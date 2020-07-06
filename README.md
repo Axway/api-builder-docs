@@ -2,13 +2,7 @@
 
 Axway-Open-Docs is a docs-as-code implementation for Axway documentation. It is built using [Hugo](https://gohugo.io/) static site generator with the [Google Docsy](https://github.com/google/docsy) theme. The site is deployed on Netlify at <https://axway-open-docs.netlify.com/>
 
-This repository contains all files for building and deploying the site. The Markdown files for the documentation are stored at `/content/en/docs`.
-
-## Contribute
-
-We welcome your contributions! To get started, go to <https://axway-open-docs.netlify.com/> and click **Documentation** in the top menu. Browse the documentation and use the options in the right navigation to edit any page using GitHub or Netlify CMS.
-
-Before you start contributing, please read the [contribution guidelines](https://axway-open-docs.netlify.com/docs/contribution_guidelines/).
+This repository contains all files for building and deploying a microsite in the Axway-Open-Docs ecosystem.
 
 ## Create your own microsite using this repository
 
@@ -55,7 +49,7 @@ After running these commands, you will have a local copy of the repository in th
 Run the hugo server command in your site root:
 
 ```
-cd ~/open-docs-MYPROJECT/
+cd ~/MYPROJECT-open-docs/
 hugo server
 ```
 

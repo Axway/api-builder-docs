@@ -32,7 +32,6 @@ On big screens, paragraphs and headings should not take up the full container wi
 
 Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&B. **I love this life we live in**.
 
-
 ## Second Header 2
 
 > This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
@@ -43,7 +42,7 @@ Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork b
 This is a code block following a header.
 ```
 
-Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan. 
+Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.
 
 #### Header 4
 
@@ -85,29 +84,29 @@ And an ordered list:
 
 And an unordered task list:
 
-- [x] Create a Hugo theme
-- [x] Add task lists to it
-- [ ] Take a vacation
+* [x] Create a Hugo theme
+* [x] Add task lists to it
+* [ ] Take a vacation
 
 And a "mixed" task list:
 
-- [ ] Pack bags
-- ?
-- [ ] Travel!
+* [ ] Pack bags
+* ?
+* [ ] Travel!
 
 And a nested list:
 
 * Jackson 5
-  * Michael
-  * Tito
-  * Jackie
-  * Marlon
-  * Jermaine
+    * Michael
+    * Tito
+    * Jackie
+    * Marlon
+    * Jermaine
 * TMNT
-  * Leonardo
-  * Michelangelo
-  * Donatello
-  * Raphael
+    * Leonardo
+    * Michelangelo
+    * Donatello
+    * Raphael
 
 Definition lists can be used with Markdown syntax. Definition headers are bold.
 
@@ -122,7 +121,6 @@ Birthplace
 
 Color
 : Green
-
 
 ----------------
 
@@ -186,16 +184,23 @@ Inline code inside table cells should still be distinguishable.
 
 ----------------
 
+## Images
+
+Add image files in the `static/Images` folder and reference them in your content as follows.
+
+You can add screenshots and animations.
+
+![Sample image](/Images/gw_mgr_ui.png)
+
+You can also add diagrams.
+
+![Another sample image](/Images/APIgw_upgrade_overview.png)
+
+Note that the image path is just `/Images` and not `/static/Images`.
+
 Small images should be shown at their actual size.
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
 Large images should always scale down and fit in the content container.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA._
-
 
 ## Components
 
@@ -207,6 +212,5 @@ _The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik 
 {{< alert color="success" >}}This is a successful alert.{{< /alert >}}
 {{< alert color="warning" >}}This is a warning.{{< /alert >}}
 {{< alert color="warning" title="Warning" >}}This is a warning with a title.{{< /alert >}}
-
 
 ## Another Heading

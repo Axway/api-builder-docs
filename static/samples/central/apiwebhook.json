@@ -1,0 +1,33 @@
+{
+    "apiVersion": "v1alpha1",
+    "kind": "Webhook",
+    "name": "webhook1",
+    "title": "webhook1 title",
+    "metadata": {
+        "scope": {
+            "kind": "Environment",
+            "name": "env1"
+        },
+    },
+    "attributes": {
+        "createdBy": "json"
+    },
+    "tags": [
+        "webhook",
+        "cli"
+    ],
+    "spec": {
+        "auth": {
+            "secret": {
+                "name": "secret1",
+                "key": "key1"
+            }
+        },
+        "enabled": true,
+        "url": "https://webhookurl.com/path",
+        "headers": {
+            "header1": "header1val",
+            "header2": "header2val"
+        }
+    }
+}

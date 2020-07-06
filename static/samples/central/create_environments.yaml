@@ -1,0 +1,25 @@
+apiVersion: v1alpha1
+title: Title one
+name: env1
+kind: Environment
+attributes:
+  createdBy: yaml
+  randomNum: 1
+tags:
+  - axway
+  - cli
+spec:
+  description: description one
+---
+apiVersion: v1alpha1
+title: Title two
+name: env2
+kind: Environment
+attributes:
+  createdBy: yaml
+  randomNum: 2
+tags:
+  - axway
+  - cli
+spec:
+  description: description two

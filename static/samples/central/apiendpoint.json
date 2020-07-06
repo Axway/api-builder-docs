@@ -1,0 +1,29 @@
+{
+    "apiVersion": "v1alpha1",
+    "kind": "APIServiceInstance",
+    "name": "apisvcinst1",
+    "title": "apisvcinst1 title",
+    "metadata": {
+        "scope": {
+            "kind": "Environment",
+            "name": "env1"
+        }
+    },
+    "attributes": {
+        "createdBy": "json"
+    },
+    "tags": [
+        "cli",
+        "apisvcinst"
+    ],
+    "spec": {
+        "apiServiceRevision": "apisvcrev1",
+        "endpoint": [
+            {
+                "host": "test-endpoint.com",
+                "port": 8080,
+                "protocol": "https"
+            }
+        ]
+    }
+}

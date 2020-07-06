@@ -1,0 +1,32 @@
+{
+    "apiVersion": "v1alpha1",
+    "kind": "ConsumerSubscriptionDefinition",
+    "name": "consumersubdef1",
+    "title": "consumersubdef1 title",
+    "metadata": {
+        "scope": {
+            "kind": "Environment",
+            "name": "env1"
+        },
+    },
+    "attributes": {
+        "createdBy": "json"
+    },
+    "tags": [
+        "cli",
+        "apisvcinst"
+    ],
+    "spec": {
+        "webhooks": [
+            "webhook1"
+        ],
+        "schema": {
+            "properties": [
+                {
+                    "key": "profile",
+                    "value": {}
+                }
+            ]
+        }
+    }
+}

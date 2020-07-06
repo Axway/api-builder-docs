@@ -1,0 +1,42 @@
+{
+    "apiVersion": "v1alpha1",
+    "kind": "ConsumerInstance",
+    "name": "consumerinst1",
+    "title": "consumerinst1 title",
+    "metadata": {
+        "scope": {
+            "kind": "Environment",
+            "name": "env1"
+        },
+    },
+    "attributes": {
+        "createdBy": "json"
+    },
+    "tags": [
+        "cli",
+        "consumerinst"
+    ],
+    "spec": {
+        "name": "Consumer Instance Name",
+        "apiServiceInstance": "apisvcinst1",
+        "description": "Catalog description",
+        "visibility": "RESTRICTED",
+        "version": "1.0",
+        "state": "PUBLISHED",
+        "status": "statusValue",
+        "tags": [
+            "instance",
+            "cli"
+        ],
+        "icon": {
+            "contentType": "image/jpeg",
+            "data": "string"
+        },
+        "documentation": "documentation string",
+        "subscription": {
+            "enabled": false,
+            "autoSubscribe": true,
+            "subscriptionDefinition": "consumersubdef1"
+        }
+    }
+}

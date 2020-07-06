@@ -1,0 +1,16 @@
+{
+  "apiVersion": "v1alpha1",
+  "kind": "APIService",
+  "name": "apisvc1",
+  "title": "apisvc1 title",
+  "metadata": {
+      "scope": {
+          "kind": "Environment",
+          "name": "env1"
+      }
+  },
+  "tags": ["apisvc", "cli", "axway"],
+  "spec": {
+      "description": "api service 1 description"
+  }
+}

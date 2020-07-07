@@ -6,7 +6,7 @@ This repository contains all files for building and deploying a microsite in the
 
 ## Create your own microsite using this repository
 
-This section details how to create your own microsite in the Axway-Open-Docs ecosystem. For an overall view of the microsite architecture, see XXX.
+This section details how to create your own microsite in the Axway-Open-Docs ecosystem. For an overall view of the microsite architecture, see [Architecture for docs-as-code at scale](https://techweb.axway.com/confluence/display/RDAPI/Architecture+for+docs+as+code+at+scale).
 
 ### Before you start
 
@@ -17,11 +17,15 @@ You must have completed all of the steps in [Set up and work locally](https://ax
 ### Create a new microsite repository in Axway org
 
 1. Go to [Axway org on GitHub](https://github.com/Axway) and click **New**.
+    ![Create new repo](/static/Images/axway_github_new.png)
 2. At the top of the page click **Import a repository**.
+    ![Import repo](/static/Images/axway_github_import.png)
 3. On the next screen, enter the clone URL of this repository and the name for your new microsite.
 
-    * To find the clone URL of this repository, click the drop-down arrow on the Code button above and copy the URL to your clipboard.
+    * To find the clone URL of this repository, click the drop-down arrow on the Code button above and copy the HTTPS URL to your clipboard.
     * Enter a name following the naming convention `MYPROJECT-open-docs`, for example `amplify-central-open-docs`.
+
+    ![Import details](/static/Images/axway_github_import_details.png)
 
 ### Clone the new microsite repository to your local environment
 

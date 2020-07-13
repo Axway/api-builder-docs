@@ -1,8 +1,8 @@
 # Axway-Open-Docs
 
-Axway-Open-Docs is a docs-as-code implementation for Axway documentation. It is built using [Hugo](https://gohugo.io/) static site generator with the [Google Docsy](https://github.com/google/docsy) theme. The site is deployed on Netlify at <https://axway-open-docs.netlify.com/>
+Axway-Open-Docs is a docs-as-code implementation for Axway documentation. It is built using the [Hugo](https://gohugo.io/) static site generator with the [Google Docsy](https://github.com/google/docsy) theme. The site is deployed on Netlify at <https://axway-open-docs.netlify.com/>. Users can edit any documentation page using GitHub web UI or a WYSIWYG editor provided by [Netlify CMS](https://www.netlifycms.org/).
 
-This repository contains all files for building and deploying a microsite in the Axway-Open-Docs ecosystem.
+This repository contains all files for building and deploying a **microsite** in the Axway-Open-Docs ecosystem.
 
 ## Create your own microsite using this repository
 
@@ -10,9 +10,15 @@ This section details how to create your own microsite in the Axway-Open-Docs eco
 
 ### Before you start
 
-You must have completed all of the steps in [Set up and work locally](https://axway-open-docs.netlify.app/docs/contribution_guidelines/setup_work_locally/).
+You must have the following installed in your development environment:
 
-**TBD: What prereqs still apply with new build scripts? Just install Hugo and NodeJS?**
+* Git client
+* Hugo
+* Node.js
+
+See [Set up and work locally](https://axway-open-docs.netlify.app/docs/contribution_guidelines/setup_work_locally/) for information on recommended versions of these tools and for tips on installing them in a WSL environment.
+
+The following steps assume that you already have a GitHub account in the Axway org and that you have the permissions to create new projects in that org.
 
 ### Create a new microsite repository in Axway org
 
@@ -33,12 +39,8 @@ Clone your new repository:
 
 ```
 cd ~
-git clone --recurse-submodules --depth 1 git@github.com:Axway/MYPROJECT-open-docs.git
+git clone git@github.com:Axway/MYPROJECT-open-docs.git
 ```
-
-**TBD: Is recurse option needed with new build scripts?**
-
-You must use `--recurse-submodules` or you will not pull down the Docsy theme code you need to generate a working site.
 
 After running these commands, you will have a local copy of the repository in the following location:
 
@@ -48,14 +50,19 @@ After running these commands, you will have a local copy of the repository in th
 
 ### Build the site locally
 
-**TBD: Does user need to install postcss etc with new build scripts?**
-
-Run the hugo server command in your site root:
+Run the `build.sh` command in your site root:
 
 ```
 cd ~/MYPROJECT-open-docs/
-hugo server
+./build.sh
 ```
+
+The `build.sh` script performs the following:
+
+* Adds the `docsy` theme Git submodule
+* Adds the `axway-open-docs-common` Git submodule
+* Installs the npm packages required by Docsy
+* Runs the `hugo server` command
 
 The website is now available locally at `http://localhost:1313/`.
 

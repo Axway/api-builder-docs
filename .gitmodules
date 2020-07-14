@@ -1,4 +1,3 @@
-
-[submodule "themes/docsy"]
-	path = themes/docsy
-	url = https://github.com/google/docsy.git
+[submodule "axway-open-docs-common"]
+	path = axway-open-docs-common
+	url = https://github.com/Axway/axway-open-docs-common.git

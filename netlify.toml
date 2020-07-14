@@ -4,7 +4,7 @@
 # Default build settings
 [build]
 publish = "public"
-command = "cd themes/docsy && git submodule update -f --init && cd ../.. && hugo"
+command = "bash build.sh -n"
 
 # "production" environment specific build settings
 [build.environment]
@@ -14,10 +14,10 @@ HUGO_VERSION = "0.66.0"
 HUGO_ENV = "production"
 
 [context.deploy-preview]
-command = "cd themes/docsy && git submodule update -f --init && cd ../.. && hugo -b $DEPLOY_PRIME_URL"
+command = "bash build.sh -p"
 
 [context.develop]
-command = "cd themes/docsy && git submodule update -f --init && cd ../.. && hugo -b $DEPLOY_PRIME_URL"
+command = "bash build.sh -p"
 
 [dev]
   targetPort = 1313

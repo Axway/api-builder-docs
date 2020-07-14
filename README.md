@@ -68,7 +68,20 @@ The website is now available locally at `http://localhost:1313/`.
 
 ### Create a new Netlify microsite
 
-Create a new site from your microsite repo in Netlify and add the axway-open-docs GitHub Oauth provider client and secret to the microsite settings in Netlify (under **Access control > Oauth**).
+Create a new site from your microsite repo in Netlify:
+
+1. Log in to [OpenDocs Netlify account](https://app.netlify.com/teams/opendocs/sites).
+2. Click **New site from Git**.
+3. Click **GitHub**.
+4. Select the Axway GitHub organization and click **Configure the Netlify app on GitHub**.
+
+    ![Add site to Netlify](/static/Images/netlify_add_site.png)
+
+5. In the GitHub window, select the Axway org and the microsite repository you created earlier and click **Update access** to give Netlify access.
+6. Back in the Netlify window, select the microsite repository.
+7. Leave the default deploy and build settings and click **Deploy site**.
+
+The site is now deployed on a random URL. To change the URL click **Site settings > Change site name** and enter a name in the format `MYPROJECT-open-docs`. The site will now be available on the URL <https://MYPROJECT-open-docs.netlify.app/>.
 
 ### Customize the site to use your Github repo
 
@@ -87,6 +100,7 @@ Make the necessary changes to get the **Edit on Netlify CMS** links to work corr
 * Change base URL in `config.toml` to the URL of your microsite?
 * Change `repo` and `site url` in `config.js` to point to your repo/microsite?
 * Update the collections in `config.js` to match your docs
+* Add the axway-open-docs GitHub Oauth provider client and secret to the microsite settings in Netlify (under **Access control > Oauth**).
 
 ### Customize the content for your project
 

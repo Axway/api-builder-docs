@@ -1,8 +1,8 @@
 # Axway-Open-Docs
 
-Axway-Open-Docs is a docs-as-code implementation for Axway documentation. It is built using [Hugo](https://gohugo.io/) static site generator with the [Google Docsy](https://github.com/google/docsy) theme. The site is deployed on Netlify at <https://axway-open-docs.netlify.com/>
+Axway-Open-Docs is a docs-as-code implementation for Axway documentation. It is built using the [Hugo](https://gohugo.io/) static site generator with the [Google Docsy](https://github.com/google/docsy) theme. The site is deployed on Netlify at <https://axway-open-docs.netlify.com/>. Users can edit any documentation page using GitHub web UI or a WYSIWYG editor provided by [Netlify CMS](https://www.netlifycms.org/).
 
-This repository contains all files for building and deploying a microsite in the Axway-Open-Docs ecosystem.
+This repository contains all files for building and deploying a **microsite** in the Axway-Open-Docs ecosystem.
 
 ## Create your own microsite using this repository
 
@@ -10,9 +10,15 @@ This section details how to create your own microsite in the Axway-Open-Docs eco
 
 ### Before you start
 
-You must have completed all of the steps in [Set up and work locally](https://axway-open-docs.netlify.app/docs/contribution_guidelines/setup_work_locally/).
+You must have the following installed in your development environment:
 
-**TBD: What prereqs still apply with new build scripts? Just install Hugo and NodeJS?**
+* Git client
+* Hugo
+* Node.js
+
+See [Set up and work locally](https://axway-open-docs.netlify.app/docs/contribution_guidelines/setup_work_locally/) for information on recommended versions of these tools and for tips on installing them in a WSL environment.
+
+The following steps assume that you already have a GitHub account in the Axway org and that you have the permissions to create new projects in that org.
 
 ### Create a new microsite repository in Axway org
 
@@ -33,12 +39,8 @@ Clone your new repository:
 
 ```
 cd ~
-git clone --recurse-submodules --depth 1 git@github.com:Axway/MYPROJECT-open-docs.git
+git clone git@github.com:Axway/MYPROJECT-open-docs.git
 ```
-
-**TBD: Is recurse option needed with new build scripts?**
-
-You must use `--recurse-submodules` or you will not pull down the Docsy theme code you need to generate a working site.
 
 After running these commands, you will have a local copy of the repository in the following location:
 
@@ -48,20 +50,38 @@ After running these commands, you will have a local copy of the repository in th
 
 ### Build the site locally
 
-**TBD: Does user need to install postcss etc with new build scripts?**
-
-Run the hugo server command in your site root:
+Run the `build.sh` command in your site root:
 
 ```
 cd ~/MYPROJECT-open-docs/
-hugo server
+./build.sh
 ```
+
+The `build.sh` script performs the following:
+
+* Adds the `docsy` theme Git submodule
+* Adds the `axway-open-docs-common` Git submodule
+* Installs the npm packages required by Docsy
+* Runs the `hugo server` command
 
 The website is now available locally at `http://localhost:1313/`.
 
 ### Create a new Netlify microsite
 
-Create a new site from your microsite repo in Netlify and add the axway-open-docs GitHub Oauth provider client and secret to the microsite settings in Netlify (under **Access control > Oauth**).
+Create a new site from your microsite repo in Netlify:
+
+1. Log in to [OpenDocs Netlify account](https://app.netlify.com/teams/opendocs/sites).
+2. Click **New site from Git**.
+3. Click **GitHub**.
+4. Select the Axway GitHub organization and click **Configure the Netlify app on GitHub**.
+
+    ![Add site to Netlify](/static/Images/netlify_add_site.png)
+
+5. In the GitHub window, select the Axway org and the microsite repository you created earlier and click **Update access** to give Netlify access.
+6. Back in the Netlify window, select the microsite repository.
+7. Leave the default deploy and build settings and click **Deploy site**.
+
+The site is now deployed on a random URL. To change the URL click **Site settings > Change site name** and enter a name in the format `MYPROJECT-open-docs`. The site will now be available on the URL <https://MYPROJECT-open-docs.netlify.app/>.
 
 ### Customize the site to use your Github repo
 
@@ -80,6 +100,7 @@ Make the necessary changes to get the **Edit on Netlify CMS** links to work corr
 * Change base URL in `config.toml` to the URL of your microsite?
 * Change `repo` and `site url` in `config.js` to point to your repo/microsite?
 * Update the collections in `config.js` to match your docs
+* Add the axway-open-docs GitHub Oauth provider client and secret to the microsite settings in Netlify (under **Access control > Oauth**).
 
 ### Customize the content for your project
 

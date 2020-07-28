@@ -77,7 +77,7 @@ Create a new site from your microsite repo in Netlify:
 
     ![Add site to Netlify](/static/Images/netlify_add_site.png)
 
-5. In the GitHub window, select the Axway org and the microsite repository you created earlier and click **Update access** to give Netlify access. Be carefule not to deselect any repositories that already have the Netlify app installed!
+5. In the GitHub window, select the Axway org and the microsite repository you created earlier and click **Update access** to give Netlify access. Be careful not to deselect or remove any repositories that already have the Netlify app installed!
 6. Back in the Netlify window, select the microsite repository.
 7. Leave the default deploy and build settings and click **Deploy site**.
 

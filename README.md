@@ -72,14 +72,15 @@ Create a new site from your microsite repo in Netlify:
 
 1. Log in to [OpenDocs Netlify account](https://app.netlify.com/teams/opendocs/sites).
 2. Click **New site from Git**.
-3. Click **GitHub**.
-4. Select the Axway GitHub organization and click **Configure the Netlify app on GitHub**.
+3. Click **GitHub**. You'll be asked to authorize Netlify to your account.
+4. On the **Create a new site** dialog, select the **Axway** GitHub organization and click **Configure the Netlify app on GitHub**.
 
     ![Add site to Netlify](/static/Images/netlify_add_site.png)
 
-5. In the GitHub window, select the Axway org and the microsite repository you created earlier and click **Update access** to give Netlify access. Be careful not to deselect or remove any repositories that already have the Netlify app installed!
-6. Back in the Netlify window, select the microsite repository.
-7. Leave the default deploy and build settings and click **Deploy site**.
+5. On the **Install Netlify** dialog, select **Axway** to expand it.
+6. On the **Update Netlify's repository access** dialog, select the Axway org and the microsite repository you created earlier and click **Update access** to give Netlify access. Be careful not to deselect or remove any repositories that already have the Netlify app installed!
+7. Back in the Netlify window, verify that your newly created microsite repository is on the list, and click to select it.
+8. Select **Open docs team** as Owner, select **master** as branch to deploy. Do not change the **Basic** or **Advanced** build settings. Click **Deploy site**.
 
 The site is now deployed on a random URL. To change the URL click **Site settings > Change site name** and enter a name in the format `MYPROJECT-open-docs`. The site will now be available on the URL <https://MYPROJECT-open-docs.netlify.app/>.
 

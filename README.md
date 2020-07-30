@@ -120,18 +120,46 @@ The landing page for the microsite is a HTML page `content/en/_index.html` and u
 
 ### Customize your Git repo for your way of working
 
-You can set up your Git repo in whatever way works best for your team and your product, however, to be accepted into the Axway-Open-Docs ecosystem you must enable the following as a minimum:
+You can set up your Git repo in whatever way works best for your team and your product, however, to be accepted into the Axway-Open-Docs ecosystem you must enable the following as a minimum.
 
-* Your `master` branch must be protected
-    * It must require pull request reviews before merging (at least 1 review from a technical writer or doc owner)
-    * It must require status checks to pass before merging (for the Axway CLA, the Markdown linter, and any Netlify checks)
-    ![Branch protections](/static/Images/microsite_github_protections.png)
-* You must use the the GitHub Action that runs the Markdown linter (see `.github/workflows/ciworkflow.yml`)
+#### Branch protections
 
-It is best to also modify the following to suit your project:
+Your `master` branch must be protected:
+
+* It must require pull request reviews before merging (at least 1 review from a technical writer or doc owner)
+* It must require status checks to pass before merging (for the Axway CLA, the Markdown linter, and any Netlify checks)
+
+![Branch protections](/static/Images/microsite_github_protections.png)
+
+#### Markdown linting
+
+You must use the the GitHub Action that runs the Markdown linter (see `.github/workflows/ciworkflow.yml`).
+
+#### Merge strategy
+
+It is best to use a squash merging strategy in public projects with external contributors as this results in a more readable Git history and cleaner change history messages at the bottom of each documentation page.
+
+To enable squash merging, select the **Allow squash merging** checkbox and deselect the other options under **Settings > Options > Merge button**. When using this option it is best to also enable the linear history requirement on any protected branches.
+
+#### Branching strategy
+
+You can set up any branching strategy as required by your product team. 
+
+Some common options include:
+
+* A single production branch (`master`) for single version continuously delivered products
+* A development branch (`develop`) and a production branch (`master`) for single version products delivered on a regular cycle
+* A latest version production branch (`master`) and one or more previous version sustaining production branches (`762`, `753`, etc.)
+
+#### CODEOWNERS
+
+You must modify the CODEOWNERS (`.github/CODEOWNERS`) file with the correct users. This automates who gets added as reviewers in pull requests.
+
+#### Pull request and issue templates
+
+It is best to modify the following templates to suit your project:
 
 * Pull request template (`.github/pull_request_template.md`) - This template is used when a contributor creates a PR on GitHub. It is not used by Netlify CMS. 
-* CODEOWNERS (`.github/CODEOWNERS`) - This automates who gets added as reviewers in pull requests.
 * Issue templates (`.github/ISSUE_TEMPLATE/documentation-issue-template.md` and `.github/ISSUE_TEMPLATE/website-issue-template.md`) - These are used when a contributor creates a GitHub issue.
 
 ### Connect your microsite to the Axway-Open-Docs ecosystem

@@ -118,6 +118,22 @@ When working with the content it can be useful to read the following Docsy docum
 
 The landing page for the microsite is a HTML page `content/en/_index.html` and uses Docsy content blocks. You must modify this page to create your own blocks and link to your own content.
 
+### Customize your Git repo for your way of working
+
+You can set up your Git repo in whatever way works best for your team and your product, however, to be accepted into the Axway-Open-Docs ecosystem you must enable the following as a minimum:
+
+* Your `master` branch must be protected
+    * It must require pull request reviews before merging (at least 1 review from a technical writer or doc owner)
+    * It must require status checks to pass before merging (for the Axway CLA, the Markdown linter, and any Netlify checks)
+    ![Branch protections](/static/Images/microsite_github_protections.png)
+* You must use the the GitHub Action that runs the Markdown linter (see `.github/workflows/ciworkflow.yml`)
+
+It is best to also modify the following to suit your project:
+
+* Pull request template (`.github/pull_request_template.md`) - This template is used when a contributor creates a PR on GitHub. It is not used by Netlify CMS. 
+* CODEOWNERS (`.github/CODEOWNERS`) - This automates who gets added as reviewers in pull requests.
+* Issue templates (`.github/ISSUE_TEMPLATE/documentation-issue-template.md` and `.github/ISSUE_TEMPLATE/website-issue-template.md`) - These are used when a contributor creates a GitHub issue.
+
 ### Connect your microsite to the Axway-Open-Docs ecosystem
 
 When you and your stakeholders are happy with the content on your Netlify microsite, you can request that your microsite be added to the overall ecosystem. This involves having redirects added to the main [Axway Open Documentation](https://axway-open-docs.netlify.app/) site to redirect all traffic to your documentation to your microsite. Contact @alexearnshaw or @andreamussap to request this.

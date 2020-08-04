@@ -127,7 +127,7 @@ You can set up your Git repo in whatever way works best for your team and your p
 Your `master` branch must be protected:
 
 * It must require pull request reviews before merging (at least 1 review from a technical writer or doc owner)
-* It must require status checks to pass before merging (for the Axway CLA, the Markdown linter, and any **Netlify** checks(Header rules, Pages changed, Redirect rules, Mixed content, deploy/netlify))
+* It must require status checks to pass before merging (for the Axway CLA, the Markdown linter, and any **Netlify** checks (Header rules, Pages changed, Redirect rules, Mixed content, deploy/netlify))
 
 ![Branch protections](/static/Images/microsite_github_protections.png)
 
@@ -140,6 +140,8 @@ You must use the the GitHub Action that runs the Markdown linter (see `.github/w
 It is best to use a squash merging strategy in public projects with external contributors as this results in a more readable Git history and cleaner change history messages at the bottom of each documentation page.
 
 To enable squash merging, select the **Allow squash merging** checkbox and deselect the other options under **Settings > Options > Merge button**. When using this option it is best to also enable the linear history requirement on any protected branches.
+
+You can also enable **Automatically delete head branches** to keep your branch list clean.
 
 #### Branching strategy
 

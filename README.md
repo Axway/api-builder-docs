@@ -127,7 +127,7 @@ You can set up your Git repo in whatever way works best for your team and your p
 Your `master` branch must be protected:
 
 * It must require pull request reviews before merging (at least 1 review from a technical writer or doc owner)
-* It must require status checks to pass before merging (for the Axway CLA, the Markdown linter, and any Netlify checks)
+* It must require status checks to pass before merging (for the Axway CLA, the Markdown linter, and any **Netlify** checks(Header rules, Pages changed, Redirect rules, Mixed content, deploy/netlify))
 
 ![Branch protections](/static/Images/microsite_github_protections.png)
 

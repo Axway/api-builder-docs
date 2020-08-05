@@ -84,7 +84,7 @@ Create a new site from your microsite repo in Netlify:
 
 The site is now deployed on a random URL. To change the URL click **Site settings > Change site name** and enter a name in the format `MYPROJECT-open-docs`. The site will now be available on the URL `https://MYPROJECT-open-docs.netlify.app/`.
 
-### Customize the site to use your Github repo
+### Customize the site to use your Github repo and test the GitHub edit links
 
 Change the `github_repo` parameter in `config.toml` to point to your project repo as this is used by Hugo/Docsy to generate the GitHub edit links on each page. For example:
 
@@ -92,11 +92,11 @@ Change the `github_repo` parameter in `config.toml` to point to your project rep
 github_repo = "https://github.com/Axway/MYPROJECT-open-docs"
 ```
 
-### Customize the site to use your Netlify CMS instance
+When this is complete, test the **Edit on GitHub** and **Create documentation issue** links on your microsite and verify that they link to the Github repo for your microsite.
+
+### Customize the site to use your Netlify CMS instance and test the CMS edit links
 
 Make the following changes to get the **Edit on Netlify CMS** links on each page to link to the correct Netlify CMS app. The Netlify CMS app is available by default on the URL  `https://MYPROJECT-open-docs.netlify.app/admin/`.
-
-**NOTE these steps are still TBC**
 
 #### Change baseURL in `config.toml` to the URL of your microsite
 
@@ -126,6 +126,12 @@ To enable users to log in to Netlify CMS with their GitHub accounts, you must ad
 4. Click **Install provider**.
 5. Select **GitHub** as the provider and enter the client ID and secret from [this internal Confluence page](https://techweb.axway.com/confluence/display/RDAPI/Open+docs+quick+reference#Opendocsquickreference-OAuthproviderdetailsforNetlifyCMS).
 6. Click **Install**.
+
+#### Test the CMS edit links
+
+When this is complete, test the **Edit on Netlify CMS** links on your microsite and verify that they link to the CMS instance for your microsite. You should see someting like this:
+
+![Netlify CMS editor](/static/Images/netlifycms_editor.jpg)
 
 ### Customize the content for your project
 
@@ -198,8 +204,33 @@ It is best to modify the following templates to suit your project:
 
 When you and your stakeholders are happy with the content on your Netlify microsite, you can request that your microsite be added to the overall ecosystem. This involves having redirects added to the main [Axway Open Documentation](https://axway-open-docs.netlify.app/) site to redirect all traffic to your documentation to your microsite. Contact @alexearnshaw or @andreamussap to request this.
 
+Redirects must be added to the `netlify.toml` file in [Axway Open Docs repo](https://github.com/Axway/axway-open-docs) for:
+
+* Documentation content (for example, `/docs/streams/*`)
+* Images (for example, `/Images/streams/*` **TBC**)
+* CMS links (for example, `/admin/#/edit/streams/*` **TBC**)
+
 ### Set up publishing to Zoomin
 
 To enable publishing of the microsite content as a new _bundle_ on Zoomin production doc portal you must create a classification file, properties file, and zip file as detailed in [Docs-as-code on Zoomin](https://techweb.axway.com/confluence/display/RDAPI/Docs-as-code+on+Zoomin).
 
 When this is set up you must manually FTP the zip file to Zoomin to trigger an upload of the Netlify microsite content.
+
+### Remove documentation content from main Axway-Open-Docs repo (optional)
+
+If your content was migrated from the main Axway-Open-Docs site to a microsite, you must now:
+
+* Remove all documentation content and images from the main site
+* Update the Zoomin classification file for the main site to remove the migrated content
+* Update the Netlify CMS config file for the main site to remove any collections for the migrated content
+
+### Test the redirects
+
+After the redirects have been implemented, and any content removed from the main site (if applicable), you must test the redirects according to the following criteria:
+
+1. Any links to the microsite content from the main site https://axway-open-docs.netlify.app/ work correctly
+2. Edit on Github links in the microsite content brings user to microsite Git repo
+3. Edit on CMS links in microsite content brings user to CMS instance containing microsite collections only
+4. No broken links are found in either the main site or the microsite
+5. Microsite content appears on Zoomin as a seperate bundle and is no longer part of Axway Open Documentation bundle
+6. GA, Hotjar, Algolia search works as before on main site and microsite

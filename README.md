@@ -154,6 +154,45 @@ After you have replaced the placeholder content with your documentation content,
 
 For more information, see [Add new documentation to Netlify CMS](https://axway-open-docs.netlify.app/docs/contribution_guidelines/maintain_customize/#add-new-documentation-to-netlify-cms).
 
+When this is complete, test the **Edit on Netlify CMS** links again on your microsite and verify that the CMS shows all of your documentation content.
+
+### Set up publishing to Zoomin
+
+To enable publishing of the microsite content as a new _bundle_ on Zoomin production doc portal you must create a classification file, properties file, and zip file as detailed in [Docs-as-code on Zoomin](https://techweb.axway.com/confluence/display/RDAPI/Docs-as-code+on+Zoomin).
+
+When this is set up you must manually FTP the zip file to Zoomin to trigger an upload of the Netlify microsite content.
+
+### Remove documentation content from main Axway-Open-Docs repo (optional)
+
+If your content was migrated from the main Axway-Open-Docs site to a microsite, you must now:
+
+* Remove all documentation content and images from the main site
+* Update the Zoomin classification file for the main site to remove the migrated content
+* Update the Netlify CMS config file for the main site to remove any collections for the migrated content
+
+### Connect your microsite to the Axway-Open-Docs ecosystem
+
+**This must be done AFTER any content in Axway-Open-Docs repo has been removed**
+
+When you and your stakeholders are happy with the content on your Netlify microsite, you can request that your microsite be added to the overall ecosystem. This involves having redirects added to the main [Axway Open Documentation](https://axway-open-docs.netlify.app/) site to redirect all traffic to your documentation to your microsite. Contact @alexearnshaw or @andreamussap to request this.
+
+Redirects must be added to the `netlify.toml` file in [Axway Open Docs repo](https://github.com/Axway/axway-open-docs) for:
+
+* Documentation content (for example, `/docs/streams/*`)
+* Images (for example, `/Images/streams/*` **TBC**)
+* CMS links (for example, `/admin/#/edit/streams/*` **TBC**)
+
+### Test the main site and microsite
+
+After the redirects have been implemented, and any content removed from the main site (if applicable), you must test the redirects according to the following criteria:
+
+1. Any links to the microsite content from the main site https://axway-open-docs.netlify.app/ work correctly
+2. Edit on Github links in the microsite content brings user to microsite Git repo
+3. Edit on CMS links in microsite content brings user to CMS instance containing microsite collections only
+4. No broken links are found in either the main site or the microsite
+5. Microsite content appears on Zoomin as a seperate bundle and is no longer part of Axway Open Documentation bundle
+6. GA, Hotjar, Algolia search works as before on main site and microsite
+
 ### Customize your Git repo for your way of working
 
 You can set up your Git repo in whatever way works best for your team and your product, however, to be accepted into the Axway-Open-Docs ecosystem you must enable the following as a minimum.
@@ -200,37 +239,6 @@ It is best to modify the following templates to suit your project:
 * Pull request template (`.github/pull_request_template.md`) - This template is used when a contributor creates a PR on GitHub. It is not used by Netlify CMS. 
 * Issue templates (`.github/ISSUE_TEMPLATE/documentation-issue-template.md` and `.github/ISSUE_TEMPLATE/website-issue-template.md`) - These are used when a contributor creates a GitHub issue.
 
-### Connect your microsite to the Axway-Open-Docs ecosystem
+### Update the microsite repo README.md
 
-When you and your stakeholders are happy with the content on your Netlify microsite, you can request that your microsite be added to the overall ecosystem. This involves having redirects added to the main [Axway Open Documentation](https://axway-open-docs.netlify.app/) site to redirect all traffic to your documentation to your microsite. Contact @alexearnshaw or @andreamussap to request this.
-
-Redirects must be added to the `netlify.toml` file in [Axway Open Docs repo](https://github.com/Axway/axway-open-docs) for:
-
-* Documentation content (for example, `/docs/streams/*`)
-* Images (for example, `/Images/streams/*` **TBC**)
-* CMS links (for example, `/admin/#/edit/streams/*` **TBC**)
-
-### Set up publishing to Zoomin
-
-To enable publishing of the microsite content as a new _bundle_ on Zoomin production doc portal you must create a classification file, properties file, and zip file as detailed in [Docs-as-code on Zoomin](https://techweb.axway.com/confluence/display/RDAPI/Docs-as-code+on+Zoomin).
-
-When this is set up you must manually FTP the zip file to Zoomin to trigger an upload of the Netlify microsite content.
-
-### Remove documentation content from main Axway-Open-Docs repo (optional)
-
-If your content was migrated from the main Axway-Open-Docs site to a microsite, you must now:
-
-* Remove all documentation content and images from the main site
-* Update the Zoomin classification file for the main site to remove the migrated content
-* Update the Netlify CMS config file for the main site to remove any collections for the migrated content
-
-### Test the redirects
-
-After the redirects have been implemented, and any content removed from the main site (if applicable), you must test the redirects according to the following criteria:
-
-1. Any links to the microsite content from the main site https://axway-open-docs.netlify.app/ work correctly
-2. Edit on Github links in the microsite content brings user to microsite Git repo
-3. Edit on CMS links in microsite content brings user to CMS instance containing microsite collections only
-4. No broken links are found in either the main site or the microsite
-5. Microsite content appears on Zoomin as a seperate bundle and is no longer part of Axway Open Documentation bundle
-6. GA, Hotjar, Algolia search works as before on main site and microsite
+When everything is tested and you are ready to make your repo available to contributors, update the `README.md` file in the root of the microsite repo to explain to contributors what your microsite contains, how it fits into the overall Axway-Open-Docs ecosystem, and how they can contribute. You can use something similar to the README in <https://github.com/Axway/axway-open-docs>.

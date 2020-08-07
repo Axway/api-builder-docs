@@ -1,6 +1,6 @@
 # Axway-Open-Docs
 
-Axway-Open-Docs is a docs-as-code implementation for Axway documentation. It is built using the [Hugo](https://gohugo.io/) static site generator with the [Google Docsy](https://github.com/google/docsy) theme. The site is deployed on Netlify at <https://axway-open-docs.netlify.com/>. Users can edit any documentation page using GitHub web UI or a WYSIWYG editor provided by [Netlify CMS](https://www.netlifycms.org/).
+Axway-Open-Docs is a docs-as-code implementation for Axway documentation. It is built using the [Hugo](https://gohugo.io/) static site generator with the [Google Docsy](https://github.com/google/docsy) theme. The site is deployed on Netlify at <https://axway-open-docs.netlify.app/>. Users can edit any documentation page using GitHub web UI or a WYSIWYG editor provided by [Netlify CMS](https://www.netlifycms.org/).
 
 This repository contains all files for building and deploying a **microsite** in the Axway-Open-Docs ecosystem.
 
@@ -174,13 +174,57 @@ If your content was migrated from the main Axway-Open-Docs site to a microsite, 
 
 **This must be done AFTER any content in Axway-Open-Docs repo has been removed**
 
-When you and your stakeholders are happy with the content on your Netlify microsite, you can request that your microsite be added to the overall ecosystem. This involves having redirects added to the main [Axway Open Documentation](https://axway-open-docs.netlify.app/) site to redirect all traffic to your documentation to your microsite. Contact @alexearnshaw or @andreamussap to request this.
+When you and your stakeholders are happy with the content on your Netlify microsite, you can request that your microsite be added to the overall ecosystem. 
 
-Redirects must be added to the `netlify.toml` file in [Axway Open Docs repo](https://github.com/Axway/axway-open-docs) for:
+This involves:
+
+1. Adding a new link for your documentation to the home page (`content/en/_index.html`) of the main [Axway Open Documentation](https://axway-open-docs.netlify.app/) site
+2. Adding redirects to the `netlify.toml` file in the main site to redirect clicks on the new link for your documentation to your microsite
+
+Redirects must be added to the `netlify.toml` file in [Axway Open Docs repo](https://github.com/Axway/axway-open-docs). You might need redirect for each of the following:
 
 * Documentation content (for example, `/docs/streams/*`)
-* Images (for example, `/Images/streams/*` **TBC**)
-* CMS links (for example, `/admin/#/edit/streams/*` **TBC**)
+* Images (for example, `/Images/streams/*`)
+* CMS links (for example, `/admin/#/edit/streams/*`) **One redirect for each Netlify CMS collection**
+
+Here is an example of the redirects added for AMPLIFY Shared Services:
+
+```
+[[redirects]]
+  from = "/docs/shared_services/*"
+  to = "https://amplifysharedservices-open-docs.netlify.app/docs/shared_services/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/admin/#/edit/shared_services/*"
+  to = "https://amplifysharedservices-open-docs.netlify.app/admin/#/edit/shared_services/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]  
+  from = "/admin/#/edit/supportapi/*"
+  to = "https://amplifysharedservices-open-docs.netlify.app/admin/#/edit/supportapi/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/admin/#/edit/methods/*"
+  to = "https://amplifysharedservices-open-docs.netlify.app/admin/#/edit/methods/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/admin/#/edit/formats/*"
+  to = "https://amplifysharedservices-open-docs.netlify.app/admin/#/edit/formats/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+```
 
 ### Test the main site and microsite
 

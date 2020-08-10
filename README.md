@@ -226,6 +226,17 @@ Here is an example of the redirects added for AMPLIFY Shared Services:
   headers = {X-From = "Netlify"}
 ```
 
+Here is an example of a redirect for images:
+
+```
+[[redirects]]
+  from = "/Images/streams/*"
+  to = "https://amplifystreams-open-docs.netlify.app/Images/streams/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+```
+
 ### Test the main site and microsite
 
 After the redirects have been implemented, and any content removed from the main site (if applicable), you must test the redirects according to the following criteria:

@@ -1,6 +1,6 @@
 ---
-title: "API Builder POC Documentation"
-linkTitle: "API Builder POC Documentation"
+title: "Amplify API Builder POC Documentation"
+linkTitle: "Amplify API Builder POC Documentation"
 weight: 20
 menu:
   main:

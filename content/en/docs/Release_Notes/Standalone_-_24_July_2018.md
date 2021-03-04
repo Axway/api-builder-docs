@@ -1,0 +1,157 @@
+---
+title: Standalone - 24 July 2018
+linkTitle: Standalone - 24 July 2018
+weight: 590
+date: 2021-03-02
+---
+
+## {{% variables/apibuilder_prod_name %}} Standalone V4 - Athens
+
+### Summary
+
+This release includes:
+
+* [Fixes](#fixes)
+
+* [Known Issues](#known-issues)
+
+* [Updated Modules](#updated-modules)
+
+* [Release Notes](#release-notes)
+
+* [Plug-ins](#plug-ins)
+
+### Fixes
+
+* **[RDPP-4722](#RDPP-4722)** : Update dependencies to improve application size
+
+* **[RDPP-4727](#RDPP-4727)** : Correct row count for composite models based on the Oracle database connector
+    **[RDPP-4760](#RDPP-4760)** : Correct the **default** response handling of service connectors and Swagger plug-ins when they are used in flows
+
+* **[RDPP-4834](#RDPP-4834)** : Update the {{% variables/apibuilder_prod_name %}} Standalone user interface to display error pages when internal errors occur
+
+* **[RDPP-4838](#RDPP-4838)** : Update the display endpoint IDs in the user interface breadcrumbs to use their friendly names
+
+* **[RDPP-4860](#RDPP-4860)** : Update Swagger plug-in to handle URI encoded JSON schema references in Swagger files
+
+* **[RDPP-4867](#RDPP-4867)** : Correct an issue with the UI listing configuration files incorrectly
+
+### Known Issues
+
+* **RDPP-3825**: Filtering the {{% variables/apibuilder_prod_name %}} Console administrator access using IPv6 addresses may cause ENOTFOUND errors.
+
+* **RDPP-3867**: When attempting to create and save a flow for an imported Swagger endpoint that contains a path or paths defined by references the save will fail.
+
+* **RDPP-3960**: The {{% variables/apibuilder_prod_name %}} Console does not recognize a required consumes value for form parameters if it is appended and the endpoint load will fail. For example:
+
+    ```
+    "consumes": [
+    "multipart/form-data; charset=utf-8"
+    ],
+    ```
+
+    The appended character set (`charset=utf-8`) will cause the endpoint load to fail.
+
+* **RDPP-3979**: When deleting endpoints which contain references within paths, a Page Not Found (404) error may be displayed in the {{% variables/apibuilder_prod_name %}} Console. For example, a Swagger document with references within paths may look similar to this:
+
+    ```
+    {
+      "swagger": "2.0",
+      "paths" {
+        "x-path": {
+          "get": {}
+        },
+        "/find": {
+          "$ref": "#/paths/x-path"
+        },
+        "/search": {
+          "$ref": "#/paths/x-path"
+        }
+
+      }
+    }
+    ```
+
+    The {{% variables/apibuilder_prod_name %}} Console will fail to find GET /find since it is inside a `$ref`. If the {{% variables/apibuilder_prod_name %}} Console has modified the referenced `$ref`, it could cause unexpected behavior for other paths referencing #/paths/x-path such as /search - deleting GET /find could unexpectedly delete GET /search too.
+
+* **RDPP-4050**: When rendering the flow editor, the {{% variables/apibuilder_prod_name %}} Console may fail to render the Scalable Vector Graphics (SVG) icons correctly in the Firefox browser. The render failure may result in blank icons being displayed in the tool panel and in the flow diagram. This is due to a long-standing bug in Firefox that fails to scale SVG graphics correctly. To fix, edit the SVG icon and add height and width. For example: `<svg ... height="80" width="80" /`\>
+
+* **RDPP-4280**: Editing large object parameters on the API Orchestration page in the {{% variables/apibuilder_prod_name %}} Console may cause multiple, confusing flow-node configuration panel scrollbars to appear.
+
+* **RDPP-4445**: If a Swagger definition uses the `allOf` parameter, the body generated in the method test window is incorrect.
+
+* **RDPP-4532**: Given a data connector that generates models from a database, and is configured to auto-generate the API for those models (`modelAutogen` is set to `true`), and there exists a table with a primary key that is not an auto-incremented number and not named "`id`" (for example, is a PK on `username`), then the API generated will not properly handle the methods for **Upsert** or **Update**. In the UI, **Upsert** will render an example body with the non-id PK (for example, `username`) and `id` and will also fail 500 with various error messages depending on content of the body, "You must provide a Model id and data Object, that will be persisted", required body parameter: username missing", "You must provide a Model id and data Object, that will be persisted". **Update** will fail with 500 error "invalid field: id". Given a table `"geozip`", `postalCode` (PK string), `lat` (string), `lng` (string), the generated API methods disallows **Create** or **Upsert**.
+
+* **RDPP-4716**: Given a MySQL data connector that generates models from a database, and is configured to auto-generate the API for those models (`modelAutogen` is set to `true`), and there exists a table with no primary key, then the {{% variables/apibuilder_prod_name %}} will not be able to handle the following methods: **Update**, **Delete**, **Find By ID**, **Find and Modify**, and **Upsert**.
+
+* **RDPP-4724**: Given an Oracle data connector that generates models from a database, and is configured to auto-generate the API for those models (`modelAutogen` is set to `true`), and there exists a table with no primary key, then the {{% variables/apibuilder_prod_name %}} will not be able to handle the following methods: **Update**, **Delete**, **Find By ID**, **Find and Modify**, and **Upsert**.
+
+* **RDPP-4736**: Given a Swagger with an extension, for example, on the [paths object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#paths-object), the Swagger flow-node plugin can fail to load the Swagger file, resulting in an error: "Error loading plugin: @axway/api-builder-plugin-fn-swagger. Cannot convert undefined or null to object."
+
+* **RDPP-4748**: {{% variables/apibuilder_prod_name %}} will set the value of `schemes` in the {{% variables/apibuilder_prod_name %}} Standalone service's Swagger document to the scheme which was used to request the document. This may result in endpoints which don't define a scheme being set with this global value instead; however, in most cases, it will be correct. Currently, it is not possible to edit what is displayed in the schemes object.
+
+* **RDPP-4752**: The format of a distinct query's response depends on the type of the connector.
+
+* **RDPP-4759**: Calling **Update** or **Find and Modify** on a Model that uses the composite connector and contains the required fields may fail and cause the server to terminate.
+
+* **RDPP-4795**: The Mongo database connector does not work well with public keys (PKs) that are not ObjectID.
+
+* **RDPP-4813**: If the endpoint Swagger file in the **`/endpoints`** directory contains special characters in its name, for example `[test].json`, the endpoint is not rendered correctly in the UI.
+
+* **RDPP-4865**: The Swagger flow-node plugin strips characters from valid object definition names which can result in schema ID collisions.
+
+* **RDPP-4865**: The Swagger flow-node plugin does not handle valid object definition names with ~ or / in their name and can result in an invalid schema references in swagger flow-nodes.
+
+* **RDPP-4891**: When saving a configuration file in the {{% variables/apibuilder_prod_name %}} Standalone UI, the editor will briefly display the old version of the configuration while the server restarts. Any changes to the configuration will be saved as intended.
+
+* **RDPP-4896**: When using the {{% variables/apibuilder_prod_name %}} Standalone UI to download the Swagger document for an API which was auto-generated from a model, the download will fail.
+
+### Updated Modules
+
+This release includes the following module updates:
+
+* [@axway/api-builder-runtime@4.0.16](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.0.16)
+
+* [@axway/api-builder@4.0.1](https://www.npmjs.com/package/@axway/api-builder/v/4.0.1)
+
+* [@axway/api-builder-admin@1.0.14](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.0.14)
+
+### Release Notes
+
+* **RDPP-4722** : Reduced the production install size of the default service by roughly 23%.
+
+* **RDPP-4727**: Previously, when a count query was executed on a composite model that is being sourced from an Oracle DB Model the reported result count will never exceed 10 irrespective of how many actual rows there are. Now, the count result count matches the actual number of rows.
+
+* **RDPP-4760** : Previously, service connectors and flow-nodes generated with `api-builder-plugin-fn-swagger` did not handle the cases where the swagger definition had a default response. Now, service connectors and flow-nodes generated with `api-builder-plugin-fn-swagger` use the proper response description even when a default description exists. For example, if the service returns an HTTP 301 code and there is not a described response for the HTTP 301 code the default response will be used if present in the Swagger document.
+
+* **RDPP-4834**: Previously, errors in {{% variables/apibuilder_prod_name %}} runtime or invalid views in the console would not render an error page and may have caused browser errors. Now, a consumable error page is shown when most errors occur.
+
+* **RDPP-4838**: Previously, the {{% variables/apibuilder_prod_name %}} Standalone user interface breadcrumbs did not display the friendly endpoint name. Now, the user interface breadcrumbs display the friendly endpoint name.
+
+* **RDPP-4860** : Previously, `api-builder-plugin-fn-swagger` would throw "Error: Invalid reference token" when attempting to handle URI encoded JSON schema references in Swagger files. Now, invalid reference errors are not thrown.
+
+* **RDPP-4867**: Previously, when listing files on the Configuration tab, some of them would disappear from the list. Now, configuration files do not disappear.
+
+## Plug-ins
+
+### Plug-ins Updated
+
+This release includes the following plug-in updates:
+
+* [@axway/api-builder-plugin-dc-mongo@1.0.3](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mongo/v/1.0.3#changes)
+
+* [@axway/api-builder-plugin-dc-mysql@1.1.4](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mysql/v/1.1.4#changes)
+
+* [@axway/api-builder-plugin-dc-oracle@1.0.4](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-oracle/v/1.0.4#changes)
+
+* [@axway/api-builder-plugin-fn-base64@1.0.10](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-base64/v/1.0.10#changes)
+
+* [@axway/api-builder-plugin-fn-dot@1.0.10](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-dot/v/1.0.10#changes)
+
+* [@axway/api-builder-plugin-fn-json@1.0.10](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-json/v/1.0.10#changes)
+
+* [@axway/api-builder-plugin-fn-restclient@1.0.10](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-restclient/v/1.0.10#changes)
+
+* [@axway/api-builder-plugin-fn-swagger@1.0.6](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/1.0.6#changes)
+
+* [axway-flow-sdk@2.0.10](https://www.npmjs.com/package/axway-flow-sdk/v/2.0.10#changes)

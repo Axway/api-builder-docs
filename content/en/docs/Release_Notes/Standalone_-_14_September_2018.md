@@ -1,0 +1,142 @@
+---
+title: Standalone - Eden
+linkTitle: Standalone - Eden
+weight: 550
+date: 2021-03-02
+---
+
+## Summary
+
+This release includes:
+
+* [Features](#features)
+
+* [Fixes](#fixes)
+
+* [Release Notes](#release-notes)
+
+* [New Deprecations](#new-deprecations)
+
+* [Updated Modules](#updated-modules)
+
+* [Updated Plugins](#updated-plugins)
+
+* [Known Issues](#known-issues)
+
+## Features
+
+* [#4467:](#4467) Support queries on Memory models using $like comparison operator
+
+* [#4758:](#4758) Support comparison operators on aliased fields in Composite models
+
+## Fixes
+
+* [#4870:](#4870) Fix issue with duplicate path detection when paths differ by parameter name/case
+
+* [#5028:](#5028) Ensure that validation errors are cleared after saving changes in the flow editor
+
+## Release Notes
+
+* #4467: Previously, the Memory connector did not support the `$like` comparison operator and would return an empty result set. Now, the Memory connector will support the correct `$like` behavior. **This is enabled with a feature flag.** See deprecation [#8](#dep-8).
+
+* #4758: Previously, queries on Composite models that have aliased fields only had support for the `$like` comparison operator. Now, Composite models support queries on aliased fields with the `$like`, `$eq`, `$ne`, `$lt`, `$lte`, `$gt`, `$gte`, `$in`, and `$nin` comparison operators. **This is enabled with a feature flag.** See deprecation [#7](#dep-7).
+
+* #4870: Previously, {{% variables/apibuilder_prod_name %}} would not correctly detect duplicate paths in endpoints if they differed by the case of the path parameters. Now, these duplicate paths are detected and reported on startup.
+
+* #5028: Previously, fixing and saving an invalid flow would erroneously mark the fixed node as still invalid. Now, fixing a flow will be rendered correctly.
+
+## New Deprecations
+
+* #7: Configuration change to enable additional comparison operators in composite model queries ([enableAliasesInCompositeOperators](/docs/deprecations/#enableAliasesInCompositeOperators)). For information on how to be prepared for the change and to start using the new behavior now, refer to [Change in the handling of comparison operators on Composite models](/docs/deprecations/change_in_the_handling_of_comparison_operators_on_composite_models/).
+
+* #8: Configuration change to enable the Memory connector to support `$like` in queries ([enableMemoryConnectorLike](/docs/deprecations/#enableMemoryConnectorLike)). For information on how to be prepared for the change and to start using the new behavior now, refer to [Change in the handling of Memory model queries using $like comparison operator](/docs/deprecations/change_in_the_handling_of_memory_model_queries_using_$like_comparison_operator/).
+
+When upgrading to this release, you should consider the [complete list of deprecated features](/docs/deprecations/).
+
+## Updated Modules
+
+* [@axway/api-builder-runtime@4.2.18](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.2.18)
+
+* [@axway/api-builder-admin@1.2.9](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.2.9)
+
+* [@axway/api-builder@4.2.7](https://www.npmjs.com/package/@axway/api-builder/v/4.2.7)
+
+## Updated Plugins
+
+* [@axway/api-builder-plugin-dc-mongo@1.1.2](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mongo/v/1.1.2)
+
+* [@axway/api-builder-plugin-dc-mysql@2.2.1](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mysql/v/2.2.1)
+
+* [@axway/api-builder-plugin-dc-oracle@2.2.1](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-oracle/v/2.2.1)
+
+* [@axway/api-builder-plugin-fn-base64@1.0.14](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-base64/v/1.0.14)
+
+* [@axway/api-builder-plugin-fn-dot@1.0.14](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-dot/v/1.0.14)
+
+* [@axway/api-builder-plugin-fn-json@1.0.14](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-json/v/1.0.14)
+
+* [@axway/api-builder-plugin-fn-restclient@1.0.14](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-restclient/v/1.0.14)
+
+* [@axway/api-builder-plugin-fn-swagger@1.0.15](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/1.0.15)
+
+* [axway-flow-sdk@2.0.14](https://www.npmjs.com/package/axway-flow-sdk/v/2.0.14)
+
+## Known Issues
+
+* #3825: Filtering the {{% variables/apibuilder_prod_name %}} Console administrator access using IPv6 addresses may cause ENOTFOUND errors.
+
+* #3867: When attempting to create and save a flow for an imported Swagger endpoint that contains a path or paths defined by references the save will fail.
+
+* #3960: {{% variables/apibuilder_prod_name %}} has issues with recognizing a required `consumes` value if anything is appended to it, for example `multipart/form-data; charset=utf-8`.
+
+* #3979: Attempting to delete an endpoint in the UI that was created as a result of dereferencing a JSON $ref will yield a 404. {{% variables/apibuilder_prod_name %}} will fail to locate the method since it only exists when the whole Swagger document is dereferenced. An example of a Swagger document using $ref:
+
+    ```
+    {
+      "swagger": "2.0",
+      "paths" {
+        "x-path": {
+          "get": {}
+        },
+        "/find": {
+          "$ref": "#/paths/x-path"
+        },
+        "/search": {
+          "$ref": "#/paths/x-path"
+        }
+
+      }
+    }
+    ```
+
+* #4050: When rendering the flow editor, the {{% variables/apibuilder_prod_name %}} Console may fail to render the Scalable Vector Graphics (SVG) icons correctly in the Firefox browser. The render failure may result in blank icons being displayed in the tool panel and in the flow diagram. This is due to a long-standing bug in Firefox that fails to scale SVG graphics correctly. To fix, edit the SVG icon and add height and width. For example: `<svg ... height="80" width="80" />`
+
+* #4280: Editing large object parameters on the API Orchestration page in the {{% variables/apibuilder_prod_name %}} Console may cause multiple, confusing flow-node configuration panel scrollbars to appear.
+
+* #4716: Given a data connector that generates models from a database, and is configured to auto-generate the API for those models (`modelAutogen` is set to `true`), and there exists a table with no primary key, then the {{% variables/apibuilder_prod_name %}} will not able to handle the following methods: **Update**, **Delete**, **Find By ID**, **Find and Modify**, and **Upsert**.
+
+* #4736: Given a swagger with an extension, for example, on the [path item object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#pathItemObject), the Swagger flow-node plugin can fail to load the swagger file, resulting in an error:
+
+    ```
+    Error loading plugin: @axway/api-builder-plugin-fn-swagger. Cannot convert undefined or null to object
+    ```
+
+* #4752: The format of a distinct query's response depends on the type of the connector.
+
+* #4759: Calling Update or FindAndModify on a Model that uses the composite connector and contains required fields may fail and cause the server to terminate.
+
+* #4795: The MongoDB plugin api-builder-plugin-dc-mongo does not correctly support primary keys that are not object identifiers. The MongoDB specification allows for primary keys of other types. As a result, trying to use the plugin will result in errors:
+
+    ```
+    { "message": "Invalid Value for Find By ID: "YOUR_STRING_PK_NAME", "success": false, "request-id": "c118f187-2090-4a68-b939-37367ac55b80" }
+    ```
+
+* #4813: If the endpoint swagger file in /endpoints contains special characters in its name, for example \[test\].json, the endpoint is not rendered correctly in the UI.
+
+* #4865: The Swagger flow-node plugin strips characters from valid object definition names which can result in schema ID collisions.
+
+* #4865: The Swagger flow-node plugin does not handle valid object definition names with ~ or / in their name and can result in an invalid schema references in swagger flow-nodes.
+
+* #4961: Having the '%' symbol in various file names can cause problems in the {{% variables/apibuilder_prod_name %}} Console and with direct linking. It is therefore advisable to avoid using '%' in API, Endpoint, Flow, Model, and Configuration file names. This is a result of an issue in react-router/history. https://github.com/ReactTraining/history/issues/505
+
+* #4966: {{% variables/apibuilder_prod_name %}} will generate invalid Swagger for programmatic API in `./apis` that bind to a path other than the `apiPrefix` defined in the configuration. These API must be bound to the same root path as is defined by `apiPrefix`.

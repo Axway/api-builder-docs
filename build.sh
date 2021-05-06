@@ -128,6 +128,12 @@ function fMergeContent() {
             ln ${_ln_opt} $(pwd)/${xxx} ${BUILD_DIR}/${xxx}
         fi
     done
+    
+     # This soft link makes the git info available for hugo to populate the date with git hash in the footer.
+     # Note that common files coming from axway-open-docs-common will not have this information and the pages
+     # will use the "date" value at the top of the page.
+     ln ${_ln_opt} $(pwd)/.git ${BUILD_DIR}/.git
+
     echo "[INFO] Following symlinks were created:"
     for xxx in `find $(basename ${BUILD_DIR}) -type l`;do
         echo "[INFO]    |- ${xxx}"

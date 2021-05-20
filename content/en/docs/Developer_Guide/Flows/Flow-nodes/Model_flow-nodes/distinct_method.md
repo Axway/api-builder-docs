@@ -1,8 +1,9 @@
 ---
 title: distinct method
-linkTitle: distinct method
+linkTitle: Distinct method
+description: ADD A DESCRIPTION
 weight: 50
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 The document describes the `distinct` method, parameters, and output.

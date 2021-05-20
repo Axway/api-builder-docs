@@ -1,8 +1,9 @@
 ---
 title: Standalone - Naples
-linkTitle: Standalone - Naples
-weight: 460
-date: 2021-03-02
+linkTitle: Standalone - naples
+description: ADD A DESCRIPTION
+weight: 510
+date: 2021-05-17
 ---
 
 ## Summary

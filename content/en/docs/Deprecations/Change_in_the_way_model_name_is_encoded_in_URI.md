@@ -1,8 +1,9 @@
 ---
 title: Change in the way model name is encoded in URI
 linkTitle: Change in the way model name is encoded in URI
+description: ADD A DESCRIPTION
 weight: 100
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D012](/docs/deprecations/#D012)\]{{% /alert %}}

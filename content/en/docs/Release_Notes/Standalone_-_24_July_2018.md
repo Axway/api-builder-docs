@@ -1,8 +1,9 @@
 ---
 title: Standalone - 24 July 2018
-linkTitle: Standalone - 24 July 2018
-weight: 590
-date: 2021-03-02
+linkTitle: Standalone - 24 july 2018
+description: ADD A DESCRIPTION
+weight: 640
+date: 2021-05-17
 ---
 
 ## {{% variables/apibuilder_prod_name %}} Standalone V4 - Athens

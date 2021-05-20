@@ -1,15 +1,16 @@
 ---
 title: Getting Started With API Builder
-linkTitle: Getting Started With API Builder
+linkTitle: Getting started with API Builder
+description: ADD A DESCRIPTION
 weight: 20
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 ## Prerequisites
 
-You should have NPM (recommended minimum v6.14.11), and Node.js (recommended minimum v12.20.1 LTS) installed.
+You should have NPM (recommended minimum v6.14.12), and Node.js (recommended minimum v12.22.1 LTS) installed.
 
-{{% variables/apibuilder_prod_name %}} v4 maintains compatibility with a minimum of Node.js v8.9, however, using a version older than v12.20.1 is not recommended. See the [Node.js support policy](/docs/node.js_support_policy/) for more information.
+{{% variables/apibuilder_prod_name %}} v4 maintains compatibility with a minimum of Node.js v8.9, however, using a version older than v12.22.1 is not recommended. See the [Node.js support policy](/docs/node.js_support_policy/) for more information.
 
 ### Minimum requirements
 
@@ -22,32 +23,32 @@ These are the absolute minimum requirements for running an {{% variables/apibuil
 
 ## Getting started
 
-This section describes installing the Amplify command line interface (CLI) and the {{% variables/apibuilder_prod_name %}} CLI. The {{% variables/apibuilder_prod_name %}} CLI is installed using the Amplify CLI. We first describe how to install the Amplify CLI, and then the {{% variables/apibuilder_prod_name %}} CLI.
+This section describes installing the Axway command line interface (CLI) and the {{% variables/apibuilder_prod_name %}} CLI. The {{% variables/apibuilder_prod_name %}} CLI is installed using the Axway CLI. We first describe how to install the Axway CLI, and then the {{% variables/apibuilder_prod_name %}} CLI.
 
-### Install the Amplify CLI
+### Install the Axway CLI globally using npm
 
-Install the Amplify CLI globally using `npm`. Refer to the [Amplify CLI](https://docs.axway.com/bundle/Amplify_CLI_allOS_en/page/amplify_cli_quick_start.html) documentation for more details.
+Refer to the [Axway CLI](https://docs.axway.com/bundle/Axway_CLI_allOS_en/page/axway_cli.html) documentation for more details.
 
 ```bash
-// Install Amplify CLI
+// Install Axway CLI
 
-[sudo] npm install -g @axway/amplify-cli
+[sudo] npm install -g axway
 ```
 
-Verify the Amplify CLI installation by running the following command.
+Verify the Axway CLI installation by running the following command.
 
 ```
-amplify pm list
+axway pm list
 ```
 
 ### Install the {{% variables/apibuilder_prod_name %}} CLI
 
-Install the {{% variables/apibuilder_prod_name %}} CLI. Refer to [{{% variables/apibuilder_prod_name %}} CLI](/docs/developer_guide/cli/) documentation for more details.
+Refer to [{{% variables/apibuilder_prod_name %}} CLI](/docs/developer_guide/cli/) documentation for more details.
 
 ```
 // Install {{% variables/apibuilder_prod_name %}}
 
-amplify pm install @axway/amplify-api-builder-cli
+axway pm install @axway/amplify-api-builder-cli
 ```
 
 Once {{% variables/apibuilder_prod_name %}} CLI is installed, you can use it to create a new project. In the following example, the CLI will create and initialize the `./myproject` project directory.
@@ -55,7 +56,7 @@ Once {{% variables/apibuilder_prod_name %}} CLI is installed, you can use it to 
 ```
 // Initialize a new project
 
-amplify builder init myproject
+axway builder init myproject
 ```
 
 Then, start the {{% variables/apibuilder_prod_name %}} project.

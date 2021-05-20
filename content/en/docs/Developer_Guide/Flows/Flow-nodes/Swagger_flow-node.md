@@ -1,8 +1,9 @@
 ---
 title: Swagger flow-node
 linkTitle: Swagger flow-node
-weight: 150
-date: 2021-03-02
+description: ADD A DESCRIPTION
+weight: 190
+date: 2021-05-17
 ---
 
 ## Overview
@@ -17,7 +18,7 @@ The Swagger plugin is installed as part of the default {{% variables/apibuilder_
 npm install --no-optional @axway/api-builder-plugin-fn-swagger
 ```
 
-For additional getting started information, refer to the [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
+For additional getting started information, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
 
 ## Using the Swagger plugin
 

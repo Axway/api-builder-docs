@@ -1,8 +1,9 @@
 ---
 title: Removal of Model prefix
 linkTitle: Removal of Model prefix
+description: ADD A DESCRIPTION
 weight: 150
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D024](/docs/deprecations/#D024)\]{{% /alert %}}

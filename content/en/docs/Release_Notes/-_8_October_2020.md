@@ -1,8 +1,9 @@
 ---
 title: '- Yokohama'
-linkTitle: '- Yokohama'
-weight: 90
-date: 2021-03-02
+linkTitle: '- yokohama'
+description: ADD A DESCRIPTION
+weight: 140
+date: 2021-05-17
 ---
 
 ## Summary

@@ -1,8 +1,9 @@
 ---
 title: Standalone - Osaka
-linkTitle: Standalone - Osaka
-weight: 450
-date: 2021-03-02
+linkTitle: Standalone - osaka
+description: ADD A DESCRIPTION
+weight: 500
+date: 2021-05-17
 ---
 
 ## Summary

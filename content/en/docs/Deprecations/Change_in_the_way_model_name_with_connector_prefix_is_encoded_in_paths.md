@@ -1,8 +1,9 @@
 ---
 title: Change in the way model name with connector prefix is encoded in paths
 linkTitle: Change in the way model name with connector prefix is encoded in paths
+description: ADD A DESCRIPTION
 weight: 110
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D015](/docs/deprecations/#D015)\]{{% /alert %}}

@@ -1,13 +1,14 @@
 ---
 title: Node.js support policy
 linkTitle: Node.js support policy
-weight: 110
-date: 2021-03-02
+description: ADD A DESCRIPTION
+weight: 120
+date: 2021-05-17
 ---
 
 |     |     |
 | --- | --- |
-| Recommended | v12.20.1 or greater |
+| Recommended | v12.22.1 or greater |
 | Minimum | v8.9.0 |
 
 ## Node.js releases

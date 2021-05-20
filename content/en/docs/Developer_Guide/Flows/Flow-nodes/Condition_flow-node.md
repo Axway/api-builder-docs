@@ -1,8 +1,9 @@
 ---
 title: Condition flow-node
 linkTitle: Condition flow-node
+description: ADD A DESCRIPTION
 weight: 50
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 The Condition flow-node methods, parameters, and outputs are described in the following sections.

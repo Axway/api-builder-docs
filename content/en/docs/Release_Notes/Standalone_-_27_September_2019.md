@@ -1,8 +1,9 @@
 ---
 title: Standalone - Barcelona
-linkTitle: Standalone - Barcelona
-weight: 320
-date: 2021-03-02
+linkTitle: Standalone - barcelona
+description: ADD A DESCRIPTION
+weight: 370
+date: 2021-05-17
 ---
 
 ## Summary

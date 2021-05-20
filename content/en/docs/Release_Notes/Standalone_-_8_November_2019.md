@@ -1,8 +1,9 @@
 ---
 title: Standalone - Darwin
-linkTitle: Standalone - Darwin
-weight: 300
-date: 2021-03-02
+linkTitle: Standalone - darwin
+description: ADD A DESCRIPTION
+weight: 350
+date: 2021-05-17
 ---
 
 ## Summary

@@ -1,8 +1,9 @@
 ---
 title: Debug a flow
 linkTitle: Debug a flow
+description: ADD A DESCRIPTION
 weight: 50
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 The flow Editor has the ability to debug flows directly from within the editor, without having to externally trigger the flow (e.g. by invoking an API method). With the debugger, you can provide request parameters to the flow and ensure that it handles all conditions correctly. For additional information on managing flows using the flow Editor, refer to [Manage flows](/docs/developer_guide/flows/manage_flows/).

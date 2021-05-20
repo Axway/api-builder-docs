@@ -1,8 +1,9 @@
 ---
 title: Managing Credentials
-linkTitle: Managing Credentials
+linkTitle: Managing credentials
+description: ADD A DESCRIPTION
 weight: 30
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 Credentials are used to grant your {{% variables/apibuilder_prod_name %}} service authorization to connect to another service. On the **Credentials** tab, you will see a card view listing of all the currently configured credentials.

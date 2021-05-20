@@ -1,8 +1,9 @@
 ---
 title: Standalone - Phoenix
-linkTitle: Standalone - Phoenix
-weight: 440
-date: 2021-03-02
+linkTitle: Standalone - phoenix
+description: ADD A DESCRIPTION
+weight: 490
+date: 2021-05-17
 ---
 
 ## Summary

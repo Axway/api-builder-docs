@@ -1,8 +1,9 @@
 ---
 title: Standalone - Eden
-linkTitle: Standalone - Eden
-weight: 550
-date: 2021-03-02
+linkTitle: Standalone - eden
+description: ADD A DESCRIPTION
+weight: 600
+date: 2021-05-17
 ---
 
 ## Summary

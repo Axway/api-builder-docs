@@ -1,8 +1,9 @@
 ---
 title: Standalone - Sofia
-linkTitle: Standalone - Sofia
-weight: 410
-date: 2021-03-02
+linkTitle: Standalone - sofia
+description: ADD A DESCRIPTION
+weight: 460
+date: 2021-05-17
 ---
 
 ## Summary

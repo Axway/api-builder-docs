@@ -1,8 +1,9 @@
 ---
 title: Standalone - Wellington
-linkTitle: Standalone - Wellington
-weight: 370
-date: 2021-03-02
+linkTitle: Standalone - wellington
+description: ADD A DESCRIPTION
+weight: 420
+date: 2021-05-17
 ---
 
 ## Summary

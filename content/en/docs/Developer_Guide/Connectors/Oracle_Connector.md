@@ -1,8 +1,9 @@
 ---
 title: Oracle Connector
-linkTitle: Oracle Connector
+linkTitle: Oracle connector
+description: ADD A DESCRIPTION
 weight: 50
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 The Oracle connector is a plugin for {{% variables/apibuilder_prod_name %}} that can connect to your Oracle database instance and interrogate your schema. It will automatically provision Models into your application, and optionally, automatically generate a rich CRUD API to the underlying tables. The Models can be used programmatically, or they can be used within the flow editor to interact with your database.

@@ -1,8 +1,9 @@
 ---
 title: Standalone - Boston
-linkTitle: Standalone - Boston
-weight: 580
-date: 2021-03-02
+linkTitle: Standalone - boston
+description: ADD A DESCRIPTION
+weight: 630
+date: 2021-05-17
 ---
 
 ## Summary

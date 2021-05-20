@@ -1,8 +1,9 @@
 ---
 title: 'Authorization: Access Gmail using Swagger flow-node'
-linkTitle: 'Authorization: Access Gmail using Swagger flow-node'
+linkTitle: 'Authorization: access Gmail using Swagger flow-node'
+description: ADD A DESCRIPTION
 weight: 10
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 ## Overview

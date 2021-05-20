@@ -1,8 +1,9 @@
 ---
 title: Standalone - Fuji
-linkTitle: Standalone - Fuji
-weight: 540
-date: 2021-03-02
+linkTitle: Standalone - fuji
+description: ADD A DESCRIPTION
+weight: 590
+date: 2021-05-17
 ---
 
 ## Summary

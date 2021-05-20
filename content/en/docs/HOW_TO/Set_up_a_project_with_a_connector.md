@@ -1,8 +1,9 @@
 ---
 title: Set up a project with a connector
 linkTitle: Set up a project with a connector
+description: ADD A DESCRIPTION
 weight: 130
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 ## Introduction
@@ -13,7 +14,7 @@ This document provides information on how to configure and run an {{% variables/
 
 Before setting up a project with a connector, refer to:
 
-* [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) - Provides detailed instructions for installing {{% variables/apibuilder_prod_name %}} and creating an {{% variables/apibuilder_prod_name %}} project.
+* [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) - Provides detailed instructions for installing {{% variables/apibuilder_prod_name %}} and creating an {{% variables/apibuilder_prod_name %}} project.
 
 * [{{% variables/apibuilder_prod_name %}} Project](/docs/developer_guide/project/) - Provides detailed information about {{% variables/apibuilder_prod_name %}} projects and services.
 

@@ -1,8 +1,9 @@
 ---
 title: Standalone - Quebec
-linkTitle: Standalone - Quebec
-weight: 430
-date: 2021-03-02
+linkTitle: Standalone - quebec
+description: ADD A DESCRIPTION
+weight: 480
+date: 2021-05-17
 ---
 
 ## Summary

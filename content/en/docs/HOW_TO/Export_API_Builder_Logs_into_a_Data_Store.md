@@ -1,8 +1,9 @@
 ---
 title: Export API Builder Logs into a Data Store
-linkTitle: Export API Builder Logs into a Data Store
+linkTitle: Export API Builder logs into a data store
+description: ADD A DESCRIPTION
 weight: 110
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 This document describes how to export Logs from an {{% variables/apibuilder_prod_name %}} application or service into a data store.
@@ -19,7 +20,7 @@ This document provides the technical requirements and an example of how to scaff
 
 Tools to be installed and prerequisites:
 
-1. **{{% variables/apibuilder_prod_name %}} Command Line Interface (CLI)** \- Refer to [installing {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/#InstallAPIB) in the the [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/). Once {{% variables/apibuilder_prod_name %}} CLI is installed, you can use it to create a new project and start the {{% variables/apibuilder_prod_name %}} project.
+1. **{{% variables/apibuilder_prod_name %}} Command Line Interface (CLI)** \- Refer to [installing {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/#InstallAPIB) in the the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/). Once {{% variables/apibuilder_prod_name %}} CLI is installed, you can use it to create a new project and start the {{% variables/apibuilder_prod_name %}} project.
 
 2. **Docker** - The installation of Docker depends on the specific operating system. For additional information on how to install Docker and its supported operating systems, refer to the [Docker installation documentation](https://docs.docker.com/install/).
 

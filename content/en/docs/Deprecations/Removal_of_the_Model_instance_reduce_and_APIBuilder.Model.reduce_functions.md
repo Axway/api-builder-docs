@@ -1,8 +1,9 @@
 ---
 title: Removal of the Model instance reduce and APIBuilder.Model.reduce functions
 linkTitle: Removal of the Model instance reduce and APIBuilder.Model.reduce functions
+description: ADD A DESCRIPTION
 weight: 170
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D017](/docs/deprecations/#D017)\]{{% /alert %}}

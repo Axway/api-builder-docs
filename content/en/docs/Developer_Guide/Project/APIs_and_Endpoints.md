@@ -1,8 +1,9 @@
 ---
 title: APIs and Endpoints
 linkTitle: APIs and Endpoints
+description: ADD A DESCRIPTION
 weight: 20
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 APIs are defined as Swagger documents which can contain one or more Endpoint definitions. The API Swagger document must be formatted as JSON and contained within the `/endpoints` directory of your application.

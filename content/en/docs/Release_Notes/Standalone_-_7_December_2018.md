@@ -1,8 +1,9 @@
 ---
 title: Standalone - Jakarta
-linkTitle: Standalone - Jakarta
-weight: 500
-date: 2021-03-02
+linkTitle: Standalone - jakarta
+description: ADD A DESCRIPTION
+weight: 550
+date: 2021-05-17
 ---
 
 ## Summary

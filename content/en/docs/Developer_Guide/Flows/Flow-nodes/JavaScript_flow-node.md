@@ -1,8 +1,9 @@
 ---
 title: JavaScript flow-node
 linkTitle: JavaScript flow-node
-weight: 90
-date: 2021-03-02
+description: ADD A DESCRIPTION
+weight: 100
+date: 2021-05-17
 ---
 
 ## Overview
@@ -15,7 +16,7 @@ To install the Javascript plugin, execute the following command:
 npm install --no-optional @axway/api-builder-plugin-fn-javascript
 ```
 
-For additional getting started information, refer to the [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
+For additional getting started information, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
 
 ## Methods
 

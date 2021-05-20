@@ -1,8 +1,9 @@
 ---
 title: HTTP Basic credentials
-linkTitle: HTTP Basic credentials
+linkTitle: HTTP basic credentials
+description: ADD A DESCRIPTION
 weight: 20
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 The `basic` credential type allows you to configure a credential with a username and password. The value of this credential is the Base64 encoded `username`:`password,` suitable for use in an HTTP Basic authorization header, though it does not have the "Basic" prefix embedded. Plugins, such as the Swagger plugin, that consume the credential will prefix it if necessary.

@@ -1,8 +1,9 @@
 ---
 title: XSLT flow-node
 linkTitle: XSLT flow-node
-weight: 160
-date: 2021-03-02
+description: ADD A DESCRIPTION
+weight: 200
+date: 2021-05-17
 ---
 
 This flow-node is an {{% variables/apibuilder_prod_name %}} plugin that executes XSL Transformations (XSLT). Supports XSLT 1.0, 2.0, and 3.0.

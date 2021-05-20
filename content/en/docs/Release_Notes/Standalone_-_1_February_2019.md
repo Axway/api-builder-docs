@@ -1,8 +1,9 @@
 ---
 title: Standalone - Melbourne
-linkTitle: Standalone - Melbourne
-weight: 470
-date: 2021-03-02
+linkTitle: Standalone - melbourne
+description: ADD A DESCRIPTION
+weight: 520
+date: 2021-05-17
 ---
 
 ## Summary

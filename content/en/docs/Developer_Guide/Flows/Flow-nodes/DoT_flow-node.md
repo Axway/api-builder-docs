@@ -1,8 +1,9 @@
 ---
 title: DoT flow-node
 linkTitle: DoT flow-node
+description: ADD A DESCRIPTION
 weight: 70
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 {{% alert title="❗️ Caution" color="danger" %}}Installing this module may report a security vulnerability with doT. This is because doT templates can be used to execute malicious JavaScript.

@@ -1,8 +1,9 @@
 ---
 title: Manage flow-nodes
 linkTitle: Manage flow-nodes
+description: ADD A DESCRIPTION
 weight: 30
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 This topic describes how to manage flow-nodes and the connections between flow-nodes on the API Orchestration user interface. The API Orchestration user interface is accessed from the APIs List page on the {{% variables/apibuilder_prod_name %}} Console by selecting a **Flow** icon or a **Create Flow** icon for a generated or imported endpoint depending upon the current endpoint status. The API Orchestration user interface is divided into the following panels:

@@ -1,8 +1,9 @@
 ---
 title: Standalone - Nancy
-linkTitle: Standalone - Nancy
-weight: 200
-date: 2021-03-02
+linkTitle: Standalone - nancy
+description: ADD A DESCRIPTION
+weight: 250
+date: 2021-05-17
 ---
 
 ## Summary

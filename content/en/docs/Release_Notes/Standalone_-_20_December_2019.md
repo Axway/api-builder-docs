@@ -1,8 +1,9 @@
 ---
 title: Standalone - Ghent
-linkTitle: Standalone - Ghent
-weight: 270
-date: 2021-03-02
+linkTitle: Standalone - ghent
+description: ADD A DESCRIPTION
+weight: 320
+date: 2021-05-17
 ---
 
 ## Summary

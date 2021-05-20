@@ -1,8 +1,9 @@
 ---
 title: v3 to v4 Upgrade Guide
-linkTitle: v3 to v4 Upgrade Guide
-weight: 100
-date: 2021-03-02
+linkTitle: V3 to v4 upgrade guide
+description: ADD A DESCRIPTION
+weight: 110
+date: 2021-05-17
 ---
 
 {{% alert title="❗️ {{% variables/apibuilder_prod_name %}} 3.x is deprecated" color="danger" %}}Support for {{% variables/apibuilder_prod_name %}} 3.x ceased on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [{{% variables/apibuilder_prod_name %}} 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
@@ -15,7 +16,7 @@ This guide covers the steps required for most users to migrate their projects fr
 
 ## Prerequisites
 
-Refer to the Prerequisites in the [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/#PreReq).
+Refer to the Prerequisites in the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/#PreReq).
 
 ### Upgrade script
 

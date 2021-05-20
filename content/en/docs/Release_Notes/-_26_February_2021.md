@@ -1,8 +1,9 @@
 ---
 title: '- Hanoi'
-linkTitle: '- Hanoi'
-weight: 610
-date: 2021-03-02
+linkTitle: '- hanoi'
+description: ADD A DESCRIPTION
+weight: 50
+date: 2021-05-17
 ---
 
 ## Summary
@@ -33,7 +34,7 @@ npm update
 
 ## Features
 
-* #6739: Previously, the version of the [marked](https://www.npmjs.com/package/marked) module that {{% variables/apibuilder_prod_name %}} was using had a vulnerability [CVE-2021-21306](https://nvd.nist.gov/vuln/detail/CVE-2021-21306). Now, the module was upgraded to marked@2.0.0, however, the module is no longer fully compatible with Node.js 8.x (see [#1927](https://github.com/markedjs/marked/issues/1927)) and since {{% variables/apibuilder_prod_name %}} Web is deprecated (see D011APIBuilderWeb\]) and Node.js 8.x is also deprecated (see D039UnmaintainedNode.jsversions\]), {{% variables/apibuilder_prod_name %}} will now emit a warning if using marked web routes on Node.js 8.x.
+* #6739: Previously, the version of the [marked](https://www.npmjs.com/package/marked) module that {{% variables/apibuilder_prod_name %}} was using had a vulnerability [CVE-2021-21306](https://nvd.nist.gov/vuln/detail/CVE-2021-21306). Now, the module was upgraded to marked@2.0.0, however, the module is no longer fully compatible with Node.js 8.x (see [#1927](https://github.com/markedjs/marked/issues/1927)) and since {{% variables/apibuilder_prod_name %}} Web is deprecated (see [D011](/docs/deprecations/#D011APIBuilderWeb%5BD011%5DAPIBuilderWeb)) and Node.js 8.x is also deprecated (see [D039](/docs/deprecations/#D039%5BD039%5DUnmaintainedNode.jsversions)), {{% variables/apibuilder_prod_name %}} will now emit a warning if using marked web routes on Node.js 8.x.
 
 * #6754: Previously, new {{% variables/apibuilder_prod_name %}} projects were installed with `version` 3.0.0 of `@axway/api-builder-plugin-fn-base64.` Now, new projects install with version 4.0.0.
 
@@ -47,7 +48,7 @@ npm update
 
 * #6555: Previously, `@axway/api-builder-plugin-fn-base64` Encode method did not correctly base64 encode `Buffers`, and would encode the JSON representation of a Buffer. Now, the raw `Buffer` will be encoded.
 
-* #6703: Previously, Endpoints that use remote schema references, that refer another another schema, were dereferenced incorrectly, which subsequently caused invalid service Swagger generation with the error `JSON_OBJECT_VALIDATION_FAILED`. Now, chained schema references can be used and will produce valid service Swagger.
+* #6703: Previously, Endpoints that use remote schema references which refer to a nested schema (such as schema:///Org#properties/User), were dereferenced incorrectly, which subsequently caused invalid service Swagger generation with the error `JSON_OBJECT_VALIDATION_FAILED`. Now, these schema references can be used and will produce valid service Swagger.
 
 * #6704: Previously, long endpoint paths that exceeded the rendering width of the flow-node properties panel were illegible in the UI when inspecting the endpoint flow-trigger. Now, long endpoint paths are rendered with an ellipsis (...), and have titles to allow the user to see the full path on hover.
 
@@ -65,9 +66,13 @@ npm update
 
 * [@axway/api-builder@4.23.0](https://www.npmjs.com/package/@axway/api-builder/v/4.23.0)
 
-* [@axway/api-builder-admin@1.37.8](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.37.8)
+* [@axway/api-builder-admin@1.37.11](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.37.11)
 
-* [@axway/api-builder-runtime@4.55.4](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.55.4)
+* [@axway/api-builder-runtime@4.56.2](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.56.2)
+
+* [@axway/api-builder-sdk@1.1.2](https://www.npmjs.com/package/@axway/api-builder-sdk/v/1.1.2)
+
+* [@axway/api-builder-test-utils@1.1.9](https://www.npmjs.com/package/@axway/api-builder-test-utils/v/1.1.9)
 
 ## Updated plugins
 

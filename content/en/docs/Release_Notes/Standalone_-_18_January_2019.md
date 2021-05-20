@@ -1,8 +1,9 @@
 ---
 title: Standalone - Lisbon
-linkTitle: Standalone - Lisbon
-weight: 480
-date: 2021-03-02
+linkTitle: Standalone - lisbon
+description: ADD A DESCRIPTION
+weight: 530
+date: 2021-05-17
 ---
 
 ## Summary

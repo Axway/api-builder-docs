@@ -1,8 +1,9 @@
 ---
 title: HTTP Response flow-node
-linkTitle: HTTP Response flow-node
-weight: 80
-date: 2021-03-02
+linkTitle: HTTP response flow-node
+description: ADD A DESCRIPTION
+weight: 90
+date: 2021-05-17
 ---
 
 The HTTP Response flow-node method, parameter, and output are described in the following sections.

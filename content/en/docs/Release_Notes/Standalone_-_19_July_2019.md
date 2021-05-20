@@ -1,8 +1,9 @@
 ---
 title: Standalone - Xapuri
-linkTitle: Standalone - Xapuri
-weight: 360
-date: 2021-03-02
+linkTitle: Standalone - xapuri
+description: ADD A DESCRIPTION
+weight: 410
+date: 2021-05-17
 ---
 
 ## Summary

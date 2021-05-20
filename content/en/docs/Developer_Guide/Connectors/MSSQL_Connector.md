@@ -1,8 +1,9 @@
 ---
 title: MSSQL Connector
-linkTitle: MSSQL Connector
+linkTitle: MSSQL connector
+description: ADD A DESCRIPTION
 weight: 30
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 The Microsoft SQL Server data connector is a plugin for {{% variables/apibuilder_prod_name %}} that can connect to your MSSQL instance and interrogate your schema that will automatically provision Models into your project, and optionally, automatically generate a rich CRUD API to the underlying tables. The Models can be used programmatically or can be used within the flow editor to interact with your database.

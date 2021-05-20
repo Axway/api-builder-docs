@@ -1,8 +1,9 @@
 ---
 title: Standalone - Independence
-linkTitle: Standalone - Independence
-weight: 250
-date: 2021-03-02
+linkTitle: Standalone - independence
+description: ADD A DESCRIPTION
+weight: 300
+date: 2021-05-17
 ---
 
 ## Summary

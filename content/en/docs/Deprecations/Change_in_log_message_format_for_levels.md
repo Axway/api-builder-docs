@@ -1,8 +1,9 @@
 ---
 title: Change in log message format for levels
 linkTitle: Change in log message format for levels
+description: ADD A DESCRIPTION
 weight: 20
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D049](/docs/deprecations/#D049)\]{{% /alert %}}

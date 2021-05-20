@@ -1,8 +1,9 @@
 ---
 title: Query a User
-linkTitle: Query a User
+linkTitle: Query a user
+description: ADD A DESCRIPTION
 weight: 90
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 To configure a query a user flow:

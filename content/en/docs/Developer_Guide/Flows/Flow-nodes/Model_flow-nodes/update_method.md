@@ -1,8 +1,9 @@
 ---
 title: update method
-linkTitle: update method
+linkTitle: Update method
+description: ADD A DESCRIPTION
 weight: 100
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 The document describes the `update` method, parameters, and outputs.

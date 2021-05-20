@@ -1,8 +1,9 @@
 ---
 title: Dockerize an API Builder Service
-linkTitle: Dockerize an API Builder Service
+linkTitle: Dockerize an API Builder service
+description: ADD A DESCRIPTION
 weight: 70
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 This document describes how to run an {{% variables/apibuilder_prod_name %}} service or application in a Docker container.
@@ -29,7 +30,7 @@ You need to have the following installed:
 
 1. Docker - The installation of Docker is via a dedicated installer for your specific operating system. For additional Docker installation information, refer to the [Docker documentation](https://docs.docker.com/install/).
 
-2. {{% variables/apibuilder_prod_name %}} CLI - Refer to [installing {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/#InstallAPIB) in the the [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
+2. {{% variables/apibuilder_prod_name %}} CLI - Refer to [installing {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/#InstallAPIB) in the the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
 
 ## Dockerize an {{% variables/apibuilder_prod_name %}} Service
 
@@ -49,7 +50,7 @@ npm start
 
 Once your project is running, point your browser to `http://localhost:8080/console` to access the {{% variables/apibuilder_prod_name %}} user interface (UI) console.
 
-For additional information on the {{% variables/apibuilder_prod_name %}} UI, refer to the [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
+For additional information on the {{% variables/apibuilder_prod_name %}} UI, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
 
 **Excellent! Now, you have tested that your service is running directly on your machine.**
 

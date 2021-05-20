@@ -1,8 +1,9 @@
 ---
 title: Create a custom flow-node
 linkTitle: Create a custom flow-node
+description: ADD A DESCRIPTION
 weight: 30
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 This document describes how to create a custom flow-node.
@@ -21,7 +22,7 @@ As an example of how to write a flow-node using the {{% variables/apibuilder_pro
 
 ## Prerequisites
 
-{{% variables/apibuilder_prod_name %}} CLI: All commands on this page require installation of the {{% variables/apibuilder_prod_name %}} CLI as described in the [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) .
+{{% variables/apibuilder_prod_name %}} CLI: All commands on this page require installation of the {{% variables/apibuilder_prod_name %}} CLI as described in the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) .
 
 {{% variables/apibuilder_prod_name %}} project: An {{% variables/apibuilder_prod_name %}} project is required to install and test your new flow-node. You can use an existing project, or initialize a new one with the following instructions:
 

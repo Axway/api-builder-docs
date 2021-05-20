@@ -1,8 +1,9 @@
 ---
 title: Find and Modify Users
-linkTitle: Find and Modify Users
+linkTitle: Find and modify users
+description: ADD A DESCRIPTION
 weight: 70
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 To configure a find and modify users flow:

@@ -1,8 +1,9 @@
 ---
 title: Models - Definition
-linkTitle: Models - Definition
+linkTitle: Models - definition
+description: ADD A DESCRIPTION
 weight: 40
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 Place all Model files in the `models` folder. You can only declare one model per file. A Model file is a JavaScript file, which:

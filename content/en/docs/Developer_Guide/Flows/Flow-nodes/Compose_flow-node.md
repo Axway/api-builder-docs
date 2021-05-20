@@ -1,8 +1,9 @@
 ---
 title: Compose flow-node
 linkTitle: Compose flow-node
+description: ADD A DESCRIPTION
 weight: 40
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 The Compose (DoT) flow-node methods, parameters, and outputs are described in the following sections. The Compose flow-node is created when NPM installs the `@axway/api-builder-plugin-fn-dot` plugin. The Compose flow-node plugin is included in the default application, but it can be removed. For additional DoT flow-node information, refer to [DoT flow-node](/docs/developer_guide/flows/flow-nodes/dot_flow-node/).

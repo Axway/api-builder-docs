@@ -1,8 +1,9 @@
 ---
 title: Standalone - Zams
-linkTitle: Standalone - Zams
-weight: 340
-date: 2021-03-02
+linkTitle: Standalone - zams
+description: ADD A DESCRIPTION
+weight: 390
+date: 2021-05-17
 ---
 
 ## Summary

@@ -1,8 +1,9 @@
 ---
 title: Standalone - Kobe
-linkTitle: Standalone - Kobe
-weight: 490
-date: 2021-03-02
+linkTitle: Standalone - kobe
+description: ADD A DESCRIPTION
+weight: 540
+date: 2021-05-17
 ---
 
 ## Summary

@@ -1,8 +1,9 @@
 ---
 title: Mongo Connector
-linkTitle: Mongo Connector
+linkTitle: Mongo connector
+description: ADD A DESCRIPTION
 weight: 20
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 The Mongo data connector is a plugin for {{% variables/apibuilder_prod_name %}} that can connect to your Mongo database instance and interrogate your schema. It will automatically provision Models into your application, and optionally, automatically generate a rich CRUD API to the underlying tables. The Models can be used programmatically, or they can be used within the flow editor to interact with your database.

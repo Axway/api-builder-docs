@@ -1,8 +1,9 @@
 ---
 title: '- Edirne'
-linkTitle: '- Edirne'
-weight: 30
-date: 2021-03-02
+linkTitle: '- edirne'
+description: ADD A DESCRIPTION
+weight: 80
+date: 2021-05-17
 ---
 
 ## Summary

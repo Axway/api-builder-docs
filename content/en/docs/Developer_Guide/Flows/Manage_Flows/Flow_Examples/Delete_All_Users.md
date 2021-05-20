@@ -1,8 +1,9 @@
 ---
 title: Delete All Users
-linkTitle: Delete All Users
+linkTitle: Delete all users
+description: ADD A DESCRIPTION
 weight: 30
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 To configure a delete all users flow:

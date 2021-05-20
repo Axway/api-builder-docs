@@ -1,8 +1,9 @@
 ---
 title: Standalone - Marrakech
-linkTitle: Standalone - Marrakech
-weight: 210
-date: 2021-03-02
+linkTitle: Standalone - marrakech
+description: ADD A DESCRIPTION
+weight: 260
+date: 2021-05-17
 ---
 
 ## Summary

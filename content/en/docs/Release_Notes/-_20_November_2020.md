@@ -1,8 +1,9 @@
 ---
 title: '- Bruges'
-linkTitle: '- Bruges'
-weight: 60
-date: 2021-03-02
+linkTitle: '- bruges'
+description: ADD A DESCRIPTION
+weight: 110
+date: 2021-05-17
 ---
 
 ## Summary

@@ -1,8 +1,9 @@
 ---
 title: Standalone - Turin
-linkTitle: Standalone - Turin
-weight: 400
-date: 2021-03-02
+linkTitle: Standalone - turin
+description: ADD A DESCRIPTION
+weight: 450
+date: 2021-05-17
 ---
 
 ## Summary

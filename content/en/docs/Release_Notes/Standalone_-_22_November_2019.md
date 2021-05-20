@@ -1,8 +1,9 @@
 ---
 title: Standalone - Ennis
-linkTitle: Standalone - Ennis
-weight: 290
-date: 2021-03-02
+linkTitle: Standalone - ennis
+description: ADD A DESCRIPTION
+weight: 340
+date: 2021-05-17
 ---
 
 ## Summary

@@ -1,8 +1,9 @@
 ---
 title: Standalone - Florence
-linkTitle: Standalone - Florence
-weight: 280
-date: 2021-03-02
+linkTitle: Standalone - florence
+description: ADD A DESCRIPTION
+weight: 330
+date: 2021-05-17
 ---
 
 ## Summary

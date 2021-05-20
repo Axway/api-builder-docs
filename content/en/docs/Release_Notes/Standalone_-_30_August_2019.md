@@ -1,8 +1,9 @@
 ---
 title: Standalone - Akita
-linkTitle: Standalone - Akita
-weight: 330
-date: 2021-03-02
+linkTitle: Standalone - akita
+description: ADD A DESCRIPTION
+weight: 380
+date: 2021-05-17
 ---
 
 ## Summary

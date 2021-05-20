@@ -1,8 +1,9 @@
 ---
 title: Standalone - Dublin
-linkTitle: Standalone - Dublin
-weight: 560
-date: 2021-03-02
+linkTitle: Standalone - dublin
+description: ADD A DESCRIPTION
+weight: 610
+date: 2021-05-17
 ---
 
 ## Summary

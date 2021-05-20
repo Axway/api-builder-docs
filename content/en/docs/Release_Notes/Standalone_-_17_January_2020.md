@@ -1,8 +1,9 @@
 ---
 title: Standalone - Huddersfield
-linkTitle: Standalone - Huddersfield
-weight: 260
-date: 2021-03-02
+linkTitle: Standalone - huddersfield
+description: ADD A DESCRIPTION
+weight: 310
+date: 2021-05-17
 ---
 
 ## Summary

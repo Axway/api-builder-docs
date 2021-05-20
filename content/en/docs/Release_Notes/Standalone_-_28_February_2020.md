@@ -1,8 +1,9 @@
 ---
 title: Standalone - Jackson
-linkTitle: Standalone - Jackson
-weight: 240
-date: 2021-03-02
+linkTitle: Standalone - jackson
+description: ADD A DESCRIPTION
+weight: 290
+date: 2021-05-17
 ---
 
 ## Summary

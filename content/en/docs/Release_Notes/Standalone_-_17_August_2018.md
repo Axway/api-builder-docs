@@ -1,8 +1,9 @@
 ---
 title: Standalone - Canberra
-linkTitle: Standalone - Canberra
-weight: 570
-date: 2021-03-02
+linkTitle: Standalone - canberra
+description: ADD A DESCRIPTION
+weight: 620
+date: 2021-05-17
 ---
 
 ## Summary

@@ -1,13 +1,14 @@
 ---
 title: 4.0.0 - 29 June 2018
-linkTitle: 4.0.0 - 29 June 2018
-weight: 600
-date: 2021-03-02
+linkTitle: 4.0.0 - 29 june 2018
+description: ADD A DESCRIPTION
+weight: 650
+date: 2021-05-17
 ---
 
 ## Summary
 
-{{% variables/apibuilder_prod_name %}} V4.0 enables customers to install and run {{% variables/apibuilder_prod_name %}} in containerized environments. Previously, {{% variables/apibuilder_prod_name %}} could only be installed in a cloud environment. For information on installing and getting started with {{% variables/apibuilder_prod_name %}} V4.0, refer to the [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/). The {{% variables/apibuilder_prod_name %}} 4.0.0 release includes the following changes and new features to implement the ability to install {{% variables/apibuilder_prod_name %}} on-premise. The release also includes breaking changes, fixed issues, known issues, and security vulnerabilities.
+{{% variables/apibuilder_prod_name %}} V4.0 enables customers to install and run {{% variables/apibuilder_prod_name %}} in containerized environments. Previously, {{% variables/apibuilder_prod_name %}} could only be installed in a cloud environment. For information on installing and getting started with {{% variables/apibuilder_prod_name %}} V4.0, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/). The {{% variables/apibuilder_prod_name %}} 4.0.0 release includes the following changes and new features to implement the ability to install {{% variables/apibuilder_prod_name %}} on-premise. The release also includes breaking changes, fixed issues, known issues, and security vulnerabilities.
 
 This release includes:
 

@@ -1,8 +1,9 @@
 ---
 title: Change in the way of handling authentication and authentication plugins
 linkTitle: Change in the way of handling authentication and authentication plugins
+description: ADD A DESCRIPTION
 weight: 130
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D010](/docs/deprecations/#D010)\]{{% /alert %}}

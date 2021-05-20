@@ -1,8 +1,9 @@
 ---
 title: Standalone - Yako
-linkTitle: Standalone - Yako
-weight: 350
-date: 2021-03-02
+linkTitle: Standalone - yako
+description: ADD A DESCRIPTION
+weight: 400
+date: 2021-05-17
 ---
 
 ## Summary

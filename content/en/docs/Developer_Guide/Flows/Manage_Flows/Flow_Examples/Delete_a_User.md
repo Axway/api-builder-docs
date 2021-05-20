@@ -1,8 +1,9 @@
 ---
 title: Delete a User
-linkTitle: Delete a User
+linkTitle: Delete a user
+description: ADD A DESCRIPTION
 weight: 40
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 To configure a delete a user flow:

@@ -1,9 +1,9 @@
 ---
 title: Deprecations
 linkTitle: Deprecations
-weight: 90
-date: 2021-03-02
-no_list: true
+description: ADD A DESCRIPTION
+weight: 100
+date: 2021-05-17
 ---
 
 {{% variables/apibuilder_prod_name %}} regularly adds feature improvements, fixes, and occasionally identify and fix features that do not work as designed, or are orthogonal to the intended direction of the product. When these are identified, we mark them as deprecated and add them to this document. We intend to remove all the deprecated features in the next major release of the product.

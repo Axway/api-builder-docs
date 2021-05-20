@@ -1,8 +1,9 @@
 ---
 title: Authorization in Swagger Plugin
-linkTitle: Authorization in Swagger Plugin
+linkTitle: Authorization in Swagger plugin
+description: ADD A DESCRIPTION
 weight: 40
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 ## Overview

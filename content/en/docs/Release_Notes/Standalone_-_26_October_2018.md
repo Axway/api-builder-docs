@@ -1,8 +1,9 @@
 ---
 title: Standalone - Halifax
-linkTitle: Standalone - Halifax
-weight: 520
-date: 2021-03-02
+linkTitle: Standalone - halifax
+description: ADD A DESCRIPTION
+weight: 570
+date: 2021-05-17
 ---
 
 ## Summary

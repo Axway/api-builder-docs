@@ -1,8 +1,9 @@
 ---
 title: Change in the handling of Memory model queries using $like comparison operator
-linkTitle: Change in the handling of Memory model queries using $like comparison operator
+linkTitle: Change in the handling of memory model queries using $like comparison operator
+description: ADD A DESCRIPTION
 weight: 40
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D008](/docs/deprecations/#D008)\]{{% /alert %}}

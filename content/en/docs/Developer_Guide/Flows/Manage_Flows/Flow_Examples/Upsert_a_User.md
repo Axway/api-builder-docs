@@ -1,8 +1,9 @@
 ---
 title: Upsert a User
-linkTitle: Upsert a User
+linkTitle: Upsert a user
+description: ADD A DESCRIPTION
 weight: 110
-date: 2021-03-02
+date: 2021-05-17
 ---
 
 To configure an upsert (update or insert) a user flow:

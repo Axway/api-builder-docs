@@ -1,4 +1,4 @@
-baseURL = "https://axway-open-docs.netlify.com/"
+baseURL = "https://apibuilderpoc-open-docs.netlify.app"
 title = "Axway-Open-Docs"
 
 enableRobotsTXT = true
@@ -81,7 +81,7 @@ privacy_policy = "https://www.axway.com/en/privacy-statement"
 version_menu = "Releases"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/Axway/axway-open-docs"
+github_repo = "https://github.com/Axway/apibuilderPOC-open-docs"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 # github_project_repo = "https://github.com/google/docsy"
 

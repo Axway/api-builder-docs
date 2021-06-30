@@ -1,9 +1,9 @@
 ---
 title: Project
 linkTitle: Project
+description: ADD A DESCRIPTION
 weight: 20
-date: 2021-03-02
-no_list: true
+date: 2021-06-22
 ---
 
 ## Overview

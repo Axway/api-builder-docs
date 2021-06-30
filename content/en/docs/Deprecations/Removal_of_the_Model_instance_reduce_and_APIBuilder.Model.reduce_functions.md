@@ -1,8 +1,9 @@
 ---
 title: Removal of the Model instance reduce and APIBuilder.Model.reduce functions
 linkTitle: Removal of the Model instance reduce and APIBuilder.Model.reduce functions
+description: ADD A DESCRIPTION
 weight: 170
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D017](/docs/deprecations/#D017)\]{{% /alert %}}
@@ -83,19 +84,19 @@ If your application reduces Models in this way, then your application will be im
 
 The easiest way to upgrade a reduced model is with the UI. You will have to use a different model name temporarily. In this example, the parent model is Employee, and your existing reduced model is Friend. Select the menu on **Person** -> **Compose into new**.
 
-![image2019-10-3_15_57_7](/Images/image2019-10-3_15_57_7.png)
+![image2019-10-3_15_57_7](/Images/image2019_10_3_15_57_7.png)
 
 This opens a dialog to generate a new composite model. We will give this model a different name, **Friend2**.
 
-![image2019-10-3_16_0_43](/Images/image2019-10-3_16_0_43.png)
+![image2019-10-3_16_0_43](/Images/image2019_10_3_16_0_43.png)
 
 You now have an opportunity to edit the model. In this screen, you can remove or rename fields that are sourced from the **Person** model. Make the changes to **Friend2** so that it has equivalent fields to the **Friend** model.
 
-![image2019-10-3_16_2_42](/Images/image2019-10-3_16_2_42.png)
+![image2019-10-3_16_2_42](/Images/image2019_10_3_16_2_42.png)
 
 Click "**Next >**" to save and generate API for **Friend2**.
 
-![image2019-10-3_16_6_38](/Images/image2019-10-3_16_6_38.png)
+![image2019-10-3_16_6_38](/Images/image2019_10_3_16_6_38.png)
 
 At this point, exit your application, delete the original `model/Friend.js`, and rename the new `model/Friend2.js` file to `model/Friend.js`.
 

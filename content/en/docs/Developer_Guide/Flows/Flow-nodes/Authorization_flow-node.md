@@ -1,8 +1,9 @@
 ---
 title: Authorization flow-node
 linkTitle: Authorization flow-node
+description: ADD A DESCRIPTION
 weight: 10
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 The Authorization flow-node can be used to retrieve the value of a known credential by name for use within the flow, for example, to authorize other services.

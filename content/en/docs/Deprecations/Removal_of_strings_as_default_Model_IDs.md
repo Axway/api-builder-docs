@@ -1,8 +1,9 @@
 ---
 title: Removal of strings as default Model IDs
 linkTitle: Removal of strings as default Model IDs
+description: ADD A DESCRIPTION
 weight: 160
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D005](/docs/deprecations/#D005)\]{{% /alert %}}

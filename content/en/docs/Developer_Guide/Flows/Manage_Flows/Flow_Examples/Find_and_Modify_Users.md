@@ -1,8 +1,9 @@
 ---
-title: Find and Modify Users
-linkTitle: Find and Modify Users
+title: Find and modify users
+linkTitle: Find and modify users
+description: ADD A DESCRIPTION
 weight: 70
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 To configure a find and modify users flow:
@@ -80,7 +81,7 @@ To configure a find and modify users flow:
 
 36. Connect the notfound output of the Find and modify users flow-node to the input of the Users not found flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). The completed flow is displayed.
 
-    ![Find_and_modify_latest](/Images/Find_and_modify_latest.png)
+    ![Find_and_modify_latest](/Images/find_and_modify_latest.png)
 37. Click **Apply**.
 
 38. On the next screen, click **Proceed**. The server will be restarted, the _Find and modify users_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.

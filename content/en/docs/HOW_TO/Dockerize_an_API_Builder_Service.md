@@ -1,8 +1,9 @@
 ---
-title: Dockerize an API Builder Service
-linkTitle: Dockerize an API Builder Service
+title: Dockerize an API Builder service
+linkTitle: Dockerize an API Builder service
+description: ADD A DESCRIPTION
 weight: 70
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 This document describes how to run an {{% variables/apibuilder_prod_name %}} service or application in a Docker container.
@@ -29,7 +30,7 @@ You need to have the following installed:
 
 1. Docker - The installation of Docker is via a dedicated installer for your specific operating system. For additional Docker installation information, refer to the [Docker documentation](https://docs.docker.com/install/).
 
-2. {{% variables/apibuilder_prod_name %}} CLI - Refer to [installing {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/#InstallAPIB) in the the [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
+2. {{% variables/apibuilder_prod_name %}} CLI - Refer to [installing {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/#InstallAPIB) in the the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
 
 ## Dockerize an {{% variables/apibuilder_prod_name %}} Service
 
@@ -49,7 +50,7 @@ npm start
 
 Once your project is running, point your browser to `http://localhost:8080/console` to access the {{% variables/apibuilder_prod_name %}} user interface (UI) console.
 
-For additional information on the {{% variables/apibuilder_prod_name %}} UI, refer to the [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
+For additional information on the {{% variables/apibuilder_prod_name %}} UI, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
 
 **Excellent! Now, you have tested that your service is running directly on your machine.**
 
@@ -101,9 +102,11 @@ The sample Docker file content is:
 
 # This line defines which node.js Docker image to leverage
 # Available versions are described at https://hub.docker.com/_/node/
-FROM node:8-alpine
+FROM node:14-alpine
 
-# Sets the default working directory to /app which is where we've copied the service files to.
+ENV NODE_ENV=production
+
+# Sets the default working directory to /app which is where we copy the service files to.
 WORKDIR /app
 
 # TODO: for security purposes, you should update this Dockerfile to specify your own target user/group
@@ -111,16 +114,19 @@ WORKDIR /app
 # -G stands for group
 # -R changes the ownership rights of a file recursively
 RUN addgroup -S axway-group && adduser -S axway-user -G axway-group && \
-    chown -R axway-user:axway-group /app
+  chown -R axway-user:axway-group /app
 
 # Set non-root user
 USER axway-user
 
 # Denotes to copy all files in the service to 'app' folder in the container
-COPY . /app
+COPY --chown=axway-user:axway-group . /app
 
 # Install service dependencies relevant for production builds skipping all development dependencies.
 RUN npm install --production --no-optional
+
+# check every 5s to ensure this service is healthy
+HEALTHCHECK --interval=5s --start-period=45s --timeout=5s --retries=5 CMD node healthcheck.js
 
 # Starts the service
 CMD ["node", "."]
@@ -136,6 +142,12 @@ RUN adduser $NONROOT_USER && \
 echo $NONROOT_USER":<password>" | chpasswd
 
 USER $NONROOT_USER
+```
+
+If you want to target a specific processor architecture which differs from the architecture of the device you're developing on, such as building for x86_64 on an M1 Mac (arm64), then you need to specify the target platform alongside the base Docker image. The base image you are using should have a published version supporting the target architecture. For more information, see [https://github.com/docker-library/official-images#architectures-other-than-amd64](https://github.com/docker-library/official-images#architectures-other-than-amd64).
+
+```
+FROM --platform=linux/amd64 node:14-alpine
 ```
 
 The Docker image can be created with the following command:

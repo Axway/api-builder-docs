@@ -1,9 +1,9 @@
 ---
-title: Configuring Credentials
-linkTitle: Configuring Credentials
+title: Configuring credentials
+linkTitle: Configuring credentials
+description: ADD A DESCRIPTION
 weight: 10
-date: 2021-03-02
-no_list: true
+date: 2021-06-22
 ---
 
 {{% variables/apibuilder_prod_name %}} credentials are defined in the [configuration](/docs/developer_guide/project/configuration/project_configuration/) under the `authorization` key. Credentials are uniquely identified by its `credential name`, and its `type`. The `credential name` is how the credential will be referenced from the flows that use the credential. Each type of credential also requires additional type-specific configuration information. {{% variables/apibuilder_prod_name %}} supports three credential types, [API Key](/docs/developer_guide/credentials/configuring_credentials/api_key_credentials/), [HTTP Basic](/docs/developer_guide/credentials/configuring_credentials/http_basic_credentials/), and [OAuth 2.0](/docs/developer_guide/credentials/configuring_credentials/oauth_2.0_credentials/) with the respective types `apiKey`, `basic`, and `oauth2`.

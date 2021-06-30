@@ -1,8 +1,9 @@
 ---
 title: XSLT flow-node
 linkTitle: XSLT flow-node
-weight: 160
-date: 2021-03-02
+description: ADD A DESCRIPTION
+weight: 200
+date: 2021-06-22
 ---
 
 This flow-node is an {{% variables/apibuilder_prod_name %}} plugin that executes XSL Transformations (XSLT). Supports XSLT 1.0, 2.0, and 3.0.
@@ -54,11 +55,11 @@ The `stylesheetParams` parameter is used provide external parameters to the XSLT
 
 After the installation of the XSLT plugin and editing a Flow, you will find the XSLT flow-node in the Core section:
 
-![image2021-1-29_13_2_14](/Images/image2021-1-29_13_2_14.png)
+![image2021-1-29_13_2_14](/Images/image2021_1_29_13_2_14.png)
 
 You can drag and drop the XSLT flow-node on to the Flow Graph and select it to edit its configuration properties in the panel on the right:
 
-![image2021-1-29_13_3_0](/Images/image2021-1-29_13_3_0.png)
+![image2021-1-29_13_3_0](/Images/image2021_1_29_13_3_0.png)
 
 ### Example 1 - Transform XML into XML
 

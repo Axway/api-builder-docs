@@ -1,8 +1,9 @@
 ---
-title: Known Issues
-linkTitle: Known Issues
-weight: 70
-date: 2021-03-02
+title: Known issues
+linkTitle: Known issues
+description: ADD A DESCRIPTION
+weight: 80
+date: 2021-06-22
 ---
 
 * #3825: Filtering the {{% variables/apibuilder_prod_name %}} Console administrator access using IPv6 addresses may cause ENOTFOUND errors.
@@ -63,7 +64,7 @@ date: 2021-03-02
 
 * #4891: When saving a configuration file in the UI, the editor will briefly display the old version of the configuration while the server restarts. Any changes to the configuration will be saved as intended.
 
-* #4951: When endpoint or flow files with URL encoded characters in the filename are present in a project, unexpected errors may occur. For example, the wrong flow or endpoint could be modified. Using files with encoded characters in their names is not recommended.
+* #4951: When Endpoint or Flow files with URL encoded characters in the filename are present in a project, unexpected errors may occur. For example, the wrong flow or endpoint could be modified. Using files with encoded characters in their names is not recommended.
 
 * #4961: Having the `%` symbol in various file names can cause problems in the {{% variables/apibuilder_prod_name %}} Console and with direct linking. It is therefore advisable to avoid using `%` in API, Endpoint, Flow, Model, and Configuration file names. This is a result of an issue in react-router/history. For additional information, refer to [https://github.com/ReactTraining/history/issues/505](https://github.com/ReactTraining/history/issues/505).
 
@@ -83,4 +84,8 @@ date: 2021-03-02
 
 * #6150: Stoplight always encodes default parameter values as strings, even though the type may not be a string (e.g. "number"). The Swagger validation will fail with an error, e.g. "Not a valid number". To work around the problem, you can manually change the parameter default from a string (e.g. `"42"`) to a number (e.g. `42`) by editing the Swagger directly, but that is not always an option. Alternatively, you can change the parameter type to a "string", and add a validation "pattern", e.g. `"[0-9]+"`.
 
+* #6722: Uploading many files can sometimes cause an error: `TypeError: Cannot convert undefined or null to object`.
+
 * #6763: When a service is configured to use apikey auth, the API Doc & Test page does not reflect this and shows examples for basic. When testing the API, basic auth is also incorrectly used. As a workaround, a tool such as Postman or CURL should be used to invoke these APIs instead.
+
+* #6804: {{% variables/apibuilder_prod_name %}} SQL Data Connector plugins do not support Table Schemas other than the default one.

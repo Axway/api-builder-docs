@@ -1,9 +1,9 @@
 ---
 title: Connectors
 linkTitle: Connectors
+description: ADD A DESCRIPTION
 weight: 60
-date: 2021-03-02
-no_list: true
+date: 2021-06-22
 ---
 
 Data connector plugins allow you to read and write data to and from an external data source, such as Oracle, MySQL, and MongoDB. They give you the power to interact with your data as part of your flow and create feature-rich microservices. For information on the Connectors UI, refer to [{{% variables/apibuilder_prod_name %}} Console](/docs/developer_guide/console/#connectors).
@@ -11,16 +11,6 @@ Data connector plugins allow you to read and write data to and from an external 
 ## Currently available
 
 The following data connector plugins are currently available for download directly from npm:
-
-* [MBS Connector](/docs/developer_guide/connectors/mbs_connector/)
-
-* [Mongo Connector](/docs/developer_guide/connectors/mongo_connector/)
-
-* [MSSQL Connector](/docs/developer_guide/connectors/mssql_connector/)
-
-* [MySQL Connector](/docs/developer_guide/connectors/mysql_connector/)
-
-* [Oracle Connector](/docs/developer_guide/connectors/oracle_connector/)
 
 ## Configuring data connector plugins
 
@@ -40,13 +30,3 @@ The following table lists the configuration files, their location, and their exa
 ## Additional information
 
 For additional information on the connectors:
-
-* [MBS Connector](/docs/developer_guide/connectors/mbs_connector/)
-
-* [Mongo Connector](/docs/developer_guide/connectors/mongo_connector/)
-
-* [MSSQL Connector](/docs/developer_guide/connectors/mssql_connector/)
-
-* [MySQL Connector](/docs/developer_guide/connectors/mysql_connector/)
-
-* [Oracle Connector](/docs/developer_guide/connectors/oracle_connector/)

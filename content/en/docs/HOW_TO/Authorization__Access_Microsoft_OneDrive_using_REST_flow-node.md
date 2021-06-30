@@ -1,8 +1,9 @@
 ---
-title: 'Authorization: Access Microsoft OneDrive using REST flow-node'
-linkTitle: 'Authorization: Access Microsoft OneDrive using REST flow-node'
+title: 'Authorization: access Microsoft OneDrive using REST flow-node'
+linkTitle: 'Authorization: access Microsoft OneDrive using REST flow-node'
+description: ADD A DESCRIPTION
 weight: 20
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 ## Overview
@@ -15,36 +16,36 @@ We will then create a flow that uses the [REST flow-node](/docs/developer_guide/
 
 Before starting on {{% variables/apibuilder_prod_name %}}, you need to register your application on the Microsoft application portal ([https://apps.dev.microsoft.com/](https://apps.dev.microsoft.com/)).
 
-![apps.dev.microsoft.com](/Images/apps.dev.microsoft.com.png)
+![apps.dev.microsoft.com](/Images/apps_dev_microsoft_com.png)
 
 ### Add an app
 
 1. Click **Add an app**.
 
-    ![apps.dev.microsoft.com_portal_register-app](/Images/apps.dev.microsoft.com_portal_register-app.png)
+    ![apps.dev.microsoft.com_portal_register-app](/Images/apps_dev_microsoft_com_portal_register_app.png)
 2. Name your application `OneDrive Example` and click **Create**.
 
-    ![apps.dev.microsoft.com_init_app](/Images/apps.dev.microsoft.com_init_app.png)
+    ![apps.dev.microsoft.com_init_app](/Images/apps_dev_microsoft_com_init_app.png)
 3. Click **Save**.
 
 ### Configure Application Secrets
 
 The `Application Id` displayed in the _Properties_ section will be the value of the `client_id` in the {{% variables/apibuilder_prod_name %}} credential. You also need to create a `client_secret`.
 
-![apps.dev.microsoft.com_secret](/Images/apps.dev.microsoft.com_secret.png)
+![apps.dev.microsoft.com_secret](/Images/apps_dev_microsoft_com_secret.png)
 
 Click **Generate New Password**. The value displayed will be your `client_secret`; this is the only time it's visible, so make a note of the value and don't lose it. If you lose it, you can repeat this step to generate a new client secret.
 
-![apps.dev.microsoft.com_client_secret](/Images/apps.dev.microsoft.com_client_secret.png)
+![apps.dev.microsoft.com_client_secret](/Images/apps_dev_microsoft_com_client_secret.png)
 
 ### Configure Platform
 
 1. You need to add OAuth support to your application and add the {{% variables/apibuilder_prod_name %}} redirect URI. Under _Platforms_, click **Add Platform**.
 
-    ![apps.dev.microsoft.com_webapp](/Images/apps.dev.microsoft.com_webapp.png)
+    ![apps.dev.microsoft.com_webapp](/Images/apps_dev_microsoft_com_webapp.png)
 2. Select **Web**.
 
-    ![apps.dev.microsoft.com_platform](/Images/apps.dev.microsoft.com_platform.png)
+    ![apps.dev.microsoft.com_platform](/Images/apps_dev_microsoft_com_platform.png)
 
     This will add a **Web** panel to the _Platforms_ list.
 
@@ -56,7 +57,7 @@ Click **Generate New Password**. The value displayed will be your `client_secret
 
 In this example, you will be reading the user's files.
 
-![apps.dev.microsoft.com_perms](/Images/apps.dev.microsoft.com_perms.png)
+![apps.dev.microsoft.com_perms](/Images/apps_dev_microsoft_com_perms.png)
 
 Click **Add** next to _Delegated Permissions_. From the list select:
 
@@ -64,7 +65,7 @@ Click **Add** next to _Delegated Permissions_. From the list select:
 
 * offline_access
 
-![apps.dev.microsoft.com_perms_done](/Images/apps.dev.microsoft.com_perms_done.png)
+![apps.dev.microsoft.com_perms_done](/Images/apps_dev_microsoft_com_perms_done.png)
 
 ### Save your Application
 
@@ -133,7 +134,7 @@ To create the credential, you need the following information.
 
 4. Once you've logged in, you will be prompted to authorize access.
 
-    ![image2018-11-16_18_43_14](/Images/image2018-11-16_18_43_14.png)
+    ![image2018-11-16_18_43_14](/Images/image2018_11_16_18_43_14.png)
 5. Click **Accept**. The credential is now ready to use.
 
     ![project_credentials_auth_lat](/Images/project_credentials_auth_lat.png)
@@ -251,14 +252,14 @@ On the disabled endpoint, there is a **Create Flow** icon. Clicking **Create Flo
 
 We will go through the steps to create the flow, but for reference, the completed flow that we're building will look like this:
 
-![Screenshot_2018-11-28_at_15.32.48](/Images/Screenshot_2018-11-28_at_15.32.48.png)
+![Screenshot_2018-11-28_at_15.32.48](/Images/screenshot_2018_11_28_at_15_32_48.png)
 
 1. Drag an Authorization flow-node from the tool panel. The Authorization flow-node only has a single `Get Credential` method. This method allows us to retrieve the managed credential token from {{% variables/apibuilder_prod_name %}}.
 
     1. On the **Parameters** tab, set the **name** to be `My OneDrive`. This is the name you gave your OneDrive credential when creating it in the configuration.
 
     2. On the **Outputs** tab, you can see that the credential token is stored in `$.credential`. We will use this later when invoking OneDrive.
-        ![Screenshot_2018-11-28_at_15.19.50](/Images/Screenshot_2018-11-28_at_15.19.50.png) ![Screenshot_2018-11-28_at_15.20.05](/Images/Screenshot_2018-11-28_at_15.20.05.png)
+        ![Screenshot_2018-11-28_at_15.19.50](/Images/screenshot_2018_11_28_at_15_19_50.png) ![Screenshot_2018-11-28_at_15.20.05](/Images/screenshot_2018_11_28_at_15_20_05.png)
 
 2. Drag a Compose flow-node from the tool panel and select the `Format object` method. We will use this node to create the request headers object that will contain the authorization token.
 

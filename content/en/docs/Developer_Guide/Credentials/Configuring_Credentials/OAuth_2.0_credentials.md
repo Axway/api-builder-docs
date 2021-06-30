@@ -1,8 +1,9 @@
 ---
 title: OAuth 2.0 credentials
 linkTitle: OAuth 2.0 credentials
+description: ADD A DESCRIPTION
 weight: 30
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 ## Overview
@@ -56,11 +57,11 @@ Many services will not issue a refresh token by default, consult your service pr
 
 When configuring your external service to support OAuth, it will request a redirect URI. After the user has authorized {{% variables/apibuilder_prod_name %}} access, this is the URI to which the browser is redirected with the authorization code. Where you configure this in your OAuth application is highly dependent on the service provider you're using. For example, if you are creating a Microsoft Application ([https://apps.dev.microsoft.com](https://apps.dev.microsoft.com)), it is configured as a `Platform` setting.
 
-![apps.dev.microsoft.com_](/Images/apps.dev.microsoft.com_.png)
+![apps.dev.microsoft.com_](/Images/apps_dev_microsoft_com_.png)
 
 If you're configuring a Google Application ([https://console.developers.google.com](https://console.developers.google.com)), it is configured under the **Restrictions**.
 
-![console.developers.google.com](/Images/console.developers.google.com.png)
+![console.developers.google.com](/Images/console_developers_google_com.png)
 
 The default Redirect URL for {{% variables/apibuilder_prod_name %}} is `http://localhost:8080/auth/callback`.
 

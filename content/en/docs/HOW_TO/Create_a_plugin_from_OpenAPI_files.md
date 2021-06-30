@@ -1,8 +1,9 @@
 ---
-title: Create a plugin from OpenAPI files
-linkTitle: Create a plugin from OpenAPI files
+title: Create a plugin from openapi files
+linkTitle: Create a plugin from openapi files
+description: ADD A DESCRIPTION
 weight: 40
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 ## Introduction
@@ -11,7 +12,7 @@ In this tutorial, you will learn how to bundle [OpenAPI specifications](https://
 
 ### Prerequisites
 
-* **{{% variables/apibuilder_prod_name %}} CLI**: All commands on this page require installation of the {{% variables/apibuilder_prod_name %}} CLI as described in the [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) .
+* **{{% variables/apibuilder_prod_name %}} CLI**: All commands on this page require installation of the {{% variables/apibuilder_prod_name %}} CLI as described in the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) .
 
 * **{{% variables/apibuilder_prod_name %}} project**: An {{% variables/apibuilder_prod_name %}} project is required to install and test your new flow-node.
 

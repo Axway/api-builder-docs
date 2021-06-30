@@ -1,8 +1,9 @@
 ---
-title: Project Configuration
-linkTitle: Project Configuration
+title: Project configuration
+linkTitle: Project configuration
+description: ADD A DESCRIPTION
 weight: 10
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 ## Introduction

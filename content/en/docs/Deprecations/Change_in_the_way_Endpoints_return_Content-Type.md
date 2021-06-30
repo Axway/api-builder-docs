@@ -1,8 +1,9 @@
 ---
 title: Change in the way Endpoints return Content-Type
 linkTitle: Change in the way Endpoints return Content-Type
+description: ADD A DESCRIPTION
 weight: 80
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D042](/docs/deprecations/#D042)\]{{% /alert %}}

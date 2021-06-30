@@ -1,8 +1,9 @@
 ---
-title: Find a Distinct User
-linkTitle: Find a Distinct User
+title: Find a distinct user
+linkTitle: Find a distinct user
+description: ADD A DESCRIPTION
 weight: 50
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 To configure a find a distinct user flow:
@@ -38,7 +39,7 @@ To configure a find a distinct user flow:
 
 15. Connect the next output of the Find a distinct user flow-node to the input of the Find succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). The completed flow is displayed.
 
-    ![Distinct_latest](/Images/Distinct_latest.png)
+    ![Distinct_latest](/Images/distinct_latest.png)
 16. Click **Apply**.
 
 17. On the next screen, click **Proceed**. The server will be restarted, the _Find a distinct user_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.

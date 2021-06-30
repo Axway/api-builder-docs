@@ -1,8 +1,9 @@
 ---
-title: API Key credentials
-linkTitle: API Key credentials
+title: API key credentials
+linkTitle: API key credentials
+description: ADD A DESCRIPTION
 weight: 10
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 The `apiKey` credential type allows you to configure a credential with a static token that will be used as the value of the credential.

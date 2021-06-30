@@ -1,8 +1,9 @@
 ---
-title: Deploy an API Builder application to AMPLIFY Runtime Services
-linkTitle: Deploy an API Builder application to AMPLIFY Runtime Services
+title: Deploy an API Builder application to AMPLIFY Runtime services
+linkTitle: Deploy an API Builder application to AMPLIFY Runtime services
+description: ADD A DESCRIPTION
 weight: 60
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 ## Introduction
@@ -21,13 +22,13 @@ You need to have an account on [https://platform.axway.com](https://platform.axw
 
 Docker is installed by a dedicated installer for your specific operating system. For additional Docker installation information, refer to the [Docker documentation](https://docs.docker.com/install/).
 
-### Amplify CLI
+### Axway CLI
 
-Refer to the [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) for details.
+Refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) for details.
 
 ### {{% variables/apibuilder_prod_name %}} CLI
 
-Refer to the [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) for details.
+Refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) for details.
 
 ### Amplify Cloud Services (ACS) CLI
 
@@ -38,7 +39,7 @@ To install the Amplify Cloud Services (ACS) CLI, execute the following command:
 ```
 // Install ACS
 
-$ amplify pm install acs
+$ axway pm install acs
 ```
 
 For additional Amplify Cloud Services (ACS) CLI information, refer to the [Amplify Runtime Services Command-Line Interface Reference](https://docs.axway.com/bundle/AMPLIFY_Runtime_Services_2_0_allOS_en/page/amplify_runtime_services_command-line_interface_reference.html).
@@ -50,27 +51,27 @@ Type the following command to log into the {{% variables/platform_prod_name %}}.
 ```
 // Log Into the {{% variables/platform_prod_name %}}
 
-amplify auth login
+axway auth login
 ```
 
-With the a`mplify auth login` command, your default browser should open up and prompt you to enter your Amplify credentials to log into the {{% variables/platform_prod_name %}}.
+With the `axway auth login` command, your default browser should open up and prompt you to enter your Amplify credentials to log into the {{% variables/platform_prod_name %}}.
 
 Once you have successfully logged in to your Amplify account, type the following command to show you the currently logged-in user and organizations to which you belong.
 
 ```
-amplify acs whoami
+axway acs whoami
 ```
 
 You now have the prerequisite applications installed to use Amplify Runtime Services (ARS).
 
 ## Create your application
 
-{{% variables/apibuilder_prod_name %}} CLI usage can be found [here](https://www.npmjs.com/package/@axway/api-builder). This the setup found in the [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/). This will create a "myproject" sub-directory.
+{{% variables/apibuilder_prod_name %}} CLI usage can be found [here](https://www.npmjs.com/package/@axway/api-builder). This the setup found in the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/). This will create a "myproject" sub-directory.
 
 ```
 // Create an {{% variables/apibuilder_prod_name %}} project
 
-$ amplify builder init myproject
+$ axway builder init myproject
 ```
 
 Do **not** change directory into "myproject" when creating your platform application below.
@@ -82,20 +83,38 @@ Execute these commands in the parent directory immediately above "myproject".
 ```
 // Register a Platform application
 
-$ amplify acs login
-$ amplify acs new myproject --force
-$ amplify acs config --set PORT=8080 myproject
-$ amplify acs config --set NODE_ENV=production myproject
-$ amplify acs server --set Large myproject
+$ axway acs login
+$ axway acs new myproject --force
+$ axway acs config --set PORT=8080 myproject
+$ axway acs config --set NODE_ENV=production myproject
+$ axway acs server --set Large myproject
 ```
 
-The commands will log you in to the {{% variables/platform_prod_name %}} using your [https://platform.axway.com](https://platform.axway.com/) username and password, and register a new project in the cloud called "myproject" (the same name as your {{% variables/apibuilder_prod_name %}} project). Then, configure your project to use PORT 8080. This is because the container is built with PORT 8080 by default. If you accidentally ran these commands in the "myproject" directory, it will create a new sub-folder "myproject/myproject" which can be deleted. It will also set the NODE_ENV environment variable to configure your project to enable production specific performance and security optimisations. See [expressjs.com](https://expressjs.com/en/advanced/best-practice-performance.html#set-node_env-to-production)
+The commands will log you in to the {{% variables/platform_prod_name %}} using your [https://platform.axway.com](https://platform.axway.com/) username and password, and register a new project in the cloud called "myproject" (the same name as your {{% variables/apibuilder_prod_name %}} project). Then, configure your project to use PORT 8080. This is because the container is built with PORT 8080 by default. If you accidentally ran these commands in the "myproject" directory, it will create a new sub-folder "myproject/myproject" which can be deleted. It will also set the NODE_ENV environment variable to configure your project to enable production specific performance and security optimizations. See [expressjs.com](https://expressjs.com/en/advanced/best-practice-performance.html#set-node_env-to-production)
 
 {{% alert title="⚠️ Important" color="primary" %}}You may already have an existing platform application in the cloud with the name "myproject". If you do, and you know that it is not being used and you wish to delete it, or if you want to delete this example project on ARS, you can execute: **acs remove myproject**.{{% /alert %}}{{% alert title="⚠️ Important" color="primary" %}}Your {{% variables/apibuilder_prod_name %}} service may use the NODE_ENV environment variable directly, and have functionality relying on the value being something other than "development" or "production". This is not recommended from a security perspective, since a value such as "staging" will not enable production-specific features. We recommend making use of a different environment variable for your service.{{% /alert %}}
 
 In the example above, we configure the ARS project to use a Large container size. Different sized containers will offer different levels of performance, at the cost of more or less container points. Information about other available sizes can be found [here](https://docs.axway.com/bundle/AMPLIFY_Runtime_Services_2_0_allOS_en/page/amplify_runtime_services_command-line_interface_reference.html#AMPLIFYRuntimeServicesCommandLineInterfaceReference-ServerCommandserver).
 
 ## Build a Docker image
+
+{{% alert title="⚠️ Important" color="primary" %}}By default, Docker will build an image for the same architecture as the device you're developing on. ARS runs on x86_64, so if you're developing on a device which is not using this platform (such as ARM devices like the Raspberry Pi or M1 Mac), then you need to configure the target platform in your application's Dockerfile. This is done by specifying the platform alongside the base image.
+
+Change the following line
+
+```
+// ./Dockerfile
+
+FROM node:14-alpine
+```
+
+to
+
+```
+// ./Dockerfile
+
+FROM --platform=linux/amd64 node:14-alpine
+```{{% /alert %}}
 
 To build a Docker image of your project, execute the following commands.
 
@@ -113,7 +132,7 @@ To publish the Docker image of your project to the Platform, execute the followi
 ```
 // Publish image
 
-$ amplify acs publish myproject --delete_oldest --force --image demo-image --app_version 0.1
+$ axway acs publish myproject --delete_oldest --force --image demo-image --app_version 0.1
 ```
 
 {{% alert title="⚠️ Important" color="primary" %}}It can take up to 10 minutes for your project to be deployed and your service to be accessible. You should [Check publish status](#check-publish-status) before trying to access your service in the cloud.{{% /alert %}}
@@ -131,13 +150,13 @@ App will be available at https://<guid>.cloudapp-enterprise.appcelerator.com
 Even though your image was sent to ARS, it can take up to 10 minutes to start (for example, `Status: Deploying`). You should check the `Status` of your project before trying to access your service that is running in the cloud. The service will not be available until status shows `Status: Active`.
 
 ```
-$ amplify acs list myproject
+$ axway acs list myproject
 ```
 
 You can also check the log of your project to see if it started properly.
 
 ```
-$ amplify acs logcat myproject
+$ axway acs logcat myproject
 ```
 
 ## Try your application

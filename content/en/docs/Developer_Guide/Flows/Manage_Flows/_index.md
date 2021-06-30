@@ -1,9 +1,9 @@
 ---
-title: Manage Flows
-linkTitle: Manage Flows
+title: Manage flows
+linkTitle: Manage flows
+description: ADD A DESCRIPTION
 weight: 20
-date: 2021-03-02
-no_list: true
+date: 2021-06-22
 ---
 
 Flows are acyclic directed graphs of operational flow-nodes, which are composed of inputs, logic, and outputs. They are used by endpoints, which require them for their runtime functionality of taking inputs and turning them into responses when an endpoint is hit. For reference information on flow orchestration and flow-node configuration, refer to [Flow-nodes](/docs/developer_guide/flows/flow-nodes/).

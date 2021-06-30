@@ -1,8 +1,9 @@
 ---
-title: Update a User
-linkTitle: Update a User
+title: Update a user
+linkTitle: Update a user
+description: ADD A DESCRIPTION
 weight: 100
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 To configure an update a user flow:
@@ -50,7 +51,7 @@ To configure an update a user flow:
 
 21. Connect the notfound output of the Update a user flow-node to the input of the User not found flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). The completed flow is displayed.
 
-    ![Update_latest](/Images/Update_latest.png)
+    ![Update_latest](/Images/update_latest.png)
 22. Click **Apply**.
 
 23. On the next screen, click **Proceed**. The server will be restarted, the _Update a user_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.

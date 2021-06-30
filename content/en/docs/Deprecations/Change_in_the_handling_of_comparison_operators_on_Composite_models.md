@@ -1,8 +1,9 @@
 ---
-title: Change in the handling of comparison operators on Composite models
-linkTitle: Change in the handling of comparison operators on Composite models
+title: Change in the handling of comparison operators on composite models
+linkTitle: Change in the handling of comparison operators on composite models
+description: ADD A DESCRIPTION
 weight: 30
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D007](/docs/deprecations/#D007)\]{{% /alert %}}

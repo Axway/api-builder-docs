@@ -1,8 +1,9 @@
 ---
 title: DoT flow-node
 linkTitle: DoT flow-node
+description: ADD A DESCRIPTION
 weight: 70
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 {{% alert title="❗️ Caution" color="danger" %}}Installing this module may report a security vulnerability with doT. This is because doT templates can be used to execute malicious JavaScript.
@@ -50,7 +51,7 @@ The curly brackets `{{}}` can be used in many ways, based on how you want to dyn
 
 ### Format string example
 
-![image2018-8-24_16_47_5](/Images/image2018-8-24_16_47_5.png)
+![image2018-8-24_16_47_5](/Images/image2018_8_24_16_47_5.png)
 
 Here you can see how data and templates are used together in the flow editor for outputting a string. The "Format string" method has been selected. As with any values, **data** can be input into the doT flow-node as hard-coded object value, or as a selector. In this case, the selector `$.params` is used. The `$.params` selector refers to an object containing parameters that were included in the request. In this example, imagine that `$.params` looks like the following object when the flow is invoked:
 
@@ -62,7 +63,7 @@ With the **template** value of "`My name is {{=it.username}}`.", the flow-node w
 
 ### Format object example
 
-![image2018-8-24_17_8_5](/Images/image2018-8-24_17_8_5.png)
+![image2018-8-24_17_8_5](/Images/image2018_8_24_17_8_5.png)
 
 This example shows how to build a JSON object dynamically using the `Format object` method of the doT flow-node. Similar to the previous example, the interpolation delimiter `{{= }}` is used to insert dynamic data. In this template, a JSON object is formatted where the keys are static and the values are dynamically provided.
 

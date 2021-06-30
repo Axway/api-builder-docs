@@ -1,8 +1,9 @@
 ---
 title: Change in the way config is passed to plugins
 linkTitle: Change in the way config is passed to plugins
+description: ADD A DESCRIPTION
 weight: 70
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D009](/docs/deprecations/#D009)\]{{% /alert %}}

@@ -45,21 +45,42 @@ const postDefaults = {
 /**
  * Add new collections here.
  */
-const collections = [{
-  ...docsDefaults('', ''), // content directory, image directory
+ const collections = [{
+  ...docsDefaults('', 'docbook/images/general'), // content directory, image directory
   name: 'docs',
-  label: 'Documentation',
-  description: 'Top level pages in documentation.',
+  label: 'API Builder Documentation',
+  description: 'Top level pages in API Builder documentation.',
   format: 'frontmatter',
   create: false,
 }, {
-    ...docsDefaults('Overview', ''),
-    name: 'overview',
-    label: 'Overview',
-    label_singular: 'page in Overview section',
-    description: 'All pages relating to Overview',
-    format: 'frontmatter',
-}];
+  ...docsDefaults('Developer_Guide', 'Developer_Guide'),
+  name: 'Developer_Guide',
+  label: 'Developer Guide',
+  label_singular: 'page in Developer Guide section',
+  description: 'All pages relating to Developer Guide section.',
+  format: 'frontmatter',
+}, {
+  ...docsDefaults('HOW_TO', 'HOW_TO'),
+  name: 'HOW_TO',
+  label: 'How to',
+  label_singular: 'page in How to section',
+  description: 'All pages relating to How to section.',
+  format: 'frontmatter',
+}, {
+  ...docsDefaults('Release_Notes', 'Release_Notes'),
+  name: 'Release_Notes',
+  label: 'Release Notes',
+  label_singular: 'page in Release Notes section',
+  description: 'All pages relating to Release Notes section.',
+  format: 'frontmatter',
+}, {
+  ...docsDefaults('Deprecations', 'Deprecations'),
+  name: 'Deprecations',
+  label: 'Deprecations',
+  label_singular: 'page in Deprecations section',
+  description: 'All pages relating to Deprecations section.',
+  format: 'frontmatter',
+},];
 
 const cms_branch = window.location.hostname.includes('develop') ? 'develop' : 'master'; // Additional config for a develop branch and develop site
 
@@ -67,13 +88,13 @@ const config = {
   backend: {
     name: 'github',
     branch: cms_branch,
-    repo: 'Axway/axway-open-docs', // Path to your GitHub repository.
+    repo: 'Axway/apibuilderpoc-open-docs', // Path to your GitHub repository.
     open_authoring: true,
   },
   publish_mode: 'editorial_workflow',
   media_folder: '/static/Images', // Media files will be stored in the repo under static/Images
   public_folder: '/Images', // The src attribute for uploaded media will begin with /Images
-  site_url: 'https://axway-open-docs.netlify.com/', // URL to netlify site
+  site_url: 'https://apibuilderpoc-open-docs.netlify.com/', // URL to netlify site
   collections,
 };
 

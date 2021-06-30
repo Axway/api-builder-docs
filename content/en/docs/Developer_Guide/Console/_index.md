@@ -1,9 +1,9 @@
 ---
 title: Console
 linkTitle: Console
+description: ADD A DESCRIPTION
 weight: 10
-date: 2021-03-02
-no_list: true
+date: 2021-06-22
 ---
 
 ## Introduction
@@ -60,7 +60,7 @@ On startup, API endpoints are automatically generated for all models as per thei
 
 The **API Doc & Test** tab in the Admin Console contains generated docs of your application APIs, including how to call the API, multiple examples, and the ability to test the APIs. The generated docs use the information in the `description` fields of your JavaScript definition files to fill in some of the information. API definitions can also be imported by selecting the **\+ API** button. You can import an API from a Swagger definition by either selecting a file from your local file system or entering a URL. For additional information, refer to [Manage Endpoints](/docs/developer_guide/flows/manage_endpoints/).
 
-![API_Doc_n_Test_latest](/Images/55476678_API_Doc_n_Test_latest.png)
+![API_Doc_n_Test_latest](/Images/55476678_api_doc_n_test_latest.png)
 
 ### Models
 
@@ -78,7 +78,7 @@ The **Models** tab lets you create new models. The model build process involves 
 
 You may only build models when executing the project locally. The build console will not work in production even if you enable the Admin Console in production.
 
-See the _Create a new model_ section of [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) for instructions on how to create a new model. For additional information on creating and editing models, refer to [Models](/docs/developer_guide/console/models/).
+See the _Create a new model_ section of [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) for instructions on how to create a new model. For additional information on creating and editing models, refer to [Models](/docs/developer_guide/console/models/).
 
 ### Configurations
 
@@ -88,7 +88,7 @@ The **Configurations** tab displays the list of configuration files on the {{% v
 
 See [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/) for an example and settings.
 
-![Configurations_latest](/Images/Configurations_latest.png)
+![Configurations_latest](/Images/configurations_latest.png)
 
 ### Credentials
 

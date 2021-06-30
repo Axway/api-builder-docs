@@ -1,8 +1,9 @@
 ---
-title: MBS Connector
-linkTitle: MBS Connector
+title: MBS connector
+linkTitle: MBS connector
+description: ADD A DESCRIPTION
 weight: 10
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 The Axway Mobile Backend Services (MBS) connector is a plugin for {{% variables/apibuilder_prod_name %}} that can connect to an MBS instance on the Axway platform that you can use to store your Model data. The Models can be used programmatically or can be used within the flow editor to interact with your MBS instance.
@@ -75,11 +76,11 @@ After you configure the connector, you can start up your {{% variables/apibuilde
 
 Go to the **Models** tab and click the **\+ Model** button:
 
-![image2019-8-19_17_27_8](/Images/image2019-8-19_17_27_8.png)
+![image2019-8-19_17_27_8](/Images/image2019_8_19_17_27_8.png)
 
 In the **New Model** dialog, change the **Connector** to "mbs". This indicates that data for this model will be persisted in MBS.
 
-![image2019-8-19_17_28_33](/Images/image2019-8-19_17_28_33.png)
+![image2019-8-19_17_28_33](/Images/image2019_8_19_17_28_33.png)
 
 Refer to the documentation for more information about creating [Models](/docs/developer_guide/console/models/).
 

@@ -1,8 +1,9 @@
 ---
-title: Authentication Schemes
-linkTitle: Authentication Schemes
+title: Authentication schemes
+linkTitle: Authentication schemes
+description: ADD A DESCRIPTION
 weight: 20
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 ## Introduction

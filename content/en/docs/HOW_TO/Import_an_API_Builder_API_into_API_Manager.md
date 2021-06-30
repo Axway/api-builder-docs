@@ -1,8 +1,9 @@
 ---
 title: Import an API Builder API into API Manager
 linkTitle: Import an API Builder API into API Manager
+description: ADD A DESCRIPTION
 weight: 120
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 This document describes how to import an {{% variables/apibuilder_prod_name %}} API into API Manager.
@@ -15,7 +16,7 @@ API Manager provides a web-based interface that enables an API owner (either in 
 
 This document assumes that you are familiar with API Manager and have it deployed and running in your infrastructure. For more information on API Manager, refer to the [API Manager Guide](https://docs.axway.com/bundle/APIManager_753_APIMgmtGuide_allOS_en_HTML5/page/Content/APIManagementGuideTopics/index.htm) or sign up for an [API Management Trial](https://www.axway.com/en/api-management-trial).
 
-This document also assumes that you have {{% variables/apibuilder_prod_name %}} installed and that you have created and deployed a service. For this document, we will use the vanilla starter application, which will be referred to as the _{{% variables/apibuilder_prod_name %}} Greet_ service. Refer to the [initialize project](/docs/getting_started_with_api_builder/#InitializeProject) section in the [Getting Started with {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) for the command to create the _{{% variables/apibuilder_prod_name %}} Greet_ service.
+This document also assumes that you have {{% variables/apibuilder_prod_name %}} installed and that you have created and deployed a service. For this document, we will use the vanilla starter application, which will be referred to as the _{{% variables/apibuilder_prod_name %}} Greet_ service. Refer to the [initialize project](/docs/getting_started_with_api_builder/#InitializeProject) section in the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) for the command to create the _{{% variables/apibuilder_prod_name %}} Greet_ service.
 
 For configuration purposes:
 
@@ -71,7 +72,7 @@ To allow API Manager to manage the backend API, you need to virtualize it. Virtu
 
 4. Select **Greet 1.0.0** in the dialog (this is the name of the backend service that we imported earlier).
 
-    ![create_new_API_dialog](/Images/create_new_API_dialog.png)
+    ![create_new_API_dialog](/Images/create_new_api_dialog.png)
 5. For demonstration purposes, we will leave the frontend API unsecured (_Pass-through)._ On the **Inbound** tab, select **Pass Through** from the _Inbound Security_ drop-down menu.
 
     {{% alert title="⚠️ Note" color="primary" %}}This is purely for demonstration purposes; API Manager has many authentication mechanisms built-in and is extensible using policies. See [Virtualize REST APIs in API Manager](https://docs.axway.com/bundle/APIManager_753_APIMgmtGuide_allOS_en_HTML5/page/Content/APIManagementGuideTopics/api_mgmt_virtualize_web.htm) for more information.{{% /alert %}}

@@ -1,8 +1,9 @@
 ---
-title: MySQL Connector
-linkTitle: MySQL Connector
+title: MySQL connector
+linkTitle: MySQL connector
+description: ADD A DESCRIPTION
 weight: 40
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 The MySQL data connector is a plugin for {{% variables/apibuilder_prod_name %}} that can connect to your MySQL database instance and interrogate your schema. It will automatically provision Models into your application, and optionally, automatically generate a rich CRUD API to the underlying tables. The Models can be used programmatically, or they can be used within the flow editor to interact with your database.

@@ -1,8 +1,9 @@
 ---
 title: SDK
 linkTitle: SDK
-weight: 120
-date: 2021-03-02
+description: ADD A DESCRIPTION
+weight: 110
+date: 2021-06-22
 ---
 
 {{% variables/apibuilder_prod_name %}} has a number of [preexisting flow-nodes](/docs/developer_guide/flows/flow-nodes/) for use, but you can also use the {{% variables/apibuilder_prod_name %}} SDK ([@axway/api-builder-sdk](https://www.npmjs.com/package/@axway/api-builder-sdk)) to write your own flow-nodes.

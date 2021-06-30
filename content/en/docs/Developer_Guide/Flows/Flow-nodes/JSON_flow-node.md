@@ -1,8 +1,9 @@
 ---
 title: JSON flow-node
 linkTitle: JSON flow-node
-weight: 100
-date: 2021-03-02
+description: ADD A DESCRIPTION
+weight: 110
+date: 2021-06-22
 ---
 
 The JSON flow-node methods, parameters, and output are described in the following sections. The JSON flow-node is created when NPM installs the `@axway/api-builder-plugin-fn-json` plugin. The JSON flow-node plugin is included in the default application, but it can be removed.

@@ -1,11 +1,10 @@
 ---
-title: Best Practices
-linkTitle: Best Practices
+title: Best practices
+linkTitle: Best practices
+description: ADD A DESCRIPTION
 weight: 30
-date: 2021-03-02
+date: 2021-06-22
 ---
-
-Modifying this file to see what happens with the Last modified date and footer info.
 
 {{% variables/apibuilder_prod_name %}} is a low-code / no-code developer application that you use to design and build a service using secure, modular, and re-usable components. When used correctly, it can be a very powerful useful tool in your organization. Below are a list of some suggestions to help you get the most out of {{% variables/apibuilder_prod_name %}}. For further reading on generic best practices for microservice development and deployment, be sure to check out the [twelve-factor app](https://12factor.net/) methodology, which this guide has borrowed from. If you have any questions or feedback, you can use [Axway's support portal](https://support.axway.com/).
 
@@ -37,13 +36,13 @@ Modifying this file to see what happens with the Last modified date and footer i
 
 ## Configuring and securing your application
 
-* Separate config from code. Do not hard-code configuration parameters that will need to change in different environments, such as: hosts, URLs, credentials, timeouts, etc. Instead, manage configuration separately from your code. The easiest way is to use our [Environmentalization guide](/docs/how_to/environmentalization/). It is compatible with our [Docker](/docs/how_to/dockerize_an_api_builder_service/).
+* Separate config from code. Do not hard-code configuration parameters that will need to change in different environments, such as: hosts, URLs, credentials, timeouts, etc. Instead, manage configuration separately from your code. The easiest way is to use our [Environmentalization](#) guide. It is compatible with Docker.
 
-* Never hard-code credentials in the application. Use our [Authentication Schemes](/docs/developer_guide/project/configuration/authentication_schemes/) to learn how to configure authentication, our [Environmentalization Guide](/docs/how_to/environmentalization/) to learn how to use environment parameters, and our Credentials guide for configuring credentials.
+* Never hard-code credentials in the application. Use our [Authentication Schemes](/docs/developer_guide/project/configuration/authentication_schemes/) to learn how to configure authentication, our [Environmentalization](#) guide to learn how to use environment parameters, and our [Credentials](/docs/developer_guide/credentials/) guide for configuring credentials.
 
 * Never use a template (e.g. mustache, XSLT, doT) from an untrusted source. These can compromise your service's integrity.
 
-* Do not disable API [acessControl](/docs/developer_guide/project/configuration/project_configuration/) security.
+* Do not disable API [acessControl](/docs/developer_guide/project/configuration/project_configuration/) [security.](/docs/developer_guide/project/configuration/project_configuration/#accesscontrol)
 
 * Log at **info** level in production (for more information about logging modes, see [Logging](/docs/developer_guide/project/logging/)). Do not log sensitive information in at **info** level. Note that in development mode, {{% variables/apibuilder_prod_name %}} will log at **debug** level ( ![warning](/Images/warning.png) **this includes sensitive information**) for debug/development purposes.
 
@@ -51,11 +50,11 @@ Modifying this file to see what happens with the Last modified date and footer i
 
 * Decide on an API development strategy. {{% variables/apibuilder_prod_name %}} supports API first with drag-and-drop flow nodes (the recommended approach), [model](/docs/developer_guide/models/models_-_create/) approach (connecting to a DB and generating a rich CRUD API from existing tables and views), or a custom API approach (write a pure JS API, but we would advise against this approach).
 
-* If using API first approach, employ [Axway's API first philosophy](https://docs.axway.com/bundle/APIManagement_tutorial_allOS_en_HTML5/page/Content/tutorial/APIfirst.htm). This ensures that you design your API to suit the customer. {{% variables/apibuilder_prod_name %}} supports [Swagger 2.0 API definitions](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md) as the front-end API to your application. These can be used to define a rich customer-facing API documentation. Once defined, you can bind [Flows](https://wiki.appcelerator.org/display/guides2/Manage+Flows) to the existing [Endpoints](/docs/developer_guide/flows/manage_endpoints/) and use our [drag-and-drop flow editor](/docs/developer_guide/flows/manage_flow-nodes/) to implement your API.
+* If using API first approach, employ [Axway's API first philosophy](https://docs.axway.com/bundle/APIManagement_tutorial_allOS_en_HTML5/page/Content/tutorial/APIfirst.htm). This ensures that you design your API to suit the customer. {{% variables/apibuilder_prod_name %}} supports [Swagger 2.0 API definitions](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md) as the front-end API to your application. These can be used to define a rich customer-facing API documentation. Once defined, you can bind [Flows](https://wiki.appcelerator.org/display/guides2/Manage+Flows) to the existing Endpoints and use our drag-and-drop flow editor to implement your API.
 
-* From the UI, you can find many [{{% variables/apibuilder_prod_name %}} plugins](/docs/developer_guide/plugins/) on **Plugins** page. These extend the capabilities of {{% variables/apibuilder_prod_name %}}. Be sure to check the available plugins for functionality before attempting to write your own implementation.
+* From the UI, you can find many {{% variables/apibuilder_prod_name %}} plugins on **Plugins** page. These extend the capabilities of {{% variables/apibuilder_prod_name %}}. Be sure to check the available plugins for functionality before attempting to write your own implementation.
 
-* If you cannot find the capabilities you need on our Plugins page, you have a choice: use the [JavaScript flow-node](/docs/developer_guide/flows/flow-nodes/javascript_flow-node/) if it is a relatively simple fragment or if you need to produce a template, or use the [{{% variables/apibuilder_prod_name %}} SDK](/docs/developer_guide/sdk/) to write a custom flow-node that can be reused between your {{% variables/apibuilder_prod_name %}} services.
+* If you cannot find the capabilities you need on our **Plugins** page, you have a choice: use the [JavaScript flow-node](/docs/developer_guide/flows/flow-nodes/javascript_flow-node/) if it is a relatively simple fragment or if you need to produce a template, or use the [{{% variables/apibuilder_prod_name %}} SDK](/docs/developer_guide/sdk/) to write a custom flow-node that can be reused between your {{% variables/apibuilder_prod_name %}} services.
 
 * We recommend that you connect to external services using Swagger 2.0 and OAS 3.0 using our [@axway/api-builder-plugin-fn-swagger](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger) flow-node.
 
@@ -63,7 +62,7 @@ Modifying this file to see what happens with the Last modified date and footer i
 
 * We recommend that you implement your API to be as fast as possible. If API calls take too long, these can tie up resources and lead to unexpected timeouts.
 
-* If API calls take too long, consider an [event-driven architecture](https://en.wikipedia.org/wiki/Event-driven_architecture) using [Flow-Triggers](/docs/developer_guide/flow_triggers/) and a message queue plugin, such as [Solace](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-solace) or [Kafka](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-kafka).
+* If API calls take too long, consider an [event-driven architecture](https://en.wikipedia.org/wiki/Event-driven_architecture) using [Flow-Triggers](/docs/developer_guide/flows/flow-triggers/) and a message queue plugin, such as [Solace](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-solace) or [Kafka](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-kafka).
 
 * Strive to make your application stateless as much as possible. This improves speed, scalability, and robustness.
 
@@ -93,25 +92,35 @@ When writing code for the [JavaScript flow-node](/docs/developer_guide/flows/flo
 
 * Write unit-tests for all API endpoints and run them as part of your CI (in the `./tests` directory, you will find examples of how to test the example Greet endpoint). We recommend [mocha](https://www.npmjs.com/package/mocha).
 
-* Learn how to [debug a flow](/docs/how_to/debug_a_flow/).
+* Learn how to [debug a flow](/docs/how_to/debug_a_flow/)[.](/docs/how_to/debug_a_flow/)
 
 * Use [curl](https://www.npmjs.com/package/curl) or [postman](https://www.postman.com/) for bespoke API requests.
 
 ## Production
 
-* [Secured with TLS](/docs/how_to/enable_a_secure_https_listener/) or SSL termination (depending on deployment architecture).
+* [Secured with TLS](/docs/security_guide/) or SSL termination (depending on deployment architecture).
 
-* Use [docker](https://docs.docker.com/get-started/) to [containerize your application](/docs/how_to/dockerize_an_api_builder_service/).
+* Use [docker](https://docs.docker.com/get-started/) to [containerize your application](/docs/how_to/dockerize_an_api_builder_service/)[.](/docs/how_to/dockerize_an_api_builder_service/)
 
 * Use security tools to scan your containers to ensure they do not have open ports or security vulnerabilities.
 
 * Use npm install with the `--production` flag.
+
+* Use [kubernetes](https://kubernetes.io/) for [scaling](https://kubernetes.io/blog/2016/07/autoscaling-in-kubernetes/), and [auto-healing](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-lifetime).
 
 * We recommend you use docker and not run as a stand-alone service (e.g. as opposed to running on a VM) so that it can be managed and scaled efficiently.
 
 * We recommend that you use [API Central](https://www.axway.com/en/platform/central) if you need to expose your service to the Internet.
 
 * Set [NODE_ENV=production](https://expressjs.com/en/advanced/best-practice-performance.html) in the environment for security and performance.
+
+## Managing your service
+
+* The health of your service can be monitored via the health-check API `/apibuilderPing.json`
+
+* The health of your Docker container is monitored via [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) and uses `./healthcheck.js` to periodically ping the health-check API `/apibuilderPing.json`
+
+* If flow-triggers become unhealthy (e.g. such as an inability to contact Kafka or Solace), your service will shut down as part of best-practices for fault-tolerant microservice architecture so that it can [self-heal and auto-restart](https://blog.risingstack.com/designing-microservices-architecture-for-failure/#selfhealing). If you are not using Docker/Kubernetes in production, then you will need to employ a process manager (e.g. [pm2](https://pm2.keymetrics.io/)).
 
 ## Maintaining your service
 

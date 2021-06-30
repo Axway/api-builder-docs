@@ -1,8 +1,9 @@
 ---
-title: MSSQL Connector
-linkTitle: MSSQL Connector
+title: MSSQL connector
+linkTitle: MSSQL connector
+description: ADD A DESCRIPTION
 weight: 30
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 The Microsoft SQL Server data connector is a plugin for {{% variables/apibuilder_prod_name %}} that can connect to your MSSQL instance and interrogate your schema that will automatically provision Models into your project, and optionally, automatically generate a rich CRUD API to the underlying tables. The Models can be used programmatically or can be used within the flow editor to interact with your database.
@@ -58,7 +59,8 @@ Once the plugin is installed, the configuration file is located in `<project>/co
 | generateModelsFromSchema | boolean | If enabled, {{% variables/apibuilder_prod_name %}} will automatically interrogate the database and auto-generate Models from SQL tables. |
 | modelAutogen | boolean | If enabled, {{% variables/apibuilder_prod_name %}} will automatically generate a full and rich CRUD API from the generated Models. |
 | options | object | MSSQL Connection options |
-| options.encrypt | boolean | Encrypt the database connection. Required when connecting to Azure. |
+| options.encrypt | boolean | Encrypt the database connection. Required when connecting to Azure. Defaults to true. |
+| options.trustServerCertificate | boolean | When options.encrypt is true, this will explicitly trust the SQL Server certificate even if it is untrusted (e.g. self-signed, invalid SNI, etc). Do not set to true in production. |
 
 ## Usage
 

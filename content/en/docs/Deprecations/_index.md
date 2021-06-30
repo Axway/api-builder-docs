@@ -1,9 +1,9 @@
 ---
 title: Deprecations
 linkTitle: Deprecations
-weight: 90
-date: 2021-03-02
-no_list: true
+description: ADD A DESCRIPTION
+weight: 100
+date: 2021-06-22
 ---
 
 {{% variables/apibuilder_prod_name %}} regularly adds feature improvements, fixes, and occasionally identify and fix features that do not work as designed, or are orthogonal to the intended direction of the product. When these are identified, we mark them as deprecated and add them to this document. We intend to remove all the deprecated features in the next major release of the product.
@@ -260,11 +260,11 @@ Beginning with the [Florence](/docs/release_notes/standalone_-_6_december_2019/)
 
 ### \[D039\] Unmaintained Node.js versions
 
-Beginning with the [Jackson](/docs/release_notes/standalone_-_28_february_2020/) release, All unmaintained Node.js versions (e.g. 8, 9 and 11) have been deprecated due to security issues. Use the latest Node.js LTS instead. See {{% variables/apibuilder_prod_name %}}'s [Node.js support policy](/docs/node.js_support_policy/). This also applies to any future unmaintained versions. While these versions are unrecommended, compatibility will be maintained for all {{% variables/apibuilder_prod_name %}} v4 releases.
+Beginning with the [Jackson](/docs/release_notes/standalone_-_28_february_2020/) release, We introduced a [Node.js support policy](/docs/node.js_support_policy/) in which end-of-life Node.js versions are automatically deprecated by {{% variables/apibuilder_prod_name %}}. See [https://nodejs.org/en/about/releases](https://nodejs.org/en/about/releases) for the versions which are actively maintained. While the versions we deem as deprecated are not recommended, API compatibility will be maintained until an explicit breaking change removes it. Only use Active LTS or Maintenance LTS Node.js versions in production.
 
 ### \[D040\] Node.js v10
 
-Beginning with the [Jackson](/docs/release_notes/standalone_-_28_february_2020/) release, Node.js v10 has been deprecated. Use the latest Node.js LTS instead. See {{% variables/apibuilder_prod_name %}}'s [Node.js support policy](/docs/node.js_support_policy/). While this version is unrecommended, compatibility will be maintained for all {{% variables/apibuilder_prod_name %}} v4 releases.
+Beginning with the [Jackson](/docs/release_notes/standalone_-_28_february_2020/) release, Node.js v10 has been deprecated. Only use Active LTS or Maintenance LTS Node.js versions in production. See {{% variables/apibuilder_prod_name %}}'s [Node.js support policy](/docs/node.js_support_policy/). While the versions we deem as deprecated are not recommended, API compatibility will be maintained until an explicit breaking change removes it. Only use Active LTS or Maintenance LTS Node.js versions in production.
 
 ### \[D041\] logger.logRequest and logger.logResponse
 
@@ -296,12 +296,12 @@ Beginning with the [Faro](/docs/release_notes/-_29_january_2021/) release, The `
 
 ### \[D047\] config.busboy
 
-Beginning with the [Faro](/docs/release_notes/-_29_january_2021/) release, The `busboy`config option is deprecated and will be removed in a future version of the product. Use `config.limits` to configure limits for multipart/form-data requests and return 413 to clients when a limit is hit.
+Beginning with the [Faro](/docs/release_notes/-_29_january_2021/) release, The `busboy` config option is deprecated and will be removed in a future version of the product. Use `config.limits` to configure limits for multipart/form-data requests and return 413 to clients when a limit it hit.
 
 ### \[D048\] undefinedMultipartPartSize
 
-Beginning with the [Faro](/docs/release_notes/-_29_january_2021/) release, The new `config.limits` config option should be configured with a value. Leaving it unset is deprecated behavior and the default behavior will change in a future version of the product to be equivalent to setting Infinity (no limit).
+Beginning with the [Faro](/docs/release_notes/-_29_january_2021/) release, The new `config.limits` config option should be configured with a value. Leaving it unset is deprecated behavior and the default behavior will change in a future version of the product to be equivalent to setting infinity (no limit).
 
 ### \[D049\] enableLoggingOfLevel
 
-Beginning with the [Giza](/docs/release_notes/-_12_february_2021/) release, The logger will now include the log level (e.g. "INFO") in each log message. This will be the default behavior in all new services. For more information on how to be prepared for the change, and to start using the new behavior now, refer to [Change in log message format for levels](/docs/deprecations/change_in_log_message_format_for_levels/).
+Beginning with the [Giza](/docs/release_notes/-_12_february_2021/) release,The logger will now include the log level (e.g. "INFO") in each log message. This will be the default behavior in all new services. For more information on how to be prepared for the change, and to start using the new behavior now, refer to [Change in log message format for levels](/docs/deprecations/change_in_log_message_format_for_levels/).

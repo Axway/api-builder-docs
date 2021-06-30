@@ -1,8 +1,9 @@
 ---
 title: Change in the outputs of Model flow-nodes
 linkTitle: Change in the outputs of Model flow-nodes
+description: ADD A DESCRIPTION
 weight: 60
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 ## Change in the outputs of Model flow-nodes
@@ -25,7 +26,7 @@ This is now the default behavior for all new services. Any existing services wil
 
 Previously, model flow-nodes had no Error outputs, and unexpected errors from the database (e.g. a disconnect or timeout) would cause the flow to abort prematurely, e.g.:
 
-![image2020-8-11_15_8_33](/Images/image2020-8-11_15_8_33.png)
+![image2020-8-11_15_8_33](/Images/image2020_8_11_15_8_33.png)
 
 Flow developers had no way to handle these types of issues.
 
@@ -33,7 +34,7 @@ Flow developers had no way to handle these types of issues.
 
 Now, model flow-nodes have an Error output that will trigger when the flow-node encounters unexpected errors from the database, e.g.:
 
-![image2020-8-11_15_12_3](/Images/image2020-8-11_15_12_3.png)
+![image2020-8-11_15_12_3](/Images/image2020_8_11_15_12_3.png)
 
 ### Upgrading existing services
 
@@ -93,10 +94,10 @@ To upgrade your flows, you need to edit flows that utilize the model flow-node. 
 
 to the "outputs" section for all the flow-nodes of type [nodehandler://api-builder-flow-invoke/model/](#!/guide/nodehandler://api-builder-flow-invoke/model/)\*
 
-![image2020-8-11_15_30_5](/Images/image2020-8-11_15_30_5.png)
+![image2020-8-11_15_30_5](/Images/image2020_8_11_15_30_5.png)
 
 #### Handle the new Error outputs
 
 The last step is to run your service and edit all flows that use these model flow-nodes in the Flow Editor and route the newly added Error output.
 
-![image2020-8-11_15_12_3](/Images/image2020-8-11_15_12_3.png)
+![image2020-8-11_15_12_3](/Images/image2020_8_11_15_12_3.png)

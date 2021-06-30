@@ -1,8 +1,9 @@
 ---
 title: Change in the way model name is encoded in Swagger
 linkTitle: Change in the way model name is encoded in Swagger
+description: ADD A DESCRIPTION
 weight: 90
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D014](/docs/deprecations/#D014)\]{{% /alert %}}

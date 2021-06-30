@@ -1,8 +1,9 @@
 ---
-title: Delete All Users
-linkTitle: Delete All Users
+title: Delete all users
+linkTitle: Delete all users
+description: ADD A DESCRIPTION
 weight: 30
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 To configure a delete all users flow:
@@ -32,7 +33,7 @@ To configure a delete all users flow:
 
 12. Connect the next output of the Delete all users flow-node to the input of the Delete succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). The completed flow is displayed.
 
-    ![Delete_all_latest](/Images/Delete_all_latest.png)
+    ![Delete_all_latest](/Images/delete_all_latest.png)
 13. Click **Apply**.
 
 14. On the next screen, click **Proceed**. The server will be restarted, the _Delete all users_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.

@@ -1,8 +1,9 @@
 ---
-title: Find a User by ID
-linkTitle: Find a User by ID
+title: Find a user by id
+linkTitle: Find a user by id
+description: ADD A DESCRIPTION
 weight: 80
-date: 2021-03-02
+date: 2021-06-22
 ---
 
 To configure a find a user by ID flow:
@@ -52,7 +53,7 @@ To configure a find a user by ID flow:
 
 22. Connect the notfound output of the Find a user by ID flow-node to the input of the User not found flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). The completed flow is displayed.
 
-    ![Find_by_ID_latest](/Images/Find_by_ID_latest.png)
+    ![Find_by_ID_latest](/Images/find_by_id_latest.png)
 23. Click **Apply**.
 
 24. On the next screen, click **Proceed**. The server will be restarted, the _Find a user by ID_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.

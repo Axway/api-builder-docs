@@ -3,7 +3,7 @@ title: Flow-triggers
 linkTitle: Flow-triggers
 description: ADD A DESCRIPTION
 weight: 60
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 Flow-triggers are ways of triggering a flow and are production-ready since the [Lyon release](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_-_23_april_2020.html). These allow flows to be configured to run on a schedule, or subscribe to an event, such as when a message is pushed to a Kafka queue.
@@ -12,15 +12,15 @@ Flow-triggers are ways of triggering a flow and are production-ready since the [
 
 ## How to get flow-triggers
 
-Flow-triggers are distributed in plugins. As with any other plugins, they can be installed as NPM modules from the command line, or via the **Plugins** tab in the UI. Plugins which contain flow-triggers are indicated by the ![image2021-4-19_11_7_26](/Images/image2021-4-19_11_7_26.png) icon as seen below:
+Flow-triggers are distributed in plugins. As with any other plugins, they can be installed as NPM modules from the command line, or via the **Plugins** tab in the UI. Plugins which contain flow-triggers are indicated by the ![image2021-4-19_11_7_26](/Images/image2021_4_19_11_7_26.png) icon as seen below:
 
-![image2021-4-19_11_5_53](/Images/image2021-4-19_11_5_53.png)
+![image2021-4-19_11_5_53](/Images/image2021_4_19_11_5_53.png)
 
 ## How to use flow-triggers
 
 Installed flow-triggers can be added, removed and configured as part of any flow from within the flow editor. They appear to the left of the flow editor at the top of the **Flow-Nodes** panel, and can be dragged onto the graph and configured using the panel on the right-hand side after selecting the flow-trigger in the graph. There is no limit to the number of flow-triggers that a flow can have.
 
-![image2021-4-19_11_17_23](/Images/image2021-4-19_11_17_23.png)
+![image2021-4-19_11_17_23](/Images/image2021_4_19_11_17_23.png)
 
 ### Configuration
 

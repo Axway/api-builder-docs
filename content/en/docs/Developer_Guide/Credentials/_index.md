@@ -3,7 +3,7 @@ title: Credentials
 linkTitle: Credentials
 description: ADD A DESCRIPTION
 weight: 70
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 A credential can be used to grant your service authorization to connect to another service from within flows. This section describes how to configure credentials in {{% variables/apibuilder_prod_name %}} and how {{% variables/apibuilder_prod_name %}} manages those credentials.

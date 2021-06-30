@@ -1,9 +1,9 @@
 ---
-title: Models - Composite
+title: Models - composite
 linkTitle: Models - composite
 description: ADD A DESCRIPTION
 weight: 30
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Create a composite model

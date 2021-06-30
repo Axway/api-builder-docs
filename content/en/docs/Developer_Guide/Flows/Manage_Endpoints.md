@@ -3,7 +3,7 @@ title: Manage Endpoints
 linkTitle: Manage Endpoints
 description: ADD A DESCRIPTION
 weight: 10
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 An API endpoint provides a way for a client to access your application, such as `GET <SERVER_ADDRESS>/api/users/query`, and access the application's models and custom code blocks to return data to the client application. To create API endpoints, see the API reference or follow the [Generate endpoints](#generate-endpoints) instructions. For reference information on flow orchestration and flow-node configuration, refer to [Flow-nodes](/docs/developer_guide/flows/flow-nodes/).
@@ -20,10 +20,10 @@ To import API endpoints using the {{% variables/apibuilder_prod_name %}} user in
 
 2. Click the **\+ API** button on the right side. The Import API Definition page is displayed.
 
-    ![import_API](/Images/import_API.png)
+    ![import_API](/Images/import_api.png)
 3. Select a file from your local file system or enter a URL. A file can be selected by browsing or dragging and dropping it. The selected file must be a Swagger formatted JSON or YAML file. Once a file is selected, or a URL entered, the API summary review page is displayed.
 
-    ![API_sum_review](/Images/API_sum_review.png)
+    ![API_sum_review](/Images/api_sum_review.png)
 4. Click the **Save** button on the right to import and save the selected API endpoint. Click the **Save and mock** button to save and mock the selected API endpoint. You can mock imported APIs to get early feedback from your API consumers and reduce your overall time-to-market. Click the **Cancel** button to cancel the import of the selected API endpoint. When the **Save** button or the **Save and mock** button is clicked, the server will restart. Once the server restart is completed, the imported API endpoints will be displayed on the APIs List page. The imported API endpoints will be disabled, and each will have a **Create Flow** and **Delete** icons. To create the API endpoint flows, refer to the Create flows instructions in [Manage Flows](/docs/developer_guide/flows/manage_flows/).
 
 ## Generate endpoints

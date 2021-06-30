@@ -1,9 +1,9 @@
 ---
-title: Find All Users
+title: Find all users
 linkTitle: Find all users
 description: ADD A DESCRIPTION
 weight: 60
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 To configure a find all users flow:
@@ -35,7 +35,7 @@ To configure a find all users flow:
 
 13. Connect the next output of the Find all users flow-node to the input of the Find succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). The completed flow is displayed.
 
-    ![Find_all_latest](/Images/Find_all_latest.png)
+    ![Find_all_latest](/Images/find_all_latest.png)
 14. Click **Apply**.
 
 15. On the next screen, click **Proceed**. The server will be restarted, the _Find all users_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.

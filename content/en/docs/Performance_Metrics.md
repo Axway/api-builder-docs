@@ -1,9 +1,9 @@
 ---
-title: Performance Metrics
+title: Performance metrics
 linkTitle: Performance metrics
 description: ADD A DESCRIPTION
 weight: 130
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 Here, we define a baseline performance metric for {{% variables/apibuilder_prod_name %}} to help users with capacity planning or footprint estimations for deployments.

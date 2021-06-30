@@ -45,46 +45,42 @@ const postDefaults = {
 /**
  * Add new collections here.
  */
-const collections = [{
-  ...docsDefaults('', ''), // content directory, image directory
+ const collections = [{
+  ...docsDefaults('', 'docbook/images/general'), // content directory, image directory
   name: 'docs',
-  label: 'Documentation',
-  description: 'Top level pages in documentation.',
+  label: 'API Builder Documentation',
+  description: 'Top level pages in API Builder documentation.',
   format: 'frontmatter',
   create: false,
 }, {
-    ...docsDefaults('Overview', 'Overview'),
-    name: 'overview',
-    label: 'Overview',
-    label_singular: 'page in Overview section',
-    description: 'All pages relating to Overview',
-    format: 'frontmatter',
-}, {
-  ...docsDefaults('Getting_Started_With_API_Builder', 'Getting_Started_With_API_Builder'),
-  name: 'Getting started with API Builder',
-  label: 'Getting started with API Builder',
-  label_singular: 'page in getting started section',
-  description: 'All pages relating to getting started',
+  ...docsDefaults('Developer_Guide', 'Developer_Guide'),
+  name: 'Developer_Guide',
+  label: 'Developer Guide',
+  label_singular: 'page in Developer Guide section',
+  description: 'All pages relating to Developer Guide section.',
   format: 'frontmatter',
-}, {...docsDefaults('Best_Practices', 'Best_Practices'), 
-    name: 'best practices',
-    label: 'Best practices',
-    label_singular: 'page in best practices section',
-    description: 'All pages relating to best practices.',
-    format: 'frontmatter',
-  }, {...docsDefaults('Deprecations', 'Deprecations'), 
+}, {
+  ...docsDefaults('HOW_TO', 'HOW_TO'),
+  name: 'HOW_TO',
+  label: 'How to',
+  label_singular: 'page in How to section',
+  description: 'All pages relating to How to section.',
+  format: 'frontmatter',
+}, {
+  ...docsDefaults('Release_Notes', 'Release_Notes'),
+  name: 'Release_Notes',
+  label: 'Release Notes',
+  label_singular: 'page in Release Notes section',
+  description: 'All pages relating to Release Notes section.',
+  format: 'frontmatter',
+}, {
+  ...docsDefaults('Deprecations', 'Deprecations'),
   name: 'Deprecations',
   label: 'Deprecations',
   label_singular: 'page in Deprecations section',
-  description: 'All pages relating to Deprecations.',
+  description: 'All pages relating to Deprecations section.',
   format: 'frontmatter',
-}, {...docsDefaults('FAQ', 'FAQ'), 
-name: 'FAQ',
-label: 'FAQ',
-label_singular: 'page in FAQ section',
-description: 'All pages relating to FAQ.',
-format: 'frontmatter',
-}];
+},];
 
 const cms_branch = window.location.hostname.includes('develop') ? 'develop' : 'master'; // Additional config for a develop branch and develop site
 

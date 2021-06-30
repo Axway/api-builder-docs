@@ -1,9 +1,9 @@
 ---
-title: Best Practices
+title: Best practices
 linkTitle: Best practices
 description: ADD A DESCRIPTION
 weight: 30
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 {{% variables/apibuilder_prod_name %}} is a low-code / no-code developer application that you use to design and build a service using secure, modular, and re-usable components. When used correctly, it can be a very powerful useful tool in your organization. Below are a list of some suggestions to help you get the most out of {{% variables/apibuilder_prod_name %}}. For further reading on generic best practices for microservice development and deployment, be sure to check out the [twelve-factor app](https://12factor.net/) methodology, which this guide has borrowed from. If you have any questions or feedback, you can use [Axway's support portal](https://support.axway.com/).
@@ -36,25 +36,25 @@ date: 2021-05-17
 
 ## Configuring and securing your application
 
-* Separate config from code. Do not hard-code configuration parameters that will need to change in different environments, such as: hosts, URLs, credentials, timeouts, etc. Instead, manage configuration separately from your code. The easiest way is to use our [Environmentalization guide](/docs/how_to/environmentalization/)[. It is compatible with our](/docs/how_to/environmentalization/) [Docker](/docs/how_to/dockerize_an_api_builder_service/)[.](/docs/how_to/dockerize_an_api_builder_service/)
+* Separate config from code. Do not hard-code configuration parameters that will need to change in different environments, such as: hosts, URLs, credentials, timeouts, etc. Instead, manage configuration separately from your code. The easiest way is to use our [Environmentalization](#) guide. It is compatible with Docker.
 
-* Never hard-code credentials in the application. Use our [Authentication Schemes](/docs/developer_guide/project/configuration/authentication_schemes/) [to learn how to configure authentication, our](/docs/developer_guide/project/configuration/authentication_schemes/) [Environmentalization Guide](/docs/how_to/environmentalization/) [to learn how to use environment parameters, and our Credentials guide for configuring credentials.](/docs/how_to/environmentalization/)
+* Never hard-code credentials in the application. Use our [Authentication Schemes](/docs/developer_guide/project/configuration/authentication_schemes/) to learn how to configure authentication, our [Environmentalization](#) guide to learn how to use environment parameters, and our [Credentials](/docs/developer_guide/credentials/) guide for configuring credentials.
 
 * Never use a template (e.g. mustache, XSLT, doT) from an untrusted source. These can compromise your service's integrity.
 
 * Do not disable API [acessControl](/docs/developer_guide/project/configuration/project_configuration/) [security.](/docs/developer_guide/project/configuration/project_configuration/#accesscontrol)
 
-* Log at **info** level in production (for more information about logging modes, see [Logging](/docs/developer_guide/project/logging/)[). Do not log sensitive information in at **info** level. Note that in development mode, {{% variables/apibuilder_prod_name %}} will log at **debug** level ( ![warning](/Images/warning.png) **this includes sensitive information**) for debug/development purposes.](/docs/developer_guide/project/logging/)
+* Log at **info** level in production (for more information about logging modes, see [Logging](/docs/developer_guide/project/logging/)). Do not log sensitive information in at **info** level. Note that in development mode, {{% variables/apibuilder_prod_name %}} will log at **debug** level ( ![warning](/Images/warning.png) **this includes sensitive information**) for debug/development purposes.
 
 ## Design and develop
 
-* Decide on an API development strategy. {{% variables/apibuilder_prod_name %}} supports API first with drag-and-drop flow nodes (the recommended approach), [model](/docs/developer_guide/models/models_-_create/) [approach (connecting to a DB and generating a rich CRUD API from existing tables and views), or a custom API approach (write a pure JS API, but we would advise against this approach).](/docs/developer_guide/models/)
+* Decide on an API development strategy. {{% variables/apibuilder_prod_name %}} supports API first with drag-and-drop flow nodes (the recommended approach), [model](/docs/developer_guide/models/models_-_create/) approach (connecting to a DB and generating a rich CRUD API from existing tables and views), or a custom API approach (write a pure JS API, but we would advise against this approach).
 
-* If using API first approach, employ [Axway's API first philosophy](https://docs.axway.com/bundle/APIManagement_tutorial_allOS_en_HTML5/page/Content/tutorial/APIfirst.htm). This ensures that you design your API to suit the customer. {{% variables/apibuilder_prod_name %}} supports [Swagger 2.0 API definitions](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md) as the front-end API to your application. These can be used to define a rich customer-facing API documentation. Once defined, you can bind [Flows](https://wiki.appcelerator.org/display/guides2/Manage+Flows) [to the existing](/docs/developer_guide/flows/manage_flows/) [Endpoints](/docs/developer_guide/flows/manage_endpoints/) [and use our](/docs/developer_guide/flows/manage_endpoints/) [drag-and-drop flow editor](/docs/developer_guide/flows/manage_flow-nodes/) [to implement your API.](/docs/developer_guide/flows/manage_endpoints/)
+* If using API first approach, employ [Axway's API first philosophy](https://docs.axway.com/bundle/APIManagement_tutorial_allOS_en_HTML5/page/Content/tutorial/APIfirst.htm). This ensures that you design your API to suit the customer. {{% variables/apibuilder_prod_name %}} supports [Swagger 2.0 API definitions](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md) as the front-end API to your application. These can be used to define a rich customer-facing API documentation. Once defined, you can bind [Flows](https://wiki.appcelerator.org/display/guides2/Manage+Flows) to the existing Endpoints and use our drag-and-drop flow editor to implement your API.
 
-* From the UI, you can find many [{{% variables/apibuilder_prod_name %}} plugins](/docs/developer_guide/plugins/) [on **Plugins** page. These extend the capabilities of {{% variables/apibuilder_prod_name %}}. Be sure to check the available plugins for functionality before attempting to write your own implementation.](/docs/developer_guide/plugins/)
+* From the UI, you can find many {{% variables/apibuilder_prod_name %}} plugins on **Plugins** page. These extend the capabilities of {{% variables/apibuilder_prod_name %}}. Be sure to check the available plugins for functionality before attempting to write your own implementation.
 
-* If you cannot find the capabilities you need on our Plugins page, you have a choice: use the [JavaScript flow-node](/docs/developer_guide/flows/flow-nodes/javascript_flow-node/) if it is a relatively simple fragment or if you need to produce a template, or use the [{{% variables/apibuilder_prod_name %}} SDK](/docs/developer_guide/sdk/) to write a custom flow-node that can be reused between your {{% variables/apibuilder_prod_name %}} services.
+* If you cannot find the capabilities you need on our **Plugins** page, you have a choice: use the [JavaScript flow-node](/docs/developer_guide/flows/flow-nodes/javascript_flow-node/) if it is a relatively simple fragment or if you need to produce a template, or use the [{{% variables/apibuilder_prod_name %}} SDK](/docs/developer_guide/sdk/) to write a custom flow-node that can be reused between your {{% variables/apibuilder_prod_name %}} services.
 
 * We recommend that you connect to external services using Swagger 2.0 and OAS 3.0 using our [@axway/api-builder-plugin-fn-swagger](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger) flow-node.
 
@@ -68,7 +68,7 @@ date: 2021-05-17
 
 ## Custom flow-node develoment
 
-When writing code for the [JavaScript flow-node](/docs/developer_guide/flows/flow-nodes/javascript_flow-node/), or writing a custom flow-node using our [SDK](/docs/developer_guide/sdk/)[, we recommend the following:](/docs/developer_guide/sdk/)
+When writing code for the [JavaScript flow-node](/docs/developer_guide/flows/flow-nodes/javascript_flow-node/), or writing a custom flow-node using our [SDK](/docs/developer_guide/sdk/), we recommend the following:
 
 * Learn [JavaScript](https://developer.mozilla.org/en-US/docs/Web/Tutorials) and Node.js. Note that JavaScript in web browsers has differences compared to Node.js which has a slightly different API.
 
@@ -98,7 +98,7 @@ When writing code for the [JavaScript flow-node](/docs/developer_guide/flows/flo
 
 ## Production
 
-* [Secured with TLS](/docs/how_to/enable_a_secure_https_listener/) [or SSL termination (depending on deployment architecture).](/docs/how_to/enable_a_secure_https_listener/)
+* [Secured with TLS](/docs/security_guide/) or SSL termination (depending on deployment architecture).
 
 * Use [docker](https://docs.docker.com/get-started/) to [containerize your application](/docs/how_to/dockerize_an_api_builder_service/)[.](/docs/how_to/dockerize_an_api_builder_service/)
 
@@ -124,8 +124,8 @@ When writing code for the [JavaScript flow-node](/docs/developer_guide/flows/flo
 
 ## Maintaining your service
 
-* Use the latest, fully-patched version of node that we support (see our [Getting Started Guide](/docs/getting_started_with_api_builder/) and [{{% variables/apibuilder_prod_name %}} Node.js support policy](/docs/node.js_support_policy/) [for version restrictions).](/docs/node.js_support_policy/)
+* Use the latest, fully-patched version of node that we support (see our [Getting Started Guide](/docs/getting_started_with_api_builder/) and [{{% variables/apibuilder_prod_name %}} Node.js support policy](/docs/node.js_support_policy/) for version restrictions).
 
 * Keep your dependencies up to date with their latest patches.
 
-* Every two weeks, Axway {{% variables/apibuilder_prod_name %}} releases new features, patches, and security fixes. You should keep an eye on our [Release Notes](/docs/release_notes/) [and list of](/docs/release_notes/) [Deprecations](/docs/deprecations/)[. Keep abreast of the updates to ensure your application will be compatible with any change(s) that may be introduced. Occasionally, you may want to incorporate these security updates and fixes into your application.](/docs/deprecations/)
+* Every two weeks, Axway {{% variables/apibuilder_prod_name %}} releases new features, patches, and security fixes. You should keep an eye on our [Release Notes](/docs/release_notes/) and list of [Deprecations](/docs/deprecations/). Keep abreast of the updates to ensure your application will be compatible with any change(s) that may be introduced. Occasionally, you may want to incorporate these security updates and fixes into your application.

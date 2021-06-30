@@ -1,9 +1,9 @@
 ---
-title: Environmentalizing Credentials
+title: Environmentalizing credentials
 linkTitle: Environmentalizing credentials
 description: ADD A DESCRIPTION
 weight: 20
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Overview

@@ -3,7 +3,7 @@ title: CLI
 linkTitle: CLI
 description: ADD A DESCRIPTION
 weight: 30
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 The {{% variables/apibuilder_prod_name %}} CLI allows you to create projects (both integrations and plugins), download connectors from the [Unifed Catalog](https://docs.axway.com/bundle/axway-open-docs/page/docs/catalog/index.html), and if needed, deploy projects to [Amplify Runtime Services](https://docs.axway.com/bundle/AMPLIFY_Runtime_Services_2_0_allOS_en/page/amplify_runtime_services.html).

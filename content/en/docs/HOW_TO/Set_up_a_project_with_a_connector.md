@@ -3,7 +3,7 @@ title: Set up a project with a connector
 linkTitle: Set up a project with a connector
 description: ADD A DESCRIPTION
 weight: 130
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Introduction
@@ -65,7 +65,7 @@ For additional MySQL connector configuration information, refer to [MySQL Connec
 
 Once you've configured your MySQL configuration files located under `<project>/conf`, you can start up your {{% variables/apibuilder_prod_name %}} project and visit the console (normally found under **`localhost:8080/console`** ). Your MySQL tables will be listed under the **Models** tab of the console.
 
-![Screen_Shot_2018-05-30_at_18.11.37](/Images/Screen_Shot_2018-05-30_at_18.11.37.png)
+![Screen_Shot_2018-05-30_at_18.11.37](/Images/screen_shot_2018_05_30_at_18_11_37.png)
 
 ## Using the auto-generated model API
 
@@ -102,4 +102,4 @@ const Account = APIBuilder.Model.extend('account', {
 
 To use the MySQL connector model in a flow, select the Flow icon for one of the generated endpoints for the MySQL connector; for example, for the Find all mysqlPersons endpoint. The API Orchestration page with all loaded connectors, flow-nodes, and so forth is displayed. For additional information on using a connector model in a flow, refer to [Manage Flows](/docs/developer_guide/flows/manage_flows/).
 
-![Screen_Shot_2018-05-30_at_18.12.41](/Images/Screen_Shot_2018-05-30_at_18.12.41.png)
+![Screen_Shot_2018-05-30_at_18.12.41](/Images/screen_shot_2018_05_30_at_18_12_41.png)

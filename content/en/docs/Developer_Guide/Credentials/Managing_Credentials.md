@@ -1,9 +1,9 @@
 ---
-title: Managing Credentials
+title: Managing credentials
 linkTitle: Managing credentials
 description: ADD A DESCRIPTION
 weight: 30
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 Credentials are used to grant your {{% variables/apibuilder_prod_name %}} service authorization to connect to another service. On the **Credentials** tab, you will see a card view listing of all the currently configured credentials.
@@ -26,8 +26,8 @@ Each card displays useful information about the credential.
 
 When invalid credentials exist in your service, a red notification badge is displayed on the **Credentials** tab. It shows the total number of invalid credentials plus those that require authorization:
 
-![Screen_Shot_2018-12-21_at_11.42.06_AM](/Images/Screen_Shot_2018-12-21_at_11.42.06_AM.png)
+![Screen_Shot_2018-12-21_at_11.42.06_AM](/Images/screen_shot_2018_12_21_at_11_42_06_am.png)
 
 An amber badge is shown when there are no invalid credentials, but there are existing OAuth2 credentials that need to be authorized:
 
-![Screen_Shot_2018-12-21_at_11.42.55_AM](/Images/Screen_Shot_2018-12-21_at_11.42.55_AM.png)
+![Screen_Shot_2018-12-21_at_11.42.55_AM](/Images/screen_shot_2018_12_21_at_11_42_55_am.png)

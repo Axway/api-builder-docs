@@ -1,9 +1,9 @@
 ---
-title: Solace Producer flow-node
+title: Solace producer flow-node
 linkTitle: Solace producer flow-node
 description: ADD A DESCRIPTION
 weight: 180
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Overview
@@ -99,11 +99,11 @@ If some of these ports are already used on your machine you can change them acco
 
 After the installation of the Solace plugin, you will find the **Solace Producer** flow-node in the list of available **Flow-Nodes > Core** in the left-hand panel of the flow editor:
 
-![image2021-4-20_16_17_38](/Images/image2021-4-20_16_17_38.png)
+![image2021-4-20_16_17_38](/Images/image2021_4_20_16_17_38.png)
 
 To use it in your flows drag and drop the **Solace Producer** flow-node into the flow graph on the right and select a method to expand its details and configure it:
 
-![image2021-4-20_16_17_5](/Images/image2021-4-20_16_17_5.png)
+![image2021-4-20_16_17_5](/Images/image2021_4_20_16_17_5.png)
 
 ### Example - Publish JSON to Solace
 
@@ -113,11 +113,11 @@ In this example, we will encode an Object as JSON and publish it to a Solace top
 
 First create a new flow following the instructions on [Create a new Flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) page. Once you have created a new blank flow, you will want to drag the **Solace Producer** from the **Flow-Nodes > Core** panel on the left, into the flow graph on the right. Configure the flow-node to have the properties as shown below:
 
-![image2021-4-20_16_15_45](/Images/image2021-4-20_16_15_45.png)
+![image2021-4-20_16_15_45](/Images/image2021_4_20_16_15_45.png)
 
 The **Connection ID** that is used here is a string identifier and can be found on the flow that contains the **Solace Consumer** configuration panel (e.g. "Consumer Flow"). Unless you have more than one, it is typically just, "solace".
 
-![image2021-4-20_15_11_48](/Images/image2021-4-20_15_11_48.png)
+![image2021-4-20_15_11_48](/Images/image2021_4_20_15_11_48.png)
 
 Click on the debugger icon in the upper-right of the graph, do not change any values, and click **Execute Flow**, and check your console debug log, you should see:
 

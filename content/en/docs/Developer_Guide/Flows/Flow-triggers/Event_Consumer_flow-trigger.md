@@ -1,9 +1,9 @@
 ---
-title: Event Consumer flow-trigger
+title: Event consumer flow-trigger
 linkTitle: Event consumer flow-trigger
 description: ADD A DESCRIPTION
 weight: 20
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Overview
@@ -38,21 +38,21 @@ For this example, we'll create a "Consumer flow" that will handle an event named
 
 Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create a "Consumer flow". In this flow, you will want to drag the **Event Consumer** from the **Flow-Nodes > Flow-Triggers** panel on the left, into the flow graph on the right. Configure the **Event Consumer** flow-trigger as shown below.
 
-![image2021-4-20_11_44_6](/Images/image2021-4-20_11_44_6.png)
+![image2021-4-20_11_44_6](/Images/image2021_4_20_11_44_6.png)
 
 This configures the **Event Consumer** to receive the Event named "BEEP". We also want to receive data for the event, and do something with that data in the flow. To configure this click on the **Flow inputs** tab.
 
-![image2021-4-22_15_6_40](/Images/image2021-4-22_15_6_40.png)
+![image2021-4-22_15_6_40](/Images/image2021_4_22_15_6_40.png)
 
 This tab configures the **Event Consumer** to provide the event's **Data** as input into the flow. The **Event Consumer** outputs a value called `$.request`, which can be seen on the **Outputs** tab. On the **Flow inputs** tab, it lists the optional named inputs that can be provided to the flow: **request**, **config**, and **env**. These keys are hard-coded into the flow and their JSONPath selectors are provided automatically. From within the flow, the respective input values can be accessed as `$.request`, `$.config`, and `$.env`.
 
 Now, let's do something with `$.request` by adding the **Mustache** flow-node to the graph, and configuring **Data** to be `$.request`, and the **Template** to be "`{{data}}`" (without quotes).
 
-![image2021-4-20_11_45_40](/Images/image2021-4-20_11_45_40.png)
+![image2021-4-20_11_45_40](/Images/image2021_4_20_11_45_40.png)
 
 Now the flow is ready to be triggered by an **Event Producer**. However, let's verify that the flow works as expected. Click on the debugger icon in the upper-right of the graph to reveal the debug panel. Change the "request" to have the value "banana" as we plan on this flow receiving a string input from the "Producer flow".
 
-![image2021-4-20_11_46_9](/Images/image2021-4-20_11_46_9.png)
+![image2021-4-20_11_46_9](/Images/image2021_4_20_11_46_9.png)
 
 Click **Execute Flow**. The flow editor will not show much, just a message, "Flow successfully executed with no response". However, if you check the console window where you launched your {{% variables/apibuilder_prod_name %}} application, you see a detailed debug log showing the execution, and that it handled the "banana" message as expected:
 
@@ -71,7 +71,7 @@ Click **Execute Flow**. The flow editor will not show much, just a message, "Flo
 
 Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create a "Producer flow". In this flow, you will want to drag the **Event Producer** from the **Flow-Nodes > Flow-Triggers** panel on the left, into the flow graph on the right. Configure the flow-node to have the properties as shown below.
 
-![image2021-4-20_11_47_16](/Images/image2021-4-20_11_47_16.png)
+![image2021-4-20_11_47_16](/Images/image2021_4_20_11_47_16.png)
 
 Click on the debugger icon in the upper-right of the graph, do not change any values, and click **Execute Flow**, and check your console debug log, you should see:
 

@@ -3,7 +3,7 @@ title: Manage flow-nodes
 linkTitle: Manage flow-nodes
 description: ADD A DESCRIPTION
 weight: 30
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 This topic describes how to manage flow-nodes and the connections between flow-nodes on the API Orchestration user interface. The API Orchestration user interface is accessed from the APIs List page on the {{% variables/apibuilder_prod_name %}} Console by selecting a **Flow** icon or a **Create Flow** icon for a generated or imported endpoint depending upon the current endpoint status. The API Orchestration user interface is divided into the following panels:
@@ -52,7 +52,7 @@ When you edit a selector or an output parameter, any previously used or valid se
 
 If authorization is required for a flow-node, then it will contain a drop-down for you to be able to specify the [Credential](/docs/developer_guide/credentials/) to use. It requires that you have previously configured [Credentials](/docs/developer_guide/credentials/), any that are valid and ready to be used as authorization parameters in your flows.
 
-![image2018-11-23_11_20_25](/Images/image2018-11-23_11_20_25.png)
+![image2018-11-23_11_20_25](/Images/image2018_11_23_11_20_25.png)
 
 Alternatively, credentials can be accessed by name using the [Authorization flow-node](/docs/developer_guide/flows/flow-nodes/authorization_flow-node/) and provided to flow-nodes which don't advertise authorization parameters using a selector.
 

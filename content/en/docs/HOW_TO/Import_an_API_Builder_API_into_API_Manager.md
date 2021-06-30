@@ -3,7 +3,7 @@ title: Import an API Builder API into API Manager
 linkTitle: Import an API Builder API into API Manager
 description: ADD A DESCRIPTION
 weight: 120
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 This document describes how to import an {{% variables/apibuilder_prod_name %}} API into API Manager.
@@ -72,7 +72,7 @@ To allow API Manager to manage the backend API, you need to virtualize it. Virtu
 
 4. Select **Greet 1.0.0** in the dialog (this is the name of the backend service that we imported earlier).
 
-    ![create_new_API_dialog](/Images/create_new_API_dialog.png)
+    ![create_new_API_dialog](/Images/create_new_api_dialog.png)
 5. For demonstration purposes, we will leave the frontend API unsecured (_Pass-through)._ On the **Inbound** tab, select **Pass Through** from the _Inbound Security_ drop-down menu.
 
     {{% alert title="⚠️ Note" color="primary" %}}This is purely for demonstration purposes; API Manager has many authentication mechanisms built-in and is extensible using policies. See [Virtualize REST APIs in API Manager](https://docs.axway.com/bundle/APIManager_753_APIMgmtGuide_allOS_en_HTML5/page/Content/APIManagementGuideTopics/api_mgmt_virtualize_web.htm) for more information.{{% /alert %}}

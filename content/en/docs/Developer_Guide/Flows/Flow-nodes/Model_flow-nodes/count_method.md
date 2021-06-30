@@ -1,9 +1,9 @@
 ---
-title: count method
+title: Count method
 linkTitle: Count method
 description: ADD A DESCRIPTION
 weight: 10
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 This document describes the `count` method, parameter, and output information.

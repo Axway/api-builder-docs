@@ -3,19 +3,19 @@ title: Node.js support policy
 linkTitle: Node.js support policy
 description: ADD A DESCRIPTION
 weight: 120
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 |     |     |
 | --- | --- |
-| Recommended | v12.22.1 or greater |
+| Recommended | v14.17.0 or greater |
 | Minimum | v8.9.0 |
 
 ## Node.js releases
 
-New semver-major releases of Node.js are released every six months. In coordination with a new _odd-numbered_ major release being cut, the previous _even-numbered_ major version will transition to the Long Term Support plan. An odd-numbered major release will cease to be actively updated when the subsequent even-numbered major release is cut.
+New semver-major releases of Node.js are released every six months. In coordination with a new _odd-numbered_ major release being cut, the previous _even-numbered_ major version will transition to the Long Term Support plan. An odd-numbered major release will cease to be actively updated when the subsequent even-numbered major release is cut. Production applications should only use _Active LTS_ or _Maintenance LTS_ releases.
 
-See [https://github.com/nodejs/Release#release-plan](https://github.com/nodejs/Release#release-plan) for more information.
+See [https://nodejs.org/en/about/releases](https://nodejs.org/en/about/releases/) or [https://github.com/nodejs/Release#release-plan](https://github.com/nodejs/Release#release-plan) for more information.
 
 ## Node.js support
 

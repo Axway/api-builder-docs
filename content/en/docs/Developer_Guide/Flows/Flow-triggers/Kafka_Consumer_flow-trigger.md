@@ -1,9 +1,9 @@
 ---
-title: Kafka Consumer flow-trigger
+title: Kafka consumer flow-trigger
 linkTitle: Kafka consumer flow-trigger
 description: ADD A DESCRIPTION
 weight: 30
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Overview
@@ -92,17 +92,17 @@ For this example, we'll create a "Consumer flow" and configure it to consume JSO
 
 Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create a "Consumer flow". In this flow, you will want to drag the **Kafka Consumer** from the **Flow-Nodes > Flow-Triggers** panel on the left, into the flow graph on the right. Configure the **Kafka Consumer** flow-trigger as shown below. The **Consumer group ID** is integral to the scalability of Kafka. For example, you can configure multiple instances of {{% variables/apibuilder_prod_name %}} with the same **Consumer group ID** to achieve scalability.
 
-![image2021-4-20_15_19_19](/Images/image2021-4-20_15_19_19.png)
+![image2021-4-20_15_19_19](/Images/image2021_4_20_15_19_19.png)
 
 This configures the **Kafka Consumer** to receive JSON messages from the "messages" topic. However, we also need to configure the **Connection** details. Scroll the **Kafka Consumer** property panel to the bottom, and enter your Kafka server's details. This example is using "localhost:9092" and is uniquely identifying this service as a unique "client-1" for **Client ID**.
 
-![image2021-4-20_15_20_41](/Images/image2021-4-20_15_20_41.png)
+![image2021-4-20_15_20_41](/Images/image2021_4_20_15_20_41.png)
 
 We will also want to do something with the Kafka message in the flow, but first we need to understand what a Kafka **Message** actually is so that we can work with it. The **Kafka Consumer** outputs a **Message** value called `$.request`, which can be seen on the **Outputs** tab.
 
-![image2021-4-20_15_21_29](/Images/image2021-4-20_15_21_29.png)
+![image2021-4-20_15_21_29](/Images/image2021_4_20_15_21_29.png)
 
-If you click the info icon ![image2021-4-16_15_15_7](/Images/image2021-4-16_15_15_7.png) , it will display the JSON schema for a **Message**. In this example, we are only interested in the `value`.
+If you click the info icon ![image2021-4-16_15_15_7](/Images/image2021_4_16_15_15_7.png) , it will display the JSON schema for a **Message**. In this example, we are only interested in the `value`.
 
 ```
 // JSON schema for Message
@@ -145,7 +145,7 @@ If you click the info icon ![image2021-4-16_15_15_7](/Images/image2021-4-16_15_1
 
 So to configure this flow to use the **Message** value, click on the **Flow inputs** tab, and edit the **request** input as shown below.
 
-![image2021-4-22_15_2_43](/Images/image2021-4-22_15_2_43.png)
+![image2021-4-22_15_2_43](/Images/image2021_4_22_15_2_43.png)
 
 This configures the **Kafka Consumer** to provide the output **Message** `value` as input into the flow.
 
@@ -153,11 +153,11 @@ On the **Flow inputs** tab, it lists the optional named inputs that can be provi
 
 Now, let's do something with `$.request` by adding the **Mustache** flow-node to the graph, and configuring **Data** to be `$.request`, and the **Template** to be "`{{data.message}}`" (without quotes).
 
-![image2021-4-20_15_22_55](/Images/image2021-4-20_15_22_55.png)
+![image2021-4-20_15_22_55](/Images/image2021_4_20_15_22_55.png)
 
 Now the flow is ready to be triggered by a **Kafka Producer**. However, let's verify that the flow works as expected. Click on the debugger icon in the upper-right of the graph to reveal the debug panel. Change the "request" to have a JSON message with the value "banana" as we plan on this flow receiving a JSON input from the "Producer flow".
 
-![image2021-4-20_15_29_6](/Images/image2021-4-20_15_29_6.png)
+![image2021-4-20_15_29_6](/Images/image2021_4_20_15_29_6.png)
 
 Click **Execute Flow**. The flow editor will not show much, just a message, "Flow successfully executed with no response". However, if you check the console window where you launched your {{% variables/apibuilder_prod_name %}} project, you see a detailed debug log showing the execution, and that it handled the "banana" message as expected:
 
@@ -174,13 +174,13 @@ Click **Execute Flow**. The flow editor will not show much, just a message, "Flo
 
 After, you can click **Apply** to save the flow. If all goes well, the **Status** of the **Kafka Consumer** flow-trigger will change to _enabled_. If there are any errors, you may need to check connectivity.
 
-![image2021-4-20_15_27_42](/Images/image2021-4-20_15_27_42.png)
+![image2021-4-20_15_27_42](/Images/image2021_4_20_15_27_42.png)
 
 #### Create a Producer flow
 
 Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create a "Producer flow". In this flow, you will want to drag the **Kafka Producer** from the **Flow-Nodes > Flow-Triggers** panel on the left, into the flow graph on the right. Configure the flow-node to have the properties as shown below.
 
-![image2021-4-20_15_30_33](/Images/image2021-4-20_15_30_33.png)
+![image2021-4-20_15_30_33](/Images/image2021_4_20_15_30_33.png)
 
 Click on the debugger icon in the upper-right of the graph, do not change any values, and click **Execute Flow**, and check your console debug log, you should see:
 

@@ -1,9 +1,9 @@
 ---
-title: Create a User
+title: Create a user
 linkTitle: Create a user
 description: ADD A DESCRIPTION
 weight: 20
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 To configure a create a user flow:
@@ -69,7 +69,7 @@ To configure a create a user flow:
 
 30. Connect the error output of the Set header location flow-node to the input of the Create failed flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). The completed flow is displayed.
 
-    ![image2019-8-6_15_55_45](/Images/image2019-8-6_15_55_45.png)
+    ![image2019-8-6_15_55_45](/Images/image2019_8_6_15_55_45.png)
 31. Click **Apply**.
 
 32. On the next screen, click **Proceed**. The server will be restarted, the _Create a user_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.

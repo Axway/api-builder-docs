@@ -1,9 +1,9 @@
 ---
-title: deleteAll method
+title: DeleteAll method
 linkTitle: DeleteAll method
 description: ADD A DESCRIPTION
 weight: 30
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 The document describes the `deleteAll` method, parameters, and output.

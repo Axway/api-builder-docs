@@ -1,9 +1,9 @@
 ---
-title: Removal of Codeblocks
+title: Removal of codeblocks
 linkTitle: Removal of codeblocks
 description: ADD A DESCRIPTION
 weight: 140
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D028](/docs/deprecations/#D028)\]{{% /alert %}}

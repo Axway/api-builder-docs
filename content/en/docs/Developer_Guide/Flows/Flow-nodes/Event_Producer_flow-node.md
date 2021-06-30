@@ -1,9 +1,9 @@
 ---
-title: Event Producer flow-node
+title: Event producer flow-node
 linkTitle: Event producer flow-node
 description: ADD A DESCRIPTION
 weight: 80
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Overview
@@ -44,14 +44,14 @@ Emits an event that can be handled by the event protocol.
 
 After the installation of the Event plugin and editing a flow, you will find the **Event Producer** flow-node in the list of available **Flow-Nodes > Core** in the left-hand panel of the flow editor:
 
-![image2021-4-16_11_14_20](/Images/image2021-4-16_11_14_20.png)
+![image2021-4-16_11_14_20](/Images/image2021_4_16_11_14_20.png)
 
 You can drag and drop the **Event Producer** flow-node into the flow graph on the right. It is auto-selected and its properties are revealed in the panel on the right:
 
-![image2021-4-20_11_23_57](/Images/image2021-4-20_11_23_57.png)
+![image2021-4-20_11_23_57](/Images/image2021_4_20_11_23_57.png)
 
 Configure your **Event Producer** in the example below.
 
-![image2021-4-20_11_24_51](/Images/image2021-4-20_11_24_51.png)
+![image2021-4-20_11_24_51](/Images/image2021_4_20_11_24_51.png)
 
 An equivalent **[Event Consumer](/docs/developer_guide/flows/flow-triggers/event_consumer_flow-trigger/)** flow-trigger is required to receive this event. Please refer to that documentation for a more detailed example.

@@ -3,7 +3,7 @@ title: REST flow-node
 linkTitle: REST flow-node
 description: ADD A DESCRIPTION
 weight: 160
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 The REST flow-node methods, parameters, and output are described in the following sections. The REST flow-node is created when NPM installs the `@axway/api-builder-plugin-fn-restclient` plugin. The REST flow-node plugin is included in the default application, but it can be removed.

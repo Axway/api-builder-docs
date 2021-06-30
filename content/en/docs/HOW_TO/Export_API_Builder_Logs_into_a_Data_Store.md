@@ -1,9 +1,9 @@
 ---
-title: Export API Builder Logs into a Data Store
+title: Export API Builder logs into a data store
 linkTitle: Export API Builder logs into a data store
 description: ADD A DESCRIPTION
 weight: 110
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 This document describes how to export Logs from an {{% variables/apibuilder_prod_name %}} application or service into a data store.
@@ -166,25 +166,25 @@ Now, we will set up the Splunk server with basic definitions in a local environm
 
 6. Enter a name and select the **Next** button.
 
-    ![Screen_Shot_2018-05-23_at_14.11.57](/Images/Screen_Shot_2018-05-23_at_14.11.57.png)
+    ![Screen_Shot_2018-05-23_at_14.11.57](/Images/screen_shot_2018_05_23_at_14_11_57.png)
 
 7. Verify that you that have successfully generated a Token.
 
 8. Copy and save the Token.
 
-    ![Screen_Shot_2018-05-23_at_14.12.43](/Images/Screen_Shot_2018-05-23_at_14.12.43.png)
+    ![Screen_Shot_2018-05-23_at_14.12.43](/Images/screen_shot_2018_05_23_at_14_12_43.png)
 
 9. Navigate to **Settings/Data inputs/** **HTTP Event Collector** and to see your Docker logs.
 
 10. Click to **Global settings** button and **Enable** button and to find HTTP Port Number.
 
-    ![Screen_Shot_2018-05-23_at_14.18.23](/Images/Screen_Shot_2018-05-23_at_14.18.23.png)
+    ![Screen_Shot_2018-05-23_at_14.18.23](/Images/screen_shot_2018_05_23_at_14_18_23.png)
 11. Click on the **Docker logs edit** button and leave the default settings.
 
-    ![Screen_Shot_2018-05-23_at_23.34.44](/Images/Screen_Shot_2018-05-23_at_23.34.44.png)
+    ![Screen_Shot_2018-05-23_at_23.34.44](/Images/screen_shot_2018_05_23_at_23_34_44.png)
 12. If you navigate to the _App: Search & Reporting_ page, the following UI will be displayed.
 
-    ![Screen_Shot_2018-05-23_at_17.27.35](/Images/Screen_Shot_2018-05-23_at_17.27.35.png)
+    ![Screen_Shot_2018-05-23_at_17.27.35](/Images/screen_shot_2018_05_23_at_17_27_35.png)
 13. Once you have the Splunk container running and have set up everything in the Splunk Web, you are ready to run the application container via Splunk. You need to set the application container to the same port that you used for binding in the previous command. For the `splunk-url`, you need to use your IP address. The `Service-Image` should be the image name that you already built in your {{% variables/apibuilder_prod_name %}} service.
 
     Please use the below command:
@@ -194,11 +194,11 @@ Now, we will set up the Splunk server with basic definitions in a local environm
     ```
 
 14. Verify that you are receiving your application logs in the Splunk Web UI. If everything works correctly, you will automatically receive all your application logs in the Splunk Web UI.
-    ![Screen_Shot_2018-05-23_at_17.27.48](/Images/Screen_Shot_2018-05-23_at_17.27.48.png)
+    ![Screen_Shot_2018-05-23_at_17.27.48](/Images/screen_shot_2018_05_23_at_17_27_48.png)
     The Logs imported into Splunk will be displayed as in the following examples.
 
     Example one:
-    ![Screen_Shot_2018-05-23_at_17.28.00](/Images/Screen_Shot_2018-05-23_at_17.28.00.png)
+    ![Screen_Shot_2018-05-23_at_17.28.00](/Images/screen_shot_2018_05_23_at_17_28_00.png)
 
     Example two:
-    ![Screen_Shot_2018-05-23_at_23.42.26](/Images/Screen_Shot_2018-05-23_at_23.42.26.png)
+    ![Screen_Shot_2018-05-23_at_23.42.26](/Images/screen_shot_2018_05_23_at_23_42_26.png)

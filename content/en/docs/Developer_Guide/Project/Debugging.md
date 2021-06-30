@@ -3,7 +3,7 @@ title: Debugging
 linkTitle: Debugging
 description: ADD A DESCRIPTION
 weight: 40
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Application logging
@@ -115,7 +115,7 @@ $ node --inspect-brk .
 
 This will launch a Node.js process and listen for a debugging client. In [Chrome](https://developers.google.com/web/tools/chrome-devtools/javascript), navigate to [chrome://inspect/#devices](#!/guide/chrome://inspect/).
 
-![Screen_Shot_2020-07-06_at_1.58.56_PM](/Images/Screen_Shot_2020-07-06_at_1.58.56_PM.png)
+![Screen_Shot_2020-07-06_at_1.58.56_PM](/Images/screen_shot_2020_07_06_at_1_58_56_pm.png)
 
 {{% alert title="⚠️ Note" color="primary" %}}Attaching to the debug process could differ based on development environment you use. This example uses Chrome, but there are alternatives. For example [VS Code](https://code.visualstudio.com), which we would also recommend (just turn on [auto-attach](https://code.visualstudio.com/blogs/2018/07/12/introducing-logpoints-and-auto-attach#_autoattaching-to-node-processes) feature, then put your breakpoints in the code, then run the app as explained earlier). For more information on this see [Node.js debugging in VS Code guide](https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_attaching-to-nodejs).{{% /alert %}}
 
@@ -123,4 +123,4 @@ This will launch a Node.js process and listen for a debugging client. In [Chrome
 
 There are a variety of ways to set breakpoints. You can set them manually in the debugger, or by inserting the "debugger" statement into your code before running the application, e.g.
 
-![image2020-7-15_10_20_55](/Images/image2020-7-15_10_20_55.png)
+![image2020-7-15_10_20_55](/Images/image2020_7_15_10_20_55.png)

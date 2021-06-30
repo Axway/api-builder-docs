@@ -3,7 +3,7 @@ title: Change in the loading of plugins when errors occur
 linkTitle: Change in the loading of plugins when errors occur
 description: ADD A DESCRIPTION
 weight: 50
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D006](/docs/deprecations/#D006)\]{{% /alert %}}

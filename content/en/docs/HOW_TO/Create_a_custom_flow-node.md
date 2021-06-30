@@ -3,7 +3,7 @@ title: Create a custom flow-node
 linkTitle: Create a custom flow-node
 description: ADD A DESCRIPTION
 weight: 30
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 This document describes how to create a custom flow-node.
@@ -154,7 +154,7 @@ To explain what occurs in the `src/flow-nodes.yaml` file, we will break the file
       ...
     ```
 
-    A method called `encode`, that is displayed in the Flow Editor as **Encode URI**, was added. The `encode` method has a single parameter. If we needed more parameters, we would repeat the whole `parameter`block. ![Screen_Shot_2020-05-19_at_3.12.19_PM](/Images/Screen_Shot_2020-05-19_at_3.12.19_PM.png)
+    A method called `encode`, that is displayed in the Flow Editor as **Encode URI**, was added. The `encode` method has a single parameter. If we needed more parameters, we would repeat the whole `parameter`block. ![Screen_Shot_2020-05-19_at_3.12.19_PM](/Images/screen_shot_2020_05_19_at_3_12_19_pm.png)
 
 4. The next two sections after the parameters defines the value that is returned from your action method and the Error that may be thrown from your action method:
 
@@ -233,35 +233,35 @@ This will install the plugin inside of our project and will start the {{% variab
 
 Launch the app and go to the the sample \`Greet Flow\`. You'll see the flow-node we created under the \`Utils\` category where we placed it.
 
-![Screen_Shot_2020-05-18_at_6.02.36_PM](/Images/Screen_Shot_2020-05-18_at_6.02.36_PM.png)
+![Screen_Shot_2020-05-18_at_6.02.36_PM](/Images/screen_shot_2020_05_18_at_6_02_36_pm.png)
 
 Drag and drop the new flow-node into the flow graph. You'll notice the flow-node has two outputs as we described it earlier.
 
-![Screen_Shot_2020-05-18_at_6.02.46_PM](/Images/Screen_Shot_2020-05-18_at_6.02.46_PM.png)
+![Screen_Shot_2020-05-18_at_6.02.46_PM](/Images/screen_shot_2020_05_18_at_6_02_46_pm.png)
 
 All we need to do now is clean up the Greet Flow from the sample greet flow-nodes and link our new node, by connecting the \`Next\` to the \`Success\` and \`Error\` to the Bad Request\` node respectively.
 
-![Screen_Shot_2020-05-19_at_3.11.27_PM](/Images/Screen_Shot_2020-05-19_at_3.11.27_PM.png)
+![Screen_Shot_2020-05-19_at_3.11.27_PM](/Images/screen_shot_2020_05_19_at_3_11_27_pm.png)
 
 Notice the flow-node is still red, this is because we defined our \`uri\` parameter as required. Another thing worth noting is that we did set \`initialType: string\` in our specification, so we see it being selected by default in the UI.
 
 We could dynamically get the URI from a selector, but to keep things simple lets set the uri we want to encode as String - i.e. \`http://example.com/?q=my query\`.
 
-![Screen_Shot_2020-05-19_at_3.10.11_PM](/Images/Screen_Shot_2020-05-19_at_3.10.11_PM.png)
+![Screen_Shot_2020-05-19_at_3.10.11_PM](/Images/screen_shot_2020_05_19_at_3_10_11_pm.png)
 
 Next and final step is to define in which context variable the response will be saved. For that click the \`Outputs\` section of the flow-node. Here you can see that when successfully encoded, the result will be available as\`$.encodedURI\` and if it failed it would be accessible as \`$.error\`.
 
-![Screen_Shot_2020-05-18_at_6.26.16_PM](/Images/Screen_Shot_2020-05-18_at_6.26.16_PM.png)
+![Screen_Shot_2020-05-18_at_6.26.16_PM](/Images/screen_shot_2020_05_18_at_6_26_16_pm.png)
 
 Now that we know what our flow-nodes is going to set, we can select the \`Success (HTTP 200)\` flow-node and amend it to include the result of our flow-node in it's body:
 
-![Screen_Shot_2020-05-18_at_6.29.30_PM](/Images/Screen_Shot_2020-05-18_at_6.29.30_PM.png)
+![Screen_Shot_2020-05-18_at_6.29.30_PM](/Images/screen_shot_2020_05_18_at_6_29_30_pm.png)
 With that done, all we need to do is run and see our flow-node in action! To do so you can click on the debugger icon and expand it.
-![Screen_Shot_2020-05-18_at_6.35.39_PM](/Images/Screen_Shot_2020-05-18_at_6.35.39_PM.png)
+![Screen_Shot_2020-05-18_at_6.35.39_PM](/Images/screen_shot_2020_05_18_at_6_35_39_pm.png)
 
 As we tweaked the Greet flow, we still have the username as required in that flow, so just pass any value as \`username\` to it and click \`Execute Flow\`.
 
-![Screen_Shot_2020-05-18_at_6.37.06_PM](/Images/Screen_Shot_2020-05-18_at_6.37.06_PM.png)
+![Screen_Shot_2020-05-18_at_6.37.06_PM](/Images/screen_shot_2020_05_18_at_6_37_06_pm.png)
 
 You can see the encodedURI variation of what we hardcoded in the body of that response!
 

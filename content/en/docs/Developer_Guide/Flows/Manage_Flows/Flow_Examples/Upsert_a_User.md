@@ -1,9 +1,9 @@
 ---
-title: Upsert a User
+title: Upsert a user
 linkTitle: Upsert a user
 description: ADD A DESCRIPTION
 weight: 110
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 To configure an upsert (update or insert) a user flow:
@@ -65,7 +65,7 @@ To configure an upsert (update or insert) a user flow:
 
 28. Connect the next output of the Set location flow-node to the input of the Insert succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). The completed flow is displayed.
 
-    ![Upsert_latest](/Images/Upsert_latest.png)
+    ![Upsert_latest](/Images/upsert_latest.png)
 29. Click **Apply**.
 
 30. On the next screen, click **Proceed**. The server will be restarted, the _Upsert a user_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.

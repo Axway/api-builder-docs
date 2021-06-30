@@ -1,9 +1,9 @@
 ---
-title: Addition of Swagger and JSON schema validation on start
+title: Addition of Swagger and json schema validation on start
 linkTitle: Addition of Swagger and json schema validation on start
 description: ADD A DESCRIPTION
 weight: 10
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D045](/docs/deprecations/#D045)\]{{% /alert %}}

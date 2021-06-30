@@ -3,7 +3,7 @@ title: Change in the way null fields are returned in Models
 linkTitle: Change in the way null fields are returned in Models
 description: ADD A DESCRIPTION
 weight: 120
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation \[[D013](/docs/deprecations/#D013)\]{{% /alert %}}

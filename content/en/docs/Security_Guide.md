@@ -1,16 +1,16 @@
 ---
-title: Security Guide
+title: Security guide
 linkTitle: Security guide
 description: ADD A DESCRIPTION
 weight: 50
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 The following document contains important information for managing and maintaining the security of your {{% variables/apibuilder_prod_name %}} service.
 
 ## API security
 
-All of the API hosted by {{% variables/apibuilder_prod_name %}} are bound to the `/api` prefix by default. This prefix can be controlled by the [apiPrefix](/docs/developer_guide/project/configuration/project_configuration/#apiprefix) configuration option. **All** HTTP requests to **any** API that is bound to the apiPrefix are required to provide credentials (controlled via the [accessControl](/docs/developer_guide/project/configuration/project_configuration/#accesscontrol) [configuration option), no exceptions. If you wish certain API (that are not bound to apiPrefix), to be accessed without credentials, you need to add them to the list of public API within](/docs/developer_guide/project/configuration/project_configuration/#accesscontrol) [accessControl](/docs/developer_guide/project/configuration/project_configuration/#accesscontrol)[.](/docs/developer_guide/project/configuration/project_configuration/#accesscontrol)
+All of the API hosted by {{% variables/apibuilder_prod_name %}} are bound to the `/api` prefix by default. This prefix can be controlled by the [apiPrefix](/docs/developer_guide/project/configuration/project_configuration/#apiprefix) configuration option. **All** HTTP requests to **any** API that is bound to the apiPrefix are required to provide credentials (controlled via the [accessControl](/docs/developer_guide/project/configuration/project_configuration/#accesscontrol) configuration option), no exceptions. If you wish certain API (that are not bound to apiPrefix), to be accessed without credentials, you need to add them to the list of public API within [accessControl](/docs/developer_guide/project/configuration/project_configuration/#accesscontrol)[.](/docs/developer_guide/project/configuration/project_configuration/#accesscontrol)
 
 ## Enabling TLS/SSL
 

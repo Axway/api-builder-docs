@@ -1,9 +1,9 @@
 ---
-title: Create a plugin from OpenAPI files
+title: Create a plugin from openapi files
 linkTitle: Create a plugin from openapi files
 description: ADD A DESCRIPTION
 weight: 40
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Introduction

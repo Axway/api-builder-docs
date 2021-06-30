@@ -1,9 +1,9 @@
 ---
-title: Deploy an API Builder application to AMPLIFY Runtime Services
+title: Deploy an API Builder application to AMPLIFY Runtime services
 linkTitle: Deploy an API Builder application to AMPLIFY Runtime services
 description: ADD A DESCRIPTION
 weight: 60
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Introduction
@@ -97,6 +97,24 @@ The commands will log you in to the {{% variables/platform_prod_name %}} using y
 In the example above, we configure the ARS project to use a Large container size. Different sized containers will offer different levels of performance, at the cost of more or less container points. Information about other available sizes can be found [here](https://docs.axway.com/bundle/AMPLIFY_Runtime_Services_2_0_allOS_en/page/amplify_runtime_services_command-line_interface_reference.html#AMPLIFYRuntimeServicesCommandLineInterfaceReference-ServerCommandserver).
 
 ## Build a Docker image
+
+{{% alert title="⚠️ Important" color="primary" %}}By default, Docker will build an image for the same architecture as the device you're developing on. ARS runs on x86_64, so if you're developing on a device which is not using this platform (such as ARM devices like the Raspberry Pi or M1 Mac), then you need to configure the target platform in your application's Dockerfile. This is done by specifying the platform alongside the base image.
+
+Change the following line
+
+```
+// ./Dockerfile
+
+FROM node:14-alpine
+```
+
+to
+
+```
+// ./Dockerfile
+
+FROM --platform=linux/amd64 node:14-alpine
+```{{% /alert %}}
 
 To build a Docker image of your project, execute the following commands.
 

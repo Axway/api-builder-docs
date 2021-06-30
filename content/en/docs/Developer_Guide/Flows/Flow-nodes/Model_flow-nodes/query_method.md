@@ -1,9 +1,9 @@
 ---
-title: query method
+title: Query method
 linkTitle: Query method
 description: ADD A DESCRIPTION
 weight: 90
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 The document describes the `query` method, parameters, and output.

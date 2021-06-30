@@ -1,9 +1,9 @@
 ---
-title: Models - Access a Model
+title: Models - access a Model
 linkTitle: Models - access a Model
 description: ADD A DESCRIPTION
 weight: 20
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 Any callback in the application that is passed the `request` object can access the Models programmatically. If the `actions` property in the model definition is set, some of the methods cannot be invoked. The `actions` property restricts which CRUD operations can be invoked on the models.

@@ -1,9 +1,9 @@
 ---
-title: findAndModify method
+title: FindAndModify method
 linkTitle: FindAndModify method
 description: ADD A DESCRIPTION
 weight: 70
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 The document describes the `findAndModify` method, parameters, and outputs.

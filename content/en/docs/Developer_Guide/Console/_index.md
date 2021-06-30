@@ -3,7 +3,7 @@ title: Console
 linkTitle: Console
 description: ADD A DESCRIPTION
 weight: 10
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Introduction
@@ -60,7 +60,7 @@ On startup, API endpoints are automatically generated for all models as per thei
 
 The **API Doc & Test** tab in the Admin Console contains generated docs of your application APIs, including how to call the API, multiple examples, and the ability to test the APIs. The generated docs use the information in the `description` fields of your JavaScript definition files to fill in some of the information. API definitions can also be imported by selecting the **\+ API** button. You can import an API from a Swagger definition by either selecting a file from your local file system or entering a URL. For additional information, refer to [Manage Endpoints](/docs/developer_guide/flows/manage_endpoints/).
 
-![API_Doc_n_Test_latest](/Images/55476678_API_Doc_n_Test_latest.png)
+![API_Doc_n_Test_latest](/Images/55476678_api_doc_n_test_latest.png)
 
 ### Models
 
@@ -88,7 +88,7 @@ The **Configurations** tab displays the list of configuration files on the {{% v
 
 See [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/) for an example and settings.
 
-![Configurations_latest](/Images/Configurations_latest.png)
+![Configurations_latest](/Images/configurations_latest.png)
 
 ### Credentials
 

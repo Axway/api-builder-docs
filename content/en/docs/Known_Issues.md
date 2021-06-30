@@ -1,9 +1,9 @@
 ---
-title: Known Issues
+title: Known issues
 linkTitle: Known issues
 description: ADD A DESCRIPTION
 weight: 80
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 * #3825: Filtering the {{% variables/apibuilder_prod_name %}} Console administrator access using IPv6 addresses may cause ENOTFOUND errors.
@@ -83,6 +83,8 @@ date: 2021-05-17
 * #6039: If including a slash "/" in a Model or Connector name, Invalid Swagger, Models, Flows and Endpoints may be encountered or generated. Therefore, it's recommended not to use this character.
 
 * #6150: Stoplight always encodes default parameter values as strings, even though the type may not be a string (e.g. "number"). The Swagger validation will fail with an error, e.g. "Not a valid number". To work around the problem, you can manually change the parameter default from a string (e.g. `"42"`) to a number (e.g. `42`) by editing the Swagger directly, but that is not always an option. Alternatively, you can change the parameter type to a "string", and add a validation "pattern", e.g. `"[0-9]+"`.
+
+* #6722: Uploading many files can sometimes cause an error: `TypeError: Cannot convert undefined or null to object`.
 
 * #6763: When a service is configured to use apikey auth, the API Doc & Test page does not reflect this and shows examples for basic. When testing the API, basic auth is also incorrectly used. As a workaround, a tool such as Postman or CURL should be used to invoke these APIs instead.
 

@@ -1,12 +1,12 @@
 ---
-title: Release Notes
+title: Release notes
 linkTitle: Release notes
 description: ADD A DESCRIPTION
 weight: 70
-date: 2021-05-17
+date: 2021-06-22
 ---
 
-## {{% variables/apibuilder_prod_name %}} - Madrid
+## {{% variables/apibuilder_prod_name %}} - Perm
 
 ### Summary
 
@@ -19,6 +19,8 @@ This release includes:
 * [Fixes](#fixes)
 
 * [Updated Modules](#updated-modules)
+
+* [Plugins](#updated-plugins)
 
 * [Known Issues](#known-issues)
 
@@ -34,25 +36,25 @@ npm update
 
 ### Features
 
-* #6697: Trigger template used to render triggers in Flow UI now contains initial values for the enum properties which results in rendering those properties with preselected values. The initial value is calculated from the schema "default" property with fallback to the first item of schema "examples" property or to the first item of the enum.
-
-* #6856: Previously, while running in production and under conditions where startup takes a long time, it was possible for the Kafka flow-trigger to start and then for the connection to become unstable (e.g. if the Kafka server went down) before the server finished starting, and if that happened, Kafka would emit unstable causing the server to be in an inconsistent state (unstable and not started), and error with `TypeError: Cannot read property 'error' of undefined`. Now, the server handles this unstable condition on startup and exits cleanly in production.
+* #6909: The Oracle plugin [@axway/api-builder-plugin-dc-oracle](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-oracle) now supports models from all tables to which the user has access. The configuration option, [generateModelsFromSchema](/docs/developer_guide/connectors/oracle_connector/#configuration) can now be used to specify the tables used for auto-generated Models.
 
 ### Fixes
 
-* #6833: Flow-node log messages are now consistently prefixed with the flow-node's display name. For users writing custom flow-nodes, this change applies to all logs made by the flow-node action logger. Additionally, when a flow-node invokes, the name of the method being invoked is now also logged.
-
-* #6865: Fixed issue with fork [@livereach/jsonpath](https://www.npmjs.com/package/@livereach/jsonpath) that made it vulnerable to [CVE-2021-23358](https://nvd.nist.gov/vuln/detail/CVE-2021-23358). Replaced forked module with original [jsonpath.](https://www.npmjs.com/package/jsonpath)
+* #6899: Previously, model flow-nodes were not named with the full model name. This would end up causing ambiguity between models from different connectors with the same table name, for example "User" and "oracle/User" both showing as "User" in the flow-node palette. Now, all model flow-nodes have the full model name.
 
 ### Updated modules
 
-* [@axway/api-builder-admin@1.42.2](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.42.2)
+* [@axway/api-builder@4.26.2](https://www.npmjs.com/package/@axway/api-builder/v/4.26.2)
 
-* [@axway/api-builder-runtime@4.63.2](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.63.2)
+* [@axway/api-builder-runtime@4.66.10](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.66.10)
 
-* [@axway/api-builder-sdk@1.1.4](https://www.npmjs.com/package/@axway/api-builder-sdk/v/1.1.4)
+### Updated plugins
 
-* [@axway/api-builder-test-utils@1.1.11](https://www.npmjs.com/package/@axway/api-builder-test-utils/v/1.1.11)
+* [@axway/api-builder-plugin-dc-mssql@3.0.2](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mssql/v/3.0.2)
+
+* [@axway/api-builder-plugin-dc-mysql@2.2.17](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mysql/v/2.2.17)
+
+* [@axway/api-builder-plugin-dc-oracle@3.1.0](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-oracle/v/3.1.0)
 
 ### Known Issues
 

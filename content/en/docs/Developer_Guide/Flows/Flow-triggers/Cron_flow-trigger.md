@@ -3,7 +3,7 @@ title: Cron flow-trigger
 linkTitle: Cron flow-trigger
 description: ADD A DESCRIPTION
 weight: 10
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Overview
@@ -51,7 +51,7 @@ For this example, we'll create a "Morning Flow" that will trigger a flow at 09:0
 
 Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create a "Morning Flow". In this flow, you will want to drag the **Cron** from the **Flow-Nodes > Flow-Triggers** panel on the left, into the flow graph on the right. Configure the **Cron** flow-trigger as shown below.
 
-![image2021-4-20_15_14_16](/Images/image2021-4-20_15_14_16.png)
+![image2021-4-20_15_14_16](/Images/image2021_4_20_15_14_16.png)
 
 This configures the **Cron** flow-trigger to invoke at "0 second, 0 minute, and 9 hour", i.e. "09:00 am". It will do so every day.
 
@@ -59,11 +59,11 @@ Unlike some flow-triggers, **Cron** does not output, so the **Outputs** tab show
 
 Now, let's do something on the flow by adding the **Logger** flow-node to the graph, and configuring the **Message** to be "`I was triggered by Cron!"`.
 
-![image2021-4-20_15_14_38](/Images/image2021-4-20_15_14_38.png)
+![image2021-4-20_15_14_38](/Images/image2021_4_20_15_14_38.png)
 
 On saving the flow, by clicking **Apply**, the flow-trigger will be configured to invoke at 9:00 am system time, every day. On successful restart, your **Cron** flow-trigger will be enabled.
 
-![image2021-4-20_15_15_17](/Images/image2021-4-20_15_15_17.png)
+![image2021-4-20_15_15_17](/Images/image2021_4_20_15_15_17.png)
 
 If you check the application console window, there is a DEBUG log message that confirms the Cron flow-trigger is configured as expected:
 
@@ -77,11 +77,11 @@ For this example, we'll create a "Midnight Flow" that will trigger a flow at 12:
 
 Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create a "Morning Flow". In this flow, you will want to drag the **Cron** flow-trigger from the **Flow-Nodes > Flow-Triggers** panel on the left, into the flow graph on the right. Configure the **Cron** flow-trigger as shown below.
 
-![image2021-4-20_15_16_56](/Images/image2021-4-20_15_16_56.png)
+![image2021-4-20_15_16_56](/Images/image2021_4_20_15_16_56.png)
 
 On saving the flow, by clicking **Apply**, the flow-trigger will be configured to invoke at 12:00 am UTC, every day. On successful restart, your **Cron** flow-trigger will be enabled.
 
-![image2021-4-20_15_17_26](/Images/image2021-4-20_15_17_26.png)
+![image2021-4-20_15_17_26](/Images/image2021_4_20_15_17_26.png)
 
 If you check the application console window, there is a DEBUG log message that confirms the Cron flow-trigger is configured as expected:
 

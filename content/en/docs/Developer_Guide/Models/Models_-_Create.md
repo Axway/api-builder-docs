@@ -1,9 +1,9 @@
 ---
-title: Models - Create
+title: Models - create
 linkTitle: Models - create
 description: ADD A DESCRIPTION
 weight: 10
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Create a new model
@@ -67,11 +67,11 @@ In the Admin Console
 
 1. Click the **API Docs & Test** tab. This page lists all the API endpoints that your application exposes. You can also add or import API endpoints via the **\+ API** button. For additional information, refer to [Manage Endpoints](/docs/developer_guide/flows/manage_endpoints/).
 
-    ![API_Doc_n_Test_latest](/Images/55476489_API_Doc_n_Test_latest.png)
+    ![API_Doc_n_Test_latest](/Images/55476489_api_doc_n_test_latest.png)
 2. Click anywhere on the row of any one of the API endpoints that you recently created. The Admin Console presents all the API endpoints that can be used to access a particular model. You can also export API endpoints via the **Download Swagger** button. For additional information, refer to [Manage Endpoints](/docs/developer_guide/flows/manage_endpoints/).
 
-    ![APIs_list_testuser_latest](/Images/APIs_list_testuser_latest.png)
+    ![APIs_list_testuser_latest](/Images/apis_list_testuser_latest.png)
 3. **Expand one of the GET methods** in your endpoint. The code example for the curl should be visible. If it's not, scroll down until the Examples section is visible and select **curl**.
 
-    ![API_Doc_n_Test_curl_latest](/Images/API_Doc_n_Test_curl_latest.png)
+    ![API_Doc_n_Test_curl_latest](/Images/api_doc_n_test_curl_latest.png)
 4. **Copy a curl command** and **run it in a terminal**. Note the message returned by this command. Alternatively, you can test the select GET method in the user interface. Scroll until the Test API section is visible; if available complete the Request, Path parameters, and Query parameters fields and then click **Execute**. Note the Result returned in the user interface.

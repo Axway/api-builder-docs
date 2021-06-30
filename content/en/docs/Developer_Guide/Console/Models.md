@@ -3,7 +3,7 @@ title: Models
 linkTitle: Models
 description: ADD A DESCRIPTION
 weight: 10
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Introduction
@@ -81,7 +81,7 @@ To edit an existing model using the user interface:
 
 2. Locate the model you wish to edit and click the **Gear** icon at the end of the row. A dialogue box will open.
 
-    ![edit-compose-generate_model](/Images/edit-compose-generate_model.png)
+    ![edit-compose-generate_model](/Images/edit_compose_generate_model.png)
 3. Click **Edit this model**. A dialogue window will open up and allow you to make changes to your selected model.
 
 4. You can edit the model name by clicking the **Pencil** icon next to the model name.

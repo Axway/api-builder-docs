@@ -1,9 +1,9 @@
 ---
-title: Kafka Producer flow-node
+title: Kafka producer flow-node
 linkTitle: Kafka producer flow-node
 description: ADD A DESCRIPTION
 weight: 120
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Overview
@@ -116,11 +116,11 @@ In this example, we will encode an Object as JSON and publish it to a Kafka topi
 
 Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create a "Producer flow". In this flow, you will want to drag the **Kafka Producer** from the **Flow-Nodes > Flow-Triggers** panel on the left, into the flow graph on the right. Configure the flow-node to have the properties as shown below.
 
-![image2021-4-20_16_12_23](/Images/image2021-4-20_16_12_23.png)
+![image2021-4-20_16_12_23](/Images/image2021_4_20_16_12_23.png)
 
 The **Connection ID** that is used here is a string identifier and can be found on the flow that contains the **Kafka Consumer** configuration panel (e.g. "Consumer Flow"). Unless you have more than one, it is typically just, "kafka".
 
-![image2021-4-20_15_27_42](/Images/image2021-4-20_15_27_42.png)
+![image2021-4-20_15_27_42](/Images/image2021_4_20_15_27_42.png)
 
 Click on the debugger icon in the upper-right of the graph, do not change any values, and click **Execute Flow**, and check your console debug log, you should see:
 

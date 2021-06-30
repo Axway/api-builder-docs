@@ -1,9 +1,9 @@
 ---
-title: Models - Predefined or Custom Endpoints
+title: Models - predefined or custom Endpoints
 linkTitle: Models - predefined or custom Endpoints
 description: ADD A DESCRIPTION
 weight: 50
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 By default, {{% variables/apibuilder_prod_name %}} generates the following API endpoints for models:

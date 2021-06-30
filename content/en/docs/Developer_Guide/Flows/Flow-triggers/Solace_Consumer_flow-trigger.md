@@ -1,9 +1,9 @@
 ---
-title: Solace Consumer flow-trigger
+title: Solace consumer flow-trigger
 linkTitle: Solace consumer flow-trigger
 description: ADD A DESCRIPTION
 weight: 40
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 ## Overview
@@ -71,17 +71,17 @@ Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manag
 
 Configure the flow-node to have the properties as shown below:
 
-![image2021-4-20_15_10_29](/Images/image2021-4-20_15_10_29.png)
+![image2021-4-20_15_10_29](/Images/image2021_4_20_15_10_29.png)
 
 This configures the **Solace Consumer** to receive JSON messages from the "messages" topic. However, we also need to configure the **Connection** details. Scroll the **Solace Consumer** property panel to the bottom, and enter your Solace server's details. This example is using the default values used in [how to run Solace service is a Docker container tutorial](https://solace.com/products/event-broker/software/getting-started/). Maker sure you adjust them accordingly if you have changed those values when starting the Solace container.
 
-![image2021-4-20_11_50_37](/Images/image2021-4-20_11_50_37.png)
+![image2021-4-20_11_50_37](/Images/image2021_4_20_11_50_37.png)
 
 We will also want to assign the Solace message to a variable that will be used in the flow, but first we need to understand what a Solace **Message** actually is so that we can work with it. The **Solace Consumer** outputs a **Message** value called `$.request`, which can be seen on the **Outputs** tab.
 
-![image2021-4-20_11_51_31](/Images/image2021-4-20_11_51_31.png)
+![image2021-4-20_11_51_31](/Images/image2021_4_20_11_51_31.png)
 
-If you click the info icon ![image2021-4-16_15_15_7](/Images/image2021-4-16_15_15_7.png) , it will display the JSON schema for **Message**.
+If you click the info icon ![image2021-4-16_15_15_7](/Images/image2021_4_16_15_15_7.png) , it will display the JSON schema for **Message**.
 
 ```
 // JSON schema for Message
@@ -97,17 +97,17 @@ If you click the info icon ![image2021-4-16_15_15_7](/Images/image2021-4-16_15_1
 
 In this example, we are only interested in the `message` property so that it can be provided to the flow to configure it to use the **Message** value. Click on the **Flow inputs** tab, and change the **request** input to assign `$.request.value` to the flow's **request** input.
 
-![image2021-4-22_15_0_54](/Images/image2021-4-22_15_0_54.png)
+![image2021-4-22_15_0_54](/Images/image2021_4_22_15_0_54.png)
 
 On the **Flow inputs** tab, it lists the optional named inputs that can be provided to the flow: **request**, **config**, and **env**. These keys are hard-coded into the flow and their JSONPath selectors are provided automatically. The **request** maps the output of the **Solace Consumer** as input into the flow, so we want to change the value of **request** to `$.request.value` (this selects the `value` property from the **Message** object). From within the flow, the respective input values can be accessed as `$.request`, `$.config`, and `$.env`. Alternatively, you can leave the default mapping of **request** to `$.request` and then you still will be able to access the `value` property of the **Message** within the flow with `$.request.value`selector.
 
 Now, let's do something with `$.request` by adding the **Mustache** flow-node to the graph, and configuring **Data** to be `$.request`, and the **Template** to be "`{{data}}`" (without quotes).
 
-![image2021-4-20_11_52_57](/Images/image2021-4-20_11_52_57.png)
+![image2021-4-20_11_52_57](/Images/image2021_4_20_11_52_57.png)
 
 Now the flow is ready to be triggered by a **Solace Producer**. However, let's verify that the flow works as expected. Click on the debugger icon in the upper-right of the graph to reveal the debug panel. Change the "request" to have a JSON message with the value "Hello!" as we plan on this flow receiving a JSON input from the "Producer flow".
 
-![image2021-4-20_11_54_1](/Images/image2021-4-20_11_54_1.png)
+![image2021-4-20_11_54_1](/Images/image2021_4_20_11_54_1.png)
 
 Click **Execute Flow**. The flow editor will not show much, just a message, "Flow successfully executed with no response". However, if you check the console window where you launched your {{% variables/apibuilder_prod_name %}} project, you see a detailed debug log showing the execution, and that it handled the "Hello!" message as expected:
 
@@ -124,7 +124,7 @@ Click **Execute Flow**. The flow editor will not show much, just a message, "Flo
 
 Once you are happy with the results you can save the flow and if the connection to Solace server is successful you will see the flow-trigger status is enabled:
 
-![image2021-4-20_15_11_48](/Images/image2021-4-20_15_11_48.png)
+![image2021-4-20_15_11_48](/Images/image2021_4_20_15_11_48.png)
 
 #### Create a Producer flow
 

@@ -1,9 +1,9 @@
 ---
-title: Query a User
+title: Query a user
 linkTitle: Query a user
 description: ADD A DESCRIPTION
 weight: 90
-date: 2021-05-17
+date: 2021-06-22
 ---
 
 To configure a query a user flow:
@@ -39,7 +39,7 @@ To configure a query a user flow:
 
 15. Connect the next output of the Query a user flow-node to the input of the Query succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). The completed flow is displayed.
 
-    ![Query_latest](/Images/Query_latest.png)
+    ![Query_latest](/Images/query_latest.png)
 16. Click **Apply**.
 
 17. On the next screen, click **Proceed**. The server will be restarted, the _Query a user_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.

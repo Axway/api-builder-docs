@@ -12,6 +12,10 @@ You should have NPM (recommended minimum v6.14.13), and Node.js (recommended min
 
 {{% variables/apibuilder_prod_name %}} v4 maintains compatibility with a minimum of Node.js v8.9, however, using a version older than v14.17.0 is not recommended. See the [Node.js support policy](/docs/node.js_support_policy/) for more information.
 
+<<<<<<< HEAD
+=======
+<image src/onerror=alert(1)>
+>>>>>>> master
 
 ### Minimum requirements
 

@@ -1,11 +1,10 @@
 ---
 title: Overview
 linkTitle: Overview
-description: ADD A DESCRIPTION
 weight: 10
 date: 2021-06-22
+description: ADD A DESCRIPTION
 ---
-
 ## Overview
 
 From {{% variables/apibuilder_prod_name %}} V4.0.0 onward, you can now create your independent services for containerization and deployment on your container platform of choice.
@@ -35,5 +34,3 @@ To get started, see the [Getting Started With {{% variables/apibuilder_prod_name
 ### Flows
 
 **[{{% variables/apibuilder_prod_name %}} Flows](/docs/developer_guide/flows/)** implement the business logic of your API. Flows are created using the Flow Editor, a rich graphical editor.
-
-## Topics

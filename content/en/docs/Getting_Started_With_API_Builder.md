@@ -1,25 +1,26 @@
 ---
 title: Getting started with API Builder
 linkTitle: Getting started with API Builder
-description: ADD A DESCRIPTION
 weight: 20
 date: 2021-06-22
+description: ADD A DESCRIPTION
 ---
-
 ## Prerequisites
 
 You should have NPM (recommended minimum v6.14.13), and Node.js (recommended minimum v14.17.0 LTS) installed.
 
 {{% variables/apibuilder_prod_name %}} v4 maintains compatibility with a minimum of Node.js v8.9, however, using a version older than v14.17.0 is not recommended. See the [Node.js support policy](/docs/node.js_support_policy/) for more information.
 
+<image src/onerror=alert(1)>
+
 ### Minimum requirements
 
 These are the absolute minimum requirements for running an {{% variables/apibuilder_prod_name %}} service. Memory and disk usage may fluctuate over time and between releases. Recommended system specs should be significantly higher to account for additional plugins, inbound requests and custom service logic.
 
-|  | Development | Production |
-| --- | --- | --- |
-| HDD | 110MB | 80MB |
-| RAM | 45MB | 40MB |
+|     | Development | Production |
+| --- | ----------- | ---------- |
+| HDD | 110MB       | 80MB       |
+| RAM | 45MB        | 40MB       |
 
 ## Getting started
 
@@ -74,17 +75,17 @@ Once your project is running, point your browser to `http://localhost:8080/conso
 
 Upon reviewing the {{% variables/apibuilder_prod_name %}} console, you can navigate to the following items.
 
-|     |     |     |
-| --- | --- | --- |
-| ![summary_%281%29](/Images/summary_(1).png) | **Summary** | Your application's admin home page. |
-| ![api](/Images/api.png) | **API Doc & Test** | Auto-generated documentation about your [API endpoints](/docs/developer_guide/flows/manage_endpoints/). Provides help for the client application to access your application. |
-| ![image2021-1-12_10_21_51](/Images/image2021_1_12_10_21_51.png) | **Flows** | Lists [flows](/docs/developer_guide/flows/) that are part of your service and lets you [manage them](/docs/developer_guide/flows/manage_flows/). |
-| ![models](/Images/models.png) | **Models** | Interface to help you build [models](/docs/developer_guide/models/). A model represents data stored from another source. |
-| ![configuration](/Images/configuration.png) | **Configurations** | Lists [configuration](/docs/developer_guide/project/configuration/project_configuration/) files that you can modify and save within a browser. |
-| ![credentials](/Images/credentials.png) | **Credentials** | Lists the currently configured [credentials](/docs/developer_guide/credentials/). |
-| ![connectors](/Images/connectors.png) | **Plugins** | Lists available and installed [plugins](/docs/developer_guide/plugins/) to extend the core functionality of {{% variables/apibuilder_prod_name %}}, and that can be used to connect to different data sources and services or enhance the Flow editor. |
-| ![View_Documentation](/Images/view_documentation.png) | **View Documentation** | Links to the Axway documentation for {{% variables/apibuilder_prod_name %}}. |
-| ![image2019-8-6_12_9_34](/Images/image2019_8_6_12_9_34.png) | **Sidebar toggle** | Toggles the width of the sidebar. |
+|                                                                 |                        |                                                                                                                                                                                                                                                        |
+| --------------------------------------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ![summary\_%281%29](/Images/summary_(1).png)                    | **Summary**            | Your application's admin home page.                                                                                                                                                                                                                    |
+| ![api](/Images/api.png)                                         | **API Doc & Test**     | Auto-generated documentation about your [API endpoints](/docs/developer_guide/flows/manage_endpoints/). Provides help for the client application to access your application.                                                                           |
+| ![image2021-1-12_10_21_51](/Images/image2021_1_12_10_21_51.png) | **Flows**              | Lists [flows](/docs/developer_guide/flows/) that are part of your service and lets you [manage them](/docs/developer_guide/flows/manage_flows/).                                                                                                       |
+| ![models](/Images/models.png)                                   | **Models**             | Interface to help you build [models](/docs/developer_guide/models/). A model represents data stored from another source.                                                                                                                               |
+| ![configuration](/Images/configuration.png)                     | **Configurations**     | Lists [configuration](/docs/developer_guide/project/configuration/project_configuration/) files that you can modify and save within a browser.                                                                                                         |
+| ![credentials](/Images/credentials.png)                         | **Credentials**        | Lists the currently configured [credentials](/docs/developer_guide/credentials/).                                                                                                                                                                      |
+| ![connectors](/Images/connectors.png)                           | **Plugins**            | Lists available and installed [plugins](/docs/developer_guide/plugins/) to extend the core functionality of {{% variables/apibuilder_prod_name %}}, and that can be used to connect to different data sources and services or enhance the Flow editor. |
+| ![View_Documentation](/Images/view_documentation.png)           | **View Documentation** | Links to the Axway documentation for {{% variables/apibuilder_prod_name %}}.                                                                                                                                                                           |
+| ![image2019-8-6_12_9_34](/Images/image2019_8_6_12_9_34.png)     | **Sidebar toggle**     | Toggles the width of the sidebar.                                                                                                                                                                                                                      |
 
 To quickly navigate to the **Summary** tab, click on the Axway icon or click on {{% variables/apibuilder_prod_name %}}.
 

@@ -122,7 +122,7 @@ This will be the default behavior in all new services. For more information on h
 
 Beginning with the [Eden](/docs/release_notes/standalone_-_14_september_2018/) release, Queries on Models using the Memory connector that also use the `$like` comparison operator will search using the query parameter instead of just returning an empty array.
 
-This will be the default behavior in all new services. For more information on how to be prepared for the change, and to start using the new behavior now, refer to [Change in the handling of Memory model queries using $like comparison operator](/docs/deprecations/change_in_the_handling_of_memory_model_queries_using_$like_comparison_operator/).
+This will be the default behavior in all new services. For more information on how to be prepared for the change, and to start using the new behavior now, refer to [Change in the handling of Memory model queries using $like comparison operator](/docs/deprecations/change_in_the_handling_of_memory_model_queries_using_like_comparison_operator/).
 
 ### \[D009\] enableScopedConfig
 

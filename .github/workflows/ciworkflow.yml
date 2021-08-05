@@ -10,32 +10,30 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "test"
+  runs-on: ubuntu-latest
   test:
     name: MarkdownChecks
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
 
     steps:
-    - name: Check out repository
-      uses: actions/checkout@v2
-    # Use Node.js
-    - name: Set up Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-    # Runs markdownlint
-    - name: Run markdown linter
-      run: |
-        npm i -g markdownlint-cli
-        markdownlint "content/en/**/*.md"
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Run markdown linter
+        run: |
+          npm i -g markdownlint-cli
+          markdownlint "content/en/**/*.md"
   publish:
-    name: Publish staging
     env:
       API_BUILDER_DOCS_PRIVATE_KEY: ${{ secrets.API_BUILDER_DOCS_PRIVATE_KEY }}
+
     steps:
-    - name: Check out repository
-      uses: actions/checkout@v2
+      - name: Check out repository
+        uses: actions/checkout@v2
 
     # - name: Configure
     #   run: |

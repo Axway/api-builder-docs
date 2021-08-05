@@ -10,9 +10,9 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  runs-on: ubuntu-latest
   test:
     name: MarkdownChecks
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository
@@ -28,6 +28,7 @@ jobs:
           npm i -g markdownlint-cli
           markdownlint "content/en/**/*.md"
   publish:
+    runs-on: ubuntu-latest
     env:
       API_BUILDER_DOCS_PRIVATE_KEY: ${{ secrets.API_BUILDER_DOCS_PRIVATE_KEY }}
 

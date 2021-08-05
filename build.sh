@@ -22,7 +22,7 @@
 #     the build script
 #   - all other files like content/en/ content will be picked up by hugo automatically
 #     if they change
-#   - 
+#   -
 #
 
 DEBUG=${DEBUG:-false}
@@ -128,7 +128,7 @@ function fMergeContent() {
             ln ${_ln_opt} $(pwd)/${xxx} ${BUILD_DIR}/${xxx}
         fi
     done
-    
+
      # This soft link makes the git info available for hugo to populate the date with git hash in the footer.
      # Note that common files coming from axway-open-docs-common will not have this information and the pages
      # will use the "date" value at the top of the page.
@@ -146,22 +146,22 @@ function fRunHugo() {
     cd ${BUILD_DIR}
     mkdir public
     case "${MODE}" in
-        "dev") 
+        "dev")
             hugo server
             ;;
-        "nelify") 
+        "nelify")
             hugo
             # Moving the "publish" directory to the ROOT of the workspace. Netlify can't publish a
             # different directory even if the "Publish directory" is changed to specify a different directory.
             mv -f ${BUILD_DIR}/public ${PROJECT_DIR}
             ;;
-        "nelify-preview") 
+        "nelify-preview")
             hugo -b $DEPLOY_PRIME_URL
             mv -f ${BUILD_DIR}/public ${PROJECT_DIR}
             ;;
     esac
 }
 
-fCheckoutSubmodule
+# fCheckoutSubmodule
 fMergeContent
-fRunHugo
+# fRunHugo

@@ -1,0 +1,8 @@
+# https://github.com/unifiedjs/unified-engine/blob/HEAD/doc/configure.md
+plugins:
+  - remark-preset-lint-recommended
+  - remark-preset-lint-consistent
+settings:
+  verbose: true
+  quote: "~"
+  list-item-indent: '1'

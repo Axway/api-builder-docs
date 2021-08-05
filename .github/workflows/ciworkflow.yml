@@ -23,10 +23,9 @@ jobs:
         with:
           node-version: '12.x'
 
-      - name: Run markdown linter
+      - name: Run build
         run: |
-          npm i -g markdownlint-cli
-          markdownlint "content/en/**/*.md"
+          npm run build:lint
   publish:
     runs-on: ubuntu-latest
     env:

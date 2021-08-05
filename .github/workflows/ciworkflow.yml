@@ -31,20 +31,3 @@ jobs:
       run: |
         npm i -g markdownlint-cli
         markdownlint "content/en/**/*.md"
-  publish:
-    name: Publish staging
-    uses: docker://sebble/deploy
-    env:
-      API_BUILDER_DOCS_PRIVATE_KEY: ${{ secrets.API_BUILDER_DOCS_PRIVATE_KEY }}
-    steps:
-    - name: Configure
-      run: |
-        echo "$API_BUILDER_DOCS_PRIVATE_KEY" > ~/docs.pem
-        chmod 600 ~/docs.pem
-        mkdir -p ~/.ssh
-        chmod 700 ~/.ssh
-        echo -e "Host upload.zoominsoftware.io\nHostname upload.zoominsoftware.io\nUser axway\nPort 22\nIdentityFile ~/docs.pem\nPasswordAuthentication no" > ~/.ssh/config
-        ssh-keyscan -H upload.zoominsoftware.io > ~/.ssh/known_hosts
-    - name: Publish FTP
-      run: |
-        lftp -c 'connect sftp://upload.zoominsoftware.io; put -O /axway.zoominsoftware.io/confluence/incoming/ ./publish/apibuilderPOC-open-docs-20210729.zip; quit'

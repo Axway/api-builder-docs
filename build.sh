@@ -162,6 +162,6 @@ function fRunHugo() {
     esac
 }
 
-# fCheckoutSubmodule
+fCheckoutSubmodule
 fMergeContent
 # fRunHugo

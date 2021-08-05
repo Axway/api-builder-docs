@@ -23,8 +23,8 @@
     "remark-preset-lint-recommended": "^5.0.0"
   },
   "scripts": {
-    "start": "cd build && mkdir -p public && hugo server",
-    "build": "npm run build:lint && npm run build:merge",
+    "start": "npm run build && cd build && mkdir -p public && hugo server",
+    "build": "npm run build:merge",
     "build:lint": "remark --frail -r remarkrc.yml content/en/docs",
     "clean": "rm -rf build node_modules",
     "build:merge": "./build.sh",

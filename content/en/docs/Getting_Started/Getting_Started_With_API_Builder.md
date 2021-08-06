@@ -7,7 +7,7 @@ description: ADD A DESCRIPTION
 ---
 ## Prerequisites
 
-You should have NPM (recommended minimum v6.14.13), and Node.js (recommended minimum v14.17.0 LTS) installed.
+You should have npm (recommended minimum v6.14.13), and Node.js (recommended minimum v14.17.0 LTS) installed.
 
 {{% variables/apibuilder_prod_name %}} v4 maintains compatibility with a minimum of Node.js v8.9, however, using a version older than v14.17.0 is not recommended. See the [Node.js support policy](/docs/node.js_support_policy/) for more information.
 
@@ -76,7 +76,7 @@ Upon reviewing the {{% variables/apibuilder_prod_name %}} console, you can navig
 |                                                                 |                        |                                                                                                                                                                                                                                                        |
 | --------------------------------------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | ![summary\_%281%29](/Images/summary_(1).png)                    | **Summary**            | Your application's admin home page.                                                                                                                                                                                                                    |
-| ![api](/Images/api.png)                                         | **API Doc & Test**     | Auto-generated documentation about your [API endpoints](/docs/developer_guide/flows/manage_endpoints/). Provides help for the client application to access your application.                                                                           |
+| ![imageAPI](/Images/api.png)                                         | **API Doc & Test**     | Auto-generated documentation about your [API endpoints](/docs/developer_guide/flows/manage_endpoints/). Provides help for the client application to access your application.                                                                           |
 | ![image2021-1-12_10_21_51](/Images/image2021_1_12_10_21_51.png) | **Flows**              | Lists [flows](/docs/developer_guide/flows/) that are part of your service and lets you [manage them](/docs/developer_guide/flows/manage_flows/).                                                                                                       |
 | ![models](/Images/models.png)                                   | **Models**             | Interface to help you build [models](/docs/developer_guide/models/). A model represents data stored from another source.                                                                                                                               |
 | ![configuration](/Images/configuration.png)                     | **Configurations**     | Lists [configuration](/docs/developer_guide/project/configuration/project_configuration/) files that you can modify and save within a browser.                                                                                                         |

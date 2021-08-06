@@ -23,8 +23,8 @@ date: 2021-06-22
 
 **[{{% variables/apibuilder_prod_name %}} Connectors](/docs/developer_guide/connectors/)** are adapters that allow you to read and write data to and from an external data source, such as MySQL, or in server memory. You can either add an existing connector to your application or create one to interface with your custom data source.
 
-### Schemas
+### Schema
 
 ### Blocks
 
-**[{{% variables/apibuilder_prod_name %}} Blocks](/docs/developer_guide/blocks/)** are filters that allow you to pre- or post-process data. Blocks are optional and can be used by either APIs or Models.
+**[{{% variables/apibuilder_prod_name %}} Blocks](/docs/developer_guide/blocks/)** are filters that allow you to pre-process or post-process data. Blocks are optional and can be used by either APIs or Models.

@@ -14,9 +14,9 @@ Visit the Axway [Support](https://support.axway.com/) site to view the knowledge
 
 For issues that require an analysis of your project, we will need a copy of the project you are working on (_without_ the node_modules directory) and any logging that you have captured when the problem occurred.
 
-## Which versions of NPM and Node.js should I use?
+## Which versions of npm and Node.js should I use?
 
-You should have NPM (recommended minimum v6.13), and Node.js (recommended minimum v12.16 LTS) installed.
+You should have npm (recommended minimum v6.13), and Node.js (recommended minimum v12.16 LTS) installed.
 
 {{% variables/apibuilder_prod_name %}} v4 maintains compatibility with a minimum of Node.js v8.9, however, using a version older than v12.16 is not recommended. See the [Node.js support policy](/docs/node.js_support_policy/) for more information.
 

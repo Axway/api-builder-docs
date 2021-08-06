@@ -1,0 +1,24 @@
+files:
+  # limit this to one directory so we can fine-tune it
+  - 'content/en/docs/Getting_Started/**/*.md'
+plugins:
+  - spell
+  - frontmatter
+  - indefinite-article
+  - repeated-words
+  - syntax-mentions
+  # something wrong with this, when enabled, non-URL things are ignored, and
+  # it doesn't seem to recognize images: ![img](url)
+  # - syntax-urls
+ignore:
+  - '{{%.*?%}}' # doesn't work :(
+  - 'apibuilder_prod_name' # have to ignore words between {{% %}}
+  - 'v[0-9]+(\.[0-9]+)?(\.[0-9]+)?' # v4, v6.14.13
+  - '[0-9]+MB' # 100MB
+  - 'image.*' # ![image](url)
+frontmatterKeys:
+  - title
+  - linkTitle
+dictionaries:
+  - dictionary.js
+quiet: true

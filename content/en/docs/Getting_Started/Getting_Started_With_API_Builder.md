@@ -1,7 +1,7 @@
 ---
-title: Getting started with API Builder
-linkTitle: Getting started with API Builder
-weight: 20
+title: Getting started
+linkTitle: Getting started
+weight: 10
 date: 2021-06-22
 description: ADD A DESCRIPTION
 ---

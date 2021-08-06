@@ -1,6 +1,5 @@
 ---
-title: HOW to
-linkTitle: HOW to
+title: Guides
 description: ADD A DESCRIPTION
 weight: 60
 date: 2021-06-22

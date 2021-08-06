@@ -7,8 +7,9 @@ plugins:
   - indefinite-article
   - repeated-words
   - syntax-mentions
-  # something wrong with this, when enabled, non-URL things are ignored, and
-  # it doesn't seem to recognize images: ![img](url)
+  # this is not a URL checker, this classifies url-like values, "example.com"
+  # as syntax.  so, it will ignore lots of things that are not syntax, e.g.
+  # "Node.js".
   # - syntax-urls
 ignore:
   - '{{%.*?%}}' # doesn't work :(

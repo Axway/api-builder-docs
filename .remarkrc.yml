@@ -1,0 +1,10 @@
+plugins:
+  - preset-lint-recommended
+  - remark-preset-lint-markdown-style-guide
+  # https://github.com/remarkjs/remark-lint/blob/main/doc/rules.md
+  - [ 'remark-frontmatter', 'yaml' ]
+  - [ 'remark-lint-heading-style', 'atx' ]
+  - [ 'remark-lint-maximum-line-length', false ]
+  - [ 'remark-lint-emphasis-marker', '_' ]
+  - [ 'remark-lint-unordered-list-marker-style', '*' ]
+  - [ 'remark-lint-list-item-indent', 2 ]

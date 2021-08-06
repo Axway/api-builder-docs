@@ -1,6 +1,6 @@
 ---
-title: Getting started
-linkTitle: Getting started
+title: Getting Started
+linkTitle: Getting Started
 weight: 10
 date: 2021-06-22
 description: ADD A DESCRIPTION
@@ -36,7 +36,7 @@ Refer to the [Axway CLI](https://docs.axway.com/bundle/Axway_CLI_allOS_en/page/a
 
 Verify the Axway CLI installation by running the following command.
 
-```
+```bash
 axway pm list
 ```
 
@@ -44,7 +44,7 @@ axway pm list
 
 Refer to [{{% variables/apibuilder_prod_name %}} CLI](/docs/developer_guide/cli/) documentation for more details.
 
-```
+```bash
 // Install {{% variables/apibuilder_prod_name %}}
 
 axway pm install @axway/amplify-api-builder-cli
@@ -52,7 +52,7 @@ axway pm install @axway/amplify-api-builder-cli
 
 Once {{% variables/apibuilder_prod_name %}} CLI is installed, you can use it to create a new project. In the following example, the CLI will create and initialize the `./myproject` project directory.
 
-```
+```bash
 // Initialize a new project
 
 axway builder init myproject
@@ -91,7 +91,7 @@ To quickly navigate to the **Summary** tab, click on the Axway icon or click on 
 
 You can choose which configuration values you want to be configurable from the environment by explicitly setting them in your `conf/default.js` using `process.env`. For example, to make the log level configurable, you could do:
 
-```
+```js
 // Example environmental configuration variables
 
 // Log level of the main logger

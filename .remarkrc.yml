@@ -10,6 +10,8 @@ plugins:
   - [ 'remark-lint-unordered-list-marker-style', '*' ]
   - [ 'remark-lint-list-item-indent', 2 ]
   - [ 'remark-lint-no-empty-sections' ]
+  - [ 'remark-lint-no-tabs' ]
+  - [ 'remark-lint-first-heading-level', 2 ]
   - [ 'remark-lint-prohibited-strings', [
       { no: 'Flow node', yes: 'Flow-node' },
       { no: 'flow node', yes: 'flow-node' },

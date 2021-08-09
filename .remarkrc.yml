@@ -10,3 +10,20 @@ plugins:
   - [ 'remark-lint-unordered-list-marker-style', '*' ]
   - [ 'remark-lint-list-item-indent', 2 ]
   - [ 'remark-lint-no-empty-sections' ]
+  - [ 'remark-lint-prohibited-strings', [
+      { no: 'Flow node', yes: 'Flow-node' },
+      { no: 'flow node', yes: 'flow-node' },
+      { yes: 'flow-node' }, # case insensitive
+      { no: 'Flow trigger', yes: 'Flow-trigger' },
+      { no: 'flow trigger', yes: 'flow-trigger' },
+      { yes: 'flow-trigger' },  # case insensitive
+      { no: 'Javascript', yes: 'JavaScript' },
+      { no: 'Node.JS', yes: 'Node.js' },
+      { no: 'NPM', yes: 'npm' },
+      { no: 'UNIX', yes: 'unix' },
+      { no: "Github", yes: "GitHub" },
+      # the plugin doesn't handle regex too well, so wasn't able to use
+      # negative lookbehind for use of "builder" without preceeding "API".
+      # https://github.com/Trott/remark-lint-prohibited-strings/blob/main/index.js
+      { no: 'builder', yes: 'Builder' },
+    ]]

@@ -31,6 +31,14 @@ NON-ISSUE: It'd be nice to catch informal contractions as a style issue.
 
 NON-ISSUE: It'd be nice to catch broken [anchor links](#methodz).
 
+ISSUE: Catch prohibited: Flow node
+ISSUE: Catch prohibited: Flow-Node
+ISSUE: Catch prohibited: Flow-Trigger
+ISSUE: Catch prohibited: flow trigger
+ISSUE: Catch prohibited: Node.JS
+ISSUE: Catch prohibited: NPM
+ISSUE: Catch prohibited: Our builder should complain if it is not "API Builder".
+
 __NON-ISSUE: do not use emphasis headers__
 The plugin [remark-lint-no-emphasis-as-heading](https://www.npmjs.com/package/remark-lint-no-emphasis-as-heading) should pick this up but didn't. It picks out `strong-marker` instead. I ordered the rules to put it first, but it still does not work as expected. But, I think we want this rule, and a rule for bold headers, or just a style for headers in general.
 

@@ -42,7 +42,8 @@ NON-ISSUE: Wonder if it will pick up on the 2-space sentences :upside_down_face:
 
 ### NON-ISSUE: Header lower-case
 
-## ISSUE: Heading with too much whitespace before
+
+## ISSUE^: Heading with too much whitespace before
 
 ## ISSUE: Would be nice to detect empty headings
 

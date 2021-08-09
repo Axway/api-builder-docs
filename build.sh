@@ -90,7 +90,7 @@ function fMergeContent() {
     fi
 
     cd ${PROJECT_DIR}
-    rm -rf ${BUILD_DIR}
+    rm -rf ${BUILD_DIR} public
     echo "[INFO] Put all [${axway_common_name}] content into [build] directory."
     rsync -a ${axway_common_name}/ build --exclude .git
     if [[ $? -ne 0 ]];then
@@ -144,10 +144,10 @@ function fMergeContent() {
 
 function fRunHugo() {
     cd ${BUILD_DIR}
-    mkdir public
+    mkdir -p public
     case "${MODE}" in
         "dev")
-            hugo server
+            # hugo server
             ;;
         "nelify")
             hugo
@@ -164,4 +164,4 @@ function fRunHugo() {
 
 fCheckoutSubmodule
 fMergeContent
-# fRunHugo
+fRunHugo

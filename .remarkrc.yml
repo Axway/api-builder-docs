@@ -5,6 +5,7 @@ plugins:
   - [ 'remark-frontmatter', 'yaml' ]
   - [ 'remark-lint-heading-style', 'atx' ]
   - [ 'remark-lint-maximum-line-length', false ]
+  - [ 'remark-lint-no-emphasis-as-heading' ]
   - [ 'remark-lint-emphasis-marker', '_' ]
   - [ 'remark-lint-unordered-list-marker-style', '*' ]
   - [ 'remark-lint-list-item-indent', 2 ]

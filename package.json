@@ -31,7 +31,7 @@
   "scripts": {
     "start": "npm run build:merge && cd build && mkdir -p public && hugo server",
     "build": "npm run build:merge && npm run build:lint && npm run build:spell",
-    "build:lint": "remark --frail --quiet -r .remarkrc.yml content/en/docs/Plugins/*.md",
+    "build:lint": "remark --quiet -r .remarkrc.yml content/en/docs/Plugins/*.md",
     "build:spell": "spellchecker",
     "clean": "rm -rf build node_modules",
     "build:merge": "./build.sh",

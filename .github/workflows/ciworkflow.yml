@@ -35,6 +35,15 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
+      - name: Set up SSH (upload.zoominsoftware.io)
+        run: |
+          echo "$API_BUILDER_DOCS_PRIVATE_KEY" > ~/docs.pem
+          chmod 600 ~/docs.pem
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          echo -e "Host upload.zoominsoftware.io\nHostname upload.zoominsoftware.io\nUser axway\nPort 22\nIdentityFile ~/docs.pem\nPasswordAuthentication no" > ~/.ssh/config
+          ssh-keyscan -H upload.zoominsoftware.io > ~/.ssh/known_hosts
+
     # - name: Configure
     #   run: |
     #     echo "$API_BUILDER_DOCS_PRIVATE_KEY" > ~/docs.pem

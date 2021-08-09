@@ -9,3 +9,4 @@ plugins:
   - [ 'remark-lint-emphasis-marker', '_' ]
   - [ 'remark-lint-unordered-list-marker-style', '*' ]
   - [ 'remark-lint-list-item-indent', 2 ]
+  - [ 'remark-lint-no-empty-sections' ]

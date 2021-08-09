@@ -34,16 +34,17 @@ NON-ISSUE: It'd be nice to catch broken [anchor links](#methodz).
 __NON-ISSUE: do not use emphasis headers__
 The plugin [remark-lint-no-emphasis-as-heading](https://www.npmjs.com/package/remark-lint-no-emphasis-as-heading) should pick this up but didn't. It picks out `strong-marker` instead. I ordered the rules to put it first, but it still does not work as expected. But, I think we want this rule, and a rule for bold headers, or just a style for headers in general.
 
-### Header Title case
-
-### Header lower-case
-
-### Banana
+### NON-ISSUE: Header Title case
+NON-ISSUE: We want to enforce "Header title case" for headers.
+NON-ISSUE: We want to "enforce matching punctuation.
+ISSUE: We want to enforce no trailing slash on [URL](https://www.npmjs.com/).
 NON-ISSUE: Wonder if it will pick up on the 2-space sentences :upside_down_face:.  Another sentence.
+
+### NON-ISSUE: Header lower-case
 
 ## ISSUE: Heading with too much whitespace before
 
-## NON-ISSUE: Would be nice to detect empty headings
+## ISSUE: Would be nice to detect empty headings
 
 ## ISSUE: This heading is an example where it is too long and will not render nicely
 

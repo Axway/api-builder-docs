@@ -39,7 +39,7 @@ The plugin [remark-lint-no-emphasis-as-heading](https://www.npmjs.com/package/re
 ### Header lower-case
 
 ### Banana
-ISSUE: This is an example of using too many emoji :grinning: in a single file :laughing: !!!  NON-ISSUE: Wonder if it will pick up on the 2-space sentences :upside_down_face:.
+NON-ISSUE: Wonder if it will pick up on the 2-space sentences :upside_down_face:.  Another sentence.
 
 ## ISSUE: Heading with too much whitespace before
 

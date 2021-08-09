@@ -28,4 +28,14 @@ plugins:
       # negative lookbehind for use of "builder" without preceeding "API".
       # https://github.com/Trott/remark-lint-prohibited-strings/blob/main/index.js
       { no: 'builder', yes: 'Builder' },
+      { no: "can't", yes: 'cannot' },
+      { no: "could've", yes: 'could have' },
+      { no: "couldn't", yes: 'could not' },
+      { no: "don't", yes: 'do not' },
+      { no: "haven't", yes: 'have not' },
+      { no: "it's", yes: 'it is' },
+      { no: "shouldn't", yes: 'should not' },
+      { no: "that's", yes: 'that is' },
+      { no: "won't", yes: 'will not' },
+      { no: "\\w+'ll", yes: '<something> will' },
     ]]

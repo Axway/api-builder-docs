@@ -29,8 +29,6 @@ ISSUE: incorrect indentation,
  | --- | ----- |
  | baz | banana |
 
-NON-ISSUE: It'd be nice to catch informal contractions as a style issue.
-
 NON-ISSUE: It'd be nice to catch broken [anchor links](#methodz).
 
 ISSUE: tabby	tab
@@ -42,6 +40,9 @@ ISSUE: Catch prohibited: flow trigger
 ISSUE: Catch prohibited: Node.JS
 ISSUE: Catch prohibited: NPM
 ISSUE: Catch prohibited: Our builder should complain if it is not "API Builder".
+
+# ISSUE: Contractions
+I can't imagine API Builder wouldn't handle OAS3. I don't care what you think, but it's something that'll take some time and we could've done it earlier, but we couldn't find the time. It shouldn't bother you.
 
 ## NON-ISSUE: Duplicate
 Duplicate 1

@@ -49,7 +49,7 @@ jobs:
         uses: MajorVengeance/Ftp-Deploy-Action@v0.2.3-alpha
         with:
           ftp_host: upload.zoominsoftware.io
-          local_source_dir: ./publish/apibuilderPOC-open-docs-20210729.zip
+          local_source_dir: ./publish
           dist_target_dir: /axway.zoominsoftware.io/confluence/incoming
 
     # lftp -c

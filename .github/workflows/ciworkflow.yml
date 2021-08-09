@@ -44,29 +44,11 @@ jobs:
           echo -e "Host upload.zoominsoftware.io\nHostname upload.zoominsoftware.io\nUser axway\nPort 22\nIdentityFile ~/docs.pem\nPasswordAuthentication no" > ~/.ssh/config
           ssh-keyscan -H upload.zoominsoftware.io > ~/.ssh/known_hosts
 
-      - name: Upload (zoomin)
-        # https://github.com/MajorVengeance/Ftp-Deploy-Action
-        uses: MajorVengeance/Ftp-Deploy-Action@v0.2.3-alpha
-        with:
-          ftp_host: upload.zoominsoftware.io
-          local_source_dir: ./publish
-          dist_target_dir: /axway.zoominsoftware.io/confluence/incoming
-
-    # lftp -c
-    # 'connect sftp://upload.zoominsoftware.io; put -O /axway.zoominsoftware.io/confluence/incoming/ ./docs/media/publishing-documentation/assets/v4-configuration/API_Builder_4x_allOS_en.zip; quit'
-
-    # - name: Configure
-    #   run: |
-    #     echo "$API_BUILDER_DOCS_PRIVATE_KEY" > ~/docs.pem
-    #     chmod 600 ~/docs.pem
-    #     mkdir -p ~/.ssh
-    #     chmod 700 ~/.ssh
-    #     echo -e "Host upload.zoominsoftware.io\nHostname upload.zoominsoftware.io\nUser axway\nPort 22\nIdentityFile ~/docs.pem\nPasswordAuthentication no" > ~/.ssh/config
-    #     ssh-keyscan -H upload.zoominsoftware.io > ~/.ssh/known_hosts
-
-    # - name: LFTP Deploy
-    #   uses: MajorVengeance/Ftp-Deploy-Action@v0.2.3-alpha
-    #   with:
-    #     ftp_host: upload.zoominsoftware.io
-    #     local_source_dir: ./publish/apibuilderPOC-open-docs-20210729.zip
-    #     dist_target_dir: /axway.zoominsoftware.io/confluence/incoming
+      # this action doesn't work for zoomin
+      # - name: Upload (zoomin)
+      #   # https://github.com/MajorVengeance/Ftp-Deploy-Action
+      #   uses: MajorVengeance/Ftp-Deploy-Action@v0.2.3-alpha
+      #   with:
+      #     ftp_host: upload.zoominsoftware.io
+      #     local_source_dir: ./publish
+      #     dist_target_dir: /axway.zoominsoftware.io/confluence/incoming

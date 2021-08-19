@@ -13,6 +13,26 @@ ISSUE: missing code-block language flag
 npm install @axway/api-builder-plugin-fn-base64
 ```
 
+## Links
+ISSUE: It'd be nice to catch misspelled [anchor links](#methodz).
+
+ISSUE: Non existent anchors should be flagged. [broken anchor links](#foobar).
+
+NON-ISSUE: Existent anchors should be fine. [working anchor link](#methods).
+
+ISSUE: Non-existent images should be caught ![import_API](/Images/import_api.png) - Name should be import_API.png, but it was added as lowercase by mistake.
+
+ISSUE: Non-existent images should be caught ![non-existent image](/Images/foo.png).
+
+NON-ISSUE: Existing images should be fine - ![imageAPI](/Images/api.png).
+
+ISSUE: External links that are not accessible(404, etc) should be caught [Google/foo](https://google.co.uk/foo).
+
+NON-ISSUE: External links that are accessible should be fine - [Google](https://google.co.uk/).
+
+ISSUE: Link to an non-existent file should be caught - [missing files are reported](missing-example.js).
+
+
 ## Methods
 ISSUE: An example of a bad list:
 * one
@@ -28,8 +48,6 @@ ISSUE: incorrect indentation,
  | foo | bar |
  | --- | ----- |
  | baz | banana |
-
-NON-ISSUE: It'd be nice to catch broken [anchor links](#methodz).
 
 ISSUE: tabby	tab
 

@@ -12,9 +12,6 @@
     "url": "https://github.com/Axway/apibuilderPOC-open-docs/issues"
   },
   "homepage": "https://github.com/Axway/apibuilderPOC-open-docs",
-  "dependencies": {
-    "remark-lint-heading-style": "^2.0.1"
-  },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "grunt": "^1.3.0",
@@ -26,6 +23,7 @@
     "remark-lint": "^8.0.0",
     "remark-lint-are-links-valid": "^1.0.3",
     "remark-lint-first-heading-level": "^2.0.1",
+    "remark-lint-heading-sentence-case": "file:plugins/remark-lint-heading-sentence-case",
     "remark-lint-no-duplicate-headings": "^2.0.1",
     "remark-lint-no-empty-sections": "^4.0.0",
     "remark-lint-no-tabs": "^2.0.1",

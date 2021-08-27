@@ -13,6 +13,7 @@ plugins:
   - [ 'remark-lint-no-empty-sections' ]
   - [ 'remark-lint-no-tabs' ]
   - [ 'remark-lint-first-heading-level', 2 ]
+  - [ 'remark-lint-heading-sentence-case' ]
   - [ 'remark-lint-prohibited-strings', [
       { no: 'Flow node', yes: 'Flow-node' },
       { no: 'flow node', yes: 'flow-node' },

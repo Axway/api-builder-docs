@@ -4,7 +4,7 @@ description: TODO
 date: 2021-06-22
 ---
 
-# ISSUE: All headings should be at least 2 (plugin only checks first though)
+# All headings should be at least 2 (plugin only checks first though) (ISSUE)
 
 You can install the **Base64** plugin from the **Plugins** page, or execute the following command:
 
@@ -59,33 +59,32 @@ ISSUE: Catch prohibited: Node.JS
 ISSUE: Catch prohibited: NPM
 ISSUE: Catch prohibited: Our builder should complain if it is not "API Builder".
 
-# ISSUE: Contractions
+# Contractions (ISSUE)
 I can't imagine API Builder wouldn't handle OAS3. I don't care what you think, but it's something that'll take some time and we could've done it earlier, but we couldn't find the time. It shouldn't bother you.
 
-## NON-ISSUE: Duplicate
+## Duplicate (NON-ISSUE)
 Duplicate 1
 
-## NON-ISSUE: Duplicate
+## Duplicate (NON-ISSUE)
 `remark-lint-no-duplicate-headings` failed to match these duplicate headings.
 
-__NON-ISSUE: do not use emphasis headers__
+__do not use emphasis headers (NON-ISSUE)__
 The plugin [remark-lint-no-emphasis-as-heading](https://www.npmjs.com/package/remark-lint-no-emphasis-as-heading) should pick this up but didn't. It picks out `strong-marker` instead. I ordered the rules to put it first, but it still does not work as expected. But, I think we want this rule, and a rule for bold headers, or just a style for headers in general.
 
-### NON-ISSUE: Header Title case
-NON-ISSUE: We want to enforce "Header title case" for headers.
+### Header Title case (ISSUE)
 NON-ISSUE: We want to "enforce matching punctuation.
 ISSUE: We want to enforce no trailing slash on [URL](https://www.npmjs.com/).
 NON-ISSUE: Wonder if it will pick up on the 2-space sentences :upside_down_face:.  Another sentence.
 
-### NON-ISSUE: Header lower-case
+### all lower-case (ISSUE)
 
 
-## ISSUE^: Heading with too much whitespace before
+## Heading ^ with too much whitespace before (ISSUE^)
 
-## ISSUE: Would be nice to detect empty headings
+## Would be nice to detect empty headings (ISSUE)
 
-## ISSUE: This heading is an example where it is too long and will not render nicely
+## This heading is an example where it is too long and will not render nicely (ISSUE)
 
-# NON-ISSUE: Want all headings >= 2
+# Want all headings >= 2 (NON-ISSUE)
 
-## ISSUE: there is no final newline
+## there is no final newline (ISSUE)

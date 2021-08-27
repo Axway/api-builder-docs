@@ -13,7 +13,11 @@ plugins:
   - [ 'remark-lint-no-empty-sections' ]
   - [ 'remark-lint-no-tabs' ]
   - [ 'remark-lint-first-heading-level', 2 ]
-  - [ 'remark-lint-heading-sentence-case' ]
+  - [ 'remark-lint-heading-sentence-case', [
+      'API Builder',
+      'Axway',
+      'APIs'
+    ]]
   - [ 'remark-lint-prohibited-strings', [
       { no: 'Flow node', yes: 'Flow-node' },
       { no: 'flow node', yes: 'flow-node' },
@@ -34,7 +38,7 @@ plugins:
       { no: "it's", yes: 'it is' },
       { no: "that's", yes: 'that is' },
       { no: "won't", yes: 'will not' },
-      { no: "(\\w+)'ve", yes: '$1 have' },
-      { no: "(\\w+)n't", yes: '$1 not' },
+      { no: "(\\w+)'ve", yes: '$1 have', replaceCaptureGroups: true },
+      { no: "(\\w+(?<!ca))n't", yes: '$1 not', replaceCaptureGroups: true },
       { no: "(\\w+)'ll", yes: '$1 will', replaceCaptureGroups: true },
     ]]

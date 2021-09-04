@@ -12,27 +12,6 @@ LINTED: missing code-block language flag
 ```
 npm install @axway/api-builder-plugin-fn-base64
 ```
-
-## Links
-LINTED: It would be nice to catch misspelled [anchor links](#methodz).
-
-LINTED: Non existent anchors should be flagged. [broken anchor links](#foobar).
-
-FIXME: Existent anchors should be fine. [working anchor link](#methods).
-
-LINTED: Non-existent images should be caught ![import_API](/Images/import_api.png) - Name should be import_API.png, but it was added as lowercase by mistake.
-
-LINTED: Non-existent images should be caught ![non-existent image](/Images/foo.png).
-
-FIXME: Existing images should be fine - ![imageAPI](/Images/api.png).
-
-LINTED: External links that are not accessible(404, etc) should be caught [Google/foo](https://google.co.uk/foo).
-
-FIXME: External links that are accessible should be fine - [Google](https://google.co.uk/).
-
-LINTED: Link to an non-existent file should be caught - [missing files are reported](missing-example.js).
-
-
 ## Lists
 LINTED: An example of a bad list:
 * one
@@ -107,5 +86,78 @@ Text.
 
 # Want all headings >= 2 (fixme)
 Text.
+
+
+## Links
+### Working links
+A [link](/docs/guides/best_practices/) to another page of the documentation.
+
+An [anchor](#lists) to an existing Heading in this file.
+
+An [anchor](/docs/plugins/mongo#mongo) to an existent file and referencing a heading that DOES exist.
+
+PROBLEM(no-undefined-references thinks this is a problem) The HUGO's way of doing [links]({{< ref "/docs/guides/debug_a_flow#debugging-flows" >}} "This is the link title").
+
+PROBLEM(no-undefined-references thinks this is a problem) The HUGO's way of doing relative [links]({{< relref "../Guides/Best_Practices.md" >}}  "This is the link title")
+
+Including an existing image - ![imageAPI](/Images/api.png).
+
+Including a link to a file that exists - [download](/samples/central/apisecret.json).
+
+An external [link](https://google.co.uk/) that is accessible.
+
+An external [link](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/environmentalization.html) - verifying url replacement works as expected.
+
+A valid reference [google]
+
+[google]: https://google.co.uk/
+
+### Links that needs to be caught and flagged
+LINTED: Misspelled [anchor links](#methodz).
+
+LINTED: Non existent [anchor](#foobar).
+
+LINTED: Link to an non-existent file should be caught - [missing files are reported](missing-example.js).
+
+LINTED: External links that are not accessible(404, etc) should be caught [Google/foo](https://google.co.uk/foo).
+
+LINTED: Misspelled images(i.e. name should be import_API.png, but it was added as lowercase by mistake) - ![import_API](/Images/import_api.png).
+
+LINTED: Including an non-existent image - ![non-existent image](/Images/foo.png).
+
+LINTED: A [link](/non-existing-file) to an non existent file.
+
+LINTED: An [anchor](/non-existing-file#foobar) to a heading in an non existent file.
+
+### References - good to be caught but not mandatory
+
+FIXME: An [anchor](/docs/plugins/mongo#foobar) to an existing file, but referencing a heading that DOES NOT exist.
+
+This a list of problematic references(i.e. a reference that is not defined, etc, etc) that can be caught by `lint-no-undefined-references` plugin. See https://www.markdownguide.org/basic-syntax/#reference-style-links for more info on references. All of the references underneath are being LINTED.
+
+[bar]
+
+[baz][]
+
+[text][qux]
+
+Spread [over
+lines][]
+
+> in [a
+> block quote][]
+
+[asd][a
+
+Can include [*emphasis*].
+
+Multiple pairs: [a][b][c].
+
+### Avoid doing links like this
+
+These two are valid links in pure markdown, but won't work in HUGO's context. We should avoid linking like this in general. However, these are still caught by the 'no-dead-urls' so we are ok even if something like this slipped in.
+
+- A [link](../Guides/Best_Practices.md) using relative paths. - WORKS in pure Markdown, doesn't work in HUGO.
+- An [anchor](../Guides/Best_Practices.md#codebase) using relative paths. - WORKS in pure Markdown, doesn't work in HUGO.
 
 ## There is no final newline (handled)

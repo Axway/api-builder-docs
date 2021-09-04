@@ -32,8 +32,9 @@
     "remark-preset-lint-markdown-style-guide": "^4.0.0",
     "remark-preset-lint-recommended": "^5.0.0",
     "spellchecker-cli": "^4.8.0",
-    "markdown-link-check": "^3.8.7",
-    "remark-validate-links": "^11.0.0"
+    "remark-validate-links": "^11.0.0",
+    "remark-lint-no-dead-urls": "^1.1.0",
+    "remark-lint-no-undefined-references": "file:plugins/remark-lint-no-undefined-references"
   },
   "scripts": {
     "start": "npm run build:merge && cd build && mkdir -p public && hugo server",
@@ -41,7 +42,6 @@
     "build:lint": "remark --quiet -r .remarkrc.yml content/en/docs/Plugins/*.md",
     "build:spell": "spellchecker",
     "clean": "rm -rf build public",
-    "build:merge": "./build.sh",
-    "link-check": "markdown-link-check ./content/en/docs/Plugins/*.md -c ./link-check-config.json"
+    "build:merge": "./build.sh"
   }
 }

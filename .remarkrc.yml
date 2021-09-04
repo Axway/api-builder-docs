@@ -2,6 +2,11 @@ plugins:
   - preset-lint-recommended
   - remark-preset-lint-markdown-style-guide
   - remark-validate-links
+  - ["remark-lint-no-dead-urls", {
+        'gotOptions': {
+          'baseUrl': 'http://localhost:1313/'
+        }
+    }]
   # https://github.com/remarkjs/remark-lint/blob/main/doc/rules.md
   - [ 'remark-frontmatter', 'yaml' ]
   - [ 'remark-lint-heading-style', 'atx' ]
@@ -31,7 +36,7 @@ plugins:
       { no: 'UNIX', yes: 'unix' },
       { no: "Github", yes: "GitHub" },
       # the plugin doesn't handle regex too well, so wasn't able to use
-      # negative lookbehind for use of "builder" without preceeding "API".
+      # negative lookbehind for use of "builder" without preceding "API".
       # https://github.com/Trott/remark-lint-prohibited-strings/blob/main/index.js
       { no: 'builder', yes: 'Builder' },
       { no: "can't", yes: 'cannot' },

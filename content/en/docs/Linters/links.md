@@ -11,9 +11,9 @@ An [anchor](#working-links) to an existing Heading in this file.
 
 An [anchor](/docs/plugins/mongo#mongo) to an existent file and referencing a heading that DOES exist.
 
-PROBLEM(no-undefined-references thinks this is a problem) The HUGO's way of doing [links]({{< ref "/docs/guides/debug_a_flow#debugging-flows" >}} "This is the link title").
+ISSUE(no-undefined-references thinks this is a problem) The HUGO's way of doing [links]({{< ref "/docs/guides/debug_a_flow#debugging-flows" >}} "This is the link title").
 
-PROBLEM(no-undefined-references thinks this is a problem) The HUGO's way of doing relative [links]({{< relref "../Guides/Best_Practices.md" >}}  "This is the link title")
+ISSUE(no-undefined-references thinks this is a problem) The HUGO's way of doing relative [links]({{< relref "../Guides/Best_Practices.md" >}}  "This is the link title")
 
 Including an existing image - ![imageAPI](/Images/api.png).
 

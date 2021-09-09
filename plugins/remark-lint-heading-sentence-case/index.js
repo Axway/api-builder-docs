@@ -76,15 +76,51 @@ function isSentenceCase(value, allAllowed) {
 }
 
 function checkSentenceCase(tree, file, allowedStrings) {
-	visit(tree, 'heading', checkText);
 	if (!Array.isArray(allowedStrings)) {
 		throw new Error(`Configuration should be an array: ${typeof allowedStrings}`);
 	}
 
-	function checkText (node) {
+	let previous;
+
+	visit(tree, 'heading', (node) => {
 		if (!node.children.length || node.children[0].type !== 'text') {
 			return;
 		}
+
+		const depth = node.depth;
+
+        // Hugo uses the docs' title from the metadata to create an h1. We would
+        // like to avoid having any h1 headings.
+        if (depth === 1) {
+			file.message('We should not use headings with h1', node);
+        }
+
+		if (previous) {
+			/*
+			This is where it gets a bit funky - We can't have h1 headings due to the above. However,
+			the heading decrease is not as straightforward to be linted. For example in our case
+			going back to h2 at any point should be allowed:
+				h2.
+				h3.
+				h4.
+
+				h2. - should be allowed, as we are basically starting a new "chapter".
+
+			However the following should not be:
+				h2.
+				h3.
+				h4.
+				h5.
+
+				h3 - should not be allowed.
+			*/
+			if (depth !== 2 && depth < previous - 1){
+				file.message( 'Heading levels should decrease by one level at a time', node)
+			}
+		}
+
+		previous = depth;
+
 		const { value } = node.children[0];
 
 		const allAllowed = [
@@ -95,5 +131,5 @@ function checkSentenceCase(tree, file, allowedStrings) {
 			const initial = start(node).offset;
 			file.message(`Heading is not sentence case: "${value}"`, node.position);
 		}
-	}
+	});
 }

@@ -26,6 +26,7 @@ An external [link](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/en
 A valid reference [google][]
 
 {{/* Even though the reference above is valid, the definition is expected to be at the bottom of the file, so we should receive a warning about this */}}
+
 [google]: https://google.co.uk/
 
 ## Links that needs to be caught and flagged

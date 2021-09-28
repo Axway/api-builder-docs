@@ -20,7 +20,6 @@
     "remark-cli": "^10.0.0",
     "remark-frontmatter": "^4.0.0",
     "remark-lint": "^8.0.0",
-    "remark-lint-are-links-valid": "^1.0.3",
     "remark-lint-first-heading-level": "^2.0.1",
     "remark-lint-heading-sentence-case": "file:plugins/remark-lint-heading-sentence-case",
     "remark-lint-no-dead-urls": "^1.1.0",

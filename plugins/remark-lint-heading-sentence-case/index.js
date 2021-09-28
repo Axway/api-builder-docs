@@ -1,17 +1,15 @@
 'use strict';
 
-const log = require('debug')('remark-lint:heading-sentence-case');
-const position = require('unist-util-position');
-const rule = require('unified-lint-rule');
-const visit = require('unist-util-visit');
-
-const { start } = position;
+import debugModule from 'debug';
+const log = new debugModule('remark-lint:heading-sentence-case');
+import { pointStart } from 'unist-util-position'
+import { lintRule } from 'unified-lint-rule'
+import { visit } from 'unist-util-visit'
 // a list of strings that are always okay.  enhancements could include lists
 // of countries, etc.
-const DEFAULT_ALLOW = [
-];
+const DEFAULT_ALLOW = [];
 
-module.exports = rule('remark-lint:heading-sentence-case', checkSentenceCase);
+export default lintRule('remark-lint:heading-sentence-case', checkSentenceCase);
 
 function cleanNonASCII(value) {
 	return value.replace(/([^A-Z0-9 ])/ig, '');
@@ -128,7 +126,7 @@ function checkSentenceCase(tree, file, allowedStrings) {
 			...DEFAULT_ALLOW
 		];
 		if (!isSentenceCase(value, allAllowed)) {
-			const initial = start(node).offset;
+			const initial = pointStart(node).offset;
 			file.message(`Heading is not sentence case: "${value}"`, node.position);
 		}
 	});

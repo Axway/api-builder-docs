@@ -19,6 +19,9 @@ describe('remark-lint-heading-sentence-case', () => {
 		expect(check('## I love bananas ♥')).to.have.length(0);
 	});
 
+	it('should not pass sentence case', () => {
+	});	
+
 	it('should pass sentence case containing globally ignored "API" and ignored "API Builder"', () => {
 		expect(check('## I love API Builder', { ignore: [ 'API Builder' ] }))
 			.to.have.length(0);

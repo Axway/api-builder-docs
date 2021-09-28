@@ -1,0 +1,35 @@
+{
+  "name": "remark-lint-validate-internal-links",
+  "version": "1.0.0",
+  "description": "Check for valid references to internal docs and anchors",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Axway/apibuilderPOC-open-docs.git"
+  },
+  "keywords": [
+    "remark",
+    "lint",
+    "markdown",
+    "references",
+    "links"
+  ],
+  "author": "Axway",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Axway/apibuilderPOC-open-docs/issues"
+  },
+  "homepage": "https://github.com/Axway/apibuilderPOC-open-docs#readme",
+  "dependencies": {
+    "mdast-util-from-markdown": "^1.0.2",
+    "remark-cli": "^10.0.0",
+    "remark-lint": "^9.1.0",
+    "unified-lint-rule": "^2.1.0",
+    "unist-util-generated": "^2.0.0",
+    "unist-util-visit": "^4.1.0"
+  }
+}

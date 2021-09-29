@@ -1,5 +1,3 @@
-'use string';
-
 import { remark } from 'remark'
 import remarkLint from 'remark-lint'
 import { VFile } from 'vfile'

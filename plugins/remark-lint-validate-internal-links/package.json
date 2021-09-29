@@ -1,11 +1,11 @@
 {
   "name": "remark-lint-validate-internal-links",
   "version": "1.0.0",
-  "description": "Check for valid references to internal docs and anchors",
+  "description": "Check for valid references to internal docs, anchors, and static files",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test.js"
+    "test": "npx mocha test/index.js"
   },
   "repository": {
     "type": "git",
@@ -31,5 +31,10 @@
     "unified-lint-rule": "^2.1.0",
     "unist-util-generated": "^2.0.0",
     "unist-util-visit": "^4.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "remark": "^14.0.1",
+    "to-vfile": "^7.2.2"
   }
 }

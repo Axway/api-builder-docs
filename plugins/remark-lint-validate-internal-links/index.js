@@ -20,10 +20,10 @@ const cache = {
 
 export default lintRule("remark-lint:validate-internal-links", validateInternalLinks);
 
-function validateInternalLinks(tree, file, options) {
+function validateInternalLinks(tree, file, options = {}) {
   projectRoot = file.cwd;
-  docsRoot = options.docsRoot;
-  staticRoot = options.staticRoot;
+  docsRoot = options.docsRoot || 'content/en';
+  staticRoot = options.staticRoot || 'static';
   
   visit(tree, "link", verifyLinks);
   visit(tree, "image", verifyImages);

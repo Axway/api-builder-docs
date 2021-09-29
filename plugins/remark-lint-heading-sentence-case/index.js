@@ -1,5 +1,3 @@
-'use strict';
-
 import debugModule from 'debug';
 const log = new debugModule('remark-lint:heading-sentence-case');
 import { pointStart } from 'unist-util-position';

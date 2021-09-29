@@ -2,9 +2,9 @@
 
 import debugModule from 'debug';
 const log = new debugModule('remark-lint:heading-sentence-case');
-import { pointStart } from 'unist-util-position'
-import { lintRule } from 'unified-lint-rule'
-import { visit } from 'unist-util-visit'
+import { pointStart } from 'unist-util-position';
+import { lintRule } from 'unified-lint-rule';
+import { visit } from 'unist-util-visit';
 // a list of strings that are always okay.  enhancements could include lists
 // of countries, etc.
 const DEFAULT_ALLOW = [];

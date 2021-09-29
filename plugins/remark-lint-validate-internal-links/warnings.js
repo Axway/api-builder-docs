@@ -8,13 +8,14 @@ export default {
     // "/non-existing-file"
     // "/docs/getting_started/concepts.md"
     // "/docs/getting_started/concepts.md#models"
-    missingDoc: 'Referred page does not exists or is specified with the extension.',
+    missingDoc: 'Referred doc does not exists or is unnessessary specified with the extension.',
 
+    // "/samples/snippets/missing.js"
     missingStaticFile: 'Referred file does not exists.',
     
     // "/docs/getting_started/concepts#missing"
     missingAnchor: 'Missing anchor in the referenced page.',
     
     // "/Images/foo.png"
-    missingImage: 'missing-image'
+    missingImage: 'Referred image does not exists.'
 }

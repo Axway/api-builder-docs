@@ -2,7 +2,10 @@ plugins:
   - preset-lint-recommended
   - remark-preset-lint-markdown-style-guide
   - remark-validate-links
-  - remark-lint-validate-internal-links  
+  - [ remark-lint-validate-internal-links, {
+      docsRoot: 'content/en',
+      staticRoot: 'static'
+    }]
   - remark-lint-no-dead-urls
   # https://github.com/remarkjs/remark-lint/blob/main/doc/rules.md
   - [ 'remark-frontmatter', 'yaml' ]

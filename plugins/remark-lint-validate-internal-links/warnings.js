@@ -1,4 +1,6 @@
 export default {
+    valid: 'The reference is valid',
+
     // "../Guides/Best_Practices.md"
     relativePath: 'Relative paths must be replaced with abcolute paths from the root e.g. /docs/guides/best_practices',
     

@@ -11,7 +11,7 @@ D002:
   release: Boston
   summary: >-
     usage of `admin.apiDocPrefix` in the
-    [project configuration](/docs/developer_guide/project/configuration/project_configuration/)
+    [project configuration](/docs/developer_guide/project/configuration/project_configuration)
     has been deprecated. Use `apidoc.prefix` instead. If both values are provided, `apidoc.prefix`
     will be preferred.
 
@@ -20,7 +20,7 @@ D003:
   release: Boston
   summary: >-
     usage of `admin.disableAPIDoc` in the
-    [FIX_LINK project configuration](project_configuration)
+    [project configuration](/docs/developer_guide/project/configuration/project_configuration)
     has been deprecated. Use `apidoc.disabled` instead. If both values are provided,
     `apidoc.disabled` will be preferred.
 
@@ -244,7 +244,7 @@ D028:
   name: Codeblocks
   release: Cairo
   summary: >-
-    [FIX_LINK codeblocks](/codeblocks) are deprecated and will be removed in a future version of the
+    [codeblocks](/docs/developer_guide/flows/flow-nodes/codeblock_flow-node) are deprecated and will be removed in a future version of the
     product.
 
 D029:
@@ -314,14 +314,14 @@ D038:
   name: Port
   release: Florence
   summary: >-
-    usage of port in the [FIX_LINK project configuration](/config) has been deprecated. Use 
+    usage of port in the [project configuration](/docs/developer_guide/project/configuration/project_configuration/) has been deprecated. Use 
     `http.port` instead.
 
 D039:
   name: Unmaintained Node.js versions
   release: Jackson
   summary: >-
-    we introduced a [FIX_LINK Node.js support policy] in which end-of-life Node.js versions are
+    we introduced a [Node.js support policy](/docs/nodejs_support_policy/) in which end-of-life Node.js versions are
     automatically deprecated by API Builder. See
     [https://nodejs.org/en/about/releases](https://nodejs.org/en/about/releases) for the versions
     which are actively maintained. While the versions we deem as deprecated are not recommended,
@@ -333,7 +333,7 @@ D040:
   release: Jackson
   summary: >-
     Node.js v10 has been deprecated. Only use Active LTS or Maintenance LTS Node.js versions in
-    production. See API Builder's [FIX_LINK Node.js support policy](/port+policy). While the
+    production. See API Builder's [Node.js support policy](/docs/nodejs_support_policy/). While the
     versions we deem as deprecated are not recommended, API compatibility will be maintained until
     an explicit breaking change removes it. Only use Active LTS or Maintenance LTS Node.js versions
     in production.
@@ -370,7 +370,7 @@ D044:
   name: API.response
   release: Zagreb
   summary: >-
-    the `response` property on the [FIX_LINK custom API](/display/AB4/API+Builder+APIs) is
+    the `response` property on the [custom API](/docs/developer_guide/apis/) is
     deprecated in favor of the `model` property. The `model` property serves the same purpose in
     that the named model is used to describe the response schema in the generated API Swagger
     documentation.
@@ -399,14 +399,14 @@ D047:
   release: Faro
   summary: >-
     The `busboy` config option is deprecated and will be removed in a future version of the product.
-    Use `[FIX_LINK config.limits](/displa)` to configure limits for multipart/form-data requests
+    Use `[config.limits](/docs/developer_guide/project/configuration/project_configuration/#limits)` to configure limits for multipart/form-data requests
     and return 413 to clients when a limit it hit.
 
 D048:
   name: undefinedMultipartPartSize
   release: Faro
   summary: >-
-    the new `[FIX_LINK config.limits](/display/AB4/uration-limits)` config option should be
+    the new `[config.limits](/docs/developer_guide/project/configuration/project_configuration/#limits)` config option should be
     configured with a value. Leaving it unset is deprecated behavior and the default behavior will
     change in a future version of the product to be equivalent to setting infinity (no limit).
 
@@ -434,4 +434,4 @@ D051:
   release: Wrecsam
   summary: >-
     The `disableServerBanner` config option has been deprecated in favor of
-    [FIX_LINK `http.headers.server`](/display/AB4/Projecp).
+    [`http.headers.server`](/docs/developer_guide/project/configuration/project_configuration/#http).

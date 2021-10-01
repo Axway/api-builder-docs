@@ -126,7 +126,7 @@ Example:
 
 proxy: `http://localhost:8081`
 
-## flags
+### flags
 [object] Flags to enable features that are not ready for production or whose use may require manual upgrade steps in legacy services.
 
 {{% flags/table %}}

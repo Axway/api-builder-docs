@@ -46,7 +46,7 @@ For this reason, you need to decide which architecture is best suited for your c
 
 ## Design and develop
 
-Each time you [create a new {{% variables/apibuilder_prod_name %}} project](/docs/getting_started_with_api_builder/), and run "npm install", you will pull the latest of our software, and the modules on which we depend. This ensures that you have all the latest features and security updates before you design your {{% variables/apibuilder_prod_name %}} service. Your service should be a microservice, and kept as small as possible (see [Microservice Design Ideals](https://www.infoq.com/articles/microservices-design-ideals/)). During development, you will design your flows, and undoubtedly add [flow-node](/docs/developer_guide/flows/flow-nodes/) plugins, or [flow-trigger](/docs/developer_guide/flows/flow-triggers/) plugins.
+Each time you [create a new {{% variables/apibuilder_prod_name %}} project](/docs/getting_started/), and run "npm install", you will pull the latest of our software, and the modules on which we depend. This ensures that you have all the latest features and security updates before you design your {{% variables/apibuilder_prod_name %}} service. Your service should be a microservice, and kept as small as possible (see [Microservice Design Ideals](https://www.infoq.com/articles/microservices-design-ideals/)). During development, you will design your flows, and undoubtedly add [flow-node](/docs/developer_guide/flows/flow-nodes/) plugins, or [flow-trigger](/docs/developer_guide/flows/flow-triggers/) plugins.
 
 During development, you should follow our [Best Practices Guide](#), and [Security Guide](/docs/security_guide/). It is important to develop a robust set of unit-tests (see ./tests for examples of how to write [mocha](https://mochajs.org/) tests) to ensure that your application is also compatible with the systems on which it depends, and those systems that also depend on it. This is key to the start of a healthy lifecycle as it enables you to confidently accept important updates and fixes.
 
@@ -119,6 +119,6 @@ Every two weeks, {{% variables/apibuilder_prod_name %}} releases new features, p
 
 For these reasons, to maintain a healthy service, it is important to update your services regularly.
 
-* Use the latest, fully patched version of node that we support (see our [Getting Started Guide](/docs/getting_started_with_api_builder/) and [{{% variables/apibuilder_prod_name %}} Node.js support policy](/docs/node.js_support_policy/) for version restrictions).
+* Use the latest, fully patched version of node that we support (see our [Getting Started Guide](/docs/getting_started/) and [{{% variables/apibuilder_prod_name %}} Node.js support policy](/docs/nodejs_support_policy/) for version restrictions).
 * Keep your dependencies up to date with their latest patches.
 * Every two weeks, Axway {{% variables/apibuilder_prod_name %}} releases new features, patches, and security fixes. You should keep an eye on our [Release Notes](/docs/release_notes/), our list of [Deprecations](/docs/deprecations/), and our [Updates](/docs/updates/). Keep abreast of the updates to ensure your application will be compatible with any change(s) that may be introduced. Occasionally, you may want to incorporate these security updates and fixes into your application.

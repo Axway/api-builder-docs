@@ -260,11 +260,11 @@ Beginning with the [Florence](/docs/release_notes/standalone_-_6_december_2019/)
 
 ### \[D039\] Unmaintained Node.js versions
 
-Beginning with the [Jackson](/docs/release_notes/standalone_-_28_february_2020/) release, We introduced a [Node.js support policy](/docs/node.js_support_policy/) in which end-of-life Node.js versions are automatically deprecated by {{% variables/apibuilder_prod_name %}}. See [https://nodejs.org/en/about/releases](https://nodejs.org/en/about/releases) for the versions which are actively maintained. While the versions we deem as deprecated are not recommended, API compatibility will be maintained until an explicit breaking change removes it. Only use Active LTS or Maintenance LTS Node.js versions in production.
+Beginning with the [Jackson](/docs/release_notes/standalone_-_28_february_2020/) release, We introduced a [Node.js support policy](/docs/nodejs_support_policy/) in which end-of-life Node.js versions are automatically deprecated by {{% variables/apibuilder_prod_name %}}. See [https://nodejs.org/en/about/releases](https://nodejs.org/en/about/releases) for the versions which are actively maintained. While the versions we deem as deprecated are not recommended, API compatibility will be maintained until an explicit breaking change removes it. Only use Active LTS or Maintenance LTS Node.js versions in production.
 
 ### \[D040\] Node.js v10
 
-Beginning with the [Jackson](/docs/release_notes/standalone_-_28_february_2020/) release, Node.js v10 has been deprecated. Only use Active LTS or Maintenance LTS Node.js versions in production. See {{% variables/apibuilder_prod_name %}}'s [Node.js support policy](/docs/node.js_support_policy/). While the versions we deem as deprecated are not recommended, API compatibility will be maintained until an explicit breaking change removes it. Only use Active LTS or Maintenance LTS Node.js versions in production.
+Beginning with the [Jackson](/docs/release_notes/standalone_-_28_february_2020/) release, Node.js v10 has been deprecated. Only use Active LTS or Maintenance LTS Node.js versions in production. See {{% variables/apibuilder_prod_name %}}'s [Node.js support policy](/docs/nodejs_support_policy/). While the versions we deem as deprecated are not recommended, API compatibility will be maintained until an explicit breaking change removes it. Only use Active LTS or Maintenance LTS Node.js versions in production.
 
 ### \[D041\] logger.logRequest and logger.logResponse
 

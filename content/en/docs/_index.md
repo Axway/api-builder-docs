@@ -1,8 +1,12 @@
 ---
-title: Overview
-linkTitle: Overview
+title: API Builder
+linkTitle: API Builder
 weight: 10
 date: 2021-10-01
+
+menu:
+  main:
+    weight: 20
 ---
 
 ## Overview
@@ -13,7 +17,7 @@ In this first version, you will be able to install the {{% variables/apibuilder_
 
 {{% variables/apibuilder_prod_name %}} lets you build and deploy a project that is comprised of API endpoints that can be consumed by any client application. An {{% variables/apibuilder_prod_name %}} project is a Node.js application that runs as a service and is comprised of several components. You can either define the components using JavaScript or JSON files placed in specific directories, which are automatically loaded when creating an {{% variables/apibuilder_prod_name %}} instance or programmatically create components after initializing an {{% variables/apibuilder_prod_name %}} instance. For information about the components, see the sections below.
 
-To get started, see the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
+To get started, see the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/).
 
 ### Connectors
 

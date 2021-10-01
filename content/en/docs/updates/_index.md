@@ -21,6 +21,6 @@ date: 2021-10-01
 
 However, from time to time, we may change these files for new applications. For example, we may change the package.json, Dockerfile, or the unit-tests. The purpose of this document is to inform you of those changes so that you can decide whether or not you need them.
 
-For how to keep your {{% variables/apibuilder_prod_name %}} version up-to-date see [Updating {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/#updating-api-builder). You should also keep a close eye on our [Release Notes](/docs/release_notes/), our list of [Deprecations](/docs/deprecations/), and this document.
+For how to keep your {{% variables/apibuilder_prod_name %}} version up-to-date see [Updating {{% variables/apibuilder_prod_name %}}](/docs/getting_started/#updating-api-builder). You should also keep a close eye on our [Release Notes](/docs/release_notes/), our list of [Deprecations](/docs/deprecations/), and this document.
 
 ## Updates

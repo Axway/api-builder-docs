@@ -1,6 +1,6 @@
 ---
-title: HOW to
-linkTitle: HOW to
+title: How to
+linkTitle: How to
 weight: 60
 date: 2021-10-01
 ---

@@ -25,11 +25,11 @@ Docker is installed by a dedicated installer for your specific operating system.
 
 ### Axway CLI
 
-Refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) for details.
+Refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/) for details.
 
 ### {{% variables/apibuilder_prod_name %}} CLI
 
-Refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) for details.
+Refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/) for details.
 
 ### Amplify Cloud Services (ACS) CLI
 
@@ -67,7 +67,7 @@ You now have the prerequisite applications installed to use Amplify Runtime Serv
 
 ## Create your application
 
-{{% variables/apibuilder_prod_name %}} CLI usage can be found [here](https://www.npmjs.com/package/@axway/api-builder). This the setup found in the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/). This will create a "myproject" sub-directory.
+{{% variables/apibuilder_prod_name %}} CLI usage can be found [here](https://www.npmjs.com/package/@axway/api-builder). This the setup found in the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/). This will create a "myproject" sub-directory.
 
 ```
 // Create an {{% variables/apibuilder_prod_name %}} project

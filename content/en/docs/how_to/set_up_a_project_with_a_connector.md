@@ -13,7 +13,7 @@ This document provides information on how to configure and run an {{% variables/
 
 Before setting up a project with a connector, refer to:
 
-* [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) - Provides detailed instructions for installing {{% variables/apibuilder_prod_name %}} and creating an {{% variables/apibuilder_prod_name %}} project.
+* [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/) - Provides detailed instructions for installing {{% variables/apibuilder_prod_name %}} and creating an {{% variables/apibuilder_prod_name %}} project.
 * [{{% variables/apibuilder_prod_name %}} Project](/docs/developer_guide/project/) - Provides detailed information about {{% variables/apibuilder_prod_name %}} projects and services.
 
 ## {{% variables/apibuilder_prod_name %}} Connectors

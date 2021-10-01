@@ -17,7 +17,7 @@ You can install the **Kafka** plugin from the **Plugins** page, or execute the f
 npm install @axway/api-builder-plugin-ft-kafka
 ```
 
-For additional getting started information, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
+For additional getting started information, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/).
 
 ## Flow-trigger details
 

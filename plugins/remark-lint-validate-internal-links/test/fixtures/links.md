@@ -28,8 +28,8 @@ This section contains working links that are not going to be used in our docs. W
 
 *   **no-undefined-references** for HUGO's way of doing [links]({{< ref "/docs/guides/debug_a_flow#debugging-flows" >}} "This is the link title").
 *   **no-undefined-references** for HUGO's way of doing relative [links]({{< relref "../Guides/Best_Practices.md" >}}  "This is the link title").
-*   **validate-internal-links** for a [link](../Guides/Best_Practices.md) using relative paths. WORKS in pure Markdown, does not work in HUGO. We do not want to use this style so we want linter warning for it.
-*   **validate-internal-links** for an [anchor](../Guides/Best_Practices.md#codebase) using relative paths. WORKS in pure Markdown, does not work in HUGO. We do not want to use this style so we want linter warning for it.
+*   **validate-internal-links** for a [link](../Guides/Best_Practices.md) with relative path. WORKS in pure Markdown, does not work in HUGO. We do not want to use this style so we want linter warning for it.
+*   **validate-internal-links** for an [anchor](../Guides/Best_Practices.md#codebase) with relative path. WORKS in pure Markdown, does not work in HUGO. We do not want to use this style so we want linter warning for it.
 
 ## Working reference style links
 This section contains working [reference style links][].
@@ -104,3 +104,7 @@ lines][]
 
 [reference style link with definition at a bottom]: https://google.co.uk/
 [reference style links]: https://www.markdownguide.org/basic-syntax/#reference-style-links
+
+## More links
+
+*   **validate-internal-links** for a [link](./Guides/Best_Practices.md) with relative path to the current directory. WORKS in pure Markdown, does not work in HUGO. We do not want to use this style so we want linter warning for it.

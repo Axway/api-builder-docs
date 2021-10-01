@@ -29,6 +29,12 @@ Hide_readingtime: true
 
 {{% releasenotes/deprecations %}}
 
+## Updated modules
+
+* [@axway/api-builder-runtime@4.11.2](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.11.2)
+* [@axway/api-builder-admin@1.10.2](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.10.2)
+* [@axway/api-builder@4.5.17](https://www.npmjs.com/package/@axway/api-builder/v/4.5.17)
+
 ## Updated plugins
 
 * [@axway/api-builder-plugin-dc-oracle@2.3.3](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-oracle/v/2.3.3)

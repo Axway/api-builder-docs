@@ -38,6 +38,12 @@ Hide_readingtime: true
 
 {{% releasenotes/deprecations %}}
 
+## Updated modules
+
+* [@axway/api-builder-runtime@4.4.21](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.4.21)
+* [@axway/api-builder-admin@1.4.22](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.4.22)
+* [@axway/api-builder@4.4.1](https://www.npmjs.com/package/@axway/api-builder/v/4.4.1)
+
 ## Updated plugins
 
 * [@axway/api-builder-plugin-dc-mongo@1.1.3](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mongo/v/1.1.3)

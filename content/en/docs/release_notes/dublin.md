@@ -26,6 +26,12 @@ Hide_readingtime: true
 
 {{% releasenotes/deprecations %}}
 
+## Updated modules
+
+* [@axway/api-builder-runtime@4.2.9](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.2.9)
+* [@axway/api-builder-admin@1.2.5](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.2.5)
+* [@axway/api-builder@4.2.2](https://www.npmjs.com/package/@axway/api-builder/v/4.2.2)
+
 ## Updated plugins
 
 * [@axway/api-builder-plugin-fn-swagger@1.0.14](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/1.0.14)

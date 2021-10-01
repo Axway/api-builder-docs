@@ -42,6 +42,12 @@ Hide_readingtime: true
 
 {{% releasenotes/deprecations %}}
 
+## Updated modules
+
+* [@axway/api-builder-runtime@4.8.6](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.8.6)
+* [@axway/api-builder-admin@1.9.5](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.9.5)
+* [@axway/api-builder@4.5.12](https://www.npmjs.com/package/@axway/api-builder/v/4.5.12)
+
 ## Updated plugins
 
 * [@axway/api-builder-plugin-dc-mssql@1.0.5](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mssql/v/1.0.5)

@@ -1,16 +1,18 @@
 import { resolve } from 'path';
 import { remark } from 'remark';
 import { expect } from 'chai';
-import { readSync } from 'to-vfile'
+import { readSync } from 'to-vfile';
 import lintRule from '../index.js';
 
 describe('remark-lint-heading-sentence-case', () => {
 	before(() => {
-		process.chdir(resolve(process.cwd(), 'test', 'fixtures'))
+		process.chdir(resolve(process.cwd(), 'test', 'fixtures'));
 	});
+
 	after(() => {
-		process.chdir(resolve(process.cwd(), '..', '..'))
+		process.chdir(resolve(process.cwd(), '..', '..'));
 	});
+
 	it('should validate links.md', async () => {
 		const expectedWarnings = [
 			"links.md:31:39-31:74: Relative paths must be replaced with abcolute paths from the root e.g. /docs/guides/best_practices",
@@ -31,6 +33,7 @@ describe('remark-lint-heading-sentence-case', () => {
 			"links.md:72:88-72:138: Referred file does not exists.",
 			"links.md:73:88-73:145: Referred file does not exists.",
 			"links.md:74:109-74:167: Paths with upper cases must be lowercased e.g. /docs/guides/best_practices",
+			"links.md:110:39-110:73: Relative paths must be replaced with abcolute paths from the root e.g. /docs/guides/best_practices",
 			"links.md:66:159-66:189: Paths with upper cases must be lowercased e.g. /docs/guides/best_practices",
 			"links.md:67:67-67:105: Referred image does not exists."
 		];

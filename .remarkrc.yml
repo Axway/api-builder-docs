@@ -16,6 +16,7 @@ plugins:
   - [ 'remark-lint-emphasis-marker', '_' ]
   - [ 'remark-lint-unordered-list-marker-style', '*' ]
   - [ 'remark-lint-list-item-indent', 'space' ]
+  - [ 'remark-lint-list-item-spacing', false ]
   - [ 'remark-lint-no-empty-sections' ]
   - [ 'remark-lint-no-tabs' ]
   - [ 'remark-lint-first-heading-level', 2 ]

@@ -10,13 +10,13 @@ Hide_readingtime: true
 
 ## Features
 
-* 5643: Filter get-catalog results to only Unified Catalog entries
-* 6092: Fix sorting algorithm for bound paths
+* #5643: Filter get-catalog results to only Unified Catalog entries
+* #6092: Fix sorting algorithm for bound paths
 
 ## Fixes
 
-* 6121: API Key should be logged at debug, not info
-* 6126: Builder CLI - Filter catalog items by swagger v2 type
+* #6121: API Key should be logged at debug, not info
+* #6126: Builder CLI - Filter catalog items by swagger v2 type
 
 ## Release notes
 

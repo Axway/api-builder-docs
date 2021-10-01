@@ -9,8 +9,8 @@ Hide_readingtime: true
 {{% releasenotes/upgrade %}}
 ## Fixes
 
-* 6105: Fix generation of Models from schemas with a field called 'id' that is not a PK
-* 6106: Update amplify-api-builder-cli to remove mbs
+* #6105: Fix generation of Models from schemas with a field called 'id' that is not a PK
+* #6106: Update amplify-api-builder-cli to remove mbs
 
 ## Release notes
 

@@ -10,20 +10,20 @@ Hide_readingtime: true
 
 ## Features
 
-* 5425: Support the ability to fix errors in Flows when a Flow-Node method ID changes
-* 5454: Add the ability to execute Flows from within the Flow editor
-* 5484: Support collapsing the Flow-Nodes panel in the Flow editor
+* #5425: Support the ability to fix errors in Flows when a Flow-Node method ID changes
+* #5454: Add the ability to execute Flows from within the Flow editor
+* #5484: Support collapsing the Flow-Nodes panel in the Flow editor
 
 ## Fixes
 
-* 5499: Create model with name containing invalid character will kill the server
-* 5516: Provide model flow-node outputs and methods with friendly names
-* 5526: Suppress "Translate this page?" prompt on Chrome
-* 5539: API Example for web.js is incorrect
-* 5545: HIGH vulnerability - All versions of \`handlebars\` are vulnerable to Prototype Pollution
-* 5549: Moderate vulnerability lodash
-* 5551: Changed field name gets reverted on composite model
-* 5578: Update @axway/requester version in Swagger plugin
+* #5499: Create model with name containing invalid character will kill the server
+* #5516: Provide model flow-node outputs and methods with friendly names
+* #5526: Suppress "Translate this page?" prompt on Chrome
+* #5539: API Example for web.js is incorrect
+* #5545: HIGH vulnerability - All versions of \`handlebars\` are vulnerable to Prototype Pollution
+* #5549: Moderate vulnerability lodash
+* #5551: Changed field name gets reverted on composite model
+* #5578: Update @axway/requester version in Swagger plugin
 
 ## Release notes
 

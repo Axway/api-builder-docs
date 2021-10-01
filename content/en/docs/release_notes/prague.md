@@ -10,8 +10,8 @@ Hide_readingtime: true
 
 ## Features
 
-* 6337: Migrate test helpers from @axway/api-builder-sdk into its own module @axway/api-builder-test-utils
-* 6441: Update @axway/api-builder-sdk to 1.0.0
+* #6337: Migrate test helpers from @axway/api-builder-sdk into its own module @axway/api-builder-test-utils
+* #6441: Update @axway/api-builder-sdk to 1.0.0
 
 ## Release notes
 

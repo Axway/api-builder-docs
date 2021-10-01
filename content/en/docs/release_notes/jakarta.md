@@ -7,12 +7,12 @@ Hide_readingtime: true
 ---
 ## Features
 
-* 5349: Release authorizations in flows feature.
+* #5349: Release authorizations in flows feature.
 
 ## Fixes
 
-* 5353: Preserve authorization across reloads.
-* 5374: Fix invalid deprecation URL for enableScopedConfig.
+* #5353: Preserve authorization across reloads.
+* #5374: Fix invalid deprecation URL for enableScopedConfig.
 
 ## Release notes
 

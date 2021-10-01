@@ -10,13 +10,13 @@ Hide_readingtime: true
 
 ## Features
 
-* 6304: Integrate both CLIs into a common code base
-* 6351: Add Redis to list of available community plugins
+* #6304: Integrate both CLIs into a common code base
+* #6351: Add Redis to list of available community plugins
 
 ## Fixes
 
-* 6352: Remove useless/confusing log messages from Model APIs
-* 6355: Improve SDK interface
+* #6352: Remove useless/confusing log messages from Model APIs
+* #6355: Improve SDK interface
 
 ## Release notes
 

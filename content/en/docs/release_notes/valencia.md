@@ -9,8 +9,8 @@ Hide_readingtime: true
 {{% releasenotes/upgrade %}}
 ## Fixes
 
-* 5620: Fix string-based model queries on dates, booleans and number fields
-* 5819: Fix invalid JSON Schema and Swagger documentation generated for models that have PK of type date
+* #5620: Fix string-based model queries on dates, booleans and number fields
+* #5819: Fix invalid JSON Schema and Swagger documentation generated for models that have PK of type date
 
 ## Release notes
 

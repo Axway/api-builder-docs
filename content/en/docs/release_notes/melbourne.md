@@ -7,15 +7,15 @@ Hide_readingtime: true
 ---
 ## Features
 
-* 5436: Support Parameter Groups in flow-nodes and Flow editor
-* 5478: Support apikey authentication in API Doc and Test for Endpoints
+* #5436: Support Parameter Groups in flow-nodes and Flow editor
+* #5478: Support apikey authentication in API Doc and Test for Endpoints
 
 ## Fixes
 
-* 5442: Fix CORS for API with path parameters
-* 5448: Apply CORS to static resources
-* 5474: Update Dockerfile with correct file permissions in template
-* 5485: Regression in Swagger plugin validation
+* #5442: Fix CORS for API with path parameters
+* #5448: Apply CORS to static resources
+* #5474: Update Dockerfile with correct file permissions in template
+* #5485: Regression in Swagger plugin validation
 
 ## Release notes
 

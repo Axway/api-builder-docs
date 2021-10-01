@@ -10,13 +10,13 @@ Hide_readingtime: true
 
 ## Features
 
-* 5470: Support YAML endpoints and import API
+* #5470: Support YAML endpoints and import API
 
 ## Fixes
 
-* 5479: Show code examples for using Endpoints
-* 5481: Headers should have x-frame-options and x-xss-protection for security
-* 5502: Correct documentation in default.js in respect to ldap authentication
+* #5479: Show code examples for using Endpoints
+* #5481: Headers should have x-frame-options and x-xss-protection for security
+* #5502: Correct documentation in default.js in respect to ldap authentication
 
 ## Release notes
 

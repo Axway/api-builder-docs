@@ -10,13 +10,13 @@ Hide_readingtime: true
 
 ## Features
 
-* 6310: Generate custom OpenAPI plugin from the CLI
-* 6461: Add output schema validation to @axway/api-builder-test-utils
-* 6468: Update CLI to use latest @axway/api-builder-test-utils and enable validateOutputs
+* #6310: Generate custom OpenAPI plugin from the CLI
+* #6461: Add output schema validation to @axway/api-builder-test-utils
+* #6468: Update CLI to use latest @axway/api-builder-test-utils and enable validateOutputs
 
 ## Fixes
 
-* 6464: Improve SDK template readability
+* #6464: Improve SDK template readability
 
 ## Release notes
 

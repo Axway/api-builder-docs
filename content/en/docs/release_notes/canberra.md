@@ -7,17 +7,17 @@ Hide_readingtime: true
 ---
 ## Features
 
-* 4532: Support data connectors actual primary key type in API, models, and flows
-* 4724: Support for Models based on tables that have no primary key.
+* #4532: Support data connectors actual primary key type in API, models, and flows
+* #4724: Support for Models based on tables that have no primary key.
 
 ## Fixes
 
-* 4791: Model flow-node distinct method's schema does not support the PK field
-* 4834: UI not showing error pages when internal errors occur.
-* 4855: Show better CLI error when using unsupported node version
-* 4869: Config: apiPrefix is not validated for a required leading slash.
-* 4916: Endpoints with names that require URI encoding can't be opened in the UI
-* 4920: Improve the findAndModify Swagger documentation
+* #4791: Model flow-node distinct method's schema does not support the PK field
+* #4834: UI not showing error pages when internal errors occur.
+* #4855: Show better CLI error when using unsupported node version
+* #4869: Config: apiPrefix is not validated for a required leading slash.
+* #4916: Endpoints with names that require URI encoding can't be opened in the UI
+* #4920: Improve the findAndModify Swagger documentation
 
 ## Release notes
 

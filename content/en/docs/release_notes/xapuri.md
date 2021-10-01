@@ -10,11 +10,11 @@ Hide_readingtime: true
 
 ## Features
 
-* 5891: Add editor for 'javascript' format Flow-Node parameters
+* #5891: Add editor for 'javascript' format Flow-Node parameters
 
 ## Fixes
 
-* 5922: Fix incorrect examples when testing Endpoints
+* #5922: Fix incorrect examples when testing Endpoints
 
 ## Release notes
 

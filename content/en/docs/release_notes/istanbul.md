@@ -7,21 +7,21 @@ Hide_readingtime: true
 ---
 ## Features
 
-* 5233: Ensure that plugins only receive plugin-specific configuration instead of the global service configuration
+* #5233: Ensure that plugins only receive plugin-specific configuration instead of the global service configuration
 * 5242:
 
 ## Fixes
 
-* 4890: Remove invisible column in Configuration list view
-* 5121: The server fails to restart when saving a flow over HTTPS with SSL enabled
-* 5165: Fix error when saving flow with special symbols in the filename
-* 5234: Support using Credentials in flow-node parameters
-* 5282: Improve localStorage detection in authorization dialog
-* 5298: Fix error when importing an endpoint using a swagger document with path-level parameters.
-* 5307: Fix swagger generation for services with models which have no primary key
-* 5308: Support proxy settings on import API
-* 5323: Replace invalid flow documentation link
-* 5325: Fix spelling error in description of Set Context flow-node
+* #4890: Remove invisible column in Configuration list view
+* #5121: The server fails to restart when saving a flow over HTTPS with SSL enabled
+* #5165: Fix error when saving flow with special symbols in the filename
+* #5234: Support using Credentials in flow-node parameters
+* #5282: Improve localStorage detection in authorization dialog
+* #5298: Fix error when importing an endpoint using a swagger document with path-level parameters.
+* #5307: Fix swagger generation for services with models which have no primary key
+* #5308: Support proxy settings on import API
+* #5323: Replace invalid flow documentation link
+* #5325: Fix spelling error in description of Set Context flow-node
 
 ## Release notes
 

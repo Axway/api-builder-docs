@@ -7,13 +7,13 @@ Hide_readingtime: true
 ---
 ## Features
 
-* 4043: Add dropdown for string and number enum parameters in flows
-* 5126: Left side menu should be expanded by default
+* #4043: Add dropdown for string and number enum parameters in flows
+* #5126: Left side menu should be expanded by default
 
 ## Fixes
 
-* 4810: JSONSelect CVE-2011-4969
-* 4818: UI Incorrectly counts parameters definition as an endpoint in APIs list
+* #4810: JSONSelect CVE-2011-4969
+* #4818: UI Incorrectly counts parameters definition as an endpoint in APIs list
 
 ## Release notes
 

@@ -10,8 +10,8 @@ Hide_readingtime: true
 
 ## Features
 
-* 5823: Support Docker HEALTHCHECK
-* 5829: Add process.env.PORT to conf/default.js
+* #5823: Support Docker HEALTHCHECK
+* #5829: Add process.env.PORT to conf/default.js
 
 ## Release notes
 

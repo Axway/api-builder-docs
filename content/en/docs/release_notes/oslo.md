@@ -10,12 +10,12 @@ Hide_readingtime: true
 
 ## Features
 
-* 6396: Update CLI with latest SDK
+* #6396: Update CLI with latest SDK
 
 ## Fixes
 
-* 6340: Update flow-node method on Model with ID that doesn't match any records fails to trigger "Not Found"
-* 6369: CLI plugin init incorrectly parses hyphenated name
+* #6340: Update flow-node method on Model with ID that doesn't match any records fails to trigger "Not Found"
+* #6369: CLI plugin init incorrectly parses hyphenated name
 
 ## Release notes
 

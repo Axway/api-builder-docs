@@ -10,15 +10,15 @@ Hide_readingtime: true
 
 ## Features
 
-* 4567: Config copy script is inconsistent between connectors
-* 6397: {{% variables/apibuilder_prod_name %}} project unit tests do not exit with non-zero exit code if they fail
-* 6458: Update CLI project template to use new major versions of Base64, JSON and JavaScript plugins
+* #4567: Config copy script is inconsistent between connectors
+* #6397: {{% variables/apibuilder_prod_name %}} project unit tests do not exit with non-zero exit code if they fail
+* #6458: Update CLI project template to use new major versions of Base64, JSON and JavaScript plugins
 
 ## Fixes
 
-* 6376: Convert "Amplify Central" in login required message into a link to the platform
-* 6445: @axway/api-builder-plugin-fn-javascript shows invalid "\\n" characters
-* 6449: The input box in the flow editor shows multiple scroll bars and extra ws
+* #6376: Convert "Amplify Central" in login required message into a link to the platform
+* #6445: @axway/api-builder-plugin-fn-javascript shows invalid "\\n" characters
+* #6449: The input box in the flow editor shows multiple scroll bars and extra ws
 
 ## Release notes
 

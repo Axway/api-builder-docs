@@ -10,14 +10,14 @@ Hide_readingtime: true
 
 ## Features
 
-* 6215: Support async/promise action functions in flow-nodes
-* 6220: Update image for bundled Dockerfile
+* #6215: Support async/promise action functions in flow-nodes
+* #6220: Update image for bundled Dockerfile
 * 6225:
 
 ## Fixes
 
-* 6186: Reduce log level of admin api calls to trace
-* 6238: Plugin SDK deletes falsy \`description\` field for flow-node methods but it is required
+* #6186: Reduce log level of admin api calls to trace
+* #6238: Plugin SDK deletes falsy \`description\` field for flow-node methods but it is required
 
 ## Release notes
 

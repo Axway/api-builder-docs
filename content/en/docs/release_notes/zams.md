@@ -10,11 +10,11 @@ Hide_readingtime: true
 
 ## Features
 
-* 5893: Replace doT with mustache flow-node
+* #5893: Replace doT with mustache flow-node
 
 ## Fixes
 
-* 5679: arrow-orm fails on $like with val.replace error
+* #5679: arrow-orm fails on $like with val.replace error
 
 ## Release notes
 

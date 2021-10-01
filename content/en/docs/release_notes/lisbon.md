@@ -10,17 +10,17 @@ Hide_readingtime: true
 * 5264:.
 ## Features
 
-* 5125: Add "Home" link functionality to Axway logo and {{% variables/apibuilder_prod_name %}} text in the header
-* 5180: Support the user in managing OAuth2 credentials for devops
-* 5264: Provide clearer and more explicit HTTP authentication
+* #5125: Add "Home" link functionality to Axway logo and {{% variables/apibuilder_prod_name %}} text in the header
+* #5180: Support the user in managing OAuth2 credentials for devops
+* #5264: Provide clearer and more explicit HTTP authentication
 
 ## Fixes
 
-* 5337: Limit graph scaling in flow editor
-* 5404: RegEx DoS attack on markdown rendering engine
-* 5412: OAuth 2.0 toast is not showing
-* 5419: Deprecate web routes
-* 5441: Create model with name containing invalid character will kill the server
+* #5337: Limit graph scaling in flow editor
+* #5404: RegEx DoS attack on markdown rendering engine
+* #5412: OAuth 2.0 toast is not showing
+* #5419: Deprecate web routes
+* #5441: Create model with name containing invalid character will kill the server
 
 ## Release notes
 

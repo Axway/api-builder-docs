@@ -7,15 +7,15 @@ Hide_readingtime: true
 ---
 ## Features
 
-* 5155: Add a nav badge to attract attention to credential errors
-* 5357: Clarify next steps to take when viewing an invalid credential
+* #5155: Add a nav badge to attract attention to credential errors
+* #5357: Clarify next steps to take when viewing an invalid credential
 
 ## Fixes
 
-* 5388: Fix server error when rendering endpoints with path parameters defined using $ref pointers
-* 5389: Endpoint headers are too verbose and unclear
-* 5393: Importing API causes {{% variables/apibuilder_prod_name %}} to exit
-* 5394: Fix issue where API Key credential with an empty string value is resolved as null
+* #5388: Fix server error when rendering endpoints with path parameters defined using $ref pointers
+* #5389: Endpoint headers are too verbose and unclear
+* #5393: Importing API causes {{% variables/apibuilder_prod_name %}} to exit
+* #5394: Fix issue where API Key credential with an empty string value is resolved as null
 
 ## Release notes
 

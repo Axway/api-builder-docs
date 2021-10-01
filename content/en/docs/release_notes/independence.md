@@ -10,11 +10,11 @@ Hide_readingtime: true
 
 ## Features
 
-* 6169: Support uninstalling plugins
+* #6169: Support uninstalling plugins
 
 ## Fixes
 
-* 6178: Rename Connectors to Plugins
+* #6178: Rename Connectors to Plugins
 
 ## Release notes
 

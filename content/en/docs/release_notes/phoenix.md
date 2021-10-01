@@ -9,10 +9,10 @@ Hide_readingtime: true
 {{% releasenotes/upgrade %}}
 ## Fixes
 
-* 5263: Log Plugin load errors and stack traces
-* 5469: Fix names for Model Flow-Nodes when the Model name starts with the Connector name
-* 5573: Flow-node outputs are missing schema in Flow Editor
-* 5585: Improve the UI's detection of server restarts
+* #5263: Log Plugin load errors and stack traces
+* #5469: Fix names for Model Flow-Nodes when the Model name starts with the Connector name
+* #5573: Flow-node outputs are missing schema in Flow Editor
+* #5585: Improve the UI's detection of server restarts
 
 ## Release notes
 

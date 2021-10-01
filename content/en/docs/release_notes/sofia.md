@@ -9,8 +9,8 @@ Hide_readingtime: true
 {{% releasenotes/upgrade %}}
 ## Fixes
 
-* 5650: @axway/amplify-api-builder-cli readme mentions wrong package
-* 5662: Fix issue corrupting files and stacking reloads on concurrent calls to Admin APIs
+* #5650: @axway/amplify-api-builder-cli readme mentions wrong package
+* #5662: Fix issue corrupting files and stacking reloads on concurrent calls to Admin APIs
 
 ## Release notes
 

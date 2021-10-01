@@ -7,14 +7,14 @@ Hide_readingtime: true
 ---
 ## Features
 
-* 4967: Support Intercom in {{% variables/apibuilder_prod_name %}}
-* 5004: Swagger plugin is generating many config files after editing one
-* 5008: Support for plugin load failure terminating server
+* #4967: Support Intercom in {{% variables/apibuilder_prod_name %}}
+* #5004: Swagger plugin is generating many config files after editing one
+* #5008: Support for plugin load failure terminating server
 
 ## Fixes
 
-* 4976: Swagger: Generated swagger for services does not set "security"
-* 4982: Versions of @axway/api-builder-plugin-dc-mysql prior to '2.2.0' are incompatible with {{% variables/apibuilder_prod_name %}} when the \`usePrimaryKey\` feature flag is enabled
+* #4976: Swagger: Generated swagger for services does not set "security"
+* #4982: Versions of @axway/api-builder-plugin-dc-mysql prior to '2.2.0' are incompatible with {{% variables/apibuilder_prod_name %}} when the \`usePrimaryKey\` feature flag is enabled
 
 ## Release notes
 

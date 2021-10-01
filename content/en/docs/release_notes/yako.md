@@ -10,17 +10,17 @@ Hide_readingtime: true
 
 ## Features
 
-* 5892: Support auto-select of initial parameter type for flow-nodes
-* 5924: Add Mustache Flow-Node
-* 5956: Include JavaScript Flow-Node in all new applications
+* #5892: Support auto-select of initial parameter type for flow-nodes
+* #5924: Add Mustache Flow-Node
+* #5956: Include JavaScript Flow-Node in all new applications
 
 ## Fixes
 
-* 4811: Fix Bootstrap XSS vulnerability
-* 5912: Fix lodash.merge prototype pollution
-* 5920: Update .dockerignore file with .git and coverage
-* 5954: Modifying outputs in the Flow Editor causes value to change to "jsonpath"
-* 5957: vulnerability
+* #4811: Fix Bootstrap XSS vulnerability
+* #5912: Fix lodash.merge prototype pollution
+* #5920: Update .dockerignore file with .git and coverage
+* #5954: Modifying outputs in the Flow Editor causes value to change to "jsonpath"
+* #5957: vulnerability
 
 ## Release notes
 

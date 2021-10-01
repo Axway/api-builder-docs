@@ -10,14 +10,14 @@ Hide_readingtime: true
 
 ## Features
 
-* 4899: Add plugin init command to CLI and new plugin SDK
-* 6139: Support loading data connectors that fail to connect
-* 6152: Add support for installing Components
+* #4899: Add plugin init command to CLI and new plugin SDK
+* #6139: Support loading data connectors that fail to connect
+* #6152: Add support for installing Components
 
 ## Fixes
 
-* 6142: causes exception
-* 6174: Add examples link to SDK
+* #6142: causes exception
+* #6174: Add examples link to SDK
 
 ## Release notes
 

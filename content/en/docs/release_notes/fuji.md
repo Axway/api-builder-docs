@@ -7,12 +7,12 @@ Hide_readingtime: true
 ---
 ## Fixes
 
-* 4050: Fix rendering issue with SVG flow-node icons when using Firefox
-* 5064: Improve the description of feature flag warnings in the CLI
-* 5070: Allow condition node to compare empty strings
-* 5079: Display a response body in Test API when the status code of the response is non-2xx
-* 5093: Display a response body in Test API when the response body is "falsy"
-* 5096: Fix issue where flow editor would stop responding when applying changes
+* #4050: Fix rendering issue with SVG flow-node icons when using Firefox
+* #5064: Improve the description of feature flag warnings in the CLI
+* #5070: Allow condition node to compare empty strings
+* #5079: Display a response body in Test API when the status code of the response is non-2xx
+* #5093: Display a response body in Test API when the response body is "falsy"
+* #5096: Fix issue where flow editor would stop responding when applying changes
 
 ## Release notes
 

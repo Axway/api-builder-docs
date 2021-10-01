@@ -10,14 +10,14 @@ Hide_readingtime: true
 
 ## Features
 
-* 6138: Introduce list of available and installed Connectors
+* #6138: Introduce list of available and installed Connectors
 
 ## Fixes
 
-* 6143: Make it easier to configure SSL
-* 6144: Saving flow a second time causes an error that a flow already exists
-* 6146: Composite model using SQL join having primary key does not return expected results
-* 6153: Fix link to JavaScript flow-node
+* #6143: Make it easier to configure SSL
+* #6144: Saving flow a second time causes an error that a flow already exists
+* #6146: Composite model using SQL join having primary key does not return expected results
+* #6153: Fix link to JavaScript flow-node
 
 ## Release notes
 

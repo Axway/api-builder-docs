@@ -7,15 +7,15 @@ Hide_readingtime: true
 ---
 ## Features
 
-* 5075: Remove Connectors page
-* 5129: Change the page title on the Summary screen
-* 5177: Support HTTP Proxy configuration on the swagger plugin
+* #5075: Remove Connectors page
+* #5129: Change the page title on the Summary screen
+* #5177: Support HTTP Proxy configuration on the swagger plugin
 
 ## Fixes
 
-* 5069: Add 401 response to swagger definition for endpoints which require auth
-* 5103: Update flow validation to handle superfluous authorization parameters
-* 5123: Improve flow editor side-panel UX for long names
+* #5069: Add 401 response to swagger definition for endpoints which require auth
+* #5103: Update flow validation to handle superfluous authorization parameters
+* #5123: Improve flow editor side-panel UX for long names
 
 ## Release notes
 

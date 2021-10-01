@@ -10,11 +10,11 @@ Hide_readingtime: true
 
 ## Features
 
-* 5674: Fix Memory connector to return collections
+* #5674: Fix Memory connector to return collections
 
 ## Fixes
 
-* 6005: Ignore 'unsel' in Connector queries when 'sel' is provided
+* #6005: Ignore 'unsel' in Connector queries when 'sel' is provided
 
 ## Release notes
 

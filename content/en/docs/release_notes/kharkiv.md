@@ -10,15 +10,15 @@ Hide_readingtime: true
 
 ## Features
 
-* 5012: Add authorization support to the {{% variables/apibuilder_prod_name %}} SDK
-* 6176: Add support for community components
-* 6265: Provide service directory to plugins
-* 6277: Support OAS3 in api-builder-plugin-fn-swagger
+* #5012: Add authorization support to the {{% variables/apibuilder_prod_name %}} SDK
+* #6176: Add support for community components
+* #6265: Provide service directory to plugins
+* #6277: Support OAS3 in api-builder-plugin-fn-swagger
 
 ## Fixes
 
-* 6252: Builder emits Responses with no Request
-* 6283: Fixed internal issues with dependencies
+* #6252: Builder emits Responses with no Request
+* #6283: Fixed internal issues with dependencies
 
 ## Release notes
 

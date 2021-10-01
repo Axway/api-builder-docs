@@ -10,14 +10,14 @@ Hide_readingtime: true
 
 ## Features
 
-* 5440: Support flow-node change of parameter name
-* 5602: Fix Model responses to include null fields
+* #5440: Support flow-node change of parameter name
+* #5602: Fix Model responses to include null fields
 
 ## Fixes
 
-* 5547: Fix crash when generating Endpoints for Models with names starting with colon
-* 5556: Fix an issue displaying long default values of parameters in the Flow editor
-* 5577: Fix crashes on concurrent restarts
+* #5547: Fix crash when generating Endpoints for Models with names starting with colon
+* #5556: Fix an issue displaying long default values of parameters in the Flow editor
+* #5577: Fix crashes on concurrent restarts
 
 ## Release notes
 

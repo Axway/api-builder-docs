@@ -10,12 +10,12 @@ Hide_readingtime: true
 
 ## Features
 
-* 6099: Support option to disable all HTTP traffic when HTTPS is enabled
+* #6099: Support option to disable all HTTP traffic when HTTPS is enabled
 
 ## Fixes
 
-* 5210: Modernise api-builder runtime tests: models_test.js
-* 6135: Server fails to start without @axway/api-builder-admin on Node.js 12 or 13
+* #5210: Modernise api-builder runtime tests: models_test.js
+* #6135: Server fails to start without @axway/api-builder-admin on Node.js 12 or 13
 
 ## Release notes
 

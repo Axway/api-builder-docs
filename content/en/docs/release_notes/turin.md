@@ -9,9 +9,9 @@ Hide_readingtime: true
 {{% releasenotes/upgrade %}}
 ## Fixes
 
-* 5742: Replace doT where possible in api-builder-plugins to reduce vulnerability warnings
-* 5775: Fix Swagger generation for services with models containing slashes
-* 5795: Count on a composite model having a 'where' condition is ignored
+* #5742: Replace doT where possible in api-builder-plugins to reduce vulnerability warnings
+* #5775: Fix Swagger generation for services with models containing slashes
+* #5795: Count on a composite model having a 'where' condition is ignored
 
 ## Release notes
 

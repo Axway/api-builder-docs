@@ -9,12 +9,12 @@ Hide_readingtime: true
 {{% releasenotes/upgrade %}}
 ## Major change
 
-* 5583: New {{% variables/apibuilder_prod_name %}} CLI for {{% variables/platform_prod_name %}}
+* #5583: New {{% variables/apibuilder_prod_name %}} CLI for {{% variables/platform_prod_name %}}
 
 ## Fixes
 
-* 5626: Concurrent writes to same model file causes server to crash
-* 5641: Error "Not possible to find intersection inside of the rectangle" when saving flow
+* #5626: Concurrent writes to same model file causes server to crash
+* #5641: Error "Not possible to find intersection inside of the rectangle" when saving flow
 
 ## Release notes
 

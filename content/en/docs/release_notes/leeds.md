@@ -10,14 +10,14 @@ Hide_readingtime: true
 
 ## Features
 
-* 6233: Cannot see Error object messages in Flow engine/editor
-* 6249: Support downloading OAS3 specification via CLI get-catalog
+* #6233: Cannot see Error object messages in Flow engine/editor
+* #6249: Support downloading OAS3 specification via CLI get-catalog
 
 ## Fixes
 
-* 6297: Fix the plugin template to bump sdk version to "^0.2.0"
-* 6305: Cannot copy parameter info/schema from Flow editor
-* 6315: Make the console URL easier to click
+* #6297: Fix the plugin template to bump sdk version to "^0.2.0"
+* #6305: Cannot copy parameter info/schema from Flow editor
+* #6315: Make the console URL easier to click
 
 ## Release notes
 

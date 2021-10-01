@@ -7,13 +7,13 @@ Hide_readingtime: true
 ---
 ## Features
 
-* 4467: Support queries on Memory models using $like comparison operator
-* 4758: Support comparison operators on aliased fields in Composite models
+* #4467: Support queries on Memory models using $like comparison operator
+* #4758: Support comparison operators on aliased fields in Composite models
 
 ## Fixes
 
-* 4870: Fix issue with duplicate path detection when paths differ by parameter name/case
-* 5028: Ensure that validation errors are cleared after saving changes in the flow editor
+* #4870: Fix issue with duplicate path detection when paths differ by parameter name/case
+* #5028: Ensure that validation errors are cleared after saving changes in the flow editor
 
 ## Release notes
 

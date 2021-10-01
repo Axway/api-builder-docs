@@ -9,7 +9,7 @@ Hide_readingtime: true
 {{% releasenotes/upgrade %}}
 ## Fixes
 
-* 5616: Remove useless/confusing log message when invoking Create from the model generated API
+* #5616: Remove useless/confusing log message when invoking Create from the model generated API
 
 ## Release notes
 

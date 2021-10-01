@@ -15,7 +15,7 @@ To install the Event plugin, execute the following command:
 npm install @axway/api-builder-plugin-ft-event
 ```
 
-For additional getting started information, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
+For additional getting started information, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/).
 
 ## Methods
 

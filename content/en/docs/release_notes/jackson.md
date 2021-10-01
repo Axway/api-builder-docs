@@ -54,8 +54,8 @@ npm update
 
 These are the deprecations introduced in this release. Click [here](/docs/deprecations/) for a list of all deprecations.
 
-* **\[[D039](/docs/deprecations/#D039)\] Unmaintained Node.js versions**: All unmaintained Node.js versions (e.g. 8, 9 and 11) have been deprecated due to security issues. Use the latest Node.js LTS instead. See {{% variables/apibuilder_prod_name %}}'s [Node.js support policy](/docs/node.js_support_policy/). This also applies to any future unmaintained versions. While these versions are unrecommended, compatibility will be maintained for all {{% variables/apibuilder_prod_name %}} v4 releases.
-* **\[[D040](/docs/deprecations/#D040)\] Node.js v10**: Node.js v10 has been deprecated. Use the latest Node.js LTS instead. See {{% variables/apibuilder_prod_name %}}'s [Node.js support policy](/docs/node.js_support_policy/). While this version is unrecommended, compatibility will be maintained for all {{% variables/apibuilder_prod_name %}} v4 releases.
+* **\[[D039](/docs/deprecations/#D039)\] Unmaintained Node.js versions**: All unmaintained Node.js versions (e.g. 8, 9 and 11) have been deprecated due to security issues. Use the latest Node.js LTS instead. See {{% variables/apibuilder_prod_name %}}'s [Node.js support policy](/docs/nodejs_support_policy/). This also applies to any future unmaintained versions. While these versions are unrecommended, compatibility will be maintained for all {{% variables/apibuilder_prod_name %}} v4 releases.
+* **\[[D040](/docs/deprecations/#D040)\] Node.js v10**: Node.js v10 has been deprecated. Use the latest Node.js LTS instead. See {{% variables/apibuilder_prod_name %}}'s [Node.js support policy](/docs/nodejs_support_policy/). While this version is unrecommended, compatibility will be maintained for all {{% variables/apibuilder_prod_name %}} v4 releases.
 * **\[[D041](/docs/deprecations/#D041)\] loggger.logRequest and logger.logResponse**: the `logRequest` and `logResponse` functions on the {{% variables/apibuilder_prod_name %}} logger are deprecated an will be removed in a future version of the product.
 
 ## Updated modules

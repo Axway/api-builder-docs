@@ -17,7 +17,7 @@ The Swagger plugin is installed as part of the default {{% variables/apibuilder_
 npm install --no-optional @axway/api-builder-plugin-fn-swagger
 ```
 
-For additional getting started information, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
+For additional getting started information, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/).
 
 ## Using the Swagger plugin
 

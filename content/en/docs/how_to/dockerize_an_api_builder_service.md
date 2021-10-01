@@ -25,7 +25,7 @@ These steps and their required prerequisites are described in the following sect
 You need to have the following installed:
 
 1. Docker - The installation of Docker is via a dedicated installer for your specific operating system. For additional Docker installation information, refer to the [Docker documentation](https://docs.docker.com/install/).
-1. {{% variables/apibuilder_prod_name %}} CLI - Refer to [installing {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/#InstallAPIB) in the the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
+1. {{% variables/apibuilder_prod_name %}} CLI - Refer to [installing {{% variables/apibuilder_prod_name %}}](/docs/getting_started/#InstallAPIB) in the the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/).
 
 ## Dockerize an {{% variables/apibuilder_prod_name %}} Service
 
@@ -45,7 +45,7 @@ npm start
 
 Once your project is running, point your browser to `http://localhost:8080/console` to access the {{% variables/apibuilder_prod_name %}} user interface (UI) console.
 
-For additional information on the {{% variables/apibuilder_prod_name %}} UI, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
+For additional information on the {{% variables/apibuilder_prod_name %}} UI, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/).
 
 **Excellent! Now, you have tested that your service is running directly on your machine.**
 

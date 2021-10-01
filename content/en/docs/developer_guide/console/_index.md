@@ -79,7 +79,7 @@ The **Models** tab lets you create new models. The model build process involves 
 
 You may only build models when executing the project locally. The build console will not work in production even if you enable the Admin Console in production.
 
-See the _Create a new model_ section of [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) for instructions on how to create a new model. For additional information on creating and editing models, refer to [Models](/docs/developer_guide/console/models/).
+See the _Create a new model_ section of [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/) for instructions on how to create a new model. For additional information on creating and editing models, refer to [Models](/docs/developer_guide/console/models/).
 
 ### Configuration
 

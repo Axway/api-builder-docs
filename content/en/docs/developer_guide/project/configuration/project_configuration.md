@@ -126,27 +126,12 @@ Example:
 
 proxy: `http://localhost:8081`
 
-### flags
+## flags
+[object] Flags to enable features that are not ready for production or whose use may require manual upgrade steps in legacy services.
 
-\[object\] Flags to enable features that are not ready for production or whose use may require manual upgrade steps in legacy services.
-
-| Key | Type | Description |
-| --- | --- | --- |
-| enableAliasesInCompositeOperators | Boolean | Enable support for comparison operators - `$lt`, `$gt`, `$lte`, `$gte`, `$in`, `$nin`, `$ne`, and `$eq` - on aliased fields in Composite models. Previously, attempting to use these operators on aliased fields would result in unexpected behavior. The old functionality is deprecated **[\[D007\]](/docs/deprecations/#D007)**, so enabling this feature is recommended. |
-| enableMemoryConnectorLike | Boolean | Enable `$like` comparison operator support in models based on the Memory connector. Previously, attempts to perform these queries would just have returned an empty result set. The old functionality is deprecated **[\[D008\]](/docs/deprecations/#D008)**, so enabling this feature is recommended. |
-| enableModelsWithNoPrimaryKey | Boolean | Enable support for Models that do not have a primary key. The `enableModelsWithNoPrimaryKey` feature is a breaking change for previous {{% variables/apibuilder_prod_name %}} Standalone versions, as Create API previously returned a location header. Also, the model advertised unsupported methods. The old functionality is deprecated **[\[D004\]](/docs/deprecations/#D004)**, so enabling this feature is recommended. |
-| usePrimaryKeyType | Boolean | Generate APIs and Flows that use primary key type for the Model ID instead of assuming that the Model ID is a string. The `usePrimaryKeyType` feature is a breaking change for previous {{% variables/apibuilder_prod_name %}} Standalone versions, as the generated APIs will change when the feature is enabled. The old functionality is deprecated **[\[D005\]](/docs/deprecations/#D005)**, so enabling this feature is recommended. |
-| exitOnPluginFailure | Boolean | Enabling this flag will cause the service to exit when there is a problem loading a plugin. The old functionality is deprecated **[\[D006\]](/docs/deprecations/#D006)**, so enabling this feature is recommended. |
-| enableScopedConfig | Boolean | Enabling this flag ensures that a plugin only receives the config relevant to that plugin. The old functionality is deprecated **[\[D009\]](/docs/deprecations/#D009),** so enabling this feature is recommended. |
-| enableNullModelFields | Boolean | Enable support for null fields coming from Models. The old functionality is deprecated **[\[D013\]](/docs/deprecations/#D013)**, so enabling this feature is recommended. |
-| enableModelNameEncoding | Boolean | Enable support for model names being percent-encoded as per RFC-3986 in auto-generated API. The old functionality is deprecated **\[[D012](/docs/deprecations/#D012)\]**, so enabling this feature is recommended. |
-| enableModelNameEncodingInSwagger | Boolean | Enable support for model names being percent-encoded as per RFC-3986 in {{% variables/apibuilder_prod_name %}}'s Swagger. The old functionality is deprecated **[\[D014\]](/docs/deprecations/#D014)**, so enabling this feature is recommended. |
-| enableModelNameEncodingWithConnectorSlash | Boolean | Enable support for model names being encoded while preserving the connector's slash. The old functionality is deprecated **[\[D015\]](/docs/deprecations/#D015)**, so enabling this feature is recommended. |
-| enableOverrideEndpointContentType | Boolean | Enable support for overriding endpoint content-type using the flow's HTTP response headers, and returning raw data from flows. The old functionality is deprecated **[\[D042\]](/docs/deprecations/#D042)**, so enabling this feature is recommended. |
-| enableModelErrorOutputs | Boolean | Enable support for model flow-nodes having Error outputs. The old functionality is deprecated **[\[D043\]](/docs/deprecations/#D043)**, so enabling this feature is recommended. |
-| exitOnSwaggerSchemaValidationError | Boolean | Enabling this flag will cause the service to exit when there is an error validating the service Swagger or any loaded JSON schema. The old functionality is deprecated **[\[D045\]](/docs/deprecations/#D045)**, so enabling this feature is recommended. |
-| enableLoggingOfLevel | Boolean | Enabling this flag will emit the log level in each log message. The old functionality is deprecated **[\[D049\]](/docs/deprecations/#D049)**, so enabling this feature is recommended. |
-| enableStrictBodyPayloads | Boolean | Enabling this flag will ignore HTTP payload body on GET and HEAD methods. The old functionality is deprecated **[\[D050\]](/docs/deprecations/#D050)**, so enabling this feature is recommended. |
+{{% flags/table %}}
+<!-- Use the format below to add new rows to the flags table -->
+<!-- | key | Boolean | a flag which is not in deprecations | -->
 
 ### logLevel
 

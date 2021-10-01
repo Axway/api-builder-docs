@@ -1,31 +1,30 @@
 ---
 title: Change in the way Endpoints return Content-Type
 linkTitle: Change in the way Endpoints return Content-Type
-weight: 90
+weight: 42
+deprecation: D042
 date: 2021-10-01
 ---
 
-{{% alert title="Note" color="primary" %}}This document describes deprecation \[[D042](/docs/deprecations/#D042)\]{{% /alert %}}
-
-## Change in the way Endpoints return Content-Type
+{{% alert title="Note" color="primary" %}}This document describes deprecation {{% deprecation/link D042 %}}{{% /alert %}}
 
 API Endpoints always return application/json, irrespective of what is set by the [HTTP Response flow-node](/docs/developer_guide/flows/flow-nodes/http_response_flow-node/), or what is defined in the [Swagger produces](https://swagger.io/docs/specification/2-0/describing-responses/).
 
-This behavior has been deprecated since the [{{% variables/apibuilder_prod_name %}} - Tokyo](/docs/release_notes/-_31_july_2020/) release.
+This behavior has been deprecated since the [{{% variables/apibuilder_prod_name %}} - Tokyo](/docs/release_notes/tokyo) release.
 
-Beginning with the [Tokyo](/docs/release_notes/-_31_july_2020/) release, if the flow defines a Content-Type header in the [HTTP Response](/docs/developer_guide/flows/flow-nodes/http_response_flow-node/) Headers, then the header will always be used. If the Content-Type header is not set in [HTTP Response](/docs/developer_guide/flows/flow-nodes/http_response_flow-node/) Headers, then the Content-Type is derived according to the type of response body. If the response body is a [Buffer](https://nodejs.org/api/buffer.html), then the Content-Type is "application/octet-stream". For all other types, then the Content-Type the body is encoded as a JSON string and the Content-Type is "application/json".
+Beginning with the [Tokyo](/docs/release_notes/tokyo) release, if the flow defines a Content-Type header in the [HTTP Response](/docs/developer_guide/flows/flow-nodes/http_response_flow-node/) Headers, then the header will always be used. If the Content-Type header is not set in [HTTP Response](/docs/developer_guide/flows/flow-nodes/http_response_flow-node/) Headers, then the Content-Type is derived according to the type of response body. If the response body is a [Buffer](https://nodejs.org/api/buffer.html), then the Content-Type is "application/octet-stream". For all other types, then the Content-Type the body is encoded as a JSON string and the Content-Type is "application/json".
 
 This will be the default behavior for all new services.
 
-### Why are we deprecating this feature
+## Why are we deprecating this feature
 
 It is a significant limitation if API Endpoints cannot return any Content-Type, not just "application/json".
 
-### How does this impact my service
+## How does this impact my service
 
 This is now the default behavior for all new services. Any existing services will continue to work as they previously did, though it is strongly recommended you enable the new behavior on existing services. The following examples show the previous behavior when making a HTTP request to an {{% variables/apibuilder_prod_name %}} endpoint.
 
-#### Previous behavior
+### Previous behavior
 
 | Body value | Body type | Flow Set HTTP Response Headers | HTTP Response Content-Type | HTTP Response Body |
 | --- | --- | --- | --- | --- |
@@ -38,7 +37,7 @@ This is now the default behavior for all new services. Any existing services wil
 | 1234 | number |  | application/json | `1234` |
 | `{ "test":"data" }` | Object |  | application/json | `{ "test":"data" }` |
 
-#### New behavior (enableOverrideEndpointContentType flag enabled)
+### New behavior (enableOverrideEndpointContentType flag enabled)
 
 | Body value | Body type | Flow Set HTTP Response Headers | HTTP Response Content-Type | HTTP Response Body |
 | --- | --- | --- | --- | --- |
@@ -51,7 +50,7 @@ This is now the default behavior for all new services. Any existing services wil
 | 1234 | number |  | application/json | `1234` |
 | `{ "test":"data" }` | Object |  | application/json | `{ "test":"data" }` |
 
-### Upgrading existing services
+## Upgrading existing services
 
 This only effects services that are using API endpoints (e.g. endpoints/Greet.json) and that have flows that currently explicitly set the Content-Type HTTP Response Header (to no effect), or currently return a body that is a Buffer. Flows that return an Object will continue to work as before (i.e. the Content-Type will be "application/json").
 

@@ -230,7 +230,7 @@ Note that this is only one way to decouple your application from its configurati
 
 ### Local environment file (conf/.env)
 
-Decoupling the configuration from the application makes the application very flexible. However, it also means that it is a pain when you want to run it. You will likely run the application locally quite often, so for this reason, a feature was added in the {{% variables/apibuilder_prod_name %}} [Barcelona](/docs/release_notes/standalone_-_27_september_2019/) release to load from a local ./`conf/.env` file. If this file exists, it is loaded by {{% variables/apibuilder_prod_name %}} on startup, and its values are augmented with the host OS environment variables. Values from this file are only applied if the host OS does not already have the value set.
+Decoupling the configuration from the application makes the application very flexible. However, it also means that it is a pain when you want to run it. You will likely run the application locally quite often, so for this reason, a feature was added in the {{% variables/apibuilder_prod_name %}} [Barcelona](/docs/release_notes/barcelona) release to load from a local ./`conf/.env` file. If this file exists, it is loaded by {{% variables/apibuilder_prod_name %}} on startup, and its values are augmented with the host OS environment variables. Values from this file are only applied if the host OS does not already have the value set.
 
 ```
 // ./conf/.env (default)
@@ -239,7 +239,7 @@ PORT=8080
 LOG_LEVEL=debug
 ```
 
-The `config/.env` file will often contain sensitive information, so it is protected so that it can only be read by the user that created it (not supported on Windows), and will _not_ be bundled as part of Docker, and it **will never be committed to source control or deployed with your service**. If you upgrade an existing application to the [Barcelona](/docs/release_notes/standalone_-_27_september_2019/) release, you will need to create the file manually and ensure it is protected and ignored in .dockerignore and .gitignore.
+The `config/.env` file will often contain sensitive information, so it is protected so that it can only be read by the user that created it (not supported on Windows), and will _not_ be bundled as part of Docker, and it **will never be committed to source control or deployed with your service**. If you upgrade an existing application to the [Barcelona](/docs/release_notes/barcelona) release, you will need to create the file manually and ensure it is protected and ignored in .dockerignore and .gitignore.
 
 {{% alert title="Optional" color="primary" %}}Using ./`config/.env` for development is entirely optional, but it will make development much easier.{{% /alert %}}{{% alert title="Caution" color="danger" %}}./`config/.env` usually contains sensitive information like usernames and passwords.
 

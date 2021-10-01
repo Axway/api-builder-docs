@@ -6,36 +6,13 @@ description: 12 February 2021
 Hide_readingtime: true
 ---
 
-## Summary
-
-This release includes:
-
-* [Upgrade](#upgrade)
-* [Breaking Changes](#breaking-changes)
-* [Features](#features)
-* [Fixes](#fixes)
-* [Deprecations](#deprecations)
-* [Updated Modules](#updated-modules)
-* [Plugins](#updated-plugins)
-* [Known Issues](#known-issues)
-
-## Upgrade
-
-Before updating, we recommend deleting package-lock.json if it exists.
-
-To update an existing {{% variables/apibuilder_prod_name %}} application, execute the following command from within the application directory:
-
-```bash
-npm update
-```
-
+{{% releasenotes/upgrade %}}
 ## Breaking changes
 
 * #6734: Updated `@axway/api-builder-plugin-fn-xslt` to use `xml` format for XML and XSLT parameters. This is a breaking change to the plugin which requires the latest version of `@axway/api-builder-admin` (Giza).
-
 ## Features
 
-* #6559: Previously, log messages did not include the log level when output. Now, every log message in new projects will include the level. See deprecation [\[D049\]](#D049).
+* #6559: Previously, log messages did not include the log level when output. Now, every log message in new projects will include the level. See deprecation {{% deprecation/link D049 %}}.
 * #6725: Previously, in the Flow editor's parameter text editor, long lines with no whitespace were not wrapped, and could not be read by scrolling horizontally. Now horizontal scrolling has been enabled.
 * #6725: Add XML syntax highlighting for XML format flow-node parameters in the Flow-editor.
 * #6735: Deprecations are now sorted and moved together to be more visible to users when the {{% variables/apibuilder_prod_name %}} server is started.
@@ -50,11 +27,7 @@ npm update
 * #6732: OpenAPI plugins will no longer error with `cannot find @axway/api-builder-runtime instance` when running tests from a sub-directory of an {{% variables/apibuilder_prod_name %}} project.
 * #6732: OpenAPI plugins will now show the detail of any OAS validation errors that are found when running the unit tests, instead of just a count.
 
-## Deprecations
-
-These are the deprecations introduced in this release. Click [here](/docs/deprecations/) for a list of all deprecations.
-
-* **\[[D049](/docs/deprecations/#D049)\] enableLoggingOfLevel**: The logger will now include the log level (e.g. "INFO") in each log message. See [Change in log message format for levels](/docs/deprecations/change_in_log_message_format_for_levels/).
+{{% releasenotes/deprecations %}}
 
 ## Updated modules
 
@@ -73,3 +46,5 @@ These are the deprecations introduced in this release. Click [here](/docs/deprec
 ## Known issues
 
 To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues/).
+
+{{% releasenotes/previous %}}

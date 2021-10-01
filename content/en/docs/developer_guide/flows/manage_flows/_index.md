@@ -59,7 +59,7 @@ To edit a flow using the {{% variables/apibuilder_prod_name %}} user interface:
 
 ## Debug a flow
 
-Beginning with the [Osaka](/docs/release_notes/standalone_-_1_march_2019/) release of {{% variables/apibuilder_prod_name %}}, the ability for Flows to be provided with parameters and executed without having to leave the Flow Editor has been added. For additional information and to get started using the Flow Editor debug feature, refer to [Debug a flow](/docs/how_to/debug_a_flow/).
+Beginning with the [Osaka](/docs/release_notes/osaka) release of {{% variables/apibuilder_prod_name %}}, the ability for flows to be provided with parameters and executed without having to leave the flow editor has been added. For additional information and to get started using the flow editor debug feature, refer to [Debug a flow](/docs/how_to/debug_a_flow/).
 
 ## Delete endpoints
 

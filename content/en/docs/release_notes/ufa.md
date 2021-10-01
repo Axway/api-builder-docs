@@ -6,30 +6,11 @@ description: 14 August 2020
 Hide_readingtime: true
 ---
 
-## Summary
-
-This release includes:
-
-* [Upgrade](#upgrade)
-* [Features](#features)
-* [Fixes](#fixes)
-* [Deprecations](#deprecations)
-* [Updated Modules](#updated-modules)
-* [Known Issues](#known-issues)
-
-## Upgrade
-
-Before updating, we recommend deleting package-lock.json if it exists.
-
-To update an existing {{% variables/apibuilder_prod_name %}} application, execute the following command from within the application directory:
-
-```bash
-npm update
-```
+{{% releasenotes/upgrade %}}
 
 ## Features
 
-* #6509: Previously, model flow-nodes would abort the flow when they encountered an unexpected error from the database. Now, model-flow-nodes have an Error output that enables the flow developer to handle unexpected errors. See deprecation [\[D043\]](#D043).
+* #6509: Previously, model flow-nodes would abort the flow when they encountered an unexpected error from the database. Now, model-flow-nodes have an Error output that enables the flow developer to handle unexpected errors. See deprecation {{% deprecation/link D043 %}}.
 * #6522: Added the ability to create new Flows. This is now available under the Flows tab in the Admin UI.
 * #6522: Added the ability to edit a flow's name and description from the title bar of the flow editor.
 
@@ -37,11 +18,7 @@ npm update
 
 * #6523: Previously, if a Model was configured to use a connector that was not installed as a dependency, the startup would fail with the error, _Cannot read property 'usage' of undefined_. Now, the startup will fail with a more informative error message, _Error loading connector connector-name for model: model-name. Couldn't find a connector named: connector-name_.
 
-## Deprecations
-
-These are the deprecations introduced in this release. Click [here](/docs/deprecations/) for a list of all deprecations.
-
-* **\[[D043](/docs/deprecations/#D043)\] enableModelErrorOutputs**: Model flow-nodes will gain an additional output, Error. This will be the default behavior when flows are generated from models in all new services. For more information on how to be prepared for the change, and to start using the new behavior now, refer to [Change in the outputs of Model flow-nodes](/docs/deprecations/change_in_the_outputs_of_model_flow-nodes/).
+{{% releasenotes/deprecations %}}
 
 ## Updated modules
 
@@ -53,3 +30,5 @@ These are the deprecations introduced in this release. Click [here](/docs/deprec
 ## Known issues
 
 To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues/).
+
+{{% releasenotes/previous %}}

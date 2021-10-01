@@ -6,35 +6,10 @@ description: 24 September 2021
 Hide_readingtime: true
 ---
 
-## Summary
-
-This release includes:
-
-* [Upgrade](#upgrade)
-* [Features](#features)
-* [Fixes](#fixes)
-* [Deprecations](#deprecations)
-* [Updated Modules](#updated-modules)
-* [Plugins](#updated-plugins)
-* [Known Issues](#known-issues)
-
-## Upgrade
-
-To update an existing {{% variables/apibuilder_prod_name %}} application, execute the following command from within the application directory:
-
-```bash
-npm update
-```
-
-To update the {{% variables/apibuilder_prod_name %}} CLI, execute the following command:
-
-```
-axway pm update
-```
-
+{{% releasenotes/upgrade %}}
 ## Features
 
-* #7065: Added new config options to disable content-md5 and etag headers for additional performance. The option to disable the server header was also moved alongside these new options. See deprecation [\[D051\]](#D051).
+* #7065: Added new config options to disable content-md5 and etag headers for additional performance. The option to disable the server header was also moved alongside these new options. See deprecation {{% deprecation/link D051 %}}.
 
 ## Fixes
 
@@ -43,11 +18,7 @@ axway pm update
 * #7022: Previously, the default `subscriptionUsageTracking.reportInterval` was every 5 minutes (300s). Now, the default report interval has been increased to 1 hour.
 * #7066: Previously, large flow payloads or input/output values could cause performance issues, even if logging is INFO or disabled. This is especially true for binary values. Now, large flow payloads or input/output values do not significantly degrade performance when values are not logged.
 
-## Deprecations
-
-These are the deprecations introduced in this release. Click [here](/docs/deprecations/) for a list of all deprecations.
-
-* **\[[D051](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_deprecations.html#APIBuilderDeprecations-D051_D051_disableServerBanner)\] disableServerBanner**: The `disableServerBanner` config option has been deprecated in favor of [`http.headers.server`](/docs/developer_guide/project/configuration/project_configuration/#http).
+{{% releasenotes/deprecations %}}
 
 ## Updated modules
 
@@ -71,3 +42,5 @@ These are the deprecations introduced in this release. Click [here](/docs/deprec
 ## Known issues
 
 To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues/).
+
+{{% releasenotes/previous %}}

@@ -97,4 +97,4 @@ The following are the MySQL connector known issues and limitations:
 * Only supports SQL tables.
 * Does not support range queries
 
-For a list of additional known issues and limitations, refer to the [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues/).
+For a list of known issues and limitations, refer to the [{{% variables/apibuilder_prod_name %}} known issues](/docs/known_issues).

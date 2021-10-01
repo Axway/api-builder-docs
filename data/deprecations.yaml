@@ -1,0 +1,437 @@
+D001:
+  name: /apidoc/docs.json
+  release: "4.0.0"
+  summary: >-
+    Swagger API docs are available on `/apidoc/swagger.json` and are mirrored on
+    `/apidoc/docs.json`. Using the `/apidoc/docs.json` endpoint to access Swagger API documentation
+    is deprecated and `/apidoc/swagger.json` should be used instead.
+
+D002:
+  name: apiDocPrefix
+  release: Boston
+  summary: >-
+    usage of `admin.apiDocPrefix` in the
+    [project configuration](/docs/developer_guide/project/configuration/project_configuration/)
+    has been deprecated. Use `apidoc.prefix` instead. If both values are provided, `apidoc.prefix`
+    will be preferred.
+
+D003:
+  name: disableAPIDoc
+  release: Boston
+  summary: >-
+    usage of `admin.disableAPIDoc` in the
+    [FIX_LINK project configuration](project_configuration)
+    has been deprecated. Use `apidoc.disabled` instead. If both values are provided,
+    `apidoc.disabled` will be preferred.
+
+D004:
+  name: enableModelsWithNoPrimaryKey
+  release: Canberra
+  flag: true
+  comment: |-
+    Enable support for Models that have no primary key.
+    Breaking change for old versions as previously the Create API returned a location
+    header. Also the model advertised unsupported methods.
+  summary: >-
+    for models that do not have a primary key:
+
+
+    * The `delete`, `findAndModify`, `findByID`, `upsert`, and `update` APIs and endpoints will not
+    be generated.
+
+    * The Model flow-node will not have `delete`, `findAndModify`, `findByID`, `upsert`, or `update`
+    methods.
+
+    * The Create API will no longer return a `location` header.
+
+D005:
+  name: usePrimaryKeyType
+  release: Canberra
+  flag: true
+  comment: |-
+    Generate APIs and flows that use primary key type rather than always assuming string.
+    Breaking change for old versions as the generated APIs will change when enabled.
+  summary: >-
+    model IDs are based on the database's primary key type instead of being hard-coded as a string.
+
+D006:
+  name: exitOnPluginFailure
+  release: Dublin
+  flag: true
+  comment: |-
+    Enabling this flag will cause the service to exit when there is a problem loading a plugin.
+  summary: >-
+    Errors when loading API Builder plugins will cause the service to terminate.
+
+D007:
+  name: enableAliasesInCompositeOperators
+  release: Eden
+  flag: true
+  comment: |-
+    Enable support for aliases in comparison operators on composite models.
+    Breaking change for old versions as previously queries $lt, $gt, $lte, $gte, $in, $nin,
+    $eq would not have translated aliased fields.
+  summary: >-
+    Queries on Composite Models will support comparison operators (`$eq`, `$ne`, `$in`, `$nin`,
+    `$lt`, `$lte`, `$gt`, `$gte`, `$like`) on aliased fields.
+
+D008:
+  name: enableMemoryConnectorLike
+  release: Eden
+  flag: true
+  comment: |-
+    Enable support for the $like comparison operator in the Memory connector.
+  summary: >-
+    queries on models using the Memory connector that also use the `$like` comparison operator will
+    search using the query parameter instead of just returning an empty array.
+
+D009:
+  name: enableScopedConfig
+  release: Istanbul
+  flag: true
+  comment: |-
+    Enabling this flag ensures that a plugin only receives the config relevant to that plugin.
+  summary: >-
+    when loading an API Builder plugin, you will only receive the config relevant to the uploaded
+    plugin.
+
+D010:
+  name: perURLAuthentication
+  release: Lisbon
+  summary: >-
+    authentication has changed to make all paths secure, and public paths must be explicitly
+    declared.
+
+D011:
+  name: API Builder Web
+  release: Lisbon
+  summary: >-
+    [API Builder Web](/docs/Developer_Guide/Web) is deprecated and will be removed in a future major
+    version. If you are currently using Web Routes, consider switching to another modern web
+    application architecture for your front end that consumes API Builder APIs.
+
+D012:
+  name: enableModelNameEncoding
+  release: Osaka
+  flag: true
+  comment: |-
+    Enable support for model names being percent-encoded as per RFC-3986 in auto-generated API.
+    Breaking change for old versions as previously names like "foo/bar" will now be encoded as
+    "foo%2Fbar".
+  summary: >-
+    model names are URI encoded as per [RFC-3986](https://www.ietf.org/rfc/rfc3986.txt), and the
+    APIs that are auto-generated for models will bind to their URI equivalent. 
+
+D013:
+  name: enableNullModelFields
+  release: Quebec
+  flag: true
+  comment: |-
+    Enable support for null fields coming from Models.
+  summary: >-
+    queries on models, which have fields with `null` values, can now return that field in the
+    response rather than hiding the field. Support for this behavior is dependent on the connector
+    being used.
+
+D014:
+  name: enableModelNameEncodingInSwagger
+  release: Quebec
+  flag: true
+  comment: |-
+    Enable support for model names being percent-encoded as per RFC-3986 in API Builder's Swagger.
+    Breaking change for old versions as previously names like "foo/bar" will now be encoded as
+    "foo%2Fbar".
+  summary: >-
+    model names are URI encoded as per [RFC-3986](https://www.ietf.org/rfc/rfc3986.txt), and the
+    APIs that are created from "Generate endpoints for models" will bind to their URI equivalent.
+
+D015:
+  name: enableModelNameEncodingWithConnectorSlash
+  release: Barcelona
+  flag: true
+  dependencies:
+    - D012
+  comment: |-
+    Enable support for model names being encoded whilst preserving the connector's slash.
+    This flag only applies when enableModelNameEncodingInSwagger is enabled.
+    Breaking change for old versions as previously model names that start with a connector name,
+    e.g. "oracle/foó" will now be encoded as "oracle/fo%C3%B3".
+  summary: >-
+    model names which are prefixed with their connector name (in other words, oracle/user) will no
+    longer have the slash encoded as %2F in auto-generated API paths.
+
+D016:
+  name: Model.define
+  release: Cairo
+  summary: >-
+    `Model.define` is deprecated and will be removed in a future version of the product. Use
+    `Model.extend` or `APIBuilder.createModel` instead.
+
+D017:
+  name: Model instance reduce and APIBuilder.Model.reduce
+  release: Cairo
+  summary: >-
+    reducing a Model instance (i.e. `Model.prototype.reduce`) and `APIBuilder.Model.reduce` are
+    deprecated and will be removed in a future version of the product.
+
+D018:
+  name: APIBuilder.removeModel
+  release: Cairo
+  summary: >-
+    `APIBuilder.removeModel` is deprecated and will be removed in a future version of the product.
+
+D019:
+  name: APIBuilder.removeConnector
+  release: Cairo
+  summary: >-
+    `APIBuilder.removeConnector` is deprecated and will be removed in a future version of the
+    product.
+
+D020:
+  name: APIBuilder.removeBlock
+  release: Cairo
+  summary: >-
+    `APIBuilder.removeBlock` is deprecated and will be removed in a future version of the product.
+
+D021:
+  name: APIBuilder.removeAPI
+  release: Cairo
+  summary: >-
+    `APIBuilder.removeAPI` is deprecated and will be removed in a future version of the product.
+
+D022:
+  name: APIBuilder.removeAPIByFilename
+  release: Cairo
+  summary: >-
+    `APIBuilder.removeAPIByFilename` is deprecated and will be removed in a future version of the
+    product.
+
+D023:
+  name: APIBuilder.removeRoute
+  release: Cairo
+  summary: >-
+    `APIBuilder.removeRoute` is deprecated and will be removed in a future version of the product.
+
+D024:
+  name: Model prefix
+  release: Cairo
+  summary: >-
+    creating a Model with the `prefix` property is deprecated and will be removed in a future
+    version of the product.
+
+D025:
+  name: Model.prototype.extend
+  release: Cairo
+  summary: >-
+    extending a model instance (i.e. `Model.prototype.extend`) is deprecated and will be removed
+    in a future version of the product.  Use `Model.extend` instead.
+
+D026:
+  name: APIBuilder.app.locals
+  release: Cairo
+  summary: >-
+    `APIBuilder.app.locals` properties `appc_external_url`, `appc_external_apidoc_path_legacy`,
+    `appc_external_apidoc_path`, or `appc_external_apidoc_url` are deprecated and will be removed
+    in a future version of the product.
+
+D027:
+  name: APIBuilder.debug
+  release: Cairo
+  summary: >-
+    `APIBuilder.debug` is deprecated and will be removed in a future version of the product.
+
+D028:
+  name: Codeblocks
+  release: Cairo
+  summary: >-
+    [FIX_LINK codeblocks](/codeblocks) are deprecated and will be removed in a future version of the
+    product.
+
+D029:
+  name: '@axway/api-builder-react-engine'
+  release: Cairo
+  summary: >-
+    [@axway/api-builder-react-engine](https://www.npmjs.com/package/@axway/api-builder-react-engine)
+    is deprecated and will not receive any updates. If you are currently using Web Routes, consider
+    switching to another modern web application architecture for your front end that consumes API
+    Builder Service APIs.
+
+D030:
+  name: APIBuilder.get
+  release: Cairo
+  summary: >-
+    `APIBuilder.get` is deprecated and will be removed in a future version of the product.
+
+D031:
+  name: APIBuilder.pluralize
+  release: Cairo
+  summary: >-
+    `APIBuilder.pluralize `is deprecated and will be removed in a future version of the product.
+    Use the pluralize module instead.
+
+D032:
+  name: APIBuilder.singularize
+  release: Cairo
+  summary: >-
+    `APIBuilder.singularize `is deprecated and will be removed in a future version of the product.
+    Use the pluralize module instead.
+
+D033:
+  name: APIBuilder.logger.stripColors
+  release: Cairo
+  summary: >-
+    `APIBuilder.logger.stripColors `is deprecated and will be removed in a future version of the
+    product.
+
+D034:
+  name: Model.fields[name].optional and API.parameters[name].optional
+  release: Cairo
+  summary: >-
+    using the `optional` property on Model fields and API parameters is deprecated and will be
+    ignored in a future version of the product. Use the `required` property instead.
+
+D035:
+  name: Logger.createDefaultLogger
+  release: Cairo
+  summary: >-
+    the static function `Logger.createDefaultLogger `is deprecated and will be removed in a future version of the product.
+
+D036:
+  name: Logger.createRestifyLogger
+  release: Cairo
+  summary: >-
+    the static function `Logger.createRestifyLogger `is deprecated and will be removed in a future
+    version of the product.
+
+D037:
+  name: Sort
+  release: Ennis
+  summary: >-
+    creating an API or Route with the `sort` property is deprecated in favor of a more robust
+    internal sort mechanism.
+
+D038:
+  name: Port
+  release: Florence
+  summary: >-
+    usage of port in the [FIX_LINK project configuration](/config) has been deprecated. Use 
+    `http.port` instead.
+
+D039:
+  name: Unmaintained Node.js versions
+  release: Jackson
+  summary: >-
+    we introduced a [FIX_LINK Node.js support policy] in which end-of-life Node.js versions are
+    automatically deprecated by API Builder. See
+    [https://nodejs.org/en/about/releases](https://nodejs.org/en/about/releases) for the versions
+    which are actively maintained. While the versions we deem as deprecated are not recommended,
+    API compatibility will be maintained until an explicit breaking change removes it. Only use
+    Active LTS or Maintenance LTS Node.js versions in production.
+
+D040:
+  name: Node.js v10
+  release: Jackson
+  summary: >-
+    Node.js v10 has been deprecated. Only use Active LTS or Maintenance LTS Node.js versions in
+    production. See API Builder's [FIX_LINK Node.js support policy](/port+policy). While the
+    versions we deem as deprecated are not recommended, API compatibility will be maintained until
+    an explicit breaking change removes it. Only use Active LTS or Maintenance LTS Node.js versions
+    in production.
+
+D041:
+  name: logger.logRequest and logger.logResponse
+  release: Jackson
+  summary: >-
+    the `logRequest` and `logResponse` functions on the API Builder logger are deprecated and will
+    be removed in a future version of the product.
+
+D042:
+  name: enableOverrideEndpointContentType
+  release: Tokyo
+  flag: true
+  comment: |-
+    Enable support for overriding endpoint content-type using the flow's HTTP response headers.
+  summary: >-
+    API Endpoints will no longer return the Content-Type `application/json` in all cases, the
+    Content-Type will either be explicitly set from within a flow, or set according to the type of
+    response body.
+
+D043:
+  name: enableModelErrorOutputs
+  release: Ufa
+  flag: true
+  comment: |-
+    Enable support for model flow-nodes having Error outputs.
+  summary: >-
+    model flow-nodes will gain an additional output, `Error`. This will be the default behavior when
+    flows are generated from models in all new services.
+
+D044:
+  name: API.response
+  release: Zagreb
+  summary: >-
+    the `response` property on the [FIX_LINK custom API](/display/AB4/API+Builder+APIs) is
+    deprecated in favor of the `model` property. The `model` property serves the same purpose in
+    that the named model is used to describe the response schema in the generated API Swagger
+    documentation.
+
+D045:
+  name: exitOnSwaggerSchemaValidationError
+  release: Bruges
+  flag: true
+  comment: |-
+    Enabling this flag will cause the service to exit when there is an error validating the service
+    Swagger or any loaded JSON schema.
+  summary: >-
+    validation errors when loading JSON schemas will cause the service to terminate. Additionally,
+    the service's Swagger API docs are now validated and will cause the service to terminate if
+    found to be invalid.
+
+D046:
+  name: config.bodyParser
+  release: Faro
+  summary: >-
+    The `bodyParser` config option is deprecated and will be removed in a future version of the
+    product.
+
+D047:
+  name: config.busboy
+  release: Faro
+  summary: >-
+    The `busboy` config option is deprecated and will be removed in a future version of the product.
+    Use `[FIX_LINK config.limits](/displa)` to configure limits for multipart/form-data requests
+    and return 413 to clients when a limit it hit.
+
+D048:
+  name: undefinedMultipartPartSize
+  release: Faro
+  summary: >-
+    the new `[FIX_LINK config.limits](/display/AB4/uration-limits)` config option should be
+    configured with a value. Leaving it unset is deprecated behavior and the default behavior will
+    change in a future version of the product to be equivalent to setting infinity (no limit).
+
+D049:
+  name: enableLoggingOfLevel
+  release: Giza
+  flag: true
+  comment: |-
+    Enabling this flag will emit the log level in each log message.
+  summary: >-
+    each log message will display it's log level (e.g. `INFO`).
+
+D050:
+  name: enableStrictBodyPayloads
+  release: Roberttown
+  flag: true
+  comment: |-
+    Enabling this flag will ignore HTTP payload body on GET and HEAD methods.
+  summary: >-
+    HTTP methods GET and HEAD will ignore payload body. Enabling this flag is recommended for
+    security purposes.
+
+D051:
+  name: disableServerBanner
+  release: Wrecsam
+  summary: >-
+    The `disableServerBanner` config option has been deprecated in favor of
+    [FIX_LINK `http.headers.server`](/display/AB4/Projecp).

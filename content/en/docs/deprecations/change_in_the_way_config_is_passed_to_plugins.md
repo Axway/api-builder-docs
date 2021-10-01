@@ -1,33 +1,32 @@
 ---
 title: Change in the way config is passed to plugins
 linkTitle: Change in the way config is passed to plugins
-weight: 80
+weight: 9
+deprecation: D009
 date: 2021-10-01
 ---
 
-{{% alert title="Note" color="primary" %}}This document describes deprecation \[[D009](/docs/deprecations/#D009)\]{{% /alert %}}
-
-## Change in the way config is passed to plugins
+{{% alert title="Note" color="primary" %}}This document describes deprecation {{% deprecation/link D009 %}}{{% /alert %}}
 
 When plugins are loaded, the global config, which is irrelevant to what the plugin needs, may be passed to the plugin's exported initialization function.
 
 This behavior has been deprecated since {{% variables/apibuilder_prod_name %}} - Istanbul release.
 
-Beginning with the [Istanbul](/docs/release_notes/standalone_-_23_november_2018/) release, an {{% variables/apibuilder_prod_name %}} plugin will only receive its relevant config information.
+Beginning with the [Istanbul](/docs/release_notes/istanbul) release, an {{% variables/apibuilder_prod_name %}} plugin will only receive its relevant config information.
 
 This will be the default behavior for all new services.
 
-### Why are we deprecating this feature
+## Why are we deprecating this feature
 
 Plugins should only receive configuration meant for their consumption as a parameter. Providing the whole service configuration in the edge case described below was unintended. Since this change modifies the interface to plugins, we are releasing it under a flag on an opt-in basis.
 
-### How does this impact my service
+## How does this impact my service
 
 This is now the default behavior for all new services. Any existing services will continue to work as they previously did, though it is strongly recommended you enable the new behavior on existing services.
 
 The following examples will show the previous behavior when the configuration is passed to the example plugin `api-builder-plugin-demo.`
 
-#### Previous behavior
+### Previous behavior
 
 If the `pluginConfig` key is not present in any configuration file loaded by the service, then the whole config is passed to every plugin.
 
@@ -78,7 +77,7 @@ module.exports = (config) => {
 };
 ```
 
-#### New behavior (enableScopedConfig flag enabled)
+### New behavior (enableScopedConfig flag enabled)
 
 If the `pluginConfig` key is not present in any configuration file loaded by the service, then the limited config is passed to every plugin.
 
@@ -104,7 +103,7 @@ module.exports = (config) => {
 };
 ```
 
-### Upgrading existing services
+## Upgrading existing services
 
 Updates contain important changes to improve the performance, stability, and security of your services. Installing them ensures that your software continues to run safely and efficiently.
 

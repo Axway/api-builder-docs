@@ -1,0 +1,1 @@
+{{ $deprecations := .Site.Data.deprecations }} {{ $id := .Get 0 }} {{ if not (index $deprecations $id) }} {{ errorf "'deprecation' Unknown deprecation %q" $id }} {{ end }} [[{{ $id }}](/docs/deprecations#{{ $id }})]

@@ -1,27 +1,26 @@
 ---
 title: Change in the way null fields are returned in Models
 linkTitle: Change in the way null fields are returned in Models
-weight: 130
+weight: 13
+deprecation: D013
 date: 2021-10-01
 ---
 
-{{% alert title="Note" color="primary" %}}This document describes deprecation \[[D013](/docs/deprecations/#D013)\]{{% /alert %}}
-
-## Change in the way null fields are returned in Models
+{{% alert title="Note" color="primary" %}}This document describes deprecation {{% deprecation/link D013 %}}{{% /alert %}}
 
 When retrieving data from Models, fields with null or undefined values would be missing from the response.
 
-This behavior has been deprecated since {{% variables/apibuilder_prod_name %}} - [Quebec](/docs/release_notes/standalone_-_29_march_2019/) release.
+This behavior has been deprecated since {{% variables/apibuilder_prod_name %}} - [Quebec](/docs/release_notes/quebec) release.
 
-Beginning with the [Phoenix](/docs/release_notes/standalone_-_15_march_2019/) release, data retrieved from models will have null fields in the response. Undefined fields will still not be returned. This behavior is part of the {{% variables/apibuilder_prod_name %}} runtime but also relies on the connector differentiating null values from undefined.
+Beginning with the [Quebec](/docs/release_notes/quebec) release, data retrieved from models will have null fields in the response. Undefined fields will still not be returned. This behavior is part of the {{% variables/apibuilder_prod_name %}} runtime but also relies on the connector differentiating null values from undefined.
 
 This will be the default behavior for all new services.
 
-### Why are we deprecating this feature
+## Why are we deprecating this feature
 
 In the majority of cases, null is a valid data type in databases and should be represented in {{% variables/apibuilder_prod_name %}} rather than ignored. With SQL databases, users will expect consistent fields between records. For non-SQL databases like MongoDB, fields may not be present or included records, and this should be differentiated from existing fields that have null values.
 
-### How does this impact my service
+## How does this impact my service
 
 This is now the default behavior for all new services. Any existing services will continue to work as they previously did, though it is strongly recommended you enable the new behavior on existing services.
 
@@ -33,7 +32,7 @@ The following examples will show the previous behavior when requesting data from
 | 1 | "Michael" | "Daniel" | "Higgins" |
 | 2 | "Batman" |  |  |
 
-#### Previous behavior
+### Previous behavior
 
 ```
 // Response
@@ -58,7 +57,7 @@ The following examples will show the previous behavior when requesting data from
 ]
 ```
 
-#### New behavior (enableNullModelFields flag enabled)
+### New behavior (enableNullModelFields flag enabled)
 
 ```
 // Response
@@ -84,7 +83,7 @@ The following examples will show the previous behavior when requesting data from
 ]
 ```
 
-### Additional changes
+## Additional changes
 
 This change alters the way that composite Models with multiple joins behave in certain situations. Given the following two tables, and a composite join on both FIRST_NAME and MIDDLE_NAME, the requesting the data would previously result in an unexpected response. The examples show the result of a findAll request, which returns all fields which contain matching FIRST_NAME and MIDDLE_NAME fields. As you can see, MIDDLE_NAME was previously ignored when the value was null, resulting in a second match with "Joe James Bloggs".
 
@@ -93,7 +92,7 @@ This change alters the way that composite Models with multiple joins behave in c
 | 0 | "Joe" | NULL | "Bloggs" |  | 0 | "Joe" | NULL | "Bloggs" |
 | 1 | "Michael" | "Daniel" | "Higgins" |  | 1 | "Joe" | "James" | "Bloggs" |
 
-#### Previous behavior
+### Previous behavior
 
 ```
 // Response
@@ -110,7 +109,7 @@ This change alters the way that composite Models with multiple joins behave in c
 ]
 ```
 
-#### New behavior (enableNullModelFields flag enabled)
+### New behavior (enableNullModelFields flag enabled)
 
 ```
 // Response
@@ -124,7 +123,7 @@ This change alters the way that composite Models with multiple joins behave in c
 ]
 ```
 
-#### Upgrading existing services
+### Upgrading existing services
 
 Updates contain important changes to improve the performance, stability, and security of your services. Installing them ensures that your software continues to run safely and efficiently.
 

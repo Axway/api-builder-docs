@@ -1,23 +1,22 @@
 ---
 title: Change in the way model name is encoded in Swagger
 linkTitle: Change in the way model name is encoded in Swagger
-weight: 100
+weight: 14
+deprecation: D014
 date: 2021-10-01
 ---
 
-{{% alert title="Note" color="primary" %}}This document describes deprecation \[[D014](/docs/deprecations/#D014)\]{{% /alert %}}
+{{% alert title="Note" color="primary" %}}This document describes deprecation {{% deprecation/link D014 %}}{{% /alert %}}
 
-## Change in the way model name is encoded in Swagger
+Using model names as-is (without modification) when bound to ExpressJS API has been deprecated since the {{% variables/apibuilder_prod_name %}} - [Quebec](/docs/release_notes/quebec) release.
 
-Using model names as-is (without modification) when bound to ExpressJS API has been deprecated since the {{% variables/apibuilder_prod_name %}} - [Quebec](/docs/release_notes/standalone_-_15_march_2019/) release.
+Beginning in the [Quebec](/docs/release_notes/quebec) release, model names will be percent-encoded according to [RFC-3986](https://tools.ietf.org/html/rfc3986) for endpoints generated from Models, and for the Swagger that your application exposes (for example, on `http://localhost:8080/apidoc/swagger.json`).
 
-Beginning in the [Quebec](/docs/release_notes/standalone_-_15_march_2019/) release, model names will be percent-encoded according to [RFC-3986](https://tools.ietf.org/html/rfc3986) for endpoints generated from Models, and for the Swagger that your application exposes (for example, on `http://localhost:8080/apidoc/swagger.json`).
-
-### Why we are making this change
+## Why we are making this change
 
 Currently, model names are used to generate Swagger paths and schema without any encoding. According to [RFC-3986](https://tools.ietf.org/html/rfc3986), characters not in `A-Z a-z 0-9 - _ . ~`, should be percent-encoded when included in a URI. So, for example, currently, a model named "employee's" will produce an API path; for example `/api/endpoints/employee's/:id`, which is not strictly correct. Many NodeJS libraries will automatically encode requests to `/api/endpoints/employee's`, as `/api/endpoints/employee%27s`, which can make calling the API difficult from NodeJS applications ({{% variables/apibuilder_prod_name %}} will return 404 because it is not listening on `/api/endpoints/employee%27s`). However, some HTTP clients, such as cURL, are less strict and permit non-RFC-3986 URI. To make {{% variables/apibuilder_prod_name %}} standards compliant and consistent with respect to model names, when {{% variables/apibuilder_prod_name %}} needs to encode model names into Swagger, they will be encoded as per RFC-3986.
 
-### How does this impact my service
+## How does this impact my service
 
 Generating new endpoints from a model will use the new [RFC-3986](https://tools.ietf.org/html/rfc3986) encoding. However, there is a potential problem with existing endpoints that have been generated for models using (Models -> Generate endpoints) can emit "Undefined schemas" errors on startup:
 
@@ -58,13 +57,13 @@ If the function produces a _different_ name, then your endpoints will be affecte
 console.log(encodeURIComponentRFC3986("employee's")); // "employee%27s"
 ```
 
-### Upgrading the existing configuration
+## Upgrading the existing configuration
 
 Updates contain important changes to improve the performance, stability, and security of your services. Installing them ensures that your software continues to run safely and efficiently.
 
 It is strongly recommended you upgrade {{% variables/apibuilder_prod_name %}} to the latest version as well any data connectors you may have in your stack. This feature requires a minimum of:
 
-* [{{% variables/apibuilder_prod_name %}} - Quebec](/docs/release_notes/standalone_-_29_march_2019/)
+* [{{% variables/apibuilder_prod_name %}} - Quebec](/docs/release_notes/quebec)
 
 Enable the flag to encode model names in Swagger:
 

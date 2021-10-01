@@ -1,13 +1,14 @@
 ---
 title: Addition of Swagger and json schema validation on start
 linkTitle: Addition of Swagger and json schema validation on start
-weight: 10
+weight: 45
+deprecation: D045
 date: 2021-10-01
 ---
 
-{{% alert title="Note" color="primary" %}}This document describes deprecation \[[D045](/docs/deprecations/#D045)\]{{% /alert %}}
+{{% alert title="Note" color="primary" %}}This document describes deprecation {{% deprecation/link D045 %}}{{% /alert %}}
 
-Beginning with the [Bruges](#!/guide//pages/createpage.action?spaceKey=AB4&title=API+Builder+Standalone+-+20+November+2020&linkCreation=true&fromPageId=62560539) release, JSON schemas loaded by {{% variables/apibuilder_prod_name %}} will now be fully validated when the service starts. Additionally, the Swagger 2.0 documentation available from `/apidoc/swagger.json` will also be validated when the service starts to ensure that it conforms to the Swagger specification and can be safely consumed by other tools.
+Beginning with the [Bruges](/docs/release_notes/bruges) release, JSON schemas loaded by {{% variables/apibuilder_prod_name %}} will now be fully validated when the service starts. Additionally, the Swagger 2.0 documentation available from `/apidoc/swagger.json` will also be validated when the service starts to ensure that it conforms to the Swagger specification and can be safely consumed by other tools.
 
 This will be the default behavior in all new services.
 

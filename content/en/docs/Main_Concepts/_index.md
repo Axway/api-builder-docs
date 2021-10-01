@@ -1,7 +1,0 @@
----
-title: Main Concepts
-description: TODO
-weight: 20
-date: 2021-06-22
----
-

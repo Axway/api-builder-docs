@@ -62,13 +62,13 @@ function fCheckoutSubmodule() {
         exit 1
     fi
     # the npm packages doesn't seem to be needed on the netify build server...this is just for developers
-    if [[ "${MODE}" == "dev" ]];then
-        echo "[INFO] Install npm packages required by docsy."
-    	if [[ ! -d "node_modules" ]];then
-    		npm install -D --save autoprefixer
-    		npm install -D --save postcss-cli
-    	fi
-    fi
+    # if [[ "${MODE}" == "dev" ]];then
+    #     echo "[INFO] Install npm packages required by docsy."
+    # 	if [[ ! -d "node_modules" ]];then
+    # 		npm install -D --save autoprefixer
+    # 		npm install -D --save postcss-cli
+    # 	fi
+    # fi
 }
 
 # fMergeContent:

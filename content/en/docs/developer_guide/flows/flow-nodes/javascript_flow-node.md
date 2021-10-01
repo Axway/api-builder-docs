@@ -15,7 +15,7 @@ To install the Javascript plugin, execute the following command:
 npm install --no-optional @axway/api-builder-plugin-fn-javascript
 ```
 
-For additional getting started information, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/).
+For additional getting started information, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/).
 
 ## Methods
 

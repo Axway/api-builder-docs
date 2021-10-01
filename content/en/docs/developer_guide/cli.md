@@ -19,7 +19,7 @@ axway pm install @axway/amplify-api-builder-cli
 
 Refer to the [Axway CLI](https://docs.axway.com/bundle/axwaycli-open-docs/page/docs/index.html) documentation for additional details about the `axway` command.
 
-{{% alert title="Note" color="primary" %}}For users who downloaded the {{% variables/apibuilder_prod_name %}} CLI directly via `npm`, we recommend that you [re-install the CLI using the Axway CLI](/docs/getting_started_with_api_builder/) to take advantage of the full range of features this CLI offers. Your existing projects will continue to work as before.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}For users who downloaded the {{% variables/apibuilder_prod_name %}} CLI directly via `npm`, we recommend that you [re-install the CLI using the Axway CLI](/docs/getting_started/) to take advantage of the full range of features this CLI offers. Your existing projects will continue to work as before.{{% /alert %}}
 
 ## Updating the {{% variables/apibuilder_prod_name %}} CLI
 

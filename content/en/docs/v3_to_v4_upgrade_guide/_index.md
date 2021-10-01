@@ -15,7 +15,7 @@ This guide covers the steps required for most users to migrate their projects fr
 
 ## Prerequisites
 
-Refer to the Prerequisites in the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/#PreReq).
+Refer to the Prerequisites in the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/#PreReq).
 
 ### Upgrade script
 

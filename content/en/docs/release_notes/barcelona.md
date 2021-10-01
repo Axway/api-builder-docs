@@ -10,14 +10,14 @@ Hide_readingtime: true
 
 ## Features
 
-* 5994: Add API for arrowPing.json to improve ARS compatibility
-* 6024: Connector models generate friendlier API
-* 6068: Support development environment file
+* #5994: Add API for arrowPing.json to improve ARS compatibility
+* #6024: Connector models generate friendlier API
+* #6068: Support development environment file
 
 ## Fixes
 
-* 6036: MBS connector errors leave {{% variables/apibuilder_prod_name %}} hanging due to uncleared interval
-* 6075: Save and mock admin API swallows up errors
+* #6036: MBS connector errors leave {{% variables/apibuilder_prod_name %}} hanging due to uncleared interval
+* #6075: Save and mock admin API swallows up errors
 
 ## Release notes
 

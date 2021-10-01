@@ -9,23 +9,23 @@ Hide_readingtime: true
 {{% releasenotes/upgrade %}}
 ## Fixes
 
-* 1835: Deprecate the APIBuilder.remove\* methods
-* 4926: Deprecate APIBuilder.debug
-* 4927: Deprecate APIBuilder.app.locals
-* 5246: Adjust custom inspect functions to work with newer Node versions
-* 6019: Deprecate Model.reduce
-* 6020:
-* 6026:
-* 6028: Deprecate Codeblocks
-* 6038: Always use full Connector name in Swagger operationIDs
-* 6053: Deprecate Model "prefix"
-* 6072: Deprecate @axway/api-builder-react-engine
-* 6079: Deprecate Model.define
-* 6082: Document deprecated Logger functions
-* 6084: Deprecate APIBuilder.get
-* 6085: Deprecate APIBuilder.pluralize and singularize
-* 6086: Deprecate Model.fields\[name\].optional and API.parameters\[name\].optional
-* 6097: Enabling plugin authentication denies access to /console
+* #1835: Deprecate the APIBuilder.remove\* methods
+* #4926: Deprecate APIBuilder.debug
+* #4927: Deprecate APIBuilder.app.locals
+* #5246: Adjust custom inspect functions to work with newer Node versions
+* #6019: Deprecate Model.reduce
+* #6020: Deprecate Model.prototype.extend (extend a model instance)
+* #6026: Document maximum supported Node.js version (10.x)
+* #6028: Deprecate Codeblocks
+* #6038: Always use full Connector name in Swagger operationIDs
+* #6053: Deprecate Model "prefix"
+* #6072: Deprecate @axway/api-builder-react-engine
+* #6079: Deprecate Model.define
+* #6082: Document deprecated Logger functions
+* #6084: Deprecate APIBuilder.get
+* #6085: Deprecate APIBuilder.pluralize and singularize
+* #6086: Deprecate Model.fields\[name\].optional and API.parameters\[name\].optional
+* #6097: Enabling plugin authentication denies access to /console
 
 ## Release notes
 

@@ -24,7 +24,7 @@ Hide_readingtime: true
 
 * #4567: Introduced new module [@axway/api-builder-project-utils](https://www.npmjs.com/package/@axway/api-builder-project-utils), which comes with `api-builder-copy` and `api-builder-create-directory` binary commands, which can help you with copying configuration files and creating directories on postinstall from your plugins into a {{% variables/apibuilder_prod_name %}} application.
 * #6376: A link to the https://platform.axway.com has been added when the user is not logged-in and runs commands which require an {{% variables/platform_prod_name %}} session.
-* #6397: Previously, anything testing {{% variables/apibuilder_prod_name %}} would always cause the process to exit with a 0 exit code, leading to successful test results in CI, even in the case of errors. Now, {{% variables/apibuilder_prod_name %}} won't interfere with the process exit code and tests which require {{% variables/apibuilder_prod_name %}} will be able to fail CI builds.
+* #6397: Previously, anything testing {{% variables/apibuilder_prod_name %}} would always cause the process to exit with a 0 exit code, leading to successful test results in CI, even in the case of errors. Now, {{% variables/apibuilder_prod_name %}} will not interfere with the process exit code and tests which require {{% variables/apibuilder_prod_name %}} will be able to fail CI builds.
 * #6397: Added config option `bindListeners`. This is enabled by default and can be disabled to prevent process listeners on exit and other signals from being bound. New project unit tests will have this option disabled in order for the {{% variables/apibuilder_prod_name %}} event listeners to not interfere with the mocha test suite.
 * #6449: Fixed styling issues in the Flow debugger and API doc and test examples where multiple scrollbars and extra padding would appear.
 * #6458: New projects now include new major versions of the [Base64](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-base64) (3.0.0), [JavaScript](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-javascript) (2.0.0) and [JSON](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-json) (4.0.0) plugins. These fix issues with the inability to handle errors, and now use "Next" and "Error" outputs. See the individual release notes for each plugin in their corresponding readmes.
@@ -44,6 +44,5 @@ Hide_readingtime: true
 * [@axway/api-builder-plugin-fn-javascript@2.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-javascript/v/2.0.0)
 * [@axway/api-builder-plugin-fn-json@4.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-json/v/4.0.0)
 * [@axway/api-builder-plugin-fn-swagger@2.7.8](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/2.7.8)
-
 
 {{% releasenotes/previous %}}

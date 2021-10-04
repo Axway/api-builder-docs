@@ -16,7 +16,7 @@ Hide_readingtime: true
 * #4834: UI not showing error pages when internal errors occur.
 * #4855: Show better CLI error when using unsupported node version
 * #4869: Config: apiPrefix is not validated for a required leading slash.
-* #4916: Endpoints with names that require URI encoding can't be opened in the UI
+* #4916: Endpoints with names that require URI encoding cannot be opened in the UI
 * #4920: Improve the findAndModify Swagger documentation
 
 ## Release notes
@@ -44,6 +44,5 @@ Hide_readingtime: true
 * [@axway/api-builder-plugin-dc-mysql@2.2.0](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mysql/v/2.2.0)
 * [@axway/api-builder-plugin-dc-oracle@2.2.0](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-oracle/v/2.2.0)
 * [@axway/api-builder-plugin-fn-swagger@1.0.11](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/1.0.11)
-
 
 {{% releasenotes/previous %}}

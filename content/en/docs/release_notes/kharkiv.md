@@ -40,5 +40,4 @@ Hide_readingtime: true
 * [@axway/api-builder-plugin-fn-restclient@2.0.20](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-restclient/v/2.0.20)
 * [@axway/api-builder-plugin-fn-swagger@2.7.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/2.7.0)
 
-
 {{% releasenotes/previous %}}

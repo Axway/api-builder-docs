@@ -21,7 +21,7 @@ Hide_readingtime: true
 
 * #6650: {{% variables/apibuilder_prod_name %}} will no longer exit on malformed multipart/form-data requests.
 * #6669: Updated `dockerfile` in new {{% variables/apibuilder_prod_name %}} services to include the NODE_ENV environment variable set to `production`.
-* #6687: Previously, if Flow-trigger plugins were installed and the `./triggers` directory did not exist, or had been deleted, the Flow editor would not show any available Flow-triggers. Now, the Flow Editor will show all installed Flow-triggers, irrespective of the existence of the `./triggers` directory or trigger configuration.
+* #6687: Previously, if flow-trigger plugins were installed and the `./triggers` directory did not exist, or had been deleted, the Flow editor would not show any available Flow-triggers. Now, the Flow Editor will show all installed Flow-triggers, irrespective of the existence of the `./triggers` directory or trigger configuration.
 * #6700: Previously, when editing flow-node or flow-trigger parameters in the flow-editor and switching to another flow-node or trigger of the same type with parameters that have not been configured, then the values from the previous selection would be visible. Now, the values of the previous selection are no longer still visible.
 * #6706: Previously, `@axway/api-builder-plugin-fn-xslt` did not handle errors when spawning an xslt3 process to parse xslt templates, causing a server crash with an "Uncaught Exception Error". Now, errors are handled by the flow-node.
 * #6732: OpenAPI plugins will no longer error with `cannot find @axway/api-builder-runtime instance` when running tests from a sub-directory of an {{% variables/apibuilder_prod_name %}} project.

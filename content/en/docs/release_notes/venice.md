@@ -9,7 +9,7 @@ Hide_readingtime: true
 {{% releasenotes/upgrade %}}
 To update the {{% variables/apibuilder_prod_name %}} CLI, execute the following command:
 
-```
+```bash
 axway pm update
 ```
 ## Features
@@ -17,10 +17,9 @@ axway pm update
 * #7006: The plugins tab has been updated to show available and installed plugins separately. Additionally, community plugins now have their own tab with clarification of what community plugins are, and confirmation before install.
 * #7030: The @axway/api-builder-plugin-invoke-flow plugin will now be included in new {{% variables/apibuilder_prod_name %}} projects by default.
 * #7035: Added support to the Oracle database connector for querying ranges of all applicable data types with $gt, $gte, $lt and $lte. For example:
-
-    ```
-    { AGE: { $gt: 0, $lt: 99 }
-    ```
+```json
+{ AGE: { $gt: 0, $lt: 99 }
+```
 
 ## Fixes
 

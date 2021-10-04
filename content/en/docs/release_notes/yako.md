@@ -11,8 +11,8 @@ Hide_readingtime: true
 ## Features
 
 * #5892: Support auto-select of initial parameter type for flow-nodes
-* #5924: Add Mustache Flow-Node
-* #5956: Include JavaScript Flow-Node in all new applications
+* #5924: Add Mustache flow-node
+* #5956: Include JavaScript flow-node in all new applications
 
 ## Fixes
 
@@ -48,6 +48,5 @@ Hide_readingtime: true
 * [@axway/api-builder-plugin-fn-restclient@2.0.15](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-restclient/v/2.0.15)
 * [@axway/api-builder-plugin-fn-mustache@1.0.1](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-mustache/v/1.0.1)
 * [axway-flow-sdk@3.4.0](https://www.npmjs.com/package/axway-flow-sdk/v/3.4.0)
-
 
 {{% releasenotes/previous %}}

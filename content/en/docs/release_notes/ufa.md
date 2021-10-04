@@ -16,7 +16,7 @@ Hide_readingtime: true
 
 ## Fixes
 
-* #6523: Previously, if a Model was configured to use a connector that was not installed as a dependency, the startup would fail with the error, _Cannot read property 'usage' of undefined_. Now, the startup will fail with a more informative error message, _Error loading connector connector-name for model: model-name. Couldn't find a connector named: connector-name_.
+* #6523: Previously, if a Model was configured to use a connector that was not installed as a dependency, the startup would fail with the error, _Cannot read property 'usage' of undefined_. Now, the startup will fail with a more informative error message, _Error loading connector connector-name for model: model-name. Could not find a connector named: connector-name_.
 
 {{% releasenotes/deprecations %}}
 

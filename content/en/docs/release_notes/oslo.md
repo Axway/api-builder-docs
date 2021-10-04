@@ -14,7 +14,7 @@ Hide_readingtime: true
 
 ## Fixes
 
-* #6340: Update flow-node method on Model with ID that doesn't match any records fails to trigger "Not Found"
+* #6340: Update flow-node method on Model with ID that does not match any records fails to trigger "Not Found"
 * #6369: CLI plugin init incorrectly parses hyphenated name
 
 ## Release notes
@@ -30,6 +30,5 @@ Hide_readingtime: true
 * [@axway/api-builder-runtime@4.27.22](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.27.22)
 * [@axway/api-builder-admin@1.17.4](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.17.4)
 * [@axway/api-builder@4.17.3](https://www.npmjs.com/package/@axway/api-builder/v/4.17.3)
-
 
 {{% releasenotes/previous %}}

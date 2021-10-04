@@ -6,7 +6,6 @@ description: 20 November 2020
 Hide_readingtime: true
 ---
 
-
 {{% releasenotes/upgrade %}}
 
 ## Features

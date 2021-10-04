@@ -46,5 +46,4 @@ Hide_readingtime: true
 * [@axway/api-builder-plugin-fn-mustache@1.0.3](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-mustache/v/1.0.3)
 * [axway-flow-sdk@3.4.2](https://www.npmjs.com/package/axway-flow-sdk/v/3.4.2)
 
-
 {{% releasenotes/previous %}}

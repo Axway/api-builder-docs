@@ -34,5 +34,4 @@ Hide_readingtime: true
 * [@axway/api-builder-sdk@1.0.4](https://www.npmjs.com/package/@axway/api-builder-sdk/v/1.0.4)
 * [@axway/api-builder-test-utils@1.1.1](https://www.npmjs.com/package/@axway/api-builder-test-utils/v/1.1.1)
 
-
 {{% releasenotes/previous %}}

@@ -40,5 +40,4 @@ Hide_readingtime: true
 * [@axway/api-builder-plugin-dc-oracle@2.3.3](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-oracle/v/2.3.3)
 * [@axway/api-builder-plugin-fn-swagger@2.4.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/2.4.0)
 
-
 {{% releasenotes/previous %}}

@@ -45,5 +45,4 @@ Hide_readingtime: true
 
 * [@axway/api-builder-plugin-fn-swagger@2.1.1](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/2.1.1)
 
-
 {{% releasenotes/previous %}}

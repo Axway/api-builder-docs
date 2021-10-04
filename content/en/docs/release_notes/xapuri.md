@@ -10,7 +10,7 @@ Hide_readingtime: true
 
 ## Features
 
-* #5891: Add editor for 'javascript' format Flow-Node parameters
+* #5891: Add editor for 'javascript' format flow-node parameters
 
 ## Fixes
 
@@ -35,6 +35,5 @@ Hide_readingtime: true
 * [@axway/api-builder-plugin-fn-javascript@1.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-javascript/v/1.0.0)
 * [@axway/api-builder-plugin-fn-restclient@2.0.13](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-restclient/v/2.0.13)
 * [axway-flow-sdk@3.2.0](https://www.npmjs.com/package/axway-flow-sdk/v/3.2.0)
-
 
 {{% releasenotes/previous %}}

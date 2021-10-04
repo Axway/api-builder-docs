@@ -11,9 +11,9 @@ Hide_readingtime: true
 ## Features
 
 * #6497: All plugins that export flow-triggers will now be validated on startup.
-* #6655: Improved Flow-Trigger logs to include the Flow-Trigger ID and a unique "request ID" in order to differentiate and correlate different flow invocations by the same Flow-Trigger.
-* #6738: Previously, the schema used for validating Flow-Triggers on start up was too permissive. Now, the schema is more restrictive and any problems caught will abort start up.
-* #6742: Added a new Flow-Trigger for scheduling a Flow execution via cron-style expressions.
+* #6655: Improved flow-frigger logs to include the flow-trigger ID and a unique "request ID" in order to differentiate and correlate different flow invocations by the same flow-trigger.
+* #6738: Previously, the schema used for validating flow-triggers on start up was too permissive. Now, the schema is more restrictive and any problems caught will abort start up.
+* #6742: Added a new flow-trigger for scheduling a Flow execution via cron-style expressions.
 * #6746: Added "Share your feedback" link to banner.
 
 ## Fixes

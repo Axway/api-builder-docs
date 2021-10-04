@@ -10,9 +10,9 @@ Hide_readingtime: true
 
 ## Features
 
-* #5425: Support the ability to fix errors in Flows when a Flow-Node method ID changes
+* #5425: Support the ability to fix errors in Flows when a flow-node method ID changes
 * #5454: Add the ability to execute Flows from within the Flow editor
-* #5484: Support collapsing the Flow-Nodes panel in the Flow editor
+* #5484: Support collapsing the flow-nodes panel in the Flow editor
 
 ## Fixes
 
@@ -54,6 +54,5 @@ Hide_readingtime: true
 * [@axway/api-builder-plugin-dc-oracle@2.3.0](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-oracle/v/2.3.0)
 * [@axway/api-builder-plugin-fn-restclient@2.0.2](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-restclient/v/2.0.2)
 * [@axway/api-builder-plugin-fn-swagger@2.2.1](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/2.2.1)
-
 
 {{% releasenotes/previous %}}

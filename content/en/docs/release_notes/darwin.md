@@ -30,5 +30,4 @@ Hide_readingtime: true
 * [@axway/api-builder-plugin-fn-dot@2.0.15](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-dot/v/2.0.15)
 * [@axway/api-builder-plugin-fn-javascript@1.1.4](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-javascript/v/1.1.4)
 
-
 {{% releasenotes/previous %}}

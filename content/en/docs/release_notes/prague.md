@@ -18,14 +18,13 @@ Hide_readingtime: true
 * #6337: Introduced new module [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) which includes test utils for Plugins such as `MockLogger` and `MockRuntime`.
 * #6441: Updated CLI to use new [@axway/api-builder-sdk](https://www.npmjs.com/package/@axway/api-builder-sdk) 1.0.
 * #6441: Released [@axway/api-builder-sdk](https://www.npmjs.com/package/@axway/api-builder-sdk) 1.0. Learn more about it [here](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_sdk.html). Features include:
-
-    * Simpler YAML/JSON flow-node definition.
-    * Greatly simplified the interface for `action` methods where outputs are removed in favor of return/throw and two outputs, Next and Error.
-    * Added `pluginContext` to allow plugins to maintain state.
-    * Simplified the unit-testing capabilities to test action response and output callback distinctly.
-    * Support for plugin configuration via runtime and unit-test.
-    * Merged action req.parameters and req.authorizations into a single argument, `params`.
-    * Fixed issue with certain method names clashing with {{% variables/apibuilder_prod_name %}} flow engine internals by prohibiting use of certain method names (see [@axway/api-builder-sdk](https://www.npmjs.com/package/@axway/api-builder-sdk)).
+  * Simpler YAML/JSON flow-node definition.
+  * Greatly simplified the interface for `action` methods where outputs are removed in favor of return/throw and two outputs, Next and Error.
+  * Added `pluginContext` to allow plugins to maintain state.
+  * Simplified the unit-testing capabilities to test action response and output callback distinctly.
+  * Support for plugin configuration via runtime and unit-test.
+  * Merged action req.parameters and req.authorizations into a single argument, `params`.
+  * Fixed issue with certain method names clashing with {{% variables/apibuilder_prod_name %}} flow engine internals by prohibiting use of certain method names (see [@axway/api-builder-sdk](https://www.npmjs.com/package/@axway/api-builder-sdk)).
 
 ## Updated modules
 
@@ -44,6 +43,5 @@ Hide_readingtime: true
 * [@axway/api-builder-plugin-fn-restclient@2.0.22](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-restclient/v/2.0.22)
 * [@axway/api-builder-plugin-fn-swagger@2.7.5](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/2.7.5)
 * [@axway/api-builder-plugin-fn-mustache@1.0.6](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-mustache/v/1.0.6)
-
 
 {{% releasenotes/previous %}}

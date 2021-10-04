@@ -26,5 +26,4 @@ Brief summary of the notable release contents.
 ## Known issues
 For a list of up-to-date known issues see [{{% variables/apibuilder_prod_name %}} known issues](/docs/known_issues).
 
-
 {{% releasenotes/previous %}}

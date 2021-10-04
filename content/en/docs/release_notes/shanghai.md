@@ -14,7 +14,7 @@ Hide_readingtime: true
 
 ## Fixes
 
-* #6294: Previously, {{% variables/apibuilder_prod_name %}} failed to authorize OAuth 2.0 credentials when the token URL had a non-JSON response by default. This would result in Github OAuth 2.0 requests failing with an error, "Unsupported mime-type: application/x-www-form-urlencoded; charset=utf-8". Now, {{% variables/apibuilder_prod_name %}} includes the `Accept: "application/json"` request header, so services such as Github, which support JSON responses, will now authorize successfully.
+* #6294: Previously, {{% variables/apibuilder_prod_name %}} failed to authorize OAuth 2.0 credentials when the token URL had a non-JSON response by default. This would result in GitHub OAuth 2.0 requests failing with an error, "Unsupported mime-type: application/x-www-form-urlencoded; charset=utf-8". Now, {{% variables/apibuilder_prod_name %}} includes the `Accept: "application/json"` request header, so services such as GitHub, which support JSON responses, will now authorize successfully.
 * #6323: Previously, while filtering the items from `get-catalog` to download, a fuzzy search was used that filtered and matched items that were seemingly inaccurate or unexpected. Now, it filters using consecutive letters and gives more accurate results, e.g. "er" will match APIs "Pattern" and "Manager".
 
 ## Updated modules

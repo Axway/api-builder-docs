@@ -20,7 +20,7 @@ Hide_readingtime: true
 
 ## Release notes
 
-* #5643: The amplify builder CLI now supports filtering when downloading the API Catalog.
+* #5643: The Amplify Builder CLI now supports filtering when downloading the API Catalog.
 * #6092: Previously, APIs would be sorted and bound in an inconsistent order based on the load order and `sort` property, Node.js version, and other factors. Now, APIs will be always bound in a consistent order. Removed the explicit maximum supported Node.js version limitation. See deprecation {{% deprecation/link D037 %}}.
 * #6121: Previously, on server startup the application's API Key was logged at the 'info' log level. Now, the API Key is logged at the 'debug' log level.
 * #6126: Previously, Amplify Builder CLI fetched from the API Catalog all the available catalog items. Now, the CLI fetches only the items with API type.
@@ -39,6 +39,5 @@ Hide_readingtime: true
 * [@axway/api-builder-plugin-fn-base64@2.1.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-base64/v/2.1.0)
 * [@axway/api-builder-plugin-fn-dot@2.1.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-dot/v/2.1.0)
 * [@axway/api-builder-plugin-fn-javascript@1.2.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-javascript/v/1.2.0)
-
 
 {{% releasenotes/previous %}}

@@ -31,5 +31,4 @@ Hide_readingtime: true
 * [@axway/api-builder-plugin-fn-restclient@2.0.9](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-restclient/v/2.0.9)
 * [axway-flow-sdk@3.1.8](https://www.npmjs.com/package/axway-flow-sdk/v/3.1.8)
 
-
 {{% releasenotes/previous %}}

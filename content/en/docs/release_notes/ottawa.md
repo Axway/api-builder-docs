@@ -11,11 +11,10 @@ Hide_readingtime: true
 ## Features
 
 * #6824: The [Logger plugin](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-logger) is now officially released and ready to be used in production.
-* #6835: Previously, It wasn't easy to see how much time a flow-node took to execute. Now, the time (in milliseconds) is logged at debug level.
-
-    ```
-    Execute (javascript.2) finished flow-node route: [], time: 3 ms
-    ```
+* #6835: Previously, It was not easy to see how much time a flow-node took to execute. Now, the time (in milliseconds) is logged at debug level.
+```bash
+Execute (javascript.2) finished flow-node route: [], time: 3 ms
+```
 
 ## Fixes
 

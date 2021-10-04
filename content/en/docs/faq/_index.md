@@ -17,7 +17,7 @@ For issues that require an analysis of your project, we will need a copy of the 
 
 You should have npm (recommended minimum v6.13), and Node.js (recommended minimum v14.17.0 LTS) installed.
 
-{{% variables/apibuilder_prod_name %}} v4 maintains compatibility with a minimum of Node.js v8.9, however, using a version older than v14.17.0 is not recommended. See the [Node.js support policy](/docs/node.js_support_policy/) for more information.
+{{% variables/apibuilder_prod_name %}} v4 maintains compatibility with a minimum of Node.js v8.9, however, using a version older than v14.17.0 is not recommended. See the [Node.js support policy](/docs/nodejs_support_policy/) for more information.
 
 ## I get errors during npm install saying I need python installed!
 

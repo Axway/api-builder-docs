@@ -1,6 +1,6 @@
 ---
-title: V3 to v4 upgrade guide
-linkTitle: V3 to v4 upgrade guide
+title: v3 to v4 upgrade guide
+linkTitle: v3 to v4 upgrade guide
 weight: 120
 date: 2021-10-01
 ---

@@ -23,7 +23,7 @@ The performance of a flow depends significantly on what the flow is doing. Conne
 
 |     |     |
 | --- | --- |
-| Date of test | November 2020 ([Agra](/docs/release_notes/agra) |
+| Date of test | November 2020 ([Agra](/docs/release_notes/agra)) |
 | Number of requests | 100,000 |
 | Concurrency | 10 |
 | Total time | 115.498 seconds |

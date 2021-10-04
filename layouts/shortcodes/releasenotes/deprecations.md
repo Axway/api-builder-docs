@@ -13,4 +13,4 @@
 These are the deprecations introduced in this release. Click [here](/docs/deprecations) for a list of all deprecations.
 {{ end }}
 {{ range $id := $ids }} {{ $dep := index $deprecations $id }}
-* [[{{ $id }}](/docs/deprecations#{{ $id }})] **{{ $dep.name }}**: {{ humanize $dep.summary }} {{ end }}
+* [[{{ $id }}](/docs/deprecations#{{ $id }})] **{{ $dep.name }}**: {{ $dep.summary }} {{ end }}

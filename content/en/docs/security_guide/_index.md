@@ -100,7 +100,7 @@ You should use different TLS/SSL certificates per environment, so you may need a
 
 ### Swagger considerations
 
-As previously mentioned, your service may be protected by an edge gateway with TLS/SSL termination. In that case, for all intents and purposes, the client will only be aware of the gateway as the {{% variables/apibuilder_prod_name %}} service. In that case, when the client requests the Swagger API document ](/Images/apidoc`), the scheme, or host may be incorrect. You can override these values in the [apidoc overrides](/docs/developer_guide/project/configuration/project_configuration/#apidoc) in the `./conf/default.js` file as appropriate:
+As previously mentioned, your service may be protected by an edge gateway with TLS/SSL termination. In that case, for all intents and purposes, the client will only be aware of the gateway as the {{% variables/apibuilder_prod_name %}} service. In that case, when the client requests the Swagger API document (`/apidoc`), the scheme, or host may be incorrect. You can override these values in the [apidoc overrides](/docs/developer_guide/project/configuration/project_configuration/#apidoc) in the `./conf/default.js` file as appropriate:
 
 ```javascript
 overrides: {

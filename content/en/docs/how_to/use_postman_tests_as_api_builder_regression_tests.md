@@ -118,7 +118,7 @@ pm.test("Response time is less than 200ms", function () {
 });
 ```
 
-Then, click **Send**. You should see "Test Results ](/Images/4)" that indicates all tests passed.
+Then, click **Send**. You should see "Test Results (4/4)" that indicates all tests passed.
 
 ![image2021-8-16_14_47_27](/Images/image2021_8_16_14_47_27.png)
 
@@ -147,7 +147,7 @@ pm.test("Response time is less than 200ms", function () {
 });
 ```
 
-When you click **Send**, you should see **Test Results ](/Images/4)**.
+When you click **Send**, you should see **Test Results (4/4)**.
 
 This completes your test suite.
 

@@ -37,7 +37,7 @@ The following topics describe the project configuration settings.
 | overrides | object | {} | Overrides to Swagger documentation. Any values set here do not change the functionality of the server, only what is exposed in the Swagger. |
 | overrides.host | string | \- | Hostname and optional port on which the server can be accessed. |
 | overrides.schemes | array | \- | Schemes which the server can be accessed using. Can be an array containing any of `http`, `https`, `ws`, or `wss`. |
-| overrides.basePath | string | \- | The root path on which the APIs hosted by the server are available. If provided, this must start with a leading slash ](/Images/`). The value can be set to `null` to clear the `basePath`. |
+| overrides.basePath | string | \- | The root path on which the APIs hosted by the server are available. If provided, this must start with a leading slash (`/`). The value can be set to `null` to clear the `basePath`. |
 
 ### apikey
 
@@ -45,7 +45,7 @@ The following topics describe the project configuration settings.
 
 ### apiPrefix
 
-\[string\] Required. Defaults to `/api`, and **must** start with a leading slash ](/Images/`).
+\[string\] Required. Defaults to `/api`, and **must** start with a leading slash (`/`).
 
 The `apiPrefix` forms the base of **all secured API** in the {{% variables/apibuilder_prod_name %}} service that you are developing. Authenticated access to all APIs that are bound to `apiPrefix` is controlled via `accessControl`.
 

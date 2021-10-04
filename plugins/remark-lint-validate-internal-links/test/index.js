@@ -20,16 +20,15 @@ describe('remark-lint-validate-internal-links', () => {
 				.use(lintRule)
 				.process(readSync('anchors.md'))
 		).messages.map(warnObj => String(warnObj));
-		// TODO: should cover 5 cases
-		expect(warnings.length).to.equal(3);
+		expect(warnings.length).to.equal(5);
 		warnings.forEach((warning) => { expect(warning).to.include(warningMessages.missingAnchor); });
 	});
 
 	it('should validate relative links', async () => {
 		const expected = [
-			'relative.md:1:5-1:40: Link references must be an absolute path from /docs: ../Guides/Best_Practices.md',
-			'relative.md:2:5-2:51: Link references must be an absolute path from /docs: ../Guides/Best_Practices.md#codebase',
-			'relative.md:3:5-3:39: Link references must be an absolute path from /docs: ./Guides/Best_Practices.md'
+			'relative.md:1:5-1:47: Link references must be an absolute path from /docs: ../getting_started/getting-started',
+			'relative.md:2:5-2:56: Link references must be an absolute path from /docs: ../getting_started/getting-started#models',
+			'relative.md:3:5-3:46: Link references must be an absolute path from /docs: ./getting_started/getting-started'
 		];
 		const warnings = (
 			await remark()
@@ -75,8 +74,7 @@ describe('remark-lint-validate-internal-links', () => {
 				.use(lintRule)
 				.process(readSync('docs.md'))
 		).messages.map(warnObj => String(warnObj));
-		// TODO: should be 4
-		expect(warnings.length).to.equal(2);
+		expect(warnings.length).to.equal(4);
 		warnings.forEach((warning) => { expect(warning).to.include(warningMessages.missingDoc); });
 	});
 

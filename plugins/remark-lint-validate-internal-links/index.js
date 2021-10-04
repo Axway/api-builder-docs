@@ -1,5 +1,5 @@
 import { accessSync, constants, readFileSync } from 'fs';
-import { join } from 'path';
+import { join, extname } from 'path';
 import { lintRule } from 'unified-lint-rule';
 import { visit } from 'unist-util-visit';
 import { fromMarkdown } from 'mdast-util-from-markdown';
@@ -46,12 +46,6 @@ function validateInternalLinks(tree, file, options = {}) {
 			cache[ref] = warnings.valid;
 			return;
 		}
-		if (isLocalAnchorRef(ref)) {
-			// TODO: handle local anchors and remove the external plugin
-			log(`${ref} is handled with "missing-heading" from remark-validate-links`);
-			cache[ref] = warnings.valid;
-			return;
-		}
 		if (isRelativeRef(ref)) {
 			file.message(`${warnings.relativePath}: ${ref}`, node);
 			cache[ref] = warnings.relativePath;
@@ -71,6 +65,9 @@ function validateInternalLinks(tree, file, options = {}) {
 			return;
 		}
 		if (isDocRef(ref)) {
+			if (warnOnMissingStartingSlash(file, node, ref)) {
+				return;
+			}
 			if (warnOnUpperCase(file, node, ref)) {
 				return;
 			}
@@ -123,12 +120,43 @@ function warnOnExtension(file, node, ref) {
 	}
 }
 
+function warnOnMissingStartingSlash(file, node, ref) {
+	if (!ref.startsWith('/')) {
+		file.message(`${warnings.missingDoc}: ${ref}`, node);
+		cache[ref] = warnings.missingDoc;
+		return true;
+	}
+}
+
 function fileWithExtension(ref) {
 	return ref.endsWith('/') ? `${ref.slice(0, -1)}.md` : `${ref}.md`
 }
 
 function verifyAnchor(file, node, ref) {
-	let [filePath, anchor] = ref.split('#');
+	let anchorFound;
+	let filePath
+	let anchor;
+	if (isLocalAnchorRef(ref)) {
+		anchorFound = false;
+		filePath = join(projectRoot, file.path);
+		anchor = ref.slice(1);
+		const doc = getFile({ file, node, ref, filePath });
+		const tree = fromMarkdown(doc);
+		visit(tree, "heading", compare);
+		if (anchorFound) {
+			cache[ref] = warnings.valid;
+		} else {
+			file.message(`${warnings.missingAnchor}: ${ref}`, node);
+			cache[ref] = warnings.missingAnchor;
+		}
+		return;
+	}
+	if (warnOnMissingStartingSlash(file, node, ref)) {
+		return;
+	}
+	const parts = ref.split('#');
+	filePath = parts[0];
+	anchor = parts[1];
 	if (warnOnUpperCase(file, node, filePath)) {
 		return;
 	}
@@ -138,28 +166,28 @@ function verifyAnchor(file, node, ref) {
 	filePath = join(projectRoot, docsRoot, fileWithExtension(filePath));
 	const doc = getFile({ file, node, ref, filePath });
 	if (doc) {
-		let anchorFound = false;
+		anchorFound = false;
 		// We got the doc now turn it into an AST.
 		const tree = fromMarkdown(doc);
 		visit(tree, "heading", compare);
-		function compare(currentNode) {
-			// Here we get the current node from AST which holds the heading value but
-			// it is the original one with spaces and upper case in the beginning.
-			// The references are with lower cases only and dashes instead of spaces
-			// to be URL friendly. So we do transform what we get as heading value in
-			// order to do proper comparison.			
-			const refAnchor
-				= currentNode.children[0].value.toLowerCase().replace(' ', '-');
-			if (refAnchor === anchor) {
-				anchorFound = true;
-				return false; //found so break the loop
-			}
-		}
 		if (anchorFound) {
 			cache[ref] = warnings.valid;
 		} else {
 			file.message(`${warnings.missingAnchor}: ${ref}`, node);
 			cache[ref] = warnings.missingAnchor;
+		}
+	}
+	function compare(currentNode) {
+		// Here we get the current node from AST which holds the heading value but
+		// it is the original one with spaces and upper case in the beginning.
+		// The references are with lower cases only and dashes instead of spaces
+		// to be URL friendly. So we do transform what we get as heading value in
+		// order to do proper comparison.			
+		const refAnchor
+			= currentNode.children[0].value.toLowerCase().replace(' ', '-');
+		if (refAnchor === anchor) {
+			anchorFound = true;
+			return false; //found so break the loop
 		}
 	}
 }
@@ -187,11 +215,7 @@ function isLocalAnchorRef(ref) {
 function isStaticRef(ref) {
 	// Add more extensions to this list if needed
 	const staticFileExtensions = ['.json', '.js', '.yaml', '.sh', '.html'];
-	function checkIfPathHasStaticExtension(prev, curr) {
-		ref.endsWith(curr) && prev++;
-		return prev;
-	};
-	return !!staticFileExtensions.reduce(checkIfPathHasStaticExtension, 0);
+	return staticFileExtensions.includes(extname(ref));
 }
 
 function getFile(config) {

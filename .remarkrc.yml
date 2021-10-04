@@ -1,7 +1,6 @@
 plugins:
   - preset-lint-recommended
   - remark-preset-lint-markdown-style-guide
-  - remark-validate-links
   - [ remark-lint-validate-internal-links, {
       docsRoot: 'content/en',
       staticRoot: 'static'

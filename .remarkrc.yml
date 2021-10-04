@@ -23,7 +23,21 @@ plugins:
   - [ 'remark-lint-heading-sentence-case', [
       'API Builder',
       'Axway',
-      'APIs'
+      'APIs',
+      'Swagger',
+      'Gmail',
+      'OneDrive',
+      'Google',
+      'Docker',
+      'Splunk',
+      'API',
+      'ID',
+      'GUID',
+      'API Manager',
+      'HTTP',
+      'OpenAPI',
+      'Endpoint',
+      'encodeURI'
     ]]
   - [ 'remark-lint-prohibited-strings', [
       { no: 'Flow node', yes: 'Flow-node' },

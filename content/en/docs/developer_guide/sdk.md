@@ -10,7 +10,7 @@ date: 2021-10-01
 Below are some resources that can help get you started writing your own flow-nodes:
 
 * [Learn JavaScript ES6+](https://www.freecodecamp.org/news/want-to-learn-es6-take-this-free-23-part-course-and-become-a-javascript-ninja-55002db1ff74/)
-* [How to use the SDK to create a custom flow-node](/docs/how_to/create_a_custom_flow-node/).
+* [How to use the SDK to create a custom flow-node](/docs/how_to/create_a_custom_flow_node/).
 * Axway [api-builder-examples](https://github.com/Axway/api-builder-examples).
 * Axway Community [api-builder-extras](https://github.com/Axway-API-Builder-Ext/api-builder-extras).
 * Axway [api-builder-project-utils](https://www.npmjs.com/package/@axway/api-builder-project-utils) - Provides a set of utils to assist with project related tasks - i.e. a script to copy files on postinstall, such as configurations.

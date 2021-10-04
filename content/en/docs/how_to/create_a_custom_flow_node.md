@@ -22,7 +22,7 @@ As an example of how to write a flow-node using the {{% variables/apibuilder_pro
 
 {{% variables/apibuilder_prod_name %}} project: An {{% variables/apibuilder_prod_name %}} project is required to install and test your new flow-node. You can use an existing project, or initialize a new one with the following instructions:
 
-```
+```bash
 // Create a new {{% variables/apibuilder_prod_name %}} project
 
 axway builder init example-project
@@ -36,7 +36,7 @@ This tutorial will demonstrate how to create a custom flow-node for use in the {
 
 Use the {{% variables/apibuilder_prod_name %}} CLI to initialize a new plugin:
 
-```
+```bash
 // Create a new flow-node plugin
 
 axway builder plugin init encodeuri
@@ -45,7 +45,7 @@ cd api-builder-plugin-encodeuri
 
 This will initialize a new plugin and install the {{% variables/apibuilder_prod_name %}} SDK and all the required dependencies for you. The new plugin has the following contents:
 
-```
+```bash
 // Create a new flow-node plugin
 
 ├── package.json
@@ -61,7 +61,7 @@ This will initialize a new plugin and install the {{% variables/apibuilder_prod_
 
 | File Name | Description |
 | --- | --- |
-| package.json | This is your module package description file. You should modify it to suit your module. The file is used by NPM. See [here](https://docs.npmjs.com/files/package.json) for more details. |
+| package.json | This is your module package description file. You should modify it to suit your module. The file is used by npm. See [here](https://docs.npmjs.com/files/package.json) for more details. |
 | src/actions.js | This file is where you will use Node.js/JavaScript to implement the methods defined in \`src/flow-nodes.yml\`. |
 | src/flow-nodes.yml | This file is where you will define your flow-node and methods. |
 | src/icon.svg | The icon file that is displayed for your flow-node in the UI . Supports image formats: bmp, jpeg, png, gif, tiff, or svg. |
@@ -73,7 +73,7 @@ This will initialize a new plugin and install the {{% variables/apibuilder_prod_
 
 Customize the `encodeURI` flow-node definition in the \``src/flow-nodes.yaml`\` file.
 
-```
+```yaml
 flow-nodes:
   encodeuri:
     name: Encode URI
@@ -111,27 +111,24 @@ flow-nodes:
 To explain what occurs in the `src/flow-nodes.yaml` file, we will break the file down piece by piece.
 
 1. The file defines a structure, a specification, that determines:
-
-    * The flow-node(s) to export.
-    * The method(s) that comprise each flow-node.
+   * The flow-node(s) to export.
+   * The method(s) that comprise each flow-node.
 1. The first portion of it allows you to define the flow-node name, icon, description, and category:
-
-    ```
+  ```yaml
     encodeuri:
       name: Encode URI
       icon: icon.svg
       description: URI encoder.
       category: utils
       ...
-    ```
+  ```
+  The `name` is the text that is displayed in the Flow Editor.
+  The default `icon` is a placeholder (a star) that should be replaced with a graphic that represents the action of the flow-node. The icon is displayed at 28 pixels by 28 pixels.
+  The `description` is the text that is displayed in the Flow Editor to describe your flow-node.
+  The `category` is the section in the Flow Editor tool panel where the flow-node is contained.
 
-    The `name` is the text that is displayed in the Flow Editor.
-    The default `icon` is a placeholder (a star) that should be replaced with a graphic that represents the action of the flow-node. The icon is displayed at 28 pixels by 28 pixels.
-    The `description` is the text that is displayed in the Flow Editor to describe your flow-node.
-    The `category` is the section in the Flow Editor tool panel where the flow-node is contained.
 1. The next section adds a single method `encode` and describe its parameters and outputs:
-
-    ```
+  ```yaml
     methods:
       encode: # This same key is used in `actions.js`
         name: Encode URI
@@ -145,12 +142,11 @@ To explain what occurs in the `src/flow-nodes.yaml` file, we will break the file
             schema:
               type: string
       ...
-    ```
+  ```
+  A method called `encode`, that is displayed in the Flow Editor as **Encode URI**, was added. The `encode` method has a single parameter. If we needed more parameters, we would repeat the whole `parameter`block. ![Screen_Shot_2020-05-19_at_3.12.19_PM](/Images/screen_shot_2020_05_19_at_3_12_19_pm.png)
 
-    A method called `encode`, that is displayed in the Flow Editor as **Encode URI**, was added. The `encode` method has a single parameter. If we needed more parameters, we would repeat the whole `parameter`block. ![Screen_Shot_2020-05-19_at_3.12.19_PM](/Images/screen_shot_2020_05_19_at_3_12_19_pm.png)
 1. The next two sections after the parameters defines the value that is returned from your action method and the Error that may be thrown from your action method:
-
-    ```
+  ```yaml
     parameters:
       ...
     # "Next" output
@@ -167,10 +163,8 @@ To explain what occurs in the `src/flow-nodes.yaml` file, we will break the file
       context: $.error
       schema:
         type: string
-    ```
-1. Understand how actions work:
-
-    The method key correlates to an action in the **src/actions.js** file. We renamed the example method from \`hello\` to \`_encode_\` above in the flow-node specification in flow-nodes.yml, now we need to also rename it in src/actions.js in Step 4.
+  ```
+1. Understand how actions work - The method key correlates to an action in the **src/actions.js** file. We renamed the example method from \`hello\` to \`_encode_\` above in the flow-node specification in flow-nodes.yml, now we need to also rename it in src/actions.js in Step 4.
 
 ### Step 4: Customize the flow-node method implementation
 
@@ -193,7 +187,7 @@ module.exports = {
 
 This is a simple scenario, but it highlights the main features. The parameters for the flow-node method are accessed under the `params` parameter. In this example, the parameter for the `encode` method is defined as `uri`:
 
-```
+```yaml
 parameters:
   uri:
     name: URI
@@ -222,11 +216,11 @@ npm start
 
 This will install the plugin inside of our project and will start the {{% variables/apibuilder_prod_name %}} service.
 
-Launch the app and go to the the sample \`Greet Flow\`. You'll see the flow-node we created under the \`Utils\` category where we placed it.
+Launch the app and go to the the sample \`Greet Flow\`. You will see the flow-node we created under the \`Utils\` category where we placed it.
 
 ![Screen_Shot_2020-05-18_at_6.02.36_PM](/Images/screen_shot_2020_05_18_at_6_02_36_pm.png)
 
-Drag and drop the new flow-node into the flow graph. You'll notice the flow-node has two outputs as we described it earlier.
+Drag and drop the new flow-node into the flow graph. You will notice the flow-node has two outputs as we described it earlier.
 
 ![Screen_Shot_2020-05-18_at_6.02.46_PM](/Images/screen_shot_2020_05_18_at_6_02_46_pm.png)
 
@@ -244,7 +238,7 @@ Next and final step is to define in which context variable the response will be 
 
 ![Screen_Shot_2020-05-18_at_6.26.16_PM](/Images/screen_shot_2020_05_18_at_6_26_16_pm.png)
 
-Now that we know what our flow-nodes is going to set, we can select the \`Success (HTTP 200)\` flow-node and amend it to include the result of our flow-node in it's body:
+Now that we know what our flow-nodes is going to set, we can select the \`Success (HTTP 200)\` flow-node and amend it to include the result of our flow-node in it is body:
 
 ![Screen_Shot_2020-05-18_at_6.29.30_PM](/Images/screen_shot_2020_05_18_at_6_29_30_pm.png)
 With that done, all we need to do is run and see our flow-node in action! To do so you can click on the debugger icon and expand it.

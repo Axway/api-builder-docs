@@ -7,7 +7,7 @@ date: 2021-10-01
 
 ## Introduction
 
-API developers or API owners who use Postman to test their APIs can very easily incorporate those tests in their {{% variables/apibuilder_prod_name %}} projects, and by doing so, make it easy to incorporate those tests in their DevOps flow. This document shows you how you can do this quickly and easily, using a downloadable example. This page first contains a primer for how Postman tests are created, and then described how you incorporate them into your project. If you already have Postman tests to try out, you can skip to the section [Running Collections in {{% variables/apibuilder_prod_name %}}](#runningCollections).
+API developers or API owners who use Postman to test their APIs can very easily incorporate those tests in their {{% variables/apibuilder_prod_name %}} projects, and by doing so, make it easy to incorporate those tests in their DevOps flow. This document shows you how you can do this quickly and easily, using a downloadable example. This page first contains a primer for how Postman tests are created, and then described how you incorporate them into your project. If you already have Postman tests to try out, you can skip to the section [Running Collections in {{% variables/apibuilder_prod_name %}}](#running-collections-in-api-builder).
 
 You may not be the person who's responsible for creating these tests, in which case the API tester may design the interfaces, the documentation, and the expected responses, and use a tool like [Postman](https://www.postman.com) to perform regression testing on the API with Postman [API](https://learning.postman.com/docs/designing-and-developing-your-api/the-api-workflow) , [Collections](https://learning.postman.com/docs/getting-started/creating-the-first-collection) , and [Environments](https://learning.postman.com/docs/sending-requests/managing-environments) . While {{% variables/apibuilder_prod_name %}} supports unit-tests that achieve the same kind of regression testing, they are more of a developer tool, and not a designer tool and is not really accessible in organizations that have separate roles and responsibilities. This document describes a general process for how to use Postman Collections that were created by an API designer and use them as regression tests in {{% variables/apibuilder_prod_name %}} to ensure compatibility and compliance when upgrading an existing {{% variables/apibuilder_prod_name %}} application.
 
@@ -15,14 +15,14 @@ You may not be the person who's responsible for creating these tests, in which c
 
 To recreate the example described, you will need the following:
 
-1. The {{% variables/apibuilder_prod_name %}} demo application [demo-postman.zip]](/Images/attachments_64226903_1_demo-postman.zip)
+1. The {{% variables/apibuilder_prod_name %}} demo application [demo-postman.zip](/files/demo-postman.zip)
 1. The [Postman](https://www.postman.com/) application
 
 If you wish to skip the manual Collection creation, you can import the "pdf-collection.json" and "dev-environment.json" files into Postman Collections and Environments respectively within the Postman application.
 
 ## Extract {{% variables/apibuilder_prod_name %}} application
 
-Download and extract [demo-postman.zip]](/Images/attachments_64226903_1_demo-postman.zip). Then, install and the demo {{% variables/apibuilder_prod_name %}} application.
+Download and extract [demo-postman.zip](/files/demo-postman.zip). Then, install and the demo {{% variables/apibuilder_prod_name %}} application.
 
 ```bash
 // Start {{% variables/apibuilder_prod_name %}}
@@ -33,7 +33,7 @@ npm install
 npm start
 ```
 
-## Import an API Collection
+## Import an API collection
 
 Ensure {{% variables/apibuilder_prod_name %}} demo-postman application is started. Then go to **Summary** and copy the link for the Download Swagger (it is usually [http://localhost:8080/apidoc/swagger.json](http://localhost:8080/apidoc/swagger.json)).
 
@@ -63,7 +63,7 @@ Then, it is important to enable "Development" as the active environment. Hover o
 
 ![image2021-8-16_14_22_27](/Images/image2021_8_16_14_22_27.png)
 
-## Create a test Collection
+## Create a test collection
 
 ### Rename the collection
 
@@ -175,7 +175,7 @@ Give each file to the {{% variables/apibuilder_prod_name %}} development team.
 
 Once you have received the respective collection and environment JSON files, you can include them in your {{% variables/apibuilder_prod_name %}} application.
 
-{{% alert title="Note" color="primary" %}}dev-environment.json should **not** be committed to source control for security. Ensure it's included in .gitignore so that it only exists locally. The file will need to be provided to each developer who wants to run these tests.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}dev-environment.json should **not** be committed to source control for security. Ensure it is included in .gitignore so that it only exists locally. The file will need to be provided to each developer who wants to run these tests.{{% /alert %}}
 
 Postman has a tool called [newman](https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/) that enables Postman Collections to be run as unit-tests. This already installed as a dependency into the sample "demo-postman" project, but can be installed into existing applications as a dev-dependency:
 
@@ -187,7 +187,7 @@ npm install newman --save-dev
 
 And then in the package.json "scripts", create a "test:postman" script to execute the following command, pointing to the Postman JSON files that are now in your application:
 
-```
+```json
 "scripts": {
   "test:postman": "newman run -e dev-environment.json pdf-collection.json",
   ...

@@ -50,7 +50,7 @@ It is strongly recommended you upgrade {{% variables/apibuilder_prod_name %}} to
 
 Upgrading to the latest does not automatically enable the new behavior on pre-existing services. To enable the behavior there, add the following setting to your `default.js` file.
 
-```
+```json
 flags: {
     enableModelsWithNoPrimaryKey: true
 }
@@ -60,7 +60,7 @@ More `default.js` configuration file information can be found here: [Project Con
 
 Once enabled, start {{% variables/apibuilder_prod_name %}} to check for invalid flows and endpoints. If there are any flows or endpoints that are now invalid because of the removed methods, {{% variables/apibuilder_prod_name %}} will fail to start with error messages. For example, an Oracle model called NOPK would generate an error like:
 
-```
+```json
 1534267446154 Invalid flow oraclenopk-delete: {
   "valid": false,
   "errors": [
@@ -99,30 +99,30 @@ Edit the response for the Create API, POST `/<modelname>`, and delete responses 
 
 For `/<modelname>/` query and GET `/<modelname>` change the referenced schema and remove the `-full` suffix. For example, change:
 
-```
+```json
 "200": {
-            "description": "The query succeeded, and the results are available.",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "schema:///model/oracle/NOPK-full"
-              }
-            }
-          }
+  "description": "The query succeeded, and the results are available.",
+  "schema": {
+    "type": "array",
+    "items": {
+      "$ref": "schema:///model/oracle/NOPK-full"
+    }
+  }
+}
 ```
 
 Remove the `-full` suffix in the referenced schema.
 
-```
+```json
 "200": {
-            "description": "The query succeeded, and the results are available.",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "schema:///model/oracle/NOPK"
-              }
-            }
-          }
+  "description": "The query succeeded, and the results are available.",
+  "schema": {
+    "type": "array",
+    "items": {
+      "$ref": "schema:///model/oracle/NOPK"
+    }
+  }
+}
 ```
 
 Once complete, your service should start; however, it is recommended that you re-test your service and clients before deploying to production.

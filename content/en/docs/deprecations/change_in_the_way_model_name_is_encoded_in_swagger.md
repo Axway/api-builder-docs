@@ -20,7 +20,7 @@ Currently, model names are used to generate Swagger paths and schema without any
 
 Generating new endpoints from a model will use the new [RFC-3986](https://tools.ietf.org/html/rfc3986) encoding. However, there is a potential problem with existing endpoints that have been generated for models using (Models -> Generate endpoints) can emit "Undefined schemas" errors on startup:
 
-```
+```javascript
 // Startup Schema Error
 
 Error loading endpoint at /home/user/app/endpoints/employees.json; Undefined schemas:
@@ -51,9 +51,8 @@ function encodeURIComponentRFC3986(str) {
 
 If the function produces a _different_ name, then your endpoints will be affected and will require a manual upgrade. For example:
 
-```
+```javascript
 // Example RFC-3986
-
 console.log(encodeURIComponentRFC3986("employee's")); // "employee%27s"
 ```
 
@@ -67,9 +66,8 @@ It is strongly recommended you upgrade {{% variables/apibuilder_prod_name %}} to
 
 Enable the flag to encode model names in Swagger:
 
-```
+```javascript
 // Enable model name URI encoding
-
 flags: {
     enableModelNameEncodingInSwagger: true
 }
@@ -77,34 +75,32 @@ flags: {
 
 Then start your application. If it starts, then no further upgrade is required. However, if your application emits an "Undefined schemas" error (above), you need to edit the affected endpoint file(s) to use the new RFC-3986 encoding for your model name. For example, if your model name was "employee's", then all references to "schema:///model/employee's" would need to be replaced with "schema:///model/employee%27s". For example:
 
-```
+```javascript
 // Enable model name URI encoding
-
 "200": {
-    "description": "The find all succeeded, and the results are available.",
-    "schema": {
-      "type": "array",
-      "items": {
-        "$ref": "schema:///model/employee's-full"
-      }
+  "description": "The find all succeeded, and the results are available.",
+  "schema": {
+    "type": "array",
+    "items": {
+      "$ref": "schema:///model/employee's-full"
     }
-  },
+  }
+}
 ```
 
 Replace all references of "schema:///model/employee's" with "schema:///model/employee%27s":
 
-```
+```javascript
 // Enable model name URI encoding
-
 "200": {
-    "description": "The find all succeeded, and the results are available.",
-    "schema": {
-      "type": "array",
-      "items": {
-        "$ref": "schema:///model/employee%27s-full"
-      }
+  "description": "The find all succeeded, and the results are available.",
+  "schema": {
+    "type": "array",
+    "items": {
+      "$ref": "schema:///model/employee%27s-full"
     }
-  },
+  }
+}
 ```
 
 Note that you are _only_ replacing the schema references. The word "employee's" is used in other places in the file, and not just schema, so a search and replace should ensure that you search for the URI that includes "schema:///model/".

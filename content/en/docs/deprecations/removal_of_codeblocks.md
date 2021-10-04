@@ -16,6 +16,6 @@ The [Codeblock](/docs/developer_guide/flows/flow-nodes/codeblock_flow-node/) was
 
 If you have a `./codeblocks` directory, and it contains files (.js and .json), then your application is impacted by this change.
 
-## Upgrading Codeblocks
+## Upgrading codeblocks
 
 You need to decide if you want to create a reusable flow-node using [axway-flow-sdk](https://www.npmjs.com/package/axway-flow-sdk), or if the code is suitable for the JavaScript flow-node [@axway/api-builder-plugin-fn-javascript](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-javascript). Follow the guides for [Creating a custom flow-node](/docs/how_to/create_a_custom_flow-node/), or using the [JavaScript flow-node](/docs/developer_guide/flows/flow-nodes/javascript_flow-node/). Once you migrate all of the Codeblocks and adjust your Flows accordingly, then you can safely delete the `./codeblocks` directory.

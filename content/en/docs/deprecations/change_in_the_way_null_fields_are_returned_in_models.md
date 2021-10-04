@@ -34,9 +34,8 @@ The following examples will show the previous behavior when requesting data from
 
 ### Previous behavior
 
-```
+```javascript
 // Response
-
 [
   {
     "ID": 0,
@@ -59,9 +58,8 @@ The following examples will show the previous behavior when requesting data from
 
 ### New behavior (enableNullModelFields flag enabled)
 
-```
+```javascript
 // Response
-
 [
   {
     "ID": 0,
@@ -94,9 +92,8 @@ This change alters the way that composite Models with multiple joins behave in c
 
 ### Previous behavior
 
-```
+```javascript
 // Response
-
 [
   {
     "FIRST_NAME": "Joe",
@@ -111,9 +108,8 @@ This change alters the way that composite Models with multiple joins behave in c
 
 ### New behavior (enableNullModelFields flag enabled)
 
-```
+```javascript
 // Response
-
 [
   {
     "FIRST_NAME": "Joe",
@@ -135,7 +131,7 @@ It is strongly recommended you upgrade {{% variables/apibuilder_prod_name %}} to
 
 After upgrading, the enableNullModelFields feature will not be active until you enable it. To enable it, add the following setting to your `default.js` file.
 
-```
+```json
 flags: {
     enableNullModelFields: true
 }

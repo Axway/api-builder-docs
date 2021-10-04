@@ -8,7 +8,6 @@ date: 2021-10-01
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation {{% deprecation/link D010 %}}{{% /alert %}}
 
-
 Configuration options for authentication and authentication plugins have changed, and have been moved to a new `accessControl` configuration section. The moved `APIKeyAuthType` and `APIKeyAuthPlugin` options have been deprecated alongside the custom `matchURL` authentication plugin method.
 
 Beginning with the [Lisbon](/docs/release_notes/lisbon) release, authentication and authentication plugins have changed to ensure _all_ paths are secured by default. Authentication is applied to the API path (`apiPrefix`), and authentication is controlled using a new configuration section, `accessControl`. All other paths are **denied** by default unless they are made explicitly public by adding them to `accessControl.paths`. There are several public paths added implicitly:
@@ -23,15 +22,14 @@ Before the [Lisbon](/docs/release_notes/lisbon) release, authentication was usin
 
 From the [Lisbon](/docs/release_notes/lisbon) release, the chosen authentication scheme will **always** be applied to paths bound to the `apiPrefix`. The type of authentication applied to these paths can be controlled in the configuration. {{% variables/apibuilder_prod_name %}} still supports `matchURL` for backward compatibility and the ability to apply security against paths _other_ than `apiPrefix`, but as already explained, this is not secure, so if your application uses `matchURL`, it will emit a warning, for example:
 
-```
+```javascript
 // matchURL warning
-
 Deprecation: The configured authentication plugin is using using a deprecated method 'matchURL' for applying security to paths and is potentially insecure.
 ```
 
 {{% alert title="Note" color="primary" %}}Continuing to use the `matchURL` feature on custom authentication plugins is potentially insecure.{{% /alert %}}
 
-This fix explicitly forces a security check against **all requests** that match the `apiPrefix`. This means that you are using a custom authentication plugin, and you previously did _not_ require authentication on `/api/foo` (in other words, `matchURL` would return false), then after this fix, your plugin will now be forced to validate requests for `/api/foo`. While this is an edge-case, it is a breaking change, but a necessary one for security purposes. If you wish to maintain this behavior, please see [legacy unauthenticated access](#legacy-unauthenticated-access) below.
+This fix explicitly forces a security check against **all requests** that match the `apiPrefix`. This means that you are using a custom authentication plugin, and you previously did _not_ require authentication on `/api/foo` (in other words, `matchURL` would return false), then after this fix, your plugin will now be forced to validate requests for `/api/foo`. While this is an edge-case, it is a breaking change, but a necessary one for security purposes. If you wish to maintain this behavior, please see [legacy unauthenticated access](#legacy-unauthenticated-access-to-paths-having-apiprefix-plugin) below.
 
 Additionally, except for a select few paths (mentioned above), access to all other paths will be denied by default. To opt-out of this behavior, paths intended to be public must be explicitly declared within the `accessControl.public` configuration.
 
@@ -43,9 +41,8 @@ These changes are compatible with the existing configuration. You should follow 
 
 Continuing to use old configuration will emit a warning:
 
-```
+```javascript
 // Old configuration warning
-
 Deprecation: Config settings related to authentication have been deprecated (APIKeyAuthType, and APIKeyAuthPlugin), use accessControl for API security instead
 ```
 
@@ -53,18 +50,16 @@ Deprecation: Config settings related to authentication have been deprecated (API
 
 If using the standard authentication mechanisms: basic, apikey, or none, your existing configuration will look similar to this:
 
-```
+```javascript
 // Example configuration
-
 apikey: 'kL51Ag9PtCR4xeTInjvhlolMlQqJ6FW3',
 APIKeyAuthType: 'basic',
 ```
 
 To upgrade, create a new key `accessControl`, and copy the value of `APIKeyAuthType` to `accessControl.apiPrefixSecurity`. You should delete the key `APIKeyAuthType`. For example:
 
-```
+```javascript
 // Upgraded configuration
-
 apikey: 'kL51Ag9PtCR4xeTInjvhlolMlQqJ6FW3',
 accessControl: {
     apiPrefixSecurity: 'basic',
@@ -76,9 +71,8 @@ accessControl: {
 
 If using ldap, it will look similar to this:
 
-```
+```javascript
 // Example configuration
-
 APIKeyAuthType: 'ldap',
 ldap: {
     url: 'ldap://ldap.acme.io:1389',
@@ -93,9 +87,8 @@ ldap: {
 
 To upgrade, create a new key `accessControl`, and set the value of `accessControl.apiPrefixSecurity` to `'ldap'`. You should delete the key `APIKeyAuthType`. For example:
 
-```
+```javascript
 // Upgraded configuration
-
 accessControl: {
   apiPrefixSecurity: 'ldap',
     public: []
@@ -115,18 +108,16 @@ ldap: {
 
 If using a custom authentication plugin, your configuration will look similar to this:
 
-```
+```javascript
 // Example configuration
-
 APIKeyAuthType: 'plugin',
 APIKeyAuthPlugin: 'custom-plugin.js'
 ```
 
 To upgrade, create a new key `accessControl`, and set the value of `accessControl.apiPrefixSecurity` to `'plugin'`. Then, copy the value of `APIKeyAuthPlugin` to `accessControl.plugin`. You should delete the keys `APIKeyAuthType` and `APIKeyAuthPlugin`.
 
-```
+```javascript
 // Upgraded configuration
-
 apikey: 'kL51Ag9PtCR4xeTInjvhlolMlQqJ6FW3',
 accessControl: {
     apiPrefixSecurity: 'plugin',
@@ -139,13 +130,14 @@ Your upgraded custom authentication plugin should not contain `matchURL`. For ex
 
 ```javascript
 // Upgraded custom authentication plugin
-
 function Plugin() {
 }
+
 Plugin.prototype.validateRequest = function (request, response, callback) {
-  // TODO: custom authentication
+    // TODO: custom authentication
     callback(null, true); // success!
 };
+
 module.exports = Plugin;
 ```
 
@@ -155,16 +147,17 @@ We _highly_ recommend that if you need unauthenticated paths, you use the [publi
 
 ```javascript
 // Upgraded custom authentication plugin
-
 function Plugin() {
 }
+
 Plugin.prototype.validateRequest = function (request, response, callback) {
     if (request.path.toLowerCase().indexOf](/Images/api/foo') === 0) {
         // unauthenticated URL
         return true;
     }
-  // TODO: custom authentication
+    // TODO: custom authentication
     callback(null, true); // success!
 };
+
 module.exports = Plugin;
 ```

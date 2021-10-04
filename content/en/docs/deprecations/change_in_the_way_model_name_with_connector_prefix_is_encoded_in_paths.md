@@ -8,7 +8,6 @@ date: 2021-10-01
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation {{% deprecation/link D015 %}}{{% /alert %}}
 
-
 URL encoding a slash between the connector and model name has been deprecated since the {{% variables/apibuilder_prod_name %}} - [Barcelona](/docs/release_notes/barcelona) release.
 
 Beginning in the [Barcelona](/docs/release_notes/barcelona) release, the slash separating the connector and model name will not be URL encoded.
@@ -35,7 +34,7 @@ Enable the flag to encoded model name with connector slash:
 
 This flag only applies when _**enableModelNameEncoding**_ is enabled. Refer to [Change in the way model name is encoded in URI](/docs/deprecations/change_in_the_way_model_name_is_encoded_in_uri/).
 
-```
+```json
 flags: {
     enableModelNameEncodingWithConnectorSlash : true
 }

@@ -20,7 +20,7 @@ When addressing deprecation warnings with corresponding flags, you should compar
 
 {{% flags/config %}}
 
-## List of Deprecated features
+## List of deprecated features
 
 The following sections list the deprecated features.
 

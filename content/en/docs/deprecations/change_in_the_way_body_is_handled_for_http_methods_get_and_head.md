@@ -24,13 +24,12 @@ Updates contain important changes to improve the performance, stability, and sec
 
 It is strongly recommended you upgrade {{% variables/apibuilder_prod_name %}} to the latest version as well any data connectors you may have in your stack. This feature requires a minimum of:
 
-* [{{% variables/apibuilder_prod_name %}} - Roberttown](/docs/roberttown)
+* [{{% variables/apibuilder_prod_name %}} - Roberttown](/docs/release_notes/roberttown)
 
 Enable the flag to ignore body payloads for HTTP methods GET and HEAD:
 
-```
+```javascript
 // Enable strict body payloads
-
 flags: {
     enableStrictBodyPayloads: true
 }
@@ -38,9 +37,8 @@ flags: {
 
 You may want to visually audit your Swagger 2.0 endpoint definitions in `./endpoints`. Open each and inspect all methods for "get" and "head" requests that consume a body, e.g. "multipart/form-data". For example:
 
-```
+```javascript
 // Example Swagger
-
 /files:
   get:
     parameters:

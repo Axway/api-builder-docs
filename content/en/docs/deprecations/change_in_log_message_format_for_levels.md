@@ -14,7 +14,7 @@ This behavior has been deprecated since {{% variables/apibuilder_prod_name %}} -
 
 Beginning with the [Giza](/docs/release_notes/giza) release, the new log format will now include a level: timestamp, log level, followed by a message. For example:
 
-```
+```javascript
 // Example log message
 
 1612369334411 INFO  Using 'basic' security for APIs prefixed with path /api
@@ -44,7 +44,7 @@ It is strongly recommended you upgrade {{% variables/apibuilder_prod_name %}} to
 
 After upgrading, the `enableLoggingOfLevel` feature will not be active until you enable it. To enable it, add the following setting to your `default.js` file.
 
-```
+```json
 flags: {
     enableLoggingOfLevel: true
 }

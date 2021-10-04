@@ -38,17 +38,15 @@ function encodeURIComponentRFC3986(str) {
 
 If the function produces a different name, then your model API will be affected. For example:
 
-```
+```javascript
 // Example RFC-3986
-
 console.log(encodeURIComponentRFC3986("oracle/employee")); // "oracle%2Femployee"
 ```
 
 ## Upgrading the existing configuration
 
-```
+```javascript
 // Enable model name URI encoding
-
 flags: {
     enableModelNameEncoding: true
 }

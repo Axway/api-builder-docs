@@ -44,9 +44,8 @@ It is strongly recommended you upgrade {{% variables/apibuilder_prod_name %}} to
 
 After upgrading, the `enableModelErrorOutputs` feature will not be active until you enable it. To enable it, add the following to your `default.js` file.
 
-```
+```javascript
 // Enable error outputs
-
 flags: {
     enableModelErrorOutputs: true
 }
@@ -58,9 +57,8 @@ More `default.js` configuration file information can be found here: [Project Con
 
 Before running your service, you should upgrade your existing flows. If you do not, you will encounter the following error:
 
-```
+```javascript
 // Example error of model flow-node missing an Error output
-
 Invalid Flow testuser-count: {
   "valid": false,
   "errors": [
@@ -78,9 +76,8 @@ Invalid Flow testuser-count: {
 
 To upgrade your flows, you need to edit flows that utilize the model flow-node. You can search all the files in `./flows` and if any match "nodehandler://api-builder-flow-invoke", then they require an upgrade. For each flow-node that it utilized in the file, you need to manually add an "Error" output
 
-```
+```javascript
 // Upgrade flow with Error output
-
 "error": {
   "context": "$.error",
   "routes": [
@@ -94,7 +91,7 @@ to the "outputs" section for all the flow-nodes of type nodehandler://api-builde
 
 ![image2020-8-11_15_30_5](/Images/image2020_8_11_15_30_5.png)
 
-### Handle the new Error outputs
+### Handle the new error outputs
 
 The last step is to run your service and edit all flows that use these model flow-nodes in the Flow Editor and route the newly added Error output.
 

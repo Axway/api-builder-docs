@@ -30,9 +30,8 @@ The following examples will show the previous behavior when the configuration is
 
 If the `pluginConfig` key is not present in any configuration file loaded by the service, then the whole config is passed to every plugin.
 
-```
+```javascript
 // Service configuration
-
 {
   apiPrefix: '/foo',
   proxy: 'example.proxy.com',
@@ -44,7 +43,6 @@ If the `pluginConfig` key is not present in any configuration file loaded by the
 
 ```javascript
 // api-builder-plugin-demo
-
 module.exports = (config) => {
   console.log(config) // { apiPrefix: '/foo', proxy: 'example.proxy.com', flags: { enableScopedConfig: false } }
   const flowNode = {}; // Define flow node
@@ -54,9 +52,8 @@ module.exports = (config) => {
 
 If the `pluginConfig` key is present in a configuration file loaded by the service, or an additional key matching the plugin name is provided, then the limited config is passed to every plugin.
 
-```
+```javascript
 // Service configuration
-
 {
   apiPrefix: '/foo',
   proxy: 'example.proxy.com',
@@ -69,7 +66,6 @@ If the `pluginConfig` key is present in a configuration file loaded by the servi
 
 ```javascript
 // api-builder-plugin-demo
-
 module.exports = (config) => {
   console.log(config) // { proxy: 'example.proxy.com' }
   const flowNode = {}; // Define flow node
@@ -81,9 +77,8 @@ module.exports = (config) => {
 
 If the `pluginConfig` key is not present in any configuration file loaded by the service, then the limited config is passed to every plugin.
 
-```
+```javascript
 // Service configuration
-
 {
   apiPrefix: '/foo',
   proxy: 'example.proxy.com',
@@ -95,7 +90,6 @@ If the `pluginConfig` key is not present in any configuration file loaded by the
 
 ```javascript
 // api-builder-plugin-demo
-
 module.exports = (config) => {
   console.log(config) // { proxy: 'example.proxy.com' }
   const flowNode = {}; // Define flow node
@@ -115,7 +109,7 @@ It is strongly recommended you upgrade {{% variables/apibuilder_prod_name %}} to
 
 After upgrading, the `enableScopedConfig` feature will not be active until you enable it. To enable it, add the following setting to your `default.js` file.
 
-```
+```json
 flags: {
     enableScopedConfig: true
 }

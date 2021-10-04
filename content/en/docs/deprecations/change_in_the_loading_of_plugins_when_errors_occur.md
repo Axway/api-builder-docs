@@ -38,7 +38,7 @@ It is strongly recommended you upgrade {{% variables/apibuilder_prod_name %}} to
 
 After upgrading, the `exitOnPluginFailure` feature will not be active until you enable it. To enable it, add the following setting to your `default.js` file.
 
-```
+```json
 flags: {
     exitOnPluginFailure: true
 }

@@ -225,4 +225,4 @@ The `PUT` method outputs are:
 
 ## Additional information
 
-For how-to information on accessing Microsoft OneDrive using a REST flow-node, refer to [Authorization - Access Microsoft OneDrive using REST flow-node](/docs/how_to/authorization_-_access_microsoft_onedrive_using_rest_flow-node/).
+For how-to information on accessing Microsoft OneDrive using a REST flow-node, refer to [Authorization - Access Microsoft OneDrive using REST flow-node](/docs/how_to/authorization_access_microsoft_onedrive_using_rest_flow_node/).

@@ -16,7 +16,7 @@ In this tutorial, you will learn how to bundle [OpenAPI specifications](https://
 
 You can use an existing project, or initialize a new one with the following instructions:
 
-```
+```bash
 // Create a new {{% variables/apibuilder_prod_name %}} project
 
 axway builder init example-project
@@ -25,9 +25,9 @@ cd example-project
 
 ## Creating a new {{% variables/apibuilder_prod_name %}} plugin to bundle OpenAPI specifications
 
-Creating an new plugin to bundle OpenAPI specification files is similar to [Creating a standard flow-node plugin](/docs/how_to/create_a_custom_flow-node/), but the difference is you use a `--type=oas` argument.
+Creating an new plugin to bundle OpenAPI specification files is similar to [Creating a standard flow-node plugin](/docs/how_to/create_a_custom_flow_node/), but the difference is you use a `--type=oas` argument.
 
-```
+```bash
 // Create a new OAS flow-node plugin
 
 axway builder plugin init --type=oas petstore
@@ -36,7 +36,7 @@ cd api-builder-plugin-petstore
 
 The CLI will create your plugin in a new directory called \`./api-builder-plugin-petstore\` and will install the dependencies for you. The new plugin has the following contents:
 
-```
+```bash
 // File contents of the OAS plugin
 
 ├── package.json
@@ -48,7 +48,7 @@ The CLI will create your plugin in a new directory called \`./api-builder-plugin
 
 | File Name | Description |
 | --- | --- |
-| package.json | This is your module package description file. You should modify it to suit your module. The file is used by NPM. See [here](https://docs.npmjs.com/files/package.json) for more details. |
+| package.json | This is your module package description file. You should modify it to suit your module. The file is used by npm. See [here](https://docs.npmjs.com/files/package.json) for more details. |
 | openapi/ | This directory is initially empty. You need to place one or more OpenAPI specification files and optionally, a related icon file in this directory. |
 | test/test.js | A mocha test suite. You should ensure all of your actions are adequately tested. |
 | [README.md](http://README.md) | A [README.md](http://README.md) file that you should update with details about your plugin before publishing. It should contain details about how to install it, and the functionality it provides. |
@@ -57,7 +57,7 @@ The CLI will create your plugin in a new directory called \`./api-builder-plugin
 
 After initializing your new plugin, you need to populate it with one or more OpenAPI specification files, by copying them into the `./openapi` directory.
 
-```
+```bash
 cd api-builder-plugin-petstore
 cp ~/Downloads/petstore.yaml ./openapi
 ```

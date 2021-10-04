@@ -20,28 +20,29 @@ Before starting on {{% variables/apibuilder_prod_name %}}, you need to register 
 ### Add an app
 
 1. Click **Add an app**.
+![apps.dev.microsoft.com_portal_register-app](/Images/apps_dev_microsoft_com_portal_register_app.png)
 
-    ![apps.dev.microsoft.com_portal_register-app](/Images/apps_dev_microsoft_com_portal_register_app.png)
 1. Name your application `OneDrive Example` and click **Create**.
+![apps.dev.microsoft.com_init_app](/Images/apps_dev_microsoft_com_init_app.png)
 
-    ![apps.dev.microsoft.com_init_app](/Images/apps_dev_microsoft_com_init_app.png)
 1. Click **Save**.
 
-### Configure Application Secrets
+### Configure application secrets
 
 The `Application Id` displayed in the _Properties_ section will be the value of the `client_id` in the {{% variables/apibuilder_prod_name %}} credential. You also need to create a `client_secret`.
 
 ![apps.dev.microsoft.com_secret](/Images/apps_dev_microsoft_com_secret.png)
 
-Click **Generate New Password**. The value displayed will be your `client_secret`; this is the only time it's visible, so make a note of the value and don't lose it. If you lose it, you can repeat this step to generate a new client secret.
+Click **Generate New Password**. The value displayed will be your `client_secret`; this is the only time it is visible, so make a note of the value and do not lose it. If you lose it, you can repeat this step to generate a new client secret.
 
 ![apps.dev.microsoft.com_client_secret](/Images/apps_dev_microsoft_com_client_secret.png)
 
-### Configure Platform
+### Configure platform
 
 1. You need to add OAuth support to your application and add the {{% variables/apibuilder_prod_name %}} redirect URI. Under _Platforms_, click **Add Platform**.
 
     ![apps.dev.microsoft.com_webapp](/Images/apps_dev_microsoft_com_webapp.png)
+
 1. Select **Web**.
 
     ![apps.dev.microsoft.com_platform](/Images/apps_dev_microsoft_com_platform.png)
@@ -50,7 +51,7 @@ Click **Generate New Password**. The value displayed will be your `client_secret
 1. Uncheck **Allow Implicit Flow** ({{% variables/apibuilder_prod_name %}} will not be doing an implicit grant).
 1. Set the Redirect URLs to `http://localhost:8080/auth/callback`.
 
-### Configure Permissions
+### Configure permissions
 
 In this example, you will be reading the user's files.
 
@@ -63,9 +64,9 @@ Click **Add** next to _Delegated Permissions_. From the list select:
 
 ![apps.dev.microsoft.com_perms_done](/Images/apps_dev_microsoft_com_perms_done.png)
 
-### Save your Application
+### Save your application
 
-If you haven't already done it, save your application.
+If you have not already done it, save your application.
 
 ## Setting up {{% variables/apibuilder_prod_name %}}
 
@@ -80,7 +81,7 @@ $ node .
 
 Your service is now running and is accessible on `http://localhost:8080/console`.
 
-## Create OneDrive Credential
+## Create OneDrive credential
 
 For more information on OAuth 2.0 credentials, see [OAuth 2.0 credentials](/docs/developer_guide/credentials/configuring_credentials/oauth_2.0_credentials/).
 
@@ -125,7 +126,7 @@ To create the credential, you need the following information.
 
     If everything went well, you should now have a credential named _My OneDrive_.
 1. The credential has not been authorized. To authorize the credential, click **Authorize**.
-1. Once you've logged in, you will be prompted to authorize access.
+1. Once you have logged in, you will be prompted to authorize access.
 
     ![image2018-11-16_18_43_14](/Images/image2018_11_16_18_43_14.png)
 1. Click **Accept**. The credential is now ready to use.
@@ -255,12 +256,11 @@ We will go through the steps to create the flow, but for reference, the complete
     1. Connect the **next** output of the Get Credential node to the new Format object node.
     1. Click on the Format object title and rename it to Format Headers for clarity.
     1. On the **Parameters** tab, set the data to be `$.credential,` and set the template to:
-
-        ```
+      ```javascript
         {
             "Authorization": "Bearer {{=it}}"
         }
-        ```
+      ```
     1. On the **Outputs** tab, change the **Next** output to `$.headers`.
 
         ![format_headers_params](/Images/format_headers_params.png) ![format_headers_outputs](/Images/format_headers_outputs.png)
@@ -279,7 +279,7 @@ We will go through the steps to create the flow, but for reference, the complete
     1. Click on the Format object title and rename it to Format Response for clarity.
     1. On the **Parameters** tab, set the data to be `$.response.body` and set the template to:
 
-        ```
+        ```javascript
         [
         {{~it.value :entry:index}}
         {{? index }}, {{?}}
@@ -308,13 +308,11 @@ We will go through the steps to create the flow, but for reference, the complete
 
 ### Test your Endpoint
 
-1. Open the **Credentials** tab and check that your credential is authorized. If it isn't, perform the credential authorization.
+1. Open the **Credentials** tab and check that your credential is authorized. If it is not, perform the credential authorization.
 1. Open the **API Doc & Test** tab.
-
-    ![doctest_done_lat](/Images/doctest_done_lat.png)
+  ![doctest_done_lat](/Images/doctest_done_lat.png)
 1. Click on your One Drive Auth Demo API and expand the GET method.
-
-    ![test_lat](/Images/test_lat.png)
+  ![test_lat](/Images/test_lat.png)
 1. Click **Execute** to test your API. You should get back a list of the name and webUrls of the contents of your OneDrive account.
 
     ![test_result](/Images/test_result.png)

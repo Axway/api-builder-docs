@@ -41,49 +41,41 @@ Open API Manager and log in. In this case, the URL is _https://apimgmt.rdpp-4522
 ### Import the backend API
 
 1. The first step is to import the Swagger service definition for the backend Greet service into API Manager. In the _API_ section, click **Backend API**.
-
-    ![add_backend_api](/Images/add_backend_api.png)
+  ![add_backend_api](/Images/add_backend_api.png)
 1. Click **New API.**
 1. Select **Import Swagger API**.
-
-    ![import_from_swagger](/Images/import_from_swagger.png)
+  ![import_from_swagger](/Images/import_from_swagger.png)
 1. API Manager requires the URL of the Swagger definition of the _{{% variables/apibuilder_prod_name %}} Greet_ service. Since the service is deployed and running, we will select a _Swagger definition URL_. {{% variables/apibuilder_prod_name %}} exposes the Swagger definition for the service under _greet.apibuilder.192.168.99.100.nip.io_.
-
-    {{% alert title="Note" color="primary" %}}In this example, the _Greet_ service is being hosted in a Kubernetes cluster with Ingress rules. This is why in the image, the URL is using HTTPS and not specifying the port.{{% /alert %}}
+  {{% alert title="Note" color="primary" %}}In this example, the _Greet_ service is being hosted in a Kubernetes cluster with Ingress rules. This is why in the image, the URL is using HTTPS and not specifying the port.{{% /alert %}}
 1. Name the backend API _Greet_ and associate it with an organization in your API Manager setup. Once imported, _Greet_ will be listed in the _Backend API_ section.
-
-    ![add_backend_api_complete](/Images/add_backend_api_complete.png)
+  ![add_backend_api_complete](/Images/add_backend_api_complete.png)
 
 ### Virtualize and configure the backend API
 
 To allow API Manager to manage the backend API, you need to virtualize it. Virtualizing the API creates a frontend API proxy for your service.
 
 1. Navigate to the **Frontend API** tab.
-
-    ![add_frontend_api](/Images/add_frontend_api.png)
+  ![add_frontend_api](/Images/add_frontend_api.png)
 1. Click **New API**.
 1. Select **New API from backend API**.
 1. Select **Greet 1.0.0** in the dialog (this is the name of the backend service that we imported earlier).
-
-    ![create_new_API_dialog](/Images/create_new_api_dialog.png)
+  ![create_new_API_dialog](/Images/create_new_api_dialog.png)
 1. For demonstration purposes, we will leave the frontend API unsecured (_Pass-through)._ On the **Inbound** tab, select **Pass Through** from the _Inbound Security_ drop-down menu.
+  {{% alert title="Note" color="primary" %}}This is purely for demonstration purposes; API Manager has many authentication mechanisms built-in and is extensible using policies. See [Virtualize REST APIs in API Manager](https://docs.axway.com/bundle/APIManager_753_APIMgmtGuide_allOS_en_HTML5/page/Content/APIManagementGuideTopics/api_mgmt_virtualize_web.htm) for more information.{{% /alert %}}
 
-    {{% alert title="Note" color="primary" %}}This is purely for demonstration purposes; API Manager has many authentication mechanisms built-in and is extensible using policies. See [Virtualize REST APIs in API Manager](https://docs.axway.com/bundle/APIManager_753_APIMgmtGuide_allOS_en_HTML5/page/Content/APIManagementGuideTopics/api_mgmt_virtualize_web.htm) for more information.{{% /alert %}}
+  ![passthrough](/Images/passthrough.png)
 
-    ![passthrough](/Images/passthrough.png)
-
-    By default, {{% variables/apibuilder_prod_name %}} services are secured using an API key. The default mechanism for passing this key is to use HTTP Basic authentication, where the key is the username, and the password is blank. If you are using a different authentication mechanism for your {{% variables/apibuilder_prod_name %}} service, then this step might differ.
+  By default, {{% variables/apibuilder_prod_name %}} services are secured using an API key. The default mechanism for passing this key is to use HTTP Basic authentication, where the key is the username, and the password is blank. If you are using a different authentication mechanism for your {{% variables/apibuilder_prod_name %}} service, then this step might differ.
 1. On the **Outbound** tab, for _Outbound authentication profile_, select **HTTP Basic.**
 1. Add the _Greet_ service API Key as the username.
 
-    {{% alert title="Note" color="primary" %}}The API key is set in the `conf/default.js` file in your {{% variables/apibuilder_prod_name %}} application and is also displayed on the console when the service starts.{{% /alert %}}
+  {{% alert title="Note" color="primary" %}}The API key is set in the `conf/default.js` file in your {{% variables/apibuilder_prod_name %}} application and is also displayed on the console when the service starts.{{% /alert %}}
 
-    ![backend_auth_dialog](/Images/backend_auth_dialog.png)
+  ![backend_auth_dialog](/Images/backend_auth_dialog.png)
 1. Save the frontend API. The _Greet_ API should now be listed as a _Frontend API._
+  ![add_frontend_api_complete](/Images/add_frontend_api_complete.png)
 
-    ![add_frontend_api_complete](/Images/add_frontend_api_complete.png)
-
-## API Catalog
+## API catalog
 
 The _Greet_ API will now be listed in the API Catalog.
 
@@ -99,8 +91,7 @@ At this stage, you should be able to test your API using tools like _cURL_ or _P
 
 1. In the _Frontend API_ section, open the _Greet_ API and open its CORS section.
 1. Add a new CORS configuration.
-
-    ![cors](/Images/cors.png)
+  ![cors](/Images/cors.png)
 
 {{% alert title="Note" color="primary" %}}For convenience, we are granting access to all domains. Using \* in production should only be done after assessing the security implications.{{% /alert %}}
 
@@ -110,11 +101,11 @@ To test the API, click the **Try It** button. In this case, we're testing _GET /
 
 ![apicatalog_test_success](/Images/apicatalog_test_success.png)
 
-## Further Integration
+## Further integration
 
 Now that your services are being managed by API Manager, you can leverage the entire arsenal of available features that it provides. These include:
 
 * Built-in support for common authentication mechanisms such as OAuth, HTTP Basic, API Key, Two-way SSL, and more.
 * Integration with third-party Identity Management (IM) infrastructures for authentication and authorization.
-* Add governance to traffic using policies; for example, to ensure sensitive information isn't being leaked in the response. See [Configure API Manager settings in Policy Studio](https://docs.axway.com/bundle/APIManager_753_APIMgmtGuide_allOS_en_HTML5/page/Content/APIManagementGuideTopics/api_mgmt_config_ps.htm#Configur) for further information.
+* Add governance to traffic using policies; for example, to ensure sensitive information is not being leaked in the response. See [Configure API Manager settings in Policy Studio](https://docs.axway.com/bundle/APIManager_753_APIMgmtGuide_allOS_en_HTML5/page/Content/APIManagementGuideTopics/api_mgmt_config_ps.htm#Configur) for further information.
 * Apply quotas on APIs. See [Administer APIs in API Manager](https://docs.axway.com/bundle/APIManager_753_APIMgmtGuide_allOS_en_HTML5/page/Content/APIManagementGuideTopics/api_mgmt_admin.htm) for more information.

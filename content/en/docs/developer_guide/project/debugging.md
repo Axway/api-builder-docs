@@ -108,7 +108,7 @@ $ DPI_DEBUG_LEVEL=64 npm start
 
 ## Using a debugger
 
-Sometimes, debugging can yield valuable information. In particular, if you are developing [custom API](/docs/developer_guide/apis/) or writing your own [flow-nodes](/docs/how_to/create_a_custom_flow-node/) using the [{{% variables/apibuilder_prod_name %}} SDK](#), it is an invaluable tool. You can use a variety of debugging / coding environments. However, the [Chrome Debugger](https://developers.google.com/web/tools/chrome-devtools/javascript) is most straight forward as you probably already have it installed. To launch [Node.js in debug mode](https://nodejs.org/en/docs/guides/debugging-getting-started/), use the --inspect-brk flag.
+Sometimes, debugging can yield valuable information. In particular, if you are developing [custom API](/docs/developer_guide/apis/) or writing your own [flow-nodes](/docs/how_to/create_a_custom_flow_node/) using the [{{% variables/apibuilder_prod_name %}} SDK](#), it is an invaluable tool. You can use a variety of debugging / coding environments. However, the [Chrome Debugger](https://developers.google.com/web/tools/chrome-devtools/javascript) is most straight forward as you probably already have it installed. To launch [Node.js in debug mode](https://nodejs.org/en/docs/guides/debugging-getting-started/), use the --inspect-brk flag.
 
 ```
 $ node --inspect-brk .

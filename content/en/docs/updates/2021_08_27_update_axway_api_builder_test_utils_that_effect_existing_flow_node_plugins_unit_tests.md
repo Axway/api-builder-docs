@@ -19,7 +19,7 @@ For this reason, we introduced a feature to [@axway/api-builder-test-utils](http
 
 ## How does this impact my service
 
-If you have [custom flow-nodes](/docs/how_to/create_a_custom_flow-node/), then you will want this update. Recall that when you generate a flow-node plugin for the first time, it generates a "hello" example that accepts a string input **Name**, and when invoked, returns the message, "Hello _Name_". The JSON schema for the **Name** is as follows:
+If you have [custom flow-nodes](/docs/how_to/create_a_custom_flow_node/), then you will want this update. Recall that when you generate a flow-node plugin for the first time, it generates a "hello" example that accepts a string input **Name**, and when invoked, returns the message, "Hello _Name_". The JSON schema for the **Name** is as follows:
 
 ```yaml
 parameters:

@@ -24,7 +24,7 @@ Connectors are adapters to allow you to read and write data to and from an exter
 
 ### Available connectors
 
-The following connectors are available for download directly from NPM:
+The following connectors are available for download directly from npm:
 
 * `@axway/api-builder-plugin-dc-mongo`
 * `@axway/api-builder-plugin-dc-mysql`
@@ -58,7 +58,7 @@ For additional MySQL connector configuration information, refer to [MySQL Connec
 
 ## Using connector models
 
-Once you've configured your MySQL configuration files located under `<project>/conf`, you can start up your {{% variables/apibuilder_prod_name %}} project and visit the console (normally found under **`localhost:8080/console`** ). Your MySQL tables will be listed under the **Models** tab of the console.
+Once you have configured your MySQL configuration files located under `<project>/conf`, you can start up your {{% variables/apibuilder_prod_name %}} project and visit the console (normally found under **`localhost:8080/console`** ). Your MySQL tables will be listed under the **Models** tab of the console.
 
 ![Screen_Shot_2018-05-30_at_18.11.37](/Images/screen_shot_2018_05_30_at_18_11_37.png)
 

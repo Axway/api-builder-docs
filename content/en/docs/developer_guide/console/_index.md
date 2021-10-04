@@ -45,13 +45,13 @@ The `admin` dictionary can contain the following keys:
 
 {{% variables/apibuilder_prod_name %}} provides a list of tabs on the left-hand side that helps you get started building your applications. Click the different sections of the UI to hop between functions and features of {{% variables/apibuilder_prod_name %}}.
 
-### Summary
+### Summary tab
 
 The **Summary** tab lists basic information about your application like app name, version, description, author, license, and API key. To quickly navigate to the **Summary** tab, click on the Axway icon or click on {{% variables/apibuilder_prod_name %}}.
 
 ![localhost_8080_console_project_summary](/Images/localhost_8080_console_project_summary.png)
 
-### API Doc & Test
+### API Doc & Test tab
 
 On startup, API endpoints are automatically generated for all models as per their default configuration. An API provides a way for a client to access your application, such as `GET <SERVER_ADDRESS>/api/users/query`, execute custom logic, internally access the application's models and APIs, and return data to the client application.
 
@@ -59,13 +59,13 @@ The **API Doc & Test** tab in the Admin Console contains generated docs of your 
 
 ![localhost_8080_console_project_summary_%281%29](/Images/localhost_8080_console_project_summary_(1).png)
 
-### Flows
+### Flows tab
 
 A flow is a low-code way of orchestrating services and utilities. Flows can be invoked by endpoints as well as by a number of other flow-triggers such as timers and event queues. The **Flows** tab lets you create and edit flows.
 
 ![localhost_8080_console_project_summary_%282%29](/Images/localhost_8080_console_project_summary_(2).png)
 
-### Models
+### Models tab
 
 A model is the data model, backed by a connector, and exposed as an API endpoint. A model can consist of other models or fields from other models. Once again, {{% variables/apibuilder_prod_name %}} will generate API endpoints for your models by default. Changes to models require a restart.
 
@@ -81,7 +81,7 @@ You may only build models when executing the project locally. The build console 
 
 See the _Create a new model_ section of [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/) for instructions on how to create a new model. For additional information on creating and editing models, refer to [Models](/docs/developer_guide/console/models/).
 
-### Configuration
+### Configuration tab
 
 The **Configuration** tab displays the list of configuration files on the {{% variables/apibuilder_prod_name %}} instance. You can edit the configuration files here.
 
@@ -91,15 +91,15 @@ See [Project Configuration](/docs/developer_guide/project/configuration/project_
 
 ![localhost_8080_console_project_summary_%284%29](/Images/localhost_8080_console_project_summary_(4).png)
 
-### Credentials
+### Credentials tab
 
 The **Credentials** tab displays a card view listing of all the currently configured credentials. For additional information, refer to [Managing Credentials](/docs/developer_guide/credentials/managing_credentials/).
 
 ![localhost_8080_console_project_summary_%288%29](/Images/localhost_8080_console_project_summary_(8).png)
 
-### Plugins
+### Plugins tab
 
-The **Plugins** tab shows the components to extend the core functionality of {{% variables/apibuilder_prod_name %}}, and that can be used to connect to different data sources and services or enhance the Flow editor. For additional connectors and plugin information, refer to [{{% variables/apibuilder_prod_name %}} Connectors](/docs/developer_guide/connectors/) and [{{% variables/apibuilder_prod_name %}} Plugins](/docs/developer_guide/plugins/). For additional information, refer to [flow-nodes](/docs/developer_guide/flows/flow-nodes/) and [flow-triggers](/docs/developer_guide/flows/flow-triggers/). The tab is separated into three sections:
+The **Plugins** tab shows the components to extend the core functionality of {{% variables/apibuilder_prod_name %}}, and that can be used to connect to different data sources and services or enhance the Flow editor. For additional connectors and plugin information, refer to [{{% variables/apibuilder_prod_name %}} Connectors](/docs/developer_guide/connectors/) and [{{% variables/apibuilder_prod_name %}} Plugins](/docs/developer_guide/plugins/). For additional information, refer to [flow-nodes](/docs/developer_guide/flows/flow_nodes/) and [flow-triggers](/docs/developer_guide/flows/flow_triggers/). The tab is separated into three sections:
 
 A list of official **Axway supported plugins.**
 

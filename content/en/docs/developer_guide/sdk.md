@@ -5,7 +5,7 @@ weight: 110
 date: 2021-10-01
 ---
 
-{{% variables/apibuilder_prod_name %}} has a number of [preexisting flow-nodes](/docs/developer_guide/flows/flow-nodes/) for use, but you can also use the {{% variables/apibuilder_prod_name %}} SDK ([@axway/api-builder-sdk](https://www.npmjs.com/package/@axway/api-builder-sdk)) to write your own flow-nodes.
+{{% variables/apibuilder_prod_name %}} has a number of [preexisting flow-nodes](/docs/developer_guide/flows/flow_nodes/) for use, but you can also use the {{% variables/apibuilder_prod_name %}} SDK ([@axway/api-builder-sdk](https://www.npmjs.com/package/@axway/api-builder-sdk)) to write your own flow-nodes.
 
 Below are some resources that can help get you started writing your own flow-nodes:
 

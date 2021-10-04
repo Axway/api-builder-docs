@@ -10,7 +10,7 @@ Hide_readingtime: true
 
 ## Features
 
-* #6739: Previously, the version of the [marked](https://www.npmjs.com/package/marked) module that {{% variables/apibuilder_prod_name %}} was using had a vulnerability [CVE-2021-21306](https://nvd.nist.gov/vuln/detail/CVE-2021-21306). Now, the module was upgraded to marked@2.0.0, however, the module is no longer fully compatible with Node.js 8.x (see [#1927](https://github.com/markedjs/marked/issues/1927)) and since {{% variables/apibuilder_prod_name %}} Web is deprecated (see [D011](/docs/deprecations/#D011APIBuilderWeb%5BD011%5DAPIBuilderWeb)) and Node.js 8.x is also deprecated (see [D039](/docs/deprecations/#D039%5BD039%5DUnmaintainedNode.jsversions)), {{% variables/apibuilder_prod_name %}} will now emit a warning if using marked web routes on Node.js 8.x.
+* #6739: Previously, the version of the [marked](https://www.npmjs.com/package/marked) module that {{% variables/apibuilder_prod_name %}} was using had a vulnerability [CVE-2021-21306](https://nvd.nist.gov/vuln/detail/CVE-2021-21306). Now, the module was upgraded to marked@2.0.0, however, the module is no longer fully compatible with Node.js 8.x (see [#1927](https://github.com/markedjs/marked/issues/1927)) and since {{% variables/apibuilder_prod_name %}} Web is deprecated (see {{% deprecation/link D011 %}}) and Node.js 8.x is also deprecated (see {{% deprecation/link D039 %}}), {{% variables/apibuilder_prod_name %}} will now emit a warning if using marked web routes on Node.js 8.x.
 * #6754: Previously, new {{% variables/apibuilder_prod_name %}} projects were installed with `version` 3.0.0 of `@axway/api-builder-plugin-fn-base64.` Now, new projects install with version 4.0.0.
 
 ## Fixes

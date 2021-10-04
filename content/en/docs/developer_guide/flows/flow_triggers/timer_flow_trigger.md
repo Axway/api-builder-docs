@@ -26,11 +26,11 @@ The following sections provide a detailed information about the **Timer** flow-t
 | Interval | The desired interval in milliseconds at which the flow would be invoked. Must be between 1 and 2147483647. | String | \- | Selector, String | Yes |
 | Start immediately | Denotes if the flow should be invoked immediately. When "true", the flow will be invoked immediately on startup without first waiting for the configured **Interval**. | String | false | Selector, String | No |
 
-## How to use the Timer flow-trigger
+## How to use the timer flow-trigger
 
-### Example - Invoking a flow every 5 minutes
+### Example - invoking a flow every 5 minutes
 
-For this example, we want a flow to be invoked every 5 minutes. Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create a "Timer flow". In this flow, you will want to drag the **Timer** from the **Flow-Nodes > Flow-Triggers** panel on the left, into the flow graph on the right.
+For this example, we want a flow to be invoked every 5 minutes. Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create a "Timer flow". In this flow, you will want to drag the **Timer** from the **flow-nodes > flow-triggers** panel on the left, into the flow graph on the right.
 
 ![image2021-4-20_11_13_14](/Images/image2021_4_20_11_13_14.png)
 
@@ -48,7 +48,7 @@ We can now save the flow by clicking **Apply**, and the service will restart.
 
 After the specified **Interval** of time has passed, the flow will be invoked, executing your business logic. If you check the console window where you launched your {{% variables/apibuilder_prod_name %}} project, you see a detailed debug log showing the execution, and that it logged the "I was triggered!" message as expected:
 
-```
+```log
 // Flow output
 
 1618914065717 INFO  [timer: timer-5] [request-id: 8a486126-b485-4a02-8b19-01a0b43c7021] Triggered

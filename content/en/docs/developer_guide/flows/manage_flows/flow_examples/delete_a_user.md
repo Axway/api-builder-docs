@@ -13,7 +13,7 @@ To configure a delete a user flow:
 1. Name the flow-node: Delete testuser
 1. Select the `delete` method.
 1. Select **Parameters**.
-1. Configure the **id** parameter. If **selector** is selected from the _selector_ drop-down menu, as you begin typing in the **id** parameter field, a drop-down menu of valid or previously used selector options is displayed. You may optionally choose a selector from the list, or continue typing to configure the parameter manually. For additional selector auto-complete information, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). For additional information on the Model flow-node and General flow-node configuration parameters, refer to [Flow-nodes](/docs/developer_guide/flows/flow-nodes/).
+1. Configure the **id** parameter. If **selector** is selected from the _selector_ drop-down menu, as you begin typing in the **id** parameter field, a drop-down menu of valid or previously used selector options is displayed. You may optionally choose a selector from the list, or continue typing to configure the parameter manually. For additional selector auto-complete information, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/). For additional information on the Model flow-node and General flow-node configuration parameters, refer to [Flow-nodes](/docs/developer_guide/flows/flow_nodes/).
 1. Select **Outputs**.
 1. Configure the **next** output. As you begin typing in the **next** field, a drop-down menu of valid or previously used output options is displayed. You may optionally choose an output from the list, or continue typing to configure the parameter manually.
 1. Configure the **notfound** output. As you begin typing in the **notfound** field, a drop-down menu of valid or previously used output options is displayed. You may optionally choose an output from the list, or continue typing to configure the parameter manually.
@@ -27,8 +27,8 @@ To configure a delete a user flow:
 1. Select **Parameters**.
 1. For the **status** parameter, select **number** and enter `404` in the field.
 1. Leave the **body** and **headers** parameters disabled.
-1. Connect the next output of the Delete a user flow-node to the input of the Delete succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/).
-1. Connect the notfound output of the Delete a user flow-node to the input of the User not found flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). The completed flow is displayed.
+1. Connect the next output of the Delete a user flow-node to the input of the Delete succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/).
+1. Connect the notfound output of the Delete a user flow-node to the input of the User not found flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/). The completed flow is displayed.
 ![Delete_01_latest](/Images/delete_01_latest.png)
 1. Click **Apply**.
 1. On the next screen, click **Proceed**. The server will be restarted, the _Delete a user_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.

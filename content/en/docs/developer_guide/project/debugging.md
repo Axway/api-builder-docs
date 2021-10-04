@@ -79,7 +79,7 @@ If changing the logging level (see above) does not yield enough information, som
 Many modules use the [Node.js debug package](https://www.npmjs.com/package/debug) (see for more information), which can be controlled using the DEBUG environment variable. For example, Express.js.
 
 ```bash
-$ DEBUG=express:router npm start
+DEBUG=express:router npm start
 ```
 
 #### Module @axway/api-builder-plugin-dc-mssql
@@ -87,7 +87,7 @@ $ DEBUG=express:router npm start
 The Microsoft SQL Server plugin uses [knex](https://www.npmjs.com/package/knex).
 
 ```bash
-$ DEBUG=knex:* npm start
+DEBUG=knex:* npm start
 ```
 
 #### Module @axway/api-builder-plugin-dc-mysql
@@ -95,7 +95,7 @@ $ DEBUG=knex:* npm start
 The MySQL plugin uses [mysql](https://www.npmjs.com/package/mysql).
 
 ```bash
-$ DEBUG=knex:* npm start
+DEBUG=knex:* npm start
 ```
 
 #### Module @axway/api-builder-plugin-dc-oracle
@@ -103,7 +103,7 @@ $ DEBUG=knex:* npm start
 The Oracle plugin uses [oracledb](https://www.npmjs.com/package/oracledb) and it has their own [debugging](https://oracle.github.io/odpi/doc/user_guide/debugging.html).
 
 ```bash
-$ DPI_DEBUG_LEVEL=64 npm start
+DPI_DEBUG_LEVEL=64 npm start
 ```
 
 ## Using a debugger

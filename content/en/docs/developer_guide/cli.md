@@ -159,7 +159,7 @@ axway builder plugin init --type=oas legacy-connector
 
 ## {{% variables/apibuilder_prod_name %}} CLI (npm)
 
-While we recommend to use the {{% variables/apibuilder_prod_name %}} CLI as part of the Axway CLI, a secondary CLI is available for install on NPM which doesn't depend on the Axway CLI. This has all the same functionality, however the commands and install mechanism are slightly different.
+While we recommend to use the {{% variables/apibuilder_prod_name %}} CLI as part of the Axway CLI, a secondary CLI is available for install on npm which does not depend on the Axway CLI. This has all the same functionality, however the commands and install mechanism are slightly different.
 
 ### Installation and update
 

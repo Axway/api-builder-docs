@@ -17,7 +17,7 @@ The method for an HTTP Response flow-node is:
 
 The HTTP Response flow-node parameter is described in the following section.
 
-### Set HTTP Response parameter
+### Set HTTP Response parameters
 
 The `Set HTTP Response` method parameters are:
 

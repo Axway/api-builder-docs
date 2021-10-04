@@ -7,7 +7,7 @@ date: 2021-10-01
 
 ## Overview
 
-The **Invoke Listener Response** flow-node is part of the **Invoke Flow** plugin, `@axway/api-builder-plugin-invoke-flow`. The plugin also contains the [Flow Listener](/docs/developer_guide/flows/flow-triggers/flow_listener_flow-trigger/) flow-trigger, and the [Invoke Flow](/docs/developer_guide/flows/flow-nodes/invoke_flow_flow-node/) flow-node, and are used together to enable one flow to invoke a another flow. It is a mechanism that can be used to create reusable flows. It can be used to invoke a flow once or multiple times, looping over an array of items. The **Invoke Listener Response** flow-node is the response from a flow that was previously configured with a [Flow Listener](/docs/developer_guide/flows/flow-triggers/flow_listener_flow-trigger/) flow-trigger, to identify the flow to invoke, and **must** be executed from **every** possible code path in the flow attached to the **Flow Listener**. It supports setting a "successful" or "error" response.
+The **Invoke Listener Response** flow-node is part of the **Invoke Flow** plugin, `@axway/api-builder-plugin-invoke-flow`. The plugin also contains the [Flow Listener](/docs/developer_guide/flows/flow_triggers/flow_listener_flow_trigger/) flow-trigger, and the [Invoke Flow](/docs/developer_guide/flows/flow_nodes/invoke_flow_flow_node/) flow-node, and are used together to enable one flow to invoke a another flow. It is a mechanism that can be used to create reusable flows. It can be used to invoke a flow once or multiple times, looping over an array of items. The **Invoke Listener Response** flow-node is the response from a flow that was previously configured with a [Flow Listener](/docs/developer_guide/flows/flow_triggers/flow_listener_flow_trigger/) flow-trigger, to identify the flow to invoke, and **must** be executed from **every** possible code path in the flow attached to the **Flow Listener**. It supports setting a "successful" or "error" response.
 
 To install the plugin, execute the following command:
 
@@ -41,4 +41,4 @@ Sets the response for the executing **Flow Listener** to be returned to the flow
 
 ## How to use the plugin
 
-See [Flow Listener](/docs/developer_guide/flows/flow-triggers/flow_listener_flow-trigger/#how-to-use-the-plugin) flow-trigger for an example on how to use the plugin.
+See [Flow Listener](/docs/developer_guide/flows/flow_triggers/flow_listener_flow_trigger/#how-to-use-the-plugin) flow-trigger for an example on how to use the plugin.

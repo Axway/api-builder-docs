@@ -9,7 +9,7 @@ date: 2021-10-01
 
 The **Solace Consumer** flow-trigger reads messages from [Solace](https://solace.com/) topics. Using Solace is useful when implementing an [event-driven microservice architecture](https://medium.com/trendyol-tech/event-driven-microservice-architecture-91f80ceaa21e).
 
-It is part of the **Solace** plugin, `@axway/api-builder-plugin-ft-solace.` The plugin also contains a [**Solace Producer** flow-node](/docs/developer_guide/flows/flow-nodes/solace_producer_flow-node/). They can be used independently in that your application may only just consume messages from Solace, it does not necessarily have to publish them.
+It is part of the **Solace** plugin, `@axway/api-builder-plugin-ft-solace.` The plugin also contains a [**Solace Producer** flow-node](/docs/developer_guide/flows/flow_nodes/solace_producer_flow_node/). They can be used independently in that your application may only just consume messages from Solace, it does not necessarily have to publish them.
 
 You can install the Solace plugin from the **Plugins** page, or execute the following command:
 
@@ -23,7 +23,7 @@ For additional getting started information, refer to the [Getting Started With {
 
 The following sections provide details of the available **Solace Consumer** parameters.
 
-### Connection Parameters
+### Connection parameters
 
 | Parameter | Type | Description | Configuration selection | Required |
 | --- | --- | --- | --- | --- |
@@ -36,7 +36,7 @@ The following sections provide details of the available **Solace Consumer** para
 
 {{% alert title="Note" color="primary" %}}There is only one Solace **Connection** configuration managed by the UI. All Solace flow-triggers share the same **Connection** configuration and have the **Connection ID** "solace".{{% /alert %}}
 
-### Trigger Parameters
+### Trigger parameters
 
 | Parameter | Type | Description | Configuration selection | Required |
 | --- | --- | --- | --- | --- |
@@ -48,12 +48,12 @@ The following sections provide details of the available **Solace Consumer** para
 
 We recommend that you first get familiar with [Solace Concepts](https://docs.solace.com/Solace-PubSub-Platform.htm). To get started using the Solace flow-trigger, you need to have access to a Solace server.
 
-Alternatively, you can run Solace in a docker container:
+Alternatively, you can run Solace in a Docker container:
 
-```
+```bash
 // Start a message broker container named
 
-$ docker run -d -p 8082:8080 -p 55555:55555 -p:8008:8008 -p:1883:1883 -p:8000:8000 -p:5672:5672 -p:9000:9000 -p:2222:2222 --shm-size=2g --env username_admin_globalaccesslevel=admin --env username_admin_password=admin --name=solace solace/solace-pubsub-standard
+docker run -d -p 8082:8080 -p 55555:55555 -p:8008:8008 -p:1883:1883 -p:8000:8000 -p:5672:5672 -p:9000:9000 -p:2222:2222 --shm-size=2g --env username_admin_globalaccesslevel=admin --env username_admin_password=admin --name=solace solace/solace-pubsub-standard
 ```
 
 If some of these ports are already used on your machine you can change them accordingly. For more information [see Solace documentation page](https://solace.com/products/event-broker/software/getting-started/).
@@ -64,7 +64,7 @@ If some of these ports are already used on your machine you can change them acco
 
 In this example, we will create a "Consumer flow" and configure it to consume JSON messages from a Solace topic, "messages".
 
-#### Create a Consumer flow
+#### Create a consumer flow
 
 Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create a "Consumer flow". Once you have created a new flow, you will want to drag the **Solace Consumer** from the **Flow-Nodes > Flow-Triggers** panel on the left, into the flow graph on the right.
 
@@ -82,7 +82,7 @@ We will also want to assign the Solace message to a variable that will be used i
 
 If you click the info icon ![image2021-4-16_15_15_7](/Images/image2021_4_16_15_15_7.png) , it will display the JSON schema for **Message**.
 
-```
+```json
 // JSON schema for Message
 
 {
@@ -110,7 +110,7 @@ Now the flow is ready to be triggered by a **Solace Producer**. However, let's v
 
 Click **Execute Flow**. The flow editor will not show much, just a message, "Flow successfully executed with no response". However, if you check the console window where you launched your {{% variables/apibuilder_prod_name %}} project, you see a detailed debug log showing the execution, and that it handled the "Hello!" message as expected:
 
-```
+```log
 // Flow output
 
 1618852657607 DEBUG [request-id: 8a6373d1-47a2-45e5-8937-8ae16efd3296] Flow invoked by debugger: Consumer Flow
@@ -125,6 +125,6 @@ Once you are happy with the results you can save the flow and if the connection 
 
 ![image2021-4-20_15_11_48](/Images/image2021_4_20_15_11_48.png)
 
-#### Create a Producer flow
+#### Create a producer flow
 
-To verify the created above Consumer flow, follow the [Solace Producer flow-node guide](/docs/developer_guide/flows/flow-nodes/solace_producer_flow-node/) to create a "Producer flow" to write JSON to the Solace topic called "messages". Publishing with the Producer flow to the same topic will trigger the execution of the Consumer flow.
+To verify the created above Consumer flow, follow the [Solace Producer flow-node guide](/docs/developer_guide/flows/flow_nodes/solace_producer_flow_node/) to create a "Producer flow" to write JSON to the Solace topic called "messages". Publishing with the Producer flow to the same topic will trigger the execution of the Consumer flow.

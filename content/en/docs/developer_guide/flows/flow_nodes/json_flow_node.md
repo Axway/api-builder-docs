@@ -5,7 +5,7 @@ weight: 130
 date: 2021-10-01
 ---
 
-The JSON flow-node methods, parameters, and output are described in the following sections. The JSON flow-node is created when NPM installs the `@axway/api-builder-plugin-fn-json` plugin. The JSON flow-node plugin is included in the default application, but it can be removed.
+The JSON flow-node methods, parameters, and output are described in the following sections. The JSON flow-node is created when npm installs the `@axway/api-builder-plugin-fn-json` plugin. The JSON flow-node plugin is included in the default application, but it can be removed.
 
 ## Methods
 
@@ -33,7 +33,7 @@ The `Stringify` method parameters are:
 | Parameter | Type | Description | Configuration selection |
 | --- | --- | --- | --- |
 | value | any | The value to convert to a JSON string. | Selector, String, Number, Boolean, Object, Array, Null |
-| space | any | A string or number object that's used to insert white space into the output JSON string for readability purposes. If this is a number, it indicates the number of space characters to use as white space; this number is capped at 10. If this is a string, its maximum length is 10; the string is used as white space. If this parameter is not provided, no white space is used. | Selector, String, Number, Boolean, Object, Array, Null |
+| space | any | A string or number object that is used to insert white space into the output JSON string for readability purposes. If this is a number, it indicates the number of space characters to use as white space; this number is capped at 10. If this is a string, its maximum length is 10; the string is used as white space. If this parameter is not provided, no white space is used. | Selector, String, Number, Boolean, Object, Array, Null |
 
 The `space` parameter can be enabled or disabled.
 

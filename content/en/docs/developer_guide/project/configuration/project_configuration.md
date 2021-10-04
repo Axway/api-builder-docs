@@ -13,6 +13,8 @@ date: 2021-10-01
 
 ## Settings
 
+<!-- lint disable heading-sentence-case -->
+
 The following topics describe the project configuration settings.
 
 ### admin

@@ -59,7 +59,7 @@ Once the plugin is installed, the configuration file is located in `<project>/co
 1. From within an {{% variables/apibuilder_prod_name %}} 4.x project, install the connector:
 
     ```bash
-    $ npm install --no-optional @axway/api-builder-plugin-dc-mbs
+    npm install --no-optional @axway/api-builder-plugin-dc-mbs
     ```
 
     After the successful installation of the connector, a `mbs.default.js` configuration file will be automatically created in your project's `/conf` directory.

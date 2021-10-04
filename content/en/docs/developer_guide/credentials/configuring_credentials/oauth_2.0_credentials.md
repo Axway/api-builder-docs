@@ -88,7 +88,7 @@ Many services will not issue a `refresh_token` by default, consult your service 
 | scope | The space-separated list of OAuth scopes for which authorization is requested. |
 | access_token | Typically, `null` for this grant as the service will obtain a new token on startup. |
 
-### Example
+### Client password example
 
 Depending on the deployment scenario, not all settings may be required, but any setting that is not required **must** be set to `null`. The following is an example configuration for a credential that uses a `client_id` and `client_secret` for client credentials grant.
 
@@ -127,7 +127,7 @@ authorization: {
 | scope | The space-separated list of OAuth scopes for which authorization is requested. |
 | access_token | Typically, `null` for this grant as the service will obtain a new token on startup. |
 
-### Example
+### JWT client authentication example
 
 Depending on the deployment scenario, not all settings may be required, but any setting that is not required **must** be set to `null`. The following is an example configuration for a credential that uses JWT for client authentication.
 
@@ -168,7 +168,7 @@ authorization: {
 | scope | The space-separated list of OAuth scopes for which authorization is requested. |
 | access_token | Typically, `null` for this grant as the service will obtain a new token on startup. |
 
-### Example
+### JWT authorization grant example
 
 Depending on the deployment scenario, not all settings may be required, but any setting that is not required **must** be set to `null`. The following is an example configuration for a credential that uses JWT for authorization grant.
 

@@ -37,7 +37,7 @@ var PreBlock = APIBuilder.Block.extend({
     description: 'will set a header named "Foo"',
 
     action: function (req, resp) {
-        // this is a synchronous block since it doesn't have a nex
+        // this is a synchronous block since it does not have a nex
         resp.set('Foo', 'Bar');
         req.log.info('Pre Example Block executed');
     }

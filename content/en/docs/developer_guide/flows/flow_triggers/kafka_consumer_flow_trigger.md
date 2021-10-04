@@ -9,7 +9,7 @@ date: 2021-10-01
 
 This is a flow-trigger that enables triggering a flow that consumes messages from [Apache Kafka](https://kafka.apache.org). Using Apache Kafka is useful when implementing an [event-driven microservice architecture](https://medium.com/trendyol-tech/event-driven-microservice-architecture-91f80ceaa21e).
 
-It is part of the **Kafka** plugin, `@axway/api-builder-plugin-ft-kafka.` The plugin also contains a [**Kafka Producer** flow-node](/docs/developer_guide/flows/flow-nodes/kafka_producer_flow-node/). They can be used independently in that your application may only just consume messages from Kafka, it does not necessarily have to produce them.
+It is part of the **Kafka** plugin, `@axway/api-builder-plugin-ft-kafka.` The plugin also contains a [**Kafka Producer** flow-node](/docs/developer_guide/flows/flow_nodes/kafka_producer_flow_node/). They can be used independently in that your application may only just consume messages from Kafka, it does not necessarily have to produce them.
 
 You can install the **Kafka** plugin from the **Plugins** page, or execute the following command:
 
@@ -23,7 +23,7 @@ For additional getting started information, refer to the [Getting Started With {
 
 The following sections provide details of the available **Kafka Consumer** parameters.
 
-### Connection Parameters
+### Connection parameters
 
 | Parameter | Type | Description | Configuration selection | Required |
 | --- | --- | --- | --- | --- |
@@ -37,7 +37,7 @@ The following sections provide details of the available **Kafka Consumer** param
 
 {{% alert title="Note" color="primary" %}}There is only one Kafka **Connection** configuration managed by the UI. All Kafka flow-triggers share the same **Connection** configuration and have the **Connection ID** "kafka".{{% /alert %}}
 
-### Trigger Parameters
+### Trigger parameters
 
 | Parameter | Type | Description | Configuration selection | Required |
 | --- | --- | --- | --- | --- |
@@ -65,18 +65,18 @@ To get started using the Kafka flow-trigger, you need to have access to a Kafka 
 
 Alternatively, if you do not wish to use Docker, you can [download Kafka](https://kafka.apache.org/downloads.html) directly and extract into a directory. You must start zookeeper first:
 
-```
+```bash
 // Start zookeeper
 
-$ ./bin/zookeeper-server-start.sh config/zookeeper.properties
+./bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
 
 After zookeeper starts, you can start Kafka:
 
-```
+```bash
 // Start kafka
 
-$ ./bin/kafka-server-start.sh config/server.properties
+./bin/kafka-server-start.sh config/server.properties
 ```
 
 When shutting down, shutdown Kafka first, and then zookeeper.
@@ -87,7 +87,7 @@ When shutting down, shutdown Kafka first, and then zookeeper.
 
 For this example, we will create a "Consumer flow" and configure it to consume JSON messages from a Kafka topic, "messages". Generally speaking, your application would be unlikely to read and write to the same topic. However, to demonstrate this example, we will also create a "Producer flow" to write JSON to the Kafka topic, "messages".
 
-#### Create a Consumer flow
+#### Create a consumer flow
 
 Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create a "Consumer flow". In this flow, you will want to drag the **Kafka Consumer** from the **Flow-Nodes > Flow-Triggers** panel on the left, into the flow graph on the right. Configure the **Kafka Consumer** flow-trigger as shown below. The **Consumer group ID** is integral to the scalability of Kafka. For example, you can configure multiple instances of {{% variables/apibuilder_prod_name %}} with the same **Consumer group ID** to achieve scalability.
 
@@ -103,7 +103,7 @@ We will also want to do something with the Kafka message in the flow, but first 
 
 If you click the info icon ![image2021-4-16_15_15_7](/Images/image2021_4_16_15_15_7.png) , it will display the JSON schema for a **Message**. In this example, we are only interested in the `value`.
 
-```
+```json
 // JSON schema for Message
 
 {
@@ -160,7 +160,7 @@ Now the flow is ready to be triggered by a **Kafka Producer**. However, let's ve
 
 Click **Execute Flow**. The flow editor will not show much, just a message, "Flow successfully executed with no response". However, if you check the console window where you launched your {{% variables/apibuilder_prod_name %}} project, you see a detailed debug log showing the execution, and that it handled the "banana" message as expected:
 
-```
+```log
 // Flow output
 
 1618583651686 DEBUG [request-id: 38b6f1ca-5fac-4b88-aefe-4f428f2b1e17] Flow invoked by debugger: Consumer
@@ -175,7 +175,7 @@ After, you can click **Apply** to save the flow. If all goes well, the **Status*
 
 ![image2021-4-20_15_27_42](/Images/image2021_4_20_15_27_42.png)
 
-#### Create a Producer flow
+#### Create a producer flow
 
 Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create a "Producer flow". In this flow, you will want to drag the **Kafka Producer** from the **Flow-Nodes > Flow-Triggers** panel on the left, into the flow graph on the right. Configure the flow-node to have the properties as shown below.
 

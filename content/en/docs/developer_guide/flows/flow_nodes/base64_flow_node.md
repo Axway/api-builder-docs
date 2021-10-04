@@ -5,7 +5,7 @@ weight: 20
 date: 2021-10-01
 ---
 
-The flow-node methods, parameters, and output for the Base64 flow-node are described in the following sections. The Base64 flow-node is created when NPM installs the `@axway/api-builder-plugin-fn-base64` plugin. The Base64 flow-node plugin is included in the default application, but it can be removed.
+The flow-node methods, parameters, and output for the Base64 flow-node are described in the following sections. The Base64 flow-node is created when npm installs the `@axway/api-builder-plugin-fn-base64` plugin. The Base64 flow-node plugin is included in the default application, but it can be removed.
 
 ## Methods
 

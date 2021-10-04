@@ -28,9 +28,9 @@ The `Format string` method parameters are:
 
 The `data` parameter refers to content which is provided to the template when it is evaluated at runtime. It is the selector or value that you want to pass to the Mustache template engine to provide dynamic values to the resulting string.
 
-#### Providing dynamic data using a JSONPath Selector
+#### Providing dynamic data using a JSONPath selector
 
-In {{% variables/apibuilder_prod_name %}} flows, the `$` is a [JSON path](http://jsonpath.com/) selector that selects data from the whole runtime context. You can also modify the selector to choose and pass specific data elements. For example, you can use `$.params.username` to refer to the username parameter in the flow. At design time, it is useful to have an understanding of the data that you are querying and an understanding of what the JSON path selector will return.
+In {{% variables/apibuilder_prod_name %}} flows, the `$` is a [JSONPath](http://jsonpath.com/) selector that selects data from the whole runtime context. You can also modify the selector to choose and pass specific data elements. For example, you can use `$.params.username` to refer to the username parameter in the flow. At design time, it is useful to have an understanding of the data that you are querying and an understanding of what the JSONPath selector will return.
 
 The `template` parameter refers to the Mustache template, which is a string that contains a mixture of static and dynamic content. Both the `template` and `data` parameters are fed into the template engine at runtime. The `data` parameter is referred to as `"data"` within the template. Dynamic content is evaluated inside double curly brackets `{{}}`. In this example, `"My name is {{data.username}}"`, the string `"My name is"` is static content and `"{{data.username}}"`is calculated dynamically based on the data parameter passed into the template at runtime.
 

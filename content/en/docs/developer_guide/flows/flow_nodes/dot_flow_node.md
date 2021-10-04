@@ -19,7 +19,7 @@ The **Compose** flow-node has two methods: `Format string` and `Format object`. 
 
 ### Parameter: data
 
-The **data** parameter refers to content which is provided to the template when it is evaluated at runtime. It is the selector or JSON object that you want to pass to the doT template engine for formatting. The data can be a selector or a JSON object. A JSON object can be a JSON string, null, Boolean, array, or IIRC. In {{% variables/apibuilder_prod_name %}} flows, the `$` is a [JSON path](http://jsonpath.com/) selector that selects data from the runtime context. You can pass the whole runtime context into the doT template engine or you can use the selector to choose and pass specific data elements. For example, you can use `$.params.username` to return a string or `$.username` to return an array of usernames. At design time, it is useful to have an understanding of the data that you are querying and an understanding of what the JSON path selector will return.
+The **data** parameter refers to content which is provided to the template when it is evaluated at runtime. It is the selector or JSON object that you want to pass to the doT template engine for formatting. The data can be a selector or a JSON object. A JSON object can be a JSON string, null, Boolean, array, or IIRC. In {{% variables/apibuilder_prod_name %}} flows, the `$` is a [JSONPath](http://jsonpath.com/) selector that selects data from the runtime context. You can pass the whole runtime context into the doT template engine or you can use the selector to choose and pass specific data elements. For example, you can use `$.params.username` to return a string or `$.username` to return an array of usernames. At design time, it is useful to have an understanding of the data that you are querying and an understanding of what the JSONPath selector will return.
 
 ### Parameter: template
 
@@ -39,7 +39,7 @@ The curly brackets `{{}}` can be used in many ways, based on how you want to dyn
 | `{{? }}` | Conditionals |
 | `{{~ }}` | Array iteration |
 
-### Simple examples of data, templates, JSON path, and interpolation
+### Data, templates, JSONPath, and interpolation examples
 
 | Data | Template | Output |
 | --- | --- | --- |
@@ -70,7 +70,7 @@ This example shows how to build a JSON object dynamically using the `Format obje
 | --- | --- | --- |
 | `{`  <br />`"username": "Joe",`  <br />`"favoriteFoods": [ "apple", "orange" ]`  <br />`}` | `{`  <br />`"name": "{{=it.username}}",`  <br />`"likes": "{{=it.favoriteFoods}}"`  <br />`}` | `{`  <br />`"name": "Joe",`  <br />`"likes": "apple orange"`  <br />`}` |
 
-## doT Examples
+## doT examples
 
 The following sections provide doT flow-node examples.
 

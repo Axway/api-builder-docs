@@ -5,9 +5,9 @@ weight: 40
 date: 2021-10-01
 ---
 
-The Compose (DoT) flow-node methods, parameters, and outputs are described in the following sections. The Compose flow-node is created when NPM installs the `@axway/api-builder-plugin-fn-dot` plugin. The Compose flow-node plugin is included in the default application, but it can be removed. For additional DoT flow-node information, refer to [DoT flow-node](/docs/developer_guide/flows/flow-nodes/dot_flow-node/).
+The Compose (doT) flow-node methods, parameters, and outputs are described in the following sections. The Compose flow-node is created when npm installs the `@axway/api-builder-plugin-fn-dot` plugin. The Compose flow-node plugin is included in the default application, but it can be removed. For additional doT flow-node information, refer to [doT flow-node](/docs/developer_guide/flows/flow_nodes/dot_flow_node/).
 
-{{% alert title="Caution" color="danger" %}}Installing the Compose (DoT) flow-node module may report a security vulnerability with doT. This is because doT templates can be used to execute malicious JavaScript.
+{{% alert title="Caution" color="danger" %}}Installing the Compose (doT) flow-node module may report a security vulnerability with doT. This is because doT templates can be used to execute malicious JavaScript.
 
 **Templates should never come from untrusted sources**. If you trust all the templates that you use, then you can safely ignore the vulnerability and continue to use this plugin.
 
@@ -17,8 +17,8 @@ This plugin is no longer bundled with new {{% variables/apibuilder_prod_name %}}
 
 The default methods for a Compose flow-node are:
 
-* `Format object` - Compose an object by evaluating a template. The evaluated template is JSON parsed and so must be a valid JSON encoded string. For additional information, see [https://olado.github.io/doT](https://olado.github.io/doT).
-* `Format string` - Compose a string by evaluating a template. For additional information, see [https://olado.github.io/doT](https://olado.github.io/doT).
+* `Format object` - Compose an object by evaluating a template. The evaluated template is JSON parsed and so must be a valid JSON encoded string. For additional information, see [https://olado.github.io/dot](https://olado.github.io/dot).
+* `Format string` - Compose a string by evaluating a template. For additional information, see [https://olado.github.io/dot](https://olado.github.io/dot).
 
 ## Parameters
 

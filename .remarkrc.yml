@@ -37,7 +37,26 @@ plugins:
       'HTTP',
       'OpenAPI',
       'Endpoint',
-      'encodeURI'
+      'encodeURI',
+      'Windows',
+      'Amplify Runtime Services',
+      'CRUD',
+      'REST',
+      'JSON',
+      'Kafka',
+      'Solace',
+      'XSLT',
+      'XML',
+      'JSONPath',
+      'JavaScript',
+      'OAuth',
+      'MBS',
+      'ARS',
+      'CLI',
+      'doT',
+      'HTML',
+      'JWT',
+      'URI'
     ]]
   - [ 'remark-lint-prohibited-strings', [
       { no: 'Flow node', yes: 'Flow-node' },
@@ -52,6 +71,15 @@ plugins:
       { yes: 'unix' },
       { yes: 'GitHub' },
       { yes: 'Docker' },
+      { yes: 'Axway' },
+      { yes: 'Amplify' },
+      { yes: 'Oracle' },
+      { yes: 'JSONPath' },
+      # the plugin doesn't handle URLs well
+      # { yes: 'doT' },
+      { yes: 'OAuth' },
+      { no: 'JSON path', yes: 'JSONPath'},
+      { yes: 'JSONPath' },
       # the plugin doesn't handle regex too well, so wasn't able to use
       # negative lookbehind for use of 'builder' without preceding 'API'.
       # https://github.com/Trott/remark-lint-prohibited-strings/blob/main/index.js
@@ -65,3 +93,12 @@ plugins:
       { no: "(\\w+(?<!ca))n't", yes: '$1 not', replaceCaptureGroups: true },
       { no: "(\\w+)'ll", yes: '$1 will', replaceCaptureGroups: true },
     ]]
+
+  # We need to figure out what to do with these rules
+
+  # too many exceptions
+  - [ 'remark-lint-heading-sentence-case', false ]
+  # Buggy AF for multi-indented lists
+  - [ 'remark-lint-list-item-content-indent', false ]
+  # shortcodes throw this off
+  - [ 'remark-lint-maximum-heading-length', false ]

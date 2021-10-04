@@ -30,9 +30,9 @@ To configure flow-nodes in a flow:
 
 1. Select a flow-node on the flow editor panel to configure its properties.
 1. If necessary, select and change the default flow-node name. Flow-node naming should reflect the function of the flow-node.
-1. Select a **Method** from the Method drop-down menu. For additional information on the Model and General flow-node Method selections, refer to [Flow-nodes](/docs/developer_guide/flows/flow-nodes/).
-1. Select **Parameters** and complete or edit the parameter configuration entries. If **selector** is selected from the _selector_ drop-down menu, as you begin typing in the **parameter** field, a drop-down menu of valid or previously used selector options is displayed. You may optionally choose a selector from the list, or continue typing to configure the parameter manually. For additional selector auto-complete information, refer to [Selector and output auto-complete](#selector-and-output-auto-complete). Note that the parameter entries are dependent on the selected flow-node method. For additional information on the Model flow-node and General flow-node configuration parameters, refer to [Flow-nodes](/docs/developer_guide/flows/flow-nodes/).
-1. Select **Outputs** and complete or edit the output configuration entries. As you begin typing in the **output** field, a drop-down menu of valid or previously used output options is displayed. You may optionally choose an output from the list, or continue typing to configure the parameter manually. For additional information on the Model and General flow-node output configuration for each method, refer to [Flow-nodes](/docs/developer_guide/flows/flow-nodes/). Once the flow-node is properly configured, the warning message is longer displayed, and the flow-node is longer highlighted.
+1. Select a **Method** from the Method drop-down menu. For additional information on the Model and General flow-node Method selections, refer to [Flow-nodes](/docs/developer_guide/flows/flow_nodes/).
+1. Select **Parameters** and complete or edit the parameter configuration entries. If **selector** is selected from the _selector_ drop-down menu, as you begin typing in the **parameter** field, a drop-down menu of valid or previously used selector options is displayed. You may optionally choose a selector from the list, or continue typing to configure the parameter manually. For additional selector auto-complete information, refer to [Selector and output auto-complete](#selector-and-output-auto-complete). Note that the parameter entries are dependent on the selected flow-node method. For additional information on the Model flow-node and General flow-node configuration parameters, refer to [Flow-nodes](/docs/developer_guide/flows/flow_nodes/).
+1. Select **Outputs** and complete or edit the output configuration entries. As you begin typing in the **output** field, a drop-down menu of valid or previously used output options is displayed. You may optionally choose an output from the list, or continue typing to configure the parameter manually. For additional information on the Model and General flow-node output configuration for each method, refer to [Flow-nodes](/docs/developer_guide/flows/flow_nodes/). Once the flow-node is properly configured, the warning message is longer displayed, and the flow-node is longer highlighted.
 
 ### Selector and output auto-complete
 
@@ -46,7 +46,7 @@ If authorization is required for a flow-node, then it will contain a drop-down f
 
 ![image2018-11-23_11_20_25](/Images/image2018_11_23_11_20_25.png)
 
-Alternatively, credentials can be accessed by name using the [Authorization flow-node](/docs/developer_guide/flows/flow-nodes/authorization_flow-node/) and provided to flow-nodes which do not advertise authorization parameters using a selector.
+Alternatively, credentials can be accessed by name using the [Authorization flow-node](/docs/developer_guide/flows/flow_nodes/authorization_flow_node/) and provided to flow-nodes which do not advertise authorization parameters using a selector.
 
 ## Connect flow-nodes
 

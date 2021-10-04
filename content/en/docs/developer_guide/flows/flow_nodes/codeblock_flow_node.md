@@ -25,7 +25,7 @@ The typical usage of code block flow-nodes involves setting parameters, mapping 
 
 ### Configuration example
 
-```
+```json
 "block.0": {
  "type": "Codeblock",
  "config": {

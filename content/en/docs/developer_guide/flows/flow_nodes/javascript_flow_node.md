@@ -99,7 +99,7 @@ This example flow-node calculates the product of the provided array of numbers.
 
 ![image2021-5-18_12_36_22](/Images/image2021_5_18_12_36_22.png)
 
-```
+```log
 1621337798796 DEBUG [request-id: 9abdf0c2-efb0-4d85-b6cb-3746ea0133f1] Waiting: Calculate product (javascript.1)
 1621337798796 DEBUG [request-id: 9abdf0c2-efb0-4d85-b6cb-3746ea0133f1] Invoking: Calculate product (javascript.1), method: Execute
 1621337798798 DEBUG [request-id: 9abdf0c2-efb0-4d85-b6cb-3746ea0133f1]   Calculate product (javascript.1) route: []
@@ -110,7 +110,7 @@ Unfortunately, when debugging, we do not see which numbers are being calculated 
 
 ![image2021-5-18_12_38_33](/Images/image2021_5_18_12_38_33.png)
 
-```
+```log
 1621337924647 DEBUG [request-id: 29011c0a-317c-456a-ac63-0dfa9f8a7f07] Waiting: Calculate product (javascript.1)
 1621337924647 DEBUG [request-id: 29011c0a-317c-456a-ac63-0dfa9f8a7f07] Invoking: Calculate product (javascript.1), method: Execute
 1621337924648 DEBUG [request-id: 29011c0a-317c-456a-ac63-0dfa9f8a7f07]   Calculate product (javascript.1) Calculating: 1 * 5 * 99 * 244
@@ -135,7 +135,7 @@ Unfortunately, when debugging, we do not see which numbers are being calculated 
 
 | Input | Code | Output |
 | --- | --- | --- |
-| data = \["1","2","3","4","5"\]; | let result = 0;  <br />  <br />data.forEach(function(element) {  <br />  const number = parseInt(element);  <br />  if(number % 2 == 0){  <br />	result += number;  <br />  }  <br />});  <br />  <br />return result; | 6 |
+| data = \["1","2","3","4","5"\]; | let result = 0;  <br />  <br />data.forEach(function(element) {  <br />  const number = parseInt(element);  <br />  if(number % 2 == 0){  <br />  result += number;  <br />  }  <br />});  <br />  <br />return result; | 6 |
 | data = \["1","2","3","4","5"\]; | return data.map(item => parseInt(item))  <br />  .filter(number => number % 2 == 0)  <br />  .reduce((sum, number) => sum + number); | 6 |
 
 ### Example 6 - Object Manipulation - Combining two objects

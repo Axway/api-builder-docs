@@ -9,7 +9,7 @@ date: 2021-10-01
 
 The **Solace Producer** flow-node writes messages to [Solace](https://solace.com/) topics. Using Solace is useful when implementing an [event-driven microservice architecture](https://medium.com/trendyol-tech/event-driven-microservice-architecture-91f80ceaa21e).
 
-It is part of the **Solace** plugin, `@axway/api-builder-plugin-ft-solace.` The plugin also contains a [**Solace Consumer** flow-trigger](/docs/developer_guide/flows/flow-triggers/solace_consumer_flow-trigger/). They can be used independently in that your application may only just publish messages to Solace, it does not necessarily have to consume them.
+It is part of the **Solace** plugin, `@axway/api-builder-plugin-ft-solace.` The plugin also contains a [**Solace Consumer** flow-trigger](/docs/developer_guide/flows/flow_triggers/solace_consumer_flow_trigger/). They can be used independently in that your application may only just publish messages to Solace, it does not necessarily have to consume them.
 
 You can install the Solace plugin from the **Plugins** page, or execute the following command:
 
@@ -84,12 +84,12 @@ Publish message with attached binary to Solace topic.
 
 We recommend that you first get familiar with [Solace Concepts](https://docs.solace.com/Solace-PubSub-Platform.htm). To get started using the Solace flow-trigger, you need to have access to a Solace server.
 
-Alternatively, you can run Solace in a docker container:
+Alternatively, you can run Solace in a Docker container:
 
-```
-// Start a message broker container named
+```bash
+# Start a message broker container named
 
-$ docker run -d -p 8082:8080 -p 55555:55555 -p:8008:8008 -p:1883:1883 -p:8000:8000 -p:5672:5672 -p:9000:9000 -p:2222:2222 --shm-size=2g --env username_admin_globalaccesslevel=admin --env username_admin_password=admin --name=solace solace/solace-pubsub-standard
+docker run -d -p 8082:8080 -p 55555:55555 -p:8008:8008 -p:1883:1883 -p:8000:8000 -p:5672:5672 -p:9000:9000 -p:2222:2222 --shm-size=2g --env username_admin_globalaccesslevel=admin --env username_admin_password=admin --name=solace solace/solace-pubsub-standard
 ```
 
 If some of these ports are already used on your machine you can change them accordingly. For more information see [Solace documentation](https://solace.com/products/event-broker/software/getting-started/).
@@ -106,7 +106,7 @@ To use it in your flows drag and drop the **Solace Producer** flow-node into the
 
 ### Example - Publish JSON to Solace
 
-In this example, we will encode an Object as JSON and publish it to a Solace topic, "messages". This example requires a [Solace Consumer](/docs/developer_guide/flows/flow-triggers/solace_consumer_flow-trigger/) flow-trigger to be created first so that it creates a valid **Connection ID** that will be used later in your **Kafka Producer**.
+In this example, we will encode an Object as JSON and publish it to a Solace topic, "messages". This example requires a [Solace Consumer](/docs/developer_guide/flows/flow_triggers/solace_consumer_flow_trigger/) flow-trigger to be created first so that it creates a valid **Connection ID** that will be used later in your **Kafka Producer**.
 
 #### Create a Producer Flow
 
@@ -120,9 +120,8 @@ The **Connection ID** that is used here is a string identifier and can be found 
 
 Click on the debugger icon in the upper-right of the graph, do not change any values, and click **Execute Flow**, and check your console debug log, you should see:
 
-```
-// Solace Producer debug output
-
+```log
+# Solace Producer debug output
 1618853664944 DEBUG [request-id: a4d271b4-fbd8-4bcb-8a6e-d5f86fae7242] Flow invoked by debugger: Solace Producer
 1618853664944 DEBUG [request-id: a4d271b4-fbd8-4bcb-8a6e-d5f86fae7242] Waiting: Publish JSON (solace.1)
 1618853664944 DEBUG [request-id: a4d271b4-fbd8-4bcb-8a6e-d5f86fae7242] Invoking: Publish JSON (solace.1)
@@ -136,11 +135,10 @@ The flow-node successfully published JSON to Solace.
 
 ### Example - Behave only as a Solace Producer
 
-It is not possible for your application to behave _only_ as a Solace Producer. This is because the Solace server configuration settings on the [Solace Consumer](/docs/developer_guide/flows/flow-triggers/solace_consumer_flow-trigger/) flow-trigger configuration panel, and it is a limitation with the product that flow-trigger connections cannot be managed independently. It is possible for your application to behave as a Solace Producer, but it is necessary to create a **Solace Consumer**, and then manually disable it. Follow the instructions to create a [Solace Consumer](/docs/developer_guide/flows/flow-triggers/solace_consumer_flow-trigger/), and then in a text editor, edit your `triggers/solace.yaml` file, and manually disable the flow-trigger by setting the "solace-1" flow trigger property "enabled" to `false (line 15)`:
+It is not possible for your application to behave _only_ as a Solace Producer. This is because the Solace server configuration settings on the [Solace Consumer](/docs/developer_guide/flows/flow_triggers/solace_consumer_flow_trigger/) flow-trigger configuration panel, and it is a limitation with the product that flow-trigger connections cannot be managed independently. It is possible for your application to behave as a Solace Producer, but it is necessary to create a **Solace Consumer**, and then manually disable it. Follow the instructions to create a [Solace Consumer](/docs/developer_guide/flows/flow_triggers/solace_consumer_flow_trigger/), and then in a text editor, edit your `triggers/solace.yaml` file, and manually disable the flow-trigger by setting the "solace-1" flow-trigger property "enabled" to `false (line 15)`:
 
-```
-// solace.yaml
-
+```yaml:
+# solace.yaml
 channels:
   solace:
     name: Solace

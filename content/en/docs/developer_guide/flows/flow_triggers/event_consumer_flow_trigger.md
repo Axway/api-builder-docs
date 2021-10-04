@@ -7,7 +7,7 @@ date: 2021-10-01
 
 ## Overview
 
-The **Event Consumer** flow-trigger is part of the **Event** plugin, `@axway/api-builder-plugin-ft-event`. The plugin also contains an [Event Producer](/docs/developer_guide/flows/flow-nodes/event_producer_flow-node/) flow-node, and both work together to enable an event to be emitted from a flow that will trigger another flow via the **Event Consumer** flow-trigger. It is a mechanism that can be used to kick-off flows that run concurrently. It is useful for spinning off relevant tasks, e.g. "new order" flow might emit a "check-inventory" event and kick off a flow that checks inventory and issues re-stock purchase orders if necessary.
+The **Event Consumer** flow-trigger is part of the **Event** plugin, `@axway/api-builder-plugin-ft-event`. The plugin also contains an [Event Producer](/docs/developer_guide/flows/flow_nodes/event_producer_flow_node/) flow-node, and both work together to enable an event to be emitted from a flow that will trigger another flow via the **Event Consumer** flow-trigger. It is a mechanism that can be used to kick-off flows that run concurrently. It is useful for spinning off relevant tasks, e.g. "new order" flow might emit a "check-inventory" event and kick off a flow that checks inventory and issues re-stock purchase orders if necessary.
 
 To install the Event plugin, execute the following command:
 
@@ -21,19 +21,19 @@ For additional getting started information, refer to the [Getting Started With {
 
 The following sections provide details of the available **Event Consumer** parameters.
 
-### Trigger Parameters
+### Trigger parameters
 
 | Parameter | Type | Description | Configuration selection | Required |
 | --- | --- | --- | --- | --- |
 | Event | String | The name of the event. | Selector, String | Yes |
 
-## How to use the Event flow-trigger
+## How to use the event flow-trigger
 
 ### Example - Beep
 
 For this example, we will create a "Consumer flow" that will handle an event named "BEEP", and a "Producer flow" that will emit an event named "BEEP" with a message. The Event plugin is required for this example.
 
-#### Create a Consumer flow
+#### Create a consumer flow
 
 Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create a "Consumer flow". In this flow, you will want to drag the **Event Consumer** from the **Flow-Nodes > Flow-Triggers** panel on the left, into the flow graph on the right. Configure the **Event Consumer** flow-trigger as shown below.
 
@@ -55,7 +55,7 @@ Now the flow is ready to be triggered by an **Event Producer**. However, let's v
 
 Click **Execute Flow**. The flow editor will not show much, just a message, "Flow successfully executed with no response". However, if you check the console window where you launched your {{% variables/apibuilder_prod_name %}} application, you see a detailed debug log showing the execution, and that it handled the "banana" message as expected:
 
-```
+```log
 // Flow output
 
 1618573541236 DEBUG [request-id: 3be8345a-be60-464d-b5df-ef1aa312dfe5] Flow invoked by debugger: Event Consumer
@@ -66,7 +66,7 @@ Click **Execute Flow**. The flow editor will not show much, just a message, "Flo
 1618573541239 DEBUG [request-id: 3be8345a-be60-464d-b5df-ef1aa312dfe5] Flow debugging completed: Event Consumer
 ```
 
-#### Create a Producer flow
+#### Create a producer flow
 
 Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create a "Producer flow". In this flow, you will want to drag the **Event Producer** from the **Flow-Nodes > Flow-Triggers** panel on the left, into the flow graph on the right. Configure the flow-node to have the properties as shown below.
 

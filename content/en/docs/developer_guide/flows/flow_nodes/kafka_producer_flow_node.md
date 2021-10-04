@@ -9,7 +9,7 @@ date: 2021-10-01
 
 The **Kafka Producer** flow-node writes messages to [Apache Kafka](https://kafka.apache.org/) topics. Using Apache Kafka is useful when implementing an [event-driven microservice architecture](https://medium.com/trendyol-tech/event-driven-microservice-architecture-91f80ceaa21e).
 
-It is part of the **Kafka** plugin, `@axway/api-builder-plugin-ft-kafka.` The plugin also contains a [Kafka Consumer](/docs/developer_guide/flows/flow-triggers/kafka_consumer_flow-trigger/) flow-trigger. They can be used independently in that your application may only just publish messages to Kafka, it does not necessarily have to consume them.
+It is part of the **Kafka** plugin, `@axway/api-builder-plugin-ft-kafka.` The plugin also contains a [Kafka Consumer](/docs/developer_guide/flows/flow_triggers/kafka_consumer_flow_trigger/) flow-trigger. They can be used independently in that your application may only just publish messages to Kafka, it does not necessarily have to consume them.
 
 You can install the **Kafka** plugin from the **Plugins** page, or execute the following command:
 
@@ -111,7 +111,7 @@ Publishes a binary message to Kafka topic.
 
 ### Example - Publish JSON to Kafka
 
-In this example, we will encode an Object as JSON and publish it to a Kafka topic, "messages". This example requires a [Kafka Consumer](/docs/developer_guide/flows/flow-triggers/kafka_consumer_flow-trigger/) flow-trigger to be created first so that it creates a valid **Connection ID** that will be used later in your **Kafka Producer**.
+In this example, we will encode an Object as JSON and publish it to a Kafka topic, "messages". This example requires a [Kafka Consumer](/docs/developer_guide/flows/flow_triggers/kafka_consumer_flow_trigger/) flow-trigger to be created first so that it creates a valid **Connection ID** that will be used later in your **Kafka Producer**.
 
 Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create a "Producer flow". In this flow, you will want to drag the **Kafka Producer** from the **Flow-Nodes > Flow-Triggers** panel on the left, into the flow graph on the right. Configure the flow-node to have the properties as shown below.
 
@@ -123,8 +123,8 @@ The **Connection ID** that is used here is a string identifier and can be found 
 
 Click on the debugger icon in the upper-right of the graph, do not change any values, and click **Execute Flow**, and check your console debug log, you should see:
 
-```
-// Kafka Producer debug output
+```log
+# Kafka Producer debug output
 
 1618820290122 DEBUG [request-id: 95956b63-9390-4270-b0d4-e78839c69eee] Flow invoked by debugger: Kafka Producer
 1618820290123 DEBUG [request-id: 95956b63-9390-4270-b0d4-e78839c69eee] Waiting: Publish String (kafka.1)
@@ -140,10 +140,10 @@ The flow-node successfully published JSON to Kafka.
 
 ### Example - Behave only as a Kafka Producer
 
-It is not possible for your application to behave _only_ as a Kafka producer. This is because the Kafka server configuration settings on the [Kafka Consumer](/docs/developer_guide/flows/flow-triggers/kafka_consumer_flow-trigger/) flow-trigger configuration panel, and it is a limitation with the product that flow-trigger connections cannot be managed independently. It is possible for your application to behave as a Kafka Producer, but it is necessary to create a **Kafka Consumer**, and then manually disable it. Follow the instructions to create a [Kafka Consumer](/docs/developer_guide/flows/flow-triggers/kafka_consumer_flow-trigger/), and then in a text editor, edit your `triggers/kafka.yaml` file, and manually disable the flow-trigger by setting the "kafka-1" flow trigger property "enabled" to `false` (line 8):
+It is not possible for your application to behave _only_ as a Kafka producer. This is because the Kafka server configuration settings on the [Kafka Consumer](/docs/developer_guide/flows/flow_triggers/kafka_consumer_flow_trigger/) flow-trigger configuration panel, and it is a limitation with the product that flow-trigger connections cannot be managed independently. It is possible for your application to behave as a Kafka Producer, but it is necessary to create a **Kafka Consumer**, and then manually disable it. Follow the instructions to create a [Kafka Consumer](/docs/developer_guide/flows/flow_triggers/kafka_consumer_flow_trigger/), and then in a text editor, edit your `triggers/kafka.yaml` file, and manually disable the flow-trigger by setting the "kafka-1" flow-trigger property "enabled" to `false` (line 8):
 
-```
-// kafka.yaml
+```yaml
+# kafka.yaml
 
 triggers:
   kafka-1:

@@ -133,7 +133,7 @@ Given no XML input, but given an XSLT input representing an equation (a + b):
 
 And an Stylesheet Params:
 
-```
+```json
 // Stylesheet params
 
 {"a": 2, "b": 3}
@@ -141,7 +141,7 @@ And an Stylesheet Params:
 
 The transformed result would be a string:
 
-```
+```xml
 // Result (XML)
 
 5

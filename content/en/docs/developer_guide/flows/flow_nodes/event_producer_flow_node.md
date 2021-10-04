@@ -7,7 +7,7 @@ date: 2021-10-01
 
 ## Overview
 
-The **Event Produce**r flow-node is part of the **Event** plugin, `@axway/api-builder-plugin-ft-event`. The plugin also contains an [Event Consumer](/docs/developer_guide/flows/flow-triggers/event_consumer_flow-trigger/), flow-trigger, and both work together to enable an event to be emitted from a flow that will trigger another flow via the [Event Consumer](/docs/developer_guide/flows/flow-triggers/event_consumer_flow-trigger/) flow-trigger. It is a mechanism that can be used to kick-off flows that run concurrently. It is useful for spinning off relevant tasks, e.g. "new order" flow might emit a "check-inventory" event and kick off a flow that checks inventory and issues re-stock purchase orders if necessary.
+The **Event Produce**r flow-node is part of the **Event** plugin, `@axway/api-builder-plugin-ft-event`. The plugin also contains an [Event Consumer](/docs/developer_guide/flows/flow_triggers/event_consumer_flow_trigger/), flow-trigger, and both work together to enable an event to be emitted from a flow that will trigger another flow via the [Event Consumer](/docs/developer_guide/flows/flow_triggers/event_consumer_flow_trigger/) flow-trigger. It is a mechanism that can be used to kick-off flows that run concurrently. It is useful for spinning off relevant tasks, e.g. "new order" flow might emit a "check-inventory" event and kick off a flow that checks inventory and issues re-stock purchase orders if necessary.
 
 To install the Event plugin, execute the following command:
 
@@ -53,4 +53,4 @@ Configure your **Event Producer** in the example below.
 
 ![image2021-4-20_11_24_51](/Images/image2021_4_20_11_24_51.png)
 
-An equivalent **[Event Consumer](/docs/developer_guide/flows/flow-triggers/event_consumer_flow-trigger/)** flow-trigger is required to receive this event. Please refer to that documentation for a more detailed example.
+An equivalent **[Event Consumer](/docs/developer_guide/flows/flow_triggers/event_consumer_flow_trigger/)** flow-trigger is required to receive this event. Please refer to that documentation for a more detailed example.

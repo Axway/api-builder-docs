@@ -5,7 +5,7 @@ weight: 10
 date: 2021-10-01
 ---
 
-Flows are acyclic directed graphs of [flow-nodes](/docs/developer_guide/flows/flow-nodes/). They are comprised of operational flow-nodes, which are composed of inputs, logic, and outputs. Flows are used to orchestrate data to provide a reusable, scalable, no-code/low-code way of building microservices to achieve complex integrations with existing data sources and systems.
+Flows are acyclic directed graphs of [flow-nodes](/docs/developer_guide/flows/flow_nodes/). They are comprised of operational flow-nodes, which are composed of inputs, logic, and outputs. Flows are used to orchestrate data to provide a reusable, scalable, no-code/low-code way of building microservices to achieve complex integrations with existing data sources and systems.
 
 The flows are source files and exist in the `./flows` directory of your application. Editing and saving a flow will also update its corresponding source file. Flows are tightly coupled with plugins that provide flow-nodes.
 
@@ -25,7 +25,7 @@ It will open this dialog. Give it some details for our example flow:
 
 ![image2021-4-20_16_39_50](/Images/image2021_4_20_16_39_50.png)
 
-New flows only exist in memory until you click "Apply". However, the editor does not allow you to save invalid flows, and currently the flow is invalid because flows require at least one [flow-node](/docs/developer_guide/flows/flow-nodes/) for it to be considered valid. Input validation or other errors can also cause the flow to be invalid. Drag the **HTTP** flow-node from the **Flow-Nodes > Core** panel on the left, into the graph on the right. It will automatically wire-up to the **Start** flow-node, and auto-select the flow-node, revealing a property panel on the right-hand side. This right-hand property panel is for configuring flow-nodes, and their outputs.
+New flows only exist in memory until you click "Apply". However, the editor does not allow you to save invalid flows, and currently the flow is invalid because flows require at least one [flow-node](/docs/developer_guide/flows/flow_nodes/) for it to be considered valid. Input validation or other errors can also cause the flow to be invalid. Drag the **HTTP** flow-node from the **Flow-Nodes > Core** panel on the left, into the graph on the right. It will automatically wire-up to the **Start** flow-node, and auto-select the flow-node, revealing a property panel on the right-hand side. This right-hand property panel is for configuring flow-nodes, and their outputs.
 
 ![image2021-4-20_16_40_15](/Images/image2021_4_20_16_40_15.png)
 

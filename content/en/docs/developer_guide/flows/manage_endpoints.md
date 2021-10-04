@@ -5,7 +5,7 @@ weight: 10
 date: 2021-10-01
 ---
 
-An API endpoint provides a way for a client to access your application, such as `GET <SERVER_ADDRESS>/api/users/query`, and access the application's models and custom code blocks to return data to the client application. To create API endpoints, see the API reference or follow the [Generate endpoints](#generate-endpoints) instructions. For reference information on flow orchestration and flow-node configuration, refer to [Flow-nodes](/docs/developer_guide/flows/flow-nodes/).
+An API endpoint provides a way for a client to access your application, such as `GET <SERVER_ADDRESS>/api/users/query`, and access the application's models and custom code blocks to return data to the client application. To create API endpoints, see the API reference or follow the [Generate endpoints](#generate-endpoints) instructions. For reference information on flow orchestration and flow-node configuration, refer to [Flow-nodes](/docs/developer_guide/flows/flow_nodes/).
 
 ## Import endpoints
 

@@ -5,13 +5,15 @@ weight: 60
 date: 2021-10-01
 ---
 
-Flow-triggers are ways of triggering a flow and are production-ready since the [Lyon release](/docs/release_notes/-_23_april_2021/). These allow flows to be configured to run on a schedule, or subscribe to an event, such as when a message is pushed to a Kafka queue.
+Flow-triggers are ways of triggering a flow and are production-ready since the [Lyon release](/docs/release_notes/lyon). These allow flows to be configured to run on a schedule, or subscribe to an event, such as when a message is pushed to a Kafka queue.
 
 ## Official flow-triggers
 
+{{% contents %}}
+
 ## How to get flow-triggers
 
-Flow-triggers are distributed in plugins. As with any other plugins, they can be installed as NPM modules from the command line, or via the **Plugins** tab in the UI. Plugins which contain flow-triggers are indicated by the ![image2021-4-19_11_7_26](/Images/image2021_4_19_11_7_26.png) icon as seen below:
+Flow-triggers are distributed in plugins. As with any other plugins, they can be installed as npm packages from the command line, or via the **Plugins** tab in the UI. Plugins which contain flow-triggers are indicated by the ![image2021-4-19_11_7_26](/Images/image2021_4_19_11_7_26.png) icon as seen below:
 
 ![image2021-4-19_11_5_53](/Images/image2021_4_19_11_5_53.png)
 

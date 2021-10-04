@@ -5,8 +5,11 @@ import { visit } from 'unist-util-visit';
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import warnings from './warnings.js';
 import debugModule from 'debug';
+import GithubSlugger from 'github-slugger';
 
 const log = new debugModule('remark-lint:validate-internal-links');
+const slugger = new GithubSlugger();
+let availableAnchors = []
 
 let projectRoot;
 let docsRoot;
@@ -134,8 +137,10 @@ function verifyAnchor(file, node, ref) {
 		anchor = ref.slice(1);
 		const doc = getFile({ file, node, ref, filePath });
 		const tree = fromMarkdown(doc);
+		slugger.reset();
+		availableAnchors = [];
 		visit(tree, "heading", compare);
-		if (anchorFound) {
+		if (availableAnchors.includes[anchor]) {
 			cache[ref] = warnings.valid;
 		} else {
 			file.message(`${warnings.missingAnchor}: ${ref}`, node);
@@ -161,8 +166,10 @@ function verifyAnchor(file, node, ref) {
 		anchorFound = false;
 		// We got the doc now turn it into an AST.
 		const tree = fromMarkdown(doc);
+		slugger.reset();
+		availableAnchors = [];
 		visit(tree, "heading", compare);
-		if (anchorFound) {
+		if (availableAnchors.includes(anchor)) {
 			cache[ref] = warnings.valid;
 		} else {
 			file.message(`${warnings.missingAnchor}: ${ref}`, node);
@@ -177,6 +184,8 @@ function verifyAnchor(file, node, ref) {
 		// order to do proper comparison.			
 		const refAnchor
 			= currentNode.children[0].value.toLowerCase().replace(' ', '-');
+		
+		availableAnchors.push(slugger.slug(refAnchor));	
 		if (refAnchor === anchor) {
 			anchorFound = true;
 			return false; //found so break the loop

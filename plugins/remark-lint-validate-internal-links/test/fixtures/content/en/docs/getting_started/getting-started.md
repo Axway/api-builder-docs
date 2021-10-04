@@ -19,4 +19,25 @@ This section describes installing the Axway command line interface (CLI) and the
 
 ## Models
 
-**[Models](/docs/developer_guide/console/models/)** provide a standardized interface for an application that allows client applications to access data. Models are either provided by a connector, reduced from an existing model, or composed of several models (composite models) using a left or an inner join operation.
+This anchor will be named "models"
+
+
+## Duplicated sections
+
+### Models
+This anchor will be named "models-1"
+
+### Models
+This anchor will be named "models-2"
+
+#### Models 1
+This anchor will be named "models-1-1"
+
+#### Models 2
+This anchor will be named "models-2"
+
+#### Models-1
+This anchor will be named "models-1-2"
+
+### My 成分
+This anchor will be named "my-成分"

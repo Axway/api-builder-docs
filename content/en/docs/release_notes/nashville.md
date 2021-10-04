@@ -6,26 +6,7 @@ description: 21 May 2021
 Hide_readingtime: true
 ---
 
-## Summary
-
-This release includes:
-
-* [Upgrade](#upgrade)
-* [Features](#features)
-* [Fixes](#fixes)
-* [Updated Modules](#updated-modules)
-* [Plugins](#updated-plugins)
-* [Known Issues](#known-issues)
-
-## Upgrade
-
-Before updating, we recommend deleting package-lock.json if it exists.
-
-To update an existing {{% variables/apibuilder_prod_name %}} application, execute the following command from within the application directory:
-
-```bash
-npm update
-```
+{{% releasenotes/upgrade %}}
 
 ## Features
 
@@ -40,7 +21,7 @@ npm update
 * #6661: Fixed broken and incorrect links to documentation for flow-triggers and flows.
 * #6696: Previously, if a plugin fails to uninstall from the UI, the user is incorrectly prompted to `npm install` to manually fix the problem. Now, the user is correctly prompted to `npm uninstall`.
 * #6787: Previously, when flow-trigger validation failed, the validation error did not include important details. These details were logged much earlier than the error so it was hard to correlate them. Now, these validation errors will include these details instead of them being logged separately.
-* #6873: Previously, when `server.start` fails, the promise it returns was rejected causing an UnhandledPromiseRejectionWarning. Now, if `server.start` fails it won't cause this warning.
+* #6873: Previously, when `server.start` fails, the promise it returns was rejected causing an UnhandledPromiseRejectionWarning. Now, if `server.start` fails it will not cause this warning.
 * #6877: Fixed a regression with {{% variables/apibuilder_prod_name %}} [Madrid](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_-_7_may_2021.html) release whereby values that were output from the JavaScript flow-node (with **Unsafe mode** disabled/false), could not have their properties selected using JSONPath. For example, if the JavaScript flow-node emitted an object that was a user as `$.user`, then `$.user.name` would return `undefined`, but `$.user` would correctly return the full object. This happened as a result of a security fix to swap the forked, unmaintained, and vulnerable [@livereach/jsonpath](https://www.npmjs.com/package/@livereach/jsonpath) module with the original [jsonpath](https://www.npmjs.com/package/jsonpath) module.
 * #6894: Previously, if {{% variables/apibuilder_prod_name %}} encountered a startup failure, such as attempting to load an invalid flow, then it would fail to shut down database connections and the process would hang. Now, shutdown works as expected.
 
@@ -68,4 +49,6 @@ npm update
 
 ## Known issues
 
-To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues/).
+To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues).
+
+{{% releasenotes/previous %}}

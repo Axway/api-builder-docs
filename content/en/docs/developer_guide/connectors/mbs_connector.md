@@ -85,4 +85,4 @@ Refer to the documentation for more information about creating [Models](/docs/de
 
 ## Known issues and limitations
 
-For a list of known issues and limitations, refer to the [{{% variables/apibuilder_prod_name %}} Release Notes](/docs/release_notes/).
+For a list of known issues and limitations, refer to the [{{% variables/apibuilder_prod_name %}} known issues](/docs/known_issues).

@@ -6,32 +6,13 @@ description: 20 November 2020
 Hide_readingtime: true
 ---
 
-## Summary
-
-This release includes:
-
-* [Upgrade](#upgrade)
-* [Features](#features)
-* [Fixes](#fixes)
-* [Deprecations](#deprecations)
-* [Updated Modules](#updated-modules)
-* [Known Issues](#known-issues)
-
-## Upgrade
-
-Before updating, we recommend deleting package-lock.json if it exists.
-
-To update an existing {{% variables/apibuilder_prod_name %}} application, execute the following command from within the application directory:
-
-```bash
-npm update
-```
+{{% releasenotes/upgrade %}}
 
 ## Features
 
 * #6588: Flow-trigger parameter values are now editable from the Flow editor.
 * #6612: Added a feature to support the definition of custom HTTP responses in programmatic API. It is now possible to define custom responses that are compatible with the Swagger 2.0 [responseObject](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#responseObject). The custom responses will be included in the application's Swagger. For more information and limitations, please see [{{% variables/apibuilder_prod_name %}} APIs](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_apis.html#APIBuilderAPIs-Introduction).
-* #6638: Previously, loaded JSON schemas with problems due to missing references would not be validated fully. Additionally, the Swagger API documentation for the service was not validated and could be invalid or even fail to download. Now, these components will be validated on startup and emit a warning if they are invalid. See deprecation [\[D045\]](#D045).
+* #6638: Previously, loaded JSON schemas with problems due to missing references would not be validated fully. Additionally, the Swagger API documentation for the service was not validated and could be invalid or even fail to download. Now, these components will be validated on startup and emit a warning if they are invalid. See deprecation {{% deprecation/link D045 %}}.
 
 ## Fixes
 
@@ -41,11 +22,7 @@ npm update
 * #6626: Previously, Model generated Endpoints contained a 401 response for each method without a descriptive schema. Now, these 401 responses are removed from the Endpoint on disk, since when the service Swagger is downloaded, the methods will already describe 401 responses with an UnauthorizedError schema when authorization is enabled.
 * #6635: Previously, if trigger plugins threw a non-standard undefined/null exception on startup, the trigger would be rejected and not loaded properly. Now, trigger plugins that throw unexpected non-standard undefined/null exceptions will be loaded in an error state with the error, "Unknown error".
 
-## Deprecations
-
-These are the deprecations introduced in this release. Click [here](/docs/deprecations/) for a list of all deprecations.
-
-* **\[[D045](/docs/deprecations/#D045)\] exitOnSwaggerSchemaValidationError**: Validation errors when loading JSON schemas will cause the service to terminate. Additionally, The service's Swagger API docs are now validated and will cause the service to terminate if found to be invalid. See [Addition of Swagger and JSON schema validation on start](/docs/deprecations/addition_of_swagger_and_json_schema_validation_on_start/).
+{{% releasenotes/deprecations %}}
 
 ## Updated modules
 
@@ -58,4 +35,6 @@ These are the deprecations introduced in this release. Click [here](/docs/deprec
 
 ## Known issues
 
-To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues/).
+To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues).
+
+{{% releasenotes/previous %}}

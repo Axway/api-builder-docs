@@ -1,23 +1,22 @@
 ---
 title: Removal of strings as default Model IDs
 linkTitle: Removal of strings as default Model IDs
-weight: 170
+weight: 5
+deprecation: D005
 date: 2021-10-01
 ---
 
-{{% alert title="Note" color="primary" %}}This document describes deprecation \[[D005](/docs/deprecations/#D005)\]{{% /alert %}}
-
-## Primary keys will no longer default to string
+{{% alert title="Note" color="primary" %}}This document describes deprecation {{% deprecation/link D005 %}}{{% /alert %}}
 
 Using strings as the default Model IDs in the generated APIs and flows has been deprecated since the {{% variables/apibuilder_prod_name %}} - Canberra release.
 
-Beginning with the [Canberra](/docs/release_notes/standalone_-_17_august_2018/) release, Model IDs are based on the database's primary key type. This will be the default behavior in all new services.
+Beginning with the [Canberra](/docs/release_notes/canberra) release, Model IDs are based on the database's primary key type. This will be the default behavior in all new services.
 
-### Why are we deprecating this feature
+## Why are we deprecating this feature
 
 Previously, APIs that required an ID always expected the Model ID to be a string, even if it was handled internally as a numeric value. However, APIs that return IDs (for example, `findAll`) returned the ID using the correct type. Now, to be consistent, all APIs will require and return the correct ID type.
 
-### How does this impact my application
+## How does this impact my application
 
 The following areas are impacted:
 
@@ -25,7 +24,7 @@ The following areas are impacted:
 * Models
 * API
 
-### Upgrading existing applications
+## Upgrading existing applications
 
 Updates contain important changes to improve the performance, stability, and security of your services. Installing them ensures that your software continues to run safely and efficiently.
 
@@ -38,7 +37,7 @@ It is strongly recommended you upgrade {{% variables/apibuilder_prod_name %}} to
 
 After upgrading, the `usePrimaryKeyType` feature will not be enabled until you enable it. To enable it, add the following setting to your `default.js` file.
 
-```
+```json
 flags: {
     usePrimaryKeyType: true
 }

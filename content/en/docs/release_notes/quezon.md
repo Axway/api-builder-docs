@@ -6,32 +6,10 @@ description: 2 July 2021
 Hide_readingtime: true
 ---
 
-## Summary
-
-This release includes:
-
-* [Upgrade](#upgrade)
-* [Breaking Changes](#breaking-changes)
-* [Features](#features)
-* [Fixes](#fixes)
-* [Updated Modules](#updated-modules)
-* [Plugins](#updated-plugins)
-* [Known Issues](#known-issues)
-
-## Upgrade
-
-Before updating, we recommend deleting package-lock.json if it exists.
-
-To update an existing {{% variables/apibuilder_prod_name %}} application, execute the following command from within the application directory:
-
-```bash
-npm update
-```
-
+{{% releasenotes/upgrade %}}
 ## Breaking changes
 
 * #6814: Previously, @axway/api-builder-plugin-fn-javascript had an "Unsafe Mode" parameter, which when enabled, allows all Node.js globals to be available for use in the flow-node. Now, the "Unsafe Mode" parameter is removed and all Node.js globals are available by default and code will be executed in the same context as the rest of the {{% variables/apibuilder_prod_name %}} service.
-
 ## Features
 
 * #6786: Added missing mock for `getScoped` to `MockLogger` in `@axway/api-builder-test-utils`. Additionally, all `MockLogger` methods are now stubbed and can have function calls asserted by default.
@@ -66,4 +44,6 @@ npm update
 
 ## Known issues
 
-To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues/).
+To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues).
+
+{{% releasenotes/previous %}}

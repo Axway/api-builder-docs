@@ -1,13 +1,12 @@
 ---
 title: Removal of unsupported APIs on Models that do not have a primary key
 linkTitle: Removal of unsupported APIs on Models that do not have a primary key
-weight: 190
+weight: 4
+deprecation: D004
 date: 2021-10-01
 ---
 
-{{% alert title="Note" color="primary" %}}This document describes deprecation \[[D004](/docs/deprecations/#D004)\]{{% /alert %}}
-
-## Removal of unsupported APIs on Models that do not have a primary key
+{{% alert title="Note" color="primary" %}}This document describes deprecation {{% deprecation/link D004 %}}{{% /alert %}}
 
 Models based on the tables that do not have a primary key:
 
@@ -17,7 +16,7 @@ Models based on the tables that do not have a primary key:
 
 These have been deprecated since the {{% variables/apibuilder_prod_name %}} - Canberra release.
 
-Beginning with the [Canberra](/docs/release_notes/standalone_-_17_august_2018/) release, for models that do not have a primary key:
+Beginning with the [Canberra](/docs/release_notes/canberra) release, for models that do not have a primary key:
 
 * The `delete`, `findAndModify`, `findByID`, `upsert`, and `update` APIs and endpoints will not be generated.
 * The model flow-node will not have `delete`, `findAndModify`, `findByID`, `upsert`, or `update` methods.
@@ -25,11 +24,11 @@ Beginning with the [Canberra](/docs/release_notes/standalone_-_17_august_2018/) 
 
 This will be the default behavior in all new services.
 
-### Why are we deprecating this feature
+## Why are we deprecating this feature
 
 The APIs generated for models that do not have primary keys are non-functional, and any attempt to use them will result in errors. Also, the location header returned for the Create API was `/api/<model>/undefined` which is incorrect, and any reliance on its value would likely result in errors.
 
-### How does this impact my service
+## How does this impact my service
 
 This is now the default behavior for all new services. Any existing services will continue to work as they previously did, though it is strongly recommended you enable the new behavior on existing services.
 
@@ -39,7 +38,7 @@ The changed behavior only impacts services that use the MySQL or Oracle data con
 * API - The auto-generated CRUD API for a model that does not have a primary key will no longer include the `delete`, `findAndModify`, `findByID`, `upsert, and update` APIs. Previously, any call to these APIs would have resulted in a response with the HTTP status code 500 (Server Error). Now, the response will be an HTTP status code 404 (Not Found).
 * Endpoints - Orchestrated APIs created using the "Generate endpoints" feature for models that do not have a primary key will contain invalid endpoints for `delete`, `findAndModify`, `findByID`, `upsert`, and `update`.
 
-### Upgrading existing services
+## Upgrading existing services
 
 Updates contain important changes to improve the performance, stability, and security of your services. Installing them ensures that your software continues to run safely and efficiently.
 
@@ -51,7 +50,7 @@ It is strongly recommended you upgrade {{% variables/apibuilder_prod_name %}} to
 
 Upgrading to the latest does not automatically enable the new behavior on pre-existing services. To enable the behavior there, add the following setting to your `default.js` file.
 
-```
+```json
 flags: {
     enableModelsWithNoPrimaryKey: true
 }
@@ -61,7 +60,7 @@ More `default.js` configuration file information can be found here: [Project Con
 
 Once enabled, start {{% variables/apibuilder_prod_name %}} to check for invalid flows and endpoints. If there are any flows or endpoints that are now invalid because of the removed methods, {{% variables/apibuilder_prod_name %}} will fail to start with error messages. For example, an Oracle model called NOPK would generate an error like:
 
-```
+```json
 1534267446154 Invalid flow oraclenopk-delete: {
   "valid": false,
   "errors": [
@@ -100,30 +99,30 @@ Edit the response for the Create API, POST `/<modelname>`, and delete responses 
 
 For `/<modelname>/` query and GET `/<modelname>` change the referenced schema and remove the `-full` suffix. For example, change:
 
-```
+```json
 "200": {
-            "description": "The query succeeded, and the results are available.",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "schema:///model/oracle/NOPK-full"
-              }
-            }
-          }
+  "description": "The query succeeded, and the results are available.",
+  "schema": {
+    "type": "array",
+    "items": {
+      "$ref": "schema:///model/oracle/NOPK-full"
+    }
+  }
+}
 ```
 
 Remove the `-full` suffix in the referenced schema.
 
-```
+```json
 "200": {
-            "description": "The query succeeded, and the results are available.",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "schema:///model/oracle/NOPK"
-              }
-            }
-          }
+  "description": "The query succeeded, and the results are available.",
+  "schema": {
+    "type": "array",
+    "items": {
+      "$ref": "schema:///model/oracle/NOPK"
+    }
+  }
+}
 ```
 
 Once complete, your service should start; however, it is recommended that you re-test your service and clients before deploying to production.

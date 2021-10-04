@@ -5,30 +5,17 @@ date: 2018-10-12
 description: 12 October 2018
 Hide_readingtime: true
 ---
-
-## Summary
-
-This release includes:
-
-* [Features](#features)
-* [Fixes](#fixes)
-* [Release Notes](#release-notes)
-* [Updated Modules](#updated-modules)
-* [New Plugins](#new-plugins)
-* [Updated Plugins](#updated-plugins)
-* [Known Issues](#known-issues)
-
 ## Features
 
-* [#5075:](#5075) Remove Connectors page
-* [#5129:](#5129) Change the page title on the Summary screen
-* [#5177:](#5177) Support HTTP Proxy configuration on the swagger plugin
+* #5075: Remove Connectors page
+* #5129: Change the page title on the Summary screen
+* #5177: Support HTTP Proxy configuration on the swagger plugin
 
 ## Fixes
 
-* [#5069:](#5069) Add 401 response to swagger definition for endpoints which require auth
-* [#5103:](#5103) Update flow validation to handle superfluous authorization parameters
-* [#5123:](#5123) Improve flow editor side-panel UX for long names
+* #5069: Add 401 response to swagger definition for endpoints which require auth
+* #5103: Update flow validation to handle superfluous authorization parameters
+* #5123: Improve flow editor side-panel UX for long names
 
 ## Release notes
 
@@ -36,7 +23,7 @@ This release includes:
 * #5075: The Connectors page has been removed. The page lacked clarity on what was being displayed and served no function.
 * #5103: Previously, flows with superfluous authorization parameters were not failing validation when loaded. Now, they will fail to validate.
 * #5123: Previously, the Flow Editor displayed the tools in square boxes which limits the amount of space for the tool name. Now, the tools are displayed in rectangular boxes which have more room for the text and the mouse over text now also contains the name of the tool.
-* #5129: Previously, the title on the Summary page was the application name, which was inconsistent with the rest of the API builder UI. Now, the available information on the Summary page contains the correct title and the project information is displayed in a more clear and consistent way.
+* #5129: Previously, the title on the Summary page was the application name, which was inconsistent with the rest of the API Builder UI. Now, the available information on the Summary page contains the correct title and the project information is displayed in a more clear and consistent way.
 * #5177: A new optional configuration parameter called 'proxy' has been added. When specified, it must be a string and must hold valid url of a proxy server. This url could be passed down to plugins that do http/s communication so they can tunnel the traffic through that proxy server.
 
 ## Updated modules
@@ -45,7 +32,7 @@ This release includes:
 * [@axway/api-builder-admin@1.3.4](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.3.4)
 * [@axway/api-builder@4.3.0](https://www.npmjs.com/package/@axway/api-builder/v/4.3.0)
 
-## New Plugins
+## New plugins
 
 * [@axway/api-builder-plugin-dc-mssql](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mssql)
 
@@ -53,55 +40,4 @@ This release includes:
 
 * [@axway/api-builder-plugin-fn-swagger@1.1.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/1.1.0)
 
-## Known issues
-
-* #3825: Filtering the {{% variables/apibuilder_prod_name %}} Console administrator access using IPv6 addresses may cause ENOTFOUND errors.
-* #3867: When attempting to create and save a flow for an imported Swagger endpoint that contains a path or paths defined by references the save will fail.
-* #3960: {{% variables/apibuilder_prod_name %}} has issues with recognizing a required `consumes` value if anything is appended to it, for example `multipart/form-data; charset=utf-8`.
-* #3979: Attempting to delete an endpoint in the UI that was created as a result of dereferencing a JSON $ref will yield a 404. {{% variables/apibuilder_prod_name %}} will fail to locate the method since it only exists when the whole Swagger document is dereferenced. An example of a Swagger document using $ref:
-
-    ```
-    {
-      "swagger": "2.0",
-      "paths" {
-        "x-path": {
-          "get": {}
-        },
-        "/find": {
-          "$ref": "#/paths/x-path"
-        },
-        "/search": {
-          "$ref": "#/paths/x-path"
-        }
-
-      }
-    }
-    ```
-* #4280: Editing large object parameters on the API Orchestration page in the {{% variables/apibuilder_prod_name %}} Console may cause multiple, confusing flow-node configuration panel scroll bars to appear.
-* #4528: Initializing new project with `api-builder init 1234` will throw an ERR_INVALID_ARG_TYPE error rather than "invalid npm package name".
-* #4595: When using a `distinct` API backed by the Memory connector and passing a `field` which does not exist on the model, the first record is returned instead of an error.
-* #4735: Invoking Upsert will fail for all data connectors when creating a composite model from an existing model and renaming one of the fields.
-* #4736: Given a swagger with an extension, for example, on the [path item object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#pathItemObject), the Swagger flow-node plugin can fail to load the swagger file, resulting in an error:
-
-    ```
-    Error loading plugin: @axway/api-builder-plugin-fn-swagger. Cannot convert undefined or null to object
-    ```
-* #4749: A query on a `distinct` API created from the Mongo plugin (`@axway/api-builder-plugin-dc-mongo`) doesn't honor the value of the `order` parameter.
-* #4750: Methods Upsert or FindAndModify are not present in APIs generated from a mongo/mysql connector based model.
-* #4751: The FindAndModify method from APIs created using the Mongo plugin (`@axway/api-builder-plugin-dc-mongo`) responds with a 404 rather than creating a new entry when `upsert` parameter is `true`.
-* #4752: The format of a distinct query's response depends on the type of the connector.
-* #4759: Calling Update or FindAndModify on a Model that uses the composite connector and contains required fields may fail and cause the server to terminate.
-* #4795: The MongoDB plugin @axway/api-builder-plugin-dc-mongo does not correctly support primary keys that are not object identifiers. The MongoDB specification allows for primary keys of other types. As a result, trying to use the plugin will result in errors:
-
-    ```
-    { "message": "Invalid Value for Find By ID: "YOUR_STRING_PK_NAME", "success": false, "request-id": "c118f187-2090-4a68-b939-37367ac55b80" }
-    ```
-* #4813: If the endpoint swagger file in /endpoints contains special characters in its name, for example \[test\].json, the endpoint is not rendered correctly in the UI.
-* #4818: In `*API Doc and Test*` the endpoint count of an API may be greater than it should be if an endpoint file defines common parameters which are misinterpreted as additional paths.
-* #4856: Passing in an invalid column name as a parameter to certain APIs generated from data connectors will result in an exception being thrown rather than executing their callback with an error. A similar error may occur when using model flow-nodes, resulting in an error which cannot be handled by the flow.
-* #4859: When endpoints are generated from a model, the endpoint descriptions do not use the correct plurals defined by the model.
-* #4865: The Swagger flow-node plugin strips characters from valid object definition names which can result in schema ID collisions.
-* #4865: The Swagger flow-node plugin does not handle valid object definition names with ~ or / in their name and can result in an invalid schema references in swagger flow-nodes.
-* #4951: When endpoint or flow files with URL encoded characters in the filename are present in a project, unexpected things may occur. For example, the wrong flow or endpoint could be modified. Using files with these types of names is not recommended.
-* #4961: Having the '%' symbol in various file names can cause problems in the {{% variables/apibuilder_prod_name %}} Console and with direct linking. It is therefore advisable to avoid using '%' in API, Endpoint, Flow, Model, and Configuration file names. This is a result of an issue in react-router/history. https://github.com/ReactTraining/history/issues/505
-* #4966: {{% variables/apibuilder_prod_name %}} will generate invalid Swagger for programmatic API in `./apis` that bind to a path other than the `apiPrefix` defined in the configuration. These API must be bound to the same root path as is defined by `apiPrefix`.
+{{% releasenotes/previous %}}

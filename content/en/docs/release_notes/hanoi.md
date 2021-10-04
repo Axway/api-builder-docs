@@ -6,26 +6,7 @@ description: 26 February 2021
 Hide_readingtime: true
 ---
 
-## Summary
-
-This release includes:
-
-* [Upgrade](#upgrade)
-* [Features](#features)
-* [Fixes](#fixes)
-* [Updated Modules](#updated-modules)
-* [Plugins](#updated-plugins)
-* [Known Issues](#known-issues)
-
-## Upgrade
-
-Before updating, we recommend deleting package-lock.json if it exists.
-
-To update an existing {{% variables/apibuilder_prod_name %}} application, execute the following command from within the application directory:
-
-```bash
-npm update
-```
+{{% releasenotes/upgrade %}}
 
 ## Features
 
@@ -42,7 +23,7 @@ npm update
 * #6704: Previously, long endpoint paths that exceeded the rendering width of the flow-node properties panel were illegible in the UI when inspecting the endpoint flow-trigger. Now, long endpoint paths are rendered with an ellipsis (...), and have titles to allow the user to see the full path on hover.
 * #6704: Previously, in the Flow editor's parameter dialog editor (e.g. Mustache), the horizontal scroll bar was visible even if the text did not overflow the editor. Now, the scroll bar is hidden when there is no horizontal scrolling.
 * #6711: Previously, the Apply button in the Flow Editor would incorrectly become enabled when a new trigger was added, but then subsequently removed. Now, the Apply button correctly becomes disabled once the newly added trigger is removed.
-* #6719: Previously, the Apply button in the Flow Editor would incorrectly become enabled when the flow was edited while it contained an invalid-flow trigger that was uninstalled. Now, the flow cannot be saved until the uninstalled flow-trigger is deleted from the Flow, and all other error(s) are resolved.
+* #6719: Previously, the Apply button in the Flow Editor would incorrectly become enabled when the flow was edited while it contained an invalid flow-trigger that was uninstalled. Now, the flow cannot be saved until the uninstalled flow-trigger is deleted from the Flow, and all other error(s) are resolved.
 * #6755: Fixed a problem where some syntactically valid flows were not rendered in the UI.
 
 ## Updated modules
@@ -60,4 +41,6 @@ npm update
 
 ## Known issues
 
-To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues/).
+To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues).
+
+{{% releasenotes/previous %}}

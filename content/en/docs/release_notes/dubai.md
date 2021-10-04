@@ -6,32 +6,13 @@ description: 18 December 2020
 Hide_readingtime: true
 ---
 
-## Summary
-
-This release includes:
-
-* [Upgrade](#upgrade)
-* [Features](#features)
-* [Fixes](#fixes)
-* [Updated Modules](#updated-modules)
-* [Plugins](#updated-plugins)
-* [Known Issues](#known-issues)
-
-## Upgrade
-
-Before updating, we recommend deleting package-lock.json if it exists.
-
-To update an existing {{% variables/apibuilder_prod_name %}} application, execute the following command from within the application directory:
-
-```bash
-npm update
-```
+{{% releasenotes/upgrade %}}
 
 ## Features
 
 * #6633: Added a new flow-node [@axway/api-builder-plugin-fn-xslt](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-xslt) to transform XML documents using [XSLT](https://www.w3.org/TR/xslt-10/). Pay close attention to the module's [README](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-xslt) as it has special installation requirements.
 * #6660: Flow-trigger's Flow input parameters are now editable and validated in the Flow editor.
-* #6665: Flow triggers can now be deleted from within the Flow editor.
+* #6665: Flow-triggers can now be deleted from within the Flow editor.
 * #6667: Previously, Kafka flow-trigger and flow-node parameters were lacking sufficient validation. This meant that providing empty values to certain parameters would cause the flow-trigger or flow-node to error. Now, the schema validation for these parameters has been improved, allowing the problem to be caught in the flow-editor before saving.
 
 ## Fixes
@@ -54,4 +35,6 @@ npm update
 
 ## Known issues
 
-To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues/).
+To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues).
+
+{{% releasenotes/previous %}}

@@ -6,26 +6,7 @@ description: 17 July 2020
 Hide_readingtime: true
 ---
 
-## Summary
-
-This release includes:
-
-* [Upgrade](#upgrade)
-* [Features](#features)
-* [Fixes](#fixes)
-* [Updated Modules](#updated-modules)
-* [Updated plugins](#updated-plugins)
-* [Known Issues](#known-issues)
-
-## Upgrade
-
-Before updating, we recommend deleting package-lock.json if it exists.
-
-To update an existing {{% variables/apibuilder_prod_name %}} application, execute the following command from within the application directory:
-
-```bash
-npm update
-```
+{{% releasenotes/upgrade %}}
 
 ## Features
 
@@ -33,7 +14,7 @@ npm update
 
 ## Fixes
 
-* #6294: Previously, {{% variables/apibuilder_prod_name %}} failed to authorize OAuth 2.0 credentials when the token URL had a non-JSON response by default. This would result in Github OAuth 2.0 requests failing with an error, "Unsupported mime-type: application/x-www-form-urlencoded; charset=utf-8". Now, {{% variables/apibuilder_prod_name %}} includes the `Accept: "application/json"` request header, so services such as Github, which support JSON responses, will now authorize successfully.
+* #6294: Previously, {{% variables/apibuilder_prod_name %}} failed to authorize OAuth 2.0 credentials when the token URL had a non-JSON response by default. This would result in GitHub OAuth 2.0 requests failing with an error, "Unsupported mime-type: application/x-www-form-urlencoded; charset=utf-8". Now, {{% variables/apibuilder_prod_name %}} includes the `Accept: "application/json"` request header, so services such as GitHub, which support JSON responses, will now authorize successfully.
 * #6323: Previously, while filtering the items from `get-catalog` to download, a fuzzy search was used that filtered and matched items that were seemingly inaccurate or unexpected. Now, it filters using consecutive letters and gives more accurate results, e.g. "er" will match APIs "Pattern" and "Manager".
 
 ## Updated modules
@@ -49,4 +30,6 @@ npm update
 
 ## Known issues
 
-To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues/).
+To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues).
+
+{{% releasenotes/previous %}}

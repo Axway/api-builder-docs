@@ -135,4 +135,4 @@ The following are the Oracle connector known issues and limitation:
 * Only supports SQL tables and views.
 * Only supports upper case tables and fields. Using mixed/lower case table names may work but is not guaranteed.
 
-For a list of additional known issues and limitations, refer to the [{{% variables/apibuilder_prod_name %}} Release Notes](/docs/release_notes/).
+For a list of known issues and limitations, refer to the [{{% variables/apibuilder_prod_name %}} known issues](/docs/known_issues).

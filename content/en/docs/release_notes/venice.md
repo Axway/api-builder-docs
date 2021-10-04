@@ -6,40 +6,20 @@ description: 10 September 2021
 Hide_readingtime: true
 ---
 
-## Summary
-
-This release includes:
-
-* [Upgrade](#upgrade)
-* [Features](#features)
-* [Fixes](#fixes)
-* [Updated Modules](#updated-modules)
-* [Plugins](#updated-plugins)
-* [Known Issues](#known-issues)
-
-## Upgrade
-
-To update an existing {{% variables/apibuilder_prod_name %}} application, execute the following command from within the application directory:
-
-```bash
-npm update
-```
-
+{{% releasenotes/upgrade %}}
 To update the {{% variables/apibuilder_prod_name %}} CLI, execute the following command:
 
-```
+```bash
 axway pm update
 ```
-
 ## Features
 
 * #7006: The plugins tab has been updated to show available and installed plugins separately. Additionally, community plugins now have their own tab with clarification of what community plugins are, and confirmation before install.
 * #7030: The @axway/api-builder-plugin-invoke-flow plugin will now be included in new {{% variables/apibuilder_prod_name %}} projects by default.
 * #7035: Added support to the Oracle database connector for querying ranges of all applicable data types with $gt, $gte, $lt and $lte. For example:
-
-    ```
-    { AGE: { $gt: 0, $lt: 99 }
-    ```
+```json
+{ AGE: { $gt: 0, $lt: 99 }
+```
 
 ## Fixes
 
@@ -61,4 +41,6 @@ axway pm update
 
 ## Known issues
 
-To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues/).
+To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues).
+
+{{% releasenotes/previous %}}

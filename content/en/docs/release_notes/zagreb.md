@@ -6,31 +6,11 @@ description: 23 October 2020
 Hide_readingtime: true
 ---
 
-## Summary
-
-This release includes:
-
-* [Upgrade](#upgrade)
-* [Features](#features)
-* [Fixes](#fixes)
-* [Deprecations](#deprecations)
-* [Updated Modules](#updated-modules)
-* [Plugins](#updated-plugins)
-* [Known Issues](#known-issues)
-
-## Upgrade
-
-Before updating, we recommend deleting package-lock.json if it exists.
-
-To update an existing {{% variables/apibuilder_prod_name %}} application, execute the following command from within the application directory:
-
-```bash
-npm update
-```
+{{% releasenotes/upgrade %}}
 
 ## Features
 
-* #6500: Specifying the 'model' property on a custom API is now taken into account for defining the output model/schema in the generated API doc. See deprecation [\[D044\]](#D044).
+* #6500: Specifying the 'model' property on a custom API is now taken into account for defining the output model/schema in the generated API doc. See deprecation {{% deprecation/link D044 %}}.
 * #6587: Trigger names now can be edited and saved from the flow editor.
 
 ## Fixes
@@ -38,11 +18,7 @@ npm update
 * #6591: Previously, the `Data` parameter in the Mustache flow-node's `Format string` method had a default type of `string`, but this value made the most sense to be provided as a selector. Now, it will default to the selector type.
 * #6595: Fixed regression in the Flow editor where flow-nodes with lots of outputs would not grow in width, leaving the outputs disconnected.
 
-## Deprecations
-
-These are the deprecations introduced in this release. Click [here](/docs/deprecations/) for a list of all deprecations.
-
-* **\[[D044](/docs/deprecations/#D044)\] API.response**: `response` property on the [custom API](/docs/developer_guide/apis/) is deprecated in favor of the `model` property. The `model` property serves the same purpose in that the named model is used to describe the response schema in the generated API Swagger documentation.
+{{% releasenotes/deprecations %}}
 
 ## Updated modules
 
@@ -59,4 +35,6 @@ These are the deprecations introduced in this release. Click [here](/docs/deprec
 
 ## Known issues
 
-To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues/).
+To see a list of up-to-date known-issues see [{{% variables/apibuilder_prod_name %}} Known Issues](/docs/known_issues).
+
+{{% releasenotes/previous %}}

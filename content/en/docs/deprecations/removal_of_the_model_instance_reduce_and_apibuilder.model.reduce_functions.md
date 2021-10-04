@@ -1,17 +1,16 @@
 ---
 title: Removal of the Model instance reduce and APIBuilder.Model.reduce functions
 linkTitle: Removal of the Model instance reduce and APIBuilder.Model.reduce functions
-weight: 180
+weight: 17
+deprecation: D017
 date: 2021-10-01
 ---
 
-{{% alert title="Note" color="primary" %}}This document describes deprecation \[[D017](/docs/deprecations/#D017)\]{{% /alert %}}
+{{% alert title="Note" color="primary" %}}This document describes deprecation {{% deprecation/link D017 %}}{{% /alert %}}
 
-## Removal of the Model instance reduce and APIBuilder.Model.reduce functions
+Beginning with the [Cairo](/docs/release_notes/cairo) release, Reducing a Model instance (i.e. `Model.prototype.reduce`) and `APIBuilder.Model.reduce` are deprecated and will be removed in a future version of the product.
 
-Beginning with the [Cairo](/docs/release_notes/standalone_-_11_october_2019/) release, Reducing a Model instance (i.e. `Model.prototype.reduce`) and `APIBuilder.Model.reduce` are deprecated and will be removed in a future version of the product.
-
-### Why we are making this change
+## Why we are making this change
 
 The `Model instance reduce` and `APIBuilder.Model.reduce` functions were designed to achieve three basic features:
 
@@ -21,7 +20,7 @@ The `Model instance reduce` and `APIBuilder.Model.reduce` functions were designe
 
 On review of these features, it was determined that all of these features could be achieved with `Model.extend`, and because of that `Model instance reduce` and `APIBuilder.Model.reduce` are redundant. For clarity and ease of use, these functions are deprecated.
 
-### How does this impact my service
+## How does this impact my service
 
 The {{% variables/apibuilder_prod_name %}} v3.x UI only uses `Model.extend`, so unless you manually code your Models, then this change will not impact your service. However, if you manually create Models, you should check your Models in the `./models` directory to see if they use `Model.reduce`. If you are using `Model.reduce`, then this feature will be removed in the next major version of the product, and you should migrate your models to use `Model.extend` instead.
 
@@ -77,7 +76,7 @@ module.exports = Model;
 
 If your application reduces Models in this way, then your application will be impacted by this change.
 
-### Upgrading models using the UI
+## Upgrading models using the UI
 
 The easiest way to upgrade a reduced model is with the UI. You will have to use a different model name temporarily. In this example, the parent model is Employee, and your existing reduced model is Friend. Select the menu on **Person** -> **Compose into new**.
 

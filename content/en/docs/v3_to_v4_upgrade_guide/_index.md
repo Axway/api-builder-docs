@@ -5,11 +5,11 @@ weight: 120
 date: 2021-10-01
 ---
 
-{{% alert title="{{% variables/apibuilder_prod_name %}} 3.x is deprecated" color="danger" %}}Support for {{% variables/apibuilder_prod_name %}} 3.x ceased on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [{{% variables/apibuilder_prod_name %}} 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
+{{% alert title="{{% variables/apibuilder_prod_name %}} 3.x is deprecated" color="danger" %}}Support for {{% variables/apibuilder_prod_name %}} 3.x ceased on 30 April 2020. Use the [v3 to v4 upgrade guide](/docs/v3_to_v4_upgrade_guide) to migrate all your applications to [{{% variables/apibuilder_prod_name %}} 4.x](/docs/getting_started).
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
-{{% variables/apibuilder_prod_name %}} 4.0.0 introduced a large number of breaking changes. They are listed in detail alongside all the other changes and fixes in the [{{% variables/apibuilder_prod_name %}} Tools 4.0.0 Release Note](/docs/release_notes/tools_4.0.0_release_note/).
+{{% variables/apibuilder_prod_name %}} 4.0.0 introduced a large number of breaking changes. They are listed in detail alongside all the other changes and fixes in the [{{% variables/apibuilder_prod_name %}} 4.0.0 Release Notes](/docs/release_notes/4).
 
 This guide covers the steps required for most users to migrate their projects from {{% variables/apibuilder_prod_name %}} v3 to {{% variables/apibuilder_prod_name %}} v4.
 
@@ -539,7 +539,7 @@ $ npm start
 
 ## Deprecation warnings
 
-When you start your upgraded project, you may encounter several [deprecation warnings](/docs/deprecations/). {{% variables/apibuilder_prod_name %}} releases every two weeks (see our past [Release Notes](/docs/release_notes/)), and each release follows an alphabetical naming convention using cities. For example, the [Akita](/docs/release_notes/standalone_-_30_august_2019/) release.
+When you start your upgraded project, you may encounter several [deprecation warnings](/docs/deprecations/). {{% variables/apibuilder_prod_name %}} releases every two weeks (see our past [Release Notes](/docs/release_notes).
 
 We regularly add feature improvements, fixes, and occasionally identify and fix features that do not work as designed, or are orthogonal to the intended direction of the product. Where these would introduce a breaking change, we create a deprecation flag that is disabled by default, meaning that it will have no impact on your project. However, it should not be ignored. We intend to disable these features in the next major release of the product. To stay abreast of the latest updates, and ensure that your project will upgrade easily to the next major release, you should follow the [{{% variables/apibuilder_prod_name %}} Deprecations](/docs/deprecations/) guide to upgrade your project.
 

@@ -47,21 +47,18 @@ function validateInternalLinks(tree, file, options = {}) {
 			return;
 		}
 		if (isLocalAnchorRef(ref)) {
+			// TODO: handle local anchors and remove the external plugin
 			log(`${ref} is handled with "missing-heading" from remark-validate-links`);
 			cache[ref] = warnings.valid;
 			return;
 		}
 		if (isRelativeRef(ref)) {
-			file.message(warnings.relativePath, node);
+			file.message(`${warnings.relativePath}: ${ref}`, node);
 			cache[ref] = warnings.relativePath;
 			return;
 		}
 		if (isStaticRef(ref)) {
-			// Ensure we don't allow upper case in static file names. This section
-			// does not handle images which is done in verifyImages.
-			if (hasUpperCase(ref.split('/').pop())) {
-				file.message(warnings.pathWithUpperCase, node);
-				cache[ref] = warnings.pathWithUpperCase;
+			if(warnOnUpperCase(file, node, ref.split('/').pop())) {
 				return;
 			}
 			addWarningIfFileIsMissing({
@@ -74,17 +71,17 @@ function validateInternalLinks(tree, file, options = {}) {
 			return;
 		}
 		if (isDocRef(ref)) {
-			// paths with upper cases are not working
-			if (hasUpperCase(ref)) {
-				file.message(warnings.pathWithUpperCase, node);
-				cache[ref] = warnings.pathWithUpperCase;
+			if (warnOnUpperCase(file, node, ref)) {
+				return;
+			}
+			if (warnOnExtension(file, node, ref)) {
 				return;
 			}
 			addWarningIfFileIsMissing({
 				file,
 				node,
 				refRoot: docsRoot,
-				ref: ref.endsWith('/') ? `${ref.slice(0, -1)}.md` : `${ref}.md`,
+				ref: fileWithExtension(ref),
 				originalRef: ref,
 				warning: warnings.missingDoc
 			}) || (cache[ref] = warnings.valid);
@@ -95,11 +92,9 @@ function validateInternalLinks(tree, file, options = {}) {
 
 	function verifyImages(node) {
 		const ref = node.url;
-		if (hasUpperCase(ref.split('/').pop())) {
-			file.message(warnings.pathWithUpperCase, node);
-			cache[ref] = warnings.pathWithUpperCase;
+		if(warnOnUpperCase(file, node, ref.split('/').pop())) {
 			return;
-		}
+		}		
 		addWarningIfFileIsMissing({
 			file,
 			node,
@@ -110,12 +105,37 @@ function validateInternalLinks(tree, file, options = {}) {
 	}
 }
 
+function warnOnUpperCase(file, node, ref) {
+	// Paths with upper cases are not working
+	if (hasUpperCase(ref)) {
+		file.message(`${warnings.pathWithUpperCase}: ${ref}`, node);
+		cache[ref] = warnings.pathWithUpperCase;
+		return true;
+	}
+}
+
+function warnOnExtension(file, node, ref) {
+	// Extensions are not wanted
+	if (ref.endsWith('.md') || ref.endsWith('.md/')) {
+		file.message(`${warnings.usingFileExtension}: ${ref}`, node);
+		cache[ref] = warnings.usingFileExtension;
+		return true;
+	}
+}
+
+function fileWithExtension(ref) {
+	return ref.endsWith('/') ? `${ref.slice(0, -1)}.md` : `${ref}.md`
+}
+
 function verifyAnchor(file, node, ref) {
 	let [filePath, anchor] = ref.split('#');
-	if (filePath.endsWith('/')) {
-		filePath = filePath.slice(0, -1);
+	if (warnOnUpperCase(file, node, filePath)) {
+		return;
 	}
-	filePath = join(projectRoot, docsRoot, `${filePath}.md`);
+	if (warnOnExtension(file, node, filePath)) {
+		return;
+	}
+	filePath = join(projectRoot, docsRoot, fileWithExtension(filePath));
 	const doc = getFile({ file, node, ref, filePath });
 	if (doc) {
 		let anchorFound = false;
@@ -123,11 +143,6 @@ function verifyAnchor(file, node, ref) {
 		const tree = fromMarkdown(doc);
 		visit(tree, "heading", compare);
 		function compare(currentNode) {
-			// We can not break the visitor loop so optimize by skiping the
-			// comparison if the anchor is already found.
-			if (anchorFound) {				
-				return;
-			}
 			// Here we get the current node from AST which holds the heading value but
 			// it is the original one with spaces and upper case in the beginning.
 			// The references are with lower cases only and dashes instead of spaces
@@ -137,12 +152,13 @@ function verifyAnchor(file, node, ref) {
 				= currentNode.children[0].value.toLowerCase().replace(' ', '-');
 			if (refAnchor === anchor) {
 				anchorFound = true;
+				return false; //found so break the loop
 			}
 		}
 		if (anchorFound) {
 			cache[ref] = warnings.valid;
 		} else {
-			file.message(warnings.missingAnchor, node);
+			file.message(`${warnings.missingAnchor}: ${ref}`, node);
 			cache[ref] = warnings.missingAnchor;
 		}
 	}
@@ -185,7 +201,7 @@ function getFile(config) {
 		doc = readFileSync(filePath);
 	} catch (err) {
 		log(err);
-		file.message(warnings.missingDoc, node);
+		file.message(`${warnings.missingDoc}: ${filePath}`, node);
 		cache[ref] = warnings.missingDoc;
 	}
 	return doc;
@@ -200,7 +216,7 @@ function addWarningIfFileIsMissing(config) {
 	try {
 		accessSync(filePath, constants.R_OK);
 	} catch (err) {
-		file.message(warning, node);
+		file.message(`${warning}: ${filePath}`, node);
 		cache[originalRef || ref] = warning;
 		return true;
 	}

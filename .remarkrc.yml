@@ -1,12 +1,12 @@
 plugins:
   - preset-lint-recommended
   - remark-preset-lint-markdown-style-guide
-  - remark-validate-links
-  - ["remark-lint-no-dead-urls", {
-        'gotOptions': {
-          'baseUrl': 'http://localhost:1313/'
-        }
-    }]
+  # - remark-validate-links
+  # - ['remark-lint-no-dead-urls', {
+  #       'gotOptions': {
+  #         'baseUrl': 'http://localhost:1313/'
+  #       }
+  #   }]
   # https://github.com/remarkjs/remark-lint/blob/main/doc/rules.md
   - [ 'remark-frontmatter', 'yaml' ]
   - [ 'remark-lint-heading-style', 'atx' ]
@@ -28,19 +28,21 @@ plugins:
   - [ 'remark-lint-prohibited-strings', [
       { no: 'Flow node', yes: 'Flow-node' },
       { no: 'flow node', yes: 'flow-node' },
-      { yes: 'flow-node' }, # case insensitive
+      # { yes: 'flow-node' }, # case insensitive
       { no: 'Flow trigger', yes: 'Flow-trigger' },
       { no: 'flow trigger', yes: 'flow-trigger' },
-      { yes: 'flow-trigger' },  # case insensitive
-      { no: 'Javascript', yes: 'JavaScript' },
-      { no: 'Node.JS', yes: 'Node.js' },
-      { no: 'NPM', yes: 'npm' },
-      { no: 'UNIX', yes: 'unix' },
-      { no: "Github", yes: "GitHub" },
+      # { yes: 'flow-trigger' },  # case insensitive
+      { yes: 'JavaScript' },
+      { yes: 'Node.js' },
+      { yes: 'npm' },
+      { yes: 'unix' },
+      { yes: 'GitHub' },
+      { yes: 'Docker' },
       # the plugin doesn't handle regex too well, so wasn't able to use
-      # negative lookbehind for use of "builder" without preceding "API".
+      # negative lookbehind for use of 'builder' without preceding 'API'.
       # https://github.com/Trott/remark-lint-prohibited-strings/blob/main/index.js
-      { no: 'builder', yes: 'Builder' },
+      { no: 'builder', yes: 'Builder', ignoreNextTo: '-' },
+      { yes: 'API Builder' }, # case insensitive
       { no: "can't", yes: 'cannot' },
       { no: "it's", yes: 'it is' },
       { no: "that's", yes: 'that is' },
@@ -49,3 +51,7 @@ plugins:
       { no: "(\\w+(?<!ca))n't", yes: '$1 not', replaceCaptureGroups: true },
       { no: "(\\w+)'ll", yes: '$1 will', replaceCaptureGroups: true },
     ]]
+
+  - [ 'remark-lint-no-shell-dollars', false ]
+  - [ 'remark-lint-heading-sentence-case', false ]
+  - [ 'remark-lint-maximum-heading-length', false ]

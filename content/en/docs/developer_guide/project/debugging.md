@@ -29,8 +29,8 @@ While in development, you may want to log at "debug" level to assist in [debuggi
 // conf/default.js
 
 // Log level of the application. Can be set to (in order of most-verbose to
-  // least): trace, debug, info, warn, error, fatal, none
-  logLevel: process.env.LOG_LEVEL || 'info',
+// least): trace, debug, info, warn, error, fatal, none
+logLevel: process.env.LOG_LEVEL || 'info',
 ```
 
 ### LOG_LEVEL environment variable
@@ -39,35 +39,35 @@ You can set the {{% variables/apibuilder_prod_name %}} log level via the LOG_LEV
 
 {{% alert title="Note" color="primary" %}}For more information about using environment variables within your application and securing your application, please see [Environmentalization](/docs/how_to/environmentalization/).{{% /alert %}}
 
-**On bash**
+#### On bash
 
 ```bash
-$ LOG_LEVEL=trace npm start
+LOG_LEVEL=trace npm start
 ```
 
-**On Windows**
+#### On Windows
 
-```bash
-> SET LOG_LEVEL=trace
-> npm start
+```cmd
+SET LOG_LEVEL=trace
+npm start
 ```
 
-**On Amplify Runtime Services**
+#### On Amplify Runtime Services
 
 {{% alert title="Note" color="primary" %}}Amplify Runtime Services is deprecated and will be discontinued effective September 1, 2022.{{% /alert %}}
 
 If you are deploying {{% variables/apibuilder_prod_name %}} on [Amplify Runtime Services](/docs/how_to/deploy_an_api_builder_application_to_amplify_runtime_services/).
 
-```
-$ amplify acs config --set LOG_LEVEL=trace myproject
+```bash
+amplify acs config --set LOG_LEVEL=trace myproject
 ```
 
-**On Docker**
+#### On Docker
 
-If you are deploying {{% variables/apibuilder_prod_name %}} [using docker](/docs/how_to/dockerize_an_api_builder_service/).
+If you are deploying {{% variables/apibuilder_prod_name %}} [using Docker](/docs/how_to/dockerize_an_api_builder_service/).
 
-```
-$ docker run -e LOG_LEVEL=trace
+```bash
+docker run -e LOG_LEVEL=trace
 ```
 
 ### Additional logging

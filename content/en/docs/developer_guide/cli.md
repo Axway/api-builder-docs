@@ -9,11 +9,7 @@ The {{% variables/apibuilder_prod_name %}} CLI allows you to create projects (bo
 
 ## Installing the {{% variables/apibuilder_prod_name %}} CLI
 
-Refer to [{{% variables/apibuilder_prod_name %}} CLI](#) documentation for more details.
-
-```
-// Install {{% variables/apibuilder_prod_name %}}
-
+```bash
 axway pm install @axway/amplify-api-builder-cli
 ```
 
@@ -26,13 +22,13 @@ Refer to the [Axway CLI](https://docs.axway.com/bundle/axwaycli-open-docs/page/d
 We recommend that you update the Axway CLI as it can contain important fixes and security updates. To update the Axway CLI run the following command:
 
 ```bash
-$ [sudo] npm i -g axway
+[sudo] npm i -g axway
 ```
 
 We recommend always keeping the {{% variables/apibuilder_prod_name %}} CLI up-to-date. To update the {{% variables/apibuilder_prod_name %}} CLI (and other Axway CLI plugins) run the following command:
 
-```
-$ axway pm update
+```bash
+axway pm update
 ```
 
 {{% alert title="Note" color="primary" %}}If you are currently using the `amplify` command, the Amplify CLI has been [deprecated](https://docs.axway.com/bundle/Axway_CLI_allOS_en/page/axway_cli.html#AxwayCLI-UpgradingfromAMPLIFYCLI) and replaced with the [Axway CLI](https://docs.axway.com/bundle/axwaycli-open-docs/page/docs/index.html). You can run the commands on this page to re-install the {{% variables/apibuilder_prod_name %}} CLI with the `axway` command.{{% /alert %}}
@@ -41,8 +37,8 @@ $ axway pm update
 
 Some of the options below require you to log into the {{% variables/platform_prod_name %}}. You can do that with the following command:
 
-```
-$ axway auth login
+```bash
+axway auth login
 ```
 
 ## Commands
@@ -53,13 +49,13 @@ This command creates a new integration project. The result is a directory contai
 
 This is the command to create a new project named "marketing_api"
 
-`$ axway builder init marketing_api`
+```bash
+axway builder init marketing_api
+```
 
 Then, install the project's dependencies and start the {{% variables/apibuilder_prod_name %}} project.
 
 ```bash
-// Run project
-
 cd myproject
 npm start
 ```
@@ -72,44 +68,44 @@ If logged into the {{% variables/platform_prod_name %}} (see above), this comman
 
 The examples below imagines a project named "marketing_api".
 
-```
-$ axway builder init --get-catalog marketing_api
+```bash
+axway builder init --get-catalog marketing_api
 ```
 
 If you want to narrow down the list of APIs, you can filter the results on the API name.
 
-```
-$ axway builder init --get-catalog --filter="Marketo" marketing_api
+```bash
+axway builder init --get-catalog --filter="Marketo" marketing_api
 ```
 
 #### \--no-install
 
 This command prevents the installation of dependent node_modules when the project is initialized. Using the same example project name as above.
 
-```
-$ axway builder init --no-install marketing_api
+```bash
+axway builder init --no-install marketing_api
 ```
 
 Once you want to install dependencies, you can change to your project directory and run this command:
 
 ```bash
-$ npm install
+npm install
 ```
 
 ### get-catalog
 
 This command has the same effect as the `--get-catalog` command described in the "init" section. It must be run while inside an {{% variables/apibuilder_prod_name %}} project directory. If logged into the {{% variables/platform_prod_name %}} (see above), you will be provided with a catalog of APIs available to you for use in your flows. This is an interactive command that allows you to choose which APIs for which you'd like to download specifications. Once run successfully, you will see new flow nodes representing your chosen APIs in the flow editor.
 
-```
-$ axway builder get-catalog
+```bash
+axway builder get-catalog
 ```
 
 #### \--filter
 
 If you want to narrow down the list of APIs, you can filter the results on the API name.
 
-```
-$ axway builder get-catalog --filter="Marketo"
+```bash
+axway builder get-catalog --filter="Marketo"
 ```
 
 ### plugin init
@@ -125,13 +121,15 @@ You use this command when you want to create a new plugin for use in your {{% va
 
 The following command will create a new plugin project:
 
-```
-$ axway builder plugin init api-builder-plugin-legacy-connector
+```bash
+axway builder plugin init api-builder-plugin-legacy-connector
 ```
 
 All {{% variables/apibuilder_prod_name %}} plugins must being "api-builder-plugin", if you entered instead:
 
-`$ axway builder plugin init legacy-connector`
+```bash
+axway builder plugin init legacy-connector`
+```
 
 Then a directory names api-builder-plugin-legacy-connector would still be created.
 
@@ -139,24 +137,24 @@ Then a directory names api-builder-plugin-legacy-connector would still be create
 
 This command prevents the installation of dependent node_modules when the plugin is initialized. (Using the same example plugin name as above.)
 
-```
-$ axway builder plugin init --no-install legacy-connector
+```bash
+axway builder plugin init --no-install legacy-connector
 ```
 
 #### \--type
 
 This option allows you to specify the type of plugin you'd like to create (see above). The options are "standard" and "oas". If neither is specified, then "standard" is assumed. You can specify "standard" as follows:
 
-```
-$ axway builder plugin init --type=standard
+```bash
+axway builder plugin init --type=standard
 ```
 
 You can also create a custom OpenAPI plugin template. A "Custom OpenAPI" type plugin template allows you to package and share plugins containing flow-nodes generated by dropping OpenAPI files into your plugin's `openapi` directory.
 
 To create an OpenAPI plugin template, you can use this command (using the same example plugin name as above):
 
-```
-$ axway builder plugin init --type=oas legacy-connector
+```bash
+axway builder plugin init --type=oas legacy-connector
 ```
 
 ## {{% variables/apibuilder_prod_name %}} CLI (npm)
@@ -166,13 +164,13 @@ While we recommend to use the {{% variables/apibuilder_prod_name %}} CLI as part
 ### Installation and update
 
 ```bash
-$ [sudo] npm install -g @axway/api-builder
+[sudo] npm install -g @axway/api-builder
 ```
 
 ### Commands
 
 All commands are as documented above. The only difference is that instead of `axway builder`, the command is `api-builder`. For example to initialise a new project, the following command is used:
 
-```
-$ api-builder init marketing_api
+```bash
+api-builder init marketing_api
 ```

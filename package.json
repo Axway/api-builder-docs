@@ -14,8 +14,6 @@
   "homepage": "https://github.com/Axway/apibuilderPOC-open-docs",
   "devDependencies": {
     "autoprefixer": "^10.0.0",
-    "grunt": "^1.3.0",
-    "grunt-markdownlint": "^2.6.0",
     "markdown-link-check": "^3.8.7",
     "minimist": "^1.2.5",
     "postcss-cli": "^8.3.1",
@@ -40,7 +38,7 @@
   "scripts": {
     "start": "npm run build:merge && cd build && mkdir -p public && hugo server -F",
     "build": "npm run build:merge && npm run build:lint && npm run build:spell",
-    "build:lint": "remark --quiet -r .remarkrc.yml content/en/docs/release_notes/*",
+    "build:lint": "remark --quiet -r .remarkrc.yml content/en/docs/developer_guide/*",
     "build:spell": "spellchecker",
     "clean": "rm -rf build public",
     "build:merge": "./build.sh"

@@ -17,11 +17,9 @@ To import API endpoints using the {{% variables/apibuilder_prod_name %}} user in
 
 1. Select the **API Doc & Test** tab.
 1. Click the **\+ API** button on the right side. The Import API Definition page is displayed.
-
-    ![import_API](/Images/import_api.png)
+![import_API](/Images/import_api.png)
 1. Select a file from your local file system or enter a URL. A file can be selected by browsing or dragging and dropping it. The selected file must be a Swagger formatted JSON or YAML file. Once a file is selected, or a URL entered, the API summary review page is displayed.
-
-    ![API_sum_review](/Images/api_sum_review.png)
+![API_sum_review](/Images/api_sum_review.png)
 1. Click the **Save** button on the right to import and save the selected API endpoint. Click the **Save and mock** button to save and mock the selected API endpoint. You can mock imported APIs to get early feedback from your API consumers and reduce your overall time-to-market. Click the **Cancel** button to cancel the import of the selected API endpoint. When the **Save** button or the **Save and mock** button is clicked, the server will restart. Once the server restart is completed, the imported API endpoints will be displayed on the APIs List page. The imported API endpoints will be disabled, and each will have a **Create Flow** and **Delete** icons. To create the API endpoint flows, refer to the Create flows instructions in [Manage Flows](/docs/developer_guide/flows/manage_flows/).
 
 ## Generate endpoints
@@ -33,12 +31,10 @@ To generate endpoints that have flows that can be edited within the flow editor 
 1. Select the **Models** tab.
 1. Click the **Gear** icon.
 1. Select **Generate endpoints**. The previously generated Endpoints will be overwritten caution window is displayed.
-
-    ![endpoint_gen_caution](/Images/endpoint_gen_caution.png)
+![endpoint_gen_caution](/Images/endpoint_gen_caution.png)
 1. Select **Proceed** to generate the model endpoint flows. Select **Cancel endpoint generation** to return to the Models tab.
 1. If Proceed is selected, the new endpoints will be generated, and the server will be restarted. Once the endpoints are generated, the Endpoint has been generated success window is displayed.
-
-    ![endpoint_gen_success](/Images/endpoint_gen_success.png)
+![endpoint_gen_success](/Images/endpoint_gen_success.png)
 1. To view and manage the Endpoints, select **Go to API details**. The method, path, nickname, description, and status (enabled, disabled, or error) of each generated endpoint is provided on the APIs List page. Additionally, **Flow** and **Delete** icons are provided for each Endpoint.
 
 ## Export endpoints
@@ -58,6 +54,5 @@ To delete endpoints using the {{% variables/apibuilder_prod_name %}} user interf
 1. Select the **API Doc &** **Test** tab.
 1. Select the API endpoint to manage from the API Endpoints list. Selecting the API endpoint to manage will open the APIs List page.
 1. Select the **Delete** icon for the endpoint to delete. The Endpoint delete caution window is displayed.
-
-    ![endpoint_del_caution](/Images/55477532_endpoint_del_caution.png)
+![endpoint_del_caution](/Images/55477532_endpoint_del_caution.png)
 1. Select **Proceed** to delete the selected endpoint. Select **Cancel** to return to the _API List_ page. If **Proceed** is selected, the endpoint and any associated flow are deleted, and the server is restarted. Once the server restart is completed, the APIs List page is displayed.

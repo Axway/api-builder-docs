@@ -47,8 +47,8 @@ function validateInternalLinks(tree, file, options = {}) {
 			return;
 		}
 		if (isRelativeRef(ref)) {
-			file.message(`${warnings.relativePath}: ${ref}`, node);
-			cache[ref] = warnings.relativePath;
+			file.message(`${warnings.usesRelativePath}: ${ref}`, node);
+			cache[ref] = warnings.usesRelativePath;
 			return;
 		}
 		if (isStaticRef(ref)) {
@@ -58,9 +58,8 @@ function validateInternalLinks(tree, file, options = {}) {
 			addWarningIfFileIsMissing({
 				file,
 				node,
-				refRoot: staticRoot,
 				ref,
-				warning: warnings.missingStaticFile
+				staticFile: true
 			}) || (cache[ref] = warnings.valid);
 			return;
 		}
@@ -77,10 +76,8 @@ function validateInternalLinks(tree, file, options = {}) {
 			addWarningIfFileIsMissing({
 				file,
 				node,
-				refRoot: docsRoot,
-				ref: fileWithExtension(ref),
-				originalRef: ref,
-				warning: warnings.missingDoc
+				ref,
+				staticFile: false
 			}) || (cache[ref] = warnings.valid);
 			return;
 		}
@@ -95,9 +92,8 @@ function validateInternalLinks(tree, file, options = {}) {
 		addWarningIfFileIsMissing({
 			file,
 			node,
-			refRoot: staticRoot,
 			ref,
-			warning: warnings.missingImage
+			staticFile: true
 		}) || (cache[ref] = warnings.valid);
 	}
 }
@@ -105,8 +101,8 @@ function validateInternalLinks(tree, file, options = {}) {
 function warnOnUpperCase(file, node, ref) {
 	// Paths with upper cases are not working
 	if (hasUpperCase(ref)) {
-		file.message(`${warnings.pathWithUpperCase}: ${ref}`, node);
-		cache[ref] = warnings.pathWithUpperCase;
+		file.message(`${warnings.usesUpperCase}: ${ref}`, node);
+		cache[ref] = warnings.usesUpperCase;
 		return true;
 	}
 }
@@ -114,8 +110,8 @@ function warnOnUpperCase(file, node, ref) {
 function warnOnExtension(file, node, ref) {
 	// Extensions are not wanted
 	if (ref.endsWith('.md') || ref.endsWith('.md/')) {
-		file.message(`${warnings.usingFileExtension}: ${ref}`, node);
-		cache[ref] = warnings.usingFileExtension;
+		file.message(`${warnings.usesFileExtension}: ${ref}`, node);
+		cache[ref] = warnings.usesFileExtension;
 		return true;
 	}
 }
@@ -126,10 +122,6 @@ function warnOnMissingStartingSlash(file, node, ref) {
 		cache[ref] = warnings.missingDoc;
 		return true;
 	}
-}
-
-function fileWithExtension(ref) {
-	return ref.endsWith('/') ? `${ref.slice(0, -1)}.md` : `${ref}.md`
 }
 
 function verifyAnchor(file, node, ref) {
@@ -163,7 +155,7 @@ function verifyAnchor(file, node, ref) {
 	if (warnOnExtension(file, node, filePath)) {
 		return;
 	}
-	filePath = join(projectRoot, docsRoot, fileWithExtension(filePath));
+	filePath = join(projectRoot, docsRoot, getFilePathWithExtension(filePath));
 	const doc = getFile({ file, node, ref, filePath });
 	if (doc) {
 		anchorFound = false;
@@ -232,17 +224,41 @@ function getFile(config) {
 }
 
 function addWarningIfFileIsMissing(config) {
-	// Note that this method is reused in multiple use case some of which modify
-	// the reference e.g. to add file extension like .md. We ususally search by the
-	// modified reference but want to store the original reference in the cache.
-	const { file, node, refRoot, ref, originalRef, warning } = config;
-	const filePath = join(projectRoot, refRoot, ref);
+	const { file, node, ref, staticFile } = config;
+	if ( staticFile ) {
+		const filePath = join(projectRoot, staticRoot, ref);
+		if (isFileMissing(filePath)) {
+			file.message(`${warnings.missingStaticFile}: ${filePath}`, node);
+			cache[ref] = warnings.missingStaticFile;
+			return true;
+		};
+	} else {
+		const filePath = join(projectRoot, docsRoot, getFilePathWithExtension(ref));
+		const indexFilePath = join(projectRoot, docsRoot, getIndexFilePath(ref));
+		// We check both options "ref" pointing out to a file or pointing out to
+		// a directory which means we have to check for _index.md file in that
+		// directory.
+		if (isFileMissing(filePath) && isFileMissing(indexFilePath)) {
+			file.message(`${warnings.missingDoc}: ${ref}`, node);
+			cache[ref] = warnings.missingDoc;
+			return true;
+		}
+	}
+}
+
+function isFileMissing(filePath) {
 	try {
 		accessSync(filePath, constants.R_OK);
 	} catch (err) {
-		file.message(`${warning}: ${filePath}`, node);
-		cache[originalRef || ref] = warning;
 		return true;
 	}
-	return false;
 }
+
+function getFilePathWithExtension(ref) {
+	return ref.endsWith('/') ? `${ref.slice(0, -1)}.md` : `${ref}.md`
+}
+
+function getIndexFilePath(ref) {
+	return ref.endsWith('/') ? `${ref}_index.md` : `${ref}/_index.md`
+}
+

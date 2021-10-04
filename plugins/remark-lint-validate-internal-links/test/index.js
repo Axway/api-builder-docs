@@ -21,7 +21,7 @@ describe('remark-lint-validate-internal-links', () => {
 				.process(readSync('anchors.md'))
 		).messages.map(warnObj => String(warnObj));
 		expect(warnings.length).to.equal(5);
-		warnings.forEach((warning) => { expect(warning).to.include(warningMessages.missingAnchor); });
+		warnings.forEach(warning => { expect(warning).to.include(warningMessages.missingAnchor); });
 	});
 
 	it('should validate relative links', async () => {
@@ -45,7 +45,7 @@ describe('remark-lint-validate-internal-links', () => {
 				.process(readSync('files.md'))
 		).messages.map(warnObj => String(warnObj));
 		expect(warnings.length).to.equal(4);
-		warnings.forEach((warning) => { expect(warning).to.include(warningMessages.missingStaticFile); });
+		warnings.forEach(warning => { expect(warning).to.include(warningMessages.missingStaticFile); });
 	});
 
 	it('should validate links with upper cases', async () => {
@@ -55,7 +55,7 @@ describe('remark-lint-validate-internal-links', () => {
 				.process(readSync('casing.md'))
 		).messages.map(warnObj => String(warnObj));
 		expect(warnings.length).to.equal(3);
-		warnings.forEach((warning) => { expect(warning).to.include(warningMessages.pathWithUpperCase); });
+		warnings.forEach(warning => { expect(warning).to.include(warningMessages.usesUpperCase); });
 	});
 	
 	it('should validate links to images', async () => {
@@ -65,7 +65,7 @@ describe('remark-lint-validate-internal-links', () => {
 				.process(readSync('images.md'))
 		).messages.map(warnObj => String(warnObj));
 		expect(warnings.length).to.equal(1);
-		warnings.forEach((warning) => { expect(warning).to.include(warningMessages.missingImage); });
+		warnings.forEach(warning => { expect(warning).to.include(warningMessages.missingStaticFile); });
 	});
 
 	it('should validate links to docs', async () => {
@@ -75,7 +75,7 @@ describe('remark-lint-validate-internal-links', () => {
 				.process(readSync('docs.md'))
 		).messages.map(warnObj => String(warnObj));
 		expect(warnings.length).to.equal(4);
-		warnings.forEach((warning) => { expect(warning).to.include(warningMessages.missingDoc); });
+		warnings.forEach(warning => { expect(warning).to.include(warningMessages.missingDoc); });
 	});
 
 	it('should validate links with extensions', async () => {
@@ -85,7 +85,7 @@ describe('remark-lint-validate-internal-links', () => {
 				.process(readSync('extensions.md'))
 		).messages.map(warnObj => String(warnObj));
 		expect(warnings.length).to.equal(5);
-		warnings.forEach((warning) => { expect(warning).to.include(warningMessages.usingFileExtension); });
+		warnings.forEach(warning => { expect(warning).to.include(warningMessages.usesFileExtension); });
 	});	
 });
 

@@ -22,7 +22,7 @@ authorization: {
 ...
 ```
 
-Generally, services that require an API key credential have a sign-up page and will grant you an API key once you have registered. These API keys typically don't expire and can be used in perpetuity.
+Generally, services that require an API key credential have a sign-up page and will grant you an API key once you have registered. These API keys typically do not expire and can be used in perpetuity.
 
 For example, you have signed up for a weather service, received an API key `aaaa-bbbb-1234`, and are aliasing the API key as `My Weather`. To configure this credential for use in {{% variables/apibuilder_prod_name %}}, your config would look like this:
 

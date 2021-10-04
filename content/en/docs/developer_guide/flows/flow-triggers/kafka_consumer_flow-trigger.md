@@ -52,7 +52,7 @@ The following sections provide details of the available **Kafka Consumer** param
 | Max bytes per partition | String | The maximum amount of data per-partition the server will return. This size must be at least as large as the maximum message size the server allows or else it is possible for the producer to send messages larger than the consumer can fetch. If that happens, the consumer can get stuck trying to fetch a large message on a certain partition. | Selector, String | No |
 | Min bytes | String | Minimum amount of data the server should return for a fetch request, otherwise wait up to maxWaitTimeInMs for more data to accumulate. | Selector, String | No |
 | Max bytes | String | Maximum amount of bytes to accumulate in the response. Supported by Kafka >= 0.10.1.0. | Selector, String | No |
-| Maximum wait time (msec) | String | The maximum amount of time in milliseconds the server will block before answering the fetch request if there isn't sufficient data to immediately satisfy the requirement given by minBytes. | Selector, String | No |
+| Maximum wait time (msec) | String | The maximum amount of time in milliseconds the server will block before answering the fetch request if there is not sufficient data to immediately satisfy the requirement given by minBytes. | Selector, String | No |
 | Partitions consumed concurrently | String | The number of partitions to consume concurrently. | Selector, String | No |
 | Read uncommitted messages | String | Configures the consumer isolation level. If false (default), the consumer will not return any transactional messages which were not committed (default false). | Selector, String | No |
 | Message format | String | The message format for messages on \`topic\` which will be used when decoding messages. If you do not know the message format, then use \`binary\`. One of: JSON | string | binary | Selector, String | Yes |
@@ -85,7 +85,7 @@ When shutting down, shutdown Kafka first, and then zookeeper.
 
 ### Example - Consume JSON messages
 
-For this example, we'll create a "Consumer flow" and configure it to consume JSON messages from a Kafka topic, "messages". Generally speaking, your application would be unlikely to read and write to the same topic. However, to demonstrate this example, we will also create a "Producer flow" to write JSON to the Kafka topic, "messages".
+For this example, we will create a "Consumer flow" and configure it to consume JSON messages from a Kafka topic, "messages". Generally speaking, your application would be unlikely to read and write to the same topic. However, to demonstrate this example, we will also create a "Producer flow" to write JSON to the Kafka topic, "messages".
 
 #### Create a Consumer flow
 

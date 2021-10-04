@@ -25,7 +25,7 @@ It will open this dialog. Give it some details for our example flow:
 
 ![image2021-4-20_16_39_50](/Images/image2021_4_20_16_39_50.png)
 
-New flows only exist in memory until you click "Apply". However, the editor does not allow you to save invalid flows, and currently the flow is invalid because flows require at least one [flow-node](/docs/developer_guide/flows/flow-nodes/) for it to be considered valid. Input validation or other errors can also cause the flow to be invalid. Drag the **HTTP** flow node from the **Flow-Nodes > Core** panel on the left, into the graph on the right. It will automatically wire-up to the **Start** flow-node, and auto-select the flow-node, revealing a property panel on the right-hand side. This right-hand property panel is for configuring flow-nodes, and their outputs.
+New flows only exist in memory until you click "Apply". However, the editor does not allow you to save invalid flows, and currently the flow is invalid because flows require at least one [flow-node](/docs/developer_guide/flows/flow-nodes/) for it to be considered valid. Input validation or other errors can also cause the flow to be invalid. Drag the **HTTP** flow-node from the **Flow-Nodes > Core** panel on the left, into the graph on the right. It will automatically wire-up to the **Start** flow-node, and auto-select the flow-node, revealing a property panel on the right-hand side. This right-hand property panel is for configuring flow-nodes, and their outputs.
 
 ![image2021-4-20_16_40_15](/Images/image2021_4_20_16_40_15.png)
 

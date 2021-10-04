@@ -46,6 +46,6 @@ In the Admin Console
 ![API_Doc_n_Test_latest](/Images/api_doc_n_test_latest.png)
 1. Click anywhere on the row of any one of the API endpoints that you recently created. The Admin Console presents all the API endpoints that can be used to access a particular model. You can also export API endpoints via the **Download Swagger** button. For additional information, refer to [Manage Endpoints](/docs/developer_guide/flows/manage_endpoints/).
 ![APIs_list_testuser_latest](/Images/apis_list_testuser_latest.png)
-1. **Expand one of the GET methods** in your endpoint. The code example for the curl should be visible. If it's not, scroll down until the Examples section is visible and select **curl**.
+1. **Expand one of the GET methods** in your endpoint. The code example for the curl should be visible. If it is not, scroll down until the Examples section is visible and select **curl**.
 ![API_Doc_n_Test_curl_latest](/Images/api_doc_n_test_curl_latest.png)
 1. **Copy a curl command** and **run it in a terminal**. Note the message returned by this command. Alternatively, you can test the select GET method in the user interface. Scroll until the Test API section is visible; if available complete the Request, Path parameters, and Query parameters fields and then click **Execute**. Note the Result returned in the user interface.

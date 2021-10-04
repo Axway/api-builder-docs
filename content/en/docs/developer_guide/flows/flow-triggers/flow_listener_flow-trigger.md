@@ -37,7 +37,7 @@ The following sections provide details of the available **Flow Listener** parame
 
 ### Example - Yummy fruit
 
-For this example, we'll create two flows. The first will call the second with a string, "banana", and the second will transform the input data into a sentence and return "Yummy banana!". The first flow is named "Invoke", and the second flow is named, "Invoke Listener". The **Invoke Flow** plugin is required for this example.
+For this example, we will create two flows. The first will call the second with a string, "banana", and the second will transform the input data into a sentence and return "Yummy banana!". The first flow is named "Invoke", and the second flow is named, "Invoke Listener". The **Invoke Flow** plugin is required for this example.
 
 #### Create the Invoke Listener flow
 
@@ -51,7 +51,7 @@ When the flow is triggered, the data that is passed to the flow (the "request"),
 
 ![Screen_Shot_2021-07-30_at_2.34.53_PM](/Images/screen_shot_2021_07_30_at_2_34_53_pm.png)
 
-The "Invoke Listener" needs to make a sentence, "Yummy banana!", so we'll use the [JavaScript](/docs/developer_guide/flows/flow-nodes/javascript_flow-node/) flow-node. Drag a **JavaScript** flow-node on to the graph. Enable **Data** and leave the value as a `$` Selector.
+The "Invoke Listener" needs to make a sentence, "Yummy banana!", so we will use the [JavaScript](/docs/developer_guide/flows/flow-nodes/javascript_flow-node/) flow-node. Drag a **JavaScript** flow-node on to the graph. Enable **Data** and leave the value as a `$` Selector.
 
 ![Screen_Shot_2021-07-30_at_2.28.05_PM](/Images/screen_shot_2021_07_30_at_2_28_05_pm.png)
 

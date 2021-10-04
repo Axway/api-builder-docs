@@ -55,7 +55,7 @@ The apiPrefix is an important consideration when you are designing your API for 
 
 To clarify, your Swagger 2.0 for this API might look similar to this:
 
-```
+```javascript
 // API design without API prefix
 
 basePath: '/v1',
@@ -104,7 +104,7 @@ Most connectors will have a default configuration file in the `conf` directory.
 
 ### cookieSecret
 
-\[string\] If you want signed cookies, you can set this value. If you don't want to sign cookies, remove this value, or make it null.
+\[string\] If you want signed cookies, you can set this value. If you do not want to sign cookies, remove this value, or make it null.
 
 ### cors
 
@@ -127,7 +127,7 @@ Example:
 proxy: `http://localhost:8081`
 
 ### flags
-[object] Flags to enable features that are not ready for production or whose use may require manual upgrade steps in legacy services.
+\[object\] Flags to enable features that are not ready for production or whose use may require manual upgrade steps in legacy services.
 
 {{% flags/table %}}
 <!-- Use the format below to add new rows to the flags table -->
@@ -206,7 +206,7 @@ module.exports = function (req, resp) {
 
 ### bindProcessHandlers
 
-\[boolean\] True by default. When this is set to false, {{% variables/apibuilder_prod_name %}} won't automatically shut down or restart on process signals such as SIGUSR2, SIGINT and SIGABRT, as well as on exit and uncaught exception events. bindProcessHandlers should be set to false when starting {{% variables/apibuilder_prod_name %}} as part of another process (i.e. during mocha unit tests), otherwise any bound process handlers may interfere with the main process and cause unexpected behaviour.
+\[boolean\] True by default. When this is set to false, {{% variables/apibuilder_prod_name %}} will not automatically shut down or restart on process signals such as SIGUSR2, SIGINT and SIGABRT, as well as on exit and uncaught exception events. bindProcessHandlers should be set to false when starting {{% variables/apibuilder_prod_name %}} as part of another process (i.e. during mocha unit tests), otherwise any bound process handlers may interfere with the main process and cause unexpected behaviour.
 
 ### Configuration files
 

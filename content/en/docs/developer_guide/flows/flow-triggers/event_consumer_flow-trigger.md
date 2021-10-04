@@ -31,7 +31,7 @@ The following sections provide details of the available **Event Consumer** param
 
 ### Example - Beep
 
-For this example, we'll create a "Consumer flow" that will handle an event named "BEEP", and a "Producer flow" that will emit an event named "BEEP" with a message. The Event plugin is required for this example.
+For this example, we will create a "Consumer flow" that will handle an event named "BEEP", and a "Producer flow" that will emit an event named "BEEP" with a message. The Event plugin is required for this example.
 
 #### Create a Consumer flow
 

@@ -103,7 +103,7 @@ For example, this OAS document is defining an OAuth 2.0 security definition in t
 ...
 ```
 
-The flow node in {{% variables/apibuilder_prod_name %}} reflects this as an authorization parameter named `Oauth2` in the parameters panel:
+The flow-node in {{% variables/apibuilder_prod_name %}} reflects this as an authorization parameter named `Oauth2` in the parameters panel:
 
 ![oauth_param](/Images/oauth_param.png)
 

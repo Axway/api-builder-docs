@@ -21,7 +21,7 @@ By default, {{% variables/apibuilder_prod_name %}} generates the following API e
 
 To disable {{% variables/apibuilder_prod_name %}} from generating these endpoints, set the Model's `autogen` property to `false` when defining the model. You will need to create [{{% variables/apibuilder_prod_name %}} APIs](/docs/developer_guide/apis/) to access the model.
 
-**Example:**
+## Example
 
 The following model is disabled from generating pre-defined endpoints. An API endpoint needs to be defined to access the model data as shown below.
 
@@ -32,9 +32,9 @@ var APIBuilder = require('@axway/api-builder-runtime');
 
 var employee = createModel('employee', {
     fields: {
-        first_name: {type:String, description:'First name', required:true},
-        last_name: {type:String, description:'Last name', required:true},
-        email_address: {type:String, description:'Email address', required:true}
+        first_name: { type: String, description: 'First name', required: true },
+        last_name: { type: String, description:'Last name', required: true },
+        email_address: { type: String, description: 'Email address', required: true }
     },
     connector: 'memory',
     autogen: false
@@ -57,7 +57,7 @@ var employeeFindOne = APIBuilder.API.extend({
     description: 'This API finds one employee record',
     model: 'employee',
     parameters: {
-        id: {description: 'the employee id'}
+        id: { description: 'the employee id' }
     },
     action: function (req, resp, next) {
         resp.stream(req.model.find, req.params.id, next);

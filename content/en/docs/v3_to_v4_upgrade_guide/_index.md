@@ -117,7 +117,7 @@ module.exports = User;
 
 {{% alert title="Note" color="primary" %}}This upgrade is handled by the @axway/api-builder-upgrade script.{{% /alert %}}
 
-In v3, there were several Flow Nodehandler dependencies that extended the Flow, and they were installed as dependencies by default. In v4, Nodehandlers are now known as flow-nodes.
+In v3, there were several nodehandler dependencies that extended the flow, and they were installed as dependencies by default. In v4, nodehandlers are now known as flow-nodes.
 
 ```json
 // package.json (v3)
@@ -189,7 +189,7 @@ The [@axway/api-builder-plugin-fn-dot](/docs/developer_guide/flows/flow-nodes/do
 
 ## Model Node Handler distinct method
 
-Previously, the distinct method on flow-nodes for connectors had parameters for `sel` and `unsel` that were ignored. Now, these parameters are removed from the model Flow Node.
+Previously, the distinct method on flow-nodes for connectors had parameters for `sel` and `unsel` that were ignored. Now, these parameters are removed from the model flow-node.
 
 ## Model query pagination parameters 'page' and 'per_page'
 

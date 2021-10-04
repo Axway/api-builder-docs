@@ -7,9 +7,9 @@ date: 2021-10-01
 
 ## Overview
 
-The Javascript plugin, `@axway/api-builder-plugin-fn-javascript`, allows the user to execute JavaScript code inside a Flow.
+The JavaScript plugin, `@axway/api-builder-plugin-fn-javascript`, allows the user to execute JavaScript code inside a Flow.
 
-To install the Javascript plugin, execute the following command:
+To install the JavaScript plugin, execute the following command:
 
 ```bash
 npm install --no-optional @axway/api-builder-plugin-fn-javascript
@@ -23,7 +23,7 @@ The following sections provide details of the JavaScript flow-node Execute metho
 
 ### Execute
 
-Allows the execution of JavaScript code and returns the result of the execution as the Flow Node's output.
+Allows the execution of JavaScript code and returns the result of the execution as the flow-node's output.
 
 #### Flow-node's parameters
 
@@ -106,7 +106,7 @@ This example flow-node calculates the product of the provided array of numbers.
 1621337798798 DEBUG [request-id: 9abdf0c2-efb0-4d85-b6cb-3746ea0133f1]   Calculate product (javascript.1) writing 120780 to ctx as: $.response
 ```
 
-Unfortunately, when debugging, we don't see which numbers are being calculated and only the result. We will add a debug log to show what's going on!
+Unfortunately, when debugging, we do not see which numbers are being calculated and only the result. We will add a debug log to show what's going on!
 
 ![image2021-5-18_12_38_33](/Images/image2021_5_18_12_38_33.png)
 

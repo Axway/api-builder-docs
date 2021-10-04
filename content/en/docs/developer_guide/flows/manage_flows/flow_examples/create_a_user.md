@@ -20,7 +20,7 @@ To configure a create a user flow:
 1. Name the flow-node: Set header location
 1. Select **Parameters**.
 1. Configure the **data** parameter. If **selector** is selected from the _selector_ drop-down menu, as you begin typing in the **data** parameter field, a drop-down menu of valid or previously used selector options is displayed. You may optionally choose a selector from the list, or continue typing to configure the parameter manually. For additional selector auto-complete information, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). For additional information on the Model flow-node and General flow-node configuration parameters, refer to [Flow-nodes](/docs/developer_guide/flows/flow-nodes/).
-1. Configure the **code** parameter. Select **Edit Javascript** and return an object which contains the **location** header.
+1. Configure the **code** parameter. Select **Edit JavaScript** and return an object which contains the **location** header.
 1. Select **Outputs**.
 1. Configure the **next** output. As you begin typing in the **next** field, a drop-down menu of valid or previously used output options is displayed. You may optionally choose an output from the list, or continue typing to configure the parameter manually.
 1. Configure the **error** output. As you begin typing in the **error** field, a drop-down menu of valid or previously used output options is displayed. You may optionally choose an output from the list, or continue typing to configure the parameter manually.

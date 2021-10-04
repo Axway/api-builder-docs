@@ -24,7 +24,7 @@ The following headers describe the available authentication mechanisms.
 
 In HTTP basic access authentication, the client needs to send a username and password, sent as a base-64 encoded string `"<username>:<password>"`, in the Authorization header of the HTTP request. The server should be configured only communicate over HTTPS, so the header is not sent as plain text (unencrypted).
 
-```
+```http
 GET api/model HTTP/1.0
 Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
 ```
@@ -119,9 +119,9 @@ module.exports = Plugin;
 
 To test the plugin, add the `-H 'X-Secret: secret'` command-line option to the cURL request.
 
-```
-$ curl "http://127.0.0.1:8080/api/foo"
+```bash
+curl "http://127.0.0.1:8080/api/foo"
 {"id":"com.appcelerator.api.unauthorized","message":"Unauthorized","success":false}
-$ curl "http://127.0.0.1:8080/api/foo" -H 'X-Secret: secret'
+curl "http://127.0.0.1:8080/api/foo" -H 'X-Secret: secret'
 {"success":true,"request-id":"0d2141f7-57ea-4c78-82cf-b6fa9497c16a", "foo":"bar"}
 ```

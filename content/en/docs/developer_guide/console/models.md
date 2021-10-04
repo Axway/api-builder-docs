@@ -15,7 +15,7 @@ In the **Models** tab, you will see a list of models (by name), connector names,
 
 ## Create a new model
 
-Models can be created in many different ways, but with the user interface (UI), you don't necessarily need to get your hands dirty with writing out code.
+Models can be created in many different ways, but with the user interface (UI), you do not necessarily need to get your hands dirty with writing out code.
 
 To create a new model using the UI:
 
@@ -38,7 +38,7 @@ To create a new model using the UI:
     1. Click **Add field to model** to complete the addition of this new field.
 1. Repeat step 4 as needed to add as many fields as necessary.
 1. At this point, you can edit any field you created by clicking the **Pencil** icon at the end of the field row.
-1. If the field isn't needed, you can remove it by clicking on the **Trashcan** icon at the end of the field row.
+1. If the field is not needed, you can remove it by clicking on the **Trashcan** icon at the end of the field row.
 
     {{% alert title="Note" color="primary" %}}There is no warning for deleting a field. When you delete a field, you will not be prompted for a confirmation of the action.{{% /alert %}}
 1. Click the **Next** button.

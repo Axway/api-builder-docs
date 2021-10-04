@@ -46,7 +46,7 @@ If authorization is required for a flow-node, then it will contain a drop-down f
 
 ![image2018-11-23_11_20_25](/Images/image2018_11_23_11_20_25.png)
 
-Alternatively, credentials can be accessed by name using the [Authorization flow-node](/docs/developer_guide/flows/flow-nodes/authorization_flow-node/) and provided to flow-nodes which don't advertise authorization parameters using a selector.
+Alternatively, credentials can be accessed by name using the [Authorization flow-node](/docs/developer_guide/flows/flow-nodes/authorization_flow-node/) and provided to flow-nodes which do not advertise authorization parameters using a selector.
 
 ## Connect flow-nodes
 

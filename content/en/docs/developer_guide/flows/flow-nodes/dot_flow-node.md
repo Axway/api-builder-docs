@@ -121,7 +121,7 @@ The following sections provide doT flow-node examples.
 
 | Data | Template | Output |
 | --- | --- | --- |
-| `{`  <br />`"username": "Sam"`  <br />`}` | `{{? it.username === "Joe" }}`  <br />`Hello Joe!`  <br />`{{??}}`  <br />`I don't know you`  <br />`{{?}}` | `I don't know you` |
+| `{`  <br />`"username": "Sam"`  <br />`}` | `{{? it.username === "Joe" }}`  <br />`Hello Joe!`  <br />`{{??}}`  <br />`I do not know you`  <br />`{{?}}` | `I do not know you` |
 
 ### Array loops
 

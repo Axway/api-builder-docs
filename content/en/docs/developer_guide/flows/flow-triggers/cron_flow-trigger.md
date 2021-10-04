@@ -44,7 +44,7 @@ This Cron plugin is a flow-trigger that enables triggering a flow based on a sch
 
 ### Example - at 09:00 am
 
-For this example, we'll create a "Morning Flow" that will trigger a flow at 09:00 am every day.
+For this example, we will create a "Morning Flow" that will trigger a flow at 09:00 am every day.
 
 #### Create a Morning Flow
 
@@ -70,7 +70,7 @@ If you check the application console window, there is a DEBUG log message that c
 
 ### Example - at 12:00 am (UTC)
 
-For this example, we'll create a "Midnight Flow" that will trigger a flow at 12:00 am UTC every day.
+For this example, we will create a "Midnight Flow" that will trigger a flow at 12:00 am UTC every day.
 
 #### Create a Midnight Flow
 

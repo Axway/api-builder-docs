@@ -38,5 +38,3 @@ To get started, see the [Getting Started With {{% variables/apibuilder_prod_name
 ### Flows
 
 **[{{% variables/apibuilder_prod_name %}} Flows](/docs/developer_guide/flows/)** implement the business logic of your API. Flows are created using the Flow Editor, a rich graphical editor.
-
-## Topics

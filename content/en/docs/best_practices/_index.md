@@ -21,7 +21,7 @@ date: 2021-10-01
 * Understand [npm dependencies and dev dependencies](https://lexi-lambda.github.io/blog/2016/08/24/understanding-the-npm-dependency-model/) and how to use them appropriately. By default, your {{% variables/apibuilder_prod_name %}} application is configured to get the latest features and patches on npm install/update.
 * Uninstall dependencies that you are not using. These add to bloat, make your application bigger, and slower to install.
 * Use security tools such as [npm audit](https://docs.npmjs.com/cli/v6/commands/npm-audit) to ensure your dependencies do not contain any vulnerabilities. {{% variables/apibuilder_prod_name %}} uses [WhiteSource](https://www.whitesourcesoftware.com/) (CVE monitoring), [npm audit](https://docs.npmjs.com/cli/v7/commands/npm-audit) (CVE monitoring), [AppSpider](https://www.rapid7.com/products/appspider/) (web security), [sonarqube](https://www.sonarqube.org/) (for code quality and security), and [Fortify](https://en.wikipedia.org/wiki/Fortify_Software) (for static code analysis).
-* Use [package-lock](https://docs.npmjs.com/cli/v6/configuring-npm/package-lock-json) or [shrinkwrap](https://docs.npmjs.com/cli/v6/commands/npm-shrinkwrap) when developing to ensure the same dependency tree. This will be created by default in up-to-date versions of NPM.
+* Use [package-lock](https://docs.npmjs.com/cli/v6/configuring-npm/package-lock-json) or [shrinkwrap](https://docs.npmjs.com/cli/v6/commands/npm-shrinkwrap) when developing to ensure the same dependency tree. This will be created by default in up-to-date versions of npm.
 * If using package-lock then you should use the [npm ci](https://docs.npmjs.com/cli/v6/commands/npm-ci) command instead of [npm install](https://docs.npmjs.com/cli/v6/commands/npm-install) in docker or for faster installation.
 
 ## Decide your architecture
@@ -76,7 +76,7 @@ When writing code for the [JavaScript flow-node](/docs/developer_guide/flows/flo
 * Do not mix tabs and spaces - this will drive people crazy. Your initial {{% variables/apibuilder_prod_name %}} project's files are all tab based. Pick one, and stick with it.
 * Use a linter to ensure code conformity and bug detection (we recommend [eslint](https://eslint.org/)).
 * We recommend [mocha](https://www.npmjs.com/package/mocha) for your unit-tests.
-* We recommend [simple-mock](https://www.npmjs.com/package/simple-mock) to mock interfaces you don't need to test (e.g. [fs](https://nodejs.org/api/fs.html)) or that you wish to force errors.
+* We recommend [simple-mock](https://www.npmjs.com/package/simple-mock) to mock interfaces you do not need to test (e.g. [fs](https://nodejs.org/api/fs.html)) or that you wish to force errors.
 * We recommend [nyc](https://github.com/istanbuljs/nyc) for calculating code coverage (we strive for 100% coverage).
 
 ## Testing your application

@@ -5,7 +5,7 @@ weight: 120
 date: 2021-10-01
 ---
 
-{{% alert title="{{% variables/apibuilder_prod_name %}} 3.x is deprecated" color="danger" %}}Support for {{% variables/apibuilder_prod_name %}} 3.x ceased on 30 April 2020. Use the [v3 to v4 upgrade guide](/docs/v3_to_v4_upgrade_guide) to migrate all your applications to [{{% variables/apibuilder_prod_name %}} 4.x](/docs/getting_started).
+{{% alert title="API Builder 3.x is deprecated" color="danger" %}}Support for {{% variables/apibuilder_prod_name %}} 3.x ceased on 30 April 2020. Use the [v3 to v4 upgrade guide](/docs/v3_to_v4_upgrade_guide) to migrate all your applications to [{{% variables/apibuilder_prod_name %}} 4.x](/docs/getting_started).
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
@@ -15,16 +15,16 @@ This guide covers the steps required for most users to migrate their projects fr
 
 ## Prerequisites
 
-Refer to the Prerequisites in the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/#PreReq).
+Refer to the Prerequisites in the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/#prerequisites).
 
 ### Upgrade script
 
 Once you have a local, backed-up copy of your project, you should run the upgrade script. The upgrade script does a **partial upgrade** in situ, upgrading several dependencies in package.json as well as modifying several files due to module renaming. Execute the following command within your v3 project directory:
 
-```
+```bash
 // Run {{% variables/apibuilder_prod_name %}} upgrade script
 
-$ npx @axway/api-builder-upgrade
+npx @axway/api-builder-upgrade
 ```
 
 Once the upgrade script completes, you should progress through each section in this document, and apply any necessary changes to your project.
@@ -32,13 +32,13 @@ Once the upgrade script completes, you should progress through each section in t
 When you have completed any steps necessary below, run the following command to build your upgraded project:
 
 ```bash
-$ npm upgrade
+npm upgrade
 ```
 
 Then launch your project as normal by running:
 
 ```bash
-$ npm start
+npm start
 ```
 
 ## Admin UI
@@ -52,7 +52,7 @@ To run the upgrade manually:
 ```bash
 // Install admin dev dependency
 
-$ npm install --save-dev @axway/api-builder-admin@^1.0.0
+npm install --save-dev @axway/api-builder-admin@^1.0.0
 ```
 
 ## Runtime
@@ -61,7 +61,7 @@ $ npm install --save-dev @axway/api-builder-admin@^1.0.0
 
 In v3, the {{% variables/apibuilder_prod_name %}} runtime was named "arrow", and it was a dev-dependency by default, but may have been added as a dependency in some cases.
 
-```
+```json
 // package.json (v3)
 
 "devDependencies": {
@@ -71,7 +71,7 @@ In v3, the {{% variables/apibuilder_prod_name %}} runtime was named "arrow", and
 
 In v4, the "arrow" dev-dependency should be removed, and replaced a new {{% variables/apibuilder_prod_name %}} runtime dependency, "@axway/api-builder-runtime".
 
-```
+```json
 // package.json (v4)
 
 "dependencies": {
@@ -117,9 +117,9 @@ module.exports = User;
 
 {{% alert title="Note" color="primary" %}}This upgrade is handled by the @axway/api-builder-upgrade script.{{% /alert %}}
 
-In v3, there were several Flow Nodehandler dependencies that extended the Flow, and they were installed as dependencies by default. In v4, Nodehandlers are now known as Flow-Nodes.
+In v3, there were several Flow Nodehandler dependencies that extended the Flow, and they were installed as dependencies by default. In v4, Nodehandlers are now known as flow-nodes.
 
-```
+```json
 // package.json (v3)
 
 "dependencies": {
@@ -129,7 +129,7 @@ In v3, there were several Flow Nodehandler dependencies that extended the Flow, 
 },
 ```
 
-In v4, there are three nodehandlers that were renamed and repackaged as Flow-Node plugins (bas64, doT, and json), and need to be renamed.
+In v4, there are three nodehandlers that were renamed and repackaged as flow-node plugins (bas64, doT, and json), and need to be renamed.
 
 | v3 | v4 |
 | --- | --- |
@@ -139,7 +139,7 @@ In v4, there are three nodehandlers that were renamed and repackaged as Flow-Nod
 
 These should be added as plugins as npm dependencies.
 
-```
+```json
 // package.json (v4)
 
 "dependencies": {
@@ -151,7 +151,7 @@ These should be added as plugins as npm dependencies.
 
 In v3 flows have references to Nodehandlers.
 
-```
+```json
 // flows/GreetFlow.json (v3)
 
 "doT.1": {
@@ -164,7 +164,7 @@ In v3 flows have references to Nodehandlers.
 
 The v4 flows should have references to plugins.
 
-```
+```json
 // flows/GreetFlow.json (v4)
 
 "doT.1": {
@@ -177,12 +177,12 @@ The v4 flows should have references to plugins.
 
 {{% alert title="Note" color="primary" %}}If you wrote your own nodehandlers in v3, they will not work in v4. If you have custom nodehandlers that you wish to upgrade, contact [support@axway.com.](mailto:support@axway.com.){{% /alert %}}{{% alert title="Security issue" color="danger" %}}Note that doT has an npm security advisory against it (#798[). Under normal use, the security issue does not apply. However, the module is no longer actively maintained. If you do not use the GreetFlow and do not use doT, then both can be removed. Remove the "nodehandler-dot" from package.json, and remove the example Flow and API endpoint files.](https://www.npmjs.com/advisories/798)
 
-```
+```bash
 // Remove Greet flow example
 
-$ rm flows/GreetFlow.json
-$ rm endpoints/Greet.json
-$ rm conf/greetflow.default.js
+rm flows/GreetFlow.json
+rm endpoints/Greet.json
+rm conf/greetflow.default.js
 ```
 
 The [@axway/api-builder-plugin-fn-dot](/docs/developer_guide/flows/flow-nodes/dot_flow-node/) plugin is no longer bundled with new {{% variables/apibuilder_prod_name %}} projects. We suggest using `@axway/api-builder-plugin-fn-javascript` instead of the `formatObject` method, or `@axway/api-builder-plugin-fn-mustache` instead of `formatString`.{{% /alert %}}
@@ -199,7 +199,7 @@ Previously, the Model's query method supported pagination parameters `page` and 
 
 In v3, the programmatic API for Model.findAll was incorrect, returning a collection as the first element of an array.
 
-```
+```javascript
 // api.js (v3)
 
 collection = myModel.FindAll()[0]
@@ -207,7 +207,7 @@ collection = myModel.FindAll()[0]
 
 In v4, this was fixed to return a collection correctly.
 
-```
+```javascript
 // api.js (v4)
 
 collection = myModel.FindAll()
@@ -253,7 +253,7 @@ The following sections describe the configuration changes from v3 to v4.
 
 Several admin configuration options have been removed, and a number have been deprecated. The following are no longer required and can be safely removed from your configuration: `enableAdminInProduction, validEmails, validOrgs, prefix`.
 
-```
+```javascript
 // conf/default.js (v3)
 
 admin: {
@@ -276,7 +276,7 @@ admin: {
 },
 ```
 
-```
+```javascript
 // conf/default.js (v4)
 
 admin: {
@@ -295,7 +295,7 @@ admin: {
 
 {{% variables/apibuilder_prod_name %}} no longer contains configuration per-environment. **You should save-off the values for `apikey_development`, `apikey_production`, and `apikey_preproduction`** .
 
-```
+```javascript
 // conf/default.js (v3)
 
 apikey_production: 'this-is-my-production-key',
@@ -309,7 +309,7 @@ In v4, {{% variables/apibuilder_prod_name %}} has one [apikey configuration opti
 
 In short, change apikey to be loaded from the environment.
 
-```
+```javascript
 // conf/default.js (v3)
 
 apikey: process.env.API_KEY,
@@ -317,7 +317,7 @@ apikey: process.env.API_KEY,
 
 Add the value of the `apikey_development` key to a protected `conf/.env`:
 
-```
+```javascript
 // conf/.env (v4)
 
 API_KEY=this-is-my-development-key
@@ -333,7 +333,7 @@ The baseurl no longer supports port. Previously, it was possible to specify base
 
 In v3, {{% variables/apibuilder_prod_name %}} would write files to a logging directory. The project's application and transaction logs would be written to `./logs` by default.
 
-```
+```javascript
 // conf/default.js (v3)
 
 // logging configuration
@@ -350,7 +350,7 @@ logging: {
 
 In v4, {{% variables/apibuilder_prod_name %}} no longer writes log files to a directory. All logs are emitted on the console stdout stream. This makes it easier for services to integrate with platform logging aggregators. The logging configuration can be deleted. Also, the default logLevel was changed to "debug".
 
-```
+```javascript
 // conf/default.js (v4)
 
 // logging configuration
@@ -359,17 +359,17 @@ logLevel: 'debug',
 
 You can delete the `./logs` directory.
 
-```
+```bash
 // Delete unused ./logs
 
-$ rm -rf ./logs
+rm -rf ./logs
 ```
 
 ### port
 
 This is a new v4 option. However, it is critical if the service is to be successfully published to Amplify Runtime Services (ARS).
 
-```
+```javascript
 // conf/default.js (v4)
 
 http: {
@@ -379,7 +379,7 @@ http: {
 
 Also, you may also want to add this environment variable to a local environment `.env` file in the `conf` directory.
 
-```
+```bash
 // conf/.env
 
 PORT=8080
@@ -393,12 +393,12 @@ For more information, please read the [Environmentalization](/docs/how_to/enviro
 
 Previously, there was a `serialization.exposePrimaryKeyAsId` configuration option that was intended to force the primary key of a model always to be called `id`. Now, this configuration option has been removed, and the model primary key field will always be exposed using its actual column name. The configuration option `serialization` can be safely deleted.
 
-```
+```javascript
 // conf/default.js (v3)
 
 serialization: {
     // Here for backwards compatibility with older arrow apps. When you set this to
-    // true, a model's primary key will always be exposed under 'id' instead of it's
+    // true, a model's primary key will always be exposed under 'id' instead of it is
     // actual name
     exposePrimaryKeyAsId: false
 }
@@ -408,17 +408,18 @@ serialization: {
 
 In v3, the product supported any number of environments, such as "development" and "production".
 
-```
+```bash
 // Install admin dev dependency
 
-$ ls -1 conf/
+ls -1 conf/
+
 appc.arrowdb.development.js
 appc.arrowdb.production.js
 default.js
 greetflow.default.js
 ```
 
-While this was convenient, it is also potentially insecure as secure keys were stored in files by default, and it's also contrary to [12factor.net](https://12factor.net) app best practices. {{% variables/apibuilder_prod_name %}} v4 is designed to be a microservice container that can run anywhere, not just [Runtime Services](https://www.axway.com/en/platform/runtime-services). In v4, {{% variables/apibuilder_prod_name %}} will only load ".\*default.js" configuration files.
+While this was convenient, it is also potentially insecure as secure keys were stored in files by default, and it is also contrary to [12factor.net](https://12factor.net) app best practices. {{% variables/apibuilder_prod_name %}} v4 is designed to be a microservice container that can run anywhere, not just [Runtime Services](https://www.axway.com/en/platform/runtime-services). In v4, {{% variables/apibuilder_prod_name %}} will only load ".\*default.js" configuration files.
 
 Generally speaking, you can follow the **appc.arrowdb** example below to environmentalize other configuration parameters.
 
@@ -491,7 +492,7 @@ module.exports = {
 
 Then, add the environment variables to your `conf/.env` file for running your service in development. This file should be secured, and only be read/writable by you, nor should it be checked into source control.
 
-```
+```bash
 // conf/.env
 
 MBS_KEY=MyArrowDBDevInstanceKey
@@ -516,12 +517,12 @@ In v3, {{% variables/apibuilder_prod_name %}} was installed and available global
 ```bash
 // Run {{% variables/apibuilder_prod_name %}} (v3)
 
-$ appc run
+appc run
 ```
 
 However, in v4, the runtime is now an explicit npm dependency (in other words, @axway/api-builder-runtime). Your project is "standalone," and it **is no longer necessary to install or log in to the Appc CLI** to run your project. In v4, you only use Node.js to run your project, so you should add a start script to your package.json.
 
-```
+```json
 // package.json (v4)
 
 "scripts": {
@@ -534,7 +535,7 @@ If you applied the necessary upgrades listed above, and your project has all the
 ```bash
 // Run {{% variables/apibuilder_prod_name %}} (v4)
 
-$ npm start
+npm start
 ```
 
 ## Deprecation warnings

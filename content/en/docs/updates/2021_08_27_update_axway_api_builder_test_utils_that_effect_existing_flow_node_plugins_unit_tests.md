@@ -13,7 +13,7 @@ date: 2021-10-01
 
 ## Why are we making this change
 
-In the [Timbuktu](/docs/release_notes/-_13_august_2021/) release of {{% variables/apibuilder_prod_name %}}, we identified a regression in [@axway/api-builder-plugin-fn-mustache](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-mustache)@1.0.6 that changed the JSON schema of the **Data** parameter from _any_ to _string_. The regression was fixed in the [Utrecht](/docs/release_notes/-_27_august_2021/) release of {{% variables/apibuilder_prod_name %}}. However, as part of the remediation of this, we identified that it was easy to write invalid unit-tests for flow-node plugins. While the plugin had a unit-test that checked that mustache could handle any **Data** input, it did not also validate those inputs against the JSON schema for the **Data** parameter. If it had input validation, then this would have been caught.
+In the [Timbuktu](/docs/release_notes/timbuktu/) release of {{% variables/apibuilder_prod_name %}}, we identified a regression in [@axway/api-builder-plugin-fn-mustache](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-mustache)@1.0.6 that changed the JSON schema of the **Data** parameter from _any_ to _string_. The regression was fixed in the [Utrecht](/docs/release_notes/utrecht/) release of {{% variables/apibuilder_prod_name %}}. However, as part of the remediation of this, we identified that it was easy to write invalid unit-tests for flow-node plugins. While the plugin had a unit-test that checked that mustache could handle any **Data** input, it did not also validate those inputs against the JSON schema for the **Data** parameter. If it had input validation, then this would have been caught.
 
 For this reason, we introduced a feature to [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) 1.4.0 that adds a new [option](https://www.npmjs.com/package/@axway/api-builder-test-utils#user-content-pluginsetoptionsoptions) to validate inputs while developing unit-tests. We also ensured that every Axway supported plugin validates its inputs as designed.
 
@@ -21,7 +21,7 @@ For this reason, we introduced a feature to [@axway/api-builder-test-utils](http
 
 If you have [custom flow-nodes](/docs/how_to/create_a_custom_flow-node/), then you will want this update. Recall that when you generate a flow-node plugin for the first time, it generates a "hello" example that accepts a string input **Name**, and when invoked, returns the message, "Hello _Name_". The JSON schema for the **Name** is as follows:
 
-```
+```yaml
 parameters:
   name:
     name: Name

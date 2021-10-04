@@ -16,9 +16,8 @@ The performance of a flow depends significantly on what the flow is doing. Conne
 * MacBook Pro; 16 GB Memory; Intel Core i9 2.3 GHz; Mac OS Mojave
 * Running single instance of {{% variables/apibuilder_prod_name %}} with logging disabled, and authentication set to "apikey"
 * Running apache benchmark (ab):
-
-    * Keep-Alive enabled
-    * gzip enabled
+  * Keep-Alive enabled
+  * gzip enabled
 
 ## Performance metrics
 
@@ -38,8 +37,7 @@ The performance of a flow depends significantly on what the flow is doing. Conne
 ## Apache benchmark (ab)
 
 [Apache benchmark](https://httpd.apache.org/docs/2.4/programs/ab.html) (ab) was used for these performance tests. This [site](https://www.tutorialspoint.com/apache_bench/apache_bench_environment_setup.htm) explains how to install it. To run:
-
-```
+```bash
 $ ab -n 100000 -c 10 -k \
  -H "Accept-Encoding: gzip" \
  -H "Accept: application/json" \

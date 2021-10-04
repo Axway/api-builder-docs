@@ -23,15 +23,17 @@ Some users may want to run their APP using [Transport Layer Security](https://en
 
 Create one new folder on the root level of your directory.
 
-```
-$ cd my-service
-$ mkdir ssl
+```bash
+cd my-service
+
+mkdir ssl
 ```
 
 Navigate to the newly created folder and create an SSL certificate via [OpenSSL](https://www.openssl.org/). Please execute the following command:
 
-```
-$ openssl req -x509 -newkey rsa:4096 -keyout ssl/key.pem -out ssl/cert.pem -days 365 -subj "/C=US/O=Axway/CN={{% variables/apibuilder_prod_name %}}"
+```bash
+openssl req -x509 -newkey rsa:4096 -keyout ssl/key.pem -out ssl/cert.pem -days 365 -subj "/C=US/O=Axway/CN={{% variables/apibuilder_prod_name %}}"
+
 Generating a RSA private key
 ........................++++
 ...........................................................++++
@@ -56,7 +58,7 @@ const path = require('path');
 
 Further below in the same file, find the "ssl" configuration. The options are the same as what is used by the Node.js [https.createServer()](https://nodejs.org/api/https.html#https_https_createserver_options_requestlistener) method. You will find the initial TLS/SSL configuration. For example:
 
-```
+```javascript
 // ssl: {
 //   port: 8443,
 //  key: fs.readFileSync(path.join('.', 'ssl','key.pem'), 'utf8'),
@@ -67,7 +69,7 @@ Further below in the same file, find the "ssl" configuration. The options are th
 
 Uncomment the configuration add change the `key` and `cert` properties (if you chose a different path). Provide a `passphrase` for the private key (configured as an OS environment variable). The following is the sample configuration:
 
-```
+```javascript
 ssl: {
   port: 8443,
   key: fs.readFileSync(path.join('.', 'ssl','key.pem'), 'utf8'),
@@ -81,7 +83,7 @@ For example, to run by setting the OS environment variable if your passphrase is
 ```bash
 // Starting with TLS enabled
 
-$ API_BUILDER_SSL_PASSWORD=secret npm start
+API_BUILDER_SSL_PASSWORD=secret npm start
 ```
 
 On startup, {{% variables/apibuilder_prod_name %}} will automatically bind TLS to port 8443 (i.e. [https://localhost:8443/console](https://localhost:8443/console)). You can change that in the `ssl` configuration previously mentioned.
@@ -90,7 +92,7 @@ On startup, {{% variables/apibuilder_prod_name %}} will automatically bind TLS t
 
 * You should keep your TLS/SSL password secure, and _**never**_ commit it to source-control.
 * You should not use use weak encryption or insecure digests when generating your production keys.
-* When enabling TLS/SSL, you may also want to also [disable HTTP](#Securityguidance-DisableHTTP).
+* When enabling TLS/SSL, you may also want to also [disable HTTP](#disabling-http).
 
 ### Environmental considerations
 
@@ -100,7 +102,7 @@ You should use different TLS/SSL certificates per environment, so you may need a
 
 As previously mentioned, your service may be protected by an edge gateway with TLS/SSL termination. In that case, for all intents and purposes, the client will only be aware of the gateway as the {{% variables/apibuilder_prod_name %}} service. In that case, when the client requests the Swagger API document ](/Images/apidoc`), the scheme, or host may be incorrect. You can override these values in the [apidoc overrides](/docs/developer_guide/project/configuration/project_configuration/#apidoc) in the `./conf/default.js` file as appropriate:
 
-```
+```javascript
 overrides: {
   // schemes: [ 'https' ],
   // host: 'localhost:8080',
@@ -112,7 +114,7 @@ overrides: {
 
 In cases when TLS/SSL listener is enabled, you may want to disable all HTTP traffic. This can be done using the **disabled** property of **http** configuration flag:
 
-```
+```javascript
 http: {
   port: parseInt(process.env.PORT) || 8080,
   disabled: true // false by default
@@ -123,7 +125,7 @@ http: {
 
 As of Node.js 7.3.0 (and LTS versions 6.10.0 and 4.8.0), it is possible to add well-known extra certificates to Node.js with a `NODE_EXTRA_CA_CERTS`environment variable. It can be useful in the cloud environment or other deployment environments to add trusted certificates as a matter of policy (as opposed to explicit coding), or on personal machines, for example, adding CAs for proxy servers. To set the additional CA certificates, use the following environmental parameter:
 
-```
+```bash
 NODE_EXTRA_CA_CERTS=file
 ```
 
@@ -133,7 +135,7 @@ For example:
 
 **File structure example:**
 
-```
+```text
 // extra-ca-certs.pem
 
 -----BEGIN CERTIFICATE-----
@@ -147,14 +149,14 @@ For example:
 
 You can then set NODE_EXTRA_CA_CERTS to the environment:
 
-```
-$ export NODE_EXTRA_CA_CERTS=./extra-ca-certs.pem
+```bash
+export NODE_EXTRA_CA_CERTS=./extra-ca-certs.pem
 ```
 
 Or via docker:
 
-```
-$ docker run --name <CONTAINER_NAME> -e NODE_EXTRA_CA_CERTS=./extra-ca-certs.pem -p 8081:8081 -d <IMAGE_NAME>
+```bash
+docker run --name <CONTAINER_NAME> -e NODE_EXTRA_CA_CERTS=./extra-ca-certs.pem -p 8081:8081 -d <IMAGE_NAME>
 ```
 
 ## Development vs. production environments
@@ -200,28 +202,28 @@ module.exports = {
 };
 ```
 
-When {{% variables/apibuilder_prod_name %}} starts up, it will look for the OS environment variable PASSWORD, if it's not set, the value will be `undefined`, but if it is set, the value is _always_ a string.
+When {{% variables/apibuilder_prod_name %}} starts up, it will look for the OS environment variable PASSWORD, if it is not set, the value will be `undefined`, but if it is set, the value is _always_ a string.
 
 Setting the value of PASSWORD is going to be specific to the OS you are using (or host).
 
 For example, on Linux PASSWORD can be set from the command line:
 
-```
-$ setenv PASSWORD=secret
+```bash
+setenv PASSWORD=secret
 ```
 
 With Docker containers, PASSWORD can be provided with [docker run](https://docs.docker.com/engine/reference/commandline/run).
 
-```
-$ docker run -e PASSWORD=secret --tag myapp:latest
+```bash
+docker run -e PASSWORD=secret --tag myapp:latest
 ```
 
 With Amplify Runtime Services, the PASSWORD can be provided with the [appc command](/docs/how_to/deploy_an_api_builder_application_to_amplify_runtime_services/).
 
 {{% alert title="Note" color="primary" %}}Amplify Runtime Services is deprecated and will be discontinued effective September 1, 2022.{{% /alert %}}
 
-```
-$ amplify acs config --set PASSWORD=secret myapp
+```bash
+amplify acs config --set PASSWORD=secret myapp
 ```
 
 Note that this is only one way to decouple your application from its configuration. There are other (more complex) ways, for example, such as obtaining these values from an external configuration server. This document gives you the basis upon which you can tailor your solution.
@@ -232,7 +234,7 @@ Note that this is only one way to decouple your application from its configurati
 
 Decoupling the configuration from the application makes the application very flexible. However, it also means that it is a pain when you want to run it. You will likely run the application locally quite often, so for this reason, a feature was added in the {{% variables/apibuilder_prod_name %}} [Barcelona](/docs/release_notes/barcelona) release to load from a local ./`conf/.env` file. If this file exists, it is loaded by {{% variables/apibuilder_prod_name %}} on startup, and its values are augmented with the host OS environment variables. Values from this file are only applied if the host OS does not already have the value set.
 
-```
+```bash
 // ./conf/.env (default)
 
 PORT=8080
@@ -315,8 +317,9 @@ module.exports = {
 
 Below is a complex example using environment variables with multiple files. Let's assume that we have a simple {{% variables/apibuilder_prod_name %}} service with MongoDB connector installed, then the configuration related files in the **service/conf** directory will be:
 
-```
-$ ls -1a conf/
+```bash
+ls -1a conf/
+
 .env
 mongo.default.js
 default.js
@@ -356,7 +359,7 @@ module.exports = {
 
 You also set values in your `conf/.env` file to make development easier:
 
-```
+```bash
 // ./conf/.env
 
 # Service

@@ -5,6 +5,9 @@ date: 2018-10-12
 description: 12 October 2018
 Hide_readingtime: true
 ---
+
+{{% releasenotes/upgrade %}}
+
 ## Features
 
 * #5075: Remove Connectors page

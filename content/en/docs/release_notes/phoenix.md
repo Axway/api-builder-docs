@@ -7,6 +7,7 @@ Hide_readingtime: true
 ---
 
 {{% releasenotes/upgrade %}}
+
 ## Fixes
 
 * #5263: Log Plugin load errors and stack traces

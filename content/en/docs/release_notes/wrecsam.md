@@ -7,6 +7,7 @@ Hide_readingtime: true
 ---
 
 {{% releasenotes/upgrade %}}
+
 ## Features
 
 * #7065: Added new config options to disable content-md5 and etag headers for additional performance. The option to disable the server header was also moved alongside these new options. See deprecation {{% deprecation/link D051 %}}.

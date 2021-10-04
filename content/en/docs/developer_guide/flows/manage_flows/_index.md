@@ -32,12 +32,11 @@ To create a flow using the {{% variables/apibuilder_prod_name %}} user interface
 1. When the flow is complete, click the **Apply** button. The Flow save caution window is displayed.
 
     {{% alert title="Note" color="primary" %}}Only changes to valid flows can be applied.{{% /alert %}}
-
-    ![save_caution](/Images/save_caution.png)
+![save_caution](/Images/save_caution.png)
 1. Select **Proceed** to save the flow. Select **Cancel** to return to the API Orchestration user interface. If **Proceed** is selected, the server is restarted, and the flow is saved. Once the server restart is completed, the API Orchestration user interface is displayed, and the flow is enabled. For flow creation examples, refer to [Flow Examples](/docs/developer_guide/flows/manage_flows/flow_examples/).
 1. To exit the API Orchestration user interface and return to the API Lists page, select **Close**. If you select **Close** and there are unsaved changes to the flow, the Close caution window is displayed.
 
-    ![close_caution](/Images/close_caution.png)
+![close_caution](/Images/close_caution.png)
 1. Select **Save and exit** to save the flow changes and return to the API Lists page. Select **Discard changes** to discard the unsaved changes to the flow and return to the API Lists page.
 
 ## Edit flows
@@ -49,12 +48,10 @@ To edit a flow using the {{% variables/apibuilder_prod_name %}} user interface:
 1. Select the **Flow** icon for the API endpoint flow to edit. The selected flow is displayed in the flow editor panel on the API Orchestration user interface.
 1. Make the required edits to the flow. For instructions on adding, configuring, and connecting flow-nodes or disconnecting and deleting flow-nodes, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/).
 1. Once the flow edits are completed, click the **Apply** button. The Flow save caution window is displayed.
-
-    ![save_caution](/Images/save_caution.png)
+![save_caution](/Images/save_caution.png)
 1. Select **Proceed** to save the flow. Select **Cancel** to return to the API Orchestration user interface. If **Proceed** is selected, the server is restarted, and the flow is saved. Once the server restart is completed, the API Orchestration user interface is displayed.
 1. To exit the API Orchestration user interface and return to the API Lists page, select **Close**. If you select **Close** and there are unsaved changes to the flow, the Close caution window is displayed.
-
-    ![close_caution](/Images/close_caution.png)
+![close_caution](/Images/close_caution.png)
 1. Select **Save and exit** to save the flow changes and return to the API Lists page. Select **Discard changes** to discard the unsaved changes to the flow and return to the API Lists page.
 
 ## Debug a flow
@@ -68,6 +65,5 @@ To delete an endpoint using the {{% variables/apibuilder_prod_name %}} user inte
 1. Select the **API Doc & Test** tab.
 1. Select an API Endpoint to view the API List of endpoints. The API Lists page is displayed.
 1. Select the **Delete** icon for the API endpoint to delete. The Endpoint delete caution window is displayed.
-
-    ![endpoint_del_caution](/Images/55181383_endpoint_del_caution.png)
+![endpoint_del_caution](/Images/55181383_endpoint_del_caution.png)
 1. Select **Proceed** to delete the selected API endpoint. Select Cancel to return to the APIs List page. If **Proceed** is selected, the endpoint and any associated flow are deleted, and the server is restarted. Once the server restart is completed, the APIs List page is displayed.

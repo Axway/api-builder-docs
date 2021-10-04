@@ -23,8 +23,7 @@ To configure a find a distinct user flow:
 1. Enable the **body** parameter, select **selector**, and select `$.models` from the selector options drop-down menu or continue typing to complete the selector configuration manually. For additional selector auto-complete information, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/).
 1. Leave the **headers** parameter disabled.
 1. Connect the next output of the Find a distinct user flow-node to the input of the Find succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). The completed flow is displayed.
-
-    ![Distinct_latest](/Images/distinct_latest.png)
+![Distinct_latest](/Images/distinct_latest.png)
 1. Click **Apply**.
 1. On the next screen, click **Proceed**. The server will be restarted, the _Find a distinct user_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.
 1. To exit API Orchestration user interface and return to API Lists page, click **Close**.

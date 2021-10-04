@@ -5,6 +5,9 @@ date: 2018-08-17
 description: 17 August 2018
 Hide_readingtime: true
 ---
+
+{{% releasenotes/upgrade %}}
+
 ## Features
 
 * #4532: Support data connectors actual primary key type in API, models, and flows

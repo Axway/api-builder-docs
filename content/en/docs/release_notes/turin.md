@@ -7,6 +7,7 @@ Hide_readingtime: true
 ---
 
 {{% releasenotes/upgrade %}}
+
 ## Fixes
 
 * #5742: Replace doT where possible in api-builder-plugins to reduce vulnerability warnings

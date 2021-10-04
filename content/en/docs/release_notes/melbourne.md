@@ -5,6 +5,9 @@ date: 2019-02-01
 description: 1 February 2019
 Hide_readingtime: true
 ---
+
+{{% releasenotes/upgrade %}}
+
 ## Features
 
 * #5436: Support Parameter Groups in flow-nodes and Flow editor

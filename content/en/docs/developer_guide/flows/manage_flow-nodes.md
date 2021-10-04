@@ -79,6 +79,5 @@ To remove a flow-node from a flow:
 
 1. Select the flow-node to remove from the flow.
 1. Click the keyboard **Del** key or **Backspace** key. The flow-node delete caution screen is displayed.
-
-    ![delete_caution](/Images/delete_caution.png)
+![delete_caution](/Images/delete_caution.png)
 1. Click **Proceed** to complete the removal of the selected flow-node and return to the flow. Select **Cancel** to cancel the removal of the selected flow-node and return to the flow.

@@ -29,8 +29,7 @@ To configure a delete a user flow:
 1. Leave the **body** and **headers** parameters disabled.
 1. Connect the next output of the Delete a user flow-node to the input of the Delete succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/).
 1. Connect the notfound output of the Delete a user flow-node to the input of the User not found flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). The completed flow is displayed.
-
-    ![Delete_01_latest](/Images/delete_01_latest.png)
+![Delete_01_latest](/Images/delete_01_latest.png)
 1. Click **Apply**.
 1. On the next screen, click **Proceed**. The server will be restarted, the _Delete a user_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.
 1. To exit API Orchestration user interface and return to API Lists page, click **Close**.

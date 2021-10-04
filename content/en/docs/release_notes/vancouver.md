@@ -7,6 +7,7 @@ Hide_readingtime: true
 ---
 
 {{% releasenotes/upgrade %}}
+
 ## Fixes
 
 * #6530: Improved Flow and Configuration editors to include a more prominent document title and help link.

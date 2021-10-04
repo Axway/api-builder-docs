@@ -5,6 +5,9 @@ date: 2018-10-26
 description: 26 October 2018
 Hide_readingtime: true
 ---
+
+{{% releasenotes/upgrade %}}
+
 ## Features
 
 * #4043: Add dropdown for string and number enum parameters in flows

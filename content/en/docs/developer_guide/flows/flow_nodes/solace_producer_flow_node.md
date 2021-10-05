@@ -131,7 +131,7 @@ Click on the debugger icon in the upper-right of the graph, do not change any va
 
 The flow-node successfully published JSON to Solace.
 
-{{% alert title="Note" color="primary" %}}It is not possible for your application to behave _only_ as a Solace Producer. For more information, see [Example - Behave only as a Solace Producer](#BehaveonlyasaSolaceProducer) below.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}It is not possible for your application to behave _only_ as a Solace Producer. For more information, see [Example - Behave only as a Solace Producer](#example-behave-only-as-a-solace-producer) below.{{% /alert %}}
 
 ### Example - Behave only as a Solace Producer
 

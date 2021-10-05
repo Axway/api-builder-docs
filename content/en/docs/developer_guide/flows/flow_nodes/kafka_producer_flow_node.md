@@ -136,7 +136,7 @@ Click on the debugger icon in the upper-right of the graph, do not change any va
 
 The flow-node successfully published JSON to Kafka.
 
-{{% alert title="Note" color="primary" %}}It is not possible for your application to behave _only_ as a Kafka Producer. For more information, see [Example - Behave only as a Kafka Producer](#kafka-producer-only) below.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}It is not possible for your application to behave _only_ as a Kafka Producer. For more information, see [Example - Behave only as a Kafka Producer](#example-behave-only-as-a-kafka-producer) below.{{% /alert %}}
 
 ### Example - Behave only as a Kafka Producer
 

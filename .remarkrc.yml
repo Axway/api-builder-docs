@@ -6,10 +6,24 @@ plugins:
       staticRoot: 'static',
       staticFilesExtensions: ['.json', '.js', '.yaml', '.sh', '.html', '.zip'],
       ignoreLinksThatStartWith: [
-        'mailto'
+        'mailto:',
+        'chrome:'
       ]
     }]
-   - remark-lint-no-dead-urls
+  - [ remark-lint-no-dead-urls, {
+      skipLocalhost: true,
+      # gotOptions: {
+      #   concurrency: 1,
+      #   timeout: {
+      #     lookup: 100,
+      #     connect: 50,
+      #     secureConnect: 50,
+      #     socket: 1000,
+      #     send: 5000,
+      #     response: 1000
+      #   }
+      # }
+    }]
   # https://github.com/remarkjs/remark-lint/blob/main/doc/rules.md
   - [ 'remark-frontmatter', 'yaml' ]
   - [ 'remark-lint-heading-style', 'atx' ]

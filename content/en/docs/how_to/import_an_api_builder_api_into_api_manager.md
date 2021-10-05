@@ -15,7 +15,7 @@ API Manager provides a web-based interface that enables an API owner (either in 
 
 This document assumes that you are familiar with API Manager and have it deployed and running in your infrastructure. For more information on API Manager, refer to the [API Manager Guide](https://docs.axway.com/bundle/APIManager_753_APIMgmtGuide_allOS_en_HTML5/page/Content/APIManagementGuideTopics/index.htm) or sign up for an [API Management Trial](https://www.axway.com/en/api-management-trial).
 
-This document also assumes that you have {{% variables/apibuilder_prod_name %}} installed and that you have created and deployed a service. For this document, we will use the vanilla starter application, which will be referred to as the _{{% variables/apibuilder_prod_name %}} Greet_ service. Refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/#InitializeProject) for the command to create the _{{% variables/apibuilder_prod_name %}} Greet_ service.
+This document also assumes that you have {{% variables/apibuilder_prod_name %}} installed and that you have created and deployed a service. For this document, we will use the vanilla starter application, which will be referred to as the _{{% variables/apibuilder_prod_name %}} Greet_ service. Refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/#create-a-new-api-builder-project) for the command to create the _{{% variables/apibuilder_prod_name %}} Greet_ service.
 
 For configuration purposes:
 

@@ -7,18 +7,18 @@ date: 2021-10-01
 
 ## Overview
 
-Each {{% variables/apibuilder_prod_name %}} integration that you create can report its own transaction usage to the platform without the need for an agent. Transactions are reported against Environments in your Organization, and you can review these transactions along with those from [other Amplify products](https://docs.axway.com/bundle/subusage_11_en/page/amplify_subscription_usage_and_reporting.html). For more information, see [Subscription Usage Tracking](https://docs.axway.com/bundle/subusage_11_en/page/about_subscription_usage_tracking.html) and [Manage Billing](https://docs.axway.com/bundle/Amplify_Platform_Management_allOS_en/page/managing_billing.html).
+Each {{% variables/apibuilder_prod_name %}} integration that you create can report its own transaction usage to the platform without the need for an agent. Transactions are reported against Environments in your Organization, and you can review these transactions along with those from [other Amplify products](https://docs.axway.com/bundle/subusage_11_en/page/amplify_subscription_usage_and_reporting.html). For more information, see [Subscription Usage Tracking](https://docs.axway.com/bundle/subusage_11_en/page/about_subscription_usage_tracking.html) and [Manage Billing](https://docs.axway.com/bundle/platform-management/page/docs/management_guide/managing_billing/index.html).
 
 ### What is counted as a transaction?
 
 If your service receives inbound events which trigger business logic, then this is counted as a transaction. This includes the following:
 
 * HTTP requests to [endpoints](/docs/developer_guide/flows/manage_endpoints/), [APIs](/docs/developer_guide/apis/), and [web routes](/docs/developer_guide/web/).
-* Flow-triggers invoking a [flow](/docs/developer_guide/flows/) from an inbound event such as a [Kafka](/docs/developer_guide/flows/flow-triggers/kafka_consumer_flow-trigger/) or [Solace](/docs/developer_guide/flows/flow-triggers/solace_consumer_flow-trigger/) message, or on a [Cron](/docs/developer_guide/flows/flow-triggers/cron_flow-trigger/) or [Timer](/docs/developer_guide/flows/flow-triggers/timer_flow-trigger/) interval.
+* Flow-triggers invoking a [flow](/docs/developer_guide/flows/) from an inbound event such as a [Kafka](/docs/developer_guide/flows/flow_triggers/kafka_consumer_flow_trigger/) or [Solace](/docs/developer_guide/flows/flow_triggers/solace_consumer_flow_trigger/) message, or on a [Cron](/docs/developer_guide/flows/flow_triggers/cron_flow_trigger/) or [Timer](/docs/developer_guide/flows/flow_triggers/timer_flow_trigger/) interval.
 
 A number of events will specifically not count as a transaction:
 
-* Accessing API Swagger documentation or [health-check](/docs/best_practices/#ManagingYourService).
+* Accessing API Swagger documentation or [health-check](/docs/best_practices/#managing-your-service).
 * Bad requests due to invalid authentication or to non-existent endpoints before business logic can be executed.
 * Outbound calls from a flow.
 * A flow calling another flow.
@@ -100,7 +100,7 @@ AXWAY_PLATFORM_ENVIRONMENT=
 AXWAY_PLATFORM_ORG=
 ```
 
-This file is local only, and not deployed with your service when the _production_ flag is used when [building a container](/docs/how_to/dockerize_an_api_builder_service/), and ensures that usage tracking is disabled (see [Local environment file (conf/.env)](/docs/security_guide/#dotenv) for more information).
+This file is local only, and not deployed with your service when the _production_ flag is used when [building a container](/docs/how_to/dockerize_an_api_builder_service/), and ensures that usage tracking is disabled (see [Local environment file (conf/.env)](/docs/security_guide/#local-environment-file-conf-env) for more information).
 
 When you want to track transaction usage, in your target environment, you need to set `AXWAY_PLATFORM_ENVIRONMENT` to the **Environment ID**, the `AXWAY_PLATFORM_ORG` to the **Organization GUID**, and `AXWAY_USAGE_TRACKING_ENABLED` to true.
 

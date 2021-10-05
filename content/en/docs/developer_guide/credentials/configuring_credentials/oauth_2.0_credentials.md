@@ -88,7 +88,7 @@ Many services will not issue a `refresh_token` by default, consult your service 
 | scope | The space-separated list of OAuth scopes for which authorization is requested. |
 | access_token | Typically, `null` for this grant as the service will obtain a new token on startup. |
 
-### Example
+### Client password example
 
 Depending on the deployment scenario, not all settings may be required, but any setting that is not required **must** be set to `null`. The following is an example configuration for a credential that uses a `client_id` and `client_secret` for client credentials grant.
 
@@ -127,7 +127,7 @@ authorization: {
 | scope | The space-separated list of OAuth scopes for which authorization is requested. |
 | access_token | Typically, `null` for this grant as the service will obtain a new token on startup. |
 
-### Example
+### JWT client authentication example
 
 Depending on the deployment scenario, not all settings may be required, but any setting that is not required **must** be set to `null`. The following is an example configuration for a credential that uses JWT for client authentication.
 
@@ -168,7 +168,7 @@ authorization: {
 | scope | The space-separated list of OAuth scopes for which authorization is requested. |
 | access_token | Typically, `null` for this grant as the service will obtain a new token on startup. |
 
-### Example
+### JWT authorization grant example
 
 Depending on the deployment scenario, not all settings may be required, but any setting that is not required **must** be set to `null`. The following is an example configuration for a credential that uses JWT for authorization grant.
 
@@ -222,4 +222,4 @@ If the service supports refresh, and the credential is configured to request a r
 
 ## Additional information
 
-For additional credential management information, refer to [{{% variables/apibuilder_prod_name %}} credential management](https://devblog.axway.com/apis/new-release-api-builder-standalone-with-credential-management/). For how-to information on accessing Gmail using a Swagger flow-node, refer to [Access Gmail using a Swagger flow-node](/docs/how_to/authorization_-_access_gmail_using_swagger_flow-node/). For how-to information on accessing Microsoft OneDrive using a REST flow-node, refer to [Access Microsoft OneDrive using a REST flow-node](/docs/how_to/authorization_-_access_microsoft_onedrive_using_rest_flow-node/).
+For additional credential management information, refer to [{{% variables/apibuilder_prod_name %}} credential management](https://devblog.axway.com/apis/new-release-api-builder-standalone-with-credential-management/). For how-to information on accessing Gmail using a Swagger flow-node, refer to [Access Gmail using a Swagger flow-node](/docs/how_to/authorization_access_gmail_using_swagger_flow_node/). For how-to information on accessing Microsoft OneDrive using a REST flow-node, refer to [Access Microsoft OneDrive using a REST flow-node](/docs/how_to/authorization_access_microsoft_onedrive_using_rest_flow_node/).

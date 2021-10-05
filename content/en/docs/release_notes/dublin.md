@@ -5,6 +5,9 @@ date: 2018-08-31
 description: 31 August 2018
 Hide_readingtime: true
 ---
+
+{{% releasenotes/upgrade %}}
+
 ## Features
 
 * #4967: Support Intercom in {{% variables/apibuilder_prod_name %}}

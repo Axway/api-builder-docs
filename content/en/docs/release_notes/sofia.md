@@ -7,6 +7,7 @@ Hide_readingtime: true
 ---
 
 {{% releasenotes/upgrade %}}
+
 ## Fixes
 
 * #5650: @axway/amplify-api-builder-cli readme mentions wrong package

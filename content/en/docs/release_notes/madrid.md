@@ -7,6 +7,7 @@ Hide_readingtime: true
 ---
 
 {{% releasenotes/upgrade %}}
+
 ## Fixes
 
 * #6833: Flow-node log messages are now consistently prefixed with the flow-node's display name. For users writing custom flow-nodes, this change applies to all logs made by the flow-node action logger. Additionally, when a flow-node invokes, the name of the method being invoked is now also logged.

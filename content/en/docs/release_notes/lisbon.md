@@ -5,14 +5,15 @@ date: 2019-01-18
 description: 18 January 2019
 Hide_readingtime: true
 ---
-## Breaking changes
 
-* 5264:.
+{{% releasenotes/upgrade %}}
+
 ## Features
 
 * #5125: Add "Home" link functionality to Axway logo and {{% variables/apibuilder_prod_name %}} text in the header
 * #5180: Support the user in managing OAuth2 credentials for devops
-* #5264: Provide clearer and more explicit HTTP authentication
+* #5264: Provide clearer and more explicit HTTP authentication.
+
 
 ## Fixes
 

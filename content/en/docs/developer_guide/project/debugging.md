@@ -29,8 +29,8 @@ While in development, you may want to log at "debug" level to assist in [debuggi
 // conf/default.js
 
 // Log level of the application. Can be set to (in order of most-verbose to
-  // least): trace, debug, info, warn, error, fatal, none
-  logLevel: process.env.LOG_LEVEL || 'info',
+// least): trace, debug, info, warn, error, fatal, none
+logLevel: process.env.LOG_LEVEL || 'info',
 ```
 
 ### LOG_LEVEL environment variable
@@ -39,35 +39,35 @@ You can set the {{% variables/apibuilder_prod_name %}} log level via the LOG_LEV
 
 {{% alert title="Note" color="primary" %}}For more information about using environment variables within your application and securing your application, please see [Environmentalization](/docs/how_to/environmentalization/).{{% /alert %}}
 
-**On bash**
+#### On bash
 
 ```bash
-$ LOG_LEVEL=trace npm start
+LOG_LEVEL=trace npm start
 ```
 
-**On Windows**
+#### On Windows
 
-```bash
-> SET LOG_LEVEL=trace
-> npm start
+```cmd
+SET LOG_LEVEL=trace
+npm start
 ```
 
-**On Amplify Runtime Services**
+#### On Amplify Runtime Services
 
 {{% alert title="Note" color="primary" %}}Amplify Runtime Services is deprecated and will be discontinued effective September 1, 2022.{{% /alert %}}
 
 If you are deploying {{% variables/apibuilder_prod_name %}} on [Amplify Runtime Services](/docs/how_to/deploy_an_api_builder_application_to_amplify_runtime_services/).
 
-```
-$ amplify acs config --set LOG_LEVEL=trace myproject
+```bash
+amplify acs config --set LOG_LEVEL=trace myproject
 ```
 
-**On Docker**
+#### On Docker
 
-If you are deploying {{% variables/apibuilder_prod_name %}} [using docker](/docs/how_to/dockerize_an_api_builder_service/).
+If you are deploying {{% variables/apibuilder_prod_name %}} [using Docker](/docs/how_to/dockerize_an_api_builder_service/).
 
-```
-$ docker run -e LOG_LEVEL=trace
+```bash
+docker run -e LOG_LEVEL=trace
 ```
 
 ### Additional logging
@@ -79,7 +79,7 @@ If changing the logging level (see above) does not yield enough information, som
 Many modules use the [Node.js debug package](https://www.npmjs.com/package/debug) (see for more information), which can be controlled using the DEBUG environment variable. For example, Express.js.
 
 ```bash
-$ DEBUG=express:router npm start
+DEBUG=express:router npm start
 ```
 
 #### Module @axway/api-builder-plugin-dc-mssql
@@ -87,7 +87,7 @@ $ DEBUG=express:router npm start
 The Microsoft SQL Server plugin uses [knex](https://www.npmjs.com/package/knex).
 
 ```bash
-$ DEBUG=knex:* npm start
+DEBUG=knex:* npm start
 ```
 
 #### Module @axway/api-builder-plugin-dc-mysql
@@ -95,7 +95,7 @@ $ DEBUG=knex:* npm start
 The MySQL plugin uses [mysql](https://www.npmjs.com/package/mysql).
 
 ```bash
-$ DEBUG=knex:* npm start
+DEBUG=knex:* npm start
 ```
 
 #### Module @axway/api-builder-plugin-dc-oracle
@@ -103,15 +103,15 @@ $ DEBUG=knex:* npm start
 The Oracle plugin uses [oracledb](https://www.npmjs.com/package/oracledb) and it has their own [debugging](https://oracle.github.io/odpi/doc/user_guide/debugging.html).
 
 ```bash
-$ DPI_DEBUG_LEVEL=64 npm start
+DPI_DEBUG_LEVEL=64 npm start
 ```
 
 ## Using a debugger
 
-Sometimes, debugging can yield valuable information. In particular, if you are developing [custom API](/docs/developer_guide/apis/) or writing your own [flow-nodes](/docs/how_to/create_a_custom_flow-node/) using the [{{% variables/apibuilder_prod_name %}} SDK](#), it is an invaluable tool. You can use a variety of debugging / coding environments. However, the [Chrome Debugger](https://developers.google.com/web/tools/chrome-devtools/javascript) is most straight forward as you probably already have it installed. To launch [Node.js in debug mode](https://nodejs.org/en/docs/guides/debugging-getting-started/), use the --inspect-brk flag.
+Sometimes, debugging can yield valuable information. In particular, if you are developing [custom API](/docs/developer_guide/apis/) or writing your own [flow-nodes](/docs/how_to/create_a_custom_flow_node/) using the [{{% variables/apibuilder_prod_name %}} SDK](#), it is an invaluable tool. You can use a variety of debugging / coding environments. However, the [Chrome Debugger](https://developers.google.com/web/tools/chrome-devtools/javascript) is most straight forward as you probably already have it installed. To launch [Node.js in debug mode](https://nodejs.org/en/docs/guides/debugging-getting-started/), use the --inspect-brk flag.
 
-```
-$ node --inspect-brk .
+```bash
+node --inspect-brk .
 ```
 
 This will launch a Node.js process and listen for a debugging client. In [Chrome](https://developers.google.com/web/tools/chrome-devtools/javascript), navigate to [chrome://inspect/#devices](#!/guide/chrome://inspect/).

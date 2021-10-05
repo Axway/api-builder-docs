@@ -5,6 +5,9 @@ date: 2018-09-28
 description: 28 September 2018
 Hide_readingtime: true
 ---
+
+{{% releasenotes/upgrade %}}
+
 ## Fixes
 
 * #4050: Fix rendering issue with SVG flow-node icons when using Firefox

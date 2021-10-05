@@ -6,6 +6,8 @@ description: 24 July 2018
 Hide_readingtime: true
 ---
 
+{{% releasenotes/upgrade %}}
+
 ## Fixes
 
 * #4722: Update dependencies to improve application size

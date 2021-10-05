@@ -7,6 +7,7 @@ Hide_readingtime: true
 ---
 
 {{% releasenotes/upgrade %}}
+
 ## Updated modules
 
 * [@axway/api-builder-runtime@4.11.33](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.11.33)

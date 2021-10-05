@@ -7,7 +7,7 @@ date: 2021-10-01
 
 ## Prerequisites
 
-You should have NPM (recommended minimum v6.14.13), and Node.js (recommended minimum v14.17.0 LTS) installed.
+You should have npm (recommended minimum v6.14.13), and Node.js (recommended minimum v14.17.0 LTS) installed.
 
 {{% variables/apibuilder_prod_name %}} v4 maintains compatibility with a minimum of Node.js v8.9, however, using a version older than v14.17.0 is not recommended. See the [Node.js support policy](/docs/nodejs_support_policy/) for more information.
 
@@ -36,11 +36,11 @@ npm install -g axway
 
 Verify the Axway CLI installation by running the following command.
 
-```
+```bash
 axway pm list
 ```
 
-If you run into issues getting the Axway CLI working, see the [Axway CLI troubleshooting guide](https://docs.axway.com/bundle/axwaycli-open-docs/page/docs/troubleshooting/index.html). You may need to check that NPM and Node.js were installed correctly.
+If you run into issues getting the Axway CLI working, see the [Axway CLI troubleshooting guide](https://docs.axway.com/bundle/axwaycli-open-docs/page/docs/troubleshooting/index.html). You may need to check that npm and Node.js were installed correctly.
 
 ### Install the {{% variables/apibuilder_prod_name %}} CLI
 
@@ -48,7 +48,7 @@ The {{% variables/apibuilder_prod_name %}} CLI is used to create new {{% variabl
 
 Refer to [{{% variables/apibuilder_prod_name %}} CLI](/docs/developer_guide/cli/) documentation for more details.
 
-```
+```bash
 // Install {{% variables/apibuilder_prod_name %}}
 
 axway pm install @axway/amplify-api-builder-cli
@@ -58,7 +58,7 @@ axway pm install @axway/amplify-api-builder-cli
 
 Once {{% variables/apibuilder_prod_name %}} CLI is installed, you can use it to create a new project. In the following example, the CLI will create and initialize a project called `myproject` in the `./myproject` directory.
 
-```
+```bash
 // Initialize a new project
 
 axway builder init myproject
@@ -89,7 +89,7 @@ If you have issues running this command, it may be because the project is missin
 
 ### Updating {{% variables/apibuilder_prod_name %}}
 
-New versions of {{% variables/apibuilder_prod_name %}} are released every 2 weeks, often containing important fixes and features. Each {{% variables/apibuilder_prod_name %}} project depends on it's own version of {{% variables/apibuilder_prod_name %}} which allows you to update your services individually.
+New versions of {{% variables/apibuilder_prod_name %}} are released every 2 weeks, often containing important fixes and features. Each {{% variables/apibuilder_prod_name %}} project depends on it is own version of {{% variables/apibuilder_prod_name %}} which allows you to update your services individually.
 
 To update {{% variables/apibuilder_prod_name %}} run the following command from your project directory. This will also update any additional dependencies in your project.
 
@@ -99,7 +99,7 @@ To update {{% variables/apibuilder_prod_name %}} run the following command from 
 npm update
 ```
 
-If you're going to be creating more {{% variables/apibuilder_prod_name %}} projects, it's important to use the latest {{% variables/apibuilder_prod_name %}} CLI so that your new projects use the latest template.
+If you're going to be creating more {{% variables/apibuilder_prod_name %}} projects, it is important to use the latest {{% variables/apibuilder_prod_name %}} CLI so that your new projects use the latest template.
 
 ```bash
 // Update Axway CLI and {{% variables/apibuilder_prod_name %}} CLI
@@ -134,7 +134,7 @@ To quickly navigate to the **Summary** tab, click on the Axway icon or click on 
 
 You can choose which configuration values you want to be configurable from the environment by explicitly setting them in your `conf/default.js` using `process.env`. For example, to make the log level configurable, you could do:
 
-```
+```javascript
 // Example environmental configuration variables
 
 // Log level of the main logger

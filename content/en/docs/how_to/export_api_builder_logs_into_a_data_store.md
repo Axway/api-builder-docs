@@ -30,7 +30,7 @@ Tools to be installed and prerequisites:
 
 Useful resources on how to use the product:
 
-* [{{% variables/apibuilder_prod_name %}} Documentation](/docs/api_builder/)
+* [{{% variables/apibuilder_prod_name %}} Documentation](/docs/)
 * [Axway Appcelerator Youtube Channel](https://www.youtube.com/watch?v=lgPFasrGATE)
 * [Appcelerator Blog](https://www.appcelerator.com/blog/)
 * [Docker Documentation](https://docs.docker.com/)
@@ -56,7 +56,7 @@ In addition to using the logging drivers included with Docker, you can also impl
 
 If the logging driver has configurable options, you can set them in the `daemon.json` file as a JSON array with the `log-opts` key. The following example sets two configurable options in the `json-file` logging driver:
 
-```
+```json
 {
   "log-driver": "json-file",
   "log-opts": {
@@ -68,8 +68,9 @@ If the logging driver has configurable options, you can set them in the `daemon.
 
 To find the current default logging driver for the Docker daemon, run the **docker info** command and search for `Logging Driver`. You can use the following command on Linux, macOS, or in PowerShell on Windows:
 
-```
-$ docker info | grep 'Logging Driver'
+```bash
+docker info | grep 'Logging Driver'
+
 Logging Driver: json-file
 ```
 
@@ -85,7 +86,7 @@ You can configure Docker logging to use the `splunk` driver by default or on a p
 
 The common way to use the `splunk` driver as the default logging driver is to set the `log-driver` and `log-opts` keys to appropriate values in the `daemon.json` configuration file and restart Docker. For example:
 
-```
+```json
 {
   "log-driver": "splunk",
   "log-opts": {
@@ -100,7 +101,7 @@ The `daemon.json` file is located in the `/etc/docker/ directory`on Linux hosts 
 
 To configure the `splunk` driver for a specific container, use the `--log-driver` and `log-opt` command-line flags with the `docker run` command:
 
-```
+```bash
 docker run --log-driver=splunk --log-opt splunk-token=VALUE --log-opt splunk-url=VALUE ...
 ```
 
@@ -109,76 +110,61 @@ docker run --log-driver=splunk --log-opt splunk-token=VALUE --log-opt splunk-url
 ### Run Splunk via Docker
 
 1. Run the following command to pull the latest version of the Splunk Enterprise image:
-
-    ```
+  ```bash
     docker pull splunk/splunk
-    ```
+  ```
 1. Run the Docker image:
-
-    ```
+  ```bash
     docker run -d -e "SPLUNK_START_ARGS=--accept-license" -e "SPLUNK_USER=root" -p "8000:8000" splunk/splunk
-    ```
+  ```
 1. Access the Splunk instance with a browser by using the Docker machine IP address and Splunk Web port. For example: `http://localhost:8000`
+  {{% alert title="Note" color="primary" %}}For additional resources information, refer to [Docker/Splunk Enterprise](https://hub.docker.com/r/splunk/splunk/).{{% /alert %}}
 
-    {{% alert title="Note" color="primary" %}}For additional resources information, refer to [Docker/Splunk Enterprise](https://hub.docker.com/r/splunk/splunk/).{{% /alert %}}
-
-#### Splunk HTTP Event Collector
+#### Splunk HTTP event collector
 
 The Splunk HTTP Event Collector (HEC) enables you to send data to Splunk Enterprise and Splunk Cloud. HEC lets you send data, application logs, and metrics over HTTP (or HTTPS) directly to Splunk Enterprise or Splunk Cloud from your application. HEC operates with tokens, which means you do not need to embed Splunk Enterprise or Splunk Cloud credentials in your application or supporting files.
 
-{{% alert title="Note" color="primary" %}}Additional information is available at: [How HTTP Event Collector works](https://docs.splunk.com/Documentation/Splunk/7.1.0/Data/AboutHEC), [Overview of Splunk logging for JavaScript and Bunyan stream for HTTP Event Collector](http://dev.splunk.com/view/splunk-logging-javascript/SP-CAAAE6U) and [Splunk-javascript-logging](https://github.com/splunk/splunk-javascript-logging).{{% /alert %}}
+{{% alert title="Note" color="primary" %}}Additional information is available at: [How HTTP Event Collector works](https://docs.splunk.com/Documentation/Splunk/7.1.0/Data/AboutHEC), [Overview of Splunk logging for JavaScript and Bunyan stream for HTTP Event Collector](http://dev.splunk.com/view/splunk-logging-javascript/SP-CAAAE6U) and [Splunk-JavaScript-logging](https://github.com/splunk/splunk-javascript-logging).{{% /alert %}}
 
-### Setup Splunk Server
+### Setup Splunk server
 
 Now, we will set up the Splunk server with basic definitions in a local environment using the Docker Splunk logging drive and the HTTP event collector.
 
 1. Pull the Splunk image from the Docker hub as follow:
-
-    ```
+```bash
     docker pull splunk/splunk
-    ```
+  ```
 1. Check the Splunk image as follows:
-
-    ```
+  ```bash
     docker images | grep splunk
-    ```
+  ```
 1. Start the Splunk server and bind it to the service port using the following command:
-
-    ```
+  ```bash
     docker run -d -e "SPLUNK_START_ARGS=--accept-license" -e "SPLUNK_USER=root" -p "8000:8000" -p "8088:8088" splunk/splunk
-    ```
+  ```
 1. Navigate to `https://localhost:8000/` in your browser and verify that the Splunk server is up.
 1. Go to **Settings > Data inputs > HTTP Event Collector > Add** new.
 1. Enter a name and select the **Next** button.
-
-    ![Screen_Shot_2018-05-23_at_14.11.57](/Images/screen_shot_2018_05_23_at_14_11_57.png)
+  ![Screen_Shot_2018-05-23_at_14.11.57](/Images/screen_shot_2018_05_23_at_14_11_57.png)
 1. Verify that you that have successfully generated a Token.
 1. Copy and save the Token.
-
-    ![Screen_Shot_2018-05-23_at_14.12.43](/Images/screen_shot_2018_05_23_at_14_12_43.png)
+  ![Screen_Shot_2018-05-23_at_14.12.43](/Images/screen_shot_2018_05_23_at_14_12_43.png)
 1. Navigate to **Settings/Data inputs/** **HTTP Event Collector** and to see your Docker logs.
 1. Click to **Global settings** button and **Enable** button and to find HTTP Port Number.
-
-    ![Screen_Shot_2018-05-23_at_14.18.23](/Images/screen_shot_2018_05_23_at_14_18_23.png)
+  ![Screen_Shot_2018-05-23_at_14.18.23](/Images/screen_shot_2018_05_23_at_14_18_23.png)
 1. Click on the **Docker logs edit** button and leave the default settings.
-
-    ![Screen_Shot_2018-05-23_at_23.34.44](/Images/screen_shot_2018_05_23_at_23_34_44.png)
+  ![Screen_Shot_2018-05-23_at_23.34.44](/Images/screen_shot_2018_05_23_at_23_34_44.png)
 1. If you navigate to the _App: Search & Reporting_ page, the following UI will be displayed.
-
-    ![Screen_Shot_2018-05-23_at_17.27.35](/Images/screen_shot_2018_05_23_at_17_27_35.png)
+  ![Screen_Shot_2018-05-23_at_17.27.35](/Images/screen_shot_2018_05_23_at_17_27_35.png)
 1. Once you have the Splunk container running and have set up everything in the Splunk Web, you are ready to run the application container via Splunk. You need to set the application container to the same port that you used for binding in the previous command. For the `splunk-url`, you need to use your IP address. The `Service-Image` should be the image name that you already built in your {{% variables/apibuilder_prod_name %}} service.
-
-    Please use the below command:
-
-    ```
+  Please use the below command:
+  ```bash
     docker run -d -p 8080:8080 --log-driver=splunk --log-opt splunk-url=http://<IP>:8088 --log-opt splunk-token=<TOKEN> --log-opt splunk-insecureskipverify=true <Service-Image>
-    ```
+  ```
 1. Verify that you are receiving your application logs in the Splunk Web UI. If everything works correctly, you will automatically receive all your application logs in the Splunk Web UI.
-    ![Screen_Shot_2018-05-23_at_17.27.48](/Images/screen_shot_2018_05_23_at_17_27_48.png)
+  ![Screen_Shot_2018-05-23_at_17.27.48](/Images/screen_shot_2018_05_23_at_17_27_48.png)
     The Logs imported into Splunk will be displayed as in the following examples.
-
-    Example one:
+  Example one:
     ![Screen_Shot_2018-05-23_at_17.28.00](/Images/screen_shot_2018_05_23_at_17_28_00.png)
-
-    Example two:
+  Example two:
     ![Screen_Shot_2018-05-23_at_23.42.26](/Images/screen_shot_2018_05_23_at_23_42_26.png)

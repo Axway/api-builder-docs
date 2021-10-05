@@ -7,9 +7,11 @@ Hide_readingtime: true
 ---
 
 {{% releasenotes/upgrade %}}
+
 ## Breaking changes
 
 * #6734: Updated `@axway/api-builder-plugin-fn-xslt` to use `xml` format for XML and XSLT parameters. This is a breaking change to the plugin which requires the latest version of `@axway/api-builder-admin` (Giza).
+
 ## Features
 
 * #6559: Previously, log messages did not include the log level when output. Now, every log message in new projects will include the level. See deprecation {{% deprecation/link D049 %}}.

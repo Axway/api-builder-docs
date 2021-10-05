@@ -9,7 +9,7 @@ date: 2021-10-01
 
 Environmentalizing the configuration variables allows you to tailor the {{% variables/apibuilder_prod_name %}} configuration to the environment it is being deployed to at deployment time. Additionally, environmentalizing the credentials also ensures their security. Credentials, by their very nature, contain sensitive information that you do not want to expose by committing them to your source control management (SCM). Credentials may also contain time-sensitive information, such as OAuth 2.0 access tokens.
 
-## Configuring Credentials
+## Configuring credentials
 
 The credential configuration uses the same approach for environmentalization as the rest of the {{% variables/apibuilder_prod_name %}} configuration; any value can be read from an environment variable on startup by replacing it with `process.env.VAR_NAME`.
 

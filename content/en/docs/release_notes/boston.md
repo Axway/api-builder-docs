@@ -5,6 +5,9 @@ date: 2018-08-03
 description: 3 August 2018
 Hide_readingtime: true
 ---
+
+{{% releasenotes/upgrade %}}
+
 ## Features
 
 * #4748: Allow swagger scheme, host, and basePath to be editable via configuration

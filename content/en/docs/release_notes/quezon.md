@@ -7,6 +7,7 @@ Hide_readingtime: true
 ---
 
 {{% releasenotes/upgrade %}}
+
 ## Breaking changes
 
 * #6814: Previously, @axway/api-builder-plugin-fn-javascript had an "Unsafe Mode" parameter, which when enabled, allows all Node.js globals to be available for use in the flow-node. Now, the "Unsafe Mode" parameter is removed and all Node.js globals are available by default and code will be executed in the same context as the rest of the {{% variables/apibuilder_prod_name %}} service.

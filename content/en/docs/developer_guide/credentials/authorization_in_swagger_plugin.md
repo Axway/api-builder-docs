@@ -7,7 +7,7 @@ date: 2021-10-01
 
 ## Overview
 
-By default, {{% variables/apibuilder_prod_name %}} projects install the Swagger plugin - `@axway/api-builder-plugin-fn-swagger`. {{% variables/apibuilder_prod_name %}} supports the OpenAPI/Swagger 2.0 specification, and the Swagger plugin creates flow-nodes that allow {{% variables/apibuilder_prod_name %}} to interact with the services described in the Swagger documents. For more information, see [Swagger flow-node](/docs/developer_guide/flows/flow-nodes/swagger_flow-node/).
+By default, {{% variables/apibuilder_prod_name %}} projects install the Swagger plugin - `@axway/api-builder-plugin-fn-swagger`. {{% variables/apibuilder_prod_name %}} supports the OpenAPI/Swagger 2.0 specification, and the Swagger plugin creates flow-nodes that allow {{% variables/apibuilder_prod_name %}} to interact with the services described in the Swagger documents. For more information, see [Swagger flow-node](/docs/developer_guide/flows/flow_nodes/swagger_flow_node/).
 
 In OpenAPI/Swagger 2.0, the security mechanisms supported by the API are defined in a [Security Definitions Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#security-definitions-object). {{% variables/apibuilder_prod_name %}} uses this configuration information to create credential stubs to make getting started with authorized APIs easier.
 

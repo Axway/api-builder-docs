@@ -72,7 +72,7 @@ Note that it is possible to create non-production environments and track usage a
 
 ## Configuration
 
-Since your {{% variables/apibuilder_prod_name %}} service can be deployed in more than one environment (in particular, when it is moved between development, test, and production environments), you should configure your project to obtain usage tracking information from the environment in which it's running.
+Since your {{% variables/apibuilder_prod_name %}} service can be deployed in more than one environment (in particular, when it is moved between development, test, and production environments), you should configure your project to obtain usage tracking information from the environment in which it is running.
 
 Usage tracking configuration is placed in the _conf_ directory. In your project, create the file `/conf/subscriptionUsageTracking.default.js` with the following content:
 
@@ -92,7 +92,7 @@ module.exports = {
 
 To ensure that your local development or test environments do not accidentally report transaction usage, add the following line to your `/conf/.env`:
 
-```
+```bash
 // /conf/.env
 
 AXWAY_USAGE_TRACKING_ENABLED=false
@@ -130,13 +130,13 @@ We recommend using an environment variable such as `AXWAY_PLATFORM_ENVIRONMENT` 
 
 When configured correctly to report transaction usage to the {{% variables/platform_prod_name %}}, on start up, you should see the following in the log at INFO level:
 
-```
+```bash
 [Subscription usage tracking: 32c9bc26-1833-46f1-b059-4ab1e469fb57] Reporting transactions every 3600s
 ```
 
 After your service processes inbound requests, and after the configured interval (defaults to 5 minutes), your service should emit the following in the log at INFO level:
 
-```
+```bash
 1628517801046 INFO  [platform-reporter: a52af8ae-f75e-49dc-831f-e1236c5007bc] Reported 1 transactions to Axway
 ```
 

@@ -45,7 +45,7 @@ If the `pluginConfig` key is not present in any configuration file loaded by the
 // api-builder-plugin-demo
 module.exports = (config) => {
   console.log(config) // { apiPrefix: '/foo', proxy: 'example.proxy.com', flags: { enableScopedConfig: false } }
-  const flowNode = {}; // Define flow node
+  const flowNode = {}; // Define flow-node
   return Promise.resolve(flowNode);
 };
 ```
@@ -68,7 +68,7 @@ If the `pluginConfig` key is present in a configuration file loaded by the servi
 // api-builder-plugin-demo
 module.exports = (config) => {
   console.log(config) // { proxy: 'example.proxy.com' }
-  const flowNode = {}; // Define flow node
+  const flowNode = {}; // Define flow-node
   return Promise.resolve(flowNode);
 };
 ```
@@ -92,7 +92,7 @@ If the `pluginConfig` key is not present in any configuration file loaded by the
 // api-builder-plugin-demo
 module.exports = (config) => {
   console.log(config) // { proxy: 'example.proxy.com' }
-  const flowNode = {}; // Define flow node
+  const flowNode = {}; // Define flow-node
   return Promise.resolve(flowNode);
 };
 ```
@@ -109,7 +109,7 @@ It is strongly recommended you upgrade {{% variables/apibuilder_prod_name %}} to
 
 After upgrading, the `enableScopedConfig` feature will not be active until you enable it. To enable it, add the following setting to your `default.js` file.
 
-```json
+```javascript
 flags: {
     enableScopedConfig: true
 }

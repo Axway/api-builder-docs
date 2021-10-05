@@ -54,13 +54,13 @@ In order to test your Endpoint flow with different values for **config**, **requ
 
 ## Advanced mode
 
-While **Basic** mode only allows you to test values of the **params** parameter and automatically provides other parameters, **Advanced** mode gives you full control over providing every parameter to your flow. All flows can be debugged in Advanced mode. This is the only mode available to flows which aren't bound to Endpoints, since these flows have customizable parameters and {{% variables/apibuilder_prod_name %}} won't be able to provide defaults.
+While **Basic** mode only allows you to test values of the **params** parameter and automatically provides other parameters, **Advanced** mode gives you full control over providing every parameter to your flow. All flows can be debugged in Advanced mode. This is the only mode available to flows which are not bound to Endpoints, since these flows have customizable parameters and {{% variables/apibuilder_prod_name %}} will not be able to provide defaults.
 
 For flows that also have **Basic** mode, you should first click on the **Switch to Advanced** button.
 
 ![Screenshot_2020-09-24_at_10.30.48](/Images/screenshot_2020_09_24_at_10_30_48.png)
 
-If you don't see this button, then the flow only has **Advanced** mode available.
+If you do not see this button, then the flow only has **Advanced** mode available.
 
 ![Screenshot_2020-09-24_at_10.42.49](/Images/screenshot_2020_09_24_at_10_42_49.png)
 

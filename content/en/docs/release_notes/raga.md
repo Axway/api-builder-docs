@@ -7,7 +7,8 @@ Hide_readingtime: true
 ---
 
 {{% releasenotes/upgrade %}}
-## Major change
+
+## Features
 
 * #5583: New {{% variables/apibuilder_prod_name %}} CLI for {{% variables/platform_prod_name %}}
 

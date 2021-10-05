@@ -15,14 +15,13 @@ In the **Models** tab, you will see a list of models (by name), connector names,
 
 ## Create a new model
 
-Models can be created in many different ways, but with the user interface (UI), you don't necessarily need to get your hands dirty with writing out code.
+Models can be created in many different ways, but with the user interface (UI), you do not necessarily need to get your hands dirty with writing out code.
 
 To create a new model using the UI:
 
 1. Click the **\+ Model** button.
 1. In the model window.
-
-    ![new_model_%281%29_latest](/Images/55477331_new_model_(1)_latest.png)
+![new_model_%281%29_latest](/Images/55477331_new_model_(1)_latest.png)
 
     1. Enter the **Model name** (required).
     1. Select a **Connector** (required).
@@ -39,7 +38,7 @@ To create a new model using the UI:
     1. Click **Add field to model** to complete the addition of this new field.
 1. Repeat step 4 as needed to add as many fields as necessary.
 1. At this point, you can edit any field you created by clicking the **Pencil** icon at the end of the field row.
-1. If the field isn't needed, you can remove it by clicking on the **Trashcan** icon at the end of the field row.
+1. If the field is not needed, you can remove it by clicking on the **Trashcan** icon at the end of the field row.
 
     {{% alert title="Note" color="primary" %}}There is no warning for deleting a field. When you delete a field, you will not be prompted for a confirmation of the action.{{% /alert %}}
 1. Click the **Next** button.
@@ -50,8 +49,7 @@ To create a new model using the UI:
     1. If you are satisfied with your new field(s), click the **Save** button.
 1. Also, on this page, you can change the singular and plural values for this new model.
 1. If you are satisfied with your new field(s), click the **Save** button.
-
-    ![compose_model_latest](/Images/compose_model_latest.png)
+![compose_model_latest](/Images/compose_model_latest.png)
 
 ## Edit a model
 
@@ -59,8 +57,7 @@ To edit an existing model using the user interface:
 
 1. Navigate to the **Models** tab.
 1. Locate the model you wish to edit and click the **Gear** icon at the end of the row. A dialogue box will open.
-
-    ![edit-compose-generate_model](/Images/edit_compose_generate_model.png)
+![edit-compose-generate_model](/Images/edit_compose_generate_model.png)
 1. Click **Edit this model**. A dialogue window will open up and allow you to make changes to your selected model.
 1. You can edit the model name by clicking the **Pencil** icon next to the model name.
 1. Locate the field you wish to edit and click the **Pencil** icon at the end of its row.
@@ -77,8 +74,7 @@ To compose a new model using the user interface:
 
 1. Click on the **Gear** icon at the end of the row for the model you wish to compose and select **Compose into new**.
 1. Enter a model name (required) and a description.
-
-    ![compose_model_latest](/Images/compose_model_latest.png)
+![compose_model_latest](/Images/compose_model_latest.png)
 1. In the Composite Model page, you can edit the name of the composite and modify the fields (as needed). If you want to rename the composite, click the **Pencil** icon and complete the fields of the Composite Model model window as necessary. Click **Update** when you have finished.
 1. If you wish to modify the fields of this new composite, click the **Pencil** icon at the end of the row for the field in question.
 1. Fill in the various fields and check the **Read-only** or **Required** checkboxes as necessary. Click **Update Field** once you have finished.

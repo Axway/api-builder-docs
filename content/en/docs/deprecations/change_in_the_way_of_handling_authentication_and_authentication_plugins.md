@@ -151,7 +151,7 @@ function Plugin() {
 }
 
 Plugin.prototype.validateRequest = function (request, response, callback) {
-    if (request.path.toLowerCase().indexOf](/Images/api/foo') === 0) {
+    if (request.path.toLowerCase().indexOf('/api/foo') === 0) {
         // unauthenticated URL
         return true;
     }

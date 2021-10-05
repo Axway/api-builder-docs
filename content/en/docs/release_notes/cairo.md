@@ -7,6 +7,7 @@ Hide_readingtime: true
 ---
 
 {{% releasenotes/upgrade %}}
+
 ## Fixes
 
 * #1835: Deprecate the APIBuilder.remove\* methods

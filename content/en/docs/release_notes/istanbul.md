@@ -5,10 +5,13 @@ date: 2018-11-23
 description: 23 November 2018
 Hide_readingtime: true
 ---
+
+{{% releasenotes/upgrade %}}
+
 ## Features
 
 * #5233: Ensure that plugins only receive plugin-specific configuration instead of the global service configuration
-* 5242:
+* #5242: Support credential management and authorization in flows (pre-release feature)
 
 ## Fixes
 

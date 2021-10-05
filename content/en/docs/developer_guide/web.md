@@ -5,7 +5,7 @@ weight: 120
 date: 2021-10-01
 ---
 
-{{% alert title="⚠️ Deprecation" color="primary" %}}Beginning with the [Lisbon](/docs/release_notes/lisbon) release, {{% variables/apibuilder_prod_name %}} Web is deprecated {{% deprecation/link D011 %}} and will be removed in a future major version. If you are currently using Web Routes, consider switching to another modern web application architecture for your front end that consumes {{% variables/apibuilder_prod_name %}} Service APIs.{{% /alert %}}
+{{% alert title="Deprecation" color="primary" %}}Beginning with the [Lisbon](/docs/release_notes/lisbon) release, {{% variables/apibuilder_prod_name %}} Web is deprecated {{% deprecation/link D011 %}} and will be removed in a future major version. If you are currently using Web Routes, consider switching to another modern web application architecture for your front end that consumes {{% variables/apibuilder_prod_name %}} Service APIs.{{% /alert %}}
 
 ## Introduction
 
@@ -175,7 +175,7 @@ In the preceding example, the route calls the `car` API. You can retrieve a refe
 
 This code returns a reference to the `car` API. Once you have the API, you need to call `execute`:
 
-```
+```javascript
 req.server.getAPI('api/car').execute({}, function(err, results){
 
 });

@@ -68,7 +68,7 @@ Besides creating a fully defined model, you can modify an existing model either 
 
 A reduced model is an existing model where you only use specific fields from it. To create a reduced model, follow the same procedure when creating a regular model, except invoke the module's `Model.reduce()` method instead of the `createModel()` method. Pass the model you want to reduce as the first parameter, the name of the new model as the second parameter, and the new model schema as the last parameter.
 
-**Example**
+#### Reduced model example
 
 The Model file below extracts three fields from the `employee` table of the `memory` connector, indicated by the `memory/employee` parameter, and renames the fields for the `baseEmp` model, for example, `email_address` in the MySQL employee table maps to `email` in the new model.
 
@@ -92,7 +92,7 @@ module.exports = baseEmp;
 
 An extended model is an existing model where you modify the fields or add more fields. To create an extended model, follow the same procedure when creating a regular model, except invoke the module's `Model.extend()` method instead of the `createModel()` method. Pass the model you want to extend as the first parameter, the name of the new model as the second parameter, and the new model schema as the last parameter.
 
-**Example**
+#### Extended model example
 
 The Model below extends the employee model by adding the `headquarters` field to it.
 
@@ -355,7 +355,7 @@ All models inherit the CRUD interfaces supported by their underlying connector. 
 
 The following are the main interfaces most connectors support.
 
-```
+```javascript
 // delete all records for a model
 Model.deleteAll(callback);
 
@@ -380,7 +380,7 @@ Model.create(object, callback);
 
 The following model has example uses.
 
-```
+```javascript
 // example model
 Model = APIBuilder.Model.extend(testTableName, {
     fields: {
@@ -395,7 +395,7 @@ Model = APIBuilder.Model.extend(testTableName, {
 
 Use the `deleteAll` function on a model to delete all of its records.
 
-```
+```javascript
 Model.deleteAll(function(err) {
     if (err) {
         return next(err);
@@ -512,7 +512,7 @@ By default, {{% variables/apibuilder_prod_name %}} generates the following API e
 
 To disable {{% variables/apibuilder_prod_name %}} from generating these endpoints, set the Model's `autogen` property to `false` when defining the model. You will need to create {{% variables/apibuilder_prod_name %}} API objects to access the model.
 
-**Example**
+### Examples
 
 The following model disabled generating pre-defined endpoints. An API endpoint needs to be defined to access the model data, as shown below.
 

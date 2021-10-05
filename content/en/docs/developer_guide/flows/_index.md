@@ -15,7 +15,7 @@ Flows are acyclic directed graphs of operational flow-nodes, which are composed 
 
 ## Flow-nodes
 
-Flow-nodes represent an individual portion of functionality in a flow. You can use the Flow editor to add, configure, and delete flow-nodes. You can also connect and disconnect flow-nodes in a flow. For additional information, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). For information about available flow-nodes see [Flow-nodes](/docs/developer_guide/flows/flow-nodes/).
+Flow-nodes represent an individual portion of functionality in a flow. You can use the Flow editor to add, configure, and delete flow-nodes. You can also connect and disconnect flow-nodes in a flow. For additional information, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/). For information about available flow-nodes see [Flow-nodes](/docs/developer_guide/flows/flow_nodes/).
 
 ## Endpoints
 
@@ -23,7 +23,7 @@ An API endpoint provides a way for a client to access your application, such as 
 
 ## Flow-triggers
 
-Flow-triggers are additional ways of triggering a Flow. These allow Flows to be configured to run on a schedule, when an event occurs, or when a Solace or Kafka message is received, to name a few examples. Like Flow-nodes, Flow-triggers are installed from Plugins, and installed Flow-triggers can be added, removed and configured as part of any Flow from within the Flow editor. For additional information, refer to [Flow triggers](/docs/developer_guide/flows/flow-triggers/).
+Flow-triggers are additional ways of triggering a Flow. These allow Flows to be configured to run on a schedule, when an event occurs, or when a Solace or Kafka message is received, to name a few examples. Like Flow-nodes, Flow-triggers are installed from Plugins, and installed Flow-triggers can be added, removed and configured as part of any Flow from within the Flow editor. For additional information, refer to [Flow triggers](/docs/developer_guide/flows/flow_triggers/).
 
 ## {{% variables/apibuilder_prod_name %}} SDK
 

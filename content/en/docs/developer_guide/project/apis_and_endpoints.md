@@ -20,7 +20,7 @@ APIs have the following extensions to the Swagger specification:
 
 This example API below is similar to the one that comes with every {{% variables/apibuilder_prod_name %}} Project. It contains an Endpoint which takes a username, invokes the flow called `“GreetFlow”`, and returns a greeting. However, since it has an x-enabled flag set, the Endpoint will be disabled, and no requests will be able to be made to it.
 
-```
+```json
 {
     "x-enabled": {
         "enabled": false

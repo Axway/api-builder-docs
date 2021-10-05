@@ -5,6 +5,9 @@ date: 2018-12-21
 description: 21 December 2018
 Hide_readingtime: true
 ---
+
+{{% releasenotes/upgrade %}}
+
 ## Features
 
 * #5155: Add a nav badge to attract attention to credential errors

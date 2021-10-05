@@ -75,7 +75,7 @@ To invoke an API endpoint:
 1. Retrieve the API instance using {{% variables/apibuilder_prod_name %}}'s get API (`endpoint`, `verb`) method by passing it the endpoint without the server host or address as the first parameter and the HTTP verb as the second parameter.
 1. Invoke the `execute(params, callback)` method on the API instance by passing it a dictionary of parameters as the first parameter and a callback function as the second parameter. The callback function is passed an `error` and `results` object.
 
-**Example:**
+### Example
 
 The Route below is invoking the `GET <SERVER_ADDRESS>/api/car` method programmatically.
 
@@ -166,7 +166,7 @@ If apiPrefixSecurity is enabled, and you also define a 401 response for your API
 
 If you want to provide additional authentication in your custom API when [apiPrefixSecurity](/docs/developer_guide/project/configuration/project_configuration/#accesscontrol) is enabled, then you should not define a 401 response in the custom responses, and when sending the 401 error, it should match the schema for the UnauthorizedError below:
 
-```
+```json
 "UnauthorizedError": {
   "type": "object",
   "required": [

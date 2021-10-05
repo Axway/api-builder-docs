@@ -7,6 +7,7 @@ Hide_readingtime: true
 ---
 
 {{% releasenotes/upgrade %}}
+
 ## Fixes
 
 * #5620: Fix string-based model queries on dates, booleans and number fields

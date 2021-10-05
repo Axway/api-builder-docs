@@ -5,6 +5,9 @@ date: 2018-09-14
 description: 14 September 2018
 Hide_readingtime: true
 ---
+
+{{% releasenotes/upgrade %}}
+
 ## Features
 
 * #4467: Support queries on Memory models using $like comparison operator

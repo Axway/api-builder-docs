@@ -18,11 +18,10 @@ To configure a find all users flow:
 1. Name the flow-node: Find succeeded
 1. Select **Parameters**.
 1. For the **status** parameter, select **number** and enter `200` in the field.
-1. Enable the **body** parameter, select **selector**, and select `$.models` from the selector options drop-down menu or continue typing to manually complete the selector configuration. For additional selector auto-complete information, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/).
+1. Enable the **body** parameter, select **selector**, and select `$.models` from the selector options drop-down menu or continue typing to manually complete the selector configuration. For additional selector auto-complete information, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/).
 1. Leave the **headers** parameter disabled.
-1. Connect the next output of the Find all users flow-node to the input of the Find succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/). The completed flow is displayed.
-
-    ![Find_all_latest](/Images/find_all_latest.png)
+1. Connect the next output of the Find all users flow-node to the input of the Find succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/). The completed flow is displayed.
+![Find_all_latest](/Images/find_all_latest.png)
 1. Click **Apply**.
 1. On the next screen, click **Proceed**. The server will be restarted, the _Find all users_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.
 1. To exit API Orchestration user interface and return to API Lists page, click **Close**.

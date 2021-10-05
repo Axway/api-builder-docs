@@ -44,16 +44,16 @@ We provide a method to create shareable plugins that contain flow-nodes for orch
 
 ## Local plugins
 
-There may be cases where you want to use a plugin in your project, which is not available publicly on NPM - Possibly received in the form of a .tar.gz or developed locally.
+There may be cases where you want to use a plugin in your project, which is not available publicly on npm - Possibly received in the form of a .tar.gz or developed locally.
 
-NPM allows for local dependencies using the "file:" protocol, and as of NPM 5 will link file dependencies to preserve disk space.
+npm allows for local dependencies using the "file:" protocol, and as of npm 5 will link file dependencies to preserve disk space.
 
 1. Extract and copy your plugin into any folder in your project, for example `/plugins`.
-    The folder that the plugin lives in must match its package name. In this case, the plugin is called `api-builder-plugin-myplugin`.
+  The folder that the plugin lives in must match its package name. In this case, the plugin is called `api-builder-plugin-myplugin`.
 1. Navigate to the root directory of your application and run the following command to install the plugin as a local dependency.
 
-    ```bash
-    npm install --no-optional plugins/api-builder-plugin-myplugin
-    ```
+  ```bash
+  npm install --no-optional plugins/api-builder-plugin-myplugin
+  ```
 
-    Now, whenever you run an NPM install, the local plugin and its dependencies will be installed alongside the rest of your app's dependencies and will be available in your project.
+  Now, whenever you run an npm install, the local plugin and its dependencies will be installed alongside the rest of your app's dependencies and will be available in your project.

@@ -129,7 +129,7 @@ As of Node.js 7.3.0 (and LTS versions 6.10.0 and 4.8.0), it is possible to add w
 NODE_EXTRA_CA_CERTS=file
 ```
 
-When set, [well known "root" CAs](https://github.com/nodejs/node/blob/master/src/node_root_certs.h) will be extended with the extra certificates in a file. The file should consist of one or more trusted certificates in PEM format. A "process.emitWarning()" message will be emitted (once) if the file is missing or malformed, but any errors are otherwise ignored. Also note that when the node.js CA options are used (i.e. [\--use-bundled-ca](https://nodejs.org/api/cli.html#cli_use_bundled_ca_use_openssl_ca), [\--use-openssl-ca](https://nodejs.org/api/cli.html#cli_use_bundled_ca_use_openssl_ca)), the NODE_EXTRA_CA_CERTS are not used.
+When set, [well known "root" CAs](https://github.com/nodejs/node/blob/master/src/node_root_certs.h) will be extended with the extra certificates in a file. The file should consist of one or more trusted certificates in PEM format. A "process.emitWarning()" message will be emitted (once) if the file is missing or malformed, but any errors are otherwise ignored. Also note that when the Node.js CA options are used (i.e. [\--use-bundled-ca](https://nodejs.org/api/cli.html#cli_use_bundled_ca_use_openssl_ca), [\--use-openssl-ca](https://nodejs.org/api/cli.html#cli_use_bundled_ca_use_openssl_ca)), the NODE_EXTRA_CA_CERTS are not used.
 
 For example:
 
@@ -153,7 +153,7 @@ You can then set NODE_EXTRA_CA_CERTS to the environment:
 export NODE_EXTRA_CA_CERTS=./extra-ca-certs.pem
 ```
 
-Or via docker:
+Or via Docker:
 
 ```bash
 docker run --name <CONTAINER_NAME> -e NODE_EXTRA_CA_CERTS=./extra-ca-certs.pem -p 8081:8081 -d <IMAGE_NAME>
@@ -245,7 +245,7 @@ The `config/.env` file will often contain sensitive information, so it is protec
 
 {{% alert title="Optional" color="primary" %}}Using ./`config/.env` for development is entirely optional, but it will make development much easier.{{% /alert %}}{{% alert title="Caution" color="danger" %}}./`config/.env` usually contains sensitive information like usernames and passwords.
 
-By default, this file is never added to npm, git, or docker.
+By default, this file is never added to npm, git, or Docker.
 
 Make sure this stays the same, and file is not committed into public repositories, or part of your production deployment. It should stay local.{{% /alert %}}
 
@@ -303,7 +303,7 @@ module.exports = {
 
 #### Formatting strings
 
-Sometimes a configuration value is a composite of different environment values. For example, when you want a database URI and a separate database name. These can be formatted using the javascript [template literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) operator, \`\`.
+Sometimes a configuration value is a composite of different environment values. For example, when you want a JavaScript URI and a separate database name. These can be formatted using the JavaScript [template literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) operator, \`\`.
 
 ```javascript
 // ./conf/default.js

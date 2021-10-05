@@ -22,7 +22,7 @@ date: 2021-10-01
 * Uninstall dependencies that you are not using. These add to bloat, make your application bigger, and slower to install.
 * Use security tools such as [npm audit](https://docs.npmjs.com/cli/v6/commands/npm-audit) to ensure your dependencies do not contain any vulnerabilities. {{% variables/apibuilder_prod_name %}} uses [WhiteSource](https://www.whitesourcesoftware.com/) (CVE monitoring), [npm audit](https://docs.npmjs.com/cli/v7/commands/npm-audit) (CVE monitoring), [AppSpider](https://www.rapid7.com/products/appspider/) (web security), [sonarqube](https://www.sonarqube.org/) (for code quality and security), and [Fortify](https://en.wikipedia.org/wiki/Fortify_Software) (for static code analysis).
 * Use [package-lock](https://docs.npmjs.com/cli/v6/configuring-npm/package-lock-json) or [shrinkwrap](https://docs.npmjs.com/cli/v6/commands/npm-shrinkwrap) when developing to ensure the same dependency tree. This will be created by default in up-to-date versions of npm.
-* If using package-lock then you should use the [npm ci](https://docs.npmjs.com/cli/v6/commands/npm-ci) command instead of [npm install](https://docs.npmjs.com/cli/v6/commands/npm-install) in docker or for faster installation.
+* If using package-lock then you should use the [npm ci](https://docs.npmjs.com/cli/v6/commands/npm-ci) command instead of [npm install](https://docs.npmjs.com/cli/v6/commands/npm-install) in Docker or for faster installation.
 
 ## Decide your architecture
 
@@ -34,7 +34,7 @@ For this reason, you need to decide which architecture is best suited for your c
 
 * [RESTful architecture](https://restfulapi.net/rest-architectural-constraints/)
 * [Asynchronous REST API](https://aws.amazon.com/blogs/architecture/managing-asynchronous-workflows-with-a-rest-api/)
-* [Event-driven architecture](https://en.wikipedia.org/wiki/Event-driven_architecture) using f[low-triggers](/docs/developer_guide/flows/flow_triggers) and a message queue plugin, such as [Solace](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-solace) or [Kafka](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-kafka).
+* [Event-driven architecture](https://en.wikipedia.org/wiki/Event-driven_architecture) using [flow-triggers](/docs/developer_guide/flows/flow_triggers) and a message queue plugin, such as [Solace](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-solace) or [Kafka](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-kafka).
 
 ## Configuring and securing your application
 
@@ -97,11 +97,11 @@ When writing code for the [JavaScript flow-node](/docs/developer_guide/flows/flo
 
 * Log at ERROR or INFO level only.
 * [Secured with TLS](/docs/security_guide/) or SSL termination (depending on deployment architecture).
-* Use [docker](https://docs.docker.com/get-started/) to [containerize your application](/docs/how_to/dockerize_an_api_builder_service/)[.](/docs/how_to/dockerize_an_api_builder_service/)
+* Use [Docker](https://docs.docker.com/get-started/) to [containerize your application](/docs/how_to/dockerize_an_api_builder_service/)[.](/docs/how_to/dockerize_an_api_builder_service/)
 * Use security tools to scan your containers to ensure they do not have open ports or security vulnerabilities.
 * Use npm install with the `--production` flag.
 * Use [kubernetes](https://kubernetes.io/) for [scaling](https://kubernetes.io/blog/2016/07/autoscaling-in-kubernetes/), and [auto-healing](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-lifetime).
-* We recommend you use docker and not run as a stand-alone service (e.g. as opposed to running on a VM) so that it can be managed and scaled efficiently.
+* We recommend you use Docker and not run as a stand-alone service (e.g. as opposed to running on a VM) so that it can be managed and scaled efficiently.
 * We recommend that you use [API Central](https://www.axway.com/en/platform/central) if you need to expose your service to the Internet.
 * Set [NODE_ENV=production](https://expressjs.com/en/advanced/best-practice-performance.html) in the environment for security and performance.
 

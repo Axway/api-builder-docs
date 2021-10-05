@@ -175,17 +175,7 @@ The v4 flows should have references to plugins.
 }
 ```
 
-{{% alert title="Note" color="primary" %}}If you wrote your own nodehandlers in v3, they will not work in v4. If you have custom nodehandlers that you wish to upgrade, contact [support@axway.com.](mailto:support@axway.com.){{% /alert %}}{{% alert title="Security issue" color="danger" %}}Note that doT has an npm security advisory against it (#798[). Under normal use, the security issue does not apply. However, the module is no longer actively maintained. If you do not use the GreetFlow and do not use doT, then both can be removed. Remove the "nodehandler-dot" from package.json, and remove the example Flow and API endpoint files.](https://www.npmjs.com/advisories/798)
-
-```bash
-// Remove Greet flow example
-
-rm flows/GreetFlow.json
-rm endpoints/Greet.json
-rm conf/greetflow.default.js
-```
-
-The [@axway/api-builder-plugin-fn-dot](/docs/developer_guide/flows/flow_nodes/dot_flow_node/) plugin is no longer bundled with new {{% variables/apibuilder_prod_name %}} projects. We suggest using `@axway/api-builder-plugin-fn-javascript` instead of the `formatObject` method, or `@axway/api-builder-plugin-fn-mustache` instead of `formatString`.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}If you wrote your own nodehandlers in v3, they will not work in v4. If you have custom nodehandlers that you wish to upgrade, contact [support@axway.com.](mailto:support@axway.com.){{% /alert %}}
 
 ## Model Node Handler distinct method
 
@@ -220,8 +210,8 @@ collection = myModel.FindAll()
 | appc.arrowdb | Renamed to [@axway/api-builder-plugin-dc-mbs](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mbs). Note that this module has been redesigned and released as a new data connector plugin to the [Mobile Backend Services](https://www.axway.com/en/products/app-development). This new module provides full support for custom objects. However, it does not support the MBS built-in objects (for example, acl, places, and so forth). |
 | appc.composite | Renamed to composite. This is now built into v4 and is no longer installed separately. |
 | appc.mongo | Renamed to [@axway/api-builder-plugin-dc-mongo](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mongo). |
-| appc.mysql | Renamed to [@axway/api-builder-plugin-dc-mysql](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-my). |
-| appc.mssql | Renamed to [@axway/api-builder-plugin-dc-mssql](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mssq). |
+| appc.mysql | Renamed to [@axway/api-builder-plugin-dc-mysql](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mysql). |
+| appc.mssql | Renamed to [@axway/api-builder-plugin-dc-mssql](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mssql). |
 | appc.oracle | Renamed to [@axway/api-builder-plugin-dc-oracle](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-oracle). |
 | memory | No change. |
 

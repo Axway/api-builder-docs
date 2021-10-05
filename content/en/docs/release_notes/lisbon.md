@@ -14,7 +14,6 @@ Hide_readingtime: true
 * #5180: Support the user in managing OAuth2 credentials for devops
 * #5264: Provide clearer and more explicit HTTP authentication.
 
-
 ## Fixes
 
 * #5337: Limit graph scaling in flow editor

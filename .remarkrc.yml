@@ -70,9 +70,9 @@ plugins:
       { yes: 'unix' },
       { yes: 'GitHub' },
       { yes: 'Docker' },
-      { yes: 'Axway' },
-      { yes: 'Amplify' },
-      { yes: 'Oracle' },
+      { yes: 'Axway', ignoreNextTo: '-' },
+      { yes: 'Amplify', ignoreNextTo: '-' },
+      { yes: 'Oracle', ignoreNextTo: '-' },
       { yes: 'JSONPath' },
       # the plugin doesn't handle URLs well
       # { yes: 'doT' },

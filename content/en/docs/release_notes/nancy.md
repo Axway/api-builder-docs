@@ -20,7 +20,10 @@ Hide_readingtime: true
 
 ## Release notes
 
-* #6304: Unified the @axway/amplify-api-builder-cli and @axway/api-builder command-line so that they are the same. The @axway/api-builder command-line now supports the "get-catalog" command, --no-banner and --no-color options. The @axway/amplify-api-builder-cli command-line for amplify now supports plugin initialization ("amplify builder plugin init").
+* #6304: Unified the @axway/amplify-api-builder-cli and @axway/api-builder command-line so that they are the same. The @axway/api-builder command-line now supports the "get-catalog" command, --no-banner and --no-color options. The @axway/amplify-api-builder-cli command-line for Amplify now supports plugin initialization:
+    ```bash
+    amplify builder plugin init
+    ```
 * #6351: Added Redis community flow-node to the list of plugins in Admin UI.
 * #6352: Additional response logs are no longer printed when executing APIs or Model APIs.
 * #6355: Updated the `@axway/api-builder` CLI to generate plugins using the latest SDK. This introduces changes to simplify how actions are written.

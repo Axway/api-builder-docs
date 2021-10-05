@@ -244,7 +244,7 @@ D028:
   name: Codeblocks
   release: Cairo
   summary: >-
-    [codeblocks](/docs/developer_guide/flows/flow-nodes/codeblock_flow-node) are deprecated and will be removed in a future version of the
+    [codeblocks](/docs/developer_guide/flows/flow_nodes/codeblock_flow_node) are deprecated and will be removed in a future version of the
     product.
 
 D029:

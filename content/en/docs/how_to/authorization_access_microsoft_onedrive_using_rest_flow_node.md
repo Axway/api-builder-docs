@@ -9,7 +9,7 @@ date: 2021-10-01
 
 This example demonstrates how to configure {{% variables/apibuilder_prod_name %}} to work with OneDrive. It will walk you through the steps of registering and configuring an Application with Microsoft. It will then walk you through setting up {{% variables/apibuilder_prod_name %}} and authorizing it to access the Microsoft application.
 
-We will then create a flow that uses the [REST flow-node](/docs/developer_guide/flows/flow-nodes/rest_flow-node/) to invoke the OneDrive API and retrieve a list of contents.
+We will then create a flow that uses the [REST flow-node](/docs/developer_guide/flows/flow_nodes/rest_flow_node/) to invoke the OneDrive API and retrieve a list of contents.
 
 ## Creating and configuring Microsoft Application
 
@@ -291,7 +291,7 @@ We will go through the steps to create the flow, but for reference, the complete
         ]
         ```
 
-        For more information on the DoT template language, see [Use doT template language](/docs/developer_guide/flows/flow-nodes/dot_flow-node/).
+        For more information on the DoT template language, see [Use doT template language](/docs/developer_guide/flows/flow_nodes/dot_flow_node/).
     1. On the **Outputs** tab, change the **Next** output to `$.contents`.
         ![responsedot_params](/Images/responsedot_params.png) ![responsedot_outputs](/Images/responsedot_outputs.png)
 1. Drag an HTTP flow-node from the tool panel; this only has a single `Set HTTP Response` method. We will use this node to configure the response that is returned to the caller.

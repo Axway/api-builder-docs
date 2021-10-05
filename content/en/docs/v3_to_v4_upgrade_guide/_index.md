@@ -185,7 +185,7 @@ rm endpoints/Greet.json
 rm conf/greetflow.default.js
 ```
 
-The [@axway/api-builder-plugin-fn-dot](/docs/developer_guide/flows/flow-nodes/dot_flow-node/) plugin is no longer bundled with new {{% variables/apibuilder_prod_name %}} projects. We suggest using `@axway/api-builder-plugin-fn-javascript` instead of the `formatObject` method, or `@axway/api-builder-plugin-fn-mustache` instead of `formatString`.{{% /alert %}}
+The [@axway/api-builder-plugin-fn-dot](/docs/developer_guide/flows/flow_nodes/dot_flow_node/) plugin is no longer bundled with new {{% variables/apibuilder_prod_name %}} projects. We suggest using `@axway/api-builder-plugin-fn-javascript` instead of the `formatObject` method, or `@axway/api-builder-plugin-fn-mustache` instead of `formatString`.{{% /alert %}}
 
 ## Model Node Handler distinct method
 
@@ -540,9 +540,9 @@ npm start
 
 ## Deprecation warnings
 
-When you start your upgraded project, you may encounter several [deprecation warnings](/docs/deprecations/). {{% variables/apibuilder_prod_name %}} releases every two weeks (see our past [Release Notes](/docs/release_notes).
+When you start your upgraded project, you may encounter several [deprecation warnings](/docs/deprecations). {{% variables/apibuilder_prod_name %}} releases every two weeks (see our past [Release Notes](/docs/release_notes).
 
-We regularly add feature improvements, fixes, and occasionally identify and fix features that do not work as designed, or are orthogonal to the intended direction of the product. Where these would introduce a breaking change, we create a deprecation flag that is disabled by default, meaning that it will have no impact on your project. However, it should not be ignored. We intend to disable these features in the next major release of the product. To stay abreast of the latest updates, and ensure that your project will upgrade easily to the next major release, you should follow the [{{% variables/apibuilder_prod_name %}} Deprecations](/docs/deprecations/) guide to upgrade your project.
+We regularly add feature improvements, fixes, and occasionally identify and fix features that do not work as designed, or are orthogonal to the intended direction of the product. Where these would introduce a breaking change, we create a deprecation flag that is disabled by default, meaning that it will have no impact on your project. However, it should not be ignored. We intend to disable these features in the next major release of the product. To stay abreast of the latest updates, and ensure that your project will upgrade easily to the next major release, you should follow the [{{% variables/apibuilder_prod_name %}} Deprecations](/docs/deprecations) guide to upgrade your project.
 
 {{% alert title="Note" color="primary" %}}To ensure that you stay abreast of important updates and to make it easier to upgrade, you should pay attention to the deprecation warnings and address them as soon as possible.{{% /alert %}}
 

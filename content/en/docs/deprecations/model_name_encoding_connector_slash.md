@@ -32,9 +32,9 @@ It is strongly recommended you upgrade {{% variables/apibuilder_prod_name %}} to
 
 Enable the flag to encoded model name with connector slash:
 
-This flag only applies when _**enableModelNameEncoding**_ is enabled. Refer to [Change in the way model name is encoded in URI](/docs/deprecations/change_in_the_way_model_name_is_encoded_in_uri/).
+This flag only applies when {{% deprecation/link D012 %}} _**enableModelNameEncoding**_ is enabled. Refer to [Change in the way model name is encoded in URI](/docs/deprecations/model_name_encoding).
 
-```json
+```javascript
 flags: {
     enableModelNameEncodingWithConnectorSlash : true
 }

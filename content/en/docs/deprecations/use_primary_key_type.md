@@ -37,7 +37,7 @@ It is strongly recommended you upgrade {{% variables/apibuilder_prod_name %}} to
 
 After upgrading, the `usePrimaryKeyType` feature will not be enabled until you enable it. To enable it, add the following setting to your `default.js` file.
 
-```json
+```javascript
 flags: {
     usePrimaryKeyType: true
 }

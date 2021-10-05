@@ -9,7 +9,7 @@ date: 2021-10-01
 
 This example demonstrates how to configure an {{% variables/apibuilder_prod_name %}} application to work with Gmail. It will walk you through the steps of registering and configuring an application with Google. It will then walk you through setting up {{% variables/apibuilder_prod_name %}} and authorizing it to access the Google application.
 
-We will then create a flow that uses the [Swagger flow-node](/docs/developer_guide/flows/flow-nodes/swagger_flow-node/) to invoke the Gmail API and retrieve the number of the emails received from a provided address.
+We will then create a flow that uses the [Swagger flow-node](/docs/developer_guide/flows/flow_nodes/swagger_flow_node/) to invoke the Gmail API and retrieve the number of the emails received from a provided address.
 
 ## Creating a new Google application
 

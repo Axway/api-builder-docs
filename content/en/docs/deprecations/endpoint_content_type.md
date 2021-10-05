@@ -8,11 +8,11 @@ date: 2021-10-01
 
 {{% alert title="Note" color="primary" %}}This document describes deprecation {{% deprecation/link D042 %}}{{% /alert %}}
 
-API Endpoints always return application/json, irrespective of what is set by the [HTTP Response flow-node](/docs/developer_guide/flows/flow-nodes/http_response_flow-node/), or what is defined in the [Swagger produces](https://swagger.io/docs/specification/2-0/describing-responses/).
+API Endpoints always return application/json, irrespective of what is set by the [HTTP Response flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node/), or what is defined in the [Swagger produces](https://swagger.io/docs/specification/2-0/describing-responses/).
 
 This behavior has been deprecated since the [{{% variables/apibuilder_prod_name %}} - Tokyo](/docs/release_notes/tokyo) release.
 
-Beginning with the [Tokyo](/docs/release_notes/tokyo) release, if the flow defines a Content-Type header in the [HTTP Response](/docs/developer_guide/flows/flow-nodes/http_response_flow-node/) Headers, then the header will always be used. If the Content-Type header is not set in [HTTP Response](/docs/developer_guide/flows/flow-nodes/http_response_flow-node/) Headers, then the Content-Type is derived according to the type of response body. If the response body is a [Buffer](https://nodejs.org/api/buffer.html), then the Content-Type is "application/octet-stream". For all other types, then the Content-Type the body is encoded as a JSON string and the Content-Type is "application/json".
+Beginning with the [Tokyo](/docs/release_notes/tokyo) release, if the flow defines a Content-Type header in the [HTTP Response](/docs/developer_guide/flows/flow_nodes/http_response_flow_node/) Headers, then the header will always be used. If the Content-Type header is not set in [HTTP Response](/docs/developer_guide/flows/flow_nodes/http_response_flow_node/) Headers, then the Content-Type is derived according to the type of response body. If the response body is a [Buffer](https://nodejs.org/api/buffer.html), then the Content-Type is "application/octet-stream". For all other types, then the Content-Type the body is encoded as a JSON string and the Content-Type is "application/json".
 
 This will be the default behavior for all new services.
 

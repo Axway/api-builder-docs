@@ -14,6 +14,8 @@ let availableAnchors = []
 let projectRoot;
 let docsRoot;
 let staticRoot;
+let staticFilesExtensions;
+let ignoreLinksThatStartWith;
 
 /**
  * The cache has the following structure => reference: warning.
@@ -27,6 +29,9 @@ function validateInternalLinks(tree, file, options = {}) {
 	projectRoot = file.cwd;
 	docsRoot = options.docsRoot || 'content/en';
 	staticRoot = options.staticRoot || 'static';
+	staticFilesExtensions = options.staticFilesExtensions
+		|| ['.json', '.js', '.yaml', '.sh', '.html', '.zip'];
+	ignoreLinksThatStartWith = options.ignoreLinksThatStartWith || ['mailto'];
 
 	visit(tree, "link", verifyLinks);
 	visit(tree, "image", verifyImages);
@@ -43,6 +48,11 @@ function validateInternalLinks(tree, file, options = {}) {
 			// node and move to the next one
 			file.message(cache[ref], node);
 			return;
+		}
+		for (const pattern of ignoreLinksThatStartWith) {
+			if (ref.startsWith(pattern)) {
+				return;
+			}
 		}
 		if (isExternalPageRef(ref)) {
 			log(`${ref} is handled with "no-dead-urls" from remark-lint-no-dead-urls`);
@@ -143,12 +153,13 @@ function verifyAnchor(file, node, ref) {
 		if (isEmptyAnchor(file, node, anchor)) {
 			return;
 		}
+		// We are reading the file that we currently process so it does exists.
 		const doc = getFile({ file, node, ref, filePath });
 		const tree = fromMarkdown(doc);
 		slugger.reset();
 		availableAnchors = [];
 		visit(tree, "heading", compare);
-		if (availableAnchors.includes[anchor]) {
+		if (availableAnchors.includes(anchor)) {
 			cache[ref] = warnings.valid;
 		} else {
 			const msg = `${warnings.missingAnchor}: ${ref}`;
@@ -172,8 +183,12 @@ function verifyAnchor(file, node, ref) {
 	if (warnOnExtension(file, node, filePath)) {
 		return;
 	}
-	filePath = join(projectRoot, docsRoot, getFilePathWithExtension(filePath));
-	const doc = getFile({ file, node, ref, filePath });
+	const pathToFile
+		= join(projectRoot, docsRoot, getFilePathWithExtension(filePath));
+	const pathToIndexFile
+		= join(projectRoot, docsRoot, getIndexFilePath(filePath));	
+	const doc = getFile({ file, node, ref, filePath: pathToFile })
+		|| getFile({ file, node, ref, filePath: pathToIndexFile });
 	if (doc) {
 		anchorFound = false;
 		// We got the doc now turn it into an AST.
@@ -188,6 +203,10 @@ function verifyAnchor(file, node, ref) {
 			file.message(msg, node);
 			cache[ref] = msg;
 		}
+	} else {
+		const msg = `${warnings.missingDoc}: ${filePath}`;
+		file.message(msg, node);
+		cache[ref] = msg;		
 	}
 	function compare(currentNode) {
 		// Here we get the current node from AST which holds the heading value but
@@ -230,9 +249,7 @@ function isLocalAnchorRef(ref) {
 }
 
 function isStaticRef(ref) {
-	// Add more extensions to this list if needed
-	const staticFileExtensions = ['.json', '.js', '.yaml', '.sh', '.html'];
-	return staticFileExtensions.includes(extname(ref));
+	return staticFilesExtensions.includes(extname(ref));
 }
 
 function getFile(config) {
@@ -242,9 +259,7 @@ function getFile(config) {
 		doc = readFileSync(filePath);
 	} catch (err) {
 		log(err);
-		const msg = `${warnings.missingDoc}: ${filePath}`;
-		file.message(msg, node);
-		cache[ref] = msg;
+		return;
 	}
 	return doc;
 }

@@ -5,7 +5,7 @@ weight: 20
 date: 2021-10-01
 ---
 
-Flows are acyclic directed graphs of operational flow-nodes, which are composed of inputs, logic, and outputs. They are used by endpoints, which require them for their runtime functionality of taking inputs and turning them into responses when an endpoint is hit. For reference information on flow orchestration and flow-node configuration, refer to [Flow-nodes](/docs/developer_guide/flows/flow-nodes/).
+Flows are acyclic directed graphs of operational flow-nodes, which are composed of inputs, logic, and outputs. They are used by endpoints, which require them for their runtime functionality of taking inputs and turning them into responses when an endpoint is hit. For reference information on flow orchestration and flow-node configuration, refer to [Flow-nodes](/docs/developer_guide/flows/flow_nodes/).
 
 ## Add API endpoints
 
@@ -26,8 +26,8 @@ To create a flow using the {{% variables/apibuilder_prod_name %}} user interface
 
 1. Import an API endpoint per the **Add endpoints** instructions in [Manage Endpoints](/docs/developer_guide/flows/manage_endpoints/). Once the API endpoints are imported, and the server is restarted, the imported API endpoints are displayed on the APIs List page. The imported API endpoints are disabled, and each endpoint has **Create Flow** and **Delete** icons. Additionally, the method, path, nickname, description, and status of each imported endpoint is provided on the APIs List page.
 1. Click the **Create Flow** icon for an endpoint. The API Orchestration user interface is displayed, and a Start flow-node is presented in the flow editor panel.
-1. Add flow-nodes to the flow. Refer to the **Add flow-node** instructions in [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/).
-1. Configure the flow-nodes added to the flow. Refer to the **Configure flow-node** instructions in [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/).
+1. Add flow-nodes to the flow. Refer to the **Add flow-node** instructions in [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/).
+1. Configure the flow-nodes added to the flow. Refer to the **Configure flow-node** instructions in [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/).
 1. Connect the flow-nodes in the flow. Refer to the **Connect flow-nodes** instructions in [Manage Flows](#).
 1. When the flow is complete, click the **Apply** button. The Flow save caution window is displayed.
 
@@ -46,7 +46,7 @@ To edit a flow using the {{% variables/apibuilder_prod_name %}} user interface:
 1. Select the **API Doc & Test** tab.
 1. Select an API Endpoint to view the API List of endpoints. The API Lists page is displayed.
 1. Select the **Flow** icon for the API endpoint flow to edit. The selected flow is displayed in the flow editor panel on the API Orchestration user interface.
-1. Make the required edits to the flow. For instructions on adding, configuring, and connecting flow-nodes or disconnecting and deleting flow-nodes, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow-nodes/).
+1. Make the required edits to the flow. For instructions on adding, configuring, and connecting flow-nodes or disconnecting and deleting flow-nodes, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/).
 1. Once the flow edits are completed, click the **Apply** button. The Flow save caution window is displayed.
 ![save_caution](/Images/save_caution.png)
 1. Select **Proceed** to save the flow. Select **Cancel** to return to the API Orchestration user interface. If **Proceed** is selected, the server is restarted, and the flow is saved. Once the server restart is completed, the API Orchestration user interface is displayed.

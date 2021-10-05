@@ -3,9 +3,13 @@ plugins:
   - remark-preset-lint-markdown-style-guide
   - [ remark-lint-validate-internal-links, {
       docsRoot: 'content/en',
-      staticRoot: 'static'
+      staticRoot: 'static',
+      staticFilesExtensions: ['.json', '.js', '.yaml', '.sh', '.html', '.zip'],
+      ignoreLinksThatStartWith: [
+        'mailto'
+      ]
     }]
-  - remark-lint-no-dead-urls
+   - remark-lint-no-dead-urls
   # https://github.com/remarkjs/remark-lint/blob/main/doc/rules.md
   - [ 'remark-frontmatter', 'yaml' ]
   - [ 'remark-lint-heading-style', 'atx' ]

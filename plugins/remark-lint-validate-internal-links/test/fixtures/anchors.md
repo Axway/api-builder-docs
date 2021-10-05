@@ -12,3 +12,10 @@
 *   Missing duplicated [anchor](/docs/getting_started/getting-started#models-3) with upper cases.
 *   Broken anchor that is comprised with hash only e.g. [anchor](#).
 *   Broken anchor that is comprised with hash only e.g. [anchor](/docs/getting_started/getting-started#).
+*   Valid anchor should not be caught [anchor](/docs/guides#models).
+*   Valid local anchor should not be caught [anchor](#models).
+*   Ignore links like [support@axway.com](mailto:support@axway.com)
+
+## Models
+
+Description about models ...

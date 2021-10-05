@@ -7,9 +7,9 @@ date: 2021-10-01
 
 ## Prerequisites
 
-You should have npm (recommended minimum v6.14.13), and Node.js (recommended minimum v14.17.0 LTS) installed.
+You should have npm (recommended minimum {{% variables/recommended_npm %}}), and Node.js (recommended minimum {{% variables/recommended_node %}}) installed.
 
-{{% variables/apibuilder_prod_name %}} v4 maintains compatibility with a minimum of Node.js v8.9, however, using a version older than v14.17.0 is not recommended. See the [Node.js support policy](/docs/nodejs_support_policy/) for more information.
+{{% variables/apibuilder_prod_name %}} v4 maintains compatibility with a minimum of Node.js {{% variables/minimum_node %}}, however, using a version older than {{% variables/recommended_node %}} is not recommended. See the [Node.js support policy](/docs/nodejs_support_policy/) for more information.
 
 ### Minimum requirements
 
@@ -141,7 +141,7 @@ You can choose which configuration values you want to be configurable from the e
 logLevel: process.env.LOG_LEVEL || 'debug',
 ```
 
-This allows you to create containers for your application that can be configured when the container is started. The PORT is already environmentalized, so if you wish to launch {{% variables/apibuilder_prod_name %}} on a different port, you can set PORT as an environment variable. For example, on Unix:
+This allows you to create containers for your application that can be configured when the container is started. The PORT is already environmentalized, so if you wish to launch {{% variables/apibuilder_prod_name %}} on a different port, you can set PORT as an environment variable. For example, on unix:
 
 ```bash
 // Change port via env

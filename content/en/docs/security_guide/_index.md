@@ -1,9 +1,3 @@
----
-title: Security guide
-linkTitle: Security guide
-weight: 50
-date: 2021-10-01
----
 
 The following document contains important information for managing and maintaining the security of your {{% variables/apibuilder_prod_name %}} service.
 

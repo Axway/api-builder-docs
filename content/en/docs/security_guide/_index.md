@@ -1,17 +1,22 @@
-
+---
+title: Security guide
+linkTitle: Security guide
+weight: 50
+date: 2021-10-01
+---
 The following document contains important information for managing and maintaining the security of your {{% variables/apibuilder_prod_name %}} service.
 
 ## API security
 
-All of the APIs hosted by {{% variables/apibuilder_prod_name %}} are bound to the `/api` prefix by default. This prefix can be controlled by the [apiPrefix](/docs/developer_guide/project/configuration/project_configuration/#apiprefix) configuration option. **All** HTTP requests to **any** API that is bound to the apiPrefix are required to provide credentials (controlled via the [accessControl](/docs/developer_guide/project/configuration/project_configuration/#accessControl) configuration option), no exceptions. If you wish certain API (that are not bound to apiPrefix), to be accessed without credentials, you need to add them to the list of public API within [accessControl](/docs/developer_guide/project/configuration/project_configuration/#accessControl).
+All of the APIs hosted by {{% variables/apibuilder_prod_name %}} are bound to the `/api` prefix by default. This prefix can be controlled by the [apiPrefix](/docs/developer_guide/project/configuration/project_configuration/#apiprefix) configuration option. **All** HTTP requests to **any** API that is bound to the apiPrefix are required to provide credentials (controlled via the [accessControl](/docs/developer_guide/project/configuration/project_configuration/#accesscontrol) configuration option), no exceptions. If you wish certain API (that are not bound to apiPrefix), to be accessed without credentials, you need to add them to the list of public API within [accessControl](/docs/developer_guide/project/configuration/project_configuration/#accesscontrol).
 
-By default, {{% variables/apibuilder_prod_name %}} uses HTTP basic authentication for these APIs, where the username is the [apikey](/docs/developer_guide/project/configuration/project_configuration/#apikey), and the password is empty. This can be configured using the [accessControl](/docs/developer_guide/project/configuration/project_configuration/#accessControl) apiPrefixSecurity configuration option.
+By default, {{% variables/apibuilder_prod_name %}} uses HTTP basic authentication for these APIs, where the username is the [apikey](/docs/developer_guide/project/configuration/project_configuration/#apikey), and the password is empty. This can be configured using the [accessControl](/docs/developer_guide/project/configuration/project_configuration/#accesscontrol) apiPrefixSecurity configuration option.
 
 ## Enabling TLS/SSL
 
 Some users may want to run their APP using [Transport Layer Security](https://en.wikipedia.org/wiki/Transport_Layer_Security) (TLS/SSL). Note that it is not always necessary to run TLS. For example, if your service will run in an environment where TLS is terminated at a gateway, then you would not need to enable TLS. However, if running in an environment where it can be directly accessed by clients that need TLS, then TLS should be enabled. This section requires [OpenSSL](https://www.openssl.org/) and some familiarity with it.
 
-{{% alert title="Note" color="primary" %}}Additional information is available at [Creating an HTTPs server with Node.js](https://contextneutral.com/story/creating-an-https-server-with-nodejs-and-express/?utm=medium) and [NodeJS and SSL](https://stackoverflow.com/questions/30957793/nodejs-ssl-bad-password-read).{{% /alert %}}
+{{% alert title="Note" color="primary" %}}Additional information is available at [Creating an HTTPs server with Node.js](https://nodejs.org/en/knowledge/HTTP/servers/how-to-create-a-HTTPS-server/) and [NodeJS and SSL](https://stackoverflow.com/questions/30957793/nodejs-ssl-bad-password-read).{{% /alert %}}
 
 ### Generate an TLS/SSL certificate
 

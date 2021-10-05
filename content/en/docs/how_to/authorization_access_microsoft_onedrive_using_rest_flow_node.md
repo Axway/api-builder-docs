@@ -231,7 +231,7 @@ Before creating the flow, you need to import the API that will expose your flow.
 
     ![api_doc_lat](/Images/api_doc_lat.png)
 1. Click **+API**.
-1. Import the `onedrive.json` Swagger document. Refer to [Create the onedrive.json Swagger document](#create-the-onedrivejson-swagger-document).
+1. Import the `onedrive.json` Swagger document. Refer to [Create the onedrive.json Swagger document](#create-the-onedrive-json-swagger-document).
 
     ![api_import_lat](/Images/api_import_lat.png)
 1. Click **Save**. This will create the API endpoint in a disabled state, as there is no flow attached to it.

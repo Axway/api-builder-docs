@@ -29,11 +29,11 @@ npm install --no-optional
 
 ## How do I setup {{% variables/apibuilder_prod_name %}} CLI?
 
-Refer to the _Getting started_ section of [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) for more information.
+Refer to the _Getting started_ section of [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/) for more information.
 
 ## How do I create and run an {{% variables/apibuilder_prod_name %}} project?
 
-Refer to the _Getting started_ section of [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) for more information.
+Refer to the _Getting started_ section of [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/) for more information.
 
 ## How do I configure access to the {{% variables/apibuilder_prod_name %}} Admin console?
 
@@ -41,7 +41,7 @@ Refer to the _Configuration_ section of [{{% variables/apibuilder_prod_name %}} 
 
 ## How do I create a model using the {{% variables/apibuilder_prod_name %}} Admin console?
 
-Refer to the _Create a new model_ section of [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started_with_api_builder/) and the _{{% variables/apibuilder_prod_name %}} tabs_ section of [{{% variables/apibuilder_prod_name %}} Console](/docs/developer_guide/console/) for more information.
+Refer to the _Create a new model_ section of [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/) and the _{{% variables/apibuilder_prod_name %}} tabs_ section of [{{% variables/apibuilder_prod_name %}} Console](/docs/developer_guide/console/) for more information.
 
 ## How do I create API endpoints?
 

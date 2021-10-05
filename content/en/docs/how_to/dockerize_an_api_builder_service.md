@@ -25,7 +25,7 @@ These steps and their required prerequisites are described in the following sect
 You need to have the following installed:
 
 1. Docker - The installation of Docker is via a dedicated installer for your specific operating system. For additional Docker installation information, refer to the [Docker documentation](https://docs.docker.com/install/).
-1. {{% variables/apibuilder_prod_name %}} CLI - Refer to [installing {{% variables/apibuilder_prod_name %}}](/docs/getting_started/#InstallAPIB) in the the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/).
+1. {{% variables/apibuilder_prod_name %}} CLI - Refer to [installing {{% variables/apibuilder_prod_name %}}](/docs/getting_started/#install-the-api-builder-cli) in the the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/).
 
 ## Dockerize an {{% variables/apibuilder_prod_name %}} Service
 

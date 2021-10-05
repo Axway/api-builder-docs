@@ -7,8 +7,8 @@ date: 2021-10-01
 
 |     |     |
 | --- | --- |
-| Recommended | v14.17.0 or greater |
-| Minimum | v8.9.0 |
+| Recommended | {{% variables/recommended_node %}} or greater |
+| Minimum | {{% variables/minimum_node %}} |
 
 ## Node.js releases
 
@@ -18,7 +18,7 @@ See [https://nodejs.org/en/about/releases](https://nodejs.org/en/about/releases/
 
 ## Node.js support
 
-{{% variables/apibuilder_prod_name %}} v4 was initially released with compatibility with Node.js v8.9.0. This compatibility will be maintained in every {{% variables/apibuilder_prod_name %}} v4.x release to avoid breaking existing services.
+{{% variables/apibuilder_prod_name %}} v4 was initially released with compatibility with Node.js {{% variables/minimum_node %}}. This compatibility will be maintained in every {{% variables/apibuilder_prod_name %}} v4.x release to avoid breaking existing services.
 
 When Node.js releases are no longer supported, they become vulnerable to current or future security issues since they will not get updated. Beginning with the Jackson release, {{% variables/apibuilder_prod_name %}} no longer recommends the use of any Node.js version which is unmaintained or end of life. Updated services will emit a warning if they are using an unsupported version of Node.js.
 

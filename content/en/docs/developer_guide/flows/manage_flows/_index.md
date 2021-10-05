@@ -28,7 +28,7 @@ To create a flow using the {{% variables/apibuilder_prod_name %}} user interface
 1. Click the **Create Flow** icon for an endpoint. The API Orchestration user interface is displayed, and a Start flow-node is presented in the flow editor panel.
 1. Add flow-nodes to the flow. Refer to the **Add flow-node** instructions in [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/).
 1. Configure the flow-nodes added to the flow. Refer to the **Configure flow-node** instructions in [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/).
-1. Connect the flow-nodes in the flow. Refer to the **Connect flow-nodes** instructions in [Manage Flows](#).
+1. Connect the flow-nodes in the flow. Refer to the **Connect flow-nodes** instructions in [Manage Flows](/docs/developer_guide/flows/manage_flows/).
 1. When the flow is complete, click the **Apply** button. The Flow save caution window is displayed.
 
     {{% alert title="Note" color="primary" %}}Only changes to valid flows can be applied.{{% /alert %}}

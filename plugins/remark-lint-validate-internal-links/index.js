@@ -50,8 +50,9 @@ function validateInternalLinks(tree, file, options = {}) {
 			return;
 		}
 		if (isRelativeRef(ref)) {
-			file.message(`${warnings.usesRelativePath}: ${ref}`, node);
-			cache[ref] = warnings.usesRelativePath;
+			const msg = `${warnings.usesRelativePath}: ${ref}`;
+			file.message(msg, node);
+			cache[ref] = msg;
 			return;
 		}
 		if (isStaticRef(ref)) {
@@ -66,7 +67,7 @@ function validateInternalLinks(tree, file, options = {}) {
 			}) || (cache[ref] = warnings.valid);
 			return;
 		}
-		if (isDocRef(ref)) {
+		if (!hasAnchor(ref)) {
 			if (warnOnMissingStartingSlash(file, node, ref)) {
 				return;
 			}
@@ -104,8 +105,9 @@ function validateInternalLinks(tree, file, options = {}) {
 function warnOnUpperCase(file, node, ref) {
 	// Paths with upper cases are not working
 	if (hasUpperCase(ref)) {
-		file.message(`${warnings.usesUpperCase}: ${ref}`, node);
-		cache[ref] = warnings.usesUpperCase;
+		const msg = `${warnings.usesUpperCase}: ${ref}`;
+		file.message(msg, node);
+		cache[ref] = msg;
 		return true;
 	}
 }
@@ -113,16 +115,18 @@ function warnOnUpperCase(file, node, ref) {
 function warnOnExtension(file, node, ref) {
 	// Extensions are not wanted
 	if (ref.endsWith('.md') || ref.endsWith('.md/')) {
-		file.message(`${warnings.usesFileExtension}: ${ref}`, node);
-		cache[ref] = warnings.usesFileExtension;
+		const msg = `${warnings.usesFileExtension}: ${ref}`;
+		file.message(msg, node);
+		cache[ref] = msg;
 		return true;
 	}
 }
 
 function warnOnMissingStartingSlash(file, node, ref) {
 	if (!ref.startsWith('/')) {
-		file.message(`${warnings.missingDoc}: ${ref}`, node);
-		cache[ref] = warnings.missingDoc;
+		const msg = `${warnings.missingDoc}: ${ref}`;
+		file.message(msg, node);
+		cache[ref] = msg;
 		return true;
 	}
 }
@@ -135,6 +139,10 @@ function verifyAnchor(file, node, ref) {
 		anchorFound = false;
 		filePath = join(projectRoot, file.path);
 		anchor = ref.slice(1);
+		// Optimise for empty anchors e.g. '#'
+		if (isEmptyAnchor(file, node, anchor)) {
+			return;
+		}
 		const doc = getFile({ file, node, ref, filePath });
 		const tree = fromMarkdown(doc);
 		slugger.reset();
@@ -143,8 +151,9 @@ function verifyAnchor(file, node, ref) {
 		if (availableAnchors.includes[anchor]) {
 			cache[ref] = warnings.valid;
 		} else {
-			file.message(`${warnings.missingAnchor}: ${ref}`, node);
-			cache[ref] = warnings.missingAnchor;
+			const msg = `${warnings.missingAnchor}: ${ref}`;
+			file.message(msg, node);
+			cache[ref] = msg;
 		}
 		return;
 	}
@@ -154,6 +163,9 @@ function verifyAnchor(file, node, ref) {
 	const parts = ref.split('#');
 	filePath = parts[0];
 	anchor = parts[1];
+	if (isEmptyAnchor(file, node, anchor)) {
+		return;
+	}
 	if (warnOnUpperCase(file, node, filePath)) {
 		return;
 	}
@@ -172,24 +184,28 @@ function verifyAnchor(file, node, ref) {
 		if (availableAnchors.includes(anchor)) {
 			cache[ref] = warnings.valid;
 		} else {
-			file.message(`${warnings.missingAnchor}: ${ref}`, node);
-			cache[ref] = warnings.missingAnchor;
+			const msg = `${warnings.missingAnchor}: ${ref}`;
+			file.message(msg, node);
+			cache[ref] = msg;
 		}
 	}
 	function compare(currentNode) {
 		// Here we get the current node from AST which holds the heading value but
 		// it is the original one with spaces and upper case in the beginning.
-		// The references are with lower cases only and dashes instead of spaces
-		// to be URL friendly. So we do transform what we get as heading value in
-		// order to do proper comparison.			
-		const refAnchor
-			= currentNode.children[0].value.toLowerCase().replace(' ', '-');
-		
-		availableAnchors.push(slugger.slug(refAnchor));	
-		if (refAnchor === anchor) {
-			anchorFound = true;
-			return false; //found so break the loop
-		}
+		// The references are URL friendly so we do transform using github-slugger
+		// module, collect all transformed anchors. Later when this loops end
+		// we compare if the anchors we search is present or not.
+		const heading = currentNode.children[0].value;
+		availableAnchors.push(slugger.slug(heading));
+	}
+}
+
+function isEmptyAnchor(file, node, anchor) {
+	if (anchor === '') {
+		const msg = `${warnings.missingAnchor}: #`;
+		file.message(msg, node);
+		cache['#'] = msg;
+		return true;
 	}
 }
 
@@ -197,8 +213,8 @@ function isExternalPageRef(ref) {
 	return ref.startsWith('http');
 }
 
-function isDocRef(ref) {
-	return !/#/g.test(ref);
+function hasAnchor(ref) {
+	return /#/g.test(ref);
 }
 
 function hasUpperCase(ref) {
@@ -226,8 +242,9 @@ function getFile(config) {
 		doc = readFileSync(filePath);
 	} catch (err) {
 		log(err);
-		file.message(`${warnings.missingDoc}: ${filePath}`, node);
-		cache[ref] = warnings.missingDoc;
+		const msg = `${warnings.missingDoc}: ${filePath}`;
+		file.message(msg, node);
+		cache[ref] = msg;
 	}
 	return doc;
 }
@@ -237,8 +254,9 @@ function addWarningIfFileIsMissing(config) {
 	if ( staticFile ) {
 		const filePath = join(projectRoot, staticRoot, ref);
 		if (isFileMissing(filePath)) {
-			file.message(`${warnings.missingStaticFile}: ${filePath}`, node);
-			cache[ref] = warnings.missingStaticFile;
+			const msg = `${warnings.missingStaticFile}: ${filePath}`;
+			file.message(msg, node);
+			cache[ref] = msg;
 			return true;
 		};
 	} else {
@@ -248,8 +266,9 @@ function addWarningIfFileIsMissing(config) {
 		// a directory which means we have to check for _index.md file in that
 		// directory.
 		if (isFileMissing(filePath) && isFileMissing(indexFilePath)) {
-			file.message(`${warnings.missingDoc}: ${ref}`, node);
-			cache[ref] = warnings.missingDoc;
+			const msg = `${warnings.missingDoc}: ${ref}`;
+			file.message(msg, node);
+			cache[ref] = msg;
 			return true;
 		}
 	}

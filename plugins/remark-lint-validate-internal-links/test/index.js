@@ -20,7 +20,7 @@ describe('remark-lint-validate-internal-links', () => {
 				.use(lintRule)
 				.process(readSync('anchors.md'))
 		).messages.map(warnObj => String(warnObj));
-		expect(warnings.length).to.equal(6);
+		expect(warnings.length).to.equal(8);
 		warnings.forEach(warning => { expect(warning).to.include(warningMessages.missingAnchor); });
 	});
 

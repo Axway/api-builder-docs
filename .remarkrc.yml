@@ -1,12 +1,11 @@
 plugins:
   - preset-lint-recommended
   - remark-preset-lint-markdown-style-guide
-  # - remark-validate-links
-  # - ['remark-lint-no-dead-urls', {
-  #       'gotOptions': {
-  #         'baseUrl': 'http://localhost:1313/'
-  #       }
-  #   }]
+  - [ remark-lint-validate-internal-links, {
+      docsRoot: 'content/en',
+      staticRoot: 'static'
+    }]
+  - remark-lint-no-dead-urls
   # https://github.com/remarkjs/remark-lint/blob/main/doc/rules.md
   - [ 'remark-frontmatter', 'yaml' ]
   - [ 'remark-lint-heading-style', 'atx' ]

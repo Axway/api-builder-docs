@@ -1,0 +1,1 @@
+*   Link to non-existent image ![non-existent image](/Images/foo.png).

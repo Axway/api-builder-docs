@@ -1,17 +1,13 @@
-'use strict';
-
-const log = require('debug')('remark-lint:heading-sentence-case');
-const position = require('unist-util-position');
-const rule = require('unified-lint-rule');
-const visit = require('unist-util-visit');
-
-const { start } = position;
+import debugModule from 'debug';
+const log = new debugModule('remark-lint:heading-sentence-case');
+import { pointStart } from 'unist-util-position';
+import { lintRule } from 'unified-lint-rule';
+import { visit } from 'unist-util-visit';
 // a list of strings that are always okay.  enhancements could include lists
 // of countries, etc.
-const DEFAULT_ALLOW = [
-];
+const DEFAULT_ALLOW = [];
 
-module.exports = rule('remark-lint:heading-sentence-case', checkSentenceCase);
+export default lintRule('remark-lint:heading-sentence-case', checkSentenceCase);
 
 function cleanNonASCII(value) {
 	return value.replace(/([^A-Z0-9 ])/ig, '');
@@ -87,39 +83,11 @@ function checkSentenceCase(tree, file, allowedStrings) {
 			return;
 		}
 
-		const depth = node.depth;
-
-        // Hugo uses the docs' title from the metadata to create an h1. We would
+		// Hugo uses the docs' title from the metadata to create an h1. We would
         // like to avoid having any h1 headings.
-        if (depth === 1) {
-			file.message('We should not use headings with h1', node);
+        if (node.depth === 1) {
+			file.message('Headings must be depth 2 or greater', node);
         }
-
-		if (previous) {
-			/*
-			This is where it gets a bit funky - We can't have h1 headings due to the above. However,
-			the heading decrease is not as straightforward to be linted. For example in our case
-			going back to h2 at any point should be allowed:
-				h2.
-				h3.
-				h4.
-
-				h2. - should be allowed, as we are basically starting a new "chapter".
-
-			However the following should not be:
-				h2.
-				h3.
-				h4.
-				h5.
-
-				h3 - should not be allowed.
-			*/
-			if (depth !== 2 && depth < previous - 1){
-				file.message( 'Heading levels should decrease by one level at a time', node)
-			}
-		}
-
-		previous = depth;
 
 		const { value } = node.children[0];
 
@@ -128,7 +96,7 @@ function checkSentenceCase(tree, file, allowedStrings) {
 			...DEFAULT_ALLOW
 		];
 		if (!isSentenceCase(value, allAllowed)) {
-			const initial = start(node).offset;
+			const initial = pointStart(node).offset;
 			file.message(`Heading is not sentence case: "${value}"`, node.position);
 		}
 	});

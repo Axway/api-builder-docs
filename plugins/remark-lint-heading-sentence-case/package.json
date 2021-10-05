@@ -2,13 +2,15 @@
 	"name": "remark-lint-heading-sentence-case",
 	"version": "1.0.0",
 	"description": "Check for heading sentence case",
+	"type": "module",
 	"main": "index.js",
 	"scripts": {
-		"test": "mocha test.js"
+		"test": "mocha test.js",
+		"check:modules": "npx npm-check"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Trott/remark-lint-prohibited-strings.git"
+		"url": "git+https://github.com/Axway/apibuilderPOC-open-docs.git"
 	},
 	"keywords": [
 		"remark",
@@ -17,57 +19,23 @@
 		"md",
 		"strings"
 	],
-	"author": "Rich Trott",
+	"author": "Axway",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/Trott/remark-lint-prohibited-strings/issues"
+		"url": "https://github.com/Axway/apibuilderPOC-open-docs/issues"
 	},
-	"homepage": "https://github.com/Trott/remark-lint-prohibited-strings#readme",
+	"homepage": "https://github.com/Axway/apibuilderPOC-open-docs#readme",
 	"dependencies": {
 		"debug": "^4.3.2",
-		"escape-string-regexp": "^4.0.0",
-		"unified-lint-rule": "^1.0.2",
-		"unist-util-position": "^3.1.0",
-		"unist-util-visit": "^2.0.0",
-		"vfile-location": "^3.0.1"
+		"unist-util-position": "^4.0.1",
+		"unified-lint-rule": "^2.1.0",
+		"unist-util-visit": "^4.1.0"
 	},
 	"devDependencies": {
-		"@semantic-release/changelog": "^5.0.1",
-		"@semantic-release/git": "^9.0.0",
-		"c8": "^7.0.0",
 		"chai": "^4.3.4",
+		"remark": "^14.0.1",
+		"vfile": "^5.0.1",
 		"mocha": "^9.1.0",
-		"remark": "^13.0.0",
-		"remark-lint": "^8.0.0",
-		"semantic-release": "^17.2.1",
-		"standard": "^16.0.0",
-		"tape": "^5.0.0",
-		"vfile": "^4.0.1"
-	},
-	"release": {
-		"branches": [
-			"main"
-		],
-		"plugins": [
-			"@semantic-release/commit-analyzer",
-			"@semantic-release/release-notes-generator",
-			[
-				"@semantic-release/changelog",
-				{
-					"changelogFile": "CHANGELOG"
-				}
-			],
-			"@semantic-release/npm",
-			[
-				"@semantic-release/git",
-				{
-					"assets": [
-						"CHANGELOG",
-						"package.json"
-					],
-					"message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-				}
-			]
-		]
+		"remark-lint": "^9.1.0"
 	}
 }

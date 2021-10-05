@@ -73,10 +73,10 @@ If you have not already done it, save your application.
 Create an example application:
 
 ```bash
-$ npx @axway/api-builder init onedrive-example
-$ cd onedrive-example
-$ npm install --no-optional
-$ node .
+npx @axway/api-builder init onedrive-example
+cd onedrive-example
+npm install --no-optional
+node .
 ```
 
 Your service is now running and is accessible on `http://localhost:8080/console`.

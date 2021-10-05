@@ -167,7 +167,7 @@ The following variable placeholder is used in this section:
 
 | Variable Placeholder | Description |
 | --- | --- |
-| `<IMAGE_NAME>` | This is your chosen docker image name. For example: `myservice`<br /><br />Docker uses this name to create the Docker image for the service.<br /><br />After the creation of the image, the **docker image ls** command should show an image with the created image name in the list of available images on your machine. |
+| `<IMAGE_NAME>` | This is your chosen Docker image name. For example: `myservice`<br /><br />Docker uses this name to create the Docker image for the service.<br /><br />After the creation of the image, the **docker image ls** command should show an image with the created image name in the list of available images on your machine. |
 
 ### Step 4: Run the Docker Container and Access the Service
 
@@ -179,7 +179,7 @@ The following variable placeholder is used in this section:
 
 Next, we will show two approaches to run the Docker container.
 
-Use the first approach if you don't want to map ports on your host machine and the second approach if you want to access the service as if it is running on your localhost.
+Use the first approach if you do not want to map ports on your host machine and the second approach if you want to access the service as if it is running on your localhost.
 
 #### Approach 1: Running Docker Container - Plain
 
@@ -234,8 +234,8 @@ The following variable placeholders are used in this section:
 
 | Variable Placeholder | Description |
 | --- | --- |
-| `<IMAGE_NAME>` | This is the name of the docker image specified by you in the previous step. |
-| `<CONTAINER_NAME>` | This is your chosen docker container name. For example: `mycontainer`<br /><br />Docker will use this name to run a container based on the Docker image specified with `<IMAGE_NAME>`. |
+| `<IMAGE_NAME>` | This is the name of the Docker image specified by you in the previous step. |
+| `<CONTAINER_NAME>` | This is your chosen Docker container name. For example: `mycontainer`<br /><br />Docker will use this name to run a container based on the Docker image specified with `<IMAGE_NAME>`. |
 | `<API_KEY>` | Must be replaced with the value of the apiKey property specified in **<SERVICE_FOLDER>/conf/default.js** file. |
 | `<IP_ADDRESS>` | Should be replaced with the value returned by the command: `docker inspect <CONTAINER_NAME> | grep '"IPAddress"' | head -n 1` |
 | `<PORT>` | 8080 if not overridden. |
@@ -274,8 +274,8 @@ The following variable placeholders are used in this section:
 
 | Variable Placeholder | Description |
 | --- | --- |
-| `<IMAGE_NAME>` | This is the name of the docker image name specified by you in the previous step. |
-| `<CONTAINER_NAME>` | This is your chosen docker container name. For example: `mycontainer`<br /><br />Docker will use this name to run a container based on the Docker image specified with `<IMAGE_NAME>`. |
+| `<IMAGE_NAME>` | This is the name of the Docker image name specified by you in the previous step. |
+| `<CONTAINER_NAME>` | This is your chosen Docker container name. For example: `mycontainer`<br /><br />Docker will use this name to run a container based on the Docker image specified with `<IMAGE_NAME>`. |
 | `<API_KEY>` | Must be replaced with the value of the apiKey property specified in **<SERVICE_FOLDER>/conf/default.js** file |
 
 ### Step 5: Accessing your service documentation

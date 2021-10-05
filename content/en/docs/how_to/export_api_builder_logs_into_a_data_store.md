@@ -124,7 +124,7 @@ docker run --log-driver=splunk --log-opt splunk-token=VALUE --log-opt splunk-url
 
 The Splunk HTTP Event Collector (HEC) enables you to send data to Splunk Enterprise and Splunk Cloud. HEC lets you send data, application logs, and metrics over HTTP (or HTTPS) directly to Splunk Enterprise or Splunk Cloud from your application. HEC operates with tokens, which means you do not need to embed Splunk Enterprise or Splunk Cloud credentials in your application or supporting files.
 
-{{% alert title="Note" color="primary" %}}Additional information is available at: [How HTTP Event Collector works](https://docs.splunk.com/Documentation/Splunk/7.1.0/Data/AboutHEC), [Overview of Splunk logging for JavaScript and Bunyan stream for HTTP Event Collector](http://dev.splunk.com/view/splunk-logging-javascript/SP-CAAAE6U) and [Splunk-javascript-logging](https://github.com/splunk/splunk-javascript-logging).{{% /alert %}}
+{{% alert title="Note" color="primary" %}}Additional information is available at: [How HTTP Event Collector works](https://docs.splunk.com/Documentation/Splunk/7.1.0/Data/AboutHEC), [Overview of Splunk logging for JavaScript and Bunyan stream for HTTP Event Collector](http://dev.splunk.com/view/splunk-logging-javascript/SP-CAAAE6U) and [Splunk-JavaScript-logging](https://github.com/splunk/splunk-javascript-logging).{{% /alert %}}
 
 ### Setup Splunk server
 

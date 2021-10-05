@@ -50,7 +50,7 @@ It is strongly recommended you upgrade {{% variables/apibuilder_prod_name %}} to
 
 Upgrading to the latest does not automatically enable the new behavior on pre-existing services. To enable the behavior there, add the following setting to your `default.js` file.
 
-```json
+```javascript
 flags: {
     enableModelsWithNoPrimaryKey: true
 }

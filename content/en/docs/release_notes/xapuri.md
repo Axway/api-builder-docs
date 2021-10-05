@@ -19,7 +19,7 @@ Hide_readingtime: true
 ## Release notes
 
 * #5891: The UI now renders a specialized javascript editor with syntax highlighting for Flow-Node parameters which are defined with `"format": "javascript"` and `"type": "string"` in their schema.
-* #5891: Flow-nodes now support defining wrapper text for `multiline` and `javascript` format parameters. The wrapper text is displayed in the parameter editor but will not be part of the value when saved in the flow. This is useful for when context or comments are needed. For more information, refer to [Flow-nodes](/docs/developer_guide/flows/flow-nodes/).
+* #5891: Flow-nodes now support defining wrapper text for `multiline` and `javascript` format parameters. The wrapper text is displayed in the parameter editor but will not be part of the value when saved in the flow. This is useful for when context or comments are needed. For more information, refer to [Flow-nodes](/docs/developer_guide/flows/flow_nodes/).
 * #5922: Previously, the example body that was shown when testing Endpoints could be incorrect and include schema snippets such as `$ref` or `anyOf`. Now, the example will better represent the expected body and will not include these schema snippets.
 
 ## Updated modules

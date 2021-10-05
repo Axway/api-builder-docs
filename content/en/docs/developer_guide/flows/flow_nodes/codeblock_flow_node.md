@@ -5,7 +5,7 @@ weight: 30
 date: 2021-10-01
 ---
 
-{{% alert title="Caution" color="danger" %}}Beginning with the [Cairo](/docs/deprecations/) release, Codeblocks are deprecated \[[D028](/docs/deprecations/#D028)\] and will be removed in a future version of the product.{{% /alert %}}
+{{% alert title="Caution" color="danger" %}}Beginning with the [Cairo](/docs/release_notes/cairo) release, Codeblocks are deprecated {{% deprecation/link D028 %}} and will be removed in a future version of the product.{{% /alert %}}
 
 This document describes a Codeblock flow-node and provides information on Codeblock flow-node.
 

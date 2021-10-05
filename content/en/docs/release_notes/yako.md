@@ -20,7 +20,8 @@ Hide_readingtime: true
 * #5912: Fix lodash.merge prototype pollution
 * #5920: Update .dockerignore file with .git and coverage
 * #5954: Modifying outputs in the Flow Editor causes value to change to "jsonpath"
-* #5957: vulnerability
+* #5957: Fix marked Regular Expression Denial of Service (ReDoS) vulnerability
+
 
 ## Release notes
 

@@ -22,7 +22,7 @@ date: 2021-10-01
 * Uninstall dependencies that you are not using. These add to bloat, make your application bigger, and slower to install.
 * Use security tools such as [npm audit](https://docs.npmjs.com/cli/v6/commands/npm-audit) to ensure your dependencies do not contain any vulnerabilities. {{% variables/apibuilder_prod_name %}} uses [WhiteSource](https://www.whitesourcesoftware.com/) (CVE monitoring), [npm audit](https://docs.npmjs.com/cli/v7/commands/npm-audit) (CVE monitoring), [AppSpider](https://www.rapid7.com/products/appspider/) (web security), [sonarqube](https://www.sonarqube.org/) (for code quality and security), and [Fortify](https://en.wikipedia.org/wiki/Fortify_Software) (for static code analysis).
 * Use [package-lock](https://docs.npmjs.com/cli/v6/configuring-npm/package-lock-json) or [shrinkwrap](https://docs.npmjs.com/cli/v6/commands/npm-shrinkwrap) when developing to ensure the same dependency tree. This will be created by default in up-to-date versions of npm.
-* If using package-lock then you should use the [npm ci](https://docs.npmjs.com/cli/v6/commands/npm-ci) command instead of [npm install](https://docs.npmjs.com/cli/v6/commands/npm-install) in docker or for faster installation.
+* If using package-lock then you should use the [npm ci](https://docs.npmjs.com/cli/v6/commands/npm-ci) command instead of [npm install](https://docs.npmjs.com/cli/v6/commands/npm-install) in Docker or for faster installation.
 
 ## Decide your architecture
 
@@ -34,7 +34,7 @@ For this reason, you need to decide which architecture is best suited for your c
 
 * [RESTful architecture](https://restfulapi.net/rest-architectural-constraints/)
 * [Asynchronous REST API](https://aws.amazon.com/blogs/architecture/managing-asynchronous-workflows-with-a-rest-api/)
-* [Event-driven architecture](https://en.wikipedia.org/wiki/Event-driven_architecture) using f[low-triggers](/docs/developer_guide/flows/flow-triggers/) and a message queue plugin, such as [Solace](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-solace) or [Kafka](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-kafka).
+* [Event-driven architecture](https://en.wikipedia.org/wiki/Event-driven_architecture) using [flow-triggers](/docs/developer_guide/flows/flow_triggers) and a message queue plugin, such as [Solace](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-solace) or [Kafka](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-kafka).
 
 ## Configuring and securing your application
 
@@ -46,7 +46,7 @@ For this reason, you need to decide which architecture is best suited for your c
 
 ## Design and develop
 
-Each time you [create a new {{% variables/apibuilder_prod_name %}} project](/docs/getting_started/), and run "npm install", you will pull the latest of our software, and the modules on which we depend. This ensures that you have all the latest features and security updates before you design your {{% variables/apibuilder_prod_name %}} service. Your service should be a microservice, and kept as small as possible (see [Microservice Design Ideals](https://www.infoq.com/articles/microservices-design-ideals/)). During development, you will design your flows, and undoubtedly add [flow-node](/docs/developer_guide/flows/flow-nodes/) plugins, or [flow-trigger](/docs/developer_guide/flows/flow-triggers/) plugins.
+Each time you [create a new {{% variables/apibuilder_prod_name %}} project](/docs/getting_started/), and run "npm install", you will pull the latest of our software, and the modules on which we depend. This ensures that you have all the latest features and security updates before you design your {{% variables/apibuilder_prod_name %}} service. Your service should be a microservice, and kept as small as possible (see [Microservice Design Ideals](https://www.infoq.com/articles/microservices-design-ideals/)). During development, you will design your flows, and undoubtedly add [flow-node](/docs/developer_guide/flows/flow_nodes) plugins, or [flow-trigger](/docs/developer_guide/flows/flow_triggers) plugins.
 
 During development, you should follow our [Best Practices Guide](#), and [Security Guide](/docs/security_guide/). It is important to develop a robust set of unit-tests (see ./tests for examples of how to write [mocha](https://mochajs.org/) tests) to ensure that your application is also compatible with the systems on which it depends, and those systems that also depend on it. This is key to the start of a healthy lifecycle as it enables you to confidently accept important updates and fixes.
 
@@ -59,7 +59,7 @@ During development, follow these general principles:
 * Decide on an API development strategy. {{% variables/apibuilder_prod_name %}} supports API first with drag-and-drop flow-nodes (the recommended approach), [model](/docs/developer_guide/models/create/) approach (connecting to a DB and generating a rich CRUD API from existing tables and views), or a custom API approach (write a pure JS API, but we would advise against this approach).
 * If using API first approach, employ [Axway's API first philosophy](https://docs.axway.com/bundle/APIManagement_tutorial_allOS_en_HTML5/page/Content/tutorial/APIfirst.htm). This ensures that you design your API to suit the customer. {{% variables/apibuilder_prod_name %}} supports [Swagger 2.0 API definitions](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md) as the front-end API to your application. These can be used to define a rich customer-facing API documentation. Once defined, you can bind [Flows](https://wiki.appcelerator.org/display/guides2/Manage+Flows) to the existing Endpoints and use our drag-and-drop flow editor to implement your API.
 * From the UI, you can find many {{% variables/apibuilder_prod_name %}} plugins on **Plugins** page. These extend the capabilities of {{% variables/apibuilder_prod_name %}}. Be sure to check the available plugins for functionality before attempting to write your own implementation.
-* If you cannot find the capabilities you need on our **Plugins** page, you have a choice: use the [JavaScript flow-node](/docs/developer_guide/flows/flow-nodes/javascript_flow-node/) if it is a relatively simple fragment or if you need to produce a template, or use the [{{% variables/apibuilder_prod_name %}} SDK](/docs/developer_guide/sdk/) to write a custom flow-node that can be reused between your {{% variables/apibuilder_prod_name %}} services.
+* If you cannot find the capabilities you need on our **Plugins** page, you have a choice: use the [JavaScript flow-node](/docs/developer_guide/flows/flow_nodes/javascript_flow_node/) if it is a relatively simple fragment or if you need to produce a template, or use the [{{% variables/apibuilder_prod_name %}} SDK](/docs/developer_guide/sdk/) to write a custom flow-node that can be reused between your {{% variables/apibuilder_prod_name %}} services.
 * We recommend that you connect to external services using Swagger 2.0 and OAS 3.0 using our [@axway/api-builder-plugin-fn-swagger](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger) flow-node.
 * When implementing your Flows, ensure all outputs are handled (e.g. **Error**).
 * We recommend that you implement your API to be as fast as possible. If API calls take too long, these can tie up resources and lead to unexpected timeouts.
@@ -67,7 +67,7 @@ During development, follow these general principles:
 
 ## Custom flow-node development
 
-When writing code for the [JavaScript flow-node](/docs/developer_guide/flows/flow-nodes/javascript_flow-node/), or writing a custom flow-node using our [SDK](/docs/developer_guide/sdk/), we recommend the following:
+When writing code for the [JavaScript flow-node](/docs/developer_guide/flows/flow_nodes/javascript_flow_node/), or writing a custom flow-node using our [SDK](/docs/developer_guide/sdk/), we recommend the following:
 
 * Learn [JavaScript](https://developer.mozilla.org/en-US/docs/Web/Tutorials) and Node.js. Note that JavaScript in web browsers has differences compared to Node.js which has a slightly different API.
 * Use [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web) (MDN) for your JavaScript reference as it is a complete/accurate resource.
@@ -97,11 +97,11 @@ When writing code for the [JavaScript flow-node](/docs/developer_guide/flows/flo
 
 * Log at ERROR or INFO level only.
 * [Secured with TLS](/docs/security_guide/) or SSL termination (depending on deployment architecture).
-* Use [docker](https://docs.docker.com/get-started/) to [containerize your application](/docs/how_to/dockerize_an_api_builder_service/)[.](/docs/how_to/dockerize_an_api_builder_service/)
+* Use [Docker](https://docs.docker.com/get-started/) to [containerize your application](/docs/how_to/dockerize_an_api_builder_service/)[.](/docs/how_to/dockerize_an_api_builder_service/)
 * Use security tools to scan your containers to ensure they do not have open ports or security vulnerabilities.
 * Use npm install with the `--production` flag.
 * Use [kubernetes](https://kubernetes.io/) for [scaling](https://kubernetes.io/blog/2016/07/autoscaling-in-kubernetes/), and [auto-healing](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-lifetime).
-* We recommend you use docker and not run as a stand-alone service (e.g. as opposed to running on a VM) so that it can be managed and scaled efficiently.
+* We recommend you use Docker and not run as a stand-alone service (e.g. as opposed to running on a VM) so that it can be managed and scaled efficiently.
 * We recommend that you use [API Central](https://www.axway.com/en/platform/central) if you need to expose your service to the Internet.
 * Set [NODE_ENV=production](https://expressjs.com/en/advanced/best-practice-performance.html) in the environment for security and performance.
 
@@ -119,6 +119,6 @@ Every two weeks, {{% variables/apibuilder_prod_name %}} releases new features, p
 
 For these reasons, to maintain a healthy service, it is important to update your services regularly.
 
-* Use the latest, fully patched version of node that we support (see our [Getting Started Guide](/docs/getting_started/) and [{{% variables/apibuilder_prod_name %}} Node.js support policy](/docs/nodejs_support_policy/) for version restrictions).
+* Use the latest, fully patched version of node that we support (see our [Getting Started Guide](/docs/getting_started) and [{{% variables/apibuilder_prod_name %}} Node.js support policy](/docs/nodejs_support_policy) for version restrictions).
 * Keep your dependencies up to date with their latest patches.
-* Every two weeks, Axway {{% variables/apibuilder_prod_name %}} releases new features, patches, and security fixes. You should keep an eye on our [Release Notes](/docs/release_notes/), our list of [Deprecations](/docs/deprecations/), and our [Updates](/docs/updates/). Keep abreast of the updates to ensure your application will be compatible with any change(s) that may be introduced. Occasionally, you may want to incorporate these security updates and fixes into your application.
+* Every two weeks, Axway {{% variables/apibuilder_prod_name %}} releases new features, patches, and security fixes. You should keep an eye on our [Release Notes](/docs/release_notes), our list of [Deprecations](/docs/deprecations), and our [Updates](/docs/updates). Keep abreast of the updates to ensure your application will be compatible with any change(s) that may be introduced. Occasionally, you may want to incorporate these security updates and fixes into your application.

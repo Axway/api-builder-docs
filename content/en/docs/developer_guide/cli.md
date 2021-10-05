@@ -31,7 +31,7 @@ We recommend always keeping the {{% variables/apibuilder_prod_name %}} CLI up-to
 axway pm update
 ```
 
-{{% alert title="Note" color="primary" %}}If you are currently using the `amplify` command, the Amplify CLI has been [deprecated](https://docs.axway.com/bundle/Axway_CLI_allOS_en/page/axway_cli.html#AxwayCLI-UpgradingfromAMPLIFYCLI) and replaced with the [Axway CLI](https://docs.axway.com/bundle/axwaycli-open-docs/page/docs/index.html). You can run the commands on this page to re-install the {{% variables/apibuilder_prod_name %}} CLI with the `axway` command.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}If you are currently using the `amplify` command, the Amplify CLI has been [deprecated](https://docs.axway.com/bundle/axwaycli-open-docs/page/docs/quick_start/index.html#upgrading-from-amplify-cli) and replaced with the [Axway CLI](https://docs.axway.com/bundle/axwaycli-open-docs/page/docs/index.html). You can run the commands on this page to re-install the {{% variables/apibuilder_prod_name %}} CLI with the `axway` command.{{% /alert %}}
 
 ## Logging into the {{% variables/platform_prod_name %}}
 

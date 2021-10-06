@@ -1,4 +1,4 @@
-import { accessSync, constants, readFileSync } from 'fs';
+import { accessSync, constants, readFileSync, readdirSync } from 'fs';
 import { join, extname } from 'path';
 import { lintRule } from 'unified-lint-rule';
 import { visit } from 'unist-util-visit';
@@ -8,30 +8,60 @@ import debugModule from 'debug';
 import GithubSlugger from 'github-slugger';
 
 const log = new debugModule('remark-lint:validate-internal-links');
+
+// This regex is used for finding hugo variables in the headings. It is somewhat
+// limited since we could have another type of parameters refered with <% text %>
+// we well as spaces in the variables e.g. {{% deprecation/link D042 %}}.
+// If we have heading in mypage.md:  ## My heading is {{% deprecation/link D042 %}}
+// It will be displayed as: ## My heading is [D042](/docs/deprecations#D042)
+// It needs to be referred as: /docs/mypage#my-heading-is-D042. Another caveat
+// is that the html files that represent variables could contain something more
+// complex than a simple string.
+//
+// REFACTOR: If we hit an edge case consider removing the current mechanism
+// (see loadHugoVariables) and  replace it with simple plugin configuration:
+// replace: {
+//	"{{% variables/api-builder-product-name %}}": "API Builder"
+// }
+const regex = /{{% [a-z/_]* %}}/;
 const slugger = new GithubSlugger();
 let availableAnchors = []
 
-let projectRoot;
-let docsRoot;
-let staticRoot;
-let staticFilesExtensions;
-let ignoreLinksThatStartWith;
+const pluginConfig = {
+	projectRoot: null,
+	docsRoot: 'content/en',
+	staticRoot: 'static',
+	staticFilesExtensions: ['.json', '.js', '.yaml', '.sh', '.html', '.zip'],
+	ignoreLinksThatStartWith: ['mailto', 'http'],
+	hugoShortcodesDirectory: 'layouts/shortcodes/variables',
+	hugoVariables: {}
+}
 
 /**
- * The cache has the following structure => reference: warning.
- * Valid references have "warnings.valid" values.
+ * The cache has the following structure => reference: warning. Valid references
+ * have "warnings.valid" values. The purpose of the caches is to skip checking
+ * links that already have been checked.
+ * 
+ * REFACTOR: The cache could be improved with storing the collected information
+ * for files and their headings. Such information could be reused in
+ * validateAnchors function.
  */
 const cache = {};
 
 export default lintRule("remark-lint:validate-internal-links", validateInternalLinks);
 
 function validateInternalLinks(tree, file, options = {}) {
-	projectRoot = file.cwd;
-	docsRoot = options.docsRoot || 'content/en';
-	staticRoot = options.staticRoot || 'static';
-	staticFilesExtensions = options.staticFilesExtensions
-		|| ['.json', '.js', '.yaml', '.sh', '.html', '.zip'];
-	ignoreLinksThatStartWith = options.ignoreLinksThatStartWith || ['mailto'];
+	pluginConfig.projectRoot = file.cwd;
+	pluginConfig.docsRoot = options.docsRoot || pluginConfig.docsRoot;
+	pluginConfig.staticRoot = options.staticRoot || pluginConfig.staticRoot;
+	pluginConfig.staticFilesExtensions =
+		options.staticFilesExtensions || pluginConfig.staticFilesExtensions;
+	pluginConfig.ignoreLinksThatStartWith =
+		options.ignoreLinksThatStartWith || pluginConfig.ignoreLinksThatStartWith;
+	pluginConfig.hugoShortcodesDirectory =
+		options.hugoShortcodesDirectory || pluginConfig.hugoShortcodesDirectory;
+	
+	loadHugoVariables();
 
 	visit(tree, "link", verifyLinks);
 	visit(tree, "image", verifyImages);
@@ -49,15 +79,10 @@ function validateInternalLinks(tree, file, options = {}) {
 			file.message(cache[ref], node);
 			return;
 		}
-		for (const pattern of ignoreLinksThatStartWith) {
+		for (const pattern of pluginConfig.ignoreLinksThatStartWith) {
 			if (ref.startsWith(pattern)) {
 				return;
 			}
-		}
-		if (isExternalPageRef(ref)) {
-			log(`${ref} is handled with "no-dead-urls" from remark-lint-no-dead-urls`);
-			cache[ref] = warnings.valid;
-			return;
 		}
 		if (isRelativeRef(ref)) {
 			const msg = `${warnings.usesRelativePath}: ${ref}`;
@@ -147,14 +172,14 @@ function verifyAnchor(file, node, ref) {
 	let anchor;
 	if (isLocalAnchorRef(ref)) {
 		anchorFound = false;
-		filePath = join(projectRoot, file.path);
+		filePath = join(pluginConfig.projectRoot, file.path);
 		anchor = ref.slice(1);
 		// Optimise for empty anchors e.g. '#'
 		if (isEmptyAnchor(file, node, anchor)) {
 			return;
 		}
 		// We are reading the file that we currently process so it does exists.
-		const doc = getFile({ file, node, ref, filePath });
+		const doc = getFile(filePath);
 		const tree = fromMarkdown(doc);
 		slugger.reset();
 		availableAnchors = [];
@@ -184,11 +209,11 @@ function verifyAnchor(file, node, ref) {
 		return;
 	}
 	const pathToFile
-		= join(projectRoot, docsRoot, getFilePathWithExtension(filePath));
+		= join(pluginConfig.projectRoot, pluginConfig.docsRoot, getFilePathWithExtension(filePath));
 	const pathToIndexFile
-		= join(projectRoot, docsRoot, getIndexFilePath(filePath));	
-	const doc = getFile({ file, node, ref, filePath: pathToFile })
-		|| getFile({ file, node, ref, filePath: pathToIndexFile });
+		= join(pluginConfig.projectRoot, pluginConfig.docsRoot, getIndexFilePath(filePath));	
+	const doc = getFile(pathToFile)
+		|| getFile(pathToIndexFile);
 	if (doc) {
 		anchorFound = false;
 		// We got the doc now turn it into an AST.
@@ -214,7 +239,17 @@ function verifyAnchor(file, node, ref) {
 		// The references are URL friendly so we do transform using github-slugger
 		// module, collect all transformed anchors. Later when this loops end
 		// we compare if the anchors we search is present or not.
-		const heading = currentNode.children[0].value;
+		let heading = currentNode.children[0].value;
+		if (heading.includes('{{%') && heading.includes('%}}')) {
+			// The heading contains hugo placeholder. Replace it.
+			let placeholder = regex.exec(heading);
+			while (placeholder) {
+				const placeholderItem = placeholder[0];
+				const variableName = placeholderItem.split('/')[1].split(' ')[0];
+				heading = heading.replace(regex, pluginConfig.hugoVariables[variableName]);
+				placeholder = regex.exec(heading);
+			}
+		}
 		availableAnchors.push(slugger.slug(heading));
 	}
 }
@@ -226,10 +261,6 @@ function isEmptyAnchor(file, node, anchor) {
 		cache['#'] = msg;
 		return true;
 	}
-}
-
-function isExternalPageRef(ref) {
-	return ref.startsWith('http');
 }
 
 function hasAnchor(ref) {
@@ -249,11 +280,10 @@ function isLocalAnchorRef(ref) {
 }
 
 function isStaticRef(ref) {
-	return staticFilesExtensions.includes(extname(ref));
+	return pluginConfig.staticFilesExtensions.includes(extname(ref));
 }
 
-function getFile(config) {
-	const { file, node, ref, filePath } = config;
+function getFile(filePath) {
 	let doc;
 	try {
 		doc = readFileSync(filePath);
@@ -267,7 +297,7 @@ function getFile(config) {
 function addWarningIfFileIsMissing(config) {
 	const { file, node, ref, staticFile } = config;
 	if ( staticFile ) {
-		const filePath = join(projectRoot, staticRoot, ref);
+		const filePath = join(pluginConfig.projectRoot, pluginConfig.staticRoot, ref);
 		if (isFileMissing(filePath)) {
 			const msg = `${warnings.missingStaticFile}: ${filePath}`;
 			file.message(msg, node);
@@ -275,8 +305,8 @@ function addWarningIfFileIsMissing(config) {
 			return true;
 		};
 	} else {
-		const filePath = join(projectRoot, docsRoot, getFilePathWithExtension(ref));
-		const indexFilePath = join(projectRoot, docsRoot, getIndexFilePath(ref));
+		const filePath = join(pluginConfig.projectRoot, pluginConfig.docsRoot, getFilePathWithExtension(ref));
+		const indexFilePath = join(pluginConfig.projectRoot, pluginConfig.docsRoot, getIndexFilePath(ref));
 		// We check both options "ref" pointing out to a file or pointing out to
 		// a directory which means we have to check for _index.md file in that
 		// directory.
@@ -305,3 +335,17 @@ function getIndexFilePath(ref) {
 	return ref.endsWith('/') ? `${ref}_index.md` : `${ref}/_index.md`
 }
 
+function loadHugoVariables() {
+	let files;
+	let directoryPath;
+	try {
+		directoryPath = join(pluginConfig.projectRoot, pluginConfig.hugoShortcodesDirectory);
+		files = readdirSync(directoryPath);
+	} catch(err) {
+		throw (`Unable to get directory content: ${err}`);
+	}
+	files.forEach(file => {
+		const variable = getFile(join(directoryPath, file));
+		pluginConfig.hugoVariables[file.slice(0, file.length-5)] = variable.toString();
+	});	
+}

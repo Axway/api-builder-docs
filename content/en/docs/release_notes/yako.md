@@ -19,9 +19,8 @@ Hide_readingtime: true
 * #4811: Fix Bootstrap XSS vulnerability
 * #5912: Fix lodash.merge prototype pollution
 * #5920: Update .dockerignore file with .git and coverage
-* #5954: Modifying outputs in the Flow Editor causes value to change to "jsonpath"
+* #5954: Modifying outputs in the Flow Editor causes value to change to "Selector"
 * #5957: Fix marked Regular Expression Denial of Service (ReDoS) vulnerability
-
 
 ## Release notes
 
@@ -30,7 +29,7 @@ Hide_readingtime: true
 * #5912: Previously, when using "npm install" on an {{% variables/apibuilder_prod_name %}} project, npm would alert that "lodash.merge" had a high alert for Prototype Pollution (\[https://nodesecurity.io/advisories/1067\]). Now, the alert has been resolved by removing the dependency.
 * #5920: Previously, the .dockerignore file that comes with a scaffolded {{% variables/apibuilder_prod_name %}} service did not include .git, coverage, and .nyc_output folders. Now, those folders are added.
 * #5924: The UI now renders a specialized Mustache editor with syntax highlighting for flow-node parameters which are defined with "format": "mustache" and "type": "string" in their schema.
-* #5954: Previously, there was a regression which meant flow-node outputs were un-editable, causing the value to always change to "jsonpath". Now, outputs can be edited again.
+* #5954: Previously, there was a regression which meant flow-node outputs were un-editable, causing the value to always change to "Selector". Now, outputs can be edited again.
 * #5956: The {{% variables/apibuilder_prod_name %}} CLI will now include the JavaScript flow-node in all new projects.
 * #5957: Previously, when using "npm install" on an {{% variables/apibuilder_prod_name %}} project, npm would alert that "marked" had a low alert for Regular Expression Denial of Service (\[https://www.npmjs.com/advisories/1076\]). Now, the alert has been resolved by updating the dependency.
 

@@ -9,7 +9,7 @@ This section provides information on {{% variables/apibuilder_prod_name %}} logg
 
 ## Configure logging
 
-The logLevel can be set in the configuration. See [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/#logLevel).
+The logLevel can be set in the configuration. See [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/#loglevel).
 
 ## Logger methods
 

@@ -108,13 +108,13 @@ DPI_DEBUG_LEVEL=64 npm start
 
 ## Using a debugger
 
-Sometimes, debugging can yield valuable information. In particular, if you are developing [custom API](/docs/developer_guide/apis/) or writing your own [flow-nodes](/docs/how_to/create_a_custom_flow_node/) using the [{{% variables/apibuilder_prod_name %}} SDK](#), it is an invaluable tool. You can use a variety of debugging / coding environments. However, the [Chrome Debugger](https://developers.google.com/web/tools/chrome-devtools/javascript) is most straight forward as you probably already have it installed. To launch [Node.js in debug mode](https://nodejs.org/en/docs/guides/debugging-getting-started/), use the --inspect-brk flag.
+Sometimes, debugging can yield valuable information. In particular, if you are developing [custom API](/docs/developer_guide/apis/) or writing your own [flow-nodes](/docs/how_to/create_a_custom_flow_node/) using the [{{% variables/apibuilder_prod_name %}} SDK](https://www.npmjs.com/package/@axway/api-builder-sdk), it is an invaluable tool. You can use a variety of debugging / coding environments. However, the [Chrome Debugger](https://developers.google.com/web/tools/chrome-devtools/javascript) is most straight forward as you probably already have it installed. To launch [Node.js in debug mode](https://nodejs.org/en/docs/guides/debugging-getting-started/), use the --inspect-brk flag.
 
 ```bash
 node --inspect-brk .
 ```
 
-This will launch a Node.js process and listen for a debugging client. In [Chrome](https://developers.google.com/web/tools/chrome-devtools/javascript), navigate to [chrome://inspect/#devices](#!/guide/chrome://inspect/).
+This will launch a Node.js process and listen for a debugging client. In [Chrome](https://developers.google.com/web/tools/chrome-devtools/javascript), navigate to [chrome://inspect/#devices](chrome://inspect).
 
 ![Screen_Shot_2020-07-06_at_1.58.56_PM](/Images/screen_shot_2020_07_06_at_1_58_56_pm.png)
 

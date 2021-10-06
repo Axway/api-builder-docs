@@ -18,7 +18,7 @@ Plugins which are released by Axway can be categorized by an additional prefix b
 * **flow-nodes**: `api-builder-plugin-fn-`
 * **data connectors**: `api-builder-plugin-dc-`
 
-For information on the Connectors UI, refer to [{{% variables/apibuilder_prod_name %}} Console](/docs/developer_guide/console/#Connectors).
+For information on the Plugins UI, refer to [{{% variables/apibuilder_prod_name %}} Console](/docs/developer_guide/console/#plugins-tab).
 
 ## Configuration
 

@@ -55,7 +55,7 @@ Once the plugin is installed, the configuration file is located in `<project>/co
 
 ## Provisioning an MBS database in the {{% variables/platform_prod_name %}}
 
-1. Follow [this guide](https://docs.axway.com/bundle/AMPLIFY_Dashboard_allOS_en/page/getting_started_with_mobile_backend_services_datasources.html) to provision an MBS database and get a username, password, and app key.
+1. Follow [this guide](https://docs.axway.com/bundle/platform-management/page/docs/dashboard_guide/managing_applications/managing_mobile_backend_services_datasources/getting_started_with_mobile_backend_services_datasources/index.html) to provision an MBS database and get a username, password, and app key.
 1. From within an {{% variables/apibuilder_prod_name %}} 4.x project, install the connector:
 
     ```bash

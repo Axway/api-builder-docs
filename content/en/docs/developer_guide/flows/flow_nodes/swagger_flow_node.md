@@ -27,7 +27,7 @@ During the npm install, the plugin will create the `./swagger` folder in the roo
 1. Place your service icons into the `./swagger` folder. This is optional but highly recommended to make your flows more readable. The icons must have the same name as the OAS files for your service. Additionally, the icons must be one of the following file formats: `bmp`, `jpeg`, `jpg`, `png`, `gif`, `tiff`, or `svg`
 1. Execute **npm start** to start your application. The plugin will generate flow-nodes from your OAS specifications and will be available in the **Connector** section of the flow-node list on the left side of the API Orchestration user interface. You should see a plugin listed for each Swagger file successfully loaded from your `./swagger` folder.
 
-For example, here are the nodes for a service that has two OAS documents, `gmail.json` and `petstore.yaml`. For the Gmail Swagger, we have included a PNG icon file. Swagger Petstore is using the default icon. For more information on using the plugin with Gmail, see [Authorization: Access Gmail using Swagger flow-node](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/authorization__access_gmail_using_swagger_flow-node.html).
+For example, here are the nodes for a service that has two OAS documents, `gmail.json` and `petstore.yaml`. For the Gmail Swagger, we have included a PNG icon file. Swagger Petstore is using the default icon. For more information on using the plugin with Gmail, see [Authorization: Access Gmail using Swagger flow-node](/docs/how_to/authorization_access_gmail_using_swagger_flow_node).
 
 ![swaggerNodes](/Images/swaggernodes.png)
 
@@ -232,4 +232,4 @@ Starting from version 2.3.0 the user has the option to configure the response fo
 
 ## Additional information
 
-For how-to information on accessing Gmail using a Swagger flow-node, refer to [Access Gmail using Swagger flow-node](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/authorization__access_gmail_using_swagger_flow-node.html).
+For how-to information on accessing Gmail using a Swagger flow-node, refer to [Access Gmail using Swagger flow-node](/docs/how_to/authorization_access_gmail_using_swagger_flow_node).

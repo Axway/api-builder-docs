@@ -5,7 +5,7 @@ weight: 120
 date: 2021-10-01
 ---
 
-{{% alert title="Deprecation" color="primary" %}}Beginning with the [Lisbon](/docs/release_notes/lisbon) release, {{% variables/apibuilder_prod_name %}} Web is deprecated {{% deprecation/link D011 %}} and will be removed in a future major version. If you are currently using Web Routes, consider switching to another modern web application architecture for your front end that consumes {{% variables/apibuilder_prod_name %}} Service APIs.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}Beginning with the [Lisbon](/docs/release_notes/lisbon) release, {{% variables/apibuilder_prod_name %}} Web is deprecated {{% deprecation/link D011 %}} and will be removed in a future major version. If you are currently using Web Routes, consider switching to another modern web application architecture for your front end that consumes {{% variables/apibuilder_prod_name %}} Service APIs.{{% /alert %}}
 
 ## Introduction
 

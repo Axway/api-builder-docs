@@ -5,7 +5,7 @@ weight: 120
 date: 2021-10-01
 ---
 
-{{% alert title="API Builder 3.x is deprecated" color="danger" %}}Support for {{% variables/apibuilder_prod_name %}} 3.x ceased on 30 April 2020. Use the [v3 to v4 upgrade guide](/docs/v3_to_v4_upgrade_guide) to migrate all your applications to [{{% variables/apibuilder_prod_name %}} 4.x](/docs/getting_started).
+{{% alert title="Note" color="primary" %}}Support for {{% variables/apibuilder_prod_name %}} 3.x ceased on 30 April 2020. Use the [v3 to v4 upgrade guide](/docs/v3_to_v4_upgrade_guide) to migrate all your applications to [{{% variables/apibuilder_prod_name %}} 4.x](/docs/getting_started).
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
@@ -215,7 +215,7 @@ collection = myModel.FindAll()
 | appc.oracle | Renamed to [@axway/api-builder-plugin-dc-oracle](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-oracle). |
 | memory | No change. |
 
-{{% alert title="Other appc connectors" color="danger" %}}All other appc.\* connectors are not supported in v4. If you need a connector upgraded, please contact [support@axway.com.](mailto:support@axway.com.){{% /alert %}}
+{{% alert title="Note" color="primary" %}}All other appc.\* connectors are not supported in v4. If you need a connector upgraded, please contact [support@axway.com.](mailto:support@axway.com.){{% /alert %}}
 
 In v4, the connector dependencies are managed by npm, and no longer managed by appc. You can remove the "dependencies" from appc.json.
 

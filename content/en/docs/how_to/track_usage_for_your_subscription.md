@@ -50,13 +50,13 @@ You can use the clipboard to copy the **Organization GUID**.
 
 ![image2021-8-12_13_24_59](/Images/image2021_8_12_13_24_59.png)
 
-{{% alert title="Important" color="primary" %}}Note that if you do not see the **Organization GUID** (this is not the same as the **Organization ID**), then it means that you do not have the correct entitlements for tracking {{% variables/apibuilder_prod_name %}} usage for Customer Managed environments, and that you will need to contact [Axway support](https://support.axway.com/).{{% /alert %}}
+{{% alert title="Note" color="primary" %}}Note that if you do not see the **Organization GUID** (this is not the same as the **Organization ID**), then it means that you do not have the correct entitlements for tracking {{% variables/apibuilder_prod_name %}} usage for Customer Managed environments, and that you will need to contact [Axway support](https://support.axway.com/).{{% /alert %}}
 
 ### Environment ID
 
 Usage reporting on the platform is arranged by deployment **Environments**, which can also be found on the platform **Organization** management screen. Environments refer to where you deploy your {{% variables/apibuilder_prod_name %}} services, which may be describe cloud or on-premise network segments, or describe separate development, test, and production environments. An environment is either marked as production or not, and each has a unique **Environment ID**. Your organization administrator can manage your environments and obtain IDs in your Organization page under **Environments**. You will need the **Environment ID** that corresponds to the deployment environment for the {{% variables/apibuilder_prod_name %}} service you wish to provision.
 
-{{% alert title="Production environments" color="primary" %}}It is possible to report transactions to both non-production and production environments, only production environments will count towards your organization's billable quota.{{% /alert %}}{{% alert title="API Gateway clusters" color="primary" %}}If you are deploying your {{% variables/apibuilder_prod_name %}} services behind an [API Gateway](https://docs.axway.com/category/apim) cluster, then you should use one environment for the API Gateway cluster, and a different one for the collection of {{% variables/apibuilder_prod_name %}} services.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}It is possible to report transactions to both non-production and production environments, only production environments will count towards your organization's billable quota.{{% /alert %}}{{% alert title="Note" color="primary" %}}If you are deploying your {{% variables/apibuilder_prod_name %}} services behind an [API Gateway](https://docs.axway.com/category/apim) cluster, then you should use one environment for the API Gateway cluster, and a different one for the collection of {{% variables/apibuilder_prod_name %}} services.{{% /alert %}}
 
 ![image2021-8-13_11_51_59](/Images/image2021_8_13_11_51_59.png)
 
@@ -88,7 +88,7 @@ module.exports = {
 };
 ```
 
-{{% alert title="Important" color="primary" %}}It is important that you do not unintentionally enable usage tracking when in development or test, otherwise these activities may count against your organization's billable quota.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}It is important that you do not unintentionally enable usage tracking when in development or test, otherwise these activities may count against your organization's billable quota.{{% /alert %}}
 
 To ensure that your local development or test environments do not accidentally report transaction usage, add the following line to your `/conf/.env`:
 
@@ -150,7 +150,7 @@ To verify that your environment is tracking usage (you must have an Organization
 
 Notice that in this example, 6 transactions were tracked against the "Staging" environment, but they were not counted against this organization's monthly quota. This is because only transactions in production environments will count towards the organization's monthly quota.
 
-{{% alert title="Quota" color="primary" %}}Depending on your subscription, your quota may be tokens or transactions. The screen above will look slightly different when your quota is transactions.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}Depending on your subscription, your quota may be tokens or transactions. The screen above will look slightly different when your quota is transactions.{{% /alert %}}
 
 ### Verify usage in production environments
 

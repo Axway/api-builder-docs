@@ -42,7 +42,7 @@ This Cron plugin is a flow-trigger that enables triggering a flow based on a sch
 └───────────────────────── second (0 - 59, OPTIONAL)
 ```
 
-{{% alert title="Tip" color="primary" %}}An online tool [crontab.guru](https://crontab.guru) can assist in helping you compose a valid cron expression, however, it only supports 5 parts (excludes seconds).{{% /alert %}}
+{{% alert title="Note" color="primary" %}}An online tool [crontab.guru](https://crontab.guru) can assist in helping you compose a valid cron expression, however, it only supports 5 parts (excludes seconds).{{% /alert %}}
 
 ### Example - at 09:00 am
 

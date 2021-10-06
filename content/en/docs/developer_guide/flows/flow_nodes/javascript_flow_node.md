@@ -34,7 +34,7 @@ Allows the execution of JavaScript code and returns the result of the execution 
 
 ##### Parameter: Code
 
-{{% alert title="Caution" color="danger" %}}It is not recommended to provide the code as a Selector. It is a security risk to execute code obtained from unknown sources.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}It is not recommended to provide the code as a Selector. It is a security risk to execute code obtained from unknown sources.{{% /alert %}}
 
 The **`Code`** parameter is where you define the JavaScript you would like to execute. The **Code** should be provided as a String. The **Data** parameter is fed into the code snippet as the first argument, `data`. The second argument of the code, `logger,` is the {{% variables/apibuilder_prod_name %}} [logger](/docs/developer_guide/project/logging/).
 

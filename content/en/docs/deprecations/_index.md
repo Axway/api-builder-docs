@@ -8,7 +8,7 @@ date: 2021-06-22
 
 {{% variables/apibuilder_prod_name %}} regularly adds feature improvements, fixes, and occasionally identify and fix features that do not work as designed, or are orthogonal to the intended direction of the product. When these are identified, we mark them as deprecated and add them to this document. We intend to remove all the deprecated features in the next major release of the product.
 
-{{% alert title="⚠️ Note" color="primary" %}}To ensure that you stay abreast of important updates and to make it easier to upgrade, you should pay attention to the deprecation warnings and address them as soon as possible.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}To ensure that you stay abreast of important updates and to make it easier to upgrade, you should pay attention to the deprecation warnings and address them as soon as possible.{{% /alert %}}
 
 Direct or indirect use of deprecated features may result in a warning when the service starts. This should not affect the functionality of your service, but the flags should be an indication that, if ignored, your service may fall behind any future breaking changes and may increase the effort to upgrade to future major releases.
 

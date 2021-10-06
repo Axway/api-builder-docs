@@ -147,16 +147,18 @@ function fRunHugo() {
     mkdir -p public
     case "${MODE}" in
         "dev")
-            # hugo server
+            # now execute following commands in npm start (i.e. hugo server)
             ;;
         "nelify")
-            hugo
+            # buildFuture allows the notes for the current release to be generated
+            hugo --buildFuture
             # Moving the "publish" directory to the ROOT of the workspace. Netlify can't publish a
             # different directory even if the "Publish directory" is changed to specify a different directory.
             mv -f ${BUILD_DIR}/public ${PROJECT_DIR}
             ;;
         "nelify-preview")
-            hugo -b $DEPLOY_PRIME_URL
+            # buildFuture allows the notes for the current release to be generated
+            hugo -b $DEPLOY_PRIME_URL --buildFuture
             mv -f ${BUILD_DIR}/public ${PROJECT_DIR}
             ;;
     esac

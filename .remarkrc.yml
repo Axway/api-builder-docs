@@ -6,7 +6,7 @@ plugins:
       staticRoot: 'static',
       staticFilesExtensions: ['.json', '.js', '.yaml', '.sh', '.html', '.zip'],
       ignoreLinksThatStartWith: [
-        'mailto', 'http'
+        'mailto', 'http', 'chrome'
       ],
       hugoShortcodesDirectory: "layouts/shortcodes/variables"
     }]

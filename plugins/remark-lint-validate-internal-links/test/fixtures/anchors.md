@@ -19,16 +19,26 @@ Those should not be caught.
 *   Valid anchor should not be caught [anchor](/docs/guides#models).
 *   Valid local anchor should not be caught [anchor](#models).
 *   Ignore links like [support@axway.com](mailto:support@axway.com)
-*   Valid local anchor with hugo variable should not be caught [anchor](#my-api-builder).
+*   Valid local anchor with hugo variable should not be caught [anchor](#hello).
+*   Valid local anchor with hugo variable should not be caught [anchor](#hello-api-builder).
+*   Valid local anchor with hugo variable should not be caught [anchor](#api-builder-api-builder).
 *   Import the `onedrive.json` Swagger document. Refer to [Create the onedrive.json Swagger document](#create-the-onedrive-json-swagger-document).
 
 ## Models
 
 Description about models ...
 
-## My {{% variables/apibuilder_prod_name %}}
+## {{% variables/hello %}}
 
-Parametrised heading
+Parametrised heading with single variable
+
+## {{% variables/hello %}} {{% variables/apibuilder_prod_name %}}
+
+Parametrised heading with multiple variables
+
+## {{% variables/apibuilder_prod_name %}} {{% variables/apibuilder_prod_name %}}
+
+Parametrised heading with the same variable twice in it
 
 ## Create the onedrive.json Swagger document
 

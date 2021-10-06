@@ -218,14 +218,18 @@ function verifyAnchor(file, node, ref) {
 		// The references are URL friendly so we do transform using github-slugger
 		// module, collect all transformed anchors. Later when this loops end
 		// we compare if the anchors we search is present or not.
-		const heading = currentNode.children[0].value;
+		let heading = currentNode.children[0].value;
 		if (heading.includes('{{%') && heading.includes('%}}')) {
 			// The heading contains hugo placeholder. Reaplce it.
 			const regex = /{{% [a-z/_]* %}}/;
-			const placeholder = regex.exec(heading)[0];
-			const variableName = placeholder.split('/')[1].split(' ')[0];
-			const headingValue = heading.replace(regex, pluginConfig.hugoVariables[variableName]);
-			availableAnchors.push(slugger.slug(headingValue));
+			let placeholder = regex.exec(heading);
+			while (placeholder) {
+				const placeholderItem = placeholder[0];
+				const variableName = placeholderItem.split('/')[1].split(' ')[0];
+				heading = heading.replace(regex, pluginConfig.hugoVariables[variableName]);
+				placeholder = regex.exec(heading);
+			}
+			availableAnchors.push(slugger.slug(heading));
 		} else {
 			availableAnchors.push(slugger.slug(heading));
 		}

@@ -11,9 +11,9 @@
 #   This is roughly the flow of the script:
 #     1. make sure "themes/docsy/"" submodule is checked out recursively
 #     2. make sure the "axway-open-docs-common/ submodule is checked out
-#     3. make sure the npm packages "postcss-cli" and "autoprefixer" are installed
-#     4. combine the "axway-open-docs-common" files with the "amplifycentral-open-docs"
-#        files and put them in the "build" folder
+#     3. make sure dependencies are installed
+#     4. combine the "axway-open-docs-common" files with the docs content
+#        and put them in the "build" folder
 #     5. runs "hugo server" from inside the build folder to build the site and the
 #        micro site will be available on http://localhost:1313/
 #
@@ -22,7 +22,6 @@
 #     the build script
 #   - all other files like content/en/ content will be picked up by hugo automatically
 #     if they change
-#   -
 #
 
 DEBUG=${DEBUG:-false}
@@ -30,9 +29,9 @@ MODE=dev
 while getopts ":np" opt; do
     case ${opt} in
         n ) MODE=nelify
-             ;;
+            ;;
         p ) MODE=nelify-preview
-             ;;
+            ;;
         * ) exit 1
             ;;
     esac
@@ -61,14 +60,12 @@ function fCheckoutSubmodule() {
         echo "[ERROR] Can't find the common content directory [${AXWAY_COMMON_DIR}]."
         exit 1
     fi
-    # the npm packages doesn't seem to be needed on the netify build server...this is just for developers
-    # if [[ "${MODE}" == "dev" ]];then
-    #     echo "[INFO] Install npm packages required by docsy."
-    # 	if [[ ! -d "node_modules" ]];then
-    # 		npm install -D --save autoprefixer
-    # 		npm install -D --save postcss-cli
-    # 	fi
-    # fi
+    # the npm packages don't seem to be needed on the netify build server...this is just for developers
+    if [[ "${MODE}" == "dev" ]];then
+        if [[ ! -d "node_modules" ]];then
+            npm install
+        fi
+    fi
 }
 
 # fMergeContent:
@@ -129,10 +126,10 @@ function fMergeContent() {
         fi
     done
 
-     # This soft link makes the git info available for hugo to populate the date with git hash in the footer.
-     # Note that common files coming from axway-open-docs-common will not have this information and the pages
-     # will use the "date" value at the top of the page.
-     ln ${_ln_opt} $(pwd)/.git ${BUILD_DIR}/.git
+    # This soft link makes the git info available for hugo to populate the date with git hash in the footer.
+    # Note that common files coming from axway-open-docs-common will not have this information and the pages
+    # will use the "date" value at the top of the page.
+    ln ${_ln_opt} $(pwd)/.git ${BUILD_DIR}/.git
 
     echo "[INFO] Following symlinks were created:"
     for xxx in `find $(basename ${BUILD_DIR}) -type l`;do
@@ -147,16 +144,18 @@ function fRunHugo() {
     mkdir -p public
     case "${MODE}" in
         "dev")
-            # hugo server
+            # now execute following commands in npm start (i.e. hugo server)
             ;;
         "nelify")
-            hugo
+            # buildFuture allows the notes for the current release to be generated
+            hugo --buildFuture
             # Moving the "publish" directory to the ROOT of the workspace. Netlify can't publish a
             # different directory even if the "Publish directory" is changed to specify a different directory.
             mv -f ${BUILD_DIR}/public ${PROJECT_DIR}
             ;;
         "nelify-preview")
-            hugo -b $DEPLOY_PRIME_URL
+            # buildFuture allows the notes for the current release to be generated
+            hugo -b $DEPLOY_PRIME_URL --buildFuture
             mv -f ${BUILD_DIR}/public ${PROJECT_DIR}
             ;;
     esac

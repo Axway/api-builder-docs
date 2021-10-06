@@ -10,7 +10,7 @@ date: 2021-10-01
 
 Configuration options for authentication and authentication plugins have changed, and have been moved to a new `accessControl` configuration section. The moved `APIKeyAuthType` and `APIKeyAuthPlugin` options have been deprecated alongside the custom `matchURL` authentication plugin method.
 
-Beginning with the [Lisbon](/docs/release_notes/lisbon) release, authentication and authentication plugins have changed to ensure _all_ paths are secured by default. Authentication is applied to the API path (`apiPrefix`), and authentication is controlled using a new configuration section, [accessControl](http://localhost:1313/docs/developer_guide/project/configuration/project_configuration/#accesscontrol). All other paths are **denied** by default unless they are made explicitly public by adding them to `accessControl.paths`. There are several public paths added implicitly:
+Beginning with the [Lisbon](/docs/release_notes/lisbon) release, authentication and authentication plugins have changed to ensure _all_ paths are secured by default. Authentication is applied to the API path (`apiPrefix`), and authentication is controlled using a new configuration section, [accessControl](/docs/developer_guide/project/configuration/project_configuration/#accesscontrol). All other paths are **denied** by default unless they are made explicitly public by adding them to `accessControl.paths`. There are several public paths added implicitly:
 
 * `/adminapi` - this path is added if `config.admin.enabled` is true, and the application is installed in development mode (for example, it is not production and api-builder-admin).
 * `/console` - same as above.

@@ -295,7 +295,7 @@ apikey_production: 'this-is-my-production-key',
     apikey_preproduction: 'this-is-my-preproduction-key',
 ```
 
-In v4, {{% variables/apibuilder_prod_name %}} has one [apikey configuration option](/docs/developer_guide/project/configuration/project_configuration/#apikey). Changing values, such as apikey so that they are different in different host environments, requires additional work. See the [Environmentalization Guide](/docs/how_to/environmentalization/) for more information.
+In v4, {{% variables/apibuilder_prod_name %}} has one [apikey configuration option](/docs/developer_guide/project/configuration/project_configuration/#apikey). Changing values, such as apikey so that they are different in different host environments, requires additional work. See the [Environmentalization Guide](/docs/security_guide#environmentalization) for more information.
 
 In short, change apikey to be loaded from the environment.
 
@@ -377,7 +377,7 @@ PORT=8080
 
 Note that you should always provide the PORT when deploying/running your service on a target environment, for example when using Docker, or when publishing to ARS.
 
-For more information, please read the [Environmentalization](/docs/how_to/environmentalization/) guide.
+For more information, please read the [Environmentalization](/docs/security_guide#environmentalization) guide.
 
 ### serialization
 
@@ -492,11 +492,11 @@ MBS_PASSWORD=dev-password
 
 Note that this does not address your _other_ environments, such as "production". Your project will have production keys for ArrowDB, but how you address those environments is entirely up to you, but you should address every environment that is necessary for your project. Generally speaking, they should be applied to the target environment. So, you may add production environment values to your CI system, or you may choose to create a script to set them. Whatever you choose, it should be secure and align with your CI/CD process.
 
-For more information, please read the [Environmentalization](/docs/how_to/environmentalization/) guide.
+For more information, please read the [Environmentalization](/docs/security_guide#environmentalization) guide.
 
 ### ARROW_\* environment variables
 
-Previously, it was possible to specify environment variables from the operating system environment and apply them to the {{% variables/apibuilder_prod_name %}} runtime (for example, `ARROW_PORT`). Now, it is no longer possible to automatically use `ARROW_*` environment properties. Instead, the configurable environment properties need to be explicitly included in the {{% variables/apibuilder_prod_name %}}'s configuration files (for example, `conf/default.js`), and reference the environment variable by name (for example, `process.env.APP_PORT`). See the [Environmentalization Guide](/docs/how_to/environmentalization/) for details.
+Previously, it was possible to specify environment variables from the operating system environment and apply them to the {{% variables/apibuilder_prod_name %}} runtime (for example, `ARROW_PORT`). Now, it is no longer possible to automatically use `ARROW_*` environment properties. Instead, the configurable environment properties need to be explicitly included in the {{% variables/apibuilder_prod_name %}}'s configuration files (for example, `conf/default.js`), and reference the environment variable by name (for example, `process.env.APP_PORT`). See the [Environmentalization Guide](/docs/security_guide#environmentalization) for details.
 
 ## Running your project
 

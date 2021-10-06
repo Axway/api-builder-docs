@@ -152,7 +152,7 @@ $ PORT=8000 npm start
 
 However, we recommend that you do not change the environmentalized port configuration in `conf/default.js` as this value is used when using Docker containers.
 
-[Environmentalization guide](/docs/how_to/environmentalization/) explains how to quickly set values to the environment variables referred to in the configuration files so they can be used during the development of the service.
+[Environmentalization guide](/docs/security_guide#environmentalization) explains how to quickly set values to the environment variables referred to in the configuration files so they can be used during the development of the service.
 
 ## Further reading
 

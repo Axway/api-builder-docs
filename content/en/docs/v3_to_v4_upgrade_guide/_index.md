@@ -22,7 +22,7 @@ Refer to the Prerequisites in the [Getting Started With {{% variables/apibuilder
 Once you have a local, backed-up copy of your project, you should run the upgrade script. The upgrade script does a **partial upgrade** in situ, upgrading several dependencies in package.json as well as modifying several files due to module renaming. Execute the following command within your v3 project directory:
 
 ```bash
-// Run {{% variables/apibuilder_prod_name %}} upgrade script
+# Run {{% variables/apibuilder_prod_name %}} upgrade script
 
 npx @axway/api-builder-upgrade
 ```
@@ -45,12 +45,12 @@ npm start
 
 {{% alert title="Note" color="primary" %}}This upgrade is handled by the @axway/api-builder-upgrade script.{{% /alert %}}
 
-In v3, the admin UI was always installed as part of {{% variables/apibuilder_prod_name %}}. While it was disabled in production, it added a lot of unnecessary bulk to deployments. In v4, the admin UI is now a separate component, and if installed, {{% variables/apibuilder_prod_name %}} will load it. Upgraded projects should have "@axway/api-builder-admin": "^1.0.0" as a devDependency.
+In v3, the admin UI was always installed as part of {{% variables/apibuilder_prod_name %}}. While it was disabled in production, it added a lot of unnecessary bulk to deployments. In v4, the admin UI is now a separate component, and if installed, {{% variables/apibuilder_prod_name %}} will load it. Upgraded projects should have `"@axway/api-builder-admin": "^1.0.0"` as a devDependency.
 
 To run the upgrade manually:
 
 ```bash
-// Install admin dev dependency
+# Install admin dev dependency
 
 npm install --save-dev @axway/api-builder-admin@^1.0.0
 ```
@@ -96,7 +96,7 @@ var User = Arrow.Model.extend('testuser', {
 module.exports = User;
 ```
 
-In v4, all of your local \*.js should be modified to replace the `require("arrow")` with `require("` `@axway/api-builder-runtime")`.
+In v4, all of your local \*.js should be modified to replace the `require("arrow")` with `require("@axway/api-builder-runtime")`.
 
 ```javascript
 // models/testuser.js (v4)
@@ -175,7 +175,7 @@ The v4 flows should have references to plugins.
 }
 ```
 
-{{% alert title="Note" color="primary" %}}If you wrote your own nodehandlers in v3, they will not work in v4. If you have custom nodehandlers that you wish to upgrade, contact [support@axway.com.](mailto:support@axway.com.){{% /alert %}}
+{{% alert title="Note" color="primary" %}}If you wrote your own nodehandlers in v3, they will not work in v4. If you have custom nodehandlers that you wish to upgrade, contact [support@axway.com](mailto:support@axway.com).{{% /alert %}}
 
 ## Model Node Handler distinct method
 
@@ -350,7 +350,7 @@ logLevel: 'debug',
 You can delete the `./logs` directory.
 
 ```bash
-// Delete unused ./logs
+# Delete unused ./logs
 
 rm -rf ./logs
 ```
@@ -370,7 +370,7 @@ http: {
 Also, you may also want to add this environment variable to a local environment `.env` file in the `conf` directory.
 
 ```bash
-// conf/.env
+# conf/.env
 
 PORT=8080
 ```
@@ -399,7 +399,7 @@ serialization: {
 In v3, the product supported any number of environments, such as "development" and "production".
 
 ```bash
-// Install admin dev dependency
+# Install admin dev dependency
 
 ls -1 conf/
 
@@ -483,7 +483,7 @@ module.exports = {
 Then, add the environment variables to your `conf/.env` file for running your service in development. This file should be secured, and only be read/writable by you, nor should it be checked into source control.
 
 ```bash
-// conf/.env
+# conf/.env
 
 MBS_KEY=MyArrowDBDevInstanceKey
 MBS_USERNAME=appc_app_user_dev
@@ -505,7 +505,7 @@ Previously, it was possible to specify environment variables from the operating 
 In v3, {{% variables/apibuilder_prod_name %}} was installed and available globally as part of the Appcelerator CLI. You would run your project using the **appc run** command.
 
 ```bash
-// Run {{% variables/apibuilder_prod_name %}} (v3)
+# Run {{% variables/apibuilder_prod_name %}} (v3)
 
 appc run
 ```
@@ -523,7 +523,7 @@ However, in v4, the runtime is now an explicit npm dependency (in other words, @
 If you applied the necessary upgrades listed above, and your project has all the necessary configuration and environment necessary to run, then your project should start.
 
 ```bash
-// Run {{% variables/apibuilder_prod_name %}} (v4)
+# Run {{% variables/apibuilder_prod_name %}} (v4)
 
 npm start
 ```

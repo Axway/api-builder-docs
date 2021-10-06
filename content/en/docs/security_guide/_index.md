@@ -16,7 +16,7 @@ By default, {{% variables/apibuilder_prod_name %}} uses HTTP basic authenticatio
 
 Some users may want to run their APP using [Transport Layer Security](https://en.wikipedia.org/wiki/Transport_Layer_Security) (TLS/SSL). Note that it is not always necessary to run TLS. For example, if your service will run in an environment where TLS is terminated at a gateway, then you would not need to enable TLS. However, if running in an environment where it can be directly accessed by clients that need TLS, then TLS should be enabled. This section requires [OpenSSL](https://www.openssl.org/) and some familiarity with it.
 
-{{% alert title="Note" color="primary" %}}Additional information is available at [Creating an HTTPs server with Node.js](https://nodejs.org/en/knowledge/HTTP/servers/how-to-create-a-HTTPS-server/) and [NodeJS and SSL](https://stackoverflow.com/questions/30957793/nodejs-ssl-bad-password-read).{{% /alert %}}
+{{% alert title="Note" color="primary" %}}Additional information is available at [Creating an HTTPs server with Node.js](https://nodejs.org/en/knowledge/HTTP/servers/how-to-create-a-HTTPS-server) and [NodeJS and SSL](https://stackoverflow.com/questions/30957793/nodejs-ssl-bad-password-read).{{% /alert %}}
 
 ### Generate an TLS/SSL certificate
 

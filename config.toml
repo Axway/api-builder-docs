@@ -1,5 +1,5 @@
-baseURL = "https://apibuilderpoc-open-docs.netlify.app"
-title = "Axway-Open-Docs"
+baseURL = "https://api-builder-docs.netlify.app"
+title = "API-Builder"
 
 enableRobotsTXT = true
 
@@ -35,7 +35,7 @@ blog = "/:section/:year/:month/:day/:slug/"
 ## Markup config
 [markup]
   defaultMarkdownHandler = "blackFriday"
-  
+
   [markup.blackFriday]
   plainIDAnchors = true
   hrefTargetBlank = true #this overrides the default setting of false
@@ -44,7 +44,7 @@ blog = "/:section/:year/:month/:day/:slug/"
   nofollowLinks = true #this overrides the default setting of false
   noreferrerLinks = true #this overrides the default setting of false
   noopenerLinks = true #this overrides the default setting of false
-  
+
   [markup.goldmark]
     [markup.goldmark.renderer]
       #unsafe = true #this overrides the default setting of false
@@ -58,14 +58,14 @@ anchor = "smart"
 [services]
 [services.googleAnalytics]
 # Comment out the next line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
-id = "UA-56643615-3"
+# id = "UA-56643615-3"
 
 # Language configuration
 
 [languages]
 [languages.en]
-title = "Axway Open Documentation"
-description = "Axway Open Documentation"
+title = "Axway Documentation"
+description = "Axway Documentation"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
@@ -81,7 +81,7 @@ privacy_policy = "https://www.axway.com/en/privacy-statement"
 version_menu = "Releases"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/Axway/apibuilderPOC-open-docs"
+github_repo = "https://github.com/Axway/api-builder-docs"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 # github_project_repo = "https://github.com/google/docsy"
 

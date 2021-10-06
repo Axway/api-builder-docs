@@ -1,17 +1,17 @@
 {
-  "name": "apibuilderPOC-open-docs",
-  "version": "0.0.1",
-  "description": "API Builder documentation",
+  "name": "api-builder-docs",
+  "version": "1.0.0",
+  "description": "API Builder Documentation",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Axway/apibuilderPOC-open-docs.git"
+    "url": "git+https://github.com/Axway/api-builder-docs.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Axway/apibuilderPOC-open-docs/issues"
+    "url": "https://github.com/Axway/api-builder-docs/issues"
   },
-  "homepage": "https://github.com/Axway/apibuilderPOC-open-docs",
+  "homepage": "https://github.com/Axway/api-builder-docs",
   "devDependencies": {
     "autoprefixer": "^10.0.0",
     "markdown-link-check": "^3.8.7",

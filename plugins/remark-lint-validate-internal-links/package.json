@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Axway/apibuilderPOC-open-docs.git"
+    "url": "git+https://github.com/Axway/api-builder-docs.git"
   },
   "keywords": [
     "remark",
@@ -22,9 +22,9 @@
   "author": "Axway",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Axway/apibuilderPOC-open-docs/issues"
+    "url": "https://github.com/Axway/api-builder-docs/issues"
   },
-  "homepage": "https://github.com/Axway/apibuilderPOC-open-docs#readme",
+  "homepage": "https://github.com/Axway/api-builder-docs#readme",
   "dependencies": {
     "debug": "^4.3.2",
     "github-slugger": "^1.4.0",

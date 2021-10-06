@@ -45,42 +45,107 @@ const postDefaults = {
 /**
  * Add new collections here.
  */
- const collections = [{
-  ...docsDefaults('', 'docbook/images/general'), // content directory, image directory
-  name: 'docs',
-  label: 'API Builder Documentation',
-  description: 'Top level pages in API Builder documentation.',
-  format: 'frontmatter',
-  create: false,
-}, {
-  ...docsDefaults('Developer_Guide', 'Developer_Guide'),
-  name: 'Developer_Guide',
-  label: 'Developer Guide',
-  label_singular: 'page in Developer Guide section',
-  description: 'All pages relating to Developer Guide section.',
-  format: 'frontmatter',
-}, {
-  ...docsDefaults('HOW_TO', 'HOW_TO'),
-  name: 'HOW_TO',
-  label: 'How to',
-  label_singular: 'page in How to section',
-  description: 'All pages relating to How to section.',
-  format: 'frontmatter',
-}, {
-  ...docsDefaults('Release_Notes', 'Release_Notes'),
-  name: 'Release_Notes',
-  label: 'Release Notes',
-  label_singular: 'page in Release Notes section',
-  description: 'All pages relating to Release Notes section.',
-  format: 'frontmatter',
-}, {
-  ...docsDefaults('Deprecations', 'Deprecations'),
-  name: 'Deprecations',
-  label: 'Deprecations',
-  label_singular: 'page in Deprecations section',
-  description: 'All pages relating to Deprecations section.',
-  format: 'frontmatter',
-},];
+ const collections = [
+  {
+    ...docsDefaults('', 'docbook/images/general'), // content directory, image directory
+    name: 'docs',
+    label: 'API Builder Documentation',
+    description: 'Top level pages in API Builder documentation.',
+    format: 'frontmatter',
+    create: false,
+  }, {
+    ...docsDefaults('developer_guide', 'developer_guide'),
+    name: 'developer_guide',
+    label: 'Developer Guide',
+    label_singular: 'page in Developer Guide section',
+    description: 'All pages relating to Developer Guide section.',
+    format: 'frontmatter',
+  }, {
+    ...docsDefaults('how_to', 'how_to'),
+    name: 'how_to',
+    label: 'How to',
+    label_singular: 'page in How to section',
+    description: 'All pages relating to How to section.',
+    format: 'frontmatter',
+  }, {
+    ...docsDefaults('release_notes', 'release_notes'),
+    name: 'release_notes',
+    label: 'Release Notes',
+    label_singular: 'page in Release Notes section',
+    description: 'All pages relating to Release Notes section.',
+    format: 'frontmatter',
+  }, {
+    ...docsDefaults('deprecations', 'deprecations'),
+    name: 'deprecations',
+    label: 'Deprecations',
+    label_singular: 'page in Deprecations section',
+    description: 'All pages relating to Deprecations section.',
+    format: 'frontmatter',
+  }, {
+    ...docsDefaults('best_practices', 'best_practices'),
+    name: 'best_practices',
+    label: 'Best Practices',
+    label_singular: 'page in Best Practices section',
+    description: 'All pages relating to Best Practices section.',
+    format: 'frontmatter',
+  }, {
+    ...docsDefaults('faq', 'faq'),
+    name: 'faq',
+    label: 'FAQ',
+    label_singular: 'page in FAQ section',
+    description: 'All pages relating to FAQ section.',
+    format: 'frontmatter',
+  }, {
+    ...docsDefaults('getting_started', 'getting_started'),
+    name: 'getting_started',
+    label: 'Getting Started',
+    label_singular: 'page in Getting Started section',
+    description: 'All pages relating to Getting Started section.',
+    format: 'frontmatter',
+  }, {
+    ...docsDefaults('known_issues', 'known_issues'),
+    name: 'known_issues',
+    label: 'Known Issues',
+    label_singular: 'page in Known Issues section',
+    description: 'All pages relating to Known Issues section.',
+    format: 'frontmatter',
+  }, {
+    ...docsDefaults('nodejs_support_policy', 'nodejs_support_policy'),
+    name: 'nodejs_support_policy',
+    label: 'Nodejs Support Policy',
+    label_singular: 'page in Nodejs Support Policy section',
+    description: 'All pages relating to Nodejs Support Policy section.',
+    format: 'frontmatter',
+  }, {
+    ...docsDefaults('performance_metrics', 'performance_metrics'),
+    name: 'performance_metrics',
+    label: 'Performance Metrics',
+    label_singular: 'page in Performance Metrics section',
+    description: 'All pages relating to Performance Metrics section.',
+    format: 'frontmatter',
+  }, {
+    ...docsDefaults('security_guide', 'security_guide'),
+    name: 'security_guide',
+    label: 'Security Guide',
+    label_singular: 'page in Security Guide section',
+    description: 'All pages relating to Security Guide section.',
+    format: 'frontmatter',
+  }, {
+    ...docsDefaults('updates', 'updates'),
+    name: 'updates',
+    label: 'Updates',
+    label_singular: 'page in Updates section',
+    description: 'All pages relating to Updates section.',
+    format: 'frontmatter',
+  }, {
+    ...docsDefaults('v3_to_v4_upgrade_guide', 'v3_to_v4_upgrade_guide'),
+    name: 'v3_to_v4_upgrade_guide',
+    label: 'v3 to v4 upgrade guide',
+    label_singular: 'page in v3 to v4 upgrade guide section',
+    description: 'All pages relating to v3 to v4 upgrade guide section.',
+    format: 'frontmatter',
+  }
+];
 
 const cms_branch = window.location.hostname.includes('develop') ? 'develop' : 'master'; // Additional config for a develop branch and develop site
 
@@ -88,13 +153,13 @@ const config = {
   backend: {
     name: 'github',
     branch: cms_branch,
-    repo: 'Axway/apibuilderpoc-open-docs', // Path to your GitHub repository.
+    repo: 'Axway/api-builder-docs', // Path to your GitHub repository.
     open_authoring: true,
   },
   publish_mode: 'editorial_workflow',
   media_folder: '/static/Images', // Media files will be stored in the repo under static/Images
   public_folder: '/Images', // The src attribute for uploaded media will begin with /Images
-  site_url: 'https://apibuilderpoc-open-docs.netlify.com/', // URL to netlify site
+  site_url: 'https://api-builder-docs.netlify.com/', // URL to netlify site
   collections,
 };
 

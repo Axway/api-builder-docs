@@ -5,7 +5,7 @@ weight: 70
 date: 2021-10-01
 ---
 
-{{% alert title="Caution" color="danger" %}}Installing this module may report a security vulnerability with doT. This is because doT templates can be used to execute malicious JavaScript.
+{{% alert title="Note" color="primary" %}}Installing this module may report a security vulnerability with doT. This is because doT templates can be used to execute malicious JavaScript.
 
 **Templates should never come from untrusted sources**. If you trust all the templates that you use, then you can safely ignore the vulnerability and continue to use this plugin.
 

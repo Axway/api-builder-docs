@@ -57,7 +57,7 @@ Once the plugin is installed, the configuration file is located in `<project>/co
 | generateModelsFromSchema | boolean | If enabled, {{% variables/apibuilder_prod_name %}} will automatically interrogate the database and auto-generate Models from SQL tables. |
 | modelAutogen | boolean | If enabled, {{% variables/apibuilder_prod_name %}} will automatically generate a full and rich CRUD API from the generated Models. |
 
-{{% alert title="Caution" color="danger" %}}The `mysql` library used by this connector depends on the MySQL server setting `NO_BACKSLASH_ESCAPES` to mitigate against SQL injection attacks. The setting must be disabled (which is the default setting for MySQL servers).{{% /alert %}}
+{{% alert title="Note" color="primary" %}}The `mysql` library used by this connector depends on the MySQL server setting `NO_BACKSLASH_ESCAPES` to mitigate against SQL injection attacks. The setting must be disabled (which is the default setting for MySQL servers).{{% /alert %}}
 
 ## Usage
 

@@ -40,7 +40,7 @@ The `message` parameter is the contents of what is going to be output at the log
 
 The `level` parameter refers to the level at which the output logs would be logged. You can pick from the following log levels: error, warn, info, debug and trace.
 
-{{% alert title="Caution" color="danger" %}}The output logs would be only visible when the configured level is greater than or equal to the application's config logLevel in order of most-to-least verbose: trace, debug, info, warn, error. For more information, see [logLevel](/docs/developer_guide/project/configuration/project_configuration/#loglevel).{{% /alert %}}
+{{% alert title="Note" color="primary" %}}The output logs would be only visible when the configured level is greater than or equal to the application's config logLevel in order of most-to-least verbose: trace, debug, info, warn, error. For more information, see [logLevel](/docs/developer_guide/project/configuration/project_configuration/#loglevel).{{% /alert %}}
 
 #### Outputs
 

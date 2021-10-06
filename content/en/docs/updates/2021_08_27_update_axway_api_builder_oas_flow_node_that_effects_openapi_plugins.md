@@ -23,7 +23,7 @@ Existing [{{% variables/apibuilder_prod_name %}} OpenAPI plugins](/docs/how_to/c
 
 Importantly, OpenAPI plugins that are upgraded should set a minimum [peerDependency](https://nodejs.org/es/blog/npm/peer-dependencies) for @axway/api-builder-runtime in their package.json to "^4.69.0" to indicate that this is the minimum version of support. Changing the peerDependency is a breaking change for your plugin and it means that the plugin should also receive a major bump. Otherwise, if your plugin will be incompatible with older versions of @axway/api-builder-runtime and consumers of your plugin will have no idea why their application will not start.
 
-{{% alert title="Important" color="primary" %}}Existing OpenAPI plugins that upgrade to [@axway/api-builder-oas-flow-node](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node)@2.0.0 should receive a major bump (see above).{{% /alert %}}
+{{% alert title="Note" color="primary" %}}Existing OpenAPI plugins that upgrade to [@axway/api-builder-oas-flow-node](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node)@2.0.0 should receive a major bump (see above).{{% /alert %}}
 
 ## Upgrade existing services
 

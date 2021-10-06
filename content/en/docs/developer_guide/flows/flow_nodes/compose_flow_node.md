@@ -7,7 +7,7 @@ date: 2021-10-01
 
 The Compose (doT) flow-node methods, parameters, and outputs are described in the following sections. The Compose flow-node is created when npm installs the `@axway/api-builder-plugin-fn-dot` plugin. The Compose flow-node plugin is included in the default application, but it can be removed. For additional doT flow-node information, refer to [doT flow-node](/docs/developer_guide/flows/flow_nodes/dot_flow_node/).
 
-{{% alert title="Caution" color="danger" %}}Installing the Compose (doT) flow-node module may report a security vulnerability with doT. This is because doT templates can be used to execute malicious JavaScript.
+{{% alert title="Note" color="primary" %}}Installing the Compose (doT) flow-node module may report a security vulnerability with doT. This is because doT templates can be used to execute malicious JavaScript.
 
 **Templates should never come from untrusted sources**. If you trust all the templates that you use, then you can safely ignore the vulnerability and continue to use this plugin.
 

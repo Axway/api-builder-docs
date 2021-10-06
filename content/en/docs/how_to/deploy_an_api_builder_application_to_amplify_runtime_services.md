@@ -93,13 +93,13 @@ axway acs server --set Large myproject
 
 The commands will log you in to the {{% variables/platform_prod_name %}} using your [https://platform.axway.com](https://platform.axway.com/) username and password, and register a new project in the cloud called "myproject" (the same name as your {{% variables/apibuilder_prod_name %}} project). Then, configure your project to use PORT 8080. This is because the container is built with PORT 8080 by default. If you accidentally ran these commands in the "myproject" directory, it will create a new sub-folder "myproject/myproject" which can be deleted. It will also set the NODE_ENV environment variable to configure your project to enable production specific performance and security optimizations. See [expressjs.com](https://expressjs.com/en/advanced/best-practice-performance.html#set-node_env-to-production)
 
-{{% alert title="Important" color="primary" %}}You may already have an existing platform application in the cloud with the name "myproject". If you do, and you know that it is not being used and you wish to delete it, or if you want to delete this example project on ARS, you can execute: **acs remove myproject**.{{% /alert %}}{{% alert title="Important" color="primary" %}}Your {{% variables/apibuilder_prod_name %}} service may use the NODE_ENV environment variable directly, and have functionality relying on the value being something other than "development" or "production". This is not recommended from a security perspective, since a value such as "staging" will not enable production-specific features. We recommend making use of a different environment variable for your service.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}You may already have an existing platform application in the cloud with the name "myproject". If you do, and you know that it is not being used and you wish to delete it, or if you want to delete this example project on ARS, you can execute: **acs remove myproject**.{{% /alert %}}{{% alert title="Note" color="primary" %}}Your {{% variables/apibuilder_prod_name %}} service may use the NODE_ENV environment variable directly, and have functionality relying on the value being something other than "development" or "production". This is not recommended from a security perspective, since a value such as "staging" will not enable production-specific features. We recommend making use of a different environment variable for your service.{{% /alert %}}
 
 In the example above, we configure the ARS project to use a Large container size. Different sized containers will offer different levels of performance, at the cost of more or less container points. Information about other available sizes can be found [here](https://docs.axway.com/bundle/AMPLIFY_Runtime_Services_2_0_allOS_en/page/amplify_runtime_services_command-line_interface_reference.html#AMPLIFYRuntimeServicesCommandLineInterfaceReference-ServerCommandserver).
 
 ## Build a Docker image
 
-{{% alert title="Important" color="primary" %}}By default, Docker will build an image for the same architecture as the device you're developing on. ARS runs on x86_64, so if you're developing on a device which is not using this platform (such as ARM devices like the Raspberry Pi or M1 Mac), then you need to configure the target platform in your application's Dockerfile. This is done by specifying the platform alongside the base image.
+{{% alert title="Note" color="primary" %}}By default, Docker will build an image for the same architecture as the device you're developing on. ARS runs on x86_64, so if you're developing on a device which is not using this platform (such as ARM devices like the Raspberry Pi or M1 Mac), then you need to configure the target platform in your application's Dockerfile. This is done by specifying the platform alongside the base image.
 
 Change the following line
 
@@ -136,7 +136,7 @@ To publish the Docker image of your project to the Platform, execute the followi
 axway acs publish myproject --delete_oldest --force --image demo-image --app_version 0.1
 ```
 
-{{% alert title="Important" color="primary" %}}It can take up to 10 minutes for your project to be deployed and your service to be accessible. You should [Check publish status](#check-publish-status) before trying to access your service in the cloud.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}It can take up to 10 minutes for your project to be deployed and your service to be accessible. You should [Check publish status](#check-publish-status) before trying to access your service in the cloud.{{% /alert %}}
 
 Once the image is written, note the URL, as you will use it to test your API, for example:
 

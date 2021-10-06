@@ -131,7 +131,7 @@ Before installing community plugins, you should confirm that you agree that you 
 
 #### Create a plugin
 
-To create a plugin, select the **Create plugin** link. You are directed to [Axway Flow SDK](/docs/developer_guide/flows/axway_flow_sdk/) documentation to guide you through the process.
+To create a plugin, select the **Create plugin** link. You are directed to [{{% variables/apibuilder_prod_name %}} SDK](/docs/developer_guide/sdk) documentation to guide you through the process.
 
 ## Information and search
 

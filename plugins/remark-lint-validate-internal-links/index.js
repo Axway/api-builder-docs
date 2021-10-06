@@ -8,6 +8,22 @@ import debugModule from 'debug';
 import GithubSlugger from 'github-slugger';
 
 const log = new debugModule('remark-lint:validate-internal-links');
+
+// This regex is used for finding hugo variables in the headings. It is somewhat
+// limited since we could have another type of parameters refered with <% text %>
+// we well as spaces in the variables e.g. {{% deprecation/link D042 %}}.
+// If we have heading in mypage.md:  ## My heading is {{% deprecation/link D042 %}}
+// It will be displayed as: ## My heading is [D042](/docs/deprecations#D042)
+// It needs to be referred as: /docs/mypage#my-heading-is-D042. Another caveat
+// is that the html files that represent variables could contain something more
+// complex than a simple string.
+//
+// REFACTOR: If we hit an edge case consider removing the current mechanism
+// (see loadHugoVariables) and  replace it with simple plugin configuration:
+// replace: {
+//	"{{% variables/api-builder-product-name %}}": "API Builder"
+// }
+const regex = /{{% [a-z/_]* %}}/;
 const slugger = new GithubSlugger();
 let availableAnchors = []
 
@@ -17,13 +33,18 @@ const pluginConfig = {
 	staticRoot: 'static',
 	staticFilesExtensions: ['.json', '.js', '.yaml', '.sh', '.html', '.zip'],
 	ignoreLinksThatStartWith: ['mailto', 'http'],
-	hugoVariablesDirectory: 'layouts/shortcodes/variables',
+	hugoShortcodesDirectory: 'layouts/shortcodes/variables',
 	hugoVariables: {}
 }
 
 /**
- * The cache has the following structure => reference: warning.
- * Valid references have "warnings.valid" values.
+ * The cache has the following structure => reference: warning. Valid references
+ * have "warnings.valid" values. The purpose of the caches is to skip checking
+ * links that already have been checked.
+ * 
+ * REFACTOR: The cache could be improved with storing the collected information
+ * for files and their headings. Such information could be reused in
+ * validateAnchors function.
  */
 const cache = {};
 
@@ -37,8 +58,8 @@ function validateInternalLinks(tree, file, options = {}) {
 		options.staticFilesExtensions || pluginConfig.staticFilesExtensions;
 	pluginConfig.ignoreLinksThatStartWith =
 		options.ignoreLinksThatStartWith || pluginConfig.ignoreLinksThatStartWith;
-	pluginConfig.hugoVariablesDirectory =
-		options.hugoVariablesDirectory || pluginConfig.hugoVariablesDirectory;
+	pluginConfig.hugoShortcodesDirectory =
+		options.hugoShortcodesDirectory || pluginConfig.hugoShortcodesDirectory;
 	
 	loadHugoVariables();
 
@@ -220,8 +241,7 @@ function verifyAnchor(file, node, ref) {
 		// we compare if the anchors we search is present or not.
 		let heading = currentNode.children[0].value;
 		if (heading.includes('{{%') && heading.includes('%}}')) {
-			// The heading contains hugo placeholder. Reaplce it.
-			const regex = /{{% [a-z/_]* %}}/;
+			// The heading contains hugo placeholder. Replace it.
 			let placeholder = regex.exec(heading);
 			while (placeholder) {
 				const placeholderItem = placeholder[0];
@@ -229,10 +249,8 @@ function verifyAnchor(file, node, ref) {
 				heading = heading.replace(regex, pluginConfig.hugoVariables[variableName]);
 				placeholder = regex.exec(heading);
 			}
-			availableAnchors.push(slugger.slug(heading));
-		} else {
-			availableAnchors.push(slugger.slug(heading));
 		}
+		availableAnchors.push(slugger.slug(heading));
 	}
 }
 
@@ -321,7 +339,7 @@ function loadHugoVariables() {
 	let files;
 	let directoryPath;
 	try {
-		directoryPath = join(pluginConfig.projectRoot, pluginConfig.hugoVariablesDirectory);
+		directoryPath = join(pluginConfig.projectRoot, pluginConfig.hugoShortcodesDirectory);
 		files = readdirSync(directoryPath);
 	} catch(err) {
 		throw (`Unable to get directory content: ${err}`);

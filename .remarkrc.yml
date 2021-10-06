@@ -6,9 +6,9 @@ plugins:
       staticRoot: 'static',
       staticFilesExtensions: ['.json', '.js', '.yaml', '.sh', '.html', '.zip'],
       ignoreLinksThatStartWith: [
-        'mailto:',
-        'chrome:'
-      ]
+        'mailto', 'http'
+      ],
+      hugoShortcodesDirectory: "layouts/shortcodes/variables"
     }]
   # - [ remark-lint-no-dead-urls, {
   #     skipLocalhost: true,

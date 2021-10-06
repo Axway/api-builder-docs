@@ -64,7 +64,7 @@ Once the plugin is installed, the configuration file is located in `<project>/co
 
     After the successful installation of the connector, a `mbs.default.js` configuration file will be automatically created in your project's `/conf` directory.
 
-After the successful installation of the connector, a configuration file 'mbs.default.js' will be automatically created in your project's conf directory.We recommend providing the app key, username, and password as environment variables. \`MBS_KEY\` , \`MBS_USER\` , and \`MBS_PASSWORD\` are the default environment variables used to configure this connector. See [Environmentalization](/docs/how_to/environmentalization/) for more information.
+After the successful installation of the connector, a configuration file 'mbs.default.js' will be automatically created in your project's conf directory.We recommend providing the app key, username, and password as environment variables. \`MBS_KEY\` , \`MBS_USER\` , and \`MBS_PASSWORD\` are the default environment variables used to configure this connector. See [Environmentalization](/docs/security_guide#environmentalization) for more information.
 After configuring the connector, you can start the service as normal.
 
 ## Usage

@@ -37,7 +37,7 @@ logLevel: process.env.LOG_LEVEL || 'info',
 
 You can set the {{% variables/apibuilder_prod_name %}} log level via the LOG_LEVEL environment variable from the console, without having to edit conf/default.js.
 
-{{% alert title="Note" color="primary" %}}For more information about using environment variables within your application and securing your application, please see [Environmentalization](/docs/how_to/environmentalization/).{{% /alert %}}
+{{% alert title="Note" color="primary" %}}For more information about using environment variables within your application and securing your application, please see [Environmentalization](/docs/security_guide#environmentalization).{{% /alert %}}
 
 #### On bash
 

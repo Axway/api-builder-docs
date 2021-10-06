@@ -45,7 +45,7 @@ As this is the URL that the user's browser will be redirected to after they perf
 
 There may be scenarios where the default `localhost` Redirect URI is not sufficient for access requirements; for example, if the developer is working on a machine that is remote to the {{% variables/apibuilder_prod_name %}} service. The default Redirect URL is generated from the configuration values of `baseurl`, `port`, and `authorization.callback`. Alternatively, the redirect_uri can be set explicitly on each credential in the configuration.
 
-However, be aware that most services require the use of HTTPs when the Redirect URI is something other than `localhost`. For more information on enabling HTTPs in {{% variables/apibuilder_prod_name %}}, see [Enable a secure HTTPS listener](/docs/how_to/enable_a_secure_https_listener/).
+However, be aware that most services require the use of HTTPs when the Redirect URI is something other than `localhost`. For more information on enabling HTTPs in {{% variables/apibuilder_prod_name %}}, see [Enabling TLS/SSL](/docs/security_guide#enabling-tls-ssl).
 
 ### Example
 

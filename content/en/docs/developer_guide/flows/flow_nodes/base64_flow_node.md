@@ -37,7 +37,7 @@ The `Decode` method parameters are:
 | data | string | \- | The base64 encoded string. | Selector, String |
 | as | boolean<br /><br />buffer<br /><br />number<br /><br />object<br /><br />string | buffer | If "buffer", data will be returned as a Buffer.<br /><br />If "string", data will be converted to utf-8 String.<br /><br />If "number", the data will be converted to a utf-8 string<br /><br />and then parsed as base 10 integer.<br /><br />If "boolean”, the data will be converted to a utf-8 string and if<br /><br />"false", "0", or empty string, the value is false (otherwise, true).<br /><br />If "object", the value is converted to a utf-8 string and parsed<br /><br />using JSON.parse. | Selector, String |
 
-The `"as`" parameter can be enabled or disabled.
+The `as` parameter can be enabled or disabled.
 
 ## Outputs
 

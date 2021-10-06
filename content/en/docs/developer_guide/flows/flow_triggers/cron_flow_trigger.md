@@ -30,15 +30,17 @@ The following sections provide details of the available **Cron** parameters.
 
 This Cron plugin is a flow-trigger that enables triggering a flow based on a schedule defined via [cron expressions](https://www.npmjs.com/package/node-schedule) that are triggered according to system time by default. The cron-like expression is different from cron in that it includes an optional _second_ (a 6th position) in the following format:
 
+```text
 \*    \*    \*    \*    \*    \*
-┬    ┬    ┬    ┬    ┬    ┬
-│    │    │    │    │    │
-│    │    │    │    │    └ day of week (0 - 7) (0 or 7 is Sun)
-│    │    │    │    └───── month (1 - 12)
-│    │    │    └────────── day of month (1 - 31)
-│    │    └─────────────── hour (0 - 23)
-│    └──────────────────── minute (0 - 59)
+┬     ┬     ┬     ┬     ┬     ┬
+│     │     │     │     │     │
+│     │     │     │     │     └ day of week (0 - 7) (0 or 7 is Sun)
+│     │     │     │     └───── month (1 - 12)
+│     │     │     └────────── day of month (1 - 31)
+│     │     └─────────────── hour (0 - 23)
+│     └──────────────────── minute (0 - 59)
 └───────────────────────── second (0 - 59, OPTIONAL)
+```
 
 {{% alert title="Tip" color="primary" %}}An online tool [crontab.guru](https://crontab.guru) can assist in helping you compose a valid cron expression, however, it only supports 5 parts (excludes seconds).{{% /alert %}}
 

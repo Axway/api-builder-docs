@@ -1,6 +1,6 @@
 ---
-title: Change in the way body is handled for http methods get and head
-linkTitle: Change in the way body is handled for http methods get and head
+title: Change in the way body is handled for HTTP methods GET and HEAD
+linkTitle: Change in the way body is handled for HTTP methods GET and HEAD
 weight: 50
 deprecation: D050
 date: 2021-10-01

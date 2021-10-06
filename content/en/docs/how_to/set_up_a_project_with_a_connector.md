@@ -18,18 +18,21 @@ Before setting up a project with a connector, refer to:
 
 ## {{% variables/apibuilder_prod_name %}} Connectors
 
-Connectors are adapters to allow you to read and write data to and from an external data source, such as Oracle, MySQL, MSSQL, and MongoDB. They give your application the ability to utilize existing data sources to create Models for use within your {{% variables/apibuilder_prod_name %}} application, either directly as API or within flows.
+Data connector plugins allow you to read and write data to and from an external data source, such as Oracle, MySQL, MSSQL, and MongoDB. They give your application the ability to utilize existing data sources to create [Models](/docs/developer_guide/models) for use within your {{% variables/apibuilder_prod_name %}} application, either directly as API or within flows.
 
 {{% alert title="Note" color="primary" %}}Refer to [{{% variables/apibuilder_prod_name %}} Connectors](/docs/developer_guide/connectors/) for detailed information.{{% /alert %}}
 
 ### Available connectors
 
-The following connectors are available for download directly from npm:
+The following data connector plugins are currently available for download directly from npm:
 
-* `@axway/api-builder-plugin-dc-mongo`
-* `@axway/api-builder-plugin-dc-mysql`
-* `@axway/api-builder-plugin-dc-mssql`
-* `@axway/api-builder-plugin-dc-oracle`
+| Connector | Plugin |
+| --------- | ------ |
+| [MBS Connector](/docs/developer_guide/connectors/mbs_connector) | [api-builder-plugin-dc-mbs](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mbs)|
+| [Mongo Connector](/docs/developer_guide/connectors/mongo_connector) | [api-builder-plugin-dc-mongo](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mongo)|
+| [MsSQL Connector](/docs/developer_guide/connectors/mssql_connector) | [api-builder-plugin-dc-mssql](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mssql)|
+| [MySQL Connector](/docs/developer_guide/connectors/mysql_connector) | [api-builder-plugin-dc-mysql](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mysql)|
+| [Oracle Connector](/docs/developer_guide/connectors/oracle_connector) | [api-builder-plugin-dc-oracle](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-oracle)|
 
 To install a data connector, navigate to the root directory of your service and use the following command; for example, to install the MySQL data connector:
 
@@ -39,22 +42,40 @@ npm install --no-optional @axway/api-builder-plugin-dc-mysql
 
 {{% alert title="Note" color="primary" %}}You will need to configure your connector with connection details before starting your application, or it will fail to start. For additional configuration details, refer to [MySQL Connector](/docs/developer_guide/connectors/mysql_connector/).{{% /alert %}}
 
-### Configuring connectors
+## Configuring data connector plugins
 
-When you install a connector, it will create a configuration file located in the `<SERVICE_FOLDER>/conf` folder that has the name of your connector. For example, `mysql.default.js`. You will need to edit this file and give it the required connection details such as database host and port, user, password, and database.
+When you install a data connector plugin, it will create a configuration file located the `<SERVICE_FOLDER>/conf` folder and has the name of your connector. For example, `mysql.default.js`. You will need to edit this file and give it the required connection details such as database host/port, username, password, and database. The connector configuration contains additional set of environment variables when using an {{% variables/apibuilder_prod_name %}} service with connectors.
 
-The configuration files that can contain environment variables are placed in the **`<SERVICE_FOLDER>/conf`** folder.
+The configuration files that can contain environment variables are placed in the `<SERVICE_FOLDER>/conf` folder.
 
 All the variables in your configuration files taken from `process.env.<VARIABLE_NAME>` can be provided when running the Docker container.
 
-The following table lists the configuration files, their location, and their example content. The connector configuration is shown to inform you that you will have to provide an additional set of environment variables when using an {{% variables/apibuilder_prod_name %}} service with connectors.
+The following is an example configuration file for the [MySQL Connector](/docs/developer_guide/connectors/mysql_connector). It will be created when [api-builder-plugin-dc-mysql](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mysql) is installed. Note that "mysql" is a friendly name of this configuration instance. You can create multiple configuration instances with different names in this file.
 
-| Configuration File | Location | Example |
-| --- | --- | --- |
-| Service Configuration | `<SERVICE_FOLDER>/conf/default.js` | <pre> module.exports = {<br /> apiKey: process.env.APIKEY<br /> port: parseInt(process.env.PORT) &#x7c;&#x7c; 8080<br />}; </pre> |
-| Connector Configuration | Example with MySQL.<br /><br />The file will be named `<SERVICE_FOLDER>/conf/mysql.default.js` | <pre> module.exports = {<br />  connectors: {<br />    mysql: {<br />      connector: '@axway/api-builder-plugin-dc-mysql',<br />      connectionPooling: true,<br />      connectionLimit: 10,<br />      host: process.env.MYSQL_HOST &#x7c;&#x7c; 'localhost',<br />      port: 3306,<br /> <br /> <br />    # This could be set to mysql since this is already available database  by default<br />      database: 'mysql',<br /> <br /> <br />      user: process.env.MYSQL_USER,<br />      password: process.env.MYSQL_PASSWORD,<br /> <br /> <br />      // Create models based on your schema that can be used in your API.<br />      generateModelsFromSchema: true,<br /> <br />      // Whether or not to generate APIs based on the methods in generated models.<br />      modelAutogen: false<br />    }<br />  }<br />}; </pre> |
-
-For additional MySQL connector configuration information, refer to [MySQL Connector](/docs/developer_guide/connectors/mysql_connector/).
+```js
+// example <SERVICE_FOLDER/conf/mysql.default.js>
+ module.exports = {
+  connectors: {
+    mysql: {
+      connector: ‘@axway/api-builder-plugin-dc-mysql’,
+      connectionPooling: true,
+      connectionLimit: 10,
+      host: process.env.MYSQL_HOST || ‘localhost’,
+      port: 3306,
+      // This could be set to mysql since this is already available database
+      // by default
+      database: ‘mysql’,
+      user: process.env.MYSQL_USER,
+      password: process.env.MYSQL_PASSWORD,
+      // Create models based on your schema that can be used in your API.
+      generateModelsFromSchema: true,
+      // Whether or not to automatically generate APIs based on the methods in
+      // generated models. Otherwise, models can be used in flows
+      modelAutogen: false
+    }
+  }
+};
+```
 
 ## Using connector models
 

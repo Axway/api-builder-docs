@@ -10,7 +10,7 @@ date: 2021-10-01
 
 When logging is enabled, the log message format that is output includes a timestamp, followed by a message.
 
-This behavior has been deprecated since {{% variables/apibuilder_prod_name %}} - Faro release.
+This behavior has been deprecated since {{% variables/apibuilder_prod_name %}} - [Faro](/docs/release_notes/faro) release.
 
 Beginning with the [Giza](/docs/release_notes/giza) release, the new log format will now include a level: timestamp, log level, followed by a message. For example:
 

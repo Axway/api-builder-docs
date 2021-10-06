@@ -35,7 +35,7 @@ The following are the supported versions, features, and prerequisites and the ap
 
 ### Prerequisites
 
-This connector requires Oracle Instant Client installed. To install it, please follow the instructions for your environment here: [Oracle Instant Client](http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html)
+This connector requires Oracle Instant Client installed. To install it, please follow the instructions for your environment here: [Oracle Instant Client](https://www.oracle.com/database/technologies/instant-client/downloads.html)
 
 The connector also depends on the `node-oracledb` module. To properly install the connector, please check the prerequisites here: `node-oracledb`
 
@@ -56,7 +56,7 @@ Once the plugin is installed, the configuration file is located in `<project>/co
 | Option name | Type | Description |
 | --- | --- | --- |
 | connector | string | Must be: `@axway/api-builder-plugin-dc-oracle` |
-| connectString | string | The database instance [connection string](https://oracle.github.io/node-oracledb/doc/api.html#connectionstrings). Supports:<br /><br />* [Easy Connect](https://oracle.github.io/node-oracledb/doc/api.html#easyconnect) (e.g. `"mydbmachine.example.com/orclpdb1"`)<br />* [Net Service Name](https://oracle.github.io/node-oracledb/doc/api.html#tnsnames) stored in a tnsnames.ora configuration file`"`<br />* [Connector Descriptor](https://oracle.github.io/node-oracledb/doc/api.html#easyconnect) (e.g. `"(DESCRIPTION=(ADDRESS=(PROTOCOL = TCP)(HOST=10.0.0.42)(PORT = 1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=oracledb12c))"`): |
+| connectString | string | The database instance [connection string](https://oracle.github.io/node-oracledb/doc/api.html#connectionstrings). Supports:<br /><br />[Easy Connect](https://oracle.github.io/node-oracledb/doc/api.html#easyconnect) (e.g. `"mydbmachine.example.com/orclpdb1"`).<br />[Net Service Name](https://oracle.github.io/node-oracledb/doc/api.html#tnsnames) stored in a tnsnames.ora configuration file.<br />[Connector Descriptor](https://oracle.github.io/node-oracledb/doc/api.html#easyconnect) (e.g. `"(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.0.42)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=oracledb12c))"`). |
 | user | string | The user with which to connect to the database. |
 | password | string | The user's password with which to connect to the database. |
 | generateModelsFromSchema | boolean, string\[\] | If `true`, {{% variables/apibuilder_prod_name %}} will automatically interrogate the database and auto-generate Models from SQL tables. If `false`, `undefined`, or empty array, no models will be generated. If an array of strings, they are an exclusive list of table name(s) used to auto-generate models. If a simple name (e.g. "EMPLOYEES"), then the table is assumed to be owned by the configured `user`. The table can also be prefixed with a schema (which is the name of the owner, e.g. "OTHER.EMPLOYEES"). If a named table is not found, then it will generate a warning on start up. It is not currently possible to have two tables with the same name (e.g. `["EMPLOYEES", "OTHER.EMPLOYEES"]`) and will generate a start up error if detected. |

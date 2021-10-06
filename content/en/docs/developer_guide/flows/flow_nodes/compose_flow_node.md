@@ -11,7 +11,7 @@ The Compose (doT) flow-node methods, parameters, and outputs are described in th
 
 **Templates should never come from untrusted sources**. If you trust all the templates that you use, then you can safely ignore the vulnerability and continue to use this plugin.
 
-This plugin is no longer bundled with new {{% variables/apibuilder_prod_name %}} projects. We suggest using `@axway/api-builder-plugin-fn-javascript` instead of the `formatObject` method, or `@axway/api-builder-plugin-fn-mustache` instead of `formatString`.{{% /alert %}}
+This plugin is no longer bundled with new {{% variables/apibuilder_prod_name %}} projects. We suggest using [JavaScript flow-node](/docs/developer_guide/flows/flow_nodes/javascript_flow_node) instead of the `formatObject` method, or [Mustache flow-node](/docs/developer_guide/flows/flow_nodes/mustache_flow_node) instead of `formatString`.{{% /alert %}}
 
 ## Methods
 

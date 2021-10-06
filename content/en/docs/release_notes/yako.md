@@ -25,7 +25,7 @@ Hide_readingtime: true
 ## Release notes
 
 * #4811: Previously, RetireJS security scans of {{% variables/apibuilder_prod_name %}} would report that it was using a vulnerable dependency on bootstrap@3.3.7. Now, the dependency is no longer reported.
-* #5892: Flow-nodes now support defining an initial type for parameters in the UI, other than always being a selector. For example, template fields could have their `initialType` set to `string`. See [Axway Flow SDK](/docs/developer_guide/flows/axway_flow_sdk/) for more information.
+* #5892: Flow-nodes now support defining an initial type for parameters in the UI, other than always being a selector. For example, template fields could have their `initialType` set to `string`.
 * #5912: Previously, when using "npm install" on an {{% variables/apibuilder_prod_name %}} project, npm would alert that "lodash.merge" had a high alert for Prototype Pollution (\[https://nodesecurity.io/advisories/1067\]). Now, the alert has been resolved by removing the dependency.
 * #5920: Previously, the .dockerignore file that comes with a scaffolded {{% variables/apibuilder_prod_name %}} service did not include .git, coverage, and .nyc_output folders. Now, those folders are added.
 * #5924: The UI now renders a specialized Mustache editor with syntax highlighting for flow-node parameters which are defined with "format": "mustache" and "type": "string" in their schema.

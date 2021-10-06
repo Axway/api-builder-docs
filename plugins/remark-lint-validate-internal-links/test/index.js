@@ -14,7 +14,7 @@ describe('remark-lint-validate-internal-links', () => {
 		process.chdir(resolve(process.cwd(), '..', '..'));
 	});
 
-	it('should validate anchors', async () => {
+	it.only('should validate anchors', async () => {
 		const warnings = (
 			await remark()
 				.use(lintRule)

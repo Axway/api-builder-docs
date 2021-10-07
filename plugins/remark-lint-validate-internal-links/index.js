@@ -5,7 +5,7 @@ import { visit } from 'unist-util-visit';
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import warnings from './warnings.js';
 import debugModule from 'debug';
-import GithubSlugger from 'github-slugger';
+import unicode from 'unicode/category/index.js';
 
 const log = new debugModule('remark-lint:validate-internal-links');
 
@@ -24,9 +24,8 @@ const log = new debugModule('remark-lint:validate-internal-links');
 //	"{{% variables/api-builder-product-name %}}": "API Builder"
 // }
 const regex = /{{% [a-z/_]* %}}/;
-const slugger = new GithubSlugger();
-let availableAnchors = []
-
+let availableAnchors = [];
+let anchorMap = Object.create(null);
 const pluginConfig = {
 	projectRoot: null,
 	docsRoot: 'content/en',
@@ -60,7 +59,7 @@ function validateInternalLinks(tree, file, options = {}) {
 		options.ignoreLinksThatStartWith || pluginConfig.ignoreLinksThatStartWith;
 	pluginConfig.hugoShortcodesDirectory =
 		options.hugoShortcodesDirectory || pluginConfig.hugoShortcodesDirectory;
-	
+
 	loadHugoVariables();
 
 	visit(tree, "link", verifyLinks);
@@ -68,7 +67,7 @@ function validateInternalLinks(tree, file, options = {}) {
 
 	function verifyLinks(node) {
 		const ref = node.url;
-		log('checking:', ref);
+		log('Verify link:', ref);
 		if (cache[ref] === warnings.valid) {
 			// We have valid reference so move to next one
 			return;
@@ -91,7 +90,7 @@ function validateInternalLinks(tree, file, options = {}) {
 			return;
 		}
 		if (isStaticRef(ref)) {
-			if(warnOnUpperCase(file, node, ref.split('/').pop())) {
+			if (warnOnUpperCase(file, node, ref.split('/').pop())) {
 				return;
 			}
 			addWarningIfFileIsMissing({
@@ -125,9 +124,9 @@ function validateInternalLinks(tree, file, options = {}) {
 
 	function verifyImages(node) {
 		const ref = node.url;
-		if(warnOnUpperCase(file, node, ref.split('/').pop())) {
+		if (warnOnUpperCase(file, node, ref.split('/').pop())) {
 			return;
-		}		
+		}
 		addWarningIfFileIsMissing({
 			file,
 			node,
@@ -181,8 +180,8 @@ function verifyAnchor(file, node, ref) {
 		// We are reading the file that we currently process so it does exists.
 		const doc = getFile(filePath);
 		const tree = fromMarkdown(doc);
-		slugger.reset();
 		availableAnchors = [];
+		anchorMap = Object.create(null);
 		visit(tree, "heading", compare);
 		if (availableAnchors.includes(anchor)) {
 			cache[ref] = warnings.valid;
@@ -211,15 +210,15 @@ function verifyAnchor(file, node, ref) {
 	const pathToFile
 		= join(pluginConfig.projectRoot, pluginConfig.docsRoot, getFilePathWithExtension(filePath));
 	const pathToIndexFile
-		= join(pluginConfig.projectRoot, pluginConfig.docsRoot, getIndexFilePath(filePath));	
+		= join(pluginConfig.projectRoot, pluginConfig.docsRoot, getIndexFilePath(filePath));
 	const doc = getFile(pathToFile)
 		|| getFile(pathToIndexFile);
 	if (doc) {
 		anchorFound = false;
 		// We got the doc now turn it into an AST.
 		const tree = fromMarkdown(doc);
-		slugger.reset();
 		availableAnchors = [];
+		anchorMap = Object.create(null);
 		visit(tree, "heading", compare);
 		if (availableAnchors.includes(anchor)) {
 			cache[ref] = warnings.valid;
@@ -231,15 +230,18 @@ function verifyAnchor(file, node, ref) {
 	} else {
 		const msg = `${warnings.missingDoc}: ${filePath}`;
 		file.message(msg, node);
-		cache[ref] = msg;		
+		cache[ref] = msg;
 	}
 	function compare(currentNode) {
 		// Here we get the current node from AST which holds the heading value but
-		// it is the original one with spaces and upper case in the beginning.
-		// The references are URL friendly so we do transform using github-slugger
-		// module, collect all transformed anchors. Later when this loops end
-		// we compare if the anchors we search is present or not.
-		let heading = currentNode.children[0].value;
+		// it is the original one which is not URL friendly. We do transform it
+		// using the slug function and collect all transformed anchors. Later when
+		// this loops end we compare if the anchor we search is present or not.
+		// Note that the cuurentNode could have a collection of children that
+		// represent the same heading in cases when the heading contains '<' and '>'
+		// symbols.
+		let heading = currentNode.children
+			.reduce((acc, current) => { return acc.concat(current.value); }, '');
 		if (heading.includes('{{%') && heading.includes('%}}')) {
 			// The heading contains hugo placeholder. Replace it.
 			let placeholder = regex.exec(heading);
@@ -250,7 +252,7 @@ function verifyAnchor(file, node, ref) {
 				placeholder = regex.exec(heading);
 			}
 		}
-		availableAnchors.push(slugger.slug(heading));
+		availableAnchors.push(slug(heading));
 	}
 }
 
@@ -296,7 +298,7 @@ function getFile(filePath) {
 
 function addWarningIfFileIsMissing(config) {
 	const { file, node, ref, staticFile } = config;
-	if ( staticFile ) {
+	if (staticFile) {
 		const filePath = join(pluginConfig.projectRoot, pluginConfig.staticRoot, ref);
 		if (isFileMissing(filePath)) {
 			const msg = `${warnings.missingStaticFile}: ${filePath}`;
@@ -341,11 +343,59 @@ function loadHugoVariables() {
 	try {
 		directoryPath = join(pluginConfig.projectRoot, pluginConfig.hugoShortcodesDirectory);
 		files = readdirSync(directoryPath);
-	} catch(err) {
+	} catch (err) {
 		throw (`Unable to get directory content: ${err}`);
 	}
 	files.forEach(file => {
 		const variable = getFile(join(directoryPath, file));
-		pluginConfig.hugoVariables[file.slice(0, file.length-5)] = variable.toString();
-	});	
+		pluginConfig.hugoVariables[file.slice(0, file.length - 5)] = variable.toString().replace(/(\r\n|\n|\r)/gm, '');
+	});
+}
+
+function isLetter(r) {
+	// 'Ll' is the collection of Unicode lower case letters and that is what we do
+	// care about. If the character is in this collection we return it as part of
+	// the sanitized anchor.
+	return unicode.Ll[r];
+}
+
+function isNumber(r) {
+	return 48 <= r && r <= 57;
+}
+
+/**
+ * Implements blackfriday algorithm for anchor sanitization:
+ * https://pkg.go.dev/github.com/russross/blackfriday#hdr-Sanitized_Anchor_Names
+ * 
+ * @param {string} heading - the heading to produce anchor from.
+ * @returns {string} the sanitized anchor.
+ */
+function slug(heading) {
+	const head = heading.toLowerCase();
+	log(`Heading to produce anchor from: ${head}`)
+	const anchorName = [];
+	let dash = false;
+	for (let i = 0; i < head.length; i++) {
+		const char = head.charAt(i);
+		const r = head.charCodeAt(i);
+		if (isNumber(r) || isLetter(r)) {
+			if (dash && anchorName.length > 0) {
+				anchorName.push('-');
+			}
+			dash = false;
+			anchorName.push(char);
+		} else {
+			dash = true
+		}
+	}
+	let slug = anchorName.join('');
+	const originalSlug = slug
+
+	while (Object.hasOwnProperty.call(anchorMap, slug)) {
+		anchorMap[originalSlug]++;
+		slug = originalSlug + '-' + anchorMap[originalSlug];
+	}
+	anchorMap[slug] = 0;
+	log(`Sanitized anchor: ${slug}`);
+	return slug
 }

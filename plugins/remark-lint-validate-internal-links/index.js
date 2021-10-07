@@ -59,7 +59,7 @@ function validateInternalLinks(tree, file, options = {}) {
 		options.ignoreLinksThatStartWith || pluginConfig.ignoreLinksThatStartWith;
 	pluginConfig.hugoShortcodesDirectory =
 		options.hugoShortcodesDirectory || pluginConfig.hugoShortcodesDirectory;
-	
+
 	loadHugoVariables();
 
 	visit(tree, "link", verifyLinks);
@@ -90,7 +90,7 @@ function validateInternalLinks(tree, file, options = {}) {
 			return;
 		}
 		if (isStaticRef(ref)) {
-			if(warnOnUpperCase(file, node, ref.split('/').pop())) {
+			if (warnOnUpperCase(file, node, ref.split('/').pop())) {
 				return;
 			}
 			addWarningIfFileIsMissing({
@@ -124,9 +124,9 @@ function validateInternalLinks(tree, file, options = {}) {
 
 	function verifyImages(node) {
 		const ref = node.url;
-		if(warnOnUpperCase(file, node, ref.split('/').pop())) {
+		if (warnOnUpperCase(file, node, ref.split('/').pop())) {
 			return;
-		}		
+		}
 		addWarningIfFileIsMissing({
 			file,
 			node,
@@ -210,7 +210,7 @@ function verifyAnchor(file, node, ref) {
 	const pathToFile
 		= join(pluginConfig.projectRoot, pluginConfig.docsRoot, getFilePathWithExtension(filePath));
 	const pathToIndexFile
-		= join(pluginConfig.projectRoot, pluginConfig.docsRoot, getIndexFilePath(filePath));	
+		= join(pluginConfig.projectRoot, pluginConfig.docsRoot, getIndexFilePath(filePath));
 	const doc = getFile(pathToFile)
 		|| getFile(pathToIndexFile);
 	if (doc) {
@@ -230,7 +230,7 @@ function verifyAnchor(file, node, ref) {
 	} else {
 		const msg = `${warnings.missingDoc}: ${filePath}`;
 		file.message(msg, node);
-		cache[ref] = msg;		
+		cache[ref] = msg;
 	}
 	function compare(currentNode) {
 		// Here we get the current node from AST which holds the heading value but
@@ -298,7 +298,7 @@ function getFile(filePath) {
 
 function addWarningIfFileIsMissing(config) {
 	const { file, node, ref, staticFile } = config;
-	if ( staticFile ) {
+	if (staticFile) {
 		const filePath = join(pluginConfig.projectRoot, pluginConfig.staticRoot, ref);
 		if (isFileMissing(filePath)) {
 			const msg = `${warnings.missingStaticFile}: ${filePath}`;
@@ -343,23 +343,24 @@ function loadHugoVariables() {
 	try {
 		directoryPath = join(pluginConfig.projectRoot, pluginConfig.hugoShortcodesDirectory);
 		files = readdirSync(directoryPath);
-	} catch(err) {
+	} catch (err) {
 		throw (`Unable to get directory content: ${err}`);
 	}
 	files.forEach(file => {
 		const variable = getFile(join(directoryPath, file));
-		pluginConfig.hugoVariables[file.slice(0, file.length-5)] = variable.toString().replace(/(\r\n|\n|\r)/gm, '');
-	});	
+		pluginConfig.hugoVariables[file.slice(0, file.length - 5)] = variable.toString().replace(/(\r\n|\n|\r)/gm, '');
+	});
 }
+
 function isLetter(r) {
 	// 'Ll' is the collection of Unicode lower case letters and that is what we do
 	// care about. If the character is in this collection we return it as part of
 	// the sanitized anchor.
-    return unicode.Ll[r];
+	return unicode.Ll[r];
 }
 
 function isNumber(r) {
-    return 48 <= r && r <= 57;
+	return 48 <= r && r <= 57;
 }
 
 /**
@@ -372,24 +373,24 @@ function isNumber(r) {
 function slug(heading) {
 	const head = heading.toLowerCase();
 	log(`Heading to produce anchor from: ${head}`)
-    const anchorName = [];
-    let dash = false;
-    for (let i = 0; i < head.length; i++) {
-        const char = head.charAt(i);
-        const r = head.charCodeAt(i);
-        if (isNumber(r) || isLetter(r)) {
-            if (dash && anchorName.length > 0) {
-                anchorName.push('-');
-            }
-            dash = false;
-            anchorName.push(char);
-        } else {
-            dash = true
-        }
-    }
-    let slug = anchorName.join('');
+	const anchorName = [];
+	let dash = false;
+	for (let i = 0; i < head.length; i++) {
+		const char = head.charAt(i);
+		const r = head.charCodeAt(i);
+		if (isNumber(r) || isLetter(r)) {
+			if (dash && anchorName.length > 0) {
+				anchorName.push('-');
+			}
+			dash = false;
+			anchorName.push(char);
+		} else {
+			dash = true
+		}
+	}
+	let slug = anchorName.join('');
 	const originalSlug = slug
-  
+
 	while (Object.hasOwnProperty.call(anchorMap, slug)) {
 		anchorMap[originalSlug]++;
 		slug = originalSlug + '-' + anchorMap[originalSlug];

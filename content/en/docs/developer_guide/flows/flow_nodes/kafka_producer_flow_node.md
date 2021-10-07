@@ -27,6 +27,7 @@ The following sections provide details of the available **Kafka Producer** flow-
 
 Publishes a string message to the Kafka topic.
 
+<!-- lint disable no-duplicate-headings -->
 #### Parameters
 
 | Parameter | Type | Description | Configuration selection | Required |
@@ -51,10 +52,11 @@ Publishes a string message to the Kafka topic.
 | Next | Any | Successfully published the message. |  |
 | Error | Any | An unexpected error was encountered. | $.error |
 
+<!-- lint enable no-duplicate-headings -->
 ### Publish JSON
 
 JSON encodes and publishes a message to a Kafka topic.
-
+<!-- lint disable no-duplicate-headings -->
 #### Parameters
 
 | Parameter | Type | Description | Configuration selection | Required |
@@ -78,11 +80,11 @@ JSON encodes and publishes a message to a Kafka topic.
 | --- | --- | --- | --- |
 | Next | Any | Successfully published the message. |  |
 | Error | Any | An unexpected error was encountered. | $.error |
-
+<!-- lint enable no-duplicate-headings -->
 ### Publish Binary
 
 Publishes a binary message to Kafka topic.
-
+<!-- lint disable no-duplicate-headings -->
 #### Parameters
 
 | Parameter | Type | Description | Configuration selection | Required |
@@ -106,7 +108,7 @@ Publishes a binary message to Kafka topic.
 | --- | --- | --- | --- |
 | Next | Any | Successfully published the message. |  |
 | Error | Any | An unexpected error was encountered. | $.error |
-
+<!-- lint enable no-duplicate-headings -->
 ## How to use the Kafka Producer
 
 ### Example - Publish JSON to Kafka

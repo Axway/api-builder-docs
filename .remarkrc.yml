@@ -75,6 +75,10 @@ plugins:
       'JWT',
       'URI'
     ]]
+    # Lots of false positives. Sometimes it's expected but we don't want
+    # this to be checking URLs, and want it to be a bit more flexible.
+    # Otherwise it's really useful for catching wrong usage of words.
+    # Consider replacing with some other sort of dictionary checker.
   - [ 'remark-lint-prohibited-strings', [
       { no: 'Flow node', yes: 'Flow-node' },
       { no: 'flow node', yes: 'flow-node' },
@@ -82,21 +86,21 @@ plugins:
       { no: 'Flow trigger', yes: 'Flow-trigger' },
       { no: 'flow trigger', yes: 'flow-trigger' },
       # { yes: 'flow-trigger' },  # case insensitive
-      { yes: 'JavaScript' },
+      # { yes: 'JavaScript' },
       { yes: 'Node.js' },
       { yes: 'npm' },
       { yes: 'unix' },
       { yes: 'GitHub' },
-      { yes: 'Docker' },
+      # { yes: 'Docker' },
       { yes: 'Axway', ignoreNextTo: '-' },
       { yes: 'Amplify', ignoreNextTo: '-' },
-      { yes: 'Oracle', ignoreNextTo: '[-"]' },
-      { yes: 'JSONPath' },
+      # { yes: 'Oracle', ignoreNextTo: '-' },
+      # { yes: 'JSONPath' },
       # the plugin doesn't handle URLs well
       # { yes: 'doT' },
       { yes: 'OAuth' },
       { no: 'JSON path', yes: 'JSONPath'},
-      { yes: 'JSONPath' },
+      # { yes: 'JSONPath' },
       # the plugin doesn't handle regex too well, so wasn't able to use
       # negative lookbehind for use of 'builder' without preceding 'API'.
       # https://github.com/Trott/remark-lint-prohibited-strings/blob/main/index.js

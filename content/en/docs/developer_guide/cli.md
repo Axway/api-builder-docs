@@ -133,6 +133,7 @@ axway builder plugin init legacy-connector`
 
 Then a directory names api-builder-plugin-legacy-connector would still be created.
 
+<!-- lint disable no-duplicate-headings -->
 #### \--no-install
 
 This command prevents the installation of dependent node_modules when the plugin is initialized. (Using the same example plugin name as above.)
@@ -140,7 +141,7 @@ This command prevents the installation of dependent node_modules when the plugin
 ```bash
 axway builder plugin init --no-install legacy-connector
 ```
-
+<!-- lint enable no-duplicate-headings -->
 #### \--type
 
 This option allows you to specify the type of plugin you'd like to create (see above). The options are "standard" and "oas". If neither is specified, then "standard" is assumed. You can specify "standard" as follows:
@@ -167,7 +168,7 @@ While we recommend to use the {{% variables/apibuilder_prod_name %}} CLI as part
 [sudo] npm install -g @axway/api-builder
 ```
 
-### Commands
+### Usage
 
 All commands are as documented above. The only difference is that instead of `axway builder`, the command is `api-builder`. For example to initialise a new project, the following command is used:
 

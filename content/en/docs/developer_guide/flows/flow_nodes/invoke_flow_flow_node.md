@@ -25,6 +25,7 @@ The following sections provide details of the available **Invoke Flow** flow-nod
 
 Invokes a flow identified by **Flow Listener ID** with the parameter **Data**, if provided. When the flow is invoked, the value of **Data** will be provided as `$.request` (it will be `undefined` if not provided).
 
+<!-- lint disable no-duplicate-headings -->
 #### Parameters
 
 | Parameter | Type | Description | Configuration selection | Required |
@@ -59,6 +60,7 @@ Invokes a flow identified by **Flow Listener ID** for each item in the **Items**
 | Next | any | The data returned by the flow. | `$.flowResponse` |
 | Error | any | The flow did not respond successfully. | `$.error` |
 
+<!-- lint enable no-duplicate-headings -->
 ## How to use the plugin
 
 See [Flow Listener](/docs/developer_guide/flows/flow_triggers/flow_listener_flow_trigger/#how-to-use-the-plugin) flow-trigger for an example on how to use the plugin.

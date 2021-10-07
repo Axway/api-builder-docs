@@ -90,6 +90,7 @@ This change alters the way that composite Models with multiple joins behave in c
 | 0 | "Joe" | NULL | "Bloggs" |  | 0 | "Joe" | NULL | "Bloggs" |
 | 1 | "Michael" | "Daniel" | "Higgins" |  | 1 | "Joe" | "James" | "Bloggs" |
 
+<!-- lint disable no-duplicate-headings -->
 ### Previous behavior
 
 ```javascript
@@ -118,7 +119,7 @@ This change alters the way that composite Models with multiple joins behave in c
   }
 ]
 ```
-
+<!-- lint enable no-duplicate-headings -->
 ### Upgrading existing services
 
 Updates contain important changes to improve the performance, stability, and security of your services. Installing them ensures that your software continues to run safely and efficiently.

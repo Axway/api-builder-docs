@@ -26,7 +26,7 @@ The following sections provide details of the available Solace Producer flow-nod
 ### Publish String
 
 Publish text message as String to Solace topic.
-
+<!-- lint disable no-duplicate-headings -->
 #### Parameters
 
 | Parameter | Type | Description | Configuration selection | Required |
@@ -41,11 +41,11 @@ Publish text message as String to Solace topic.
 | --- | --- | --- | --- |
 | Next | Any | Successfully published message to Solace topic. |  |
 | Error | Any | Unexpected error when publishing to Solace topic. | $.error |
-
+<!-- lint enable no-duplicate-headings -->
 ### Publish JSON
 
 JSON encodes and publishes a message to a Solace topic.
-
+<!-- lint disable no-duplicate-headings -->
 #### Parameters
 
 | Parameter | Type | Description | Configuration selection | Required |
@@ -60,11 +60,11 @@ JSON encodes and publishes a message to a Solace topic.
 | --- | --- | --- | --- |
 | Next | Any | Successfully published message to Solace topic. |  |
 | Error | Any | Unexpected error when publishing to Solace topic. | $.error |
-
+<!-- lint enable no-duplicate-headings -->
 ### Publish Binary
 
 Publish message with attached binary to Solace topic.
-
+<!-- lint disable no-duplicate-headings -->
 #### Parameters
 
 | Parameter | Type | Description | Configuration selection | Required |
@@ -79,7 +79,7 @@ Publish message with attached binary to Solace topic.
 | --- | --- | --- | --- |
 | Next | Any | Successfully published message to Solace topic. |  |
 | Error | Any | Unexpected error when publishing to Solace topic. | $.error |
-
+<!-- lint enable no-duplicate-headings -->
 ## Prerequisite
 
 We recommend that you first get familiar with [Solace Concepts](https://docs.solace.com/Solace-PubSub-Platform.htm). To get started using the Solace flow-trigger, you need to have access to a Solace server.

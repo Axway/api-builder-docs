@@ -25,7 +25,7 @@ const log = new debugModule('remark-lint:validate-internal-links');
 // }
 const regex = /{{% [a-z/_]* %}}/;
 let availableAnchors = [];
-let occurrences = Object.create(null);
+let anchorMap = Object.create(null);
 const pluginConfig = {
 	projectRoot: null,
 	docsRoot: 'content/en',
@@ -67,7 +67,7 @@ function validateInternalLinks(tree, file, options = {}) {
 
 	function verifyLinks(node) {
 		const ref = node.url;
-		log('checking:', ref);
+		log('Verify link:', ref);
 		if (cache[ref] === warnings.valid) {
 			// We have valid reference so move to next one
 			return;
@@ -181,7 +181,7 @@ function verifyAnchor(file, node, ref) {
 		const doc = getFile(filePath);
 		const tree = fromMarkdown(doc);
 		availableAnchors = [];
-		occurrences = Object.create(null);
+		anchorMap = Object.create(null);
 		visit(tree, "heading", compare);
 		if (availableAnchors.includes(anchor)) {
 			cache[ref] = warnings.valid;
@@ -218,7 +218,7 @@ function verifyAnchor(file, node, ref) {
 		// We got the doc now turn it into an AST.
 		const tree = fromMarkdown(doc);
 		availableAnchors = [];
-		occurrences = Object.create(null);
+		anchorMap = Object.create(null);
 		visit(tree, "heading", compare);
 		if (availableAnchors.includes(anchor)) {
 			cache[ref] = warnings.valid;
@@ -237,7 +237,11 @@ function verifyAnchor(file, node, ref) {
 		// it is the original one which is not URL friendly. We do transform it
 		// using the slug function and collect all transformed anchors. Later when
 		// this loops end we compare if the anchor we search is present or not.
-		let heading = currentNode.children[0].value;
+		// Note that the cuurentNode could have a collection of children that
+		// represent the same heading in cases when the heading contains '<' and '>'
+		// symbols.
+		let heading = currentNode.children
+			.reduce((acc, current) => { return acc.concat(current.value); }, '');
 		if (heading.includes('{{%') && heading.includes('%}}')) {
 			// The heading contains hugo placeholder. Replace it.
 			let placeholder = regex.exec(heading);
@@ -248,7 +252,7 @@ function verifyAnchor(file, node, ref) {
 				placeholder = regex.exec(heading);
 			}
 		}
-		availableAnchors.push(slug(heading.toLowerCase()));
+		availableAnchors.push(slug(heading));
 	}
 }
 
@@ -362,32 +366,35 @@ function isNumber(r) {
  * Implements blackfriday algorithm for anchor sanitization:
  * https://pkg.go.dev/github.com/russross/blackfriday#hdr-Sanitized_Anchor_Names
  * 
- * @param {string} anchor - the anchor to be sanitized.
+ * @param {string} heading - the heading to produce anchor from.
  * @returns {string} the sanitized anchor.
  */
-function slug(anchor) {
+function slug(heading) {
+	const head = heading.toLowerCase();
+	log(`Heading to produce anchor from: ${head}`)
     const anchorName = [];
-    let futureDash = false;
-    for (let i = 0; i < anchor.length; i++) {
-        const char = anchor.charAt(i);
-        const r = anchor.charCodeAt(i);
+    let dash = false;
+    for (let i = 0; i < head.length; i++) {
+        const char = head.charAt(i);
+        const r = head.charCodeAt(i);
         if (isNumber(r) || isLetter(r)) {
-            if (futureDash && anchorName.length > 0) {
+            if (dash && anchorName.length > 0) {
                 anchorName.push('-');
             }
-            futureDash = false;
+            dash = false;
             anchorName.push(char);
         } else {
-            futureDash = true
+            dash = true
         }
     }
     let slug = anchorName.join('');
 	const originalSlug = slug
   
-	while (Object.hasOwnProperty.call(occurrences, slug)) {
-		occurrences[originalSlug]++;
-		slug = originalSlug + '-' + occurrences[originalSlug];
+	while (Object.hasOwnProperty.call(anchorMap, slug)) {
+		anchorMap[originalSlug]++;
+		slug = originalSlug + '-' + anchorMap[originalSlug];
 	}
-	occurrences[slug] = 0;
+	anchorMap[slug] = 0;
+	log(`Sanitized anchor: ${slug}`);
 	return slug
 }

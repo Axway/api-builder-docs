@@ -10,6 +10,12 @@
 ## Valid Anchors
 Those should not be caught.
 
+### Duplicated Anchors
+*   A duplicated [anchor](/docs/getting_started/getting-started#foo).
+*   A duplicated [anchor](/docs/getting_started/getting-started#foo-bar-1).
+*   A duplicated [anchor](/docs/getting_started/getting-started#foo-bar-2).
+*   A duplicated [anchor](/docs/getting_started/getting-started#foo-bar-3).
+*   A duplicated [anchor](/docs/getting_started/getting-started#foo-bar-4).
 *   A duplicated [anchor](/docs/getting_started/getting-started#models) with upper cases.
 *   A duplicated [anchor](/docs/getting_started/getting-started#models-1) with upper cases.
 *   A duplicated [anchor](/docs/getting_started/getting-started#models-1-1) with upper cases.
@@ -17,11 +23,15 @@ Those should not be caught.
 *   A duplicated [anchor](/docs/getting_started/getting-started#models-2-1) with upper cases.
 *   Valid anchor should not be caught [anchor](/docs/guides#models).
 *   Valid local anchor should not be caught [anchor](#models).
+
+### Speacial Cases
 *   Ignore links like [support@axway.com](mailto:support@axway.com)
 *   Valid local anchor with hugo variable should not be caught [anchor](#hello).
 *   Valid local anchor with hugo variable should not be caught [anchor](#hello-api-builder).
 *   Valid local anchor with hugo variable should not be caught [anchor](#api-builder-api-builder).
 *   Import the `onedrive.json` Swagger document. Refer to [Create the onedrive.json Swagger document](#create-the-onedrive-json-swagger-document).
+*   A duplicated [anchor](/docs/getting_started/getting-started#foo-bar-baz).
+
 
 ## Models
 

@@ -38,3 +38,26 @@ This anchor will be named "models-2"
 
 #### Models-1
 This anchor will be named "models-1-2"
+
+## Headings with non alphanumeric characters
+
+### foo (bar)
+This anchor will be named "foo-bar"
+
+### foo <bar>
+This anchor will be named "foo-bar-1"
+
+### foo -bar-
+This anchor will be named "foo-bar-2"
+
+### foo #bar
+This anchor will be named "foo-bar-3"
+
+### foo      bar
+This anchor will be named "foo-bar-4"
+
+### foo?
+This anchor will be named "foo"
+
+### foo <bar> baz
+This anchor will be named "foo-bar-baz"

@@ -38,6 +38,3 @@ This anchor will be named "models-2"
 
 #### Models-1
 This anchor will be named "models-1-2"
-
-### My 成分
-This anchor will be named "my-成分"

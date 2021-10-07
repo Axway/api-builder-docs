@@ -5,7 +5,7 @@ import { visit } from 'unist-util-visit';
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import warnings from './warnings.js';
 import debugModule from 'debug';
-import GithubSlugger from 'github-slugger';
+import unicode from 'unicode/category/index.js';
 
 const log = new debugModule('remark-lint:validate-internal-links');
 
@@ -24,9 +24,8 @@ const log = new debugModule('remark-lint:validate-internal-links');
 //	"{{% variables/api-builder-product-name %}}": "API Builder"
 // }
 const regex = /{{% [a-z/_]* %}}/;
-const slugger = new GithubSlugger();
-let availableAnchors = []
-
+let availableAnchors = [];
+let occurrences = Object.create(null);
 const pluginConfig = {
 	projectRoot: null,
 	docsRoot: 'content/en',
@@ -181,8 +180,8 @@ function verifyAnchor(file, node, ref) {
 		// We are reading the file that we currently process so it does exists.
 		const doc = getFile(filePath);
 		const tree = fromMarkdown(doc);
-		slugger.reset();
 		availableAnchors = [];
+		occurrences = Object.create(null);
 		visit(tree, "heading", compare);
 		if (availableAnchors.includes(anchor)) {
 			cache[ref] = warnings.valid;
@@ -218,8 +217,8 @@ function verifyAnchor(file, node, ref) {
 		anchorFound = false;
 		// We got the doc now turn it into an AST.
 		const tree = fromMarkdown(doc);
-		slugger.reset();
 		availableAnchors = [];
+		occurrences = Object.create(null);
 		visit(tree, "heading", compare);
 		if (availableAnchors.includes(anchor)) {
 			cache[ref] = warnings.valid;
@@ -235,10 +234,9 @@ function verifyAnchor(file, node, ref) {
 	}
 	function compare(currentNode) {
 		// Here we get the current node from AST which holds the heading value but
-		// it is the original one with spaces and upper case in the beginning.
-		// The references are URL friendly so we do transform using github-slugger
-		// module, collect all transformed anchors. Later when this loops end
-		// we compare if the anchors we search is present or not.
+		// it is the original one which is not URL friendly. We do transform it
+		// using the slug function and collect all transformed anchors. Later when
+		// this loops end we compare if the anchor we search is present or not.
 		let heading = currentNode.children[0].value;
 		if (heading.includes('{{%') && heading.includes('%}}')) {
 			// The heading contains hugo placeholder. Replace it.
@@ -250,7 +248,7 @@ function verifyAnchor(file, node, ref) {
 				placeholder = regex.exec(heading);
 			}
 		}
-		availableAnchors.push(slugger.slug(heading));
+		availableAnchors.push(slug(heading.toLowerCase()));
 	}
 }
 
@@ -346,6 +344,50 @@ function loadHugoVariables() {
 	}
 	files.forEach(file => {
 		const variable = getFile(join(directoryPath, file));
-		pluginConfig.hugoVariables[file.slice(0, file.length-5)] = variable.toString();
+		pluginConfig.hugoVariables[file.slice(0, file.length-5)] = variable.toString().replace(/(\r\n|\n|\r)/gm, '');
 	});	
+}
+function isLetter(r) {
+	// 'Ll' is the collection of Unicode lower case letters and that is what we do
+	// care about. If the character is in this collection we return it as part of
+	// the sanitized anchor.
+    return unicode.Ll[r];
+}
+
+function isNumber(r) {
+    return 48 <= r && r <= 57;
+}
+
+/**
+ * Implements blackfriday algorithm for anchor sanitization:
+ * https://pkg.go.dev/github.com/russross/blackfriday#hdr-Sanitized_Anchor_Names
+ * 
+ * @param {string} anchor - the anchor to be sanitized.
+ * @returns {string} the sanitized anchor.
+ */
+function slug(anchor) {
+    const anchorName = [];
+    let futureDash = false;
+    for (let i = 0; i < anchor.length; i++) {
+        const char = anchor.charAt(i);
+        const r = anchor.charCodeAt(i);
+        if (isNumber(r) || isLetter(r)) {
+            if (futureDash && anchorName.length > 0) {
+                anchorName.push('-');
+            }
+            futureDash = false;
+            anchorName.push(char);
+        } else {
+            futureDash = true
+        }
+    }
+    let slug = anchorName.join('');
+	const originalSlug = slug
+  
+	while (Object.hasOwnProperty.call(occurrences, slug)) {
+		occurrences[originalSlug]++;
+		slug = originalSlug + '-' + occurrences[originalSlug];
+	}
+	occurrences[slug] = 0;
+	return slug
 }

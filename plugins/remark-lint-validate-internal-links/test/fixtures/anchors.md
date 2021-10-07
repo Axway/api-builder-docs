@@ -15,7 +15,6 @@ Those should not be caught.
 *   A duplicated [anchor](/docs/getting_started/getting-started#models-1-1) with upper cases.
 *   A duplicated [anchor](/docs/getting_started/getting-started#models-1-2) with upper cases.
 *   A duplicated [anchor](/docs/getting_started/getting-started#models-2-1) with upper cases.
-*   A duplicated [anchor](/docs/getting_started/getting-started#my-成分) with upper cases.
 *   Valid anchor should not be caught [anchor](/docs/guides#models).
 *   Valid local anchor should not be caught [anchor](#models).
 *   Ignore links like [support@axway.com](mailto:support@axway.com)

@@ -24,7 +24,7 @@ describe('remark-lint-validate-internal-links', () => {
 		// used in hugo:
 		// https://pkg.go.dev/github.com/russross/blackfriday#hdr-Sanitized_Anchor_Names
 		// https://github.com/shurcooL/sanitized_anchor_name/blob/master/main.go
-		expect(warnings.length).to.equal(9);
+		expect(warnings.length).to.equal(8);
 		warnings.forEach(warning => { expect(warning).to.include(warningMessages.missingAnchor); });
 	});
 

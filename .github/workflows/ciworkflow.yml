@@ -26,29 +26,4 @@ jobs:
       - name: Run build
         run: |
           npm install
-  publish:
-    runs-on: ubuntu-latest
-    env:
-      API_BUILDER_DOCS_PRIVATE_KEY: ${{ secrets.API_BUILDER_DOCS_PRIVATE_KEY }}
-
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v2
-
-      - name: Set up SSH (zoomin)
-        run: |
-          echo "$API_BUILDER_DOCS_PRIVATE_KEY" > ~/docs.pem
-          chmod 600 ~/docs.pem
-          mkdir -p ~/.ssh
-          chmod 700 ~/.ssh
-          echo -e "Host upload.zoominsoftware.io\nHostname upload.zoominsoftware.io\nUser axway\nPort 22\nIdentityFile ~/docs.pem\nPasswordAuthentication no" > ~/.ssh/config
-          ssh-keyscan -H upload.zoominsoftware.io > ~/.ssh/known_hosts
-
-      # this action doesn't work for zoomin
-      # - name: Upload (zoomin)
-      #   # https://github.com/MajorVengeance/Ftp-Deploy-Action
-      #   uses: MajorVengeance/Ftp-Deploy-Action@v0.2.3-alpha
-      #   with:
-      #     ftp_host: upload.zoominsoftware.io
-      #     local_source_dir: ./publish
-      #     dist_target_dir: /axway.zoominsoftware.io/confluence/incoming
+          npm run build:lint

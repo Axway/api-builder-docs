@@ -15,7 +15,7 @@ date: 2021-10-01
 * Keep your codebase clean and remove things that you are not using (e.g. log files, flows, API, endpoints, models, etc.).
 * We recommend that {{% variables/apibuilder_prod_name %}} is developed on a local development machine. We do not recommend an "online" shared server approach to development where {{% variables/apibuilder_prod_name %}} is installed on a machine that many developers access.
 
-## Dependencies
+## Codebase
 
 * Understand [semantic versioning](https://semver.org/).
 * Understand [npm dependencies and dev dependencies](https://lexi-lambda.github.io/blog/2016/08/24/understanding-the-npm-dependency-model/) and how to use them appropriately. By default, your {{% variables/apibuilder_prod_name %}} application is configured to get the latest features and patches on npm install/update.

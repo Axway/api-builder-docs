@@ -4,9 +4,11 @@ name: CI workflow
 # events for the master branch and branch starts with rdpp-
 on:
   push:
-    branches: [ master, /^rdpp-.*$/ ]
+    branches: 
+      - master
+      - 'rdpp-*'
   pull_request:
-    branches: [ master, /^rdpp-.*$/ ]
+    branches: [ 'master', 'rdpp-*' ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

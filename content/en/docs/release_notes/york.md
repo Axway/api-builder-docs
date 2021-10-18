@@ -16,7 +16,7 @@ Brief summary of the notable release contents.
 
 ## Fixes
 
-* #7100: Fixed an issue installing [@axway/amplify-api-builder-cli](https://www.npmjs.com/package/@axway/amplify-api-builder-cli) version `1.20.0` that resulted in the error `ENOENT inquirer-checkbox-plus-prompt.git` on install.
+* #7100: Fixed an issue installing [@axway/amplify-api-builder-cli](https://www.npmjs.com/package/@axway/amplify-api-builder-cli) version `1.20.0` that resulted in the error `error syscall spawn git` when installing "git://github.com/wickedest/inquirer-checkbox-plus-prompt.git".
 
 {{% releasenotes/deprecations %}}
 

@@ -14,7 +14,9 @@ Brief summary of the notable release contents.
 
 <!-- ## Features -->
 
-<!-- ## Fixes -->
+## Fixes
+
+* #7100: Fixed an issue installing [@axway/amplify-api-builder-cli](https://www.npmjs.com/package/@axway/amplify-api-builder-cli) version `1.20.0` that resulted in the error `ENOENT inquirer-checkbox-plus-prompt.git` on install.
 
 {{% releasenotes/deprecations %}}
 

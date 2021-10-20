@@ -25,9 +25,11 @@ Brief summary of the notable release contents.
 ## Updated modules
 * [@axway/amplify-api-builder-cli@1.20.1](https://www.npmjs.com/package/@axway/amplify-api-builder-cli/v/1.20.1)
 * [@axway/api-builder@4.27.3](https://www.npmjs.com/package/@axway/api-builder/v/4.27.3)
-* [@axway/api-builder-runtime@4.70.8](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.70.8)
+* [@axway/api-builder-oas-flow-node@2.0.3](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/2.0.3)
+* [@axway/api-builder-runtime@4.70.9](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.70.9)
 
-<!-- ## Updated plugins -->
+## Updated plugins
+* [@axway/api-builder-plugin-fn-swagger@3.0.4](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/3.0.4)
 
 ## Known issues
 For a list of up-to-date known issues see [{{% variables/apibuilder_prod_name %}} known issues](/docs/known_issues/).

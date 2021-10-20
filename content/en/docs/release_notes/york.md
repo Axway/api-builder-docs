@@ -17,7 +17,7 @@ Brief summary of the notable release contents.
 ## Fixes
 
 * #7100: Fixed an issue installing [@axway/amplify-api-builder-cli](https://www.npmjs.com/package/@axway/amplify-api-builder-cli) version `1.20.0` that resulted in the error "error syscall spawn git" when installing `git://github.com/wickedest/inquirer-checkbox-plus-prompt.git`.
-* #7059: Fixed an issue in [@axway/api-builder-plugin-fn-swagger](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger) and [@axway/api-builder-oas-flow-node](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node) loading OAS spec with the error "Cannot convert undefined or null to object". The issue was encountered on OAS specs containing mixed references to component properties, e.g. `#/components/schemas/Pet/properties/name` and references to components, e.g. `#/components/schemas/Pet`.
+* #7059: Fixed an issue in [@axway/api-builder-plugin-fn-swagger](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger) and [@axway/api-builder-oas-flow-node](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node) loading OAS specs with the error "Cannot convert undefined or null to object". The issue was encountered on OAS specs containing mixed references to component properties, e.g. `#/components/schemas/Pet/properties/name` and references to components, e.g. `#/components/schemas/Pet`.
 
 {{% releasenotes/deprecations %}}
 

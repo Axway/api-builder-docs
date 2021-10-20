@@ -17,7 +17,7 @@ Brief summary of the notable release contents.
 ## Fixes
 
 * #7100: Fixed an issue installing [@axway/amplify-api-builder-cli](https://www.npmjs.com/package/@axway/amplify-api-builder-cli) version `1.20.0` that resulted in the error `error syscall spawn git` when installing "git://github.com/wickedest/inquirer-checkbox-plus-prompt.git".
-* #7081: Previously, the Model API responses were logging body at INFO level. Now, body is not been logged in the response as part of improving performance.
+* #7081: Previously, model and custom API logged the response body at INFO level. Now, model and custom API do not log the response body at any level.
 
 {{% releasenotes/deprecations %}}
 

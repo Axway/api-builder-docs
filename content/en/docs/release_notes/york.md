@@ -16,8 +16,8 @@ Brief summary of the notable release contents.
 
 ## Fixes
 
-* #7100: Fixed an issue installing [@axway/amplify-api-builder-cli](https://www.npmjs.com/package/@axway/amplify-api-builder-cli) version `1.20.0` that resulted in the error `error syscall spawn git` when installing "git://github.com/wickedest/inquirer-checkbox-plus-prompt.git".
-* #7059: Fixed an issue loading OAS spec with the error "Cannot convert undefined or null to object". The issue was encountered on OAS specs containing mixed references to component properties, e.g. "#/components/schemas/Pet/properties/name" and references to components, e.g. ""#/components/schemas/Pet".
+* #7100: Fixed an issue installing [@axway/amplify-api-builder-cli](https://www.npmjs.com/package/@axway/amplify-api-builder-cli) version `1.20.0` that resulted in the error "error syscall spawn git" when installing `git://github.com/wickedest/inquirer-checkbox-plus-prompt.git`.
+* #7059: Fixed an issue loading OAS spec with the error "Cannot convert undefined or null to object". The issue was encountered on OAS specs containing mixed references to component properties, e.g. `#/components/schemas/Pet/properties/name` and references to components, e.g. `#/components/schemas/Pet`.
 
 {{% releasenotes/deprecations %}}
 

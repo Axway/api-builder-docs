@@ -13,7 +13,7 @@ In this release, we fixed a notable issue with loading schemas from OpenAPI docu
 <!-- ## Breaking changes -->
 
 ## Features
-* #7093: Added an interface for plugging different protocols into API Builder that will eventually be used to support OAS 3 in the product.
+* #7093: Added an interface for plugging different protocols into API Builder that will eventually be used to support OpenAPI 3 in the product.
 
 ## Fixes
 

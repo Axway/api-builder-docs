@@ -6,13 +6,12 @@ date: 2021-10-22
 Hide_readingtime: true
 ---
 ## Summary
-In this release, we fixed a notable issue with loading schemas from OpenAPI documents. We also fixed an issue when installing the API Builder CLI which incorretly relied on `git`. Additional performance improvements were made to model and custom APIs. We also started working to support [OAS 3](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md).
+In this release, we fixed a notable issue with loading schemas from OpenAPI documents. We also fixed an issue when installing the API Builder CLI which incorretly relied on `git`. Additional performance improvements were made to model and custom APIs. We also started working to support [OpenAPI 3](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md).
 
 {{% releasenotes/upgrade %}}
 
 <!-- ## Breaking changes -->
 
-<!-- ## Features -->
 ## Features
 * #7093: Added an interface for plugging different protocols into API Builder that will eventually be used to support OAS 3 in the product.
 

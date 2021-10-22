@@ -27,7 +27,7 @@ In this release, we fixed a notable issue with loading schemas from OpenAPI docu
 ## Updated modules
 * [@axway/amplify-api-builder-cli@1.20.1](https://www.npmjs.com/package/@axway/amplify-api-builder-cli/v/1.20.1)
 * [@axway/api-builder@4.27.3](https://www.npmjs.com/package/@axway/api-builder/v/4.27.3)
-* [@axway/api-builder-admin@1.46.0](https://www.npmjs.com/package/@axway/api-builder/v/1.46.0)
+* [@axway/api-builder-admin@1.46.0](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.46.0)
 * [@axway/api-builder-oas-flow-node@2.0.3](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/2.0.3)
 * [@axway/api-builder-runtime@4.71.0](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.71.0)
 

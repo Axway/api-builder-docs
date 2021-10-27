@@ -15,6 +15,9 @@ Brief summary of the notable release contents.
 <!-- ## Features -->
 
 <!-- ## Fixes -->
+## Fixes
+
+* #7105: Removed body payload from `response` log at `DEBUG` level in `@axway/requester` plugin which improves performance and security.
 
 {{% releasenotes/deprecations %}}
 

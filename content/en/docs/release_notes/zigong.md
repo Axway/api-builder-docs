@@ -16,6 +16,7 @@ Brief summary of the notable release contents.
 
 ## Fixes
 * #7105: Removed body payload from `response` log at `DEBUG` level in `@axway/requester` plugin which improves performance and security.
+* #7108: Removed the default decription in the Endpoints if description is not present in the loaded openAPI 3.0 api first specs.
 
 {{% releasenotes/deprecations %}}
 

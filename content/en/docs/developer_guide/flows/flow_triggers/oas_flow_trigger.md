@@ -5,14 +5,14 @@ weight: 10
 date: 2021-10-27
 ---
 
-{{% alert title="Note" color="primary" %}}This component is currently alpha release and should not be considered production ready.  It can be used to try API Builder with OpenAPI 3.x specifications and provide feedback, but should not be used in production.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}This component is currently alpha release and should not be considered production ready.  It can be used to try the latest version of API Builder with OpenAPI 3.x specifications and provide feedback, but should not be used in production.{{% /alert %}}
 
 The **OpenAPI** flow-trigger enables [OpenAPI specification](https://swagger.io/resources/open-api/) support for versions [OAS 2.0](https://swagger.io/specification/v2/) and [OAS 3.0](https://swagger.io/specification/) in API Builder. This plugin enables API Builder to support [API First](https://blog.axway.com/amplify-products/api-management/api-first-design) design methodology, where the microservice's API interface can be designed by experienced API designers, and then integrations implemented in API Builder using [Flows](/docs/developer_guide/flows/).
 
 You can manually install the **OpenAPI** plugin using the following command:
 
 ```bash
-npm install @axway/api-builder-plugin-ft-cron
+npm install @axway/api-builder-plugin-ft-oas
 ```
 
 ## Flow-trigger details

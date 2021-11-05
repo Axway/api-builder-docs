@@ -25,9 +25,14 @@ Added support for creating and editing flows in the UI with the new alpha [OAS f
 {{% releasenotes/deprecations %}}
 
 <!-- Regenerate modules/plugins with api-builder-tools script -->
-<!-- ## Updated modules -->
+## Updated modules
+* [@axway/api-builder-admin@1.47.0](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.47.0)
+* [@axway/api-builder-oas-flow-node@2.0.4](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/2.0.4)
+* [@axway/api-builder-runtime@4.72.0](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.72.0)
 
-<!-- ## Updated plugins -->
+## Updated plugins
+* [@axway/api-builder-plugin-dc-oracle@3.2.3](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-oracle/v/3.2.3)
+* [@axway/api-builder-plugin-fn-swagger@3.0.5](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/3.0.5)
 
 ## Known issues
 For a list of up-to-date known issues see [{{% variables/apibuilder_prod_name %}} known issues](/docs/known_issues/).

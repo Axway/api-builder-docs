@@ -14,7 +14,9 @@ Brief summary of the notable release contents.
 
 <!-- ## Features -->
 
-<!-- ## Fixes -->
+## Fixes
+* #7077: Fixed an issue in Models that, when a composite model had a [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) field that was aliased (i.e. renamed), the model could not be used to create records, resulting in an error `"required field value missing"`. Now, records are created without error.
+* #7084: Fixed an issue in [@axway/api-builder-plugin-dc-mssql](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mssql) that prevented queries from working as expected with falsey values from queries (e.g. `{ "value": 0 }`), and also where values were expected to be equal to `null` or not equal to `null`.
 
 {{% releasenotes/deprecations %}}
 

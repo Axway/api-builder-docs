@@ -254,7 +254,7 @@ As discussed, configuration parameters usually have specific type requirements, 
 
 #### Default values
 
-Sometimes you want to default to a value when it is not specified as an environment variable. You can use the `||` operator to provide a default when the environment value is falsey.
+Sometimes you want to default to a value when it is not specified as an environment variable. You can use the `||` operator to provide a default when the environment value is falsy.
 
 ```javascript
 // ./conf/default.js

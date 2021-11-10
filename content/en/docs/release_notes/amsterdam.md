@@ -12,7 +12,8 @@ Brief summary of the notable release contents.
 
 <!-- ## Breaking changes -->
 
-<!-- ## Features -->
+## Features
+* #7132: Added support for [OAS parameter style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#styleValues) decoding to [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas).
 
 ## Fixes
 * #7077: Fixed an issue in models that when a composite model had a [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) field that was aliased (i.e. renamed), the model could not be used to create records, resulting in an error `"required field value missing"`. Now, records are created without error.

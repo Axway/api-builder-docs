@@ -377,7 +377,7 @@ PORT=8080
 
 Note that you should always provide the PORT when deploying/running your service on a target environment, for example when using Docker, or when publishing to ARS.
 
-For more information, please read the [Environmentalization](/https://docs.axway.com/bundle/api-builder-security-guide/page/environmentalization.html) guide.
+For more information, please read the [Environmentalization](https://docs.axway.com/bundle/api-builder-security-guide/page/environmentalization.html) guide.
 
 ### serialization
 

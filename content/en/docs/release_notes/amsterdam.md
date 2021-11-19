@@ -30,7 +30,7 @@ Added features to [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/packa
 ## Updated modules
 * [@axway/api-builder-admin@1.48.1](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.48.1)
 * [@axway/api-builder-oas-flow-node@2.1.0](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/2.1.0)
-* [@axway/api-builder-runtime@4.74.1](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.74.1)
+* [@axway/api-builder-runtime@4.74.2](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.74.2)
 
 ## Updated plugins
 * [@axway/api-builder-plugin-dc-mssql@3.1.0](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mssql/v/3.1.0)

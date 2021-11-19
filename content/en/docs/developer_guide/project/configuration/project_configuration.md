@@ -23,7 +23,7 @@ The following topics describe the project configuration settings.
 
 | Key | Type | Default | Description |
 | --- | --- | --- | --- |
-| allowedHosts | Array<String> | \- | Restricts access to the Admin Console to the specified hosts. |
+| allowedHosts | Array`<String>` | \- | Restricts access to the Admin Console to the specified hosts. |
 | apiDocPrefix | String | '/apidoc' | **Deprecated {{% deprecation/link D002 %}}**. Prefix for the API documentation. |
 | disableAPIDoc | Boolean | false | **Deprecated {{% deprecation/link D003 %}}**. Set to `true` to display the generated Swagger API Docs. Changing the setting only works in production. Swagger documentation is always available in dev mode. |
 | enabled | Boolean | true | Set to `true` to enable the Admin Console. |
@@ -74,7 +74,7 @@ paths: {
 
 | Key | Type | Default | Description |
 | --- | --- | --- | --- |
-| multipartPartSize | number|string | Infinity | Configures the maximum allowed part size for `multipart/form-data` requests. If any part exceeds this limit, the server will respond with a [413 Payload Too Large](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/413). Allowed values are:<br /><br />**number** - represents the maximum part size, in bytes.  <br />**string** - supports values such as "10B", "1KB", "100MB". Units are powers of two (1KB = 1024B). Stringified numbers without commas or decimals are also accepted. For example "65536". This allows full control via [environment](/docs/security_guide#environmentalization) variables.<br /><br />Negative numbers and `Infinity` are equivalent and represent **no limit**. It is recommended that your service be configured with a limit, otherwise it can be subjected to [DoS attacks](https://en.wikipedia.org/wiki/Denial-of-service_attack).<br /><br />When no value is provided, the default behavior is **no limit** for file type parts and **1mb** for other types of multipart fields. Due to the inconsistency, This behavior is deprecated {{% deprecation/link D048 %}}<br /><br />When a limit is configured, 413 responses will be added to all methods in the service's Swagger document. |
+| multipartPartSize | number|string | Infinity | Configures the maximum allowed part size for `multipart/form-data` requests. If any part exceeds this limit, the server will respond with a [413 Payload Too Large](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/413). Allowed values are:<br /><br />**number** - represents the maximum part size, in bytes.  <br />**string** - supports values such as "10B", "1KB", "100MB". Units are powers of two (1KB = 1024B). Stringified numbers without commas or decimals are also accepted. For example "65536". This allows full control via [environment](https://docs.axway.com/bundle/api-builder-security-guide/page/environmentalization.html) variables.<br /><br />Negative numbers and `Infinity` are equivalent and represent **no limit**. It is recommended that your service be configured with a limit, otherwise it can be subjected to [DoS attacks](https://en.wikipedia.org/wiki/Denial-of-service_attack).<br /><br />When no value is provided, the default behavior is **no limit** for file type parts and **1mb** for other types of multipart fields. Due to the inconsistency, This behavior is deprecated {{% deprecation/link D048 %}}<br /><br />When a limit is configured, 413 responses will be added to all methods in the service's Swagger document. |
 
 ### accessControl
 
@@ -129,6 +129,7 @@ Example:
 proxy: `http://localhost:8081`
 
 ### flags
+
 \[object\] Flags to enable features that are not ready for production or whose use may require manual upgrade steps in legacy services.
 
 {{% flags/table %}}
@@ -214,7 +215,7 @@ module.exports = function (req, resp) {
 
 {{% variables/apibuilder_prod_name %}} will look for two sets of configuration files in the **`./conf`** directory of the application, those ending in `default.js` and `local.js`. The `default` files are part of the source for your application, whereas the `local` files might contain sensitive information (such as passwords) and are not source controlled (these files will be ignored by the Git repository). At startup, all `default` files are loaded and sorted and merged into a single configuration object. Then, all `local` files are loaded, sorted, and merged with the single configuration object.
 
-Usually, the values for configuration parameters are directly specified in the configuration file. However, for sensitive information, those values could be environmentalized. For how to do that, refer to the [Environmentalization guide](/docs/security_guide#environmentalization). The important thing to know is that if environmentalization is used, all the values will come as strings and might need subsequent type conversion like this:
+Usually, the values for configuration parameters are directly specified in the configuration file. However, for sensitive information, those values could be environmentalized. For how to do that, refer to the [Environmentalization guide](https://docs.axway.com/bundle/api-builder-security-guide/page/environmentalization.html). The important thing to know is that if environmentalization is used, all the values will come as strings and might need subsequent type conversion like this:
 
 ```javascript
 // default.js

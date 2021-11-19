@@ -100,7 +100,7 @@ AXWAY_PLATFORM_ENVIRONMENT=
 AXWAY_PLATFORM_ORG=
 ```
 
-This file is local only, and not deployed with your service when the _production_ flag is used when [building a container](/docs/how_to/dockerize_an_api_builder_service/), and ensures that usage tracking is disabled (see [Local environment file (conf/.env)](/docs/security_guide/#local-environment-file-conf-env) for more information).
+This file is local only, and not deployed with your service when the _production_ flag is used when [building a container](/docs/how_to/dockerize_an_api_builder_service/), and ensures that usage tracking is disabled (see [Local environment file (conf/.env)](https://docs.axway.com/bundle/api-builder-security-guide/page/environmentalization.html#Environmentalization-Localenvironmentfile_conf__env_) for more information).
 
 When you want to track transaction usage, in your target environment, you need to set `AXWAY_PLATFORM_ENVIRONMENT` to the **Environment ID**, the `AXWAY_PLATFORM_ORG` to the **Organization GUID**, and `AXWAY_USAGE_TRACKING_ENABLED` to true.
 

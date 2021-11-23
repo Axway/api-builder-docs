@@ -5,9 +5,9 @@ weight: 10
 date: 2021-10-27
 ---
 
-{{% alert title="Note" color="primary" %}}This component is currently alpha release and should not be considered production ready.  It can be used to try the latest version of API Builder with OpenAPI 3.x specifications and provide feedback, but should not be used in production.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}This component is currently alpha release and should not be considered production ready. It can be used to try the latest version of {{% variables/apibuilder_prod_name %}} with OpenAPI specifications and provide feedback, but should not be used in production.{{% /alert %}}
 
-The **OpenAPI** flow-trigger enables [OpenAPI specification](https://swagger.io/resources/open-api/) support for versions [OAS 2.0](https://swagger.io/specification/v2/) and [OAS 3.0](https://swagger.io/specification/) in API Builder. This plugin enables API Builder to support [API First](https://blog.axway.com/amplify-products/api-management/api-first-design) design methodology, where the microservice's API interface can be designed by experienced API designers, and then integrations implemented in API Builder using [Flows](/docs/developer_guide/flows/).
+The **OpenAPI** flow-trigger enables [OpenAPI specification](https://swagger.io/resources/open-api/) support for versions [OpenAPI 2.0](https://swagger.io/specification/v2/) and [OpenAPI 3.0](https://swagger.io/specification/) in {{% variables/apibuilder_prod_name %}}. This plugin enables {{% variables/apibuilder_prod_name %}} to support [API First](https://blog.axway.com/amplify-products/api-management/api-first-design) design methodology, where the microservice's API interface can be designed by experienced API designers, and then integrations implemented in {{% variables/apibuilder_prod_name %}} using [Flows](/docs/developer_guide/flows/).
 
 You can manually install the **OpenAPI** plugin using the following command:
 
@@ -40,7 +40,14 @@ After, you can successfully start your application.
 npm start
 ```
 
-Installing the plugin enables new UI on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page, and disables the old "legacy" Swagger 2.0 implementation that is currently built into API Builder runtime. We are trying to maintain a similar experience. To get started, you can import your OpenAPI specification using a new button, **+OpenAPI** on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page.
+Installing the plugin enables new UI on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page, and disables the old "legacy" Swagger 2.0 implementation that is currently built into {{% variables/apibuilder_prod_name %}}. We are trying to maintain a similar experience. To get started, you can import your OpenAPI specification using a new button, **+OpenAPI** on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page.
+
+## API Prefix
+
+Your service is configured with an [apiPrefix](/docs/developer_guide/project/configuration/project_configuration#apiPrefix) which {{% variables/apibuilder_prod_name %}} uses to apply authentication to all paths under this prefix. By default this is `/api`, but can be configured. 
+All paths defined in your imported OpenAPI document will be bound to this prefix. For example `/service/user` will be bound as `/api/service/user`.
+
+If all your desgined paths begin with a common prefix, i.e. `/service`, then by changing your `apiPrefix` in configuration to match this prefix, {% variables/apibuilder_prod_name %}} will not apply the prefix twice, and allow `/service/user` to be bound as-is.
 
 ## Roadmap
 
@@ -49,7 +56,7 @@ Installing the plugin enables new UI on the [API Doc & Test](/docs/developer_gui
 * \[X] Bind flows to OAS methods
 * \[X] Invoke flows with limited support (may not work with all OAS features or parameters)
 * \[X] HTTP request parameter and JSON schema validation
-* \[ ] Support import and validation of 2.0 specifications
+* \[X] Support import and validation of 2.0 specifications
 * \[ ] Support import and validation of 3.1 specifications
 * \[ ] Updating the API-first specification
 * \[ ] Improve UX to assist in flow creation

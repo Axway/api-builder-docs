@@ -19,7 +19,7 @@ npm install @axway/api-builder-plugin-ft-oas
 
 The following sections provide details of the available **OpenAPI** flow-trigger parameters.
 
-### Trigger Parameters
+### Trigger parameters
 
 | Parameter | Type | Description | Configuration selection | Required |
 | --- | --- | --- | --- | --- |
@@ -42,12 +42,16 @@ npm start
 
 Installing the plugin enables new UI on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page, and disables the old "legacy" Swagger 2.0 implementation that is currently built into {{% variables/apibuilder_prod_name %}}. We are trying to maintain a similar experience. To get started, you can import your OpenAPI specification using a new button, **+OpenAPI** on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page.
 
-## API Prefix
+## API prefix
 
-Your service is configured with an [apiPrefix](/docs/developer_guide/project/configuration/project_configuration#apiprefix) which {{% variables/apibuilder_prod_name %}} uses to apply authentication to all paths under this prefix. By default this is `/api`, but can be configured. 
+Your service is configured with an [apiPrefix](/docs/developer_guide/project/configuration/project_configuration#apiprefix) which {{% variables/apibuilder_prod_name %}} uses to apply authentication to all paths under this prefix. By default this is `/api`, but can be configured.
 All paths defined in your imported OpenAPI document will be bound to this prefix. For example `/service/user` will be bound as `/api/service/user`.
 
 If all your desgined paths begin with a common prefix, i.e. `/service`, then by changing your `apiPrefix` in configuration to match this prefix, {% variables/apibuilder_prod_name %}} will not apply the prefix twice, and allow `/service/user` to be bound as-is.
+
+## API specification
+
+The OpenAPI specification is bound to `/apidoc/swagger.json`, `/apidoc/swagger.yaml` (both for legacy purposes), as well as `/apidoc/openapi.json` and `/apidoc/openapi.yaml`. On startup, users will see only one path in the log. For OpenAPI 2.0, it is `/apidoc/swagger.json`, otherwise, it is `/apidoc/openapi.json`.
 
 ## Roadmap
 

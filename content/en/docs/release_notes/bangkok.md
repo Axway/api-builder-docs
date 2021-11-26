@@ -12,7 +12,9 @@ Brief summary of the notable release contents.
 
 <!-- ## Breaking changes -->
 
-<!-- ## Features -->
+## Features
+* #7142: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now binds OpenAPI specifications to `/apidoc/swagger.json`, `/apidoc/swagger.yaml` (both for legacy purposes), as well as `/apidoc/openapi.json` and `/apidoc/openapi.yaml`. The paths `/apidoc/oas.json` and `/apidoc/oas.yaml` are no longer bound. On startup, users will see only one path in the log. For OpenAPI 2.0, it is `/apidoc/swagger.json`, otherwise, it is `/apidoc/openapi.json`.
+* #7148: Added support for HTTP body parsing and validation for `multipart/form-data` and `application/x-www-form-urlencoded` requests in [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas).
 
 <!-- ## Fixes -->
 

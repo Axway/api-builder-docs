@@ -6,7 +6,7 @@ date: 2021-12-03
 Hide_readingtime: true
 ---
 ## Summary
-Brief summary of the notable release contents.
+In this release we continued getting the OpenAPI flow-trigger closer to release: HTTP request bodies are now parsed and validated, and HTTP response headers can now be configured in flows.
 
 {{% releasenotes/upgrade %}}
 
@@ -34,6 +34,7 @@ Brief summary of the notable release contents.
 
 ## Updated plugins
 * [@axway/api-builder-plugin-fn-swagger@3.0.8](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/3.0.8)
+* [@axway/api-builder-plugin-ft-oas@0.2.3](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas/v/0.2.3) 
 
 ## Known issues
 For a list of up-to-date known issues see [{{% variables/apibuilder_prod_name %}} known issues](/docs/known_issues/).

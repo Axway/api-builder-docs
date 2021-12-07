@@ -10,11 +10,14 @@ Brief summary of the notable release contents.
 
 {{% releasenotes/upgrade %}}
 
-<!-- ## Breaking changes -->
+## Breaking changes
+* #7185: {{% variables/apibuilder_prod_name %}} CLIs now require a minimum Node.js version of `12.17.0`. {{% variables/apibuilder_prod_name %}} Runtime is not impacted by this change, and existing projects can still be upgraded without a breaking change.
+
 
 <!-- ## Features -->
 
-<!-- ## Fixes -->
+## Fixes
+* #7185: Using the handlebars renderer on Linux with Node.js 14 and above no longer throws `ERR_FEATURE_UNAVAILABLE_ON_PLATFORM`.
 
 {{% releasenotes/deprecations %}}
 

@@ -12,7 +12,7 @@ Brief summary of the notable release contents.
 
 ## Breaking changes
 * #7185: {{% variables/apibuilder_prod_name %}} CLIs now require a minimum Node.js version of `12.17.0`. {{% variables/apibuilder_prod_name %}} Runtime is not impacted by this change, and existing projects can still be upgraded without a breaking change.
-
+* #7185: Projects created with the new CLI no longer have a development dependency on `request` for unit tests and now use [`got`](https://github.com/sindresorhus/got) instead. 
 
 <!-- ## Features -->
 

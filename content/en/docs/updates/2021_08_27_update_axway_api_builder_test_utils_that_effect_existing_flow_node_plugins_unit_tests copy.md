@@ -1,15 +1,15 @@
 ---
 title: >-
-  2021-08-27 update  @axway/api-builder-test-utils that effect existing
+  2021-08-13 update @axway/api-builder-test-utils that effect existing
   flow-node plugins' unit-tests
 linkTitle: >-
-  2021-08-27 update  @axway/api-builder-test-utils that effect existing
+  2021-08-13 update @axway/api-builder-test-utils that effect existing
   flow-node plugins' unit-tests
-weight: 30
+weight: 10
 date: 2021-10-01
 ---
 
-2021-08-27 Update @axway/api-builder-test-utils that effect existing flow-node plugins' unit-tests
+2021-08-13 Update @axway/api-builder-test-utils that effect existing flow-node plugins' unit-tests
 
 ## Why are we making this change
 

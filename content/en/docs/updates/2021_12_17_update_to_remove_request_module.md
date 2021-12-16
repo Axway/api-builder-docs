@@ -11,7 +11,7 @@ date: 2021-12-17
 
 In the [Caracas](/docs/release_notes/caracas) release of {{% variables/apibuilder_prod_name %}}, we released a new major version of the [{{% variables/apibuilder_prod_name %}} CLI](/docs/developer_guide/cli). This version removes the dependency on [`request`](https://www.npmjs.com/package/request) in new projects. While `request` is still fully functional, the library has been deprecated and has a [CVE](https://nvd.nist.gov/vuln/detail/CVE-2021-3918) reported against one of it dependencies. Note that `request` itself does not make use of the vulnerable code, but security scans will still emit warnings.
 
-We made a breaking change to the CLI, upgrading it to the latest version of the [{{% variables/company_name.md }} CLI](https://docs.axway.com/bundle/axwaycli-open-docs/page/docs/index.html), v3.1.0, and requires the minimum Node.js (>= 12.17). In the new version of the CLI, new projects are now created which have a dependency of [`got`](https://www.npmjs.com/package/got) instead of `request`. This dependency is used for making HTTP requests to {{% variables/apibuilder_prod_name %}} to test APIs in unit tests.
+We made a breaking change to the CLI, upgrading it to the latest version of the [{{% variables/company_name %}} CLI](https://docs.axway.com/bundle/axwaycli-open-docs/page/docs/index.html), v3.1.0, and requires the minimum Node.js (>= 12.17). In the new version of the CLI, new projects are now created which have a dependency of [`got`](https://www.npmjs.com/package/got) instead of `request`. This dependency is used for making HTTP requests to {{% variables/apibuilder_prod_name %}} to test your application's APIs.
 
 ## How does this impact my service
 
@@ -41,9 +41,9 @@ npm uninstall request
 npm install got@11
 ```
 
-{{%/* alert title="Note" */%}}
+{{% alert title="Note" %}}
 Note: This version of `got` requires at least Node.js 10.19. If you're developing your project on an older version of Node.js we strongly recommend upgrading to at least {{% variables/recommended_node %}}.
-{{%/* /alert */%}}
+{{% /alert %}}
 
 ### If your application uses "npm test"
 
@@ -60,7 +60,7 @@ We would suggest that you get familiar with the changes to the `new-project` tes
 
 #### Use got instead
 
-We've delete `requestAsync`, so if your test file has the following, replace it with `got`:
+We deleted `requestAsync`, so if your test file has the following, replace it with `got`:
 ```js
 const { startApiBuilder, stopApiBuilder, requestAsync } = require('./_base');
 ```

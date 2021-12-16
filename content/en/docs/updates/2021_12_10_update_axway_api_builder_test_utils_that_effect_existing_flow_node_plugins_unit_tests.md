@@ -50,7 +50,6 @@ To ensure that your flow-node inputs and outputs are valid with respect to your 
 
 ```javascript
 // test.js
-
 beforeEach(async () => {
   plugin = await MockRuntime.loadPlugin(getPlugin);
   plugin.setOptions({
@@ -65,7 +64,6 @@ If all of your unit-test pass, then your flow-node is valid with respect to its 
 
 ```javascript
 // action.js
-
 async function hello(params, options) {
   const { name } = params;
   const { logger } = options;

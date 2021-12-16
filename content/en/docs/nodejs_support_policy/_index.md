@@ -9,6 +9,7 @@ date: 2021-10-01
 | --- | --- |
 | Recommended | {{% variables/recommended_node %}} or greater |
 | Minimum | {{% variables/minimum_node %}} |
+| Minimum (CLI) | {{% variables/minimum_node_cli %}} |
 
 ## Node.js releases
 

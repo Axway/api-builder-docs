@@ -165,34 +165,34 @@ server.getModel('testuser')
 We also updated a number of dependencies that you may wish to update:
 
 ```diff
-	"dependencies": {
--		"@axway/api-builder-runtime": "^4.69.0",
-+		"@axway/api-builder-runtime": "^4.74.8",
--		"@axway/api-builder-plugin-invoke-flow": "^1.1.1",
-+		"@axway/api-builder-plugin-invoke-flow": "^1.1.2",
--		"@axway/api-builder-plugin-fn-base64": "^4.0.2",
-+		"@axway/api-builder-plugin-fn-base64": "^4.0.3",
--		"@axway/api-builder-plugin-fn-javascript": "^3.0.2",
-+		"@axway/api-builder-plugin-fn-javascript": "^3.0.3",
--		"@axway/api-builder-plugin-fn-json": "^4.0.2",
-+		"@axway/api-builder-plugin-fn-json": "^4.0.3",
--		"@axway/api-builder-plugin-fn-logger": "^1.0.1",
-+		"@axway/api-builder-plugin-fn-logger": "^1.0.2",
--		"@axway/api-builder-plugin-fn-mustache": "^1.0.10",
-+		"@axway/api-builder-plugin-fn-mustache": "^1.0.11",
--		"@axway/api-builder-plugin-fn-restclient": "^2.0.24",
-+		"@axway/api-builder-plugin-fn-restclient": "^2.0.26",
--		"@axway/api-builder-plugin-fn-swagger": "^3.0.0"
-+		"@axway/api-builder-plugin-fn-swagger": "^3.0.8"
-	},
-	"devDependencies": {
--		"@axway/api-builder-admin": "^1.44.13",
-+		"@axway/api-builder-admin": "^1.48.3",
--		"chai": "^4.3.1",
-+		"chai": "^4.3.4",
-+		"got": "^11.8.3",
--		"mocha": "^6.1.4",
-+		"mocha": "^9.1.2"
--		"request": "^2.88.0",
-	},
+  "dependencies": {
+-    "@axway/api-builder-runtime": "^4.69.0",
++    "@axway/api-builder-runtime": "^4.74.8",
+-    "@axway/api-builder-plugin-invoke-flow": "^1.1.1",
++    "@axway/api-builder-plugin-invoke-flow": "^1.1.2",
+-    "@axway/api-builder-plugin-fn-base64": "^4.0.2",
++    "@axway/api-builder-plugin-fn-base64": "^4.0.3",
+-    "@axway/api-builder-plugin-fn-javascript": "^3.0.2",
++    "@axway/api-builder-plugin-fn-javascript": "^3.0.3",
+-    "@axway/api-builder-plugin-fn-json": "^4.0.2",
++    "@axway/api-builder-plugin-fn-json": "^4.0.3",
+-    "@axway/api-builder-plugin-fn-logger": "^1.0.1",
++    "@axway/api-builder-plugin-fn-logger": "^1.0.2",
+-    "@axway/api-builder-plugin-fn-mustache": "^1.0.10",
++    "@axway/api-builder-plugin-fn-mustache": "^1.0.11",
+-    "@axway/api-builder-plugin-fn-restclient": "^2.0.24",
++    "@axway/api-builder-plugin-fn-restclient": "^2.0.26",
+-    "@axway/api-builder-plugin-fn-swagger": "^3.0.0"
++    "@axway/api-builder-plugin-fn-swagger": "^3.0.8"
+  },
+  "devDependencies": {
+-    "@axway/api-builder-admin": "^1.44.13",
++    "@axway/api-builder-admin": "^1.48.3",
+-    "chai": "^4.3.1",
++    "chai": "^4.3.4",
++    "got": "^11.8.3",
+-    "mocha": "^6.1.4",
++    "mocha": "^9.1.2"
+-    "request": "^2.88.0",
+  },
 ```

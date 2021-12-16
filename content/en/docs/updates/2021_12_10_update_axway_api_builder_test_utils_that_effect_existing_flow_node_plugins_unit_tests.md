@@ -1,40 +1,91 @@
 ---
 title: >-
-  2021-12-10 Replace the request dev-dependency in project unit tests
-weight: 40
-date: 2021-12-10
+  2021-08-27 update  @axway/api-builder-test-utils that effect existing
+  flow-node plugins' unit-tests
+linkTitle: >-
+  2021-08-27 update  @axway/api-builder-test-utils that effect existing
+  flow-node plugins' unit-tests
+weight: 30
+date: 2021-10-01
 ---
 
-2021-12-10 Replace the request dev-dependency in project unit tests
+2021-08-27 Update @axway/api-builder-test-utils that effect existing flow-node plugins' unit-tests
 
 ## Why are we making this change
 
-In the [Caracas](/docs/release_notes/caracas) release of {{% variables/apibuilder_prod_name %}}, we released a new major version of the [{{% variables/apibuilder_prod_name %}} CLI](/docs/developer_guide/cli). This version removes the dependency on [`request`](https://www.npmjs.com/package/request) in new projects. While `request` is still fully functional, the library has been deprecated and has a [CVE](https://nvd.nist.gov/vuln/detail/CVE-2021-3918) reported against one of it dependencies. Note that `request` itself does not make use of the vulnerable code, but security scans will still emit warnings.
+In the [Timbuktu](/docs/release_notes/timbuktu/) release of {{% variables/apibuilder_prod_name %}}, we identified a regression in [@axway/api-builder-plugin-fn-mustache](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-mustache)@1.0.6 that changed the JSON schema of the **Data** parameter from _any_ to _string_. The regression was fixed in the [Utrecht](/docs/release_notes/utrecht/) release of {{% variables/apibuilder_prod_name %}}. However, as part of the remediation of this, we identified that it was easy to write invalid unit-tests for flow-node plugins. While the plugin had a unit-test that checked that mustache could handle any **Data** input, it did not also validate those inputs against the JSON schema for the **Data** parameter. If it had input validation, then this would have been caught.
 
-In the new version of the CLI, new projects are now created which have a dependency of [`got`](https://www.npmjs.com/package/got) instead of `request`. This dependency is used for making HTTP requests to {{% variables/apibuilder_prod_name %}} to test APIs in unit tests.
+For this reason, we introduced a feature to [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) 1.4.0 that adds a new [option](https://www.npmjs.com/package/@axway/api-builder-test-utils#user-content-pluginsetoptionsoptions) to validate inputs while developing unit-tests. We also ensured that every Axway supported plugin validates its inputs as designed.
 
 ## How does this impact my service
 
-While there is no direct vulnerability to any production code, security scans on your project may report a CVE against `request`, as well as a warning that the module has been deprecated and has not been updated in over 2 years. While we can modify the implementation and dependencies of API Builder, we cannot change the direct dependencies of your project such as this during an upgrade, and updates such as this are the developer's responsibility to update and modify as required.
-While there is no direct vulnerability to any production code, security scans on your project may report a CVE against `request`, as well as a warning that the module has been deprecated and has not been updated in over 2 years. While we can modify the implementation and dependencies of API Builder, we cannot change the direct dependencies of your project such as this during an upgrade, and updates such as this are the developer's responsibility to update and modify as required.
+If you have [custom flow-nodes](/docs/how_to/create_a_custom_flow_node/), then you will want this update. Recall that when you generate a flow-node plugin for the first time, it generates a "hello" example that accepts a string input **Name**, and when invoked, returns the message, "Hello _Name_". The JSON schema for the **Name** is as follows:
 
-While we chose `got` as a replacement for `request` in new projects, and the following section describes how to modify your project to use it, `got` is not a hard requirement. You can choose to write your tests in the way which works best for you, using any available library.
+```yaml
+parameters:
+  name:
+    name: Name
+    description: The name of the person to greet.
+    required: true
+    initialType: string
+    schema:
+      type: string
+```
+
+It is possible to accidentally write a unit-test that appears to work, but is actually invalid during runtime. Notice the JSON schema for **Name** is "type: string". It is possible to write a valid unit-test that sets the name to a number 1234, instead of a string, and the unit-test will pass:
+
+```javascript
+it('should succeed with valid argument', async () => {
+  const { value, output } = await flowNode.hello({ name: 1234 });
+  expect(value).to.equal('Hello 1234');
+  expect(output).to.equal('next');
+});
+```
+
+The issue is that, the way this flow-node is written, a number is _not_ a valid input. It may indicate that a number should be accepted as a valid input, but the point is that it is not, and your existing unit-tests may have this issue.
 
 ## Upgrade existing services
 
-If you do no use the unit test framework included in your project (`npm test`) then you can safely clear the security warnings from your project by removing the dependency on `request` from your project by running the following command from your project directory:
+To ensure that your flow-node inputs and outputs are valid with respect to your JSON schema definition, you should enable the new validateInputs and the existing validateOutputs [options](https://www.npmjs.com/package/@axway/api-builder-test-utils#user-content-pluginsetoptionsoptions) in your unit-tests, for example:
 
-```bash
-npm uninstall request
+```javascript
+// test.js
+beforeEach(async () => {
+  plugin = await MockRuntime.loadPlugin(getPlugin);
+  plugin.setOptions({
+    validateInputs: true,
+    validateOutputs: true
+  });
+  flowNode = plugin.getFlowNode('greeting');
+});
 ```
 
-If you have not written any unit tests yet but would like to, we recommend installing the latest version of the CLI and creating a new project, then copying the `/test` directory from the new project into your existing project, replacing the existing directory. Finally, run the following commands to replace the dependency on`request` with `got` version 11 (which the new tests use).
+If all of your unit-test pass, then your flow-node is valid with respect to its JSON schema. However, if any fail, you need to investigate. It may be accidental, in which case, you need to fix your unit-test, or it may be intentional as {{% variables/apibuilder_prod_name %}} does not validate flow-node inputs at runtime for performance reasons. For this reason, you need to develop your flow-node to handle invalid inputs (e.g. when **Name** is not a string or undefined), and you need to write unit tests that intentionally check that invalid inputs are handled, e.g. that the name is a string:
 
-```bash
-npm uninstall request
-npm install got@11
+```javascript
+// action.js
+async function hello(params, options) {
+  const { name } = params;
+  const { logger } = options;
+  if (!name) {
+    throw new Error('Missing required parameter: name');
+  }
+  if (typeof name !== 'string') {
+    throw new Error('Parameter "name" is not a string');
+  }
+  return `Hello ${name}`;
+}
 ```
 
-Note: This version of `got` requires at least Node.js 10.19. If you're developing your project on an older version of Node.js we strongly recommend upgrading to at least {{% variables/recommended_node %}}.
+In this case, you want to write a unit-test for that, and _intentionally_ pass in an invalid name, but because input validation is enabled in the test-utils, it will not actually hit your code. To intentionally pass invalid inputs, you must disable the `validateInputs` option:
 
-If you are making use of the the unit test framework then you will want to follow the following guidelines. Note that you should read the `got` documentation to learn the full capabilities and API of the library.
+```javascript
+it('should error when name parameter is not a string', async () => {
+  // Invoke #hello with a non-number and check error.
+  plugin.setOptions({ validateInputs: false });
+  const { value, output } = await flowNode.hello({ name: 1234  });
+  expect(value).to.be.instanceOf(Error)
+    .and.to.have.property('message', 'Parameter "name" is not a string');
+  expect(output).to.equal('error');
+});
+```

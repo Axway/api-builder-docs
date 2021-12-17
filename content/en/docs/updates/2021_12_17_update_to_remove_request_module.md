@@ -4,9 +4,6 @@ title: >-
 weight: 40
 date: 2021-12-17
 ---
-
-2021-12-10 Replace the request dev-dependency in project unit tests
-
 ## Why are we making this change
 
 In the [Caracas](/docs/release_notes/caracas) release of {{% variables/apibuilder_prod_name %}}, we released a new major version of the [{{% variables/apibuilder_prod_name %}} CLI](/docs/developer_guide/cli). This version removes the dependency on [`request`](https://www.npmjs.com/package/request) in new projects. While `request` is still fully functional, the library has been deprecated and has a [CVE](https://nvd.nist.gov/vuln/detail/CVE-2021-3918) reported against one of it dependencies. Note that `request` itself does not make use of the vulnerable code, but security scans will still emit warnings.

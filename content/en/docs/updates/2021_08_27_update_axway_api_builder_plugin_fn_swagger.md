@@ -1,8 +1,8 @@
 ---
 title: 2021-08-27 update @axway/api-builder-plugin-fn-swagger
 linkTitle: 2021-08-27 update @axway/api-builder-plugin-fn-swagger
-weight: 20
-date: 2021-10-01
+weight: 30
+date: 2021-08-27
 ---
 
 ## Why are we making this change

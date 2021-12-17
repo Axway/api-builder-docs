@@ -17,9 +17,9 @@ In this release, [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/packag
 
 ## Features
 
-* #7185: Projects created with the latest CLI no longer have a development dependency on [`request`](https://www.npmjs.com/package/request) for unit tests and now use [`got`](https://github.com/sindresorhus/got) instead.
-* #7185: Addressed [CVE-2021-3918](https://nvd.nist.gov/vuln/detail/CVE-2021-3918), and upgraded the [{{% variables/apibuilder_prod_name %}} CLI](https://www.npmjs.com/package/@axway/amplify-api-builder-cli) to 2.0.0. This removes the [request](https://www.npmjs.com/package/request) module from the product and new projects will use [got](https://www.npmjs.com/package/got) for tests. This also updates the third-party dependencies for new projects. You should upgrade the {{% variables/apibuilder_prod_name %}} CLI. **TODO: merge RDPP-7185 and provide link here.**
-* #7153: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now binds OpenAPI specifications to `/apidoc/swagger.json`, `/apidoc/swagger.yaml` (both for legacy purposes), as well as `/apidoc/openapi.json` and `/apidoc/openapi.yaml`. The paths `/apidoc/oas.json` and `/apidoc/oas.yaml` are no longer bound. On startup, users will see only one path in the log. For OpenAPI 2.0, it is `/apidoc/swagger.json`, otherwise, it is `/apidoc/openapi.json`.
+* #7185: Projects created with the latest CLI no longer have a development dependency on [`request`](https://www.npmjs.com/package/request) for unit tests. The newly scaffolded projects will use [got](https://www.npmjs.com/package/got) for tests instead.
+* #7155: Addressed [CVE-2021-3918](https://nvd.nist.gov/vuln/detail/CVE-2021-3918), and upgraded the [{{% variables/apibuilder_prod_name %}} CLI](https://www.npmjs.com/package/@axway/amplify-api-builder-cli) to 2.0.0. This removes the [request](https://www.npmjs.com/package/request) module from the product. This also updates the third-party dependencies for new projects. You should upgrade the {{% variables/apibuilder_prod_name %}} CLI.
+* #7167: All the paths bound in the API Builder app are now logged at DEBUG level.
 
 ## Fixes
 
@@ -27,13 +27,17 @@ In this release, [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/packag
 
 {{% releasenotes/deprecations %}}
 
-<!-- Regenerate modules/plugins with api-builder-tools script -->
-
 ## Updated modules
+* [@axway/amplify-api-builder-cli@2.0.0](https://www.npmjs.com/package/@axway/amplify-api-builder-cli/v/2.0.0)
+* [@axway/api-builder@5.0.0](https://www.npmjs.com/package/@axway/api-builder/v/5.0.0)
+* [@axway/api-builder-admin@1.48.4](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.48.4)
+* [@axway/api-builder-oas-flow-node@2.2.0](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/2.2.0)
+* [@axway/api-builder-runtime@4.74.12](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.74.12)
 
-* [@axway/api-builder-runtime@4.74.9](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.74.9)
-
-<!-- ## Updated plugins -->
+## Updated plugins
+* [@axway/api-builder-plugin-fn-restclient@2.0.27](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-restclient/v/2.0.27)
+* [@axway/api-builder-plugin-fn-swagger@3.0.9](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/3.0.9)
+* [@axway/api-builder-plugin-ft-oas@0.2.4](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas/v/0.2.4)
 
 ## Known issues
 

@@ -18,7 +18,7 @@ In this release, [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/packag
 ## Features
 
 * #7185: Projects created with the latest CLI no longer have a development dependency on [`request`](https://www.npmjs.com/package/request) for unit tests. The newly scaffolded projects will use [got](https://www.npmjs.com/package/got) for tests instead.
-* #7155: Addressed [CVE-2021-3918](https://nvd.nist.gov/vuln/detail/CVE-2021-3918), and upgraded the [{{% variables/apibuilder_prod_name %}} CLI](https://www.npmjs.com/package/@axway/amplify-api-builder-cli) to 2.0.0. This removes the [request](https://www.npmjs.com/package/request) module from the product. This also updates the third-party dependencies for new projects. You should upgrade the {{% variables/apibuilder_prod_name %}} CLI.
+* #7185: Addressed [CVE-2021-3918](https://nvd.nist.gov/vuln/detail/CVE-2021-3918), and upgraded the [{{% variables/apibuilder_prod_name %}} CLI](https://www.npmjs.com/package/@axway/amplify-api-builder-cli) to 2.0.0. This removes the [request](https://www.npmjs.com/package/request) module from the product. This also updates the third-party dependencies for new projects. You should upgrade the {{% variables/apibuilder_prod_name %}} CLI. For more details of the changes made to the {{% variables/apibuilder_prod_name %}} project, see [Replace the request dev-dependency in project unit tests](/docs/updates/2021_12_17_update_to_remove_request_module).
 * #7167: All the paths bound in the API Builder app are now logged at DEBUG level.
 
 ## Fixes

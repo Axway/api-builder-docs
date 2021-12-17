@@ -78,7 +78,10 @@ Then, somewhere in your test, for example, in the `before` script, you need to c
     prefixUrl: 'http://localhost:8080',
     username: apikey,
     password: '',
-    headers: { apikey },
+    headers: {
+      apikey,
+      authorization: `Basic ${Buffer.from(apikey + ':').toString('base64')}`
+    },
     throwHttpErrors: false
   });
 ```

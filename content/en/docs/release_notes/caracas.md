@@ -28,8 +28,8 @@ In this release, [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/packag
 {{% releasenotes/deprecations %}}
 
 ## Updated modules
-* [@axway/amplify-api-builder-cli@2.0.0](https://www.npmjs.com/package/@axway/amplify-api-builder-cli/v/2.0.0)
-* [@axway/api-builder@5.0.0](https://www.npmjs.com/package/@axway/api-builder/v/5.0.0)
+* [@axway/amplify-api-builder-cli@2.0.1](https://www.npmjs.com/package/@axway/amplify-api-builder-cli/v/2.0.1)
+* [@axway/api-builder@5.0.1](https://www.npmjs.com/package/@axway/api-builder/v/5.0.1)
 * [@axway/api-builder-admin@1.48.4](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.48.4)
 * [@axway/api-builder-oas-flow-node@2.2.0](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/2.2.0)
 * [@axway/api-builder-runtime@4.74.12](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.74.12)

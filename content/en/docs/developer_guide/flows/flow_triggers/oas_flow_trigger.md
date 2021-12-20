@@ -52,7 +52,7 @@ If all your designed paths begin with a common prefix, i.e. `/service`, then by 
 ## API specification
 
 The OpenAPI specification is bound to `/apidoc/swagger.json`, `/apidoc/swagger.yaml` (both for legacy purposes), as well as `/apidoc/openapi.json` and `/apidoc/openapi.yaml`. On startup, users will see only one path in the log. For OpenAPI 2.0, it is `/apidoc/swagger.json`, otherwise, it is `/apidoc/openapi.json`.
-The prefix (`/apidoc`) is configured by changing [`apidoc.prefix` in configuration](/docs/developer_guide/project/configuration/project_configuration#apidoc). 
+The prefix (`/apidoc`) is configured by changing [`apidoc.prefix` in configuration](/docs/developer_guide/project/configuration/project_configuration#apidoc).
 
 ## Currently unsupported features
 
@@ -64,8 +64,10 @@ The prefix (`/apidoc`) is configured by changing [`apidoc.prefix` in configurati
 * OAS 2 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) for `tsv` (tab separated value).
 * OAS 2 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) array of items more than one level deep (i.e. does not support array of array items).
 * OAS 2 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) `pipes` and `ssv` are not supported in `cookie`, `formData`, `header`, or `path` (only supported in `query`).
-* multipart/form-data body that is an array of binary strings e.g. mutliple file uploads
-* The `byte` value of `format` modifier is supported, but it will not automatically decode the base64 data. On the other hand, the `base64` value of `format` is not supported.
+* `multipart/form-data` with arrays of binary data is not supported, e.g. `-F file[]=a -F file[]=b`.
+* OAS 3 [byte format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types) is supported, but it will not automatically decode the base64 data.
+* OAS 3 [base64 format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#considerations-for-file-uploads) is not supported because it is not really a valid format.
+* OAS 3 cookie parameters for objects and arrays, `style="form", explode=true` [style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#style-examples) is not supported.
 
 ## Roadmap
 

@@ -64,6 +64,8 @@ The prefix (`/apidoc`) is configured by changing [`apidoc.prefix` in configurati
 * OAS 2 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) for `tsv` (tab separated value).
 * OAS 2 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) array of items more than one level deep (i.e. does not support array of array items).
 * OAS 2 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) `pipes` and `ssv` are not supported in `cookie`, `formData`, `header`, or `path` (only supported in `query`).
+* multipart/form-data body that is an array of binary strings e.g. mutliple file uploads
+* The `byte` value of `format` modifier is supported, but it will not automatically decode the base64 data. On the other hand, the `base64` value of `format` is not supported.
 
 ## Roadmap
 

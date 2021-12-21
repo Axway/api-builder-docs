@@ -6,14 +6,14 @@ date: 2021-12-31
 Hide_readingtime: true
 ---
 ## Summary
-Brief summary of the notable release contents.
+Supports stricter parameter styles and binary body validation.
 
 {{% releasenotes/upgrade %}}
 
 <!-- ## Breaking changes -->
 
 ## Features
-* #7153: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now binds OpenAPI specifications to `/apidoc/swagger.json`, `/apidoc/swagger.yaml` (both for legacy purposes), as well as `/apidoc/openapi.json` and `/apidoc/openapi.yaml`. The paths `/apidoc/oas.json` and `/apidoc/oas.yaml` are no longer bound. On startup, users will see only one path in the log. For OpenAPI 2.0, it is `/apidoc/swagger.json`, otherwise, it is `/apidoc/openapi.json`.
+* #7153: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now enforces stricter parameter [styles](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#style-values), returning 400 when the encoding is incorrect.
 * #7182: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) request body validation refactored to support binary body, and body that cannot be parsed (e.g. non-JSON).
 
 <!-- ## Fixes -->

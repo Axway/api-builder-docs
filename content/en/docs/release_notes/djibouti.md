@@ -16,6 +16,9 @@ Supports stricter parameter styles and binary body validation.
 * #7182: [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) now supports non-JSON and non-text body as `Buffer`.
 * #7182: [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) now supports all JSON content-type `application/*+json`.
 
+## Fixes
+* #7198: Fixed an issue with [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) that failed to stop the server when running tests and a plugin failed to load.
+
 {{% releasenotes/deprecations %}}
 
 ## Updated modules

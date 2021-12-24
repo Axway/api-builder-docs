@@ -10,22 +10,19 @@ Supports stricter parameter styles and binary body validation.
 
 {{% releasenotes/upgrade %}}
 
-<!-- ## Breaking changes -->
-
 ## Features
 * #7153: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now enforces stricter parameter [styles](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#style-values), returning 400 when the encoding is incorrect.
 * #7182: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) request body validation refactored to support binary and non-JSON body.
 * #7182: [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) now supports non-JSON and non-text body as `Buffer`.
 * #7182: [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) now supports all JSON content-type `application/*+json`.
 
-<!-- ## Fixes -->
-
 {{% releasenotes/deprecations %}}
 
-<!-- Regenerate modules/plugins with api-builder-tools script -->
-<!-- ## Updated modules -->
+## Updated modules
+* [@axway/api-builder-runtime@4.75.1](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.75.1)
 
-<!-- ## Updated plugins -->
+## Updated plugins
+* [@axway/api-builder-plugin-ft-oas@0.3.0](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas/v/0.3.0)
 
 ## Known issues
 For a list of up-to-date known issues see [{{% variables/apibuilder_prod_name %}} known issues](/docs/known_issues/).

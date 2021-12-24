@@ -8,7 +8,7 @@ This document describes how to enable Prometheus metrics in your {{% variables/a
 
 ## Overview
 
-The [@axway/api-builder-plugin-prometheus](https://www.npmjs.com/package/@axway/api-builder-plugin-prometheus) is used to enable [Prometheus](https://prometheus.io/) metrics reporting in your {{% variables/apibuilder_prod_name %}} application via the [express-prom-bundle](https://www.npmjs.com/package/express-prom-bundle)
+The [@axway/api-builder-plugin-prometheus](https://www.npmjs.com/package/@axway/api-builder-plugin-prometheus) is used to enable [Prometheus](https://prometheus.io/) metrics reporting in your {{% variables/apibuilder_prod_name %}} application via the [express-prom-bundle](https://www.npmjs.com/package/express-prom-bundle).
 
 Installation will install a default configuration file. Once installed, it exposes a configurable endpoint that can be polled from an aggregator application. The plugin will bind to `8081` by default, but this can be changed in the configuration, or by setting the environment variable `API_BUILDER_PROMETHEUS_PORT`. The metrics do not persist between application restarts. With the default configuration, the next time your application starts, metrics can be accessed at: http://localhost:8081/metrics.
 

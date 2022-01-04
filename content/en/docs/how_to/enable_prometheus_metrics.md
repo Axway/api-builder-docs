@@ -20,7 +20,7 @@ Metrics will be aggregated for paths bound to the `config.apiPrefix` (e.g. `"/ap
 
 ## Prerequisites
 
-Requires an API Builder application with a minimum [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) version of `4.76.0`. [Exeter](/docs/release_notes/exeter)
+Requires an API Builder application with a minimum [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) version of `4.76.0` ([Exeter](/docs/release_notes/exeter)). 
 
 ## Installation
 

@@ -18,7 +18,7 @@ Metrics will be aggregated for paths bound to the `config.apiPrefix` (e.g. `"/ap
 
 ## Prerequisites
 
-Requires an API Builder application with a minimum [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) version of `4.76.0` ([Exeter](/docs/release_notes/exeter)).
+Requires an {{% variables/apibuilder_prod_name %}} application with a minimum [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) version of `4.76.0` ([Exeter](/docs/release_notes/exeter)).
 
 ## Installation
 
@@ -80,5 +80,16 @@ module.exports = {
 ### Options
 
 * **enabled** (`boolean`): Enables or disables the plugin. Default: `true`.
-* **http.port** (`integer|string`): Sets the metrics port (note that `process.env.API_BUILDER_PROMETHEUS_PORT` takes precedence). The port **cannot** be the same port that API Builder is using. Default `8081`.
+* **http.port** (`integer|string`): Sets the metrics port (note that `process.env.API_BUILDER_PROMETHEUS_PORT` takes precedence). The port **cannot** be the same port that {{% variables/apibuilder_prod_name %}} is using. Default `8081`.
 * **options** (`object`): These are the `express-prom-bundle` options, such as the route used to access the metrics (defaults to `/metrics`). See [options](https://www.npmjs.com/package/express-prom-bundle#options) for further details.
+
+### Docker
+
+If you are running {{% variables/apibuilder_prod_name %}} from Docker, then you will want to expose the port {{% variables/apibuilder_prod_name %}} is running on (e.g. 8080), as well as the Prometheus metrics (e.g. 8081).
+
+```bash
+docker build -t myapp ./
+docker run --name myapp -e PORT=8080 -e API_BUILDER_PROMETHEUS_PORT=8081 myapp:latest
+```
+
+For more information about how to use Docker with {{% variables/apibuilder_prod_name %}}, please see [Dockerize an {{% variables/apibuilder_prod_name %}} service](/docs/how_to/dockerize_an_api_builder_service).

@@ -18,7 +18,7 @@ Metrics will be aggregated for paths bound to the `config.apiPrefix` (e.g. `"/ap
 
 ## Prerequisites
 
-Requires an API Builder application with a minimum [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) version of `4.76.0` ([Exeter](/docs/release_notes/exeter)). 
+Requires an API Builder application with a minimum [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) version of `4.76.0` ([Exeter](/docs/release_notes/exeter)).
 
 ## Installation
 
@@ -58,7 +58,7 @@ module.exports = {
     '@axway/api-builder-plugin-prometheus': {
       enabled: true,
       http: {
-				// note that the port must be different than the runtime
+        // note that the port must be different than the runtime
         port: process.env.API_BUILDER_PROMETHEUS_PORT || 8081
       },
       options: {

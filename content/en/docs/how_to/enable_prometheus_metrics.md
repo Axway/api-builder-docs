@@ -10,9 +10,7 @@ This document describes how to enable Prometheus metrics in your {{% variables/a
 
 The [@axway/api-builder-plugin-prometheus](https://www.npmjs.com/package/@axway/api-builder-plugin-prometheus) is used to enable [Prometheus](https://prometheus.io/) metrics reporting in your {{% variables/apibuilder_prod_name %}} application via [express-prom-bundle](https://www.npmjs.com/package/express-prom-bundle).
 
-Installation will install a default configuration file, `conf/prometheus.default.js` and the next time your application starts, metrics can be accessed at: http://localhost:8081/metrics. The `/metrics` endpoint is configurable and can be polled by an aggregator application. By default, the plugin will bind to `8081`, but this can be changed in the configuration or by setting the environment variable `API_BUILDER_PROMETHEUS_PORT`. The metrics do not persist between application restarts.
-
-Metrics will be aggregated for paths bound to the `config.apiPrefix` (e.g. `"/api"`). Public paths will not be aggregated (i.e. `config.accessControl.public`).
+Metrics will be aggregated for paths bound to the `config.apiPrefix` (e.g. `"/api"`). Public paths will not be aggregated (i.e. `config.accessControl.public`). On startup, using the defaults, the Metrics will be available at: http://localhost:8081/metrics. The metrics do not persist between application restarts.
 
 ## Limitations
 
@@ -52,7 +50,7 @@ up 1
 
 ## Configuration
 
-Installation will install a default configuration file, `conf/prometheus.default.js` and the next time your application starts, metrics can be accessed at: http://localhost:8081/metrics. The `/metrics` endpoint is configurable and can be polled by an aggregator application. By default, the plugin will bind to `8081`, but this can be changed in the configuration or by setting the environment variable `API_BUILDER_PROMETHEUS_PORT`. The metrics do not persist between application restarts.
+Installation will install a default configuration file, `conf/prometheus.default.js` and the next time your application starts, metrics can be accessed at: http://localhost:8081/metrics. The `/metrics` endpoint as well as the port the metrics are bound are configurable via the configuration file. By default, the plugin will bind to `8081`, but this can be changed in the configuration or by setting the environment variable `API_BUILDER_PROMETHEUS_PORT`. The metrics do not persist between application restarts.
 
 ```js
 module.exports = {
@@ -60,6 +58,7 @@ module.exports = {
     '@axway/api-builder-plugin-prometheus': {
       enabled: true,
       http: {
+				// note that the port must be different than the runtime
         port: process.env.API_BUILDER_PROMETHEUS_PORT || 8081
       },
       options: {
@@ -81,5 +80,5 @@ module.exports = {
 ### Options
 
 * **enabled** (`boolean`): Enables or disables the plugin. Default: `true`.
-* **http.port** (`integer|string`): Sets the metrics port (note that `process.env.API_BUILDER_PROMETHEUS_PORT` takes precedence). The port **cannot** be the same port as API Builder. Default `8081`.
-* **options** (`object`): These are the `express-prom-bundle` options, such as the route used to access the metrics (defaults to `/metrics`).  See [options](https://www.npmjs.com/package/express-prom-bundle#options) for further details.
+* **http.port** (`integer|string`): Sets the metrics port (note that `process.env.API_BUILDER_PROMETHEUS_PORT` takes precedence). The port **cannot** be the same port that API Builder is using. Default `8081`.
+* **options** (`object`): These are the `express-prom-bundle` options, such as the route used to access the metrics (defaults to `/metrics`). See [options](https://www.npmjs.com/package/express-prom-bundle#options) for further details.

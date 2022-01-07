@@ -90,7 +90,7 @@ If you are running {{% variables/apibuilder_prod_name %}} from Docker, then you 
 
 ```bash
 docker build -t myapp ./
-docker run --name myapp -e PORT=8080 -e API_BUILDER_PROMETHEUS_PORT=8081 myapp:latest
+docker run --name myapp -e PORT=8080 -e API_BUILDER_PROMETHEUS_PORT=8081 -p 8080:8080 -p 8081:8081 myapp:latest
 ```
 
 For more information about how to use Docker with {{% variables/apibuilder_prod_name %}}, please see [Dockerize an {{% variables/apibuilder_prod_name %}} service](/docs/how_to/dockerize_an_api_builder_service).

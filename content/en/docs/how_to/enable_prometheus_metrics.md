@@ -1,6 +1,7 @@
 ---
 title: Enable Prometheus metrics
 linkTitle: Enable Prometheus metrics
+weight: 110
 date: 2022-01-07
 ---
 

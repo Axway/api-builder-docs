@@ -14,8 +14,11 @@ Added a new plugin [@axway/api-builder-plugin-prometheus](https://www.npmjs.com/
 
 ## Features
 * #7196: Made changes to [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) startup to enable loading [@axway/api-builder-plugin-prometheus](https://www.npmjs.com/package/@axway/api-builder-plugin-prometheus).
+* #7193: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) now supports passing XML body to the flow as a string, as opposed to a `Buffer`, when the request has an "XML" type content-type header (e.g. application/xml).
+* #7166: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) now supports documenting TLS in the OpenAPI 2.0 and 3.0 api-docs when `config.ssl` is enabled.
 
-<!-- ## Fixes -->
+## Fixes
+* #7199: Fixed issue in [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) where it failed to decode parameter of "any" type.
 
 {{% releasenotes/deprecations %}}
 

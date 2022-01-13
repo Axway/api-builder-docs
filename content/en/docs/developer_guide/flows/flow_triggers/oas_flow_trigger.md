@@ -54,6 +54,8 @@ If all your designed paths begin with a common prefix, i.e. `/service`, then by 
 The OpenAPI specification is bound to `/apidoc/swagger.json`, `/apidoc/swagger.yaml` (both for legacy purposes), as well as `/apidoc/openapi.json` and `/apidoc/openapi.yaml`. On startup, users will see only one path in the log. For OpenAPI 2.0, it is `/apidoc/swagger.json`, otherwise, it is `/apidoc/openapi.json`.
 The prefix (`/apidoc`) is configured by changing [`apidoc.prefix` in configuration](/docs/developer_guide/project/configuration/project_configuration#apidoc).
 
+
+
 ## Currently unsupported features
 
 * OAS 3 parameter `in.cookie` with [style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-examples) `form` and explode `true`
@@ -69,13 +71,14 @@ The prefix (`/apidoc`) is configured by changing [`apidoc.prefix` in configurati
 * OAS 3 [base64 format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#considerations-for-file-uploads) is not supported because it is not really a valid format.
 * OAS 3 cookie parameters for objects and arrays, `style="form", explode=true` [style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#style-examples) is not supported.
 * OAS body content-types `application/json`, `application/*+json`, `application/x-www-form-urlencoded`, or `multipart/form-data` will be decoded, "XML" types such as `application/xml` will be handled as strings but not decoded, all others will be handled as `Buffer`.
+* In API Doc & Test, APIs with `multipart/form-data` or `application/x-www-form-urlencoded` bodies will fail to render examples and execute correctly if the body schema is missing an implicit `type: object`.
 
 ## Roadmap
 
 * \[X] Support import and validation of 3.0 specifications
-* \[X] Download OAS specification
-* \[X] Bind flows to OAS methods
-* \[X] Invoke flows with limited support (may not work with all OAS features or parameters)
+* \[X] Download OpenAPI specification
+* \[X] Bind flows to OpenAPI methods
+* \[X] Invoke flows with limited support (may not work with all OpenAPI features or parameters)
 * \[X] HTTP request parameter and JSON schema validation
 * \[X] Support import and validation of 2.0 specifications
 * \[ ] Support import and validation of 3.1 specifications

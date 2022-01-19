@@ -11,14 +11,17 @@ In this release, we introduced smart body encoding and `content-type` header sel
 {{% releasenotes/upgrade %}}
 
 ## Breaking changes
-* #7168: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) is more strict when a response body is sent without a `content-type` header, and will now return a 500 Server Error if the correct `content-type` cannot automatically be determined from the OpenAPI document.
+* #7168: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) is more strict when a response body is sent without a `content-type` header, and will now return a `500 Server Error` if the correct `content-type` cannot automatically be determined from the OpenAPI document.
 
 ## Features
 
-* #7168: Added smart `content-type` header selection to [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) when a HTTP response body is provided without `content-type`. The flow-trigger will attempt to determine the correct `content-type` from the OpenAPI document.
-* #7168: Added automatic JSON response body encoding to [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) when a `content-type` header is not set and the OpenAPI document describes a single JSON mime-type for that response.
+* #7168: Added smart `content-type` header selection to [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) when a HTTP response body is set in the flow without a `content-type` header. The flow-trigger will attempt to determine the correct `content-type` from the OpenAPI document.
+* #7168: Added automatic JSON response body encoding to [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) when a `content-type` header is not set in the flow and the OpenAPI document describes a single JSON mime-type for that response.
+* #7195: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) can now handle OpenAPI specifications containing cyclical references with `requestBody` of content-type `application/x-www-form-urlencoded` or `multipart/form-data`.
 
-<!-- ## Fixes -->
+## Fixes
+
+* #7195: Fixed an issue with [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) that failed to dereference JSON schema when parsing and validating the request body or parameters.
 
 {{% releasenotes/deprecations %}}
 

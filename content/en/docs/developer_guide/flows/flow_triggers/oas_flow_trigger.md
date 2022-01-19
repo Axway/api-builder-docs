@@ -54,7 +54,33 @@ If all your designed paths begin with a common prefix, i.e. `/service`, then by 
 The OpenAPI specification is bound to `/apidoc/swagger.json`, `/apidoc/swagger.yaml` (both for legacy purposes), as well as `/apidoc/openapi.json` and `/apidoc/openapi.yaml`. On startup, users will see only one path in the log. For OpenAPI 2.0, it is `/apidoc/swagger.json`, otherwise, it is `/apidoc/openapi.json`.
 The prefix (`/apidoc`) is configured by changing [`apidoc.prefix` in configuration](/docs/developer_guide/project/configuration/project_configuration#apidoc).
 
-## Currently unsupported features
+<!-- ## Request handling
+Describe what we do on an inbound request before hitting the flow. Write about what validation, massaging, coercing, response codes to expect and when. -->
+
+## Response handling
+
+{{% variables/apibuilder_prod_name %}} and the OpenAPI flow-trigger do additional processing after a flow completes, before sending the response. This section describes the areas that are processed
+
+## Response body
+You can send a `string` or `Buffer` as the response body in a HTTP request.
+
+When a different data type is set as the response body, we may encode it as JSON if your OpenAPI spec documents a _single_ `application/json` type response for that status code (or default if the code in use is not documented). Otherwise, the encoding is ambiguous so results in a 500 Internal Server Error. In this case, you should ensure you encode the body within the flow and set an appropriate `content-type` header for the encoding used.
+
+### Response headers
+
+All response headers set by the HTTP Response flow-node will be sent in the response, although there will be some cases where additional heads may be set.
+
+{{% variables/apibuilder_prod_name %}} can automatically set `server`, `content-md5` and `etag` on every response, and they can be configured [here](/docs/developer_guide/project/configuration/project_configuration#http).
+
+#### Content type
+
+It's recommended to always set a `content-type` header in your flow if sending a response body, however, in the OpenAPI flow-trigger `content-type` may automatically be set based on the `HTTP Response` body, and the OpenAPI specification.
+
+If a response body is not provided, content-type will never be automatically set. If a `content-type` header was set in the flow, a warning will be logged. This indicates a bug or misconfigured flow.
+
+If a response body is provided, `content-type` will be set to the `produces` (OpenAPI 2) or `content` media type (OpenAPI 3) only if one media type is documented for the status code (or default if the code in use is not documented). All other cases will result in a 500 error since the expected value is ambiguous, and you should ensure that an appropriate `content-type` header is set from your flow.
+
+## Unsupported features
 
 * OAS 3 parameter `in.cookie` with [style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-examples) `form` and explode `true`
 * OAS 3 parameter [content](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#parameterObject) is currently not supported, and `schema` is required.
@@ -80,6 +106,7 @@ The prefix (`/apidoc`) is configured by changing [`apidoc.prefix` in configurati
 * \[X] HTTP request parameter and JSON schema validation
 * \[X] Support import and validation of 2.0 specifications
 * \[ ] Support import and validation of 3.1 specifications
+* \[ ] Support updating imported specifications
 * \[ ] Updating the API-first specification
 * \[ ] Improve UX to assist in flow creation
 * \[ ] Improve UX to prevent misconfiguration

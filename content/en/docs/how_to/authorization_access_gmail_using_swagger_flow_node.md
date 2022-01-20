@@ -75,7 +75,7 @@ Your service is now running and is accessible on`http://localhost:8080/console`.
 
 ## Import the Gmail Swagger flow-node
 
-1. We will use the [Swagger plugin](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger) to connect to the Gmail service. To do this, we can use a simplified Gmail Swagger 2.0 definition is that available here. Download [gmail.json](/files/gmail.json) and install it into the `./swagger` directory as `gmail.json`.
+1. We will use the [Swagger plugin](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger) to connect to the Gmail service. To do this, we can use a simplified Gmail Swagger 2.0 definition is that available here. Download [gmail.json](/samples/gmail.json) and install it into the `./swagger` directory as `gmail.json`.
 1. Navigate to [https://www.iconfinder.com/icons/132837/gmail_icon](https://www.iconfinder.com/icons/132837/gmail_icon) and save this icon as `./swagger/gmail.png` (it is important that the base file names are the same). Note that any image file can be used svg, png, gif, bmp, jpg, or diff formats.
 1. Restart your service (npm start)
 1. Navigate to the **Credentials** tab and notice that a Gmail credential has been automatically created. Note that the credential is _not_ ready to be used. For the credential to be ready, we need to provide the client id and client secret that we created above in [Creating a new Google application](#creating-a-new-google-application).

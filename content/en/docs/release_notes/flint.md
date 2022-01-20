@@ -1,8 +1,8 @@
 ---
 title: Flint release notes
 linkTitle: Flint
-description: 24 January 2022
-date: 2022-01-24
+description: 28 January 2022
+date: 2022-01-28
 Hide_readingtime: true
 ---
 ## Summary

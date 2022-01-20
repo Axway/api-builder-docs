@@ -15,14 +15,14 @@ You may not be the person who's responsible for creating these tests, in which c
 
 To recreate the example described, you will need the following:
 
-1. The {{% variables/apibuilder_prod_name %}} demo application [demo-postman.zip](/files/demo-postman.zip)
+1. The {{% variables/apibuilder_prod_name %}} demo application [demo-postman.zip](/samples/demo-postman.zip)
 1. The [Postman](https://www.postman.com/) application
 
 If you wish to skip the manual Collection creation, you can import the "pdf-collection.json" and "dev-environment.json" files into Postman Collections and Environments respectively within the Postman application.
 
 ## Extract {{% variables/apibuilder_prod_name %}} application
 
-Download and extract [demo-postman.zip](/files/demo-postman.zip). Then, install and the demo {{% variables/apibuilder_prod_name %}} application.
+Download and extract [demo-postman.zip](/samples/demo-postman.zip). Then, install and the demo {{% variables/apibuilder_prod_name %}} application.
 
 ```bash
 // Start {{% variables/apibuilder_prod_name %}}

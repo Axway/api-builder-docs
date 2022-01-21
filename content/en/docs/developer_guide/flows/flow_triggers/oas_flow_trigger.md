@@ -59,7 +59,7 @@ Describe what we do on an inbound request before hitting the flow. Write about w
 
 ## Response handling
 
-{{% variables/apibuilder_prod_name %}} and the OpenAPI flow-trigger do additional processing after a flow completes, before sending the response. This section describes the areas that are processed
+{{% variables/apibuilder_prod_name %}} and the OpenAPI flow-trigger do additional processing after a flow completes, before sending the response. This section describes the areas that are processed.
 
 ## Response body
 You can send a `string` or `Buffer` as the response body in a HTTP request.

@@ -13,6 +13,8 @@ host, basePath and schemes in the OpenAPI 2.0 and servers in OpenAPI 3.0 api-doc
 
 ## Breaking changes
 * #7168: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) is more strict when a response body is sent without a `content-type` header, and will now return a `500 Server Error` if the correct `content-type` cannot automatically be determined from the OpenAPI document.
+* #7195: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now relies on a minimum version of [@axway/api-builder-runtime@4.79.0](https://www.npmjs.com/package/@axway/api-builder-runtime)
+* #7212: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now sends `400 Bad Request` if a client includes a HTTP body but the spec does not define one.
 
 ## Features
 
@@ -27,6 +29,7 @@ host, basePath and schemes in the OpenAPI 2.0 and servers in OpenAPI 3.0 api-doc
 * #7226: Fixed an issue with [@axway/api-builder-plugin-fn-restclient](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-restclient) flow-node while invoking an API with it should be able to access the response body of the API call when the method is DELETE or OPTIONS.
 * #7195: Fixed an issue with [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) that failed to dereference JSON schema when parsing and validating the request body or parameters.
 * #7228: Updated `marked` dependency to fix [CVE-2022-21680](https://github.com/advisories/GHSA-rrrm-qjm4-v8hf) and [CVE-2022-21681](https://github.com/advisories/GHSA-5v2h-r2cx-5xgj).
+* #7212: Fixed an issue in [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) that incorrectly treated requests having `content-length: 0` as being invalid, even when the body was optional.
 
 {{% releasenotes/deprecations %}}
 

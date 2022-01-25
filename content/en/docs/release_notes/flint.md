@@ -15,6 +15,7 @@ host, basePath and schemes in the OpenAPI 2.0 and servers in OpenAPI 3.0 api-doc
 * #7168: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) is more strict when a response body is sent without a `content-type` header, and will now return a `500 Server Error` if the correct `content-type` cannot automatically be determined from the OpenAPI document.
 * #7195: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now relies on a minimum version of [@axway/api-builder-runtime@4.79.0](https://www.npmjs.com/package/@axway/api-builder-runtime)
 * #7212: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now sends `400 Bad Request` if a client includes a HTTP body but the spec does not define one.
+* #7220: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) plugin `save` method now overrides a previously saved specification with a new one.
 
 ## Features
 
@@ -23,6 +24,7 @@ host, basePath and schemes in the OpenAPI 2.0 and servers in OpenAPI 3.0 api-doc
 * #7168: Added automatic JSON response body encoding to [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) when a `content-type` header is not set in the flow and the OpenAPI document describes a single JSON mime-type for that response.
 * #7195: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) can now handle OpenAPI specifications containing cyclical references with `requestBody` of content-type `application/x-www-form-urlencoded` or `multipart/form-data`.
 * #7138: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) now supports configuration overrides in the OpenAPI 2.0 and 3.0 api-docs when `config.overrides` are enabled.
+* #7220: Added support for updating the existing specification from the UI.
 
 ## Fixes
 

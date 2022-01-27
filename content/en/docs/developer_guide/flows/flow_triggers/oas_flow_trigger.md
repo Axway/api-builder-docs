@@ -42,46 +42,70 @@ npm start
 
 Installing the plugin enables new UI on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page, and disables the old "legacy" Swagger 2.0 Endpoints that is currently built into {{% variables/apibuilder_prod_name %}}. We are trying to maintain a similar experience. To get started, you can import your OpenAPI specification using a new button, **+OpenAPI** on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page.
 
-## API prefix
+## Configuration
 
-Your service is configured with an [apiPrefix](/docs/developer_guide/project/configuration/project_configuration#apiprefix) which {{% variables/apibuilder_prod_name %}} uses to apply authentication to all paths under this prefix. By default this is `/api`, but can be configured.
-All paths defined in your imported OpenAPI document will be bound to this prefix. For example `/service/user` will be bound as `/api/service/user`.
+### API prefix
+
+Your service is configured with an [apiPrefix](/docs/developer_guide/project/configuration/project_configuration#apiprefix) which {{% variables/apibuilder_prod_name %}} uses to apply authentication to all paths under this prefix. It defaults to `/api`, but it can be configured. All paths defined in your imported OpenAPI document will be bound to this prefix. For example, `/service/user` will be bound as `/api/service/user`.
 
 If all your designed paths begin with a common prefix, i.e. `/service`, then by changing your `apiPrefix` in configuration to match this prefix, {{% variables/apibuilder_prod_name %}} will not apply the prefix twice, and allow `/service/user` to be bound as-is.
 
-## API specification
-
-The OpenAPI specification is bound to `/apidoc/swagger.json`, `/apidoc/swagger.yaml` (both for legacy purposes), as well as `/apidoc/openapi.json` and `/apidoc/openapi.yaml`. On startup, users will see only one path in the log. For OpenAPI 2.0, it is `/apidoc/swagger.json`, otherwise, it is `/apidoc/openapi.json`.
-The prefix (`/apidoc`) is configured by changing [`apidoc.prefix` in configuration](/docs/developer_guide/project/configuration/project_configuration#apidoc).
-
 ### Overrides
+
 There is a list of optional [`apidoc.overrides`](/docs/developer_guide/project/configuration/project_configuration#apidoc) that you can specify as part of your service configuration that would allow you to tweak how the API specification is generated. This allows you to tweak specific OpenAPI values that are useful when the service is not consumed directly, such as when the services is exposed through a proxy.
 
-<!-- ## Request handling
-Describe what we do on an inbound request before hitting the flow. Write about what validation, massaging, coercing, response codes to expect and when. -->
+## Accessing the API specification
+
+The OpenAPI specification is bound to the following paths and is exposed by the service for download:
+* `/apidoc/swagger.json` (for legacy purposes)
+* `/apidoc/swagger.yaml` (for legacy purposes)
+* `/apidoc/openapi.json`
+* `/apidoc/openapi.yaml`
+
+On startup, administrators will see only one path in the log. For OpenAPI 2.0, it is `/apidoc/swagger.json`, otherwise, it is `/apidoc/openapi.json`. Some parts of the API specification can be tweaked from the [configuration](#configuration). The "/apidoc" prefix is configured by changing the [`apidoc.prefix`](/docs/developer_guide/project/configuration/project_configuration#apidoc) in the configuration.
+
+<!-- TODO:
+## Request handling
+Describe what we do on an inbound request before hitting the flow. Write about what validation, massaging, coercing, response codes to expect and when.
+-->
 
 ## Response handling
 
 {{% variables/apibuilder_prod_name %}} and the OpenAPI flow-trigger do additional processing after a flow completes, before sending the response. This section describes the areas that are processed.
 
-## Response body
-You can send a `string` or `Buffer` as the response body in a HTTP request.
+In your flow, you can use the [HTTP Respose flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) to set the HTTP response **Status**, **Body**, and **Headers**, and these dictate the response you wish to send to the client.  However, {{% variables/apibuilder_prod_name %}} and the OpenAPI flow-trigger do additional processing after a flow completes, before sending the actual response. The following sections describe how the response might be effected.
 
-When a different data type is set as the response body, we may encode it as JSON if your OpenAPI spec documents a _single_ `application/json` type response for that status code (or default if the code in use is not documented). Otherwise, the encoding is ambiguous so results in a 500 Internal Server Error. In this case, you should ensure you encode the body within the flow and set an appropriate `content-type` header for the encoding used.
+### Response status
+
+The response **Status** that you set in the flow should be a valid [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status), and should match one of the documented HTTP response(s) from your OpenAPI specification. This **Status** code dictates how the OpenAPI flow-trigger handles the response body.
+
+### Response body
+
+The combined response **Body** _and_ **Status** code that you set in the flow should match one of the documented HTTP response(s) from your OpenAPI specification (or "default" if it is defined).
+
+If the **Body** is a "raw" `string` or `Buffer`, then no additional processing will be done, and the client will receive the body as-is.
+
+If the **Body** is a type _other_ than `string` or `Buffer` (e.g. an `Object` or `Array`), then OpenAPI flow-trigger may automatically JSON encode response if there is exactly one response media type that is JSON (e.g. "application/json"). Otherwise, the response content encoding is ambiguous, and results in a `500 Internal Server Error`. In this case, you should ensure you encode the **Body** within the flow and set an appropriate `content-type` header in **Headers** that matches the encoding for the **Body**.
+
+{{% alert title="Note" color="primary" %}}
+Currently, the response body is not validated against the JSON schema, so it is possible to send _invalid_ responses. This will be improved in a future release.
+{{% /alert %}}
 
 ### Response headers
 
-All response headers set by the HTTP Response flow-node will be sent in the response, although there will be some cases where additional heads may be set.
+The response **Headers** that you set in the flow are optional.  All response headers set by the [HTTP Respose flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) will be sent in the response. {{% variables/apibuilder_prod_name %}} may set additional HTTP response headers for `server`, `content-md5` and `etag`, and they can be enabled or disabled in the [configuration](/docs/developer_guide/project/configuration/project_configuration#http).
 
-{{% variables/apibuilder_prod_name %}} can automatically set `server`, `content-md5` and `etag` on every response, and they can be configured [here](/docs/developer_guide/project/configuration/project_configuration#http).
+#### Content-type header
 
-#### Content type
+{{% variables/apibuilder_prod_name %}} will automatically handle response content encoding and the HTTP response `content-type` header, if the type of response **Body** set from the flow is unambiguous with respect to the `responseBody` media type(s) defined.
 
-It's recommended to always set a `content-type` header in your flow if sending a response body, however, in the OpenAPI flow-trigger `content-type` may automatically be set based on the `HTTP Response` body, and the OpenAPI specification.
+* If you explicitly set a `content-type` header in **Headers**, it will be used.
+* If there is only one media type, then that will be used.
+* If exactly one of the documented response media type(s) are a JSON (e.g. "application/json"), then that will be used.
 
-If a response body is not provided, content-type will never be automatically set. If a `content-type` header was set in the flow, a warning will be logged. This indicates a bug or misconfigured flow.
+All other cases will result in a 500 error since the expected value is ambiguous, and you should ensure that an appropriate `content-type` header is set from your flow.
 
-If a response body is provided, `content-type` will be set to the `produces` (OpenAPI 2) or `content` media type (OpenAPI 3) only if one media type is documented for the status code (or default if the code in use is not documented). All other cases will result in a 500 error since the expected value is ambiguous, and you should ensure that an appropriate `content-type` header is set from your flow.
+Also note that if the response **Body** is a `string`, then [Express.js](https://expressjs.com) will automatically explicitly set the charset to "utf-8".  If you do not want this, then you will have to use a `Buffer` instead and set the correct charset on your `content-type` header.
 
 ## Unsupported features
 

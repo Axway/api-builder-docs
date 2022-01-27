@@ -6,19 +6,22 @@ date: 2022-01-28
 Hide_readingtime: true
 ---
 ## Summary
-In this release, we introduced smart body encoding and `content-type` header selection to the OpenAPI flow-trigger. Additionally, added support for overriding host, basePath and schemes in the OpenAPI 2.0 and servers in OpenAPI 3.0 api-docs respectively when `config.overrides` are enabled.
+
+In this release, in the OpenAPI flow-trigger, we added support for updating an existing OpenAPI document via the UI, and also introduced smart body encoding and `content-type` header selection. Additionally, we added support for overriding `host`, `basePath` and `schemes` in the OpenAPI 2.0 and `servers` in OpenAPI 3.0 api-docs respectively when [`config.apidoc.overrides`](/docs/developer_guide/project/configuration/project_configuration#apidoc) are enabled.
 
 {{% releasenotes/upgrade %}}
 
 ## Breaking changes
+
 * #7168: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) is more strict when a response body is sent without a `content-type` header, and will now return a `500 Server Error` if the correct `content-type` cannot automatically be determined from the OpenAPI document.
-* #7195: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now relies on a minimum version of [@axway/api-builder-runtime@4.79.0](https://www.npmjs.com/package/@axway/api-builder-runtime)
+* #7195: Minimum API Builder version is now Flint
 * #7212: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now sends `400 Bad Request` if a client includes a HTTP body but the spec does not define one.
 * #7220: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) plugin `save` method now overrides a previously saved specification with a new one.
+* #7138: Minimum API Builder version is now Flint. Now supports configuration overrides in the OpenAPI 2.0 and 3.0 api-docs when `config.overrides` are enabled.
 
 ## Features
 
-* #7214: Added log warning in the start up that request body has been ignored for GET/HEAD requests.
+* #7214: Added log warning if a GET/HEAD request sends a body, it will be ignored.
 * #7168: Added smart `content-type` header selection to [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) when a HTTP response body is set in the flow without a `content-type` header. The flow-trigger will attempt to determine the correct `content-type` from the OpenAPI document.
 * #7168: Added automatic JSON response body encoding to [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) when a `content-type` header is not set in the flow and the OpenAPI document describes a single JSON mime-type for that response.
 * #7195: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) can now handle OpenAPI specifications containing cyclical references with `requestBody` of content-type `application/x-www-form-urlencoded` or `multipart/form-data`.

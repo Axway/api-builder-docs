@@ -6,8 +6,7 @@ date: 2022-01-28
 Hide_readingtime: true
 ---
 ## Summary
-In this release, we introduced smart body encoding and `content-type` header selection to the OpenAPI flow-trigger. Additionally, added support for overriding
-host, basePath and schemes in the OpenAPI 2.0 and servers in OpenAPI 3.0 api-docs respectively when `config.overrides` are enabled.
+In this release, we introduced smart body encoding and `content-type` header selection to the OpenAPI flow-trigger. Additionally, added support for overriding host, basePath and schemes in the OpenAPI 2.0 and servers in OpenAPI 3.0 api-docs respectively when `config.overrides` are enabled.
 
 {{% releasenotes/upgrade %}}
 

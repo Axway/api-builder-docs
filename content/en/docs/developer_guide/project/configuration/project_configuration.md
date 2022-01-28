@@ -25,21 +25,22 @@ The following topics describe the project configuration settings.
 | --- | --- | --- | --- |
 | allowedHosts | Array`<String>` | \- | Restricts access to the Admin Console to the specified hosts. |
 | apiDocPrefix | String | '/apidoc' | **Deprecated {{% deprecation/link D002 %}}**. Prefix for the API documentation. |
-| disableAPIDoc | Boolean | false | **Deprecated {{% deprecation/link D003 %}}**. Set to `true` to display the generated Swagger API Docs. Changing the setting only works in production. Swagger documentation is always available in dev mode. |
+| disableAPIDoc | Boolean | false | **Deprecated {{% deprecation/link D003 %}}**. Set to `true` to display the generated OpenAPI Docs. Changing the setting only works in production. Swagger documentation is always available in dev mode. |
 | enabled | Boolean | true | Set to `true` to enable the Admin Console. |
 
 ### apidoc
 
-\[object\] Configures the Swagger API documentation since the {{% variables/apibuilder_prod_name %}} Standalone - Boston release. The `apidoc` object may contain the following key-value pairs:
+\[object\] Configures the OpenAPI documentation since the {{% variables/apibuilder_prod_name %}} Standalone - Boston release. The `apidoc` object may contain the following key-value pairs:
 
 | Key | Type | Default | Description |
 | --- | --- | --- | --- |
-| disabled | Boolean | false | Set to `true` to display the generated Swagger API Docs. Changing the setting only works in production. Swagger documentation is always available in dev mode. |
+| disabled | Boolean | false | Set to `true` to display the generated OpenAPI Docs. Changing the setting only works in production. Swagger documentation is always available in dev mode. |
 | prefix | String | '/apidoc' | Prefix for the API documentation. |
 | overrides | object | {} | Overrides to Swagger documentation. Any values set here do not change the functionality of the server, only what is exposed in the Swagger. |
-| overrides.host | string | \- | Hostname and optional port on which the server can be accessed. |
-| overrides.schemes | array | \- | Schemes which the server can be accessed using. Can be an array containing any of `http`, `https`, `ws`, or `wss`. |
-| overrides.basePath | string | \- | The root path on which the APIs hosted by the server are available. If provided, this must start with a leading slash (`/`). The value can be set to `null` to clear the `basePath`. |
+| overrides.host | string | \- | OpenAPI 2 specific override. Hostname and optional port on which the server can be accessed. The value can be set to `null` to clear the `host`. |
+| overrides.schemes | array | \- | OpenAPI 2 specific override. Schemes which the server can be accessed using. Can be an array containing any of `http`, `https`, `ws`, or `wss`. The value can be set to `null` to clear the `schemes`.|
+| overrides.basePath | string | \- | OpenAPI 2 specific override. The root path on which the APIs hosted by the server are available. If provided, this must start with a leading slash (`/`). The value can be set to `null` to clear the `basePath`. |
+| overrides.servers | array | \- | OpenAPI 3 specific override. If provided, this must be an array of server objects, and each server must contain the server `url` as string. The value can be set to `null` to clear the `servers`. |
 
 ### apikey
 

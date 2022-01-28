@@ -24,7 +24,7 @@ In this release, in the OpenAPI flow-trigger, we added support for updating an e
 * #7214: Added log warning if a GET/HEAD request sends a body, it will be ignored.
 * #7168: Added smart `content-type` header selection to [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) when a HTTP response body is set in the flow without a `content-type` header. The flow-trigger will attempt to determine the correct `content-type` from the OpenAPI document.
 * #7168: Added automatic JSON response body encoding to [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) when a `content-type` header is not set in the flow and the OpenAPI document describes a single JSON mime-type for that response.
-* #7195: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) can now handle OpenAPI specifications containing cyclical references with `requestBody` of content-type `application/x-www-form-urlencoded` or `multipart/form-data`.
+* #7195: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) can now handle OpenAPI specifications containing references with `requestBody` of content-type `application/x-www-form-urlencoded` or `multipart/form-data`.
 * #7138: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/plugin-ft-oas) now supports configuration overrides in the OpenAPI 2.0 and 3.0 api-docs when `config.overrides` are enabled.
 * #7220: Added support for updating the existing specification from the UI.
 

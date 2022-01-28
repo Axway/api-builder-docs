@@ -35,8 +35,9 @@ The `DELETE` method parameters are:
 | Follow redirect | boolean | true | Follow HTTP 3xx responses as redirects. | Selector, Boolean |
 | Insecure | boolean | false | Do not require the SSL certificates to be valid. | Selector, Boolean |
 | Maximum redirects | integer | 10 | The maximum number of redirects before aborting. | Selector, Number |
+| Response encoding | string | \- | The response body encoding if you expect binary use `binary` as the encoding. | Selector, String |
 
-The `Headers`, `Follow redirect`, `Insecure`, and `Maximum redirects` parameters can be enabled or disabled.
+The `Headers`, `Follow redirect`, `Insecure`, `Maximum redirects`, and `Response encoding` parameters can be enabled or disabled`.`
 
 ### GET parameters
 
@@ -81,8 +82,9 @@ The `OPTIONS` method parameters are:
 | Follow redirect | boolean | true | Follow HTTP 3xx responses as redirects. | Selector, Boolean |
 | Insecure | boolean | false | Do not require the SSL certificates to be valid. | Selector, Boolean |
 | Maximum redirects | integer | 10 | The maximum number of redirects before aborting. | Selector, Number |
+| Response encoding | string | \- | The response body encoding if you expect binary use `binary` as the encoding. | Selector, String |
 
-The `Headers, Follow redirect`, `Insecure`, and `Maximum redirects` parameters can be enabled or disabled`.`
+The `Headers`, `Follow redirect`, `Insecure`, `Maximum redirects`, and `Response encoding` parameters can be enabled or disabled`.`
 
 ### PATCH parameters
 

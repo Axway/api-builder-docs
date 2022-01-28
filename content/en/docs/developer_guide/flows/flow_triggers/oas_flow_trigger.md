@@ -85,7 +85,7 @@ The combined response **Body** _and_ **Status** code that you set in the flow sh
 
 If the **Body** is a "raw" `string` or `Buffer`, then no additional processing will be done, and the client will receive the body as-is.
 
-If the **Body** is a type _other_ than `string` or `Buffer` (e.g. an `Object` or `Array`), then OpenAPI flow-trigger may automatically JSON encode response if there is exactly one response media type that is JSON (e.g. "application/json"). Otherwise, the response content encoding is ambiguous, and results in a `500 Internal Server Error`. In this case, you should ensure you encode the **Body** within the flow and set an appropriate `content-type` header in **Headers** that matches the encoding for the **Body**.
+If the **Body** is a type _other_ than `string` or `Buffer` (e.g. an `Object` or `Array`), then OpenAPI flow-trigger may automatically JSON encode the response if there is exactly one response media type that is JSON (e.g. "application/json"). Otherwise, the response content encoding is ambiguous, and results in a `500 Internal Server Error`. In this case, you should ensure you encode the **Body** within the flow and set an appropriate `content-type` header in **Headers** that matches the encoding for the **Body**.
 
 {{% alert title="Note" color="primary" %}}
 Currently, the response body is not validated against the JSON schema, so it is possible to send _invalid_ responses. This will be improved in a future release.

@@ -399,14 +399,14 @@ D047:
   release: Faro
   summary: >-
     The `busboy` config option is deprecated and will be removed in a future version of the product.
-    Use `[config.limits](/docs/developer_guide/project/configuration/project_configuration/#limits)` to configure limits for multipart/form-data requests
+    Use `[config.limits](/docs/developer_guide/project/configuration/project_configuration/index.html#limits)` to configure limits for multipart/form-data requests
     and return 413 to clients when a limit it hit.
 
 D048:
   name: undefinedMultipartPartSize
   release: Faro
   summary: >-
-    the new `[config.limits](/docs/developer_guide/project/configuration/project_configuration/#limits)` config option should be
+    the new `[config.limits](/docs/developer_guide/project/configuration/project_configuration/index.html#limits)` config option should be
     configured with a value. Leaving it unset is deprecated behavior and the default behavior will
     change in a future version of the product to be equivalent to setting infinity (no limit).
 

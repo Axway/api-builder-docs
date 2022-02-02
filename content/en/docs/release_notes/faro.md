@@ -10,7 +10,7 @@ Hide_readingtime: true
 
 ## Features
 
-* #6601: Added a new configuration option `limits.multipartPartSize`. This allows {{% variables/apibuilder_prod_name %}} to be configured to return 413 (Payload too large) when individual parts of multipart/form-data requests exceed the configured limit. It's recommended to configure this. In new services, the default maximum size is configured to 10MB. See deprecation {{% deprecation/link D048 %}}.
+* #6601: Added a new configuration option `limits.multipartPartSize`. This allows {{% variables/apibuilder_prod_name %}} to be configured to return 413 (Payload too large) when individual parts of multipart/form-data requests exceed the configured limit. It is recommended to configure this. In new services, the default maximum size is configured to 10MB. See deprecation {{% deprecation/link D048 %}}.
 * #6643: Added parameter `retries` to the Connection parameters in Kafka flow-trigger. This controls the number of times that the Kafka client retries when attempting to establish a connection to the configured Kafka server.
 * #6658: Flow-triggers can now be created from within the Flow editor by dragging and dropping installed ones from the flow-nodes panel on the left.
 * #6699: breaking change: Support XSLT 2.0 and 3.0 in XSLT plugin.

@@ -80,12 +80,8 @@ plugins:
     # Otherwise it's really useful for catching wrong usage of words.
     # Consider replacing with some other sort of dictionary checker.
   - [ 'remark-lint-prohibited-strings', [
-      { no: 'Flow node', yes: 'Flow-node' },
-      { no: 'flow node', yes: 'flow-node' },
-      # { yes: 'flow-node' }, # case insensitive
-      { no: 'Flow trigger', yes: 'Flow-trigger' },
-      { no: 'flow trigger', yes: 'flow-trigger' },
-      # { yes: 'flow-trigger' },  # case insensitive
+      { no: '[fF]low node', yes: 'flow-node' },
+      { no: '[fF]low trigger', yes: 'flow-trigger' },
       # { yes: 'JavaScript' },
       { yes: 'Node.js' },
       { yes: 'npm' },

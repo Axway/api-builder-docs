@@ -109,6 +109,7 @@ Also note that if the response **Body** is a `string`, then [Express.js](https:/
 
 ## Unsupported features
 
+* OAS 3 requestBody `anyOf`, `oneOf`, `allOf`, and `none` are only supported for `application/json`.  All other media types are not supported.
 * OAS 3 parameter `in.cookie` with [style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-examples) `form` and explode `true`
 * OAS 3 parameter [content](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#parameterObject) is currently not supported, and `schema` is required.
 * OAS 3 [link](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#link-object).

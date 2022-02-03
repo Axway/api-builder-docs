@@ -6,7 +6,7 @@ date: 2022-01-14
 Hide_readingtime: true
 ---
 ## Summary
-In this release, we added a new [plugin](/docs/how_to/enable_prometheus_metrics) to enable [Prometheus](https://prometheus.io/) compatible metrics in the application. Additionally, added support for automatically detecting XML request bodies and parsing them as a string instead of a Buffer.
+In this release, we added a new [plugin](/docs/how_to/enable_prometheus_metrics) to enable [Prometheus](https://prometheus.io/) compatible metrics in the application. Additionally, we added support for automatically detecting XML request bodies and parsing them as a string instead of a Buffer.
 
 {{% releasenotes/upgrade %}}
 

@@ -16,7 +16,9 @@ In this release, in API Builder, we added support to view and resolve errors whe
 
 <!-- ## Features -->
 
-<!-- ## Fixes -->
+## Features
+
+* #7200: Added documentation to unsupported section in flow-trigger about `requestBody` schema of `anyOf`, `oneOf`, `allOf`, and `none` are only supported for application/json. All other media types are not supported.
 
 {{% releasenotes/deprecations %}}
 

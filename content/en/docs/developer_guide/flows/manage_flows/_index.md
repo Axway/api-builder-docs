@@ -5,7 +5,7 @@ weight: 20
 date: 2021-10-01
 ---
 
-Flows are acyclic directed graphs of operational flow-nodes, which are composed of inputs, logic, and outputs. They are used by endpoints, which require them for their runtime functionality of taking inputs and turning them into responses when an endpoint is hit. For reference information on flow orchestration and flow-node configuration, refer to [Flow-nodes](/docs/developer_guide/flows/flow_nodes/).
+Flows are acyclic directed graphs of operational flow-nodes, which are composed of inputs, logic, and outputs. They are used by endpoints and other [flow-triggers](/docs/developer_guide/flows/flow_triggers/), which require them for their runtime functionality of taking inputs and turning them into responses when a flow-trigger is invoked. For reference information on flow orchestration and flow-node configuration, refer to [flow-nodes](/docs/developer_guide/flows/flow_nodes/).
 
 ## Add API endpoints
 
@@ -53,6 +53,18 @@ To edit a flow using the {{% variables/apibuilder_prod_name %}} user interface:
 1. To exit the API Orchestration user interface and return to the API Lists page, select **Close**. If you select **Close** and there are unsaved changes to the flow, the Close caution window is displayed.
 ![close_caution](/Images/close_caution.png)
 1. Select **Save and exit** to save the flow changes and return to the API Lists page. Select **Discard changes** to discard the unsaved changes to the flow and return to the API Lists page.
+
+## Delete flows
+To delete a flow using the {{% variables/apibuilder_prod_name %}} user interface:
+
+1. Navigate to the flow you wish to delete (through **API Doc & Test** or **Flows**) and open the flow for editing.
+1. If the flow can be deleted, you will see a red **trash can** icon next to the flow name.
+![delete_flow](/Images/delete_flow.png)
+1. Select the **trash can** icon and confirm that you want to delete the flow. The Flow delete caution window is displayed.
+![delete_flow_confirm](/Images/delete_flow_confirm.png)
+1. Select **Proceed** to delete the flow. Select **Cancel** to return to the API Orchestration user interface. If **Proceed** is selected, the server is restarted, and the flow is deleted. Once the server restart is completed, you will be redirected to the previous screen.
+
+Flows which have not been saved yet or bound to endpoints will not display the **trash can** icon and cannot be deleted.
 
 ## Debug a flow
 

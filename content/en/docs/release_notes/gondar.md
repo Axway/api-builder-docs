@@ -7,16 +7,17 @@ Hide_readingtime: true
 ---
 ## Summary
 
-In this release, in API Builder, we added support to view and resolve errors when re-importing an updated OpenAPI specification.  We also added the ability to delete flows (under limited conditions).
+In this release, in API Builder, we added support to view and resolve errors when re-importing an updated OpenAPI specification. We also added the ability to delete flows.
 
 {{% releasenotes/upgrade %}}
 
 ## Breaking changes
 * #7140: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now requires a minimum API Builder version of Gondar.
 
-<!-- ## Features -->
-
 ## Features
+* #7248: Added the ability to delete flows from the flow editor. The exception is that flows used by endpoints cannot be deleted.
+
+## Fixes
 
 * #7200: Added documentation to unsupported section in flow-trigger about `requestBody` schema of `anyOf`, `oneOf`, `allOf`, and `none` are only supported for application/json. All other media types are not supported.
 

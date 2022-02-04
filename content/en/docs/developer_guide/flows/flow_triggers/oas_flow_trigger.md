@@ -44,6 +44,8 @@ Installing the plugin enables new UI on the [API Doc & Test](/docs/developer_gui
 
 ## Configuration
 
+The OpenAPI flow-trigger should not need any additional configuration above the defaults. However, the following sections describe how to configure the OpenAPI flow-trigger to change the default behavior.
+
 ### API prefix
 
 Your service is configured with an [apiPrefix](/docs/developer_guide/project/configuration/project_configuration#apiprefix) which {{% variables/apibuilder_prod_name %}} uses to apply authentication to all paths under this prefix. It defaults to `/api`, but it can be configured. All paths defined in your imported OpenAPI document will be bound to this prefix. For example, `/service/user` will be bound as `/api/service/user`.
@@ -57,6 +59,7 @@ There is a list of optional [`apidoc.overrides`](/docs/developer_guide/project/c
 ## Accessing the API specification
 
 The OpenAPI specification is bound to the following paths and is exposed by the service for download:
+
 * `/apidoc/swagger.json` (for legacy purposes)
 * `/apidoc/swagger.yaml` (for legacy purposes)
 * `/apidoc/openapi.json`
@@ -73,7 +76,7 @@ Describe what we do on an inbound request before hitting the flow. Write about w
 
 {{% variables/apibuilder_prod_name %}} and the OpenAPI flow-trigger do additional processing after a flow completes, before sending the response. This section describes the areas that are processed.
 
-In your flow, you can use the [HTTP Respose flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) to set the HTTP response **Status**, **Body**, and **Headers**, and these dictate the response you wish to send to the client.  However, {{% variables/apibuilder_prod_name %}} and the OpenAPI flow-trigger do additional processing after a flow completes, before sending the actual response. The following sections describe how the response might be effected.
+In your flow, you can use the [HTTP Response flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) to set the HTTP response **Status**, **Body**, and **Headers**, and these dictate the response you wish to send to the client.  However, {{% variables/apibuilder_prod_name %}} and the OpenAPI flow-trigger do additional processing after a flow completes, before sending the actual response. The following sections describe how the response might be effected.
 
 ### Response status
 

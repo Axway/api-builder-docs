@@ -17,9 +17,7 @@ In this release, in API Builder, we added support to view and resolve errors whe
 ## Features
 * #7248: Added the ability to delete flows from the flow editor. The exception is that flows used by endpoints cannot be deleted.
 
-## Fixes
-
-* #7200: Added documentation to unsupported section in flow-trigger about `requestBody` schema of `anyOf`, `oneOf`, `allOf`, and `none` are only supported for application/json. All other media types are not supported.
+<!-- ## Fixes -->
 
 {{% releasenotes/deprecations %}}
 

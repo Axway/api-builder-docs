@@ -112,19 +112,18 @@ Also note that if the response **Body** is a `string`, then [Express.js](https:/
 
 ## Unsupported features
 
-* OAS 3 requestBody `anyOf`, `oneOf`, `allOf`, and `none` are only supported for `application/json`.  All other media types are not supported.
-* OAS 3 parameter `in.cookie` with [style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-examples) `form` and explode `true`
-* OAS 3 parameter [content](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#parameterObject) is currently not supported, and `schema` is required.
-* OAS 3 [link](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#link-object).
-* OAS 3 parameter [media type encoding](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#encodingObject).
-* OAS 3 [discriminator](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#discriminatorObject).
-* OAS 2 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) for `tsv` (tab separated value).
-* OAS 2 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) array of items more than one level deep (i.e. does not support array of array items).
-* OAS 2 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) `pipes` and `ssv` are not supported in `cookie`, `formData`, `header`, or `path` (only supported in `query`).
+* OpenAPI 3 requestBody `anyOf`, `oneOf`, `allOf`, and `none` are only supported for `application/json`.  All other media types are not supported.
+* OpenAPI 3 parameter [content](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#parameterObject) is currently not supported, and `schema` is required.
+* OpenAPI 3 [link](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#link-object).
+* OpenAPI 3 parameter [media type encoding](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#encodingObject).
+* OpenAPI 3 [discriminator](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#discriminatorObject).
+* OpenAPI 2 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) for `tsv` (tab separated value).
+* OpenAPI 2 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) array of items more than one level deep (i.e. does not support array of array items).
+* OpenAPI 2 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) `pipes` and `ssv` are not supported in `cookie`, `formData`, `header`, or `path` (only supported in `query`).
 * `multipart/form-data` with arrays of binary data is not supported, e.g. `curl -F file[]=a -F file[]=b`.
-* OAS 3 [byte format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types) is supported, but it will not automatically decode the base64 data.
-* OAS 3 [base64 format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#considerations-for-file-uploads) is not supported because it is not really a valid format.
-* OAS 3 cookie parameters for objects and arrays, `style="form", explode=true` [style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#style-examples) is not supported.
+* OpenAPI 3 [byte format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types) is supported, but it will not automatically decode the base64 data.
+* OpenAPI 3 [base64 format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#considerations-for-file-uploads) is not supported because it is not really a valid format.
+* OpenAPI 3 cookie parameters for objects and arrays, `style="form", explode=true` [style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#style-examples) is not supported.
 * OAS body content-types `application/json`, `application/*+json`, `application/x-www-form-urlencoded`, or `multipart/form-data` will be decoded, "XML" types such as `application/xml` will be handled as strings but not decoded, all others will be handled as `Buffer`.
 * In API Doc & Test, APIs with `multipart/form-data` or `application/x-www-form-urlencoded` bodies will fail to render examples and execute correctly if the body schema is missing an implicit `type: object`.
 
@@ -136,9 +135,8 @@ Also note that if the response **Body** is a `string`, then [Express.js](https:/
 * \[X] Invoke flows with limited support (may not work with all OpenAPI features or parameters)
 * \[X] HTTP request parameter and JSON schema validation
 * \[X] Support import and validation of 2.0 specifications
+* \[X] Support updating imported specifications
 * \[ ] Support import and validation of 3.1 specifications
-* \[ ] Support updating imported specifications
-* \[ ] Updating the API-first specification
 * \[ ] Improve UX to assist in flow creation
 * \[ ] Improve UX to prevent misconfiguration
 * \[ ] Improve UX to improve API First experience

@@ -16,6 +16,7 @@ In this release, in API Builder, we added support to view and resolve errors whe
 
 ## Features
 * #7248: Added the ability to delete flows from the flow editor. The exception is that flows used by endpoints cannot be deleted.
+* #7249: Added the ability to display flow-triggers errors when re-importing an API document.
 
 <!-- ## Fixes -->
 

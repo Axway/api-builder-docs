@@ -5,7 +5,7 @@ weight: 20
 date: 2021-10-01
 ---
 
-Flows are acyclic directed graphs of operational flow-nodes, which are composed of inputs, logic, and outputs. They are used by endpoints, which require them for their runtime functionality of taking inputs and turning them into responses when an endpoint is hit. For reference information on flow orchestration and flow-node configuration, refer to [Flow-nodes](/docs/developer_guide/flows/flow_nodes/).
+Flows are acyclic directed graphs of operational flow-nodes, which are composed of inputs, logic, and outputs. They are used by endpoints and other [flow-triggers](/docs/developer_guide/flows/flow_triggers/), which require them for their runtime functionality of taking inputs and turning them into responses when a flow-trigger is invoked. For reference information on flow orchestration and flow-node configuration, refer to [flow-nodes](/docs/developer_guide/flows/flow_nodes/).
 
 ## Add API endpoints
 
@@ -35,7 +35,6 @@ To create a flow using the {{% variables/apibuilder_prod_name %}} user interface
 ![save_caution](/Images/save_caution.png)
 1. Select **Proceed** to save the flow. Select **Cancel** to return to the API Orchestration user interface. If **Proceed** is selected, the server is restarted, and the flow is saved. Once the server restart is completed, the API Orchestration user interface is displayed, and the flow is enabled. For flow creation examples, refer to [Flow Examples](/docs/developer_guide/flows/manage_flows/flow_examples/).
 1. To exit the API Orchestration user interface and return to the API Lists page, select **Close**. If you select **Close** and there are unsaved changes to the flow, the Close caution window is displayed.
-
 ![close_caution](/Images/close_caution.png)
 1. Select **Save and exit** to save the flow changes and return to the API Lists page. Select **Discard changes** to discard the unsaved changes to the flow and return to the API Lists page.
 
@@ -53,6 +52,16 @@ To edit a flow using the {{% variables/apibuilder_prod_name %}} user interface:
 1. To exit the API Orchestration user interface and return to the API Lists page, select **Close**. If you select **Close** and there are unsaved changes to the flow, the Close caution window is displayed.
 ![close_caution](/Images/close_caution.png)
 1. Select **Save and exit** to save the flow changes and return to the API Lists page. Select **Discard changes** to discard the unsaved changes to the flow and return to the API Lists page.
+
+## Delete flows
+When a flow can be deleted, a **Delete** button is shown besides the flow name in the flow editor. Flows can not be deleted if they have not been saved or are bound to endpoints.
+![delete_flow](/Images/delete_flow.png)
+
+To delete a flow:
+
+1. Navigate to the editor for the flow you wish to delete.
+1. Click the **Delete** button and confirm that you want to delete the flow. The flow delete caution window is displayed.
+1. Click **Proceed** to delete the flow. Click **Cancel** to continue editing the flow. If **Proceed** is clicked, the server is restarted, and the flow is deleted. Once the server has restarted, you will be redirected to the previous screen.
 
 ## Debug a flow
 

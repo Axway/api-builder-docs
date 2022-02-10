@@ -80,12 +80,8 @@ plugins:
     # Otherwise it's really useful for catching wrong usage of words.
     # Consider replacing with some other sort of dictionary checker.
   - [ 'remark-lint-prohibited-strings', [
-      { no: 'Flow node', yes: 'Flow-node' },
-      { no: 'flow node', yes: 'flow-node' },
-      # { yes: 'flow-node' }, # case insensitive
-      { no: 'Flow trigger', yes: 'Flow-trigger' },
-      { no: 'flow trigger', yes: 'flow-trigger' },
-      # { yes: 'flow-trigger' },  # case insensitive
+      { no: '[fF]low node', yes: 'flow-node' },
+      { no: '[fF]low trigger', yes: 'flow-trigger' },
       # { yes: 'JavaScript' },
       { yes: 'Node.js' },
       { yes: 'npm' },
@@ -106,11 +102,11 @@ plugins:
       # https://github.com/Trott/remark-lint-prohibited-strings/blob/main/index.js
       { no: 'builder', yes: 'Builder', ignoreNextTo: '-' },
       { yes: 'API Builder' }, # case insensitive
-      { no: 'falsey', yes: 'falsy' },
-      { no: "can't", yes: 'cannot' },
-      { no: "it's", yes: 'it is' },
-      { no: "that's", yes: 'that is' },
-      { no: "won't", yes: 'will not' },
+      { no: '[fF]alsey', yes: 'falsy' },
+      { no: "[cC]an't", yes: 'cannot' },
+      { no: "[iI]t's", yes: 'it is' },
+      { no: "[tT]hat's", yes: 'that is' },
+      { no: "[wW]on't", yes: 'will not' },
       { no: "(\\w+)'ve", yes: '$1 have', replaceCaptureGroups: true },
       { no: "(\\w+(?<!ca))n't", yes: '$1 not', replaceCaptureGroups: true },
       { no: "(\\w+)'ll", yes: '$1 will', replaceCaptureGroups: true },

@@ -67,6 +67,8 @@ Finally, we need to return an error response for the Flow Listener using [Flow L
 
 ![Screen_Shot_2021-07-30_at_2.29.31_PM](/Images/screen_shot_2021_07_30_at_2_29_31_pm.png)
 
+It is important to note that the outputs for `Flow Listener Response` should be unchanged from the default value of `$.response`. 
+
 #### Create the invoke flow
 
 Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) to create the "Invoke" flow. In this flow, you will want to drag the **Invoke Flow** flow-node on to the graph and connect it to **Start** (it should connect automatically).

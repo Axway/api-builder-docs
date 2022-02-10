@@ -24,9 +24,12 @@ In this release, in API Builder, we added support to view and resolve errors whe
 {{% releasenotes/deprecations %}}
 
 <!-- Regenerate modules/plugins with api-builder-tools script -->
-<!-- ## Updated modules -->
+## Updated modules
+* [@axway/api-builder-admin@1.53.0](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.53.0)
+* [@axway/api-builder-runtime@4.82.2](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.82.2)
 
-<!-- ## Updated plugins -->
+## Updated plugins
+* [@axway/api-builder-plugin-ft-oas@0.10.0](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas/v/0.10.0)
 
 ## Known issues
 

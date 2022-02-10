@@ -7,7 +7,7 @@ Hide_readingtime: true
 ---
 ## Summary
 
-In this release, in API Builder, we added support to view and resolve errors when re-importing an updated OpenAPI specification. We also added the ability to delete flows.
+In this release, in API Builder, we added support to view and resolve errors when re-importing an updated OpenAPI specification. We also added the ability to delete flows and automatically pan while connecting flow-nodes.
 
 {{% releasenotes/upgrade %}}
 

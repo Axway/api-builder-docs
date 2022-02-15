@@ -11,7 +11,8 @@ Brief summary of the notable release contents.
 
 {{% releasenotes/upgrade %}}
 
-<!-- ## Breaking changes -->
+## Breaking changes
+* #7250: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now on re-importing an oas spec, we are preserving the original name of the initially imported file and adjust the extension to match the extension of the newly imported file.
 
 <!-- ## Features -->
 

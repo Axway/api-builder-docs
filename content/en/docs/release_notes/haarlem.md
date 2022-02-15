@@ -13,8 +13,8 @@ Brief summary of the notable release contents.
 
 <!-- ## Breaking changes -->
 
-<!-- ## Features -->
-
+## Features
+* #7264: Extended the OAS flow-trigger plugin's responses to include the status code and the request id.
 <!-- ## Fixes -->
 
 {{% releasenotes/deprecations %}}

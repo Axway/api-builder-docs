@@ -17,7 +17,7 @@ Brief summary of the notable release contents.
 
 ## Features
 
-* #7250: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now preserves the original OpenAPI filename when updating the specification, and may adjust the extention to match the newly imported file.
+* #7250: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now preserves the original OpenAPI filename when updating the specification, and may adjust the extension to match the newly imported file.
 * #7264: Extended the OAS flow-trigger plugin's responses to include the status `code` and the `request-id`.
 
 <!-- ## Fixes -->

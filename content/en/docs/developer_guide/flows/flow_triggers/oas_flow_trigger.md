@@ -169,16 +169,16 @@ For example, if your endpoint has a parameter "IPAddress" that is a string with 
 | JSON schema validation for format "uuid" | no | yes |
 | JSON schema validation for format "json-pointer" | no | yes |
 | JSON schema validation for format "relative-json-pointer" | no | yes |
-| JSON schema validation for OpenAPI format "int32" | no | no ² |
-| JSON schema validation for OpenAPI format "int64" | no | no ² |
-| JSON schema validation for OpenAPI format "float" | no | no ² |
-| JSON schema validation for OpenAPI format "double" | no | no ² |
+| JSON schema validation for OpenAPI format "int32" | no | yes |
+| JSON schema validation for OpenAPI format "int64" | no | yes |
+| JSON schema validation for OpenAPI format "float" | no | yes |
+| JSON schema validation for OpenAPI format "double" | no | yes |
 | JSON schema validation for OpenAPI format "byte" | no | yes |
 | JSON schema validation for OpenAPI format "binary" | no | no ² |
 | JSON schema validation for OpenAPI format "password" | no | no ² |
 
 1. Currently unsupported, but the feature is planned on the [roadmap](#roadmap).
-1. Can be used for documentation purposes, but **OpenAPI** flow-trigger will not validate the format.
+1. Can be used for documentation purposes, but the format is not validated.
 
 ## Roadmap
 

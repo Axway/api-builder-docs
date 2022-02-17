@@ -171,8 +171,8 @@ For example, if your endpoint has a parameter "IPAddress" that is a string with 
 | JSON schema validation for format "relative-json-pointer" | no | yes |
 | JSON schema validation for OpenAPI format "int32" | no | yes |
 | JSON schema validation for OpenAPI format "int64" | no | yes |
-| JSON schema validation for OpenAPI format "float" | no | yes |
-| JSON schema validation for OpenAPI format "double" | no | yes |
+| JSON schema validation for OpenAPI format "float" | no | no ² |
+| JSON schema validation for OpenAPI format "double" | no | no ² |
 | JSON schema validation for OpenAPI format "byte" | no | yes |
 | JSON schema validation for OpenAPI format "binary" | no | no ² |
 | JSON schema validation for OpenAPI format "password" | no | no ² |

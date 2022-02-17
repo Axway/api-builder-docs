@@ -111,7 +111,7 @@ All other cases will result in a 500 error since the expected value is ambiguous
 Also note that if the response **Body** is a `string`, then [Express.js](https://expressjs.com) will automatically explicitly set the charset to "utf-8".  If you do not want this, then you will have to use a `Buffer` instead and set the correct charset on your `content-type` header.
 
 {{% alert title="Note" color="primary" %}}
-Note that previously, endpoints would automatically default to `application/json` unless it was explicitly set within the flow.  With **OpenAPI** flow-trigger, your flows may fail if they explicitly set a content-type header that was not defined for the operation response, or if the flow does not set a content-type header, and a JSON-like one was not defined for the operation response.
+Previously, endpoints would automatically default to `application/json` unless it was explicitly set within the flow.  With **OpenAPI** flow-trigger, your flows may fail if they explicitly set a content-type header that was not defined for the operation response, or if the flow does not set a content-type header, and a JSON-like one was not defined for the operation response.
 {{% /alert %}}
 
 ## Unsupported features

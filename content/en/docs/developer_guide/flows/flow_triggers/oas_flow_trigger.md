@@ -9,11 +9,21 @@ date: 2021-10-27
 
 The **OpenAPI** flow-trigger enables [OpenAPI specification](https://swagger.io/resources/open-api/) support for versions [OpenAPI 2.0](https://swagger.io/specification/v2/) and [OpenAPI 3.0](https://swagger.io/specification/) in {{% variables/apibuilder_prod_name %}}. This plugin enables {{% variables/apibuilder_prod_name %}} to support [API First](https://blog.axway.com/amplify-products/api-management/api-first-design) design methodology, where the microservice's API interface can be designed by experienced API designers, and then integrations implemented in {{% variables/apibuilder_prod_name %}} using [Flows](/docs/developer_guide/flows/).
 
+## Installation
+
 You can manually install the **OpenAPI** plugin using the following command:
 
 ```bash
 npm install @axway/api-builder-plugin-ft-oas
 ```
+
+After, you can successfully start your application.
+
+```bash
+npm start
+```
+
+Installing the plugin enables new UI on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page, and disables the old "legacy" Swagger 2.0 Endpoints that is currently built into {{% variables/apibuilder_prod_name %}}. The intention is to maintain a similar experience. To get started, you can import your OpenAPI specification using a new button, **+OpenAPI** on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page.
 
 ## Flow-trigger details
 
@@ -24,23 +34,6 @@ The following sections provide details of the available **OpenAPI** flow-trigger
 | Parameter | Type | Description | Configuration selection | Required |
 | --- | --- | --- | --- | --- |
 | API method | String | The OAS [operationId](https://swagger.io/specification/#operationObject) of the method to bind. | Selector, String | Yes |
-
-## How to use OpenAPI flow-trigger
-
-Currently, the plugin is in alpha, so it should only be used in new applications.  You must first manually remove the existing Greet flow and endpoint.
-
-```bash
-rm -rf endpoints/*
-rm -rf flows/*
-```
-
-After, you can successfully start your application.
-
-```bash
-npm start
-```
-
-Installing the plugin enables new UI on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page, and disables the old "legacy" Swagger 2.0 Endpoints that is currently built into {{% variables/apibuilder_prod_name %}}. We are trying to maintain a similar experience. To get started, you can import your OpenAPI specification using a new button, **+OpenAPI** on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page.
 
 ## Configuration
 

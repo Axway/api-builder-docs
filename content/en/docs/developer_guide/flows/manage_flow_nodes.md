@@ -27,9 +27,9 @@ To add flow-nodes to a flow:
 ## Managing the flow graph
 As you develop further your business logic, the flow graph will grow exponentially. We have added a set of shortcut keys to help you operate more easily. They are as follows:
 
-1. Panning - you can use your arrow keys to navigate the flow graph.
-1. Zooming -> `+` and `-` to zoom in and zoom out respectively.
-1. Resetting the flow graph - press `0`.
+1. Panning - Press the arrow keys to move the flow graph.
+1. Zooming - Press the `+` and `-` keys to zoom in and zoom out respectively.
+1. Reset - press the `0` key to reset the position and scale of the flow graph.
 
 ## Configure flow-nodes
 

@@ -29,7 +29,7 @@ As you develop further your business logic, the flow graph will grow exponential
 
 1. Panning - Press the arrow keys to move the flow graph.
 1. Zooming - Press the `+` and `-` keys to zoom in and zoom out respectively.
-1. Reset - press the `0` key to reset the position and scale of the flow graph.
+1. Reset - Press the `0` key to reset the position and scale of the flow graph.
 
 ## Configure flow-nodes
 

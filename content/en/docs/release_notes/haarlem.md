@@ -25,7 +25,8 @@ Brief summary of the notable release contents.
 * #7276: The flow editor now resets the graph pan and zoom positions when `0` is pressed.
 
 ## Fixes
-- #7283: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas)  schema validation for `multipart/form-data` files now ignores schema with constraints `minLength`, `maxLength`, and `pattern`.
+
+* #7283: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas)  schema validation for `multipart/form-data` files now ignores schema with constraints `minLength`, `maxLength`, and `pattern`.
 
 {{% releasenotes/deprecations %}}
 

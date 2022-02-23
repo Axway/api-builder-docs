@@ -27,8 +27,8 @@ Brief summary of the notable release contents.
 
 ## Fixes
 
-* #7283: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas)  schema validation for `multipart/form-data` files now ignores schema with constraints `minLength`, `maxLength`, and `pattern`.
-* #7297: Fixed issue where header parameters were incorrectly handled case-sensitive when validating the request.  Now, headers parameters are case-insensitive for validation.
+* #7283: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) schema validation for `multipart/form-data` files now ignores schema with constraints `minLength`, `maxLength`, and `pattern`.
+* #7297: fixed issue in [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) where header parameters were incorrectly handled case-sensitive when validating the request. Now, headers parameters are case-insensitive for validation.
 
 {{% releasenotes/deprecations %}}
 

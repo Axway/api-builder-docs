@@ -32,10 +32,16 @@ Brief summary of the notable release contents.
 
 {{% releasenotes/deprecations %}}
 
-<!-- Regenerate modules/plugins with api-builder-tools script -->
-<!-- ## Updated modules -->
+## Updated modules
 
-<!-- ## Updated plugins -->
+* [@axway/api-builder-admin@1.54.0](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.54.0)
+* [@axway/api-builder-oas-flow-node@2.3.0](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/2.3.0)
+* [@axway/api-builder-runtime@4.82.6](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.82.6)
+
+## Updated plugins
+
+* [@axway/api-builder-plugin-fn-swagger@3.1.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/3.1.0)
+* [@axway/api-builder-plugin-ft-oas@0.13.0](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas/v/0.13.0)
 
 ## Known issues
 

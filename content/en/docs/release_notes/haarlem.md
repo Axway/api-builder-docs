@@ -7,7 +7,7 @@ Hide_readingtime: true
 ---
 ## Summary
 
-Brief summary of the notable release contents.
+In this release, in {{% variables/apibuilder_prod_name %}}, in [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas), we moved the OpenAPI specifications from `./endpoints` to `./apidocs/openapi`, changed path parameters to be passed into the flow as `$.request.path`, use the same file basname when updating the OpenAPI spec, and made the OpenAPI flow-trigger more compatible with respect the JSON schema draft-04 and formats for validation.  We also made some minor flow editor fixes.
 
 {{% releasenotes/upgrade %}}
 
@@ -23,7 +23,7 @@ Brief summary of the notable release contents.
 * #7264: Extended the OpenAPI flow-trigger plugin's responses to include the status `code` and the `request-id`.
 * #7282: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) is now properly validating with JSON Schema Draft 4.
 * #7276: The flow editor now resets the graph pan and zoom positions when `0` is pressed.
-* #7280: API Builder users will no longer be able generate endpoints for models. The OpenAPI flow-trigger is a replacement for endpoints and our new bespoke solution.
+* #7280: {{% variables/apibuilder_prod_name %}} users will no longer be able generate endpoints for models. The OpenAPI flow-trigger is a replacement for endpoints and our new bespoke solution.
 
 ## Fixes
 

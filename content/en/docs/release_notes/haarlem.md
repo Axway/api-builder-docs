@@ -7,29 +7,29 @@ Hide_readingtime: true
 ---
 ## Summary
 
-In this release, in {{% variables/apibuilder_prod_name %}}, in [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas), we moved the OpenAPI specifications from `./endpoints` to `./apidocs/openapi`, changed path parameters to be passed into the flow as `$.request.path`, use the same file basname when updating the OpenAPI spec, and made the OpenAPI flow-trigger more compatible with respect the JSON schema draft-04 and formats for validation.  We also made some minor flow editor fixes.
+In this release, in [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas), we moved the OpenAPI specification from `./endpoints` to `./apidocs/openapi`, changed path parameters to be passed into the flow as `$.request.path`, and now preserve the filename when updating an OpenAPI specification. We also added a shortcut key in the flow editor to reset the graph.
 
 {{% releasenotes/upgrade %}}
 
 ## Breaking changes
 
-* #7271: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now saves and loads OpenAPI specifications from `apidocs/openapi` instead of `endpoints`.
+* #7271: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now saves and loads OpenAPI specification from `apidocs/openapi` instead of `endpoints`.
 * #7282: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) is now using Ajv version 6 which affects the way JSON Schema date-time format is validated.
 * #7285: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now passes path parameters to the flow as `$.request.path` (instead of `$.request.params` as was done previously).
 
 ## Features
 
 * #7250: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now preserves the original OpenAPI filename when updating the specification, and may adjust the extension to match the newly imported file.
-* #7264: Extended the OpenAPI flow-trigger plugin's responses to include the status `code` and the `request-id`.
-* #7282: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) is now properly validating with JSON Schema Draft 4.
-* #7276: The flow editor now resets the graph pan and zoom positions when `0` is pressed.
-* #7280: {{% variables/apibuilder_prod_name %}} users will no longer be able generate endpoints for models. The OpenAPI flow-trigger is a replacement for endpoints and our new bespoke solution.
+* #7264: Responses from [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now include the status `code` and the `request-id`.
+* #7276: The flow editor now resets the graph pan and zoom positions when the `0` key is pressed.
 
 ## Fixes
 
 * #7283: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) schema validation for `multipart/form-data` files now ignores schema with constraints `minLength`, `maxLength`, and `pattern`.
+* #7282: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now properly validates using JSON Schema Draft 4.
 * #7297: Fixed issue in [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) where header parameters were incorrectly handled case-sensitive when validating the request. Now, headers parameters are case-insensitive for validation.
 * #7279: Fixed issue where the +/- zoom shortcut keys in the flow editor would not work on Firefox.
+* #7280: The "generate endpoints for models" feature is now removed when endpoints are disabled. This happens when [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) is installed as it is a replacement for endpoints.
 
 {{% releasenotes/deprecations %}}
 

@@ -28,7 +28,8 @@ In this release, in {{% variables/apibuilder_prod_name %}}, in [@axway/api-build
 ## Fixes
 
 * #7283: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) schema validation for `multipart/form-data` files now ignores schema with constraints `minLength`, `maxLength`, and `pattern`.
-* #7297: fixed issue in [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) where header parameters were incorrectly handled case-sensitive when validating the request. Now, headers parameters are case-insensitive for validation.
+* #7297: Fixed issue in [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) where header parameters were incorrectly handled case-sensitive when validating the request. Now, headers parameters are case-insensitive for validation.
+* #7279: Fixed issue where the +/- zoom shortcut keys in the flow editor would not work on Firefox.
 
 {{% releasenotes/deprecations %}}
 

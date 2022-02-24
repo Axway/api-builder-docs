@@ -15,6 +15,14 @@ You can manually install the **OpenAPI** flow-trigger plugin using the following
 npm install @axway/api-builder-plugin-ft-oas
 ```
 
+After, you can successfully start your application.
+
+```bash
+npm start
+```
+
+Installing the plugin enables new UI on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page, and disables the old "legacy" Swagger 2.0 Endpoints that is currently built into {{% variables/apibuilder_prod_name %}}. The intention is to maintain a similar experience. To get started, you can import your OpenAPI specification using a new button, **+OpenAPI** on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page.
+
 ## Flow-trigger details
 
 The following sections provide details of the available **OpenAPI** flow-trigger parameters.
@@ -24,23 +32,6 @@ The following sections provide details of the available **OpenAPI** flow-trigger
 | Parameter | Type | Description | Configuration selection | Required |
 | --- | --- | --- | --- | --- |
 | API method | String | The OAS [operationId](https://swagger.io/specification/#operationObject) of the method to bind. | Selector, String | Yes |
-
-## How to use OpenAPI flow-trigger
-
-Currently, the plugin is in alpha, so it should only be used in new applications.  You must first manually remove the existing Greet flow and endpoint.
-
-```bash
-rm -rf endpoints/*
-rm -rf flows/*
-```
-
-After, you can successfully start your application.
-
-```bash
-npm start
-```
-
-Installing the plugin enables new UI on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page, and disables the old "legacy" Swagger 2.0 Endpoints that is currently built into {{% variables/apibuilder_prod_name %}}. We are trying to maintain a similar experience. To get started, you can import your OpenAPI specification using a new button, **+OpenAPI** on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page.
 
 ## Configuration
 

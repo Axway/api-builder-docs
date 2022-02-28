@@ -73,9 +73,6 @@ In your flow, you can use the [HTTP Response flow-node](/docs/developer_guide/fl
 
 The response **Status** that you set in the flow should be a valid [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status), and should match one of the documented HTTP response(s) from your OpenAPI specification. This **Status** code dictates how the **OpenAPI** flow-trigger handles the response body.
 
-If the flow responds with a status code which is not documented by the specification, then this will result in a `500 Internal Server Error`. 
-If `default` is documented then any status code is valid, although the response headers and body must still match the specification as below.
-
 ### Response body
 
 The combined response **Body** _and_ **Status** code that you set in the flow should match one of the documented HTTP response(s) from your OpenAPI specification (or "default" if it is defined).
@@ -84,29 +81,15 @@ If the **Body** is a "raw" `string` or `Buffer`, then no additional processing w
 
 If the **Body** is a type _other_ than `string` or `Buffer` (e.g. an `Object` or `Array`), then **OpenAPI** flow-trigger may automatically JSON encode the response if there is exactly one response media type that is JSON (e.g. "application/json"). Otherwise, the response content encoding is ambiguous, and results in a `500 Internal Server Error`. In this case, you should ensure you encode the **Body** within the flow and set an appropriate `content-type` header in **Headers** that matches the encoding for the **Body**.
 
-Additional validation is also performed to ensure the response body matches what's defined in your specification. Any mismatches will result in a `500 Internal Server Error`. 
-
-#### Required body
-If the specification documents content for the response, then this indicates a body should be returned. Similarly, if no content is documented, a body should not be returned.
-
-Note: in OpenAPI 2, responses have a `schema` property which is used to document that a response has content.
-
-#### JSON body validation
-If the response `content-type` is JSON, the response body will be validated as JSON. If a JSON schema is documented for the response, the body will be validated against it. Any failures will
+{{% alert title="Note" color="primary" %}}
+Currently, the response body is not validated against the JSON schema, so it is possible to send _invalid_ responses. This will be improved in a future release.
+{{% /alert %}}
 
 ### Response headers
 
 The response **Headers** that you set in the flow are optional.  All response headers set by the [HTTP Respose flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) will be sent in the response. {{% variables/apibuilder_prod_name %}} may set additional HTTP response headers for `server`, `content-md5` and `etag`, and they can be enabled or disabled in the [configuration](/docs/developer_guide/project/configuration/project_configuration#http).
 
-Additional validation is also performed to ensure the response headers match what's defined in your specification. Any mismatches will result in a `500 Internal Server Error`. 
-
-#### Required headers
-All documented `required` headers must be returned by the flow.
-
-#### Extraneous headers
-All headers returned by the flow must be documented in the specification.
-
-### Content-type header
+#### Content-type header
 
 {{% variables/apibuilder_prod_name %}} will automatically handle response content encoding and the HTTP response `content-type` header, if the type of response **Body** set from the flow is unambiguous with respect to the `responseBody` media type(s) defined.
 
@@ -121,8 +104,6 @@ Also note that if the response **Body** is a `string`, then [Express.js](https:/
 {{% alert title="Note" color="primary" %}}
 Previously, endpoints would automatically default to `application/json` unless it was explicitly set within the flow.  With **OpenAPI** flow-trigger, your flows may fail if they explicitly set a content-type header that was not defined for the operation response, or if the flow does not set a content-type header, and a JSON-like one was not defined for the operation response.
 {{% /alert %}}
-
-The response content-type header is matched against a response `content` (or `produces`) media-type in your specification. Any mismatches will result in a `500 Internal Server Error`. Currently wildcard media-types and parameters such as `charset` are not supported. 
 
 ## Unsupported features
 
@@ -140,7 +121,6 @@ The response content-type header is matched against a response `content` (or `pr
 * OpenAPI 3 cookie parameters for objects and arrays, `style="form", explode=true` [style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#style-examples) is not supported.
 * OAS body content-types `application/json`, `application/*+json`, `application/x-www-form-urlencoded`, or `multipart/form-data` will be decoded, "XML" types such as `application/xml` will be handled as strings but not decoded, all others will be handled as `Buffer`.
 * In API Doc & Test, APIs with `multipart/form-data` or `application/x-www-form-urlencoded` bodies will fail to render examples and execute correctly if the body schema is missing an implicit `type: object`.
-* media-type parameters such as `;charset=utf-8` in request and response are are currently ignored.
 
 ## Upgrading from endpoints
 

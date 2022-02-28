@@ -14,7 +14,7 @@ Hide_readingtime: true
 ## Features
 
 * #7302: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now supports a new option "Lower-case all headers" that will force all headers to be lower-cased before they are passed into the flow, including OpenAPI header parameters, which would normally be case-sensitive.
-* #4284: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now supports a new option a new option "Flatten parameters" that flatten all OpenAPI parameters into a single request property "params" that will be accessible from the flow from `$.request.params`.
+* #7284: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now supports a new option "Flatten parameters" that flatten all OpenAPI parameters into a single request property "params" that will be accessible from the flow from `$.request.params`.
 
 ## Fixes
 

@@ -13,7 +13,9 @@ Hide_readingtime: true
 
 <!-- ## Features -->
 
-<!-- ## Fixes -->
+## Fixes
+
+* #7305: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) updated schema for HTTP request.
 
 {{% releasenotes/deprecations %}}
 

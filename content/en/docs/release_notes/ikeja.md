@@ -20,6 +20,7 @@ Hide_readingtime: true
 
 * #7305: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) updated schema for HTTP request.
 * #7283: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now ignores [JSON schema constraints](https://json-schema.org/understanding-json-schema/reference/string.html#id5) `minLength`, `maxLength`, and `pattern` when validating uploaded files.
+* #7274: OAS flow-trigger will not binds apidoc when it is disabled in config.
 
 {{% releasenotes/deprecations %}}
 

@@ -92,7 +92,7 @@ If the specification documents content for the response, then this indicates a b
 Note: in OpenAPI 2, responses have a `schema` property which is used to document that a response has content.
 
 #### JSON body validation
-If the response `content-type` is JSON, the response body will be validated as JSON. If a JSON schema is documented for the response, the body will be validated against it. Any failures will
+If the response `content-type` is JSON, the response body will be validated as JSON. If a JSON schema is documented for the response, the body will be validated against it.
 
 ### Response headers
 
@@ -140,7 +140,7 @@ The response content-type header is matched against a response `content` (or `pr
 * OpenAPI 3 cookie parameters for objects and arrays, `style="form", explode=true` [style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#style-examples) is not supported.
 * OAS body content-types `application/json`, `application/*+json`, `application/x-www-form-urlencoded`, or `multipart/form-data` will be decoded, "XML" types such as `application/xml` will be handled as strings but not decoded, all others will be handled as `Buffer`.
 * In API Doc & Test, APIs with `multipart/form-data` or `application/x-www-form-urlencoded` bodies will fail to render examples and execute correctly if the body schema is missing an implicit `type: object`.
-* media-type parameters such as `;charset=utf-8` in request and response are are currently ignored.
+* media-type parameters such as `;charset=utf-8` in request and response are currently ignored.
 
 ## Upgrading from endpoints
 

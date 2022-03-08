@@ -1,0 +1,65 @@
+---
+title: Quick start
+weight: 10
+date: 2022-03-01
+description: Quickly get started to write your first flow, learn the basics of OpenAPI development, and learn how they relate to your service to build APIs with {{% variables/apibuilder_prod_name %}}.
+---
+
+## Import your first API
+
+1. Navigate to _API Doc & Test_
+1. Click on the **+ OpenAPI** button
+1. In the input box, enter:<br>https://docs.axway.com/bundle/api-builder/page/samples/openapi/bookstore.yaml
+1. Click **Fetch from URL**
+1. It will show a Summary of the API. Click **Save** to finish importing the API
+
+**TODO**: Record 1075x670 GIF video using Chrome plugin, "Capture to GIF"
+
+## Your first flow
+
+After importing the API, the _API Doc & Test_ shows the rendered OpenAPI specification. Each operation is rendered in the color representing their HTTP method. Initially, all of the operations are unimplemented. {{% variables/apibuilder_prod_name %}} handles all the HTTP request processing, including parsing, request and parameter validation, as well as the HTTP response. It will strictly enforce the inputs according to the OpenAPI specification. The role of the developer in {{% variables/apibuilder_prod_name %}} is to implement these operations using [flows](/docs/developer_guide/flows).
+
+The following steps will bind an operation to a new flow.
+
+1. Find the operation for **GET /books/{isbn}** and click the **Create Flow** button. This will bring you to the flow editor.
+1. In the _Flow-Nodes_ panel to the left, find the [**HTTP response flow-node**](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) ![HTTP response flow-node](/Images/flow-node-http-response.png)
+1. Then click and drag the [**HTTP response flow-node**](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) on to the graph on the right. It will automatically add this to the **Start** node.
+1. In the flow-node properties panel on the right, find the **Status** property.
+1. In the **Status** property, change the _Selector_ drop-down to _Number_.
+1. In the **Status** property, enter the value: `200`, representing HTTP success.
+1. In the flow-node properties panel on the right, find **Body** property. It should appear disabled.
+1. In the **Body** property, enable the property by clicking the toggle switch.
+1. In the **Body** property, change the _Selector_ drop-down to _Object_.
+1. In the **Body** property, enter the value:<br>
+`{"id":"1234","isbn":"ISBN 1234", "title":"Moby Dick", "author":"Herman Melville","published":"1851-10-18"}`
+1. Click **Close** and then **Save and exit**
+
+After the server restarts, you are brought back to the _API Doc & Test_ page with the summary of your API. Note that the button associated with the **GET /books/{isbn}** operation now says, **Edit Flow**. This is because this operation is now bound to a flow. You can edit the flow as many times as is necessary to fully implement the operation. You can read more about flows [here](/docs/developer_guide/flows).
+
+**TODO**: Record 1075x670 GIF video using Chrome plugin, "Capture to GIF"
+
+## Try your API
+
+Now that your **GET /books/{isbn}** is implemented, you can invoke your API.
+
+1. Click the **GET /books/{isbn}** row to expand the GET operation
+1. Click **Try it out**
+1. In the **isbn** parameter field, input `ISBN 1234`
+1. Click the **Execute** button (you may need to scroll down)
+
+**TODO**: Record 1075x670 GIF video using Chrome plugin, "Capture to GIF"
+
+## Accessing the API specification
+
+The OpenAPI specification you imported is served by the {{% variables/apibuilder_prod_name %}} application. From the UI, you can click on the **Summary** page, and then click on **Download OpenAPI specification**.
+
+The OpenAPI specification is bound to the following paths and is exposed by the service for download:
+
+* `/apidoc/swagger.json` (for legacy purposes)
+* `/apidoc/swagger.yaml` (for legacy purposes)
+* `/apidoc/openapi.json`
+* `/apidoc/openapi.yaml`
+
+Administrators will see only one path in the log. For OpenAPI 2.0, it is `/apidoc/swagger.json`, otherwise, it is `/apidoc/openapi.json`. Some parts of the API specification can be tweaked from the [configuration](#configuration). The "/apidoc" prefix is configured by changing the [`apidoc.prefix`](/docs/developer_guide/project/configuration/project_configuration#apidoc) in the configuration.
+
+For example, the OpenAPI specification can be downloaded from: http://localhost:8080/apidoc/openapi.yaml

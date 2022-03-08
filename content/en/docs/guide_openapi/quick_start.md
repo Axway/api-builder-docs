@@ -17,9 +17,7 @@ description: Quickly get started to write your first flow, learn the basics of O
 
 ## Your first flow
 
-After importing the API, the _API Doc & Test_ shows the rendered OpenAPI specification. Each operation is rendered in the color representing their HTTP method. Initially, all of the operations are unimplemented. {{% variables/apibuilder_prod_name %}} handles all the HTTP request processing, including parsing, request and parameter validation, as well as the HTTP response. It will strictly enforce the inputs according to the OpenAPI specification. The role of the developer in {{% variables/apibuilder_prod_name %}} is to implement these operations using [flows](/docs/developer_guide/flows).
-
-The following steps will bind an operation to a new flow.
+After importing the API, the _API Doc & Test_ shows the rendered OpenAPI specification. The role of the developer in {{% variables/apibuilder_prod_name %}} is to implement these operations using [flows](/docs/developer_guide/flows), so we will start by creating a flow for **GET /books/{isbn}**.
 
 1. Find the operation for **GET /books/{isbn}** and click the **Create Flow** button. This will bring you to the flow editor.
 1. In the _Flow-Nodes_ panel to the left, find the [**HTTP response flow-node**](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) ![HTTP response flow-node](/Images/flow_node_http_response.png)
@@ -33,6 +31,8 @@ The following steps will bind an operation to a new flow.
 1. In the **Body** property, enter the value:<br>
 `{"id":"1234","isbn":"ISBN 1234", "title":"Moby Dick", "author":"Herman Melville","published":"1851-10-18"}`
 1. Click **Close** and then **Save and exit**
+
+![OpenAPI edit flow](/Images/openapi_quickstart_flow.gif)
 
 After the server restarts, you are brought back to the _API Doc & Test_ page with the summary of your API. Note that the button associated with the **GET /books/{isbn}** operation now says, **Edit Flow**. This is because this operation is now bound to a flow. You can edit the flow as many times as is necessary to fully implement the operation. You can read more about flows [here](/docs/developer_guide/flows).
 

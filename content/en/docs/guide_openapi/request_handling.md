@@ -21,21 +21,21 @@ If any parameter fails to parse, or if the parameters fail to validate against t
 
 #### Request cookie parameters
 
-If the [OpenAPI operation](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operationObject) defines cookie parameter(s), they will be decoded with respect to the defined [OpenAPI parameter](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameter-object) and can be accessed from within the flow using their case-sensitive parameter names from `$.request.cookies`.  For example, `$.request.cookies.session`.
+If the [OpenAPI operation](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operationObject) defines cookie parameter(s), they will be decoded with respect to the defined [OpenAPI parameter](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameter-object) and can be accessed from within the flow using their case-sensitive parameter names from `$.request.cookies`. For example, `$.request.cookies.session`.
 
 #### Request header parameters
 
-If the [OpenAPI operation](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operationObject) defines header parameter(s), they will be decoded with respect to the defined [OpenAPI parameter](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameter-object) and can be accessed from within the flow using their case-sensitive parameter names from `$.request.headers`.  For example, `$.request.headers.limit`.
+If the [OpenAPI operation](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operationObject) defines header parameter(s), they will be decoded with respect to the defined [OpenAPI parameter](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameter-object) and can be accessed from within the flow using their case-sensitive parameter names from `$.request.headers`. For example, `$.request.headers.limit`.
 
-All remaining non-parameter HTTP request headers are lower-cased and will be passed into the flow, and are accessible from `$.request.headers`.  For example, `$.request.headers['content-type']`.
+All remaining non-parameter HTTP request headers are lower-cased and will be passed into the flow, and are accessible from `$.request.headers`. For example, `$.request.headers['content-type']`.
 
 #### Request query parameters
 
-If the [OpenAPI operation](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operationObject) defines query parameter(s), they will be decoded according to the [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameter-object) and can be accessed from within the flow using their case-sensitive parameter names from `$.request.query`.  For example, `$.request.query.limit`.
+If the [OpenAPI operation](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operationObject) defines query parameter(s), they will be decoded according to the [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameter-object) and can be accessed from within the flow using their case-sensitive parameter names from `$.request.query`. For example, `$.request.query.limit`.
 
 #### Request path parameters
 
-If the [OpenAPI operation](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operationObject) defines path parameter(s), they will be decoded according to the [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameter-object) and can be accessed from within the flow using their case-sensitive parameter names from `$.request.path`.  For example, `$.request.query.path`.
+If the [OpenAPI operation](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operationObject) defines path parameter(s), they will be decoded according to the [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameter-object) and can be accessed from within the flow using their case-sensitive parameter names from `$.request.path`. For example, `$.request.query.path`.
 
 ### Request body
 

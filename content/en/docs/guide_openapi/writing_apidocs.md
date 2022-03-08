@@ -39,7 +39,7 @@ All links in our documentation will be to the preferred standard [OpenAPI 3.0](h
 
 The following features are currently unsupported by the **OpenAPI** flow-trigger. While you can document them in your OpenAPI specifications, their use may not work as expected during runtime. Unless otherwise indicated, assume that this is the case.
 
-* OpenAPI 3 requestBody `anyOf`, `oneOf`, `allOf`, and `not` are only supported for `application/json`.  All other media types are not supported.
+* OpenAPI 3 requestBody `anyOf`, `oneOf`, `allOf`, and `not` are only supported for `application/json`. All other media types are not supported.
 * OpenAPI 3 parameter [content](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#parameterObject) is currently not supported, and `schema` is required.
 * OpenAPI 3 [link](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#link-object)¹.
 * OpenAPI 3 [callback](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#callbackObject)¹.
@@ -126,7 +126,7 @@ The [OpenAPI 2.0 basePath, host, and schemes](https://github.com/OAI/OpenAPI-Spe
 
 ### Optional apidoc.overrides
 
-There is a list of optional [`apidoc.overrides`](/docs/developer_guide/project/configuration/project_configuration#apidoc) that you can specify as part of your service configuration that would allow you to tweak how the API specification is generated. This allows you to tweak specific OpenAPI values that are useful when the service is not consumed directly, such as when the services is exposed through a proxy.  For example, you can change the defined [OpenAPI servers](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#openapi-object), allowing the server URL(s) to be changed for different hosting environments, such as development, test, or production.
+There is a list of optional [`apidoc.overrides`](/docs/developer_guide/project/configuration/project_configuration#apidoc) that you can specify as part of your service configuration that would allow you to tweak how the API specification is generated. This allows you to tweak specific OpenAPI values that are useful when the service is not consumed directly, such as when the services is exposed through a proxy. For example, you can change the defined [OpenAPI servers](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#openapi-object), allowing the server URL(s) to be changed for different hosting environments, such as development, test, or production.
 
 {{% alert title="Tip" color="primary" %}}
 Plan on using the {{% variables/apibuilder_prod_name %}} [apidoc.overrides](/docs/developer_guide/project/configuration/project_configuration#apidoc) overrides for every hosting environment. You do not have to try to define all the environment(s) within one document.
@@ -139,7 +139,7 @@ Plan on using the {{% variables/apibuilder_prod_name %}} [apidoc.overrides](/doc
 Using `operationId` has the following benefits:
 
 1. Allows you to change the HTTP method or path without any impact on previously bound flows.
-1. Useful as a short-hand identifier.  For example, "getUserById" might be easier to communicate than "GET /organization/users/{userId}"
+1. Useful as a short-hand identifier. For example, "getUserById" might be easier to communicate than "GET /organization/users/{userId}"
 1. Used when writing flow files to disk, so it provides a stronger connection to the API specification. Should any issues arises with a flow, they can be more easily traced back to the OpenAPI operation.
 
 {{% alert title="Tip" color="primary" %}}

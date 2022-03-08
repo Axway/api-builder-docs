@@ -27,7 +27,7 @@ npm install @axway/api-builder-plugin-ft-oas
 
 Below is a table of known differences between **OpenAPI** flow-trigger and [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints) that can affect your existing service and how you develop with OpenAPI, mostly around request and response validation. Before upgrading, you should have all your source under source control, and a suite of tests to ensure that your service works as expected after upgrade.
 
-For example, if your endpoint has a parameter "IPAddress" that is a string with a format "ipv4", previously, this parameter value would not be validated with respect to the format.  After upgrade, this format will be validated and existing clients may receive a `400 Bad Request` error if they are sending invalid IP addresses.
+For example, if your endpoint has a parameter "IPAddress" that is a string with a format "ipv4", previously, this parameter value would not be validated with respect to the format. After upgrade, this format will be validated and existing clients may receive a `400 Bad Request` error if they are sending invalid IP addresses.
 
 | Feature | Swagger Endpoints | OpenAPI flow-trigger plugin |
 | ------- | ----------------- | --------------------------- |

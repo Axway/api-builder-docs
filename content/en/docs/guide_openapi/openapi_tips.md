@@ -47,7 +47,7 @@ OpenAPI [examples](https://github.com/OAI/OpenAPI-Specification/blob/main/versio
 
 ## Reusable components
 
-JSON schema can take a lot of time to get right and to document correctly. You really want to limit the number of changes required to make changes/updates.  [JSON schema references](https://json-schema.org/understanding-json-schema/structuring.html#ref) are a powerful tool and can greatly reduce the size of your OpenAPI document. Smaller documents will be easier to manage, validate faster, and download faster.
+JSON schema can take a lot of time to get right and to document correctly. You really want to limit the number of changes required to make changes/updates. [JSON schema references](https://json-schema.org/understanding-json-schema/structuring.html#ref) are a powerful tool and can greatly reduce the size of your OpenAPI document. Smaller documents will be easier to manage, validate faster, and download faster.
 
 It is generally a good idea to use [OpenAPI components](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#componentsObject), and then refer to these components using JSON schema references (`$ref`).
 

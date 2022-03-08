@@ -36,8 +36,6 @@ After importing the API, the _API Doc & Test_ shows the rendered OpenAPI specifi
 
 After the server restarts, you are brought back to the _API Doc & Test_ page with the summary of your API. Note that the button associated with the **GET /books/{isbn}** operation now says, **Edit Flow**. This is because this operation is now bound to a flow. You can edit the flow as many times as is necessary to fully implement the operation. You can read more about flows [here](/docs/developer_guide/flows).
 
-**TODO**: Record 1075x670 GIF video using Chrome plugin, "Capture to GIF"
-
 ## Try your API
 
 Now that your **GET /books/{isbn}** is implemented, you can invoke your API.
@@ -46,8 +44,6 @@ Now that your **GET /books/{isbn}** is implemented, you can invoke your API.
 1. Click **Try it out**
 1. In the **isbn** parameter field, input `ISBN 1234`
 1. Click the **Execute** button (you may need to scroll down)
-
-**TODO**: Record 1075x670 GIF video using Chrome plugin, "Capture to GIF"
 
 ## Accessing the API specification
 

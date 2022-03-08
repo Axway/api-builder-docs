@@ -64,7 +64,7 @@ Once your project is running, point your browser to `http://localhost:8080/conso
 
 #### \--get-catalog
 
-If logged into the {{% variables/platform_prod_name %}} (see above), this command will present you with APIs from the [Unified Catalog](https://docs.axway.com/bundle/amplify-central/page/docs/manage_marketplace/index.html) available to you for use in your flows. This is an interactive command that allows you to choose which APIs for which you'd like to download specifications. If you do not want to run this command when creating your project, you can always run the get-catalog command (see below) at any time in your project. Once run successfully, you will see new flow-nodes representing your chosen APIs in the flow editor.
+If logged into the {{% variables/platform_prod_name %}} (see above), this command will present you with APIs from the [Unified Catalog](https://docs.axway.com/bundle/amplify-central/page/docs/manage_marketplace/index.html) available to you for use in your flows. This is an interactive command that allows you to choose which APIs for which you would like to download specifications. If you do not want to run this command when creating your project, you can always run the get-catalog command (see below) at any time in your project. Once run successfully, you will see new flow-nodes representing your chosen APIs in the flow editor.
 
 The examples below imagines a project named "marketing_api".
 
@@ -94,7 +94,7 @@ npm install
 
 ### get-catalog
 
-This command has the same effect as the `--get-catalog` command described in the "init" section. It must be run while inside an {{% variables/apibuilder_prod_name %}} project directory. If logged into the {{% variables/platform_prod_name %}} (see above), you will be provided with a catalog of APIs available to you for use in your flows. This is an interactive command that allows you to choose which APIs for which you'd like to download specifications. Once run successfully, you will see new flow-nodes representing your chosen APIs in the flow editor.
+This command has the same effect as the `--get-catalog` command described in the "init" section. It must be run while inside an {{% variables/apibuilder_prod_name %}} project directory. If logged into the {{% variables/platform_prod_name %}} (see above), you will be provided with a catalog of APIs available to you for use in your flows. This is an interactive command that allows you to choose which APIs for which you would like to download specifications. Once run successfully, you will see new flow-nodes representing your chosen APIs in the flow editor.
 
 ```bash
 axway builder get-catalog
@@ -144,7 +144,7 @@ axway builder plugin init --no-install legacy-connector
 <!-- lint enable no-duplicate-headings -->
 #### \--type
 
-This option allows you to specify the type of plugin you'd like to create (see above). The options are "standard" and "oas". If neither is specified, then "standard" is assumed. You can specify "standard" as follows:
+This option allows you to specify the type of plugin you would like to create (see above). The options are "standard" and "oas". If neither is specified, then "standard" is assumed. You can specify "standard" as follows:
 
 ```bash
 axway builder plugin init --type=standard

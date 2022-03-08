@@ -99,7 +99,7 @@ To update {{% variables/apibuilder_prod_name %}} run the following command from 
 npm update
 ```
 
-If you're going to be creating more {{% variables/apibuilder_prod_name %}} projects, it is important to use the latest {{% variables/apibuilder_prod_name %}} CLI so that your new projects use the latest template.
+If you are going to be creating more {{% variables/apibuilder_prod_name %}} projects, it is important to use the latest {{% variables/apibuilder_prod_name %}} CLI so that your new projects use the latest template.
 
 ```bash
 // Update Axway CLI and {{% variables/apibuilder_prod_name %}} CLI

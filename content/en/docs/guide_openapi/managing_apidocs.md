@@ -12,7 +12,7 @@ Currently, **OpenAPI** flow-trigger supports the following specifications:
 * [OpenAPI 2.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md)
 * [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md)
 
-If you do not already have an OpenAPI specification to manage, you can read our guide on [how to write OpenAPI documents](/docs/guide_openapi/writing_apidocs);
+If you do not already have an OpenAPI specification to manage, you can read our guide on [how to write OpenAPI documents](/docs/guide_openapi/writing_apidocs).
 
 ## Importing OpenAPI documents
 

@@ -40,7 +40,7 @@ const pluginConfig = {
  * The cache has the following structure => reference: warning. Valid references
  * have "warnings.valid" values. The purpose of the caches is to skip checking
  * links that already have been checked.
- * 
+ *
  * REFACTOR: The cache could be improved with storing the collected information
  * for files and their headings. Such information could be reused in
  * validateAnchors function.
@@ -186,6 +186,7 @@ function verifyAnchor(file, node, ref) {
 		if (availableAnchors.includes(anchor)) {
 			cache[ref] = warnings.valid;
 		} else {
+			debugger;
 			const msg = `${warnings.missingAnchor}: ${ref}`;
 			file.message(msg, node);
 			cache[ref] = msg;
@@ -220,9 +221,14 @@ function verifyAnchor(file, node, ref) {
 		availableAnchors = [];
 		anchorMap = Object.create(null);
 		visit(tree, "heading", compare);
+		// console.dir(availableAnchors);
+		// console.log('anchor:', filePath, anchor);
+		// process.stderr.write(availableAnchors.join(', '));
+
 		if (availableAnchors.includes(anchor)) {
 			cache[ref] = warnings.valid;
 		} else {
+			debugger;
 			const msg = `${warnings.missingAnchor}: ${ref}`;
 			file.message(msg, node);
 			cache[ref] = msg;
@@ -258,6 +264,7 @@ function verifyAnchor(file, node, ref) {
 
 function isEmptyAnchor(file, node, anchor) {
 	if (anchor === '') {
+		debugger;
 		const msg = `${warnings.missingAnchor}: #`;
 		file.message(msg, node);
 		cache['#'] = msg;
@@ -366,7 +373,7 @@ function isNumber(r) {
 /**
  * Implements blackfriday algorithm for anchor sanitization:
  * https://pkg.go.dev/github.com/russross/blackfriday#hdr-Sanitized_Anchor_Names
- * 
+ *
  * @param {string} heading - the heading to produce anchor from.
  * @returns {string} the sanitized anchor.
  */

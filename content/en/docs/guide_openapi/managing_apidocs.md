@@ -32,11 +32,13 @@ This is an unsafe update. If you remove an [OpenAPI operation](https://github.co
 
 ### Changing the method of a bound operation
 
-This is the same as [removing a bound operation](#removing-bound-operations).
+This is the same as [removing a bound operation](#removing-a-bound-operation).
 
 ### Changing path or path parameter of a bound operation
 
-If your operation does not use an [`operationId`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operation-object), then changing the path or path parameters of a bound operation is the same as [removing a bound operation](#removing-bound-operations). This is discussed in the [OpenAPI tips](/docs/guide_openapi/openapi_tips#use-operationId) on how to manage your API more effectively. However, if your operation does use an [`operationId`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operation-object), then it is shielded against this.
+If your operation does not use an [`operationId`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operation-object), then changing the path or path parameters of a bound operation is the same as [removing a bound operation](#removing-a-bound-operation). This is discussed in the [Writing OpenAPI documents](/docs/guide_openapi/writing_apidocs#use-operationid) on how to manage your API more effectively. However, if your operation does use an [`operationId`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operation-object), then it is shielded against this.
+
+/home/jamie/piper/api-builder-docs/content/en/docs/guide_openapi/writing_apidocs.md
 
 ### Changes that may break a flow
 

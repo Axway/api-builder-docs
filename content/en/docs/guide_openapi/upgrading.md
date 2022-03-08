@@ -43,11 +43,11 @@ For example, if your endpoint has a parameter "IPAddress" that is a string with 
 | Request validation | yes | yes ³ |
 | Response validation | no | yes |
 | Date parameters converted to JavaScript Date objects | yes | no ¹ |
-| [Dedupe of API path](#api-prefix) if same as `config.apiPrefix` | no | yes |
-| Default [response content-type header](#content-type-header) `application/json` | yes | no |
+| [Dedupe of API path](/docs/guide_openapi/configuration#api-prefix) if same as `config.apiPrefix` | no | yes |
+| Default [response content-type header](/docs/guide_openapi/response_handling#content-type-header) `application/json` | yes | no |
 | Default 200 response with no flow [Response](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) | yes | no |
-| Permit undocumented [response content-type header](#content-type-header) | yes | no |
-| Auto select [response content-type header](#content-type-header) | no | yes |
+| Permit undocumented [response content-type header](/docs/guide_openapi/response_handling#content-type-header) | yes | no |
+| Auto select [response content-type header](/docs/guide_openapi/response_handling#content-type-header) | no | yes |
 | JSON schema validation for format "date" | yes | yes |
 | JSON schema validation for format "time" | yes | yes |
 | JSON schema validation for format "date-time" | yes | yes |
@@ -70,22 +70,22 @@ For example, if your endpoint has a parameter "IPAddress" that is a string with 
 | JSON schema validation for OpenAPI format "binary" | no | no ² |
 | JSON schema validation for OpenAPI format "password" | no | no ² |
 
-1. Currently unsupported, but the feature is planned on the [roadmap](#roadmap).
+1. Currently unsupported, but the feature is planned on the [roadmap](/docs/guide_openapi/writing_apidocs#openapi-roadmap).
 1. Can be used for documentation purposes, but the format is not validated.
 
-#### Generated /apidocs/swagger.json
+### Generated /apidocs/swagger.json
 
-Previously, {{% variables/apibuilder_prod_name %}} would take your Swagger specification and modify it, adding our own response codes and schema, any custom API, and model schemas. It was not possible to have an API owner produce and maintain a specification. The OpenAPI specification that you use for your service belongs to the API owner. So, the `/apidocs/swagger.json` is no longer generated - it is the same OpenAPI specification that you imported (with some [exceptions](/docs/guide_openapi/managing_apidocs#mutating-openapi-documents)).
+Previously, {{% variables/apibuilder_prod_name %}} would take your Swagger specification and modify it, adding our own response codes and schema, any custom API, and model schemas. It was not possible to have an API owner produce and maintain a specification. The OpenAPI specification that you use for your service belongs to the API owner. So, the `/apidocs/swagger.json` is no longer generated - it is the same OpenAPI specification that you imported (with some [exceptions](/docs/guide_openapi/writing_apidocs#mutating-openapi-documents)).
 
-#### Default to application/json
+### Default to application/json
 
 Previously, endpoints would automatically default to `application/json` unless it was explicitly set within the flow. With **OpenAPI** flow-trigger, your flows may fail if they explicitly set a `content-type` header that was not defined for the operation response, or if the flow does not set an `content-type` header (and a JSON-like one was not defined for the operation response).
 
-#### Default to 200
+### Default to 200
 
 Previously, endpoints would default to sending a HTTP status code `200` for flows that did not set an explicit response with the [HTTP Response flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) before terminating. With **OpenAPI** flow-trigger, your flows can fail with `500` errors if they do not set a [HTTP Response flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) through all paths through the flow.
 
-#### Dates were objects
+### Dates were objects
 
 Previously, endpoints would pass date parameters (for example, having format "date-time") into the flow as [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) objects. While it may be useful, it is also really easy to create a `Date` from a string, but it is not easy to create a string from a `Date`. That is why we decided that date parameters shall remain as strings.
 
@@ -95,10 +95,10 @@ There is also an option, [Parse flow parameters](/docs/guide_openapi/flows) on t
 const date = new Date('2022-03-25');
 ```
 
-#### Base path and prefix
+### Base path and prefix
 
 TODO
 
-#### No $.fields
+### No $.fields
 
 TODO

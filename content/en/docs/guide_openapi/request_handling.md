@@ -114,8 +114,8 @@ requestBody:
       schema:
         properties:
           image:
-			type: string
-			format: binary
+      type: string
+      format: binary
 ```
 
 The `$.request.body.image` is an object that fully describes the uploaded file:
@@ -142,8 +142,8 @@ requestBody:
   content:
     text/plain:
       schema:
-	  	type: string
-		maxLength: 1024
+      type: string
+    maxLength: 1024
 ```
 
 #### Raw body

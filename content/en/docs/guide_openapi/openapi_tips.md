@@ -16,7 +16,7 @@ Typically, entities would have a plural root, e.g. `/users`, under which all met
 | HTTP method | HTTP path (plural) | Success code    | Response body | REST API |
 | ------------| ------------------ | --------------- | ------------- | --------- |
 | POST        | `/users`           | 201 Created     | ¹             | Create user |
-| GET         | `/users`           | 200 OK          | [ Users ]     | Retrieve users |
+| GET         | `/users`           | 200 OK          | \[ Users \]   | Retrieve users |
 | GET         | `/users/{id}`      | 200 OK          | User          | Retrieve user by ID |
 | PUT         | `/users/{id}`      | 204 No Content  |               | Update user by ID  |
 | DELETE      | `/users/{id}`      | 204 No Content  |               | Delete user by |

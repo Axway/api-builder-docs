@@ -2,11 +2,10 @@
 title: Configuration
 weight: 100
 date: 2022-03-01
+description: This chapter describes how to configure **OpenAPI** flow-trigger to change the default behavior.
 ---
 
-The **OpenAPI** flow-trigger should not need any additional configuration above the defaults. However, the following sections describe how to configure the **OpenAPI** flow-trigger to change the default behavior.
-
-### API prefix
+## API prefix
 
 All API in {{% variables/apibuilder_prod_name %}} are bound to a configurable [`apiPrefix`](/docs/developer_guide/project/configuration/project_configuration#apiprefix) path, which defaults to `/api`. Any path under the [`apiPrefix`](/docs/developer_guide/project/configuration/project_configuration#apiprefix) is protected by the configured authentication scheme in [`accessControl.apiPrefixSecurity`](/docs/developer_guide/project/configuration/project_configuration#accesscontrol), and will require that clients provided the requisite credentials in order to invoke the API.
 
@@ -26,6 +25,6 @@ Sometimes, having API bound to `/api` is not desirable from a client perspective
 
 It is possible for paths to clash when also using [Custom API](/docs/developer_guide/apis), so on startup watch for warning messages. You should resolve path conflicts before going to production.
 
-### Overrides
+## Overrides
 
 There is a list of optional [`apidoc.overrides`](/docs/developer_guide/project/configuration/project_configuration#apidoc) that you can specify as part of your service configuration that would allow you to tweak how the API specification is generated. This allows you to tweak specific OpenAPI values that are useful when the service is not consumed directly, such as when the services is exposed through a proxy.  For example, you can change the defined OpenAPI servers.

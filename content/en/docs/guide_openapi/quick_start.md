@@ -13,7 +13,7 @@ description: Quickly get started to write your first flow, learn the basics of O
 1. Click **Fetch from URL**
 1. It will show a Summary of the API. Click **Save** to finish importing the API
 
-**TODO**: Record 1075x670 GIF video using Chrome plugin, "Capture to GIF"
+![OpenAPI import](/Images/openapi_quickstart_import.gif)
 
 ## Your first flow
 
@@ -22,7 +22,7 @@ After importing the API, the _API Doc & Test_ shows the rendered OpenAPI specifi
 The following steps will bind an operation to a new flow.
 
 1. Find the operation for **GET /books/{isbn}** and click the **Create Flow** button. This will bring you to the flow editor.
-1. In the _Flow-Nodes_ panel to the left, find the [**HTTP response flow-node**](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) ![HTTP response flow-node](/Images/flow-node-http-response.png)
+1. In the _Flow-Nodes_ panel to the left, find the [**HTTP response flow-node**](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) ![HTTP response flow-node](/Images/flow_node_http_response.png)
 1. Then click and drag the [**HTTP response flow-node**](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) on to the graph on the right. It will automatically add this to the **Start** node.
 1. In the flow-node properties panel on the right, find the **Status** property.
 1. In the **Status** property, change the _Selector_ drop-down to _Number_.

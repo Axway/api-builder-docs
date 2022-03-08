@@ -11,7 +11,7 @@ description: Technical details about how HTTP responses are handled by the produ
 
 Flows should return a response that is suitable for the expected [OpenAPI response object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#responseObject). A HTTP response is set using the [**HTTP response** flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node).
 
-![**HTTP response** flow-node](/Images/flow-node-http-response.png)
+![**HTTP response** flow-node](/Images/flow_node_http_response.png)
 
 All possible flow execution paths must have a suitable [**HTTP response** flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node). Failure to use it will result in an `ERROR` being logged to the console and an [`500 Internal Server Error`](#internal-server-error-500) being returned to the client.
 

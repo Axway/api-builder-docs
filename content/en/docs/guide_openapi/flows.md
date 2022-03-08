@@ -28,7 +28,7 @@ When done, it is necessary to set appropriate [flow output(s)](#flow-outputs).
 
 The [Response processing](/docs/guide_openapi/request_handling) section details how {{% variables/apibuilder_prod_name %}} processes the outputs from the [flow](docs/developer_guide/flows) before sending them on to the client. This section details how to correctly set those values in [**HTTP response** flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node).
 
-![HTTP response flow-node](/Images/flow-node-http-response.png)
+![HTTP response flow-node](/Images/flow_node_http_response.png)
 
 Any HTTP response must consist of a valid [HTTP response status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status), optional HTTP header(s), and an optional body.
 

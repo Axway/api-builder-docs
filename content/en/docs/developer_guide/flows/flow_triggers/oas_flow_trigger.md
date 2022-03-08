@@ -89,7 +89,7 @@ Currently, the response body is not validated against the JSON schema, so it is 
 
 The response **Headers** that you set in the flow are optional.  All response headers set by the [HTTP Respose flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) will be sent in the response. {{% variables/apibuilder_prod_name %}} may set additional HTTP response headers for `server`, `content-md5` and `etag`, and they can be enabled or disabled in the [configuration](/docs/developer_guide/project/configuration/project_configuration#http).
 
-Additional validation is also performed to ensure the response headers match the specification. Any mismatches will result in a `500 Internal Server Error`. 
+#### Content-type header
 
 {{% variables/apibuilder_prod_name %}} will automatically handle response content encoding and the HTTP response `content-type` header, if the type of response **Body** set from the flow is unambiguous with respect to the `responseBody` media type(s) defined.
 

@@ -7,13 +7,7 @@ description: Technical details about how HTTP requests are handled by the produc
 
 ## HTTP Requests
 
-{{% variables/apibuilder_prod_name %}} will process HTTP requests.
-
-* Any request failing authentication will result in an an automatic [`401 Unauthorized`](#unauthorized-401) error response being sent to the client. The flow will not be executed.
-* Any request for an unimplemented method will result in an automatic [`404 Not Found`](#not-found-404) error response being sent to the client.
-* Any request for a bound OpenAPI operation that fails to parse, or fails to validate with respect to the OpenAPI specification, will result in an automatic [`400 Bad Request`](#bad-request-errors-400) error response being sent to the client. The flow will not be executed.
-
-If the HTTP request matches a bound OpenAPI operation, then the request will be handled as described in the following sections. A request must successfully be decoded, and pass validation (if applicable) before the flow is executed. Flows will only ever be executed with valid inputs.
+{{% variables/apibuilder_prod_name %}} will pre-process HTTP requests. Any errors processing, decoding, or validating the request will result in an [automatic response](#automatic-responses). Flows will only ever be executed with valid inputs. If the HTTP request matches a bound OpenAPI operation, then all of the defined OpenAPI operation inputs are gathered into [flow inputs](#flow-inputs) and handled as described in the following sections.
 
 ## Flow inputs
 
@@ -60,7 +54,7 @@ The OpenAPI supports decoding and validating the body for the following `content
 * `image/svg+xml`¹
 * `model/x3d+xml`¹
 
-1. XML types will be handled as strings but not decoded
+1. XML types will be handled as strings and are not decoded. However, the XML can be processed within the flow with the [**XSLT** flow-node](/docs/developer_guide/flows/flow_nodes/xslt_flow_node).
 
 All other unknown `content-type` will be handled as [`Buffer`](https://nodejs.org/api/buffer.html).
 
@@ -166,16 +160,49 @@ TODO
 
 ## Automatic responses
 
-TODO
+If {{% variables/apibuilder_prod_name %}} encounters errors with the client's HTTP request, it will send automatic errors without invoking the flow. The errors are detailed in the following sections. Note that your OpenAPI document should include these errors in its specification for correctness. A [list of errors](/docs/guide_openapi/writing_apidocs#default-error-codes-and-responses) has been provided for convenience.
+
+* Any request for a bound OpenAPI operation that fails to parse, or fails to validate with respect to the OpenAPI specification, will result in an automatic [`400 Bad Request`](#bad-request-errors-400) error response being sent to the client. The flow will not be executed.
+* Any request failing authentication will result in an an automatic [`401 Unauthorized`](#unauthorized-401) error response being sent to the client. The flow will not be executed.
+* Any request for an unimplemented method will result in an automatic [`404 Not Found`](#not-found-404) error response being sent to the client.
 
 ### Bad request errors (400)
 
-TODO
+The client sent an invalid request. The client needs to examine the error(s) and their request to determine how to correct the issue.
+
+```json
+{
+  "success": false,
+  "code": 400,
+  "request-id": "a-unique-identifier",
+  "message": "A summary message",
+  "errors": [
+    "Detailed error"
+  ]
+}
+```
 
 ### Unauthorized (401)
 
-TODO
+The client failed to send valid credentials, or the credentials were invalid.
+
+```json
+{
+  "id":"com.appcelerator.api.unauthorized",
+  "success": false,
+  "message": "Unauthorized"
+}
+```
 
 ### Not found (404)
 
-TODO
+The client tried to access a resource that does not exist. This may be because the OpenAPI operation is not yet bound, or it may be that the client provided an incorrect HTTP method or path.
+
+```json
+{
+  "success": false,
+  "code": 404,
+  "request-id": "a-unique-identifier",
+  "message": "Not found"
+}
+```

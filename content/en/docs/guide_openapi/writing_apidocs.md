@@ -20,6 +20,21 @@ Also note that [OpenAPI 3.1](https://github.com/OAI/OpenAPI-Specification/blob/m
 All links in our documentation will be to the preferred standard [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md), unless otherwise noted.
 {{% /alert %}}
 
+## OpenAPI roadmap
+
+* \[X] Support import and validation of 3.0 specifications
+* \[X] Download OpenAPI specification
+* \[X] Bind flows to OpenAPI methods
+* \[X] Invoke flows with limited support (may not work with all OpenAPI features or parameters)
+* \[X] HTTP request parameter and JSON schema validation
+* \[X] Support import and validation of 2.0 specifications
+* \[X] Support updating imported specifications
+* \[ ] Improve UX to improve API First experience
+* \[ ] Support import and validation of 3.1 specifications
+* \[ ] Improve UX to assist in flow creation
+* \[ ] Improve UX to prevent misconfiguration
+* \[ ] Add streaming capability
+
 ## Unsupported features
 
 The following features are currently unsupported by the **OpenAPI** flow-trigger. While you can document them in your OpenAPI specifications, their use may not work as expected during runtime. Unless otherwise indicated, assume that this is the case.
@@ -38,23 +53,10 @@ The following features are currently unsupported by the **OpenAPI** flow-trigger
 * OpenAPI 3 [base64 format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#considerations-for-file-uploads) is not supported because it is not really a valid [OpenAPI format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types). The example is invalid and should be "byte".
 * OpenAPI 3 cookie parameters for objects and arrays, `style="form", explode=true` [style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#style-examples) is not supported.
 * In _API Doc & Test_, APIs with `multipart/form-data` or `application/x-www-form-urlencoded` bodies will fail to render examples and execute correctly if the body schema is missing an implicit `type: object`.
+* [Media-type parameters](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#media-types) such as `;charset=utf-8` in request and response are currently ignored.
+* OpenAPI [response header styles](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#headerObject).
 
 1. Using this feature in your OpenAPI specification will not cause any runtime issues, but using it may confuse clients.
-
-## OpenAPI roadmap
-
-* \[X] Support import and validation of 3.0 specifications
-* \[X] Download OpenAPI specification
-* \[X] Bind flows to OpenAPI methods
-* \[X] Invoke flows with limited support (may not work with all OpenAPI features or parameters)
-* \[X] HTTP request parameter and JSON schema validation
-* \[X] Support import and validation of 2.0 specifications
-* \[X] Support updating imported specifications
-* \[ ] Improve UX to improve API First experience
-* \[ ] Support import and validation of 3.1 specifications
-* \[ ] Improve UX to assist in flow creation
-* \[ ] Improve UX to prevent misconfiguration
-* \[ ] Add streaming capability
 
 ## JSON schema versions
 
@@ -90,13 +92,49 @@ The following formats are available for JSON schema validation:
 | binary | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types) | no |
 | password | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types) | no |
 
-## Editing OpenAPI documents
+## OpenAPI editors
 
-At this time, {{% variables/apibuilder_prod_name %}} does not have a UI for editing OpenAPI documents. We recommend using an external tool like [Stoplight](https://stoplight.io) to create and manage your OpenAPI documents (API First). It provides collaborateive design, mocking, and revision history. Before writing your own OpenAPI documents, you should be aware of the [unsupported features](#unsupported-features). Also, have a look at our [OpenAPI tips](/docs/guide_openapi/openapi_tips) for ideas on how to write better OpenAPI specifications.
+At this time, {{% variables/apibuilder_prod_name %}} does not have a UI for editing OpenAPI documents. We recommend using an external tool like [Stoplight](https://stoplight.io) to create and manage your OpenAPI documents (API First). It provides collaborateive design, mocking, and revision history.
+
+## Writing OpenAPI documents
+
+Before writing your own OpenAPI documents, you should be aware of the [unsupported features](#unsupported-features). Also, have a look at our [OpenAPI tips](/docs/guide_openapi/openapi_tips) for ideas on how to write better OpenAPI specifications. The following sections provide technical details about how {{% variables/apibuilder_prod_name %}} will interpret your OpenAPI specification.
+
+### API prefix
+
+All API in {{% variables/apibuilder_prod_name %}} are bound to a configurable [`apiPrefix`](/docs/developer_guide/project/configuration/project_configuration#apiprefix) path, which defaults to `/api`. Any path under the [`apiPrefix`](/docs/developer_guide/project/configuration/project_configuration#apiprefix) is protected by the configured authentication scheme in [`accessControl.apiPrefixSecurity`](/docs/developer_guide/project/configuration/project_configuration#accesscontrol), and will require that clients provided the requisite credentials in order to invoke the API.
+
+Paths that are defined in your OpenAPI document, that are subsequently bound to [flows](/docs/developer_guide/flows), will be appended to the [`apiPrefix`](/docs/developer_guide/project/configuration/project_configuration#apiprefix). For example, if your OpenAPI specification defines the path `/users`, it will be accessible from {{% variables/apibuilder_prod_name %}} as `/api/users`.
+
+Sometimes, having API bound to `/api` is not desirable from a client perspective. If all your designed paths begin with a common prefix, then by changing your [`apiPrefix`](/docs/developer_guide/project/configuration/project_configuration#apiprefix) in configuration to match the common prefix, {{% variables/apibuilder_prod_name %}} will not apply the prefix twice, and the common prefix will be deduped. The following table illustrates.
+
+| OpenAPI example path(s)    | apiPrefix | Bound API path(s)                       | Deduped |
+| -------------------------- | --------- | --------------------------------------- | ------- |
+| /apple                     | /api      |  /api/apple                             | no |
+| /apple                     | /fruits   | /fruits/apple                           | no |
+| /apple<br>/banana          | /api      | /api/apple<br>/api/banana               | no |
+| /api/apple<br>/api/banana  | /fruits   | /fruits/api/apple<br>/fruits/api/banana | no |
+| /api/apple<br>/api/banana  | /api      | /api/apple<br>/api/banana               | yes |
+
+{{% alert title="Note" color="primary" %}}The OpenAPI 2.0 [`basePath`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields) is ignored when computing the accessible OpenAPI paths.{{% /alert %}}
+
+It is possible for paths to clash when also using [Custom API](/docs/developer_guide/apis), so on startup watch for warning messages. You should resolve path conflicts before going to production.
+
+### OpenAPI 2.0 basePath, host, and schemes
+
+The [OpenAPI 2.0 basePath, host, and schemes](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields) are not used by {{% variables/apibuilder_prod_name %}}.
+
+### Optional apidoc.overrides
+
+There is a list of optional [`apidoc.overrides`](/docs/developer_guide/project/configuration/project_configuration#apidoc) that you can specify as part of your service configuration that would allow you to tweak how the API specification is generated. This allows you to tweak specific OpenAPI values that are useful when the service is not consumed directly, such as when the services is exposed through a proxy.  For example, you can change the defined [OpenAPI servers](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#openapi-object), allowing the server URL(s) to be changed for different hosting environments, such as development, test, or production.
+
+{{% alert title="Tip" color="primary" %}}
+Plan on using the {{% variables/apibuilder_prod_name %}} [apidoc.overrides](/docs/developer_guide/project/configuration/project_configuration#apidoc) overrides for every hosting environment. You do not have to try to define all the environment(s) within one document.
+{{% /alert %}}
 
 ### Use operationId
 
-**OpenAPI** flow-trigger uses the [operationId](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#fixed-fields-8) to uniquely identify operations, which are necessary when binding specific API operations to flows. While the `operationId` is optional in OpenAPI, we would recommend using it. If one is not provided, **OpenAPI** flow-trigger will generate one dynamically from the operation HTTP method and path (including path parameters). This can have an adverse affect of unbinding previously bound flows, if these properties change.
+**OpenAPI** flow-trigger uses the [`operationId`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#fixed-fields-8) to uniquely identify operations, which are necessary when binding specific API operations to flows. While the `operationId` is optional in OpenAPI, we would recommend using it. If one is not provided, **OpenAPI** flow-trigger will generate one dynamically from the operation HTTP method and path (including path parameters), unnecessarily tightly couples the dynamically generated `operationId` to the operation. This can have an adverse affect of unbinding previously bound flows, if any of these properties change.
 
 Using `operationId` has the following benefits:
 
@@ -108,11 +146,7 @@ Using `operationId` has the following benefits:
 Using OpenAPI `operationId` will make managing OpenAPI easier.
 {{% /alert %}}
 
-### Mutating OpenAPI documents
-
-When **OpenAPI** flow-trigger loads your OpenAPI specification, it will tweak it to make it more correct for use as an {{% variables/apibuilder_prod_name %}} micro-service. The changes that **OpenAPI** flow-trigger makes to your specification, or the differences from your OpenAPI specification are detailed below.
-
-#### Security changes
+### Security definitions are removed
 
 **OpenAPI** flow-trigger will remove all [security requirements](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#securityRequirementObject), and [security schemes](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#componentsSecuritySchemes) from the entire OpenAPI specification. This is because {{% variables/apibuilder_prod_name %}} has its own [configurable authentication](/docs/developer_guide/project/configuration/project_configuration#accesscontrol), and it will replace the security with its own.
 
@@ -120,15 +154,7 @@ When **OpenAPI** flow-trigger loads your OpenAPI specification, it will tweak it
 You do not need to define your own OpenAPI security, {{% variables/apibuilder_prod_name %}} will do that for you.
 {{% /alert %}}
 
-#### API documentation overrides
-
-**OpenAPI** flow-trigger will apply any configured [apidoc.overrides](/docs/developer_guide/project/configuration/project_configuration#apidoc). This allows one OpenAPI specification to be used in a variety of hosting situations. For example, the `servers` are probably different, depending on development, test, or production.
-
-{{% alert title="Tip" color="primary" %}}
-Plan on using the {{% variables/apibuilder_prod_name %}} [apidoc.overrides](/docs/developer_guide/project/configuration/project_configuration#apidoc) overrides for every hosting environment. You do not have to try to define all the environment(s) within one document.
-{{% /alert %}}
-
-## Default error codes and responses
+### Default error codes and responses
 
 API Builder provides can return default errors and responses to the client that are not handled by the flow. Such errors can occur when the client makes a bad request, fails authentication, exceeds upload limits, or if an unexpected error occurred. It is recommended that you include the detail of all the potential errors, so that client developers know what to expect from the API. For convenience, a full specification of all the errors are listed below for convenience to use within your OpenAPI specifications.
 
@@ -139,7 +165,17 @@ components:
       type: object
       description: Axway error response.
       additionalProperties: true
+      required:
+        - success
+        - message
       properties:
+        id:
+          description: A unique error code.
+          type: string
+        'request-id':
+          description: A unique request identifier.
+          type: string
+          format: uuid
         success:
           description: A boolean indicating failure.
           type: boolean
@@ -178,6 +214,10 @@ components:
             allOf:
             - $ref: '#/components/schemas/AxwayError'
             properties:
+              id:
+                type: string
+                enum:
+                  - com.appcelerator.api.unauthorized
               code:
                 type: number
                 enum:

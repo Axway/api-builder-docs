@@ -2,7 +2,7 @@
 title: Quick start
 weight: 10
 date: 2022-03-01
-description: Quickly get started to write your first flow, learn the basics of OpenAPI development, and learn how they relate to your service to build APIs with {{% variables/apibuilder_prod_name %}}.
+description: Quickly get started to write your first flow, and learn the basics of OpenAPI development.
 ---
 
 ## Import your first API
@@ -35,6 +35,10 @@ After importing the API, the _API Doc & Test_ shows the rendered OpenAPI specifi
 ![OpenAPI edit flow](/Images/openapi_quickstart_flow.gif)
 
 After the server restarts, you are brought back to the _API Doc & Test_ page with the summary of your API. Note that the button associated with the **GET /books/{isbn}** operation now says, **Edit Flow**. This is because this operation is now bound to a flow. You can edit the flow as many times as is necessary to fully implement the operation. You can read more about flows [here](/docs/developer_guide/flows).
+
+{{% alert title="Note" color="primary" %}}
+When a flow is created for an OpenAPI operation, we say the operation is "bound" to a flow.
+{{% /alert %}}
 
 ## Try your API
 

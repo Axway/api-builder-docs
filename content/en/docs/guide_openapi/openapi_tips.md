@@ -31,7 +31,15 @@ A good API should allow querying, paging, and filtering to reducing the amount o
 
 ## Version your API
 
-TODO
+A good API should have a version strictly managed. We recommend using [Semantic versioning](https://semver.org/) ("semver"), following a _major.minor.patch_ convention. In OpenAPI 3.0, you can add a major version to your server paths, for example:
+
+```yaml
+servers:
+  - url: https://api.banana.io/v1
+    description: Banana API v1
+```
+
+In {{% variables/apibuilder_prod_name %}}, you can manage the `servers` using [apidoc.overrides](/docs/guide_openapi/configuration/#overrides).
 
 ## Use examples
 

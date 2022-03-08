@@ -28,7 +28,8 @@ Hide_readingtime: true
 {{% releasenotes/deprecations %}}
 
 <!-- Regenerate modules/plugins with api-builder-tools script -->
-<!-- ## Updated modules -->
+## Updated modules
+* [example](https://www.npmjs.com/package/example/v/2.5.0)
 
 <!-- ## Updated plugins -->
 

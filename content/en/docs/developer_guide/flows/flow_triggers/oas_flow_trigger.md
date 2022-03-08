@@ -81,29 +81,15 @@ If the **Body** is a "raw" `string` or `Buffer`, then no additional processing w
 
 If the **Body** is a type _other_ than `string` or `Buffer` (e.g. an `Object` or `Array`), then **OpenAPI** flow-trigger may automatically JSON encode the response if there is exactly one response media type that is JSON (e.g. "application/json"). Otherwise, the response content encoding is ambiguous, and results in a `500 Internal Server Error`. In this case, you should ensure you encode the **Body** within the flow and set an appropriate `content-type` header in **Headers** that matches the encoding for the **Body**.
 
-Additional validation is also performed to ensure the response body matches the specification. Any mismatches will result in a `500 Internal Server Error`. 
-
-#### Required body
-If the specification documents content for the response, then this indicates a body should be returned. Similarly, if no content is documented, a body should not be returned.
-
-Note: in OpenAPI 2, responses have a `schema` property which is used to document that a response has content.
-
-#### JSON body validation
-If the response `content-type` is JSON, the response body will be validated as JSON. If a JSON schema is documented for the response, the body will be validated against it.
+{{% alert title="Note" color="primary" %}}
+Currently, the response body is not validated against the JSON schema, so it is possible to send _invalid_ responses. This will be improved in a future release.
+{{% /alert %}}
 
 ### Response headers
 
 The response **Headers** that you set in the flow are optional.  All response headers set by the [HTTP Respose flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) will be sent in the response. {{% variables/apibuilder_prod_name %}} may set additional HTTP response headers for `server`, `content-md5` and `etag`, and they can be enabled or disabled in the [configuration](/docs/developer_guide/project/configuration/project_configuration#http).
 
 Additional validation is also performed to ensure the response headers match the specification. Any mismatches will result in a `500 Internal Server Error`. 
-
-#### Required headers
-All documented `required` headers must be returned by the flow.
-
-#### Extraneous headers
-All headers returned by the flow must be documented in the specification.
-
-### Content-type header
 
 {{% variables/apibuilder_prod_name %}} will automatically handle response content encoding and the HTTP response `content-type` header, if the type of response **Body** set from the flow is unambiguous with respect to the `responseBody` media type(s) defined.
 

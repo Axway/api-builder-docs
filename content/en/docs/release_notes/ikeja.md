@@ -27,11 +27,14 @@ Hide_readingtime: true
 
 {{% releasenotes/deprecations %}}
 
-<!-- Regenerate modules/plugins with api-builder-tools script -->
+<!-- Regenerate modules/plugins with api-builder-tools generate-release-notes script -->
 ## Updated modules
-* [example@1.0.0](https://www.npmjs.com/package/example/v/2.5.0)
+* [@axway/api-builder-oas-flow-node@2.5.0](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/2.5.0)
+* [@axway/api-builder-runtime@4.82.8](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.82.8)
 
-<!-- ## Updated plugins -->
+## Updated plugins
+* [@axway/api-builder-plugin-fn-swagger@3.1.2](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/3.1.2)
+* [@axway/api-builder-plugin-ft-oas@0.13.5](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas/v/0.13.5)
 
 ## Known issues
 

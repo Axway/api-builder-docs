@@ -32,21 +32,21 @@ Before updating your OpenAPI document, you should first be aware of how {{% vari
 
 The details in the following sections are only relevant if operations are bound to flows. If operations are not bound to flows, you can update them without any affect.
 
+### Changing a bound operationId
+
+Changing the name of a bound operation's `operationId` is the same as deleting it and adding a new one with a new name. It is impossible to distinguish. When this happens, the old operation and flow will become unbound. To fix, edit the flow, and change the **OpenAPI** flow-trigger **Method** to use the new `operationId`.
+
 ### Removing a bound operation
 
 This is an unsafe update. If you remove an [OpenAPI operation](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operationObject) that is bound to a flow, the flow will become "unbound", and the console window and UI will show an error that this happened. If you have no need of the flow, it is [safe to delete](/docs/developer_guide/flows/manage_flows#delete-flows).
 
-### Changing path or path parameter of a bound operation
+### Changing method, path, or path parameter of a bound operation
 
-If your operation does not use an [`operationId`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operation-object), then changing the path or path parameters of a bound operation is the same as [removing a bound operation](#removing-a-bound-operation). This is discussed in the [writing OpenAPI documents](/docs/guide_openapi/writing_apidocs#use-operationid) on how to manage your API more effectively. However, if your operation does use an [`operationId`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operation-object), then it is shielded against this.
-
-### Changing the method of a bound operation
-
-It is the same as [changing path or path parameter of a bound operation](#changing-path-or-path-parameter-of-a-bound-operation).
+If your operation does not use an [`operationId`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operation-object), then changing the method, path, or path parameters of a bound operation is the same as [removing a bound operation](#removing-a-bound-operation). This is discussed in the [writing OpenAPI documents](/docs/guide_openapi/writing_apidocs#use-operationid) on how to manage your API more effectively. However, if your operation does use an [`operationId`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operation-object), then it is shielded against this.
 
 ### Changes that may break a flow
 
-In addition to directly manipulating the method or path parameters of an [Operation object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operationObject), the following changes may break your flow and require additional changes in the flow editor.
+In addition to directly manipulating the method, path, or path parameters of an [Operation object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#operationObject), the following changes may break your flow and require additional changes in the flow editor.
 
 * Removing parameters
 * Renaming parameters (this is effectively removing them)

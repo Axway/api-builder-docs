@@ -39,7 +39,7 @@ servers:
     description: Banana API v1
 ```
 
-In {{% variables/apibuilder_prod_name %}}, you can manage the `servers` using [apidoc.overrides](/docs/guide_openapi/configuration/#overrides).
+In {{% variables/apibuilder_prod_name %}}, you can manage the `servers` using [apidoc.overrides](/docs/guide_openapi/writing_apidocs#overriding-servers-host-schemes-or-basepath).
 
 ## Use examples
 

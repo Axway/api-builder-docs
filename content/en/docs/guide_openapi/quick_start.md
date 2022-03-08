@@ -60,6 +60,6 @@ The OpenAPI specification is bound to the following paths and is exposed by the 
 * `/apidoc/openapi.json`
 * `/apidoc/openapi.yaml`
 
-Administrators will see only one path in the log. For OpenAPI 2.0, it is `/apidoc/swagger.json`, otherwise, it is `/apidoc/openapi.json`. Some parts of the API specification can be tweaked from the [configuration](/docs/guide_openapi/configuration). The "/apidoc" prefix is configured by changing the [`apidoc.prefix`](/docs/developer_guide/project/configuration/project_configuration#apidoc) in the configuration.
+Administrators will see only one path in the log. For OpenAPI 2.0, it is `/apidoc/swagger.json`, otherwise, it is `/apidoc/openapi.json`. Some parts of the API specification can be tweaked from the [apidocs.overrides configuration](/docs/developer_guide/project/configuration/project_configuration#apidoc). The "/apidoc" prefix is configured by changing the [`apidoc.prefix`](/docs/developer_guide/project/configuration/project_configuration#apidoc) in the configuration.
 
 For example, the OpenAPI specification can be downloaded from: http://localhost:8080/apidoc/openapi.yaml

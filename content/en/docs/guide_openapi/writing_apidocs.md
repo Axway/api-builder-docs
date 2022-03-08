@@ -124,7 +124,7 @@ It is possible for paths to clash when also using [Custom API](/docs/developer_g
 
 The [OpenAPI 2.0 basePath, host, and schemes](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields) are not used by {{% variables/apibuilder_prod_name %}}.
 
-### Optional apidoc.overrides
+### Overriding servers, host, schemes, or basePath
 
 There is a list of optional [`apidoc.overrides`](/docs/developer_guide/project/configuration/project_configuration#apidoc) that you can specify as part of your service configuration that would allow you to tweak how the API specification is generated. This allows you to tweak specific OpenAPI values that are useful when the service is not consumed directly, such as when the services is exposed through a proxy. For example, you can change the defined [OpenAPI servers](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#openapi-object), allowing the server URL(s) to be changed for different hosting environments, such as development, test, or production.
 

@@ -43,7 +43,7 @@ For example, if your endpoint has a parameter "IPAddress" that is a string with 
 | Request validation | yes | yes ³ |
 | Response validation | no | yes |
 | Date parameters converted to JavaScript Date objects | yes | no ¹ |
-| [Dedupe of API path](/docs/guide_openapi/configuration#api-prefix) if same as `config.apiPrefix` | no | yes |
+| [Dedupe of API path](/docs/guide_openapi/writing_apidocs#api-prefix) if same as `config.apiPrefix` | no | yes |
 | Default [response content-type header](/docs/guide_openapi/response_handling#content-type-header) `application/json` | yes | no |
 | Default 200 response with no flow [Response](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) | yes | no |
 | Permit undocumented [response content-type header](/docs/guide_openapi/response_handling#content-type-header) | yes | no |
@@ -75,7 +75,7 @@ For example, if your endpoint has a parameter "IPAddress" that is a string with 
 
 ### Generated /apidocs/swagger.json
 
-Previously, {{% variables/apibuilder_prod_name %}} would take your Swagger specification and modify it, adding our own response codes and schema, any custom API, and model schemas. It was not possible to have an API owner produce and maintain a specification. The OpenAPI specification that you use for your service belongs to the API owner. So, the `/apidocs/swagger.json` is no longer generated - it is the same OpenAPI specification that you imported (with some [exceptions](/docs/guide_openapi/writing_apidocs#mutating-openapi-documents)).
+Previously, {{% variables/apibuilder_prod_name %}} would take your Swagger specification and modify it, adding our own response codes and schema, any custom API, and model schemas. It was not possible to have an API owner produce and maintain a specification. The OpenAPI specification that you use for your service belongs to the API owner. So, the `/apidocs/swagger.json` is no longer generated - it is the same OpenAPI specification that you imported (with some [exceptions](/docs/guide_openapi/writing_apidocs#security-definitions-are-removed)).
 
 ### Default to application/json
 

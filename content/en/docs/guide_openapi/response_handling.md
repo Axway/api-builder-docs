@@ -15,7 +15,7 @@ Flows should return a response that is suitable for the expected [OpenAPI respon
 
 All possible flow execution paths must have a suitable [**HTTP response** flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node). Failure to use it will result in an `ERROR` being logged to the console and an [`500 Internal Server Error`](#internal-server-error-500) being returned to the client.
 
-For more information on how to use the **HTTP response** flow-node with the **OpenAPI** flow-trigger, see [flow outputs](/docs/developer_guide/flows#flow-outputs).
+For more information on how to use the **HTTP response** flow-node with the **OpenAPI** flow-trigger, see [flow outputs](/docs/guide_openapi/flows#flow-outputs).
 
 ### Status
 

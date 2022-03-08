@@ -29,7 +29,7 @@ Hide_readingtime: true
 
 <!-- Regenerate modules/plugins with api-builder-tools script -->
 ## Updated modules
-* [example](https://www.npmjs.com/package/example/v/2.5.0)
+* [example@1.0.0](https://www.npmjs.com/package/example/v/2.5.0)
 
 <!-- ## Updated plugins -->
 

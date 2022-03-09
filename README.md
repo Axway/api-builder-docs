@@ -16,7 +16,7 @@ When writing about text buttons, these shall be **Bold**, and written exactly as
 
 1. **Apply**
 1. **Close**
-1. **Discad changes**
+1. **Discard changes**
 
 ### Inputs, tabs
 
@@ -62,4 +62,4 @@ Named plugins shall be bold, but only the name, not the type.
 
 ### Pages
 
-Pages, such as _API Doc & Test_ shall be written in itallic, and exactly as they appear in the UI.
+Pages, such as _API Doc & Test_ shall be written in italic, and exactly as they appear in the UI.

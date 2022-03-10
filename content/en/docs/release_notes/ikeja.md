@@ -13,7 +13,7 @@ In this release, we added HTTP response validation to the OpenAPI flow-trigger t
 
 ## Breaking changes
 
-* 7139: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now validates response `status code`, `headers` (including `content-type`) and `body` against the specification.
+* #7139: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now validates response `status code`, `headers` (including `content-type`) and `body` against the specification.
 * #7277: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now requires a minimum API Builder version of Ikeja.
 
 ## Features

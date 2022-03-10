@@ -6,10 +6,15 @@ date: 2022-03-11
 Hide_readingtime: true
 ---
 <!-- ## Summary -->
+## Summary
+
+In this release, we added the ability to delete the currently imported OpenAPI specification in your services. Additionally, in [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas), we added support for several new oas trigger options that will allow you fine tune them in a way it fits your preference and use cases. The full list of the newly added options can be found under `Features`.
 
 {{% releasenotes/upgrade %}}
 
-<!-- ## Breaking changes -->
+## Breaking changes
+
+* #7277: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now requires a minimum API Builder version of Ikeja.
 
 ## Features
 

@@ -16,4 +16,4 @@ Below are some resources that can help get you started writing your own flow-nod
 * Axway [api-builder-project-utils](https://www.npmjs.com/package/@axway/api-builder-project-utils) - Provides a set of utils to assist with project related tasks - i.e. a script to copy files on postinstall, such as configurations.
 * Axway [api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) - Provides a set of test utils to help you test your flow-nodes.
 
-If you're looking to create a connector plugin for a service described with an OpenAPI/Swagger file, see [Create a plugin from OpenAPI files](/docs/how_to/create_a_plugin_from_openapi_files/).
+If you are looking to create a connector plugin for a service described with an OpenAPI/Swagger file, see [Create a plugin from OpenAPI files](/docs/how_to/create_a_plugin_from_openapi_files/).

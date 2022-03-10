@@ -13,7 +13,7 @@ Hide_readingtime: true
 * #5012: Add authorization support to the {{% variables/apibuilder_prod_name %}} SDK
 * #6176: Add support for community components
 * #6265: Provide service directory to plugins
-* #6277: Support OAS3 in api-builder-plugin-fn-swagger
+* #6277: Support OpenAPI 3.0 in api-builder-plugin-fn-swagger
 
 ## Fixes
 
@@ -26,7 +26,7 @@ Hide_readingtime: true
 * #6176: Added support for listing plugins provided by community.
 * #6252: Previously, requests from the UI for static resources would log a "Response" at info level (with no corresponding "Request"). Now, requests for UI static resources are logged at trace level.
 * #6265: {{% variables/apibuilder_prod_name %}} now provides the service directory as `options.appDir` to plugins.
-* #6277:[@axway/api-builder-plugin-fn-swagger](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger) now supports OAS 2 and OAS 3. Please see the [README](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger) for supported features.
+* #6277:[@axway/api-builder-plugin-fn-swagger](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger) now supports OpenAPI 2 and OpenAPI 3. Please see the [README](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger) for supported features.
 * #6283: Fixed internal issues with dependencies.
 
 ## Updated modules

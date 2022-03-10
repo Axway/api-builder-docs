@@ -95,7 +95,7 @@ At this stage, you should be able to test your API using tools like _cURL_ or _P
 
 {{% alert title="Note" color="primary" %}}For convenience, we are granting access to all domains. Using \* in production should only be done after assessing the security implications.{{% /alert %}}
 
-To test the API, click the **Try It** button. In this case, we're testing _GET /api/greet_. This is a simple API that takes a username and responds with a greeting string.
+To test the API, click the **Try It** button. In this case, we are testing _GET /api/greet_. This is a simple API that takes a username and responds with a greeting string.
 
 ![apicatalog_test](/Images/apicatalog_test.png)
 

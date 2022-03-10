@@ -63,7 +63,7 @@ You can drag and drop the Logger flow-node into the Flow Graph to expand its det
 
 Here is how you could use the Logger flow-node in our Greet Flow example:
 
-For the purpose of this example let's say you'd like to log the flow input parameter **_username_** at **_debug_** log level.
+For the purpose of this example let's say you would like to log the flow input parameter **_username_** at **_debug_** log level.
 
 The first step is to drag and drop the Logger flow-node and wire it up in the flow graph as follows:
 
@@ -75,7 +75,7 @@ From the Greet Flow example, we know that the **_username_** could be accessed v
 
 ![Screen_Shot_2021-04-07_at_2.22.20_PM](/Images/screen_shot_2021_04_07_at_2_22_20_pm.png)
 
-We now have the **Message** that we would like to output. Next, we need to set the log **Level** as we said we'd like to log it at _**debug**_ and by default the flow-node is logging at _**info**_.
+We now have the **Message** that we would like to output. Next, we need to set the log **Level** as we said we would like to log it at _**debug**_ and by default the flow-node is logging at _**info**_.
 
 To do this, toggle the **Level** parameter and select **_debug_** from the dropdown.
 

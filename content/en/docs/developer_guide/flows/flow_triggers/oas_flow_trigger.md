@@ -31,7 +31,7 @@ The following sections provide details of the available **OpenAPI** flow-trigger
 
 | Parameter | Type | Description | Configuration selection | Required |
 | --- | --- | --- | --- | --- |
-| API method | String | The OAS [operationId](https://swagger.io/specification/#operationObject) of the method to bind. | Selector, String | Yes |
+| API method | String | The OpenAPI [operationId](https://swagger.io/specification/#operationObject) of the method to bind. | Selector, String | Yes |
 
 ## Configuration
 
@@ -138,7 +138,7 @@ The response content-type header is matched against a response `content` (or `pr
 * OpenAPI 3.0 [byte format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types) is supported, but it will not automatically decode the base64 data.
 * OpenAPI 3.0 [base64 format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#considerations-for-file-uploads) is not supported because it is not really a valid format.
 * OpenAPI 3.0 cookie parameters for objects and arrays, `style="form", explode=true` [style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#style-examples) is not supported.
-* OAS body content-types `application/json`, `application/*+json`, `application/x-www-form-urlencoded`, or `multipart/form-data` will be decoded, "XML" types such as `application/xml` will be handled as strings but not decoded, all others will be handled as `Buffer`.
+* OpenAPI body content-types `application/json`, `application/*+json`, `application/x-www-form-urlencoded`, or `multipart/form-data` will be decoded, "XML" types such as `application/xml` will be handled as strings but not decoded, all others will be handled as `Buffer`.
 * In API Doc & Test, APIs with `multipart/form-data` or `application/x-www-form-urlencoded` bodies will fail to render examples and execute correctly if the body schema is missing an implicit `type: object`.
 * media-type parameters such as `;charset=utf-8` in request and response are currently ignored.
 

@@ -11,7 +11,7 @@ Hide_readingtime: true
 ## Features
 
 * #6233: Cannot see Error object messages in Flow engine/editor
-* #6249: Support downloading OAS3 specification via CLI get-catalog
+* #6249: Support downloading OpenAPI 3 specification via CLI get-catalog
 
 ## Fixes
 
@@ -22,7 +22,7 @@ Hide_readingtime: true
 ## Release notes
 
 * #6233: Previously, `Error` objects output from flow-nodes during flow invocation would appear to be logged as empty "{}" objects at runtime. Now, the full error message is logged and `Error` that were output from flow-nodes can be encoded as JSON.
-* #6249: Previously, the Amplify Builder CLI `get-catalog` commands only downloaded OAS 2 specifications from the Amplify Catalog. Now, the CLI will download OAS 2 and OAS 3 specifications.
+* #6249: Previously, the Amplify Builder CLI `get-catalog` commands only downloaded OpenAPI 2 specifications from the Amplify Catalog. Now, the CLI will download OpenAPI 2 and OpenAPI 3 specifications.
 * #6297: The CLI now generates plugins that depend on api-builder-sdk "^0.2.0".
 * #6305: Previously, information from descriptions and schema in the Flow editor and definitions in API Doc and Test could not be copied. Now, they can be selected and copied.
 * #6315: Previously, when starting an {{% variables/apibuilder_prod_name %}} service, the console URL was not clickable in some terminals due to the dot at the end of the URL. Now, the dot has been removed making the URL clickable in more terminals which support this functionality.

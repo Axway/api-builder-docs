@@ -116,6 +116,7 @@ plugins:
       { no: "(\\w+)'ll", yes: '$1 will', replaceCaptureGroups: true },
       { no: "(\\w+)'d", yes: '$1 would', replaceCaptureGroups: true },
       { no: "(\\w+)'re", yes: '$1 are', replaceCaptureGroups: true },
+      { no: 'oas|OAS', yes: 'OpenAPI' }
     ]]
 
   # We need to figure out what to do with these rules

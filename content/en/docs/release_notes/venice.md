@@ -19,7 +19,7 @@ Hide_readingtime: true
 
 ## Fixes
 
-* #6295: Previously, the Server URL parameter of flow-nodes from `@axway/api-builder-plugin-fn-swagger` or custom OAS plugins only allowed server URLs to be picked from a predefined list. Now, custom URLs can easily be provided.
+* #6295: Previously, the Server URL parameter of flow-nodes from `@axway/api-builder-plugin-fn-swagger` or custom OpenAPI plugins only allowed server URLs to be picked from a predefined list. Now, custom URLs can easily be provided.
 
 ## Updated modules
 

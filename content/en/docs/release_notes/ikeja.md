@@ -5,15 +5,15 @@ description: 11 March 2022
 date: 2022-03-11
 Hide_readingtime: true
 ---
-<!-- ## Summary -->
 ## Summary
 
-In this release, we added the ability to delete the currently imported OpenAPI specification in your services. Additionally, in [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas), we added support for several new oas trigger options that will allow you fine tune them in a way it fits your preference and use cases. The full list of the newly added options can be found under `Features`.
+In this release, we added HTTP response validation to the OpenAPI flow-trigger to help users ensure that flows implement exactly what is documented by the specification. We also introduced the ability to delete an imported OpenAPI specification. Additionally, we added support for several new OpenAPI flow-trigger options that will allow you fine tune the behavior in a way it fits your preference and use cases.
 
 {{% releasenotes/upgrade %}}
 
 ## Breaking changes
 
+* 7139: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now validates response `status code`, `headers` (including `content-type`) and `body` against the specification.
 * #7277: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now requires a minimum API Builder version of Ikeja.
 
 ## Features
@@ -34,12 +34,13 @@ In this release, we added the ability to delete the currently imported OpenAPI s
 
 <!-- Regenerate modules/plugins with api-builder-tools generate-release-notes script -->
 ## Updated modules
-* [@axway/api-builder-oas-flow-node@2.5.0](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/2.5.0)
-* [@axway/api-builder-runtime@4.82.8](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.82.8)
+* [@axway/api-builder-admin@1.55.0](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.55.0)
+* [@axway/api-builder-oas-flow-node@2.5.1](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/2.5.1)
+* [@axway/api-builder-runtime@4.83.0](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.83.0)
 
 ## Updated plugins
-* [@axway/api-builder-plugin-fn-swagger@3.1.2](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/3.1.2)
-* [@axway/api-builder-plugin-ft-oas@0.13.5](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas/v/0.13.5)
+* [@axway/api-builder-plugin-fn-swagger@3.1.3](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/3.1.3)
+* [@axway/api-builder-plugin-ft-oas@0.15.2](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas/v/0.15.2)
 
 ## Known issues
 

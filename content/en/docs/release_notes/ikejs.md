@@ -6,14 +6,13 @@ date: 2022-03-11
 Hide_readingtime: true
 ---
 ## Summary
-In this release we added 
-## Summary
 
 In this release, we added HTTP response validation to the OpenAPI flow-trigger to help users ensure that flows implement exactly what is documented by the specification. We also introduced the ability to delete an imported OpenAPI specification. Additionally, we added support for several new OpenAPI flow-trigger options that will allow you fine tune the behavior in a way it fits your preference and use cases.
 
 {{% releasenotes/upgrade %}}
 
 ## Breaking changes
+
 * 7139: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now validates response `status code`, `headers` (including `content-type`) and `body` against the specification.
 * #7277: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now requires a minimum API Builder version of Ikeja.
 

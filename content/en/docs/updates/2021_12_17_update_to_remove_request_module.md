@@ -39,7 +39,7 @@ npm install got@11
 ```
 
 {{% alert title="Note" %}}
-Note: This version of `got` requires at least Node.js 10.19. If you're developing your project on an older version of Node.js we strongly recommend upgrading to at least {{% variables/recommended_node %}}.
+Note: This version of `got` requires at least Node.js 10.19. If you are developing your project on an older version of Node.js we strongly recommend upgrading to at least {{% variables/recommended_node %}}.
 {{% /alert %}}
 
 ### If your application uses "npm test"

@@ -139,7 +139,7 @@ echo $NONROOT_USER":<password>" | chpasswd
 USER $NONROOT_USER
 ```
 
-If you want to target a specific processor architecture which differs from the architecture of the device you're developing on, such as building for x86_64 on an M1 Mac (arm64), then you need to specify the target platform alongside the base Docker image. The base image you are using should have a published version supporting the target architecture. For more information, see [https://github.com/docker-library/official-images#architectures-other-than-amd64](https://github.com/docker-library/official-images#architectures-other-than-amd64).
+If you want to target a specific processor architecture which differs from the architecture of the device you are developing on, such as building for x86_64 on an M1 Mac (arm64), then you need to specify the target platform alongside the base Docker image. The base image you are using should have a published version supporting the target architecture. For more information, see [https://github.com/docker-library/official-images#architectures-other-than-amd64](https://github.com/docker-library/official-images#architectures-other-than-amd64).
 
 ```bash
 FROM --platform=linux/amd64 node:14-alpine

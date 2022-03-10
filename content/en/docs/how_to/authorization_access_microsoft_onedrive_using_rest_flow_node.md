@@ -242,7 +242,7 @@ On the disabled endpoint, there is a **Create Flow** icon. Clicking **Create Flo
 
 ![api_disabled_lat](/Images/api_disabled_lat.png)
 
-We will go through the steps to create the flow, but for reference, the completed flow that we're building will look like this:
+We will go through the steps to create the flow, but for reference, the completed flow that we are building will look like this:
 
 ![Screenshot_2018-11-28_at_15.32.48](/Images/screenshot_2018_11_28_at_15_32_48.png)
 

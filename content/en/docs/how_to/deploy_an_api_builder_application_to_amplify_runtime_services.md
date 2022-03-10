@@ -99,7 +99,7 @@ In the example above, we configure the ARS project to use a Large container size
 
 ## Build a Docker image
 
-{{% alert title="Note" color="primary" %}}By default, Docker will build an image for the same architecture as the device you're developing on. ARS runs on x86_64, so if you're developing on a device which is not using this platform (such as ARM devices like the Raspberry Pi or M1 Mac), then you need to configure the target platform in your application's Dockerfile. This is done by specifying the platform alongside the base image.
+{{% alert title="Note" color="primary" %}}By default, Docker will build an image for the same architecture as the device you are developing on. ARS runs on x86_64, so if you are developing on a device which is not using this platform (such as ARM devices like the Raspberry Pi or M1 Mac), then you need to configure the target platform in your application's Dockerfile. This is done by specifying the platform alongside the base image.
 
 Change the following line
 

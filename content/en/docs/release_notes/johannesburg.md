@@ -18,7 +18,9 @@ Brief summary of the notable release contents.
 
 <!-- ## Features -->
 
-<!-- ## Fixes -->
+## Fixes
+
+*#7322: In [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) added a log `warn` and `error` when fail to import OAS specs that do not validate.
 
 {{% releasenotes/deprecations %}}
 

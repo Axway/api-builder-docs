@@ -5,8 +5,6 @@ weight: 10
 date: 2021-10-27
 ---
 
-{{% alert title="Note" color="primary" %}}This component is currently alpha release and should not be considered production ready. It can be used to try the latest version of {{% variables/apibuilder_prod_name %}} with OpenAPI specifications and provide feedback, but should not be used in production.{{% /alert %}}
-
 The **OpenAPI** flow-trigger enables [OpenAPI specification](https://swagger.io/resources/open-api/) support for versions [OpenAPI 2.0](https://swagger.io/specification/v2/) and [OpenAPI 3.0](https://swagger.io/specification/) in {{% variables/apibuilder_prod_name %}}. This plugin enables {{% variables/apibuilder_prod_name %}} to support [API First](https://blog.axway.com/amplify-products/api-management/api-first-design) design methodology, where the microservice's API interface can be designed by experienced API designers, and then integrations implemented in {{% variables/apibuilder_prod_name %}} using [Flows](/docs/developer_guide/flows). This feature replaces the existing Swagger [Endpoints](/docs/developer_guide/flows/manage_endpoints) feature, which will soon be deprecated.
 
 You can manually install the **OpenAPI** flow-trigger plugin using the following command:
@@ -124,7 +122,7 @@ Previously, endpoints would automatically default to `application/json` unless i
 
 ## Upgrading from endpoints
 
-When upgrading from the [endpoints](/docs/developer_guide/flows/manage_endpoints) to **OpenAPI** flow-triger, there are a number of known differences between implementations that can affect your existing service and how you develop with OpenAPI, mostly around request and response validation. Before upgrading, you should have all your source under source control, and a suite of tests to ensure that your service works as expected after upgrade.
+When upgrading from the [endpoints](/docs/developer_guide/flows/manage_endpoints) to **OpenAPI** flow-trigger, there are a number of known differences between implementations that can affect your existing service and how you develop with OpenAPI, mostly around request and response validation. Before upgrading, you should have all your source under source control, and a suite of tests to ensure that your service works as expected after upgrade.
 
 For example, if your endpoint has a parameter "IPAddress" that is a string with a format "ipv4", previously, this parameter value would not be validated with respect to the format.  After upgrade, this format will be validated and existing clients may receive a `400 Bad Request` error if they are sending invalid IP addresses.
 

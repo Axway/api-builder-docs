@@ -122,7 +122,7 @@ It is possible for paths to clash when also using [Custom API](/docs/developer_g
 
 ### OpenAPI 2.0 basePath, host, and schemes
 
-The [OpenAPI 2.0 basePath, host, and schemes](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields) are not used by {{% variables/apibuilder_prod_name %}}.
+Any [OpenAPI 2.0 fields](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields) `basePath`, `host`, and `schemes` in the specification will be ignored by {{% variables/apibuilder_prod_name %}} and can be [overridden](#overriding-servers-host-schemes-or-basepath).
 
 ### Overriding servers, host, schemes, or basePath
 

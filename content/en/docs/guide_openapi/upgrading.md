@@ -25,7 +25,7 @@ npm install @axway/api-builder-plugin-ft-oas
 
 ## Known differences
 
-Below is a table of known differences between **OpenAPI** flow-trigger and [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints) that can affect your existing service and how you develop with OpenAPI, mostly around request and response validation. Before upgrading, you should have all your source under source control, and a suite of tests to ensure that your service works as expected after upgrade.
+Below is a table of known differences between **OpenAPI** flow-trigger and [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints) features that can affect your existing service and how you develop with OpenAPI, mostly around request and response validation. Before upgrading, you should have all your source under source control, and a suite of tests to ensure that your service works as expected after upgrade.
 
 For example, if your endpoint has a parameter "IPAddress" that is a string with a format "ipv4", previously, this parameter value would not be validated with respect to the format. After upgrade, this format will be validated and existing clients may receive a `400 Bad Request` error if they are sending invalid IP addresses.
 
@@ -89,16 +89,69 @@ Previously, endpoints would default to sending a HTTP status code `200` for flow
 
 Previously, endpoints would pass date parameters (for example, having format "date-time") into the flow as [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) objects. While it may be useful, it is also really easy to create a `Date` from a string, but it is not easy to create a string from a `Date`. That is why we decided that date parameters shall remain as strings.
 
-There is also an option, [Parse flow parameters](/docs/guide_openapi/flows) on the OpenAPI flow-trigger to do this for you. They can also be manually converted to a `Date`. For example:
+If it is desirable to continue to use `$.params`, then there is an option on the **OpenAPI** flow-trigger to [Parse flow parameters](/docs/guide_openapi/flows) that will convert date strings to `Date` objects before they are passed to the flow. Alternatively, date strings can also be manually converted to a `Date`. For example:
 
 ```js
 const date = new Date('2022-03-25');
 ```
 
-### Base path and prefix
+### OpenAPI 2.0 basePath is ignored
 
-TODO
+Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), the OpenAPI 2.0 Swagger [`basePath`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields) was used in conjunction with the [`config.apiPrefix`](/docs/developer_guide/project/configuration/project_configuration#apiprefix), and all of the [`paths`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#pathsObject) in the Swagger specification, to build a path on which the API would be invoked. Now, Swagger `basePath` is ignored.
 
-### No $.fields
+This change was made because `basePath`, `host`, and `schemes` all describe where the API is "hosted", and do not describe _how_ to host the API. Furthermore, it was difficult for developers to build an application that correctly conformed to the API Owner's expectations. Now, {{% variables/apibuilder_prod_name %}} will update these fields according to how the product is configured. The [`apiPrefix`](/docs/developer_guide/project/configuration/project_configuration#apiprefix) will be used for the `basePath`, unless it is [`overridden`](/docs/developer_guide/project/configuration/project_configuration#apidoc).
 
-TODO
+### The $.request is different
+
+Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), the `$.request` was the full [Node.js `ClientRequest`](https://nodejs.org/api/http.html#class-httpclientrequest). It provided access to things that were not part of the OpenAPI specification, such as `$.request.hostname` and `$.request.socket`. Now, it is restricted to the following properties that are more tightly aligned with the OpenAPI specifciation.
+
+| Selector | See also | Description |
+| -------- | --- | ----------- |
+| $.request.body | [Request body](/docs/guide_openapi/request_handling#request-body) | The processed [OpenAPI `requestBody`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#requestBodyObject) body. |
+| $.request.files | [Multipart files](/docs/guide_openapi/request_handling#multipart-files) | Any uploaded `multipart/form-data` file(s) |
+| $.request.cookies | [Request cookie parameters](/docs/guide_openapi/request_handling#request-cookie-parameters) | The processed, case-sensitive, [OpenAPI `cookie` parameter(s)](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameterObject), if provided. |
+| $.request.headers | [Request header parameters](/docs/guide_openapi/request_handling#request-header-parameters) | The processed, case-sensitive, [OpenAPI `header` parameter(s)](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameterObject), if provided. |
+| $.request.query | [Request query parameters](/docs/guide_openapi/request_handling#request-query-parameters) | The processed, case-sensitive, [OpenAPI `query` parameter(s)](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameterObject), if provided. |
+| $.request.path | [Request path parameters](/docs/guide_openapi/request_handling#request-path-parameters) | The processed, case-sensitive, [OpenAPI `path` parameter(s)](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameterObject), if provided. |
+
+This change was made because it provided full access to the raw request that could be used in an unsafe manner. It also exposes the flow to changes to the `ClientRequest` that can occur between implementations of Node.js.
+
+### No $.request.fields
+
+Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), HTTP form fields from `application/x-www-form-urlencoded` and `multipart/form-data` would be passed to the flow using `$.request.fields`. Now, only documented fields are passed to the flow using `$.request.body`.
+
+This change was made because HTTP form fields are part of the request body. They are not an actual component of the HTTP client request and only increased complexity.
+
+### No $.request.files
+
+Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), HTTP `multipart/form-data` files would be passed to the flow using `$.request.files`. Now, only documented files are passed to the flow using `$.request.body`.
+
+This change was made because HTTP form files are part of the request body. They are not an actual component of the HTTP client request and only increased complexity.
+
+### The $.request.headers are different
+
+Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), all HTTP headers from the request would be passed to the flow where all of the keys were lower-case. While this is still true, if any HTTP header is an [OpenAPI parameter](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameterObject), then the case will be preserved.
+
+If it is desirable to ensure all headers are lower-case, then there is an option on the **OpenAPI** flow-trigger to [Lower-case all headers](/docs/guide_openapi/flows#lower-case-all-headers).
+
+This change was made because OpenAPI parameters are uniquely identified by the properties `in` and `name`, where `name` is case-sensitive. Because of this, all parameters are now accessed through their [HTTP request component parts](/docs/guide_openapi/upgrading#the-request-is-different), which guarantees uniqueness, but also preserves case (when applicable).
+
+### Removed $.params
+
+Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), all OpenAPI parameters were parsed and passed to the flow through `$.params`. Now, all OpenAPI parameters are accessed through their [HTTP request component parts](/docs/guide_openapi/upgrading#the-request-is-different).
+
+If it is desirable to continue to use `$.params`, then there is an option on the **OpenAPI** flow-trigger to [Flatten parameters](/docs/guide_openapi/flows#flatten-parameters).
+
+This change was made because OpenAPI parameters are uniquely identified by the properties `in` and `name`, where `name` is case-sensitive. This means that when using `$.params`, it is possible for parameter names to clash. Because of this, all parameters are now accessed through their[HTTP request component parts](/docs/guide_openapi/upgrading#the-request-is-different) which guarantees uniqueness.
+
+### Removed $.request.params
+
+Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), OpenAPI path parameters were passed through the case-sensitive map of `$.request.params`. Now, these are all accessible from `$.request.path`.
+
+This change was made because it is was not user-friendly. The "params" is too closely tied to the [Express](https://expressjs.com).
+
+### Removed $.request.cookies
+
+Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), all HTTP cookies were parsed and passed through `$.request.cookies`. Now, only actual OpenAPI 3.x [cookie parameters](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameterObject) are passed to the flow from `$.request.cookies`. In OpenAPI 2.0, there is no such thing as a "cookie parameter". However, the raw cookie is accessible from `$.request.headers.cookie` if it is needed.
+
+This change was made because the OpenAPI specification should dictate the components that are passed into the flow.

@@ -21,6 +21,7 @@ Brief summary of the notable release contents.
 ## Fixes
 
 * #7322: In [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) added a log `warn` and `error` when fail to import OAS specs that do not validate.
+* #7327: In [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) added support for date string to Date object conversion for forms content types.
 
 {{% releasenotes/deprecations %}}
 

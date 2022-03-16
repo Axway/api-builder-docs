@@ -31,6 +31,10 @@ This option controls what happens when a request fails to validate. When the opt
 
 When this option is enabled to `"true"`, all OpenAPI parameters will be written to `$.request.headers` in lower-case, regardless of the case used in the OpenAPI specification. HTTP headers are case-insensitive, but OpenAPI parameter names are case-sensitive. This feature ensures that the application will treat all HTTP headers as lower-case, including the ones specified as OpenAPI parameters.
 
+#### Response validation
+
+This option controls what happens when a response fails to validate against the OpenAPI specification. When the option is `"disabled"`, no validation will occur. When the option is `"warn"`, warning messages will be logged to the console, but processing will continue. If the value is `"error"` (the default), then an error will be sent to the client. Required body and parameters are always enforced.
+
 ## Flow inputs
 
 The chapter on [request processing](/docs/guide_openapi/request_handling) details how the [**OpenAPI** flow-trigger](#flow-trigger) processes the raw HTTP request and turns it into flow inputs. This chapter details how to use those flow inputs in the [flow](/docs/developer_guide/flows).

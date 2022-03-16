@@ -7,7 +7,7 @@ Hide_readingtime: true
 ---
 ## Summary
 
-Brief summary of the notable release contents.
+In this release we officially shipped the OpenAPI flow-trigger and added the ability to disable response validation.
 
 {{% releasenotes/upgrade %}}
 
@@ -16,7 +16,9 @@ Brief summary of the notable release contents.
 * #7320: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now supports loading multiple flow-triggers.
 * #7217: New projects from the API Builder CLI are now initialised without example APIs, models, schema flows or endpoints.
 
-<!-- ## Features -->
+## Features
+
+* #7315: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now supports a new option "Response validation" that allows toggling between "error", "warn" and "disabled" modes. When set to "warn" or "disabled" and the response does not match the specification, the app will not respond with 500 but will execute the flow and respond with the result of its execution. When set to "warn", validation will still occur, and be printed to the console.
 
 ## Fixes
 

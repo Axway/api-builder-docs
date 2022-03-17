@@ -1,6 +1,6 @@
 ---
-title: Deploy an API Builder application to Amplify Runtime services
-linkTitle: Deploy an API Builder application to Amplify Runtime services
+title: Deploy an API Builder application to Amplify Runtime Services
+linkTitle: Deploy an API Builder application to Amplify Runtime Services
 weight: 60
 date: 2021-10-01
 ---

@@ -94,6 +94,9 @@ github_repo = "https://github.com/Axway/api-builder-docs"
 # Enable Algolia search
 algolia_docsearch = true
 
+# Enable syntax highlighting and copy buttons on code blocks with Prism
+prism_syntax_highlighting = true
+
 # User interface configuration
 [params.ui]
 # Enable to show the side bar menu in its compact state.

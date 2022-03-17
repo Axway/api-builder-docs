@@ -1,6 +1,6 @@
 ---
-title: Deploy an API Builder application to AMPLIFY Runtime services
-linkTitle: Deploy an API Builder application to AMPLIFY Runtime services
+title: Deploy an API Builder application to Amplify Runtime services
+linkTitle: Deploy an API Builder application to Amplify Runtime services
 weight: 60
 date: 2021-10-01
 ---
@@ -43,7 +43,7 @@ To install the Amplify Cloud Services (ACS) CLI, execute the following command:
 axway pm install acs
 ```
 
-For additional Amplify Cloud Services (ACS) CLI information, refer to the [Amplify Runtime Services Command-Line Interface Reference](https://docs.axway.com/bundle/AMPLIFY_Runtime_Services_2_0_allOS_en/page/amplify_runtime_services_command-line_interface_reference.html).
+For additional Amplify Cloud Services (ACS) CLI information, refer to the [Amplify Runtime Services Command-Line Interface Reference](https://docs.axway.com/bundle/Amplify_Runtime_Services_2_0_allOS_en/page/amplify_runtime_services_command-line_interface_reference.html).
 
 ## Log Into the {{% variables/platform_prod_name %}}
 

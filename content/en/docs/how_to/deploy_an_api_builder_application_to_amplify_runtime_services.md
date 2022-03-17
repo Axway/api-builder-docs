@@ -15,7 +15,7 @@ This topic describes how to create, Dockerize, and publish an {{% variables/apib
 
 The following sections describe the prerequisites.
 
-### {{% variables/platform_prod_name %}} account
+### Amplify platform account
 
 You need to have an account on [https://platform.axway.com](https://platform.axway.com).
 

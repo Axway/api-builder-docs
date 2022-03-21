@@ -85,15 +85,18 @@ Previously, endpoints would automatically default to `application/json` unless i
 
 Previously, endpoints would default to sending a HTTP status code `200` for flows that did not set an explicit response with the [HTTP Response flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) before terminating. With **OpenAPI** flow-trigger, your flows can fail with `500` errors if they do not set a [HTTP Response flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) through all paths through the flow.
 
-### Dates were objects
+### Dates
 
-Previously, endpoints would pass date parameters (for example, having format "date-time") into the flow as [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) objects. While it may be useful, it is also really easy to create a `Date` from a string, but it is not easy to create a string from a `Date`. That is why we decided that date parameters shall remain as strings.
-
-If it is desirable to continue to use `$.params`, then there is an option on the **OpenAPI** flow-trigger to [Parse flow parameters](/docs/guide_openapi/flows) that will convert date strings to `Date` objects before they are passed to the flow. Alternatively, date strings can also be manually converted to a `Date`. For example:
+Previously, endpoints would pass date parameters (for example, having format "date-time") into the flow as [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) objects. While it may be useful, it is also really easy to create a `Date` from a string with:
 
 ```js
 const date = new Date('2022-03-25');
 ```
+
+However, it is not easy to create a string from a `Date`. That is why we decided that date parameters shall remain as strings. If it is desirable to continue to use `$.params`, then there is an option on the **OpenAPI** flow-trigger to [Parse flow parameters](/docs/guide_openapi/flows) that will convert date strings to `Date` objects before they are passed to the flow. Note that with this option on the following two cases will previously not be converted to Date objects, while now they will be:
+
+* "text/plain" bodies accessible with $.request.body selector 
+* "x-www-form-urlencoded" form parameters accessible, for example, with $.request.body.date
 
 ### OpenAPI 2.0 basePath is ignored
 

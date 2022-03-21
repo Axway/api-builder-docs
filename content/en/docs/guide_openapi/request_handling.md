@@ -162,7 +162,6 @@ TODO
 
 TODO
 
-
 ## Automatic responses
 
 If {{% variables/apibuilder_prod_name %}} encounters errors with the client's HTTP request, it will send automatic errors without invoking the flow. The errors are detailed in the following sections. Note that your OpenAPI document should include these errors in its specification for correctness. A [list of errors](/docs/guide_openapi/writing_apidocs#default-error-codes-and-responses) has been provided for convenience.

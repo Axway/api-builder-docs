@@ -7,11 +7,11 @@ description: This document provides recommendations that help you write clear an
 
 ## Model your API around resources
 
-A "RESTful" API is one that is stateless and utilizes an expected pattern of Create, Retrieve, Update, and Delete operations on resources (CRUD operations). A good REST API would have a predicatable, uniform interface. If you are familiar with this, you can skip to the [example REST API](#example-rest-api) which utilizes the best practices noted from this document.
+A "RESTful" API is one that is stateless and utilizes an expected pattern of Create, Retrieve, Update, and Delete operations on resources (CRUD operations). A good REST API would have a predictable, uniform interface. If you are familiar with this, you can skip to the [example REST API](#example-rest-api) which utilizes the best practices noted from this document.
 
 ### Resources
 
-Typically, entities would have a plural root, e.g. `/users`, under which all methods would relate. Resources are nouns, and the actions taken on the resurces are verbs (for example, to "retrieve" a resource). Below is a typical pattern for REST API for managing a resource collection for a "User" resource:
+Typically, entities would have a plural root, e.g. `/users`, under which all methods would relate. Resources are nouns, and the actions taken on the resources are verbs (for example, to "retrieve" a resource). Below is a typical pattern for REST API for managing a resource collection for a "User" resource:
 
 | HTTP method | HTTP path (plural) | Success code    | Response body | REST API |
 | ------------| ------------------ | --------------- | ------------- | --------- |
@@ -27,7 +27,7 @@ In OpenAPI, resource values are described by [JSON schema](https://json-schema.o
 
 ### Paging and filtering
 
-A good API should allow querying, paging, and filtering to reducing the amount of data returned as much as possible. For example, return only specific field(s) instead of entire entities. Expect that the developer needs to build a fast, scaleable application under many different OS and mobile environments where bandwidth might be very limited.
+A good API should allow querying, paging, and filtering to reducing the amount of data returned as much as possible. For example, return only specific field(s) instead of entire entities. Expect that the developer needs to build a fast, scalable application under many different OS and mobile environments where bandwidth might be very limited.
 
 ## Version your API
 

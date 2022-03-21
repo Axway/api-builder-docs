@@ -103,7 +103,7 @@ This change was made because `basePath`, `host`, and `schemes` all describe wher
 
 ### The $.request is different
 
-Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), the `$.request` was the full [Node.js `ClientRequest`](https://nodejs.org/api/http.html#class-httpclientrequest). It provided access to things that were not part of the OpenAPI specification, such as `$.request.hostname` and `$.request.socket`. Now, it is restricted to the following properties that are more tightly aligned with the OpenAPI specifciation.
+Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), the `$.request` was the full [Node.js `ClientRequest`](https://nodejs.org/api/http.html#class-httpclientrequest). It provided access to things that were not part of the OpenAPI specification, such as `$.request.hostname` and `$.request.socket`. Now, it is restricted to the following properties that are more tightly aligned with the OpenAPI specification.
 
 | Selector | See also | Description |
 | -------- | --- | ----------- |

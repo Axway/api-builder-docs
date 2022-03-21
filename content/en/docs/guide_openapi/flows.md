@@ -68,7 +68,7 @@ The **Status** must be a valid [HTTP status code](https://developer.mozilla.org/
 
 ### Headers
 
-The **Headers** is used to set custom HTTP headers that will be returned to the client. It is an Object of key/properties, where all the values are strings. With the exception of `content-type`, all headers must match thoses defined by the [OpenAPI response object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#responseObject), and any required headers must be provided. Any header returned that is not documented in the OpenAPI specification will result in an error.
+The **Headers** is used to set custom HTTP headers that will be returned to the client. It is an Object of key/properties, where all the values are strings. With the exception of `content-type`, all headers must match those defined by the [OpenAPI response object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#responseObject), and any required headers must be provided. Any header returned that is not documented in the OpenAPI specification will result in an error.
 
 #### Content-Type header
 

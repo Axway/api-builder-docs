@@ -113,7 +113,13 @@ If the response `content-type` is JSON, the response body will be validated as J
 
 ### Disabling response validation
 
-TODO
+There is possibility to disable some aspects of the response validation. This can be done via [**OpenAPI** flow-trigger](#flow-trigger) `"Response validation"` parameter:
+
+![OpenAPI import](/Images/response_validation_warn.png)
+
+When set to `"warn"`, unexpected status codes, JSON schema validation errors, missing required response body, unexpected response body, missing required headers, and unexpected headers will all emit console warnings. When set to `"disabled"`, this is the same as `"warn"`, except that warnings will not be emitted and the body will not be JSON schema validated.
+
+However, with both modes - `"warn"` and `"disabled"` - status code and `content-type` will still be semantically checked, and the `content-type` will be auto-picked and body encoded as required, which means errors related to those aspects will cause responses with status code 500.
 
 ## Automatic responses
 

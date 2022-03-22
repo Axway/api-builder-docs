@@ -14,26 +14,11 @@ Currently, **OpenAPI** flow-trigger supports the following specifications:
 
 Note that OpenAPI 3.0 is the preferred standard for {{% variables/apibuilder_prod_name %}}. All links in our documentation will be to this standard, unless there is a specific need to link to OpenAPI 2.0. If you are using OpenAPI 2.0, you should consider moving to 3.0, but if you choose to remain on 2.0, you may have to refer back to equivalent sections in 2.0.
 
-Also note that [OpenAPI 3.1](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md) is currently not supported, but is on the [roadmap](#openapi-roadmap).
+Also note that [OpenAPI 3.1](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md) is currently not supported, but is on the roadmap.
 
 {{% alert title="Note" color="warning" %}}
 All links in our documentation will be to the preferred standard [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md), unless otherwise noted.
 {{% /alert %}}
-
-## OpenAPI roadmap
-
-* \[X] Support import and validation of 3.0 specifications
-* \[X] Download OpenAPI specification
-* \[X] Bind flows to OpenAPI methods
-* \[X] Invoke flows with limited support (may not work with all OpenAPI features or parameters)
-* \[X] HTTP request parameter and JSON schema validation
-* \[X] Support import and validation of 2.0 specifications
-* \[X] Support updating imported specifications
-* \[ ] Improve UX to improve API First experience
-* \[ ] Support import and validation of 3.1 specifications
-* \[ ] Improve UX to assist in flow creation
-* \[ ] Improve UX to prevent misconfiguration
-* \[ ] Add streaming capability
 
 ## Unsupported features
 

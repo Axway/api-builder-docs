@@ -166,20 +166,5 @@ For example, if your endpoint has a parameter "IPAddress" that is a string with 
 | JSON schema validation for OpenAPI format "binary" | no | no ² |
 | JSON schema validation for OpenAPI format "password" | no | no ² |
 
-1. Currently unsupported, but the feature is planned on the [roadmap](#roadmap).
+1. Currently unsupported.
 1. Can be used for documentation purposes, but the format is not validated.
-
-## Roadmap
-
-* \[X] Support import and validation of 3.0 specifications
-* \[X] Download OpenAPI specification
-* \[X] Bind flows to OpenAPI methods
-* \[X] Invoke flows with limited support (may not work with all OpenAPI features or parameters)
-* \[X] HTTP request parameter and JSON schema validation
-* \[X] Support import and validation of 2.0 specifications
-* \[X] Support updating imported specifications
-* \[ ] Improve UX to improve API First experience
-* \[ ] Support import and validation of 3.1 specifications
-* \[ ] Improve UX to assist in flow creation
-* \[ ] Improve UX to prevent misconfiguration
-* \[ ] Add streaming capability

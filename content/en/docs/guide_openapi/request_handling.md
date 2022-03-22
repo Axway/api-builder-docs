@@ -156,11 +156,7 @@ Failure to validate the request's body against the OpenAPI operation will result
 
 ### Disabling request validation
 
-There is possibility to disable the request validation. This can be done via [**OpenAPI** flow-trigger](#flow-trigger) `"Request validation"` parameter:
-
-![OpenAPI import](/Images/request_validation.png)
-
-When the option is set to `"warn"`, a warning message will be logged to the console, but the flow will be invoked irrespectively of the request matching the specification or not.
+There is possibility to disable the request validation via [**Request validation**](/docs/guide_openapi/flows#request-validation) option.
 
 ## Automatic responses
 

@@ -20,7 +20,7 @@ paths:
           pattern: ISBN .*
     get:
       tags:
-        - book
+        - Books
       description: Gets a book by ID
       operationId: getBook
       responses:
@@ -43,7 +43,7 @@ paths:
           $ref: '#/components/responses/InternalServerError'
     put:
       tags:
-        - book
+        - Books
       description: Updates a book by ID
       operationId: updateBook
       requestBody:
@@ -67,7 +67,7 @@ paths:
           $ref: '#/components/responses/InternalServerError'
     delete:
       tags:
-        - book
+        - Books
       description: Deletes a book by ID
       operationId: deleteBook
       responses:
@@ -82,17 +82,24 @@ paths:
   /books:
     get:
       tags:
-        - book
+        - Books
       description: Search books.
       operationId: searchBooks
       parameters:
         - $ref: '#/components/parameters/OffsetQuery'
         - $ref: '#/components/parameters/LimitQuery'
+        - $ref: '#/components/parameters/FieldsQuery'
         - in: query
           description: The title to search.
           name: title
           schema:
             type: string
+        - in: query
+          description: The published date to search.
+          name: date
+          schema:
+            type: string
+            format: date
       responses:
         default:
           description: Books matching the search criteria.
@@ -108,7 +115,7 @@ paths:
           $ref: '#/components/responses/InternalServerError'
     post:
       tags:
-        - book
+        - Books
       description: Creates a book
       operationId: createBook
       requestBody:
@@ -160,13 +167,14 @@ components:
           items:
             type: string
             minLength: 1
-    _Book:
+    BookFields:
       type: object
       additionalProperties: true
       properties:
+        id:
+          type: number
         isbn:
           type: string
-          pattern: ISBN .*
         title:
           type: string
         author:
@@ -174,33 +182,32 @@ components:
         published:
           type: string
           format: date
-      required:
-        - isbn
-        - title
-        - author
-        - published
     BookWithId:
       allOf:
-        - $ref: '#/components/schemas/_Book'
+        - $ref: '#/components/schemas/BookWithoutId'
       properties:
-        id:
-          type: string
-          format: uuid
+        id: {}
+      additionalProperties: false
+      required:
+        - id
+    BookWithoutId:
+      allOf:
+        - $ref: '#/components/schemas/BookWithoutId'
+      properties:
         isbn: {}
         title: {}
         author: {}
         published: {}
       additionalProperties: false
       required:
-        - id
-    BookWithoutId:
-      allOf:
-        - $ref: '#/components/schemas/_Book'
-      additionalProperties: false
+        - isbn
+        - title
+        - author
+        - published
     ArrayOfBooks:
       type: array
       items:
-        $ref: '#/components/schemas/BookWithId'
+        $ref: '#/components/schemas/BookFields'
   responses:
     BadRequest:
       description: Bad request
@@ -292,6 +299,19 @@ components:
         type: number
         default: 10
         minimum: 1
+    FieldsQuery:
+      name: fields
+      in: query
+      style: form
+      explode: false
+      required: false
+      description: >-
+        A list of fields to use to filter the fields from the response and reduce
+        the payload size.
+      schema:
+        type: array
+        items:
+          type: string
   examples:
     Book:
       summary: Array of books

@@ -13,7 +13,8 @@ In this release we officially shipped the OpenAPI flow-trigger and added the abi
 
 ## Breaking changes
 
-* #7320: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now supports loading multiple flow-triggers.
+* #7320: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now supports loading multiple OpenAPI specifications.
+* #7332: Breaking change: Minimum supported version of {{% variables/apibuilder_prod_name %}} is now `Johannesburg`.
 * #7217: New projects from the API Builder CLI are now initialised without example APIs, models, schema flows or endpoints.
 
 ## Features
@@ -22,7 +23,7 @@ In this release we officially shipped the OpenAPI flow-trigger and added the abi
 
 ## Fixes
 
-* #7322: In [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) added a log `warn` and `error` when fail to import OpenAPI specs that do not validate.
+* #7322: In [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now logs the reason(s) for the failure to validate OpenAPI specifications.
 * #7327: In [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) added support for date string to Date object conversion for forms content types.
 
 {{% releasenotes/deprecations %}}

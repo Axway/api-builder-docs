@@ -26,7 +26,7 @@ If you do no use the unit test framework included in your project (`npm test`), 
 npm uninstall request
 ```
 
-### If your application has "npm test" but have not update it yet
+### If your application does not use "npm test" but you want to write unit tests
 
 If you have not written any unit tests or changed any of the existing test, but would like to make use of `npm test`, then we recommend installing the latest version of the CLI and creating a new project, then copy the new `/test` directory from the new project into your existing project (`existing-project`), replacing the existing directory. Finally, then uninstall `request` and install `got` version 11.x (which the new tests use).
 
@@ -39,7 +39,7 @@ npm install got@11
 ```
 
 {{% alert title="Note" %}}
-Note: This version of `got` requires at least Node.js 10.19. If you're developing your project on an older version of Node.js we strongly recommend upgrading to at least {{% variables/recommended_node %}}.
+Note: This version of `got` requires at least Node.js 10.19. If you are developing your project on an older version of Node.js we strongly recommend upgrading to at least {{% variables/recommended_node %}}.
 {{% /alert %}}
 
 ### If your application uses "npm test"

@@ -102,14 +102,22 @@ plugins:
       # https://github.com/Trott/remark-lint-prohibited-strings/blob/main/index.js
       { no: 'builder', yes: 'Builder', ignoreNextTo: '-' },
       { yes: 'API Builder' }, # case insensitive
+      { no: 'API First', yes: 'API-first' },
       { no: '[fF]alsey', yes: 'falsy' },
       { no: "[cC]an't", yes: 'cannot' },
       { no: "[iI]t's", yes: 'it is' },
       { no: "[tT]hat's", yes: 'that is' },
+      { no: "[wW]hat's", yes: 'what is' },
       { no: "[wW]on't", yes: 'will not' },
+      { no: "[yY]ou'd", yes: 'you would' },
+      { no: "[yY]ou're", yes: 'you are' },
+      { no: "[wR]e're", yes: 'we are' },
       { no: "(\\w+)'ve", yes: '$1 have', replaceCaptureGroups: true },
       { no: "(\\w+(?<!ca))n't", yes: '$1 not', replaceCaptureGroups: true },
       { no: "(\\w+)'ll", yes: '$1 will', replaceCaptureGroups: true },
+      { no: "(\\w+)'d", yes: '$1 would', replaceCaptureGroups: true },
+      { no: "(\\w+)'re", yes: '$1 are', replaceCaptureGroups: true },
+      { no: 'oas|OAS', yes: 'OpenAPI' }
     ]]
 
   # We need to figure out what to do with these rules

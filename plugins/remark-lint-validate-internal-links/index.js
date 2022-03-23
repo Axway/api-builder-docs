@@ -10,7 +10,7 @@ import unicode from 'unicode/category/index.js';
 const log = new debugModule('remark-lint:validate-internal-links');
 
 // This regex is used for finding hugo variables in the headings. It is somewhat
-// limited since we could have another type of parameters refered with <% text %>
+// limited since we could have another type of parameters referred with <% text %>
 // we well as spaces in the variables e.g. {{% deprecation/link D042 %}}.
 // If we have heading in mypage.md:  ## My heading is {{% deprecation/link D042 %}}
 // It will be displayed as: ## My heading is [D042](/docs/deprecations#D042)
@@ -186,7 +186,6 @@ function verifyAnchor(file, node, ref) {
 		if (availableAnchors.includes(anchor)) {
 			cache[ref] = warnings.valid;
 		} else {
-			debugger;
 			const msg = `${warnings.missingAnchor}: ${ref}`;
 			file.message(msg, node);
 			cache[ref] = msg;
@@ -221,14 +220,9 @@ function verifyAnchor(file, node, ref) {
 		availableAnchors = [];
 		anchorMap = Object.create(null);
 		visit(tree, "heading", compare);
-		// console.dir(availableAnchors);
-		// console.log('anchor:', filePath, anchor);
-		// process.stderr.write(availableAnchors.join(', '));
-
 		if (availableAnchors.includes(anchor)) {
 			cache[ref] = warnings.valid;
 		} else {
-			debugger;
 			const msg = `${warnings.missingAnchor}: ${ref}`;
 			file.message(msg, node);
 			cache[ref] = msg;
@@ -264,7 +258,6 @@ function verifyAnchor(file, node, ref) {
 
 function isEmptyAnchor(file, node, anchor) {
 	if (anchor === '') {
-		debugger;
 		const msg = `${warnings.missingAnchor}: #`;
 		file.message(msg, node);
 		cache['#'] = msg;

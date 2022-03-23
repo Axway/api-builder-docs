@@ -79,7 +79,7 @@ The following formats are available for JSON schema validation:
 
 ## OpenAPI editors
 
-At this time, {{% variables/apibuilder_prod_name %}} does not have a UI for editing OpenAPI documents. We recommend using an external tool like [Stoplight](https://stoplight.io) to create and manage your OpenAPI documents (API First). It provides collaborative design, mocking, and revision history.
+At this time, {{% variables/apibuilder_prod_name %}} does not have a UI for editing OpenAPI documents. We recommend using an external tool like [Stoplight](https://stoplight.io) to create and manage your OpenAPI documents (API-first). It provides collaborative design, mocking, and revision history.
 
 ## Writing OpenAPI documents
 

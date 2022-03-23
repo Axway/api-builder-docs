@@ -24,7 +24,7 @@ A number of events will specifically not count as a transaction:
 * A flow calling another flow.
 * CORS preflight requests.
 
-{{% alert title="Note" color="primary" %}}Ensure you're using the latest versions of each {{% variables/apibuilder_prod_name %}} plugin in order for transactions to be correctly counted (or not counted).{{% /alert %}}
+{{% alert title="Note" color="primary" %}}Ensure you are using the latest versions of each {{% variables/apibuilder_prod_name %}} plugin in order for transactions to be correctly counted (or not counted).{{% /alert %}}
 
 ## Prerequisites
 

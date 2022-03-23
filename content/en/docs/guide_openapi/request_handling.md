@@ -156,11 +156,7 @@ Failure to validate the request's body against the OpenAPI operation will result
 
 ### Disabling request validation
 
-TODO
-
-### Disabling response validation
-
-TODO
+There is possibility to disable the request validation via [**Request validation**](/docs/guide_openapi/flows#request-validation) option.
 
 ## Automatic responses
 

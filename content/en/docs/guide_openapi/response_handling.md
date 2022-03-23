@@ -113,7 +113,7 @@ If the response `content-type` is JSON, the response body will be validated as J
 
 ### Disabling response validation
 
-TODO
+It is possible to disable the response validation via [**Response validation**](/docs/guide_openapi/flows#response-validation) option.
 
 ## Automatic responses
 

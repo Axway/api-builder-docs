@@ -10,11 +10,11 @@ Hide_readingtime: true
 
 ## Features
 
-* #6296: Added optional Advanced HTTP Options **Headers** parameter to Swagger plugin flow-nodes and custom OAS flow-nodes. This allows overriding headers, as well as defining any headers not in the OAS spec.
+* #6296: Added optional Advanced HTTP Options **Headers** parameter to Swagger plugin flow-nodes and custom OpenAPI flow-nodes. This allows overriding headers, as well as defining any headers not in the OpenAPI specification.
 * #6485: Added Solace plugin to support publishing and subscribing to Solace topics.
 * #6490: Added Kafka plugin to support publishing and subscribing to Kafka topics.
-* #6549: Fixed regression with @axway/api-builder-plugin-fn-swagger where `basePath` could not be overridden in config for OAS2 documents.
-* #6549: Add support to @axway/api-builder-plugin-fn-swagger for overriding an existing `basePath` with an empty string in config for OAS2 documents.
+* #6549: Fixed regression with @axway/api-builder-plugin-fn-swagger where `basePath` could not be overridden in config for OpenAPI 2.0 specifications.
+* #6549: Add support to @axway/api-builder-plugin-fn-swagger for overriding an existing `basePath` with an empty string in config for OpenAPI 2.0 specifications.
 
 ## Fixes
 

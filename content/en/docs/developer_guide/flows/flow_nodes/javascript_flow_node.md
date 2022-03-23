@@ -106,7 +106,7 @@ This example flow-node calculates the product of the provided array of numbers.
 1621337798798 DEBUG [request-id: 9abdf0c2-efb0-4d85-b6cb-3746ea0133f1]   Calculate product (javascript.1) writing 120780 to ctx as: $.response
 ```
 
-Unfortunately, when debugging, we do not see which numbers are being calculated and only the result. We will add a debug log to show what's going on!
+Unfortunately, when debugging, we do not see which numbers are being calculated and only the result. We will add a debug log to show what is going on!
 
 ![image2021-5-18_12_38_33](/Images/image2021_5_18_12_38_33.png)
 

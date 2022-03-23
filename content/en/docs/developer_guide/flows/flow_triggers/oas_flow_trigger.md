@@ -5,7 +5,7 @@ weight: 10
 date: 2021-10-27
 ---
 
-The **OpenAPI** flow-trigger enables [OpenAPI specification](https://swagger.io/resources/open-api/) support for versions [OpenAPI 2.0](https://swagger.io/specification/v2/) and [OpenAPI 3.0](https://swagger.io/specification/) in {{% variables/apibuilder_prod_name %}}. This plugin enables {{% variables/apibuilder_prod_name %}} to support [API First](https://blog.axway.com/amplify-products/api-management/api-first-design) design methodology, where the microservice's API interface can be designed by experienced API designers, and then integrations implemented in {{% variables/apibuilder_prod_name %}} using [Flows](/docs/developer_guide/flows). This feature replaces the existing Swagger [Endpoints](/docs/developer_guide/flows/manage_endpoints) feature, which will soon be deprecated.
+The **OpenAPI** flow-trigger enables [OpenAPI specification](https://swagger.io/resources/open-api/) support for versions [OpenAPI 2.0](https://swagger.io/specification/v2/) and [OpenAPI 3.0](https://swagger.io/specification/) in {{% variables/apibuilder_prod_name %}}. This plugin enables {{% variables/apibuilder_prod_name %}} to support [API-first](https://blog.axway.com/amplify-products/api-management/api-first-design) design methodology, where the microservice's API interface can be designed by experienced API designers, and then integrations implemented in {{% variables/apibuilder_prod_name %}} using [Flows](/docs/developer_guide/flows). This feature replaces the existing Swagger [Endpoints](/docs/developer_guide/flows/manage_endpoints) feature, which will soon be deprecated.
 
 You can manually install the **OpenAPI** flow-trigger plugin using the following command:
 
@@ -13,13 +13,13 @@ You can manually install the **OpenAPI** flow-trigger plugin using the following
 npm install @axway/api-builder-plugin-ft-oas
 ```
 
-After, you can successfully start your application.
-
-```bash
-npm start
-```
-
 Installing the plugin enables new UI on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page, and disables the old "legacy" Swagger 2.0 Endpoints that is currently built into {{% variables/apibuilder_prod_name %}}. The intention is to maintain a similar experience. To get started, you can import your OpenAPI specification using a new button, **+OpenAPI** on the [API Doc & Test](/docs/developer_guide/console#api-doc-test-tab) page.
+
+## How to use the OpenAPI flow-trigger
+
+To get started and learn more on how the flow-trigger plugin enables the use of Api-first in {{% variables/apibuilder_prod_name %}} see our [Quick start guide](/docs/guide_openapi/quick_start).
+
+If you have an existing service that uses the old legacy endpoints you can upgrade your service with our [Upgrade guide](/docs/guide_openapi/upgrading).
 
 ## Flow-trigger details
 
@@ -27,164 +27,11 @@ The following sections provide details of the available **OpenAPI** flow-trigger
 
 ### Trigger parameters
 
-| Parameter | Type | Description | Configuration selection | Required |
-| --- | --- | --- | --- | --- |
-| API method | String | The OpenAPI [operationId](https://swagger.io/specification/#operationObject) of the method to bind. | Selector, String | Yes |
-
-## Configuration
-
-The **OpenAPI** flow-trigger should not need any additional configuration above the defaults. However, the following sections describe how to configure the **OpenAPI** flow-trigger to change the default behavior.
-
-### API prefix
-
-Your service is configured with an [apiPrefix](/docs/developer_guide/project/configuration/project_configuration#apiprefix) which {{% variables/apibuilder_prod_name %}} uses to apply authentication to all paths under this prefix. It defaults to `/api`, but it can be configured. All paths defined in your imported OpenAPI document will be bound to this prefix. For example, `/service/user` will be bound as `/api/service/user`.
-
-If all your designed paths begin with a common prefix, i.e. `/service`, then by changing your `apiPrefix` in configuration to match this prefix, {{% variables/apibuilder_prod_name %}} will not apply the prefix twice, and allow `/service/user` to be bound as-is (it will be deduped).
-
-### Overrides
-
-There is a list of optional [`apidoc.overrides`](/docs/developer_guide/project/configuration/project_configuration#apidoc) that you can specify as part of your service configuration that would allow you to tweak how the API specification is generated. This allows you to tweak specific OpenAPI values that are useful when the service is not consumed directly, such as when the services is exposed through a proxy.
-
-## Accessing the API specification
-
-The OpenAPI specification is bound to the following paths and is exposed by the service for download:
-
-* `/apidoc/swagger.json` (for legacy purposes)
-* `/apidoc/swagger.yaml` (for legacy purposes)
-* `/apidoc/openapi.json`
-* `/apidoc/openapi.yaml`
-
-On startup, administrators will see only one path in the log. For OpenAPI 2.0, it is `/apidoc/swagger.json`, otherwise, it is `/apidoc/openapi.json`. Some parts of the API specification can be tweaked from the [configuration](#configuration). The "/apidoc" prefix is configured by changing the [`apidoc.prefix`](/docs/developer_guide/project/configuration/project_configuration#apidoc) in the configuration.
-
-<!-- TODO:
-## Request handling
-Describe what we do on an inbound request before hitting the flow. Write about what validation, massaging, coercing, response codes to expect and when.
--->
-
-## Response handling
-
-{{% variables/apibuilder_prod_name %}} and the **OpenAPI** flow-trigger do additional processing after a flow completes, before sending the response. This section describes the areas that are processed.
-
-In your flow, you can use the [HTTP Response flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) to set the HTTP response **Status**, **Body**, and **Headers**, and these dictate the response you wish to send to the client.  However, {{% variables/apibuilder_prod_name %}} and the **OpenAPI** flow-trigger do additional processing after a flow completes, before sending the actual response. The following sections describe how the response might be effected.
-
-### Response status
-
-The response **Status** that you set in the flow should be a valid [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status), and should match one of the documented HTTP response(s) from your OpenAPI specification. This **Status** code dictates how the **OpenAPI** flow-trigger handles the response body.
-
-If the flow responds with a status code which is not documented by the specification, then this will result in a `500 Internal Server Error`. 
-If `default` is documented then any status code is valid, although the response headers and body must still match the specification as below.
-
-### Response body
-
-The combined response **Body** _and_ **Status** code that you set in the flow should match one of the documented HTTP response(s) from your OpenAPI specification (or "default" if it is defined).
-
-If the **Body** is a "raw" `string` or `Buffer`, then no additional processing will be done, and the client will receive the body as-is.
-
-If the **Body** is a type _other_ than `string` or `Buffer` (e.g. an `Object` or `Array`), then **OpenAPI** flow-trigger may automatically JSON encode the response if there is exactly one response media type that is JSON (e.g. "application/json"). Otherwise, the response content encoding is ambiguous, and results in a `500 Internal Server Error`. In this case, you should ensure you encode the **Body** within the flow and set an appropriate `content-type` header in **Headers** that matches the encoding for the **Body**.
-
-Additional validation is also performed to ensure the response body matches the specification. Any mismatches will result in a `500 Internal Server Error`. 
-
-#### Required body
-If the specification documents a response body, then this indicates a body must be returned. Similarly, if no response body is documented, a body must not be returned.
-
-#### JSON body validation
-If the response `content-type` is `application/json` or a derivative such as `application/user+json`, the response body must be valid JSON. If a schema is documented for the response body, then the body must validate against that schema.
-
-For other content-types, the documented schema is ignored.
-
-### Response headers
-
-The response **Headers** that you set in the flow are optional.  All response headers set by the [HTTP Respose flow-node](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) will be sent in the response. {{% variables/apibuilder_prod_name %}} may set additional HTTP response headers for `server`, `content-md5` and `etag`, and they can be enabled or disabled in the [configuration](/docs/developer_guide/project/configuration/project_configuration#http).
-
-Additional validation is also performed to ensure the response headers match the specification. Any mismatches will result in a `500 Internal Server Error`. 
-
-#### Required headers
-All documented `required` headers must be returned by the flow.
-
-#### Extraneous headers
-All headers returned by the flow must be documented in the specification.
-
-### Content-type header
-
-{{% variables/apibuilder_prod_name %}} will automatically handle response content encoding and the HTTP response `content-type` header, if the type of response **Body** set from the flow is unambiguous with respect to the `responseBody` media type(s) defined.
-
-* If you explicitly set a `content-type` header in **Headers**, it will be used.
-* If there is only one media type, then that will be used.
-* If exactly one of the documented response media type(s) are a JSON (e.g. "application/json"), then that will be used.
-
-All other cases will result in a 500 error since the expected value is ambiguous, and you should ensure that an appropriate `content-type` header is set from your flow.
-
-Also note that if the response **Body** is a `string`, then [Express.js](https://expressjs.com) will automatically explicitly set the charset to "utf-8".  If you do not want this, then you will have to use a `Buffer` instead and set the correct charset on your `content-type` header.
-
-{{% alert title="Note" color="primary" %}}
-Previously, endpoints would automatically default to `application/json` unless it was explicitly set within the flow.  With **OpenAPI** flow-trigger, your flows may fail if they explicitly set a content-type header that was not defined for the operation response, or if the flow does not set a content-type header, and a JSON-like one was not defined for the operation response.
-{{% /alert %}}
-
-The response content-type header is matched against a response `content` (or `produces`) media-type in your specification. Any mismatches will result in a `500 Internal Server Error`. Currently wildcard media-types and parameters such as `charset` are not supported. 
-
-## Unsupported features
-
-* OpenAPI 3.0 requestBody `anyOf`, `oneOf`, `allOf`, and `not` are only supported for `application/json`.  All other media types are not supported.
-* OpenAPI 3.0 parameter [content](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameterObject) is currently not supported, and `schema` is required.
-* OpenAPI 3.0 [link](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#link-object).
-* OpenAPI 3.0 parameter [media type encoding](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#encodingObject).
-* OpenAPI 3.0 [discriminator](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#discriminatorObject).
-* OpenAPI 2.0 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) for `tsv` (tab separated value).
-* OpenAPI 2.0 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) array of items more than one level deep (i.e. does not support array of array items).
-* OpenAPI 2.0 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) `pipes` and `ssv` are not supported in `cookie`, `formData`, `header`, or `path` (only supported in `query`).
-* `multipart/form-data` with arrays of binary data is not supported, e.g. `curl -F file[]=a -F file[]=b`.
-* OpenAPI 3.0 [byte format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types) is supported, but it will not automatically decode the base64 data.
-* OpenAPI 3.0 [base64 format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#considerations-for-file-uploads) is not supported because it is not really a valid format.
-* OpenAPI 3.0 cookie parameters for objects and arrays, `style="form", explode=true` [style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#style-examples) is not supported.
-* OpenAPI body content-types `application/json`, `application/*+json`, `application/x-www-form-urlencoded`, or `multipart/form-data` will be decoded, "XML" types such as `application/xml` will be handled as strings but not decoded, all others will be handled as `Buffer`.
-* In API Doc & Test, APIs with `multipart/form-data` or `application/x-www-form-urlencoded` bodies will fail to render examples and execute correctly if the body schema is missing an implicit `type: object`.
-* media-type parameters such as `;charset=utf-8` in request and response are currently ignored.
-
-## Upgrading from endpoints
-
-When upgrading from the [endpoints](/docs/developer_guide/flows/manage_endpoints) to **OpenAPI** flow-trigger, there are a number of known differences between implementations that can affect your existing service and how you develop with OpenAPI, mostly around request and response validation. Before upgrading, you should have all your source under source control, and a suite of tests to ensure that your service works as expected after upgrade.
-
-For example, if your endpoint has a parameter "IPAddress" that is a string with a format "ipv4", previously, this parameter value would not be validated with respect to the format.  After upgrade, this format will be validated and existing clients may receive a `400 Bad Request` error if they are sending invalid IP addresses.
-
-| Feature | Swagger Endpoints | OpenAPI flow-trigger plugin |
-| ------- | ----------------- | --------------------------- |
-| OpenAPI 2.0 support | yes | yes |
-| OpenAPI 3.0 support | no | yes |
-| OpenAPI 3.1 support | no | no ¹ |
-| OpenAPI 2.0 specification schema validation | yes | yes |
-| OpenAPI 2.0 specification semantic validation | yes | yes |
-| OpenAPI 3.0 specification schema validation | no | yes |
-| OpenAPI 3.0 specification semantic validation | no | no ¹ |
-| Updating (re-importing) OpenAPI specification | no | yes |
-| Request validation | yes | yes ³ |
-| Response validation | no | yes |
-| Date parameters converted to JavaScript Date objects | yes | no ¹ |
-| [Dedupe of API path](#api-prefix) if same as `config.apiPrefix` | no | yes |
-| Default [response content-type header](#content-type-header) `application/json` | yes | no |
-| Default 200 response with no flow [Response](/docs/developer_guide/flows/flow_nodes/http_response_flow_node) | yes | no |
-| Permit undocumented [response content-type header](#content-type-header) | yes | no |
-| Auto select [response content-type header](#content-type-header) | no | yes |
-| JSON schema validation for format "date" | yes | yes |
-| JSON schema validation for format "time" | yes | yes |
-| JSON schema validation for format "date-time" | yes | yes |
-| JSON schema validation for format "uri" | no | yes |
-| JSON schema validation for format "uri-template" | no | yes |
-| JSON schema validation for format "url" | no | yes |
-| JSON schema validation for format "email" | no | yes |
-| JSON schema validation for format "hostname" | no | yes |
-| JSON schema validation for format "ipv4" | no | yes |
-| JSON schema validation for format "ipv6" | no | yes |
-| JSON schema validation for format "regex" | no | yes |
-| JSON schema validation for format "uuid" | no | yes |
-| JSON schema validation for format "json-pointer" | no | yes |
-| JSON schema validation for format "relative-json-pointer" | no | yes |
-| JSON schema validation for OpenAPI format "int32" | no | yes |
-| JSON schema validation for OpenAPI format "int64" | no | yes |
-| JSON schema validation for OpenAPI format "float" | no | no ² |
-| JSON schema validation for OpenAPI format "double" | no | no ² |
-| JSON schema validation for OpenAPI format "byte" | no | yes |
-| JSON schema validation for OpenAPI format "binary" | no | no ² |
-| JSON schema validation for OpenAPI format "password" | no | no ² |
-
-1. Currently unsupported.
-1. Can be used for documentation purposes, but the format is not validated.
+| Parameter | Type | Description | Configuration selection | Default | Required |
+| --- | --- | --- | --- | --- | --- |
+| API method | String | The OpenAPI [operationId](https://swagger.io/specification/#operationObject) of the method to bind. | Selector, String | - | Yes |
+| Flatten Parameters | String | When this option is enabled to `"true"`, all parameters will be accessible from `$.request.params`, as well as the normal ones from [flow input](#flow-inputs). This can make the flow less susceptible to changes in the OpenAPI operation. For example, if a query parameter `$.request.query.limit` is moved to a header, then the selector will change to `$.request.headers.limit`, and can break your flow. With this option enabled, it can be accessed `$.request.params.limit` regardless of where the parameter is moved. However, parameters are unique by their defined [OpenAPI parameter](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameterObject) `name` and `in` properties, so if the names clash, then they can be overwritten. | Selector, String | false | No |
+| Lower-case all headers | String | When this option is enabled to `"true"`, all OpenAPI parameters will be written to `$.request.headers` in lower-case, regardless of the case used in the OpenAPI specification. HTTP headers are case-insensitive, but OpenAPI parameter names are case-sensitive. This feature ensures that the application will treat all HTTP headers as lower-case, including the ones specified as OpenAPI parameters. | Selector, String | false | No |
+| Parse date parameters | String | When this option is enabled to `"true"`, all [OpenAPI parameter](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameterObject) that are dates (with format `date` or `date-time`), will be converted to [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date). | Selector, String | false | No |
+| Request validation | String | This option controls what happens when a request fails to validate. When the option is `"warn"`, a warning message will be logged to the console, but processing will continue. If the value is `"error"` (the default), then an error will be sent to the client. Required body and parameters are always enforced. | Selector, String | error | No |
+| Response validation | String | This option controls what happens when a response fails to validate against the OpenAPI specification. When the option is `"disabled"`, no validation will occur. When the option is `"warn"`, warning messages will be logged to the console, but processing will continue. If the value is `"error"` (the default), then an error will be sent to the client. Required body and parameters are always enforced. | Selector, String | error | No |

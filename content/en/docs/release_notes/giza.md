@@ -27,7 +27,7 @@ Hide_readingtime: true
 * #6700: Previously, when editing flow-node or flow-trigger parameters in the flow-editor and switching to another flow-node or trigger of the same type with parameters that have not been configured, then the values from the previous selection would be visible. Now, the values of the previous selection are no longer still visible.
 * #6706: Previously, `@axway/api-builder-plugin-fn-xslt` did not handle errors when spawning an xslt3 process to parse xslt templates, causing a server crash with an "Uncaught Exception Error". Now, errors are handled by the flow-node.
 * #6732: OpenAPI plugins will no longer error with `cannot find @axway/api-builder-runtime instance` when running tests from a sub-directory of an {{% variables/apibuilder_prod_name %}} project.
-* #6732: OpenAPI plugins will now show the detail of any OAS validation errors that are found when running the unit tests, instead of just a count.
+* #6732: OpenAPI plugins will now show the detail of any OpenAPI validation errors that are found when running the unit tests, instead of just a count.
 
 {{% releasenotes/deprecations %}}
 

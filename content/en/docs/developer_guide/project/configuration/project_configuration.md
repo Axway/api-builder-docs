@@ -52,7 +52,7 @@ The following topics describe the project configuration settings.
 
 The `apiPrefix` forms the base of **all secured API** in the {{% variables/apibuilder_prod_name %}} service that you are developing. Authenticated access to all APIs that are bound to `apiPrefix` is controlled via `accessControl`.
 
-For example, the model "testuser" has its API bound to `/api/testuser`, the "testapi" has its API bound to `/api/testapi`, and the API endpoint examlple for Greet flow is bound to `/api/greet`.
+For example, a model "user" would have its API bound to `/api/user`.
 
 The apiPrefix is an important consideration when you are designing your API for use as an API endpoint in {{% variables/apibuilder_prod_name %}}. You might design your API so that all methods start with `/api`. For example, you might design your API as `/api/v1/calendar`. However, when it is imported into {{% variables/apibuilder_prod_name %}}, your path will be bound to `/api/api/v1/calendar`, which is not what you want. To achieve the desired result, the API needs to be designed _without_ the apiPrefix. The recommendation is to design your API with a versioned basePath "/v1", and then design your paths; for example, "/calendar". Your designed API, including its basePath, would have the method `/v1/calendar`, but when imported into {{% variables/apibuilder_prod_name %}}, it would be accessible as `/api/v1/calendar`.
 

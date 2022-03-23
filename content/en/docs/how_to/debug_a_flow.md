@@ -17,7 +17,7 @@ To debug a flow and enter parameters using flow Editor debugger:
 
 2\. In the debugger, flow **Parameters** are provided as JSON. The input differs depending on the debugger mode - this example shows **Basic** mode. See below for the difference between **Advanced** and **Basic** modes. The input parameters reflect what the flow would be provided when invoked by an Endpoint or another trigger.
 
-In this example we're providing an object with a username property. You can access any of the provided parameters by using a `selector` type input in a flow-node. Here, in **Basic** mode we would use $.params.username to access the username.
+In this example we are providing an object with a username property. You can access any of the provided parameters by using a `selector` type input in a flow-node. Here, in **Basic** mode we would use $.params.username to access the username.
 
 ![Screenshot_2020-09-24_at_11.09.26](/Images/screenshot_2020_09_24_at_11_09_26.png)
 
@@ -33,7 +33,7 @@ In this example we're providing an object with a username property. You can acce
 
 ## Basic mode
 
-For flows that are bound to Endpoints the debugger has an **Basic** mode available, which is the default debugger state. You can tell you're in **Basic** mode if you see **Switch to Advanced** in the top right corner of the debugger.
+For flows that are bound to Endpoints the debugger has an **Basic** mode available, which is the default debugger state. You can tell you are in **Basic** mode if you see **Switch to Advanced** in the top right corner of the debugger.
 
 ![Screenshot_2020-09-24_at_10.30.48](/Images/screenshot_2020_09_24_at_10_30_48.png)
 

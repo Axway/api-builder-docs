@@ -31,11 +31,11 @@ Services that use [OAuth 2.0 authorization](https://oauth.net/2/) require that r
 
 ### Configuring the Redirect URI
 
-When configuring your external service to support OAuth, it will request a redirect URI. After the user has authorized {{% variables/apibuilder_prod_name %}} access, this is the URI to which the browser is redirected with the authorization code. Where you configure this in your OAuth application is highly dependent on the service provider you're using. For example, if you are creating a Microsoft Application ([https://apps.dev.microsoft.com](https://apps.dev.microsoft.com/)), it is configured as a `Platform` setting.
+When configuring your external service to support OAuth, it will request a redirect URI. After the user has authorized {{% variables/apibuilder_prod_name %}} access, this is the URI to which the browser is redirected with the authorization code. Where you configure this in your OAuth application is highly dependent on the service provider you are using. For example, if you are creating a Microsoft Application ([https://apps.dev.microsoft.com](https://apps.dev.microsoft.com/)), it is configured as a `Platform` setting.
 
 ![apps.dev.microsoft.com_](/Images/apps_dev_microsoft_com_.png)
 
-If you're configuring a Google Application ([https://console.developers.google.com](https://console.developers.google.com/)), it is configured under the **Restrictions**.
+If you are configuring a Google Application ([https://console.developers.google.com](https://console.developers.google.com/)), it is configured under the **Restrictions**.
 
 ![console.developers.google.com](/Images/console_developers_google_com.png)
 

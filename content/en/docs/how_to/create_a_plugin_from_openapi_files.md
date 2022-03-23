@@ -6,7 +6,7 @@ date: 2021-10-01
 ---
 
 ## Introduction
-
+<!-- lint disable prohibited-strings -->
 In this tutorial, you will learn how to bundle [OpenAPI specifications](https://www.openapis.org) (aka Swagger, and OAS), into plugins so that they may be used as dependencies in {{% variables/apibuilder_prod_name %}} applications to orchestrate data between existing services via flow-nodes.
 
 ### Prerequisites
@@ -28,7 +28,7 @@ cd example-project
 Creating an new plugin to bundle OpenAPI specification files is similar to [Creating a standard flow-node plugin](/docs/how_to/create_a_custom_flow_node/), but the difference is you use a `--type=oas` argument.
 
 ```bash
-// Create a new OAS flow-node plugin
+// Create a new OpenAPI flow-node plugin
 
 axway builder plugin init --type=oas petstore
 cd api-builder-plugin-petstore
@@ -37,7 +37,7 @@ cd api-builder-plugin-petstore
 The CLI will create your plugin in a new directory called \`./api-builder-plugin-petstore\` and will install the dependencies for you. The new plugin has the following contents:
 
 ```bash
-// File contents of the OAS plugin
+// File contents of the OpenAPI plugin
 
 ├── package.json
 ├── openapi/
@@ -64,7 +64,7 @@ cp ~/Downloads/petstore.yaml ./openapi
 
 ### Install optional icon file(s)
 
-You can also optionally install an icon to use when the flow-node is displayed in the Flow editor. The icon file must have the same root name as your OAS specification file (e.g. "petstore.json" and "petstore.svg"), and can be any one of the supported image formats: bmp, jpeg, png, gif, tiff, or svg. For best results, use svg and keep the icon small and symmetrical (e.g. 50 x 50 pixels).
+You can also optionally install an icon to use when the flow-node is displayed in the Flow editor. The icon file must have the same root name as your OpenAPI specification file (e.g. "petstore.json" and "petstore.svg"), and can be any one of the supported image formats: bmp, jpeg, png, gif, tiff, or svg. For best results, use svg and keep the icon small and symmetrical (e.g. 50 x 50 pixels).
 
 ### Testing your plugin
 
@@ -88,7 +88,7 @@ npm install ./api-builder-plugin-petstore
 npm start
 ```
 
-You will find your new OAS plugin as a flow-node available in the [Flow editor](/docs/developer_guide/flows/).
+You will find your new OpenAPI plugin as a flow-node available in the [Flow editor](/docs/developer_guide/flows/).
 
 Note that this process creates an npm link to your plugin in your `package.json` file. You may or may not want this, depending on how you want to publish your plugin. To make your plugin re-usable, please refer to the [@axway/api-builder-sdk](https://www.npmjs.com/package/@axway/api-builder-sdk) README section on [Using the plugin](https://www.npmjs.com/package/@axway/api-builder-sdk#user-content-using-the-plugin).
 

@@ -23,7 +23,7 @@ In this release we officially shipped the OpenAPI flow-trigger and added the abi
 
 ## Fixes
 
-* #7322: In [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now logs the reason(s) for the failure to validate OpenAPI specifications.
+* #7322: In [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now logs the reason(s) for failing to validate OpenAPI specifications upon import.
 * #7327: In [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) added support for date string to Date object conversion for forms content types.
 
 {{% releasenotes/deprecations %}}

@@ -33,7 +33,7 @@ npx @axway/api-builder-openapi-upgrade
 
 After running, the command, you should see output similar to this:
 
-```
+```text
 API Builder OpenAPI upgrade, version 1.0.0
 
 ✔ Created: /home/jamie/piper/rdpp-swagger/apidocs/openapi/myapi.json
@@ -130,7 +130,7 @@ However, it is not easy to create a string from a `Date`. That is why we decided
 * `x-www-form-urlencoded` form parameters accessible, for example, with $.request.body.date
 
 {{% alert title="Tip" color="primary" %}}
-The [OpenAPI upgrade](/docs/guides_openapi/upgrading#upgrading-to-openapi-flow-trigger) will automatically enable [**Lower-case all headers**](/docs/guide_openapi/flows#lower-case-all-headers) for upgraded flows.
+The [OpenAPI upgrade](#upgrading-to-openapi-flow-trigger) will automatically enable [**Lower-case all headers**](/docs/guide_openapi/flows#lower-case-all-headers) for upgraded flows.
 {{% /alert %}}
 
 ### OpenAPI 2.0 basePath is ignored
@@ -183,7 +183,7 @@ This change was made because OpenAPI parameters are uniquely identified by the p
 If it is desirable to ensure all headers are lower-case, then there is an option on the **OpenAPI** flow-trigger to [**Lower-case all headers**](/docs/guide_openapi/flows#lower-case-all-headers).
 
 {{% alert title="Tip" color="primary" %}}
-The [OpenAPI upgrade](/docs/guides_openapi/upgrading#upgrading-to-openapi-flow-trigger) will automatically enable [**Lower-case all headers**](/docs/guide_openapi/flows#lower-case-all-headers) for upgraded flows.
+The [OpenAPI upgrade](#upgrading-to-openapi-flow-trigger) will automatically enable [**Lower-case all headers**](/docs/guide_openapi/flows#lower-case-all-headers) for upgraded flows.
 {{% /alert %}}
 
 ### Removed $.params
@@ -195,7 +195,7 @@ This change was made because OpenAPI parameters are uniquely identified by the p
 If it is desirable to continue to use `$.params`, then there is an option on the **OpenAPI** flow-trigger to [**Flatten parameters**](/docs/guide_openapi/flows#flatten-parameters).
 
 {{% alert title="Tip" color="primary" %}}
-The [OpenAPI upgrade](/docs/guides_openapi/upgrading#upgrading-to-openapi-flow-trigger) will automatically enable [**Flatten parameters**](/docs/guide_openapi/flows#flatten-parameters) for upgraded flows.
+The [OpenAPI upgrade](#upgrading-to-openapi-flow-trigger) will automatically enable [**Flatten parameters**](/docs/guide_openapi/flows#flatten-parameters) for upgraded flows.
 {{% /alert %}}
 
 ### Removed $.request.params
@@ -207,7 +207,7 @@ This change was made because it is was not user-friendly. The "params" is too cl
 If you encounter this issue, you should change your flow to access the parameters from `$.request.path`.
 
 {{% alert title="Tip" color="primary" %}}
-The [OpenAPI upgrade](/docs/guides_openapi/upgrading#upgrading-to-openapi-flow-trigger) will automatically enable [**Flatten parameters**](/docs/guide_openapi/flows#flatten-parameters) for upgraded flows, and these parameters can also be accessed from `$.params`.
+The [OpenAPI upgrade](#upgrading-to-openapi-flow-trigger) will automatically enable [**Flatten parameters**](/docs/guide_openapi/flows#flatten-parameters) for upgraded flows, and these parameters can also be accessed from `$.params`.
 {{% /alert %}}
 
 ### Removed $.request.cookies

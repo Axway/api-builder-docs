@@ -102,6 +102,7 @@ plugins:
       # https://github.com/Trott/remark-lint-prohibited-strings/blob/main/index.js
       { no: 'builder', yes: 'Builder', ignoreNextTo: '-' },
       { yes: 'API Builder' }, # case insensitive
+      { no: 'API First', yes: 'API-first' },
       { no: '[fF]alsey', yes: 'falsy' },
       { no: "[cC]an't", yes: 'cannot' },
       { no: "[iI]t's", yes: 'it is' },

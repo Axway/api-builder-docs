@@ -1,5 +1,5 @@
 ---
-title: Flows
+title: Implementing APIs with flows
 weight: 50
 date: 2022-03-01
 description: This chapter describes how to use flows with OpenAPI to receive the HTTP inputs and create an effective HTTP response.

@@ -36,8 +36,9 @@ After running, the command, you should see output similar to this:
 ```text
 API Builder OpenAPI upgrade, version 1.0.0
 
-✔ Created: /home/jamie/piper/rdpp-swagger/apidocs/openapi/myapi.json
-✔ Skipped installation, please run "npm install" manually
+✔ Created: /project/apidocs/openapi/myapi.json
+✔ Remove node_modules
+✔ Install dependencies
 
 Your application is now successfully upgraded.
 ```

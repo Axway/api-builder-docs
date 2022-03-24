@@ -217,3 +217,11 @@ Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoint
 This change was made because the OpenAPI specification should dictate the components that are passed into the flow.
 
 If you encounter an issue where you need to access parsed cookies from `$.request`, please submit a change request with the {{% variables/apibuilder_prod_name %}} team, and we will consider the request.
+
+### Axway schema references
+
+Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), Axway schema references were supported (for example, `$ref` that start with `schema:///`). Now, they are not supported.
+
+This change was made because there is currently no consistent way to support these. They are external to the API-first OpenAPI specification and there is currently no way to expose them to the clients, and therefore would not be consumable.
+
+If you encounter this issue, we recommend you add the schema to your OpenAPI specification and reference them that way.

@@ -20,11 +20,13 @@ To get started, see the [Getting Started With {{% variables/apibuilder_prod_name
 {{% variables/apibuilder_prod_name %}} offers:
 
 * Low code/no code approach
-* Based on standards (OpenAPI, Node.js, NPM, Javascript, JSON)
+* Based on standards (OpenAPI, Node.js, npm, JavaScript, JSON, JSON schema)
 * Optimized for use in containers
 * Pub-sub connectivity
-* A wide range of plugins
+* A wide range of [plugins](/docs/developer_guide/flows/flow_nodes)
 * Easily expandable using the available [{{% variables/apibuilder_prod_name %}} SDK](/docs/developer_guide/sdk)
+* REST development
+* [API-first](/docs/guide_openapi) development
 
 ### Flows
 
@@ -36,17 +38,17 @@ To get started, see the [Getting Started With {{% variables/apibuilder_prod_name
 
 You can even create custom flow-node plugins using the [{{% variables/apibuilder_prod_name %}} SDK](/docs/developer_guide/sdk).
 
-Plugins are installed as node modules and are easily shared with other developers in the {{% variables/apibuilder_prod_name %}} community using NPM.
+Plugins are installed as node modules and are easily shared with other developers in the {{% variables/apibuilder_prod_name %}} community using npm.
 
 ### API-first development
 
-In the API-first approach, you import an OpenAPI specification which defines the service you want to implement. This provides API Builder with the interface of your service, such as the paths, input parameters and outputs. You can then implement your service using flows.
+In the API-first approach, you import an OpenAPI specification which defines the service you want to implement. This provides {{% variables/apibuilder_prod_name %}} with the interface of your service, such as the paths, input parameters and outputs. You can then implement your service using flows.
 
-Learn more about [API-first with OpenAPI](/docs/developer_guide/guide_openapi.html).
+Learn more about [API-first with OpenAPI](/docs/guide_openapi).
 
 ### Event-driven services
 
-{{% variables/apibuilder_prod_name %}} allows you to create more than just REST APIs: Using available [flow-trigger plugins](/docs/developer_guide/flows/flow_triggers), you can build flows which are executed by events such as on a schedule, or through a subscription to pub-sub service like Apache Kafka.
+{{% variables/apibuilder_prod_name %}} allows you to create more than just REST APIs: Using available [flow-trigger plugins](/docs/developer_guide/flows/flow_triggers), you can build flows which are executed by events such as on a schedule, or through a subscription to pub-sub service like Apache [Kafka](/docs/developer_guide/flows/flow_triggers/kafka_consumer_flow_trigger).
 
 ### Database connectivity
 

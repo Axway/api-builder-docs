@@ -23,7 +23,7 @@ The performance of a flow depends significantly on what the flow is doing. Conne
 
 |     |     |
 | --- | --- |
-| Date of test | November 2020 ([Johannesburg](/docs/release_notes/johannesburg)) |
+| Date of test | March 2022 ([Johannesburg](/docs/release_notes/johannesburg)) |
 | Number of requests | 100,000 |
 | Concurrency | 10 |
 | Total time | 75.487 seconds |

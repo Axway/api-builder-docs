@@ -57,12 +57,6 @@ In addition to directly manipulating the method, path, or path parameters of an 
 
 ## Deleting OpenAPI documents
 
-Deleting your OpenAPI documents is one of these actions that should be taken with caution. It is an irreversible action that will have a big impact on your service as you are effectively removing a chunk from it. It is important to note that deleting an OpenAPI document will delete all associated flows too. Any non related flows will be preserved.
+Deleting your OpenAPI documents is an action that should be taken with caution. It is an irreversible action that can have a big impact on your service as you are removing the OpenAPI document and all associated flows from it. Any unrelated flows will be preserved.
 
-TODO: Insert gif here showcasing:
-* Pre-req: Have the bookstore that was imported earlier on already in the app.
-* Start by clicking API Doc & Test.
-* Select the Bookstore API.
-* Click Delete.
-* Confirm.
-* Show the restart and the redirect back to API Doc & Test.
+![OpenAPI edit flow](/Images/openapi_delete.gif)

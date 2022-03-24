@@ -29,7 +29,7 @@ After importing the API, the _API Doc & Test_ shows the rendered OpenAPI specifi
 1. In the **Body** property, enable the property by clicking the toggle switch.
 1. In the **Body** property, change the _Selector_ drop-down to _Object_.
 1. In the **Body** property, enter the value:<br>
-`{"id":"1234","isbn":"ISBN 1234", "title":"Moby Dick", "author":"Herman Melville","published":"1851-10-18"}`
+`{"id":"1234","isbn":"1234", "title":"Moby Dick", "author":"Herman Melville","published":"1851-10-18"}`
 1. Click **Close** and then **Save and exit**
 
 ![OpenAPI edit flow](/Images/openapi_quickstart_flow.gif)
@@ -46,7 +46,7 @@ Now that your **GET /books/{isbn}** is implemented, you can invoke your API.
 
 1. Click the **GET /books/{isbn}** row to expand the GET operation
 1. Click **Try it out**
-1. In the **isbn** parameter field, input `ISBN 1234`
+1. In the **isbn** parameter field, input `1234`
 1. Click the **Execute** button (you may need to scroll down)
 
 ## Accessing the API specification

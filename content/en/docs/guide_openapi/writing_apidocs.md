@@ -10,14 +10,14 @@ description: This chapter describes how to write OpenAPI specifications and best
 Currently, **OpenAPI** flow-trigger supports the following specifications:
 
 * [OpenAPI 2.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md)
-* [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md)
+* [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md)
 
 Note that OpenAPI 3.0 is the preferred standard for {{% variables/apibuilder_prod_name %}}. All links in our documentation will be to this standard, unless there is a specific need to link to OpenAPI 2.0. If you are using OpenAPI 2.0, you should consider moving to 3.0, but if you choose to remain on 2.0, you may have to refer back to equivalent sections in 2.0.
 
 Also note that [OpenAPI 3.1](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md) is currently not supported, but is on the roadmap.
 
 {{% alert title="Note" color="warning" %}}
-All links in our documentation will be to the preferred standard [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md), unless otherwise noted.
+All links in our documentation will be to the preferred standard [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md), unless otherwise noted.
 {{% /alert %}}
 
 ## Unsupported features
@@ -25,27 +25,27 @@ All links in our documentation will be to the preferred standard [OpenAPI 3.0](h
 The following features are currently unsupported by the **OpenAPI** flow-trigger. While you can document them in your OpenAPI specifications, their use may not work as expected during runtime. Unless otherwise indicated, assume that this is the case.
 
 * OpenAPI 3 requestBody `anyOf`, `oneOf`, `allOf`, and `not` are only supported for `application/json`. All other media types are not supported.
-* OpenAPI 3 parameter [content](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#parameterObject) is currently not supported, and `schema` is required.
-* OpenAPI 3 [link](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#link-object)¹.
-* OpenAPI 3 [callback](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#callbackObject)¹.
-* OpenAPI 3 parameter [media type encoding](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#encodingObject)¹.
-* OpenAPI 3 [discriminator](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#discriminatorObject).
+* OpenAPI 3 parameter [content](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#parameterObject) is currently not supported, and `schema` is required.
+* OpenAPI 3 [link](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#link-object)¹.
+* OpenAPI 3 [callback](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#callbackObject)¹.
+* OpenAPI 3 parameter [media type encoding](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#encodingObject)¹.
+* OpenAPI 3 [discriminator](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#discriminatorObject).
 * OpenAPI 2 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) for `tsv` (tab separated value).
 * OpenAPI 2 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) array of items more than one level deep (i.e. does not support array of array items).
 * OpenAPI 2 [collectionFormat](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#fixed-fields-7) `pipes` and `ssv` are not supported in `cookie`, `formData`, `header`, or `path` (only supported in `query`).
 * `multipart/form-data` with arrays of binary data is not supported, e.g. `curl -F file[]=a -F file[]=b`.
-* OpenAPI 3 [byte format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types)¹ is supported, but it will not automatically decode the base64 data.
-* OpenAPI 3 [base64 format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#considerations-for-file-uploads) is not supported because it is not really a valid [OpenAPI format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types). The example is invalid and should be "byte".
-* OpenAPI 3 cookie parameters for objects and arrays, `style="form", explode=true` [style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#style-examples) is not supported.
+* OpenAPI 3.0 [byte format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types)¹ is supported, but it will not automatically decode the base64 data.
+* OpenAPI 3.0 [base64 format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#considerations-for-file-uploads) is not supported. use `byte` instead.
+* OpenAPI 3 cookie parameters for objects and arrays, `style="form", explode=true` [style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-examples) is not supported.
 * In _API Doc & Test_, APIs with `multipart/form-data` or `application/x-www-form-urlencoded` bodies will fail to render examples and execute correctly if the body schema is missing an implicit `type: object`.
-* [Media-type parameters](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#media-types) such as `;charset=utf-8` in request and response are currently ignored.
-* OpenAPI [response header styles](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#headerObject).
+* [Media-type parameters](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#media-types) such as `;charset=utf-8` in request and response are currently ignored.
+* OpenAPI [response header styles](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#headerObject).
 
 1. Using this feature in your OpenAPI specification will not cause any runtime issues, but using it may confuse clients.
 
 ## JSON schema versions
 
-OpenAPI 2.0 and 3.1 both effectively support a subset of JSON schema draft-04 with additional restrictions and formats. Though, [OpenAPI 2.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#data-types) supports [json-schema-draft-04](https://json-schema.org/specification-links.html#draft-4), and [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#dataTypes) supports the [Wright JSON schema](https://json-schema.org/specification-links.html#draft-5), which is effectively draft-04 with some fixes (aka "json-schema-draft-05").
+OpenAPI 2.0 and 3.1 both effectively support a subset of JSON schema draft-04 with additional restrictions and formats. Though, [OpenAPI 2.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#data-types) supports [json-schema-draft-04](https://json-schema.org/specification-links.html#draft-4), and [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#dataTypes) supports the [Wright JSON schema](https://json-schema.org/specification-links.html#draft-5), which is effectively draft-04 with some fixes (aka "json-schema-draft-05").
 
 When writing JSON schema, understand that you are more/less targeting draft-04 syntax, and not any of the other [draft specifications](https://json-schema.org/specification-links.html).
 
@@ -69,13 +69,13 @@ The following formats are available for JSON schema validation:
 | uuid | [JSON schema](https://json-schema.org/understanding-json-schema/reference/string.html#resource-identifiers) | yes |
 | json-pointer | [JSON schema](https://json-schema.org/understanding-json-schema/reference/string.html#json-pointer) | yes |
 | relative-json-pointer | [JSON schema](https://json-schema.org/understanding-json-schema/reference/string.html#json-pointer) | yes |
-| int32 | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types) | yes |
-| int64 | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types) | yes |
-| float | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types) | no |
-| double | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types) | no |
-| byte | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types) | yes |
-| binary | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types) | no |
-| password | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#data-types) | no |
+| int32 | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types) | yes |
+| int64 | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types) | yes |
+| float | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types) | no |
+| double | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types) | no |
+| byte | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types) | yes |
+| binary | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types) | no |
+| password | [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types) | no |
 
 ## OpenAPI editors
 
@@ -111,7 +111,7 @@ Any [OpenAPI 2.0 fields](https://github.com/OAI/OpenAPI-Specification/blob/main/
 
 ### Overriding servers, host, schemes, or basePath
 
-There is a list of optional [`apidoc.overrides`](/docs/developer_guide/project/configuration/project_configuration#apidoc) that you can specify as part of your service configuration that would allow you to tweak how the API specification is generated. This allows you to tweak specific OpenAPI values that are useful when the service is not consumed directly, such as when the services is exposed through a proxy. For example, you can change the defined [OpenAPI servers](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#openapi-object), allowing the server URL(s) to be changed for different hosting environments, such as development, test, or production.
+There is a list of optional [`apidoc.overrides`](/docs/developer_guide/project/configuration/project_configuration#apidoc) that you can specify as part of your service configuration that would allow you to tweak how the API specification is generated. This allows you to tweak specific OpenAPI values that are useful when the service is not consumed directly, such as when the services is exposed through a proxy. For example, you can change the defined [OpenAPI servers](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#openapi-object), allowing the server URL(s) to be changed for different hosting environments, such as development, test, or production.
 
 {{% alert title="Tip" color="primary" %}}
 Plan on using the {{% variables/apibuilder_prod_name %}} [apidoc.overrides](/docs/developer_guide/project/configuration/project_configuration#apidoc) overrides for every hosting environment. You do not have to try to define all the environment(s) within one document.
@@ -119,7 +119,7 @@ Plan on using the {{% variables/apibuilder_prod_name %}} [apidoc.overrides](/doc
 
 ### Use operationId
 
-**OpenAPI** flow-trigger uses the [`operationId`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#fixed-fields-8) to uniquely identify operations, which are necessary when binding specific API operations to flows. While the `operationId` is optional in OpenAPI, we would recommend using it. If one is not provided, **OpenAPI** flow-trigger will generate one dynamically from the operation HTTP method and path (including path parameters), unnecessarily tightly couples the dynamically generated `operationId` to the operation. This can have an adverse affect of unbinding previously bound flows, if any of these properties change.
+**OpenAPI** flow-trigger uses the [`operationId`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#fixed-fields-8) to uniquely identify operations, which are necessary when binding specific API operations to flows. While the `operationId` is optional in OpenAPI, we would recommend using it. If one is not provided, **OpenAPI** flow-trigger will generate one dynamically from the operation HTTP method and path (including path parameters), unnecessarily tightly couples the dynamically generated `operationId` to the operation. This can have an adverse affect of unbinding previously bound flows, if any of these properties change.
 
 Using `operationId` has the following benefits:
 
@@ -133,7 +133,7 @@ Using OpenAPI `operationId` will make managing OpenAPI easier.
 
 ### Security definitions are removed
 
-**OpenAPI** flow-trigger will remove all [security requirements](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#securityRequirementObject), and [security schemes](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#componentsSecuritySchemes) from the entire OpenAPI specification. This is because {{% variables/apibuilder_prod_name %}} has its own [configurable authentication](/docs/developer_guide/project/configuration/project_configuration#accesscontrol), and it will replace the security with its own.
+**OpenAPI** flow-trigger will remove all [security requirements](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#securityRequirementObject), and [security schemes](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#componentsSecuritySchemes) from the entire OpenAPI specification. This is because {{% variables/apibuilder_prod_name %}} has its own [configurable authentication](/docs/developer_guide/project/configuration/project_configuration#accesscontrol), and it will replace the security with its own.
 
 {{% alert title="Tip" color="primary" %}}
 You do not need to define your own OpenAPI security, {{% variables/apibuilder_prod_name %}} will do that for you.

@@ -148,12 +148,12 @@ Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoint
 
 | Selector | See also | Description |
 | -------- | --- | ----------- |
-| $.request.body | [Request body](/docs/guide_openapi/request_handling#request-body) | The processed [OpenAPI `requestBody`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#requestBodyObject) body. |
+| $.request.body | [Request body](/docs/guide_openapi/request_handling#request-body) | The processed [OpenAPI `requestBody`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#requestBodyObject) body. |
 | $.request.files | [Multipart files](/docs/guide_openapi/request_handling#multipart-files) | Any uploaded `multipart/form-data` file(s) |
-| $.request.cookies | [Request cookie parameters](/docs/guide_openapi/request_handling#request-cookie-parameters) | The processed, case-sensitive, [OpenAPI `cookie` parameter(s)](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameterObject), if provided. |
-| $.request.headers | [Request header parameters](/docs/guide_openapi/request_handling#request-header-parameters) | The processed, case-sensitive, [OpenAPI `header` parameter(s)](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameterObject), if provided. |
-| $.request.query | [Request query parameters](/docs/guide_openapi/request_handling#request-query-parameters) | The processed, case-sensitive, [OpenAPI `query` parameter(s)](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameterObject), if provided. |
-| $.request.path | [Request path parameters](/docs/guide_openapi/request_handling#request-path-parameters) | The processed, case-sensitive, [OpenAPI `path` parameter(s)](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameterObject), if provided. |
+| $.request.cookies | [Request cookie parameters](/docs/guide_openapi/request_handling#request-cookie-parameters) | The processed, case-sensitive, [OpenAPI `cookie` parameter(s)](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#parameterObject), if provided. |
+| $.request.headers | [Request header parameters](/docs/guide_openapi/request_handling#request-header-parameters) | The processed, case-sensitive, [OpenAPI `header` parameter(s)](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#parameterObject), if provided. |
+| $.request.query | [Request query parameters](/docs/guide_openapi/request_handling#request-query-parameters) | The processed, case-sensitive, [OpenAPI `query` parameter(s)](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#parameterObject), if provided. |
+| $.request.path | [Request path parameters](/docs/guide_openapi/request_handling#request-path-parameters) | The processed, case-sensitive, [OpenAPI `path` parameter(s)](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#parameterObject), if provided. |
 
 This change was made because it provided full access to the raw request that could be used in an unsafe manner. It also exposes the flow to changes to the `ClientRequest` that can occur between implementations of Node.js.
 
@@ -177,7 +177,7 @@ If you encounter this issue, you should change your flow to access the fields fr
 
 ### The $.request.headers are different
 
-Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), all HTTP headers from the request would be passed to the flow where all of the keys were lower-case. While this is still true, if any HTTP header is an [OpenAPI parameter](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameterObject), then the case will be preserved.
+Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), all HTTP headers from the request would be passed to the flow where all of the keys were lower-case. While this is still true, if any HTTP header is an [OpenAPI parameter](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#parameterObject), then the case will be preserved.
 
 This change was made because OpenAPI parameters are uniquely identified by the properties `in` and `name`, where `name` is case-sensitive. Because of this, all parameters are now accessed through their [HTTP request component parts](/docs/guide_openapi/upgrading#the-request-is-different), which guarantees uniqueness, but also preserves case (when applicable).
 
@@ -213,7 +213,7 @@ The [OpenAPI upgrade](#upgrading-to-openapi-flow-trigger) will automatically ena
 
 ### Removed $.request.cookies
 
-Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), all HTTP cookies were parsed and passed through `$.request.cookies`. Now, only actual OpenAPI 3.x [cookie parameters](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#parameterObject) are passed to the flow from `$.request.cookies`. In OpenAPI 2.0, there is no such thing as a "cookie parameter". However, the raw cookie is accessible from `$.request.headers.cookie` if it is needed.
+Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), all HTTP cookies were parsed and passed through `$.request.cookies`. Now, only actual OpenAPI 3.x [cookie parameters](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#parameterObject) are passed to the flow from `$.request.cookies`. In OpenAPI 2.0, there is no such thing as a "cookie parameter". However, the raw cookie is accessible from `$.request.headers.cookie` if it is needed.
 
 This change was made because the OpenAPI specification should dictate the components that are passed into the flow.
 

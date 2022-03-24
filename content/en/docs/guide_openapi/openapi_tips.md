@@ -43,16 +43,16 @@ In {{% variables/apibuilder_prod_name %}}, you can manage the `servers` using [a
 
 ## Use examples
 
-OpenAPI [examples](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#exampleObject) can greatly assist the developer in using your API because JSON schema is hard to read. They are understood by the UI and assist in being able to try your API with little effort.
+OpenAPI [examples](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#exampleObject) can greatly assist the developer in using your API because JSON schema is hard to read. They are understood by the UI and assist in being able to try your API with little effort.
 
 ## Reusable components
 
 JSON schema can take a lot of time to get right and to document correctly. You really want to limit the number of changes required to make changes/updates. [JSON schema references](https://json-schema.org/understanding-json-schema/structuring.html#ref) are a powerful tool and can greatly reduce the size of your OpenAPI document. Smaller documents will be easier to manage, validate faster, and download faster.
 
-It is generally a good idea to use [OpenAPI components](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#componentsObject), and then refer to these components using JSON schema references (`$ref`).
+It is generally a good idea to use [OpenAPI components](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#componentsObject), and then refer to these components using JSON schema references (`$ref`).
 
 {{% alert title="Tip" color="primary" %}}
-Reusable [OpenAPI components](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#componentsObject) will save time and make the document easier to adapt.
+Reusable [OpenAPI components](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#componentsObject) will save time and make the document easier to adapt.
 {{% /alert %}}
 
 ## JSON Schema tips

@@ -13,7 +13,7 @@ Supports stricter parameter styles and binary body validation.
 
 ## Features
 
-* #7153: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now enforces stricter parameter [styles](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#style-values), returning 400 when the encoding is incorrect.
+* #7153: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now enforces stricter parameter [styles](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-values), returning 400 when the encoding is incorrect.
 * #7182: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) request body validation refactored to support binary and non-JSON body.
 * #7182: [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) now supports non-JSON and non-text body as `Buffer`.
 * #7182: [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) now supports all JSON content-type `application/*+json`.

@@ -1,3 +1,2 @@
 {{ range .Page.Pages }}
-* [{{ .Title }}]({{ .Permalink }}){{ range .Pages }}
-  * [{{ .Title }}]({{ .Permalink }}){{ end }}{{ end }}
+* [{{ .Title }}]({{ .Permalink }}){{ range .Pages }}{{ end }}{{ end }}

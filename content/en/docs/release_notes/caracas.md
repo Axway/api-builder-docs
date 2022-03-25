@@ -7,7 +7,7 @@ Hide_readingtime: true
 ---
 ## Summary
 
-In this release, [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) HTTP request validation was refactored to resolve a number of issues with validating binary body and form-data. We also provide stricter parsing for the [OpenAPI 3.0 style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#style-values) parameters. We addressed [CVE-2021-3918](https://nvd.nist.gov/vuln/detail/CVE-2021-3918), completely removing the deprecated [request](https://www.npmjs.com/package/request) module from the product. With this change, we also upgraded the [{{% variables/apibuilder_prod_name %}} CLI](https://www.npmjs.com/package/@axway/amplify-api-builder-cli) which is now version 2.0.0.
+In this release, [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) HTTP request validation was refactored to resolve a number of issues with validating binary body and form-data. We also provide stricter parsing for the [OpenAPI 3.0 style](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-values) parameters. We addressed [CVE-2021-3918](https://nvd.nist.gov/vuln/detail/CVE-2021-3918), completely removing the deprecated [request](https://www.npmjs.com/package/request) module from the product. With this change, we also upgraded the [{{% variables/apibuilder_prod_name %}} CLI](https://www.npmjs.com/package/@axway/amplify-api-builder-cli) which is now version 2.0.0.
 
 {{% releasenotes/upgrade %}}
 

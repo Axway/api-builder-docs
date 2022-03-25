@@ -1,17 +1,17 @@
 ---
-title: Swagger flow-node
-linkTitle: Swagger flow-node
+title: OpenAPI client flow-node
+linkTitle: OpenAPI client flow-node
 weight: 210
 date: 2021-10-01
 ---
 
 ## Overview
 
-The plugin @axway/api-builder-plugin-fn-swagger loads OpenAPI 2.0 and 3.x documents from the ./swagger folder in your application and generates one flow-node per OpenAPI document. The generated flow-nodes expose methods that can be used within {{% variables/apibuilder_prod_name %}} flows for communication with the API services described in your OpenAPI documents.
+The OpenAPI Client (previously known as the Swagger flow-node) loads OpenAPI specifications from the ./swagger folder in your application and generates one flow-node per OpenAPI specification. The generated flow-nodes expose methods that can be used within {{% variables/apibuilder_prod_name %}} flows for communication with the API services described in your OpenAPI specifications.
 
-Support for OpenAPI 3 was added in version 2.7.0.
+Support for OpenAPI 3.0 was added in version 2.7.0.
 
-The Swagger plugin is installed as part of the default {{% variables/apibuilder_prod_name %}} project; however, if you need to manually install it for some reason, navigate to your application folder and execute the following command:
+The OpenAPI client is installed as part of the default {{% variables/apibuilder_prod_name %}} project; however, if you need to manually install it, you can install it from the _Plugins_ page in the {{% variables/apibuilder_prod_name %}} console. Alternatively, navigate to your application folder and execute the following command:
 
 ```bash
 npm install --no-optional @axway/api-builder-plugin-fn-swagger
@@ -19,27 +19,27 @@ npm install --no-optional @axway/api-builder-plugin-fn-swagger
 
 For additional getting started information, refer to the [Getting Started With {{% variables/apibuilder_prod_name %}}](/docs/getting_started/).
 
-## Using the Swagger plugin
+## Using the OpenAPI client
 
-During the npm install, the plugin will create the `./swagger` folder in the root directory of your application. If the `./swagger` folder already exists, it will be preserved with all of its content. To use the plugin:
+During installation, the plugin will create the `./swagger` folder in the root directory of your application. If the `./swagger` folder already exists, it will be preserved with all of its content. To use the plugin:
 
 1. Place your OpenAPI files (in JSON or YAML format) into the `./swagger` folder.
-1. Place your service icons into the `./swagger` folder. This is optional but highly recommended to make your flows more readable. The icons must have the same name as the OpenAPI files for your service. Additionally, the icons must be one of the following file formats: `bmp`, `jpeg`, `jpg`, `png`, `gif`, `tiff`, or `svg`
-1. Execute **npm start** to start your application. The plugin will generate flow-nodes from your OpenAPI specifications and will be available in the **Connector** section of the flow-node list on the left side of the API Orchestration user interface. You should see a plugin listed for each Swagger file successfully loaded from your `./swagger` folder.
+1. Place your service icons into the `./swagger` folder. This is optional but highly recommended to make your flows more readable. The icons must have the same name as the OpenAPI files for your service. Additionally, the icons must be one of the following file formats: `bmp`, `jpeg`, `jpg`, `png`, `gif`, `tiff`, or `svg`.
+1. Execute **npm start** to start your application. The plugin will generate flow-nodes from your OpenAPI specifications and will be available in the **Connector** section of the flow-node list on the left side of the flow editor. You should see a plugin listed for each OpenAPI file successfully loaded from your `./swagger` folder.
 
-For example, here are the nodes for a service that has two OpenAPI documents, `gmail.json` and `petstore.yaml`. For the Gmail Swagger, we have included a PNG icon file. Swagger Petstore is using the default icon. For more information on using the plugin with Gmail, see [Authorization: Access Gmail using Swagger flow-node](/docs/how_to/authorization_access_gmail_using_swagger_flow_node).
+For example, here are the nodes for a service that has two OpenAPI specifications, `gmail.json` and `petstore.yaml`. For Gmail, we have included a PNG icon file. Petstore is using the default icon. For more information on using the plugin with Gmail, see [Authorization: Access Gmail using OpenAPI client](/docs/how_to/authorization_access_gmail_using_swagger_flow_node).
 
-![swaggerNodes](/Images/swaggernodes.png)
+![OpenAPI flow-nodes](/Images/swaggernodes.png)
 
-The flow-nodes generated for the Swagger service expose the methods that are defined in that OpenAPI document. For example, here we have imported a Swagger for Gmail, and the available methods are the APIs that the OpenAPI document describes.
+The generated flow-node for a service exposes the methods that are defined in that OpenAPI specification. For example, here we have imported a specification for Gmail, and the available flow-node methods are the individual Gmail APIs.
 
 ![gmail](/Images/gmail.png)
 
-The methods in the flow-nodes generated by the Swagger plugin expose all the parameters defined in the OpenAPI document, their descriptions, and the schema definitions.
+The methods in the flow-nodes generated by the OpenAPI client expose all the parameters defined in the OpenAPI specification, their descriptions, and the schema definitions.
 
 ![gmail-params](/Images/gmail_params.png) ![image2018-11-30_10_53_50](/Images/image2018_11_30_10_53_50.png)
 
-Here we have three outputs. All flow-nodes generated by the Swagger plugin will have at least **Default** and **Error** outputs, with more being available if the provided OpenAPI document advertises additional known status codes. In this case, the OpenAPI document advertises a known **200** status code for the API corresponding to the **gmail.users.messages.get** method.
+Here we have three outputs. All flow-nodes generated by the OpenAPI client will have at least **Default** and **Error** outputs, with more being available if the provided OpenAPI specification advertises additional known status codes. In this case, the OpenAPI specification advertises a known **200** status code for the API corresponding to the **gmail.users.messages.get** method.
 
 ![image2018-11-30_11_24_15](/Images/image2018_11_30_11_24_15.png)
 
@@ -53,11 +53,11 @@ Each output will describe the type of response data and a more complex schema of
 
 ### Authorization
 
-As well as parameters, the OpenAPI document describes the Authorization requirements of an API. If a Swagger flow-node requires authorization, the flow-node will expose that authorization as a parameter to allow you to set the credential to use. For more information on how authorization is defined in Swagger, see [https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#security-requirement-object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#security-requirement-object).
+As well as parameters, the OpenAPI specification describes the Authorization requirements of an API. If an OpenAPI client requires authorization, the flow-node will expose that authorization as a parameter to allow you to set the credential to use. For more information on how authorization is defined in OpenAPI, see the documentation for Security requirement objects in [OpenAPI 2.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#security-requirement-object) or [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#security-requirement-object).
 
 The flow-node supports API Key, HTTP Basic, and OAuth 2.0 credentials.
 
-For example, this OpenAPI document is defining an OAuth 2.0 security definition in the section `securityDefinitions` which it is named `Oauth2`. Subsequently, in the method definitions, the `Oauth2` security definition is specified as a requirement.
+For example, this OpenAPI specification is defining an OAuth 2.0 security definition in the section `securityDefinitions` which it is named `Oauth2`. Subsequently, in the method definitions, the `Oauth2` security definition is specified as a requirement.
 
 ```json
 // swagger/gmail.json
@@ -111,13 +111,13 @@ This parameter can be a `Selector`, a `String`, or a `Credential`. The `Selector
 
 ![cred_param](/Images/cred_param.png)
 
-To simplify populating the credential store with suitable credentials, the plugin will automatically generate stub credentials when loading new OpenAPI documents. For more information, see [Authorization in Swagger Plugin](/docs/developer_guide/credentials/authorization_in_swagger_plugin/). For more information on credentials, see [{{% variables/apibuilder_prod_name %}} Credentials](/docs/developer_guide/credentials/).
+To simplify populating the credential store with suitable credentials, the plugin will automatically generate stub credentials when loading new OpenAPI specifications. For more information, see [Authorization in OpenAPI client](/docs/developer_guide/credentials/authorization_in_swagger_plugin/). For more information on credentials, see [{{% variables/apibuilder_prod_name %}} Credentials](/docs/developer_guide/credentials/).
 
-## Configure the Swagger plugin
+## Configure the OpenAPI client
 
-In some scenarios, you may need to override the information in the OpenAPI document. For example, to connect to staging servers rather than production ones while in testing.
+In some scenarios, you may need to override the information in the OpenAPI specification. For example, to connect to staging servers rather than production ones while in testing.
 
-When a new OpenAPI document is loaded a default configuration file is created for it in the `conf` folder of your project.
+When a new OpenAPI specification is loaded a default configuration file is created for it in the `conf` folder of your project.
 
 ```javascript
 // conf/gmail.default.js
@@ -155,7 +155,7 @@ module.exports = {
 
 You can configure endpoint URI in the generated configuration file.
 
-Note, this only applies to OpenAPI 2 documents. For OpenAPI 3 documents, you can make use of Server parameters defined in the OpenAPI3 document, or provide a custom Server URL within the flow.
+Note, this only applies to OpenAPI 2 specifications. For OpenAPI 3 specifications, you can make use of Server parameters defined in the OpenAPI3 specification, or provide a custom Server URL within the flow.
 
 To configure the endpoint URI, set the following parameter:
 
@@ -172,7 +172,7 @@ Additionally, you can set the port, host, protocol, and base path as described i
 
 ## Accept and Content-Type
 
-Starting from version 2.3.0 the Swagger plugin respects the \`consumes\` and \`produces\` properties in OpenAPI documents. It is parsing this information and generates Advanced HTTP Options based on it.
+Starting from version 2.3.0 the OpenAPI client respects the \`consumes\` and \`produces\` properties in OpenAPI specifications. It is parsing this information and generates Advanced HTTP Options based on it.
 
 More specifically:
 
@@ -210,11 +210,11 @@ For Content-Type where methods have **formData** parameters:
 
 The system offers the possibility to override the default selection.
 
-If there are types specified in Swagger the user can select the desired type from the drop-down:
+If there are types specified in OpenAPI the user can select the desired type from the drop-down:
 
 ![Screen_Shot_2019-03-14_at_6.15.54_PM](/Images/screen_shot_2019_03_14_at_6_15_54_pm.png)
 
-If there is no consumes/produces information specified in Swagger, the system shows an input field rather than a drop-down, and the user can specify the value that they want to use:
+If there is no consumes/produces information specified in OpenAPI, the system shows an input field rather than a drop-down, and the user can specify the value that they want to use:
 
 ![Screen_Shot_2019-03-14_at_6.12.12_PM](/Images/screen_shot_2019_03_14_at_6_12_12_pm.png)
 
@@ -222,7 +222,7 @@ If there is no consumes/produces information specified in Swagger, the system sh
 
 ### Filtering invalid types
 
-According to RFC-7321, the " _**Internet media types ought to be registered with IANA according to the procedures defined in ..."**_ \- So, if the OpenAPI document contains invalid content types, the system will filter those types and will not show them in the UI. A package called **content-type** is used under the hood to verify the validity of the content type. It does not check if the type is registered in the IANA registry but check about the validity of its name. In other words, a type named **'application/jsonsssss'** will not be filtered but a type called **'banana'** will be filtered and not shown in the UI.
+According to RFC-7321, the " _**Internet media types ought to be registered with IANA according to the procedures defined in ..."**_ \- So, if the OpenAPI specification contains invalid content types, the system will filter those types and will not show them in the UI. A package called **content-type** is used under the hood to verify the validity of the content type. It does not check if the type is registered in the IANA registry but check about the validity of its name. In other words, a type named **'application/jsonsssss'** will not be filtered but a type called **'banana'** will be filtered and not shown in the UI.
 
 ## Decoding Response
 
@@ -232,4 +232,4 @@ Starting from version 2.3.0 the user has the option to configure the response fo
 
 ## Additional information
 
-For how-to information on accessing Gmail using a Swagger flow-node, refer to [Access Gmail using Swagger flow-node](/docs/how_to/authorization_access_gmail_using_swagger_flow_node).
+For how-to information on accessing Gmail using an OpenAPI client, refer to [Access Gmail using OpenAPI client](/docs/how_to/authorization_access_gmail_using_swagger_flow_node).

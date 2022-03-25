@@ -1,9 +1,4 @@
 openapi: 3.0.0
-servers:
-  - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com/wickedest7/bookstore/1.0.1
-  - description: Bookstore API service
-    url: https://localhost:8088/v1
 info:
   description: My bookstore service
   version: 1.0.1

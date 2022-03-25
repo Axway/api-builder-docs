@@ -37,12 +37,11 @@
   },
   "scripts": {
     "start": "npm run build:merge && cd build && mkdir -p public && hugo server -F",
-    "build": "npm run build:merge && npm run build:lint && npm run build:spell",
+    "build": "npm run build:merge && npm run build:lint",
     "build:lint": "remark --frail -r .remarkrc.yml content/en/docs/*",
     "build:spell": "spellchecker",
     "clean": "rm -rf build public",
-    "build:merge": "./build.sh",
-    "check:modules": "npx npm-check"
+    "build:merge": "./build.sh"
   },
   "dependencies": {
     "postcss": "^8.3.6"

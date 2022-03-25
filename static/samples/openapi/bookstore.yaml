@@ -177,21 +177,38 @@ components:
           type: string
           format: date
     BookWithId:
-      allOf:
-        - $ref: '#/components/schemas/BookWithoutId'
+      type: object
       properties:
-        id: {}
+        id:
+          type: number
+        isbn:
+          type: string
+        title:
+          type: string
+        author:
+          type: string
+        published:
+          type: string
+          format: date
       additionalProperties: false
       required:
         - id
+        - isbn
+        - title
+        - author
+        - published
     BookWithoutId:
-      allOf:
-        - $ref: '#/components/schemas/BookWithoutId'
+      type: object
       properties:
-        isbn: {}
-        title: {}
-        author: {}
-        published: {}
+        isbn:
+          type: string
+        title:
+          type: string
+        author:
+          type: string
+        published:
+          type: string
+          format: date
       additionalProperties: false
       required:
         - isbn

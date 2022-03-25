@@ -7,7 +7,7 @@ date: 2021-10-01
 
 Here, we define a baseline performance metric for {{% variables/apibuilder_prod_name %}} to help users with capacity planning or footprint estimations for deployments.
 
-The figure we supply is an indicative baseline for the most basic sample flow: GreetFlow. We will use this figure as an upper bound for the performance you can expect from a running container.
+The figure we supply is an indicative baseline for a simple GET API with one `string` query parameter. We will use this figure as an upper bound for the performance you can expect from a running container.
 
 The performance of a flow depends significantly on what the flow is doing. Connecting to external systems will be at the mercy of their response times and network latency, and complex data transformations (e.g. large XML transformations) will affect transaction processing. For this reason, we always recommend that you run your own performance benchmarking tests. You can find the tooling we used in the Apache Benchmark section at the end.
 

@@ -1,0 +1,320 @@
+openapi: 3.0.0
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/wickedest7/bookstore/1.0.1
+  - description: Bookstore API service
+    url: https://localhost:8088/v1
+info:
+  description: My bookstore service
+  version: 1.0.1
+  title: Bookstore API
+paths:
+  /books/{isbn}:
+    parameters:
+      - in: path
+        name: isbn
+        description: The ISBN
+        required: true
+        schema:
+          type: string
+    get:
+      tags:
+        - Books
+      description: Gets a book by ID
+      operationId: getBook
+      responses:
+        200:
+          description: The book
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/BookWithId'
+              examples:
+                MobyDick:
+                  $ref: '#/components/examples/Book'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    put:
+      tags:
+        - Books
+      description: Updates a book by ID
+      operationId: updateBook
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/BookWithId'
+          'application/x-www-form-urlencoded':
+            schema:
+              $ref: '#/components/schemas/BookWithId'
+      responses:
+        '204':
+          description: Success
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      tags:
+        - Books
+      description: Deletes a book by ID
+      operationId: deleteBook
+      responses:
+        '204':
+          description: Success
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /books:
+    get:
+      tags:
+        - Books
+      description: Search books.
+      operationId: searchBooks
+      parameters:
+        - $ref: '#/components/parameters/OffsetQuery'
+        - $ref: '#/components/parameters/LimitQuery'
+        - $ref: '#/components/parameters/FieldsQuery'
+        - in: query
+          description: The title to search.
+          name: title
+          schema:
+            type: string
+        - in: query
+          description: The published date to search.
+          name: date
+          schema:
+            type: string
+            format: date
+      responses:
+        default:
+          description: Books matching the search criteria.
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/ArrayOfBooks'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - Books
+      description: Creates a book
+      operationId: createBook
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/BookWithoutId'
+            examples:
+              MobyDick:
+                $ref: '#/components/examples/Book'
+          'application/x-www-form-urlencoded':
+            schema:
+              $ref: '#/components/schemas/BookWithoutId'
+      responses:
+        default:
+          description: The book
+          headers:
+            location:
+              description: The URL of the book
+              schema:
+                type: string
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+components:
+  schemas:
+    AxwayError:
+      type: object
+      description: Axway error response.
+      additionalProperties: true
+      properties:
+        success:
+          description: A boolean indicating failure.
+          type: boolean
+          enum:
+            - false
+        code:
+          description: The HTTP error code
+          type: number
+        message:
+          description: A summary of the error
+          type: string
+        errors:
+          description: An array of errors for additional context
+          type: array
+          items:
+            type: string
+            minLength: 1
+    BookFields:
+      type: object
+      additionalProperties: true
+      properties:
+        id:
+          type: number
+        isbn:
+          type: string
+        title:
+          type: string
+        author:
+          type: string
+        published:
+          type: string
+          format: date
+    BookWithId:
+      allOf:
+        - $ref: '#/components/schemas/BookWithoutId'
+      properties:
+        id: {}
+      additionalProperties: false
+      required:
+        - id
+    BookWithoutId:
+      allOf:
+        - $ref: '#/components/schemas/BookWithoutId'
+      properties:
+        isbn: {}
+        title: {}
+        author: {}
+        published: {}
+      additionalProperties: false
+      required:
+        - isbn
+        - title
+        - author
+        - published
+    ArrayOfBooks:
+      type: array
+      items:
+        $ref: '#/components/schemas/BookFields'
+  responses:
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - $ref: '#/components/schemas/AxwayError'
+            properties:
+              code:
+                type: number
+                enum:
+                  - 400
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            allOf:
+            - $ref: '#/components/schemas/AxwayError'
+            properties:
+              code:
+                type: number
+                enum:
+                  - 401
+    NotFound:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - $ref: '#/components/schemas/AxwayError'
+            properties:
+              code:
+                type: number
+                enum:
+                  - 404
+    PayloadTooLarge:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - $ref: '#/components/schemas/AxwayError'
+            properties:
+              code:
+                type: number
+                enum:
+                  - 413
+    InternalServerError:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - $ref: '#/components/schemas/AxwayError'
+            properties:
+              code:
+                type: number
+                enum:
+                  - 500
+    Book:
+      description: The book
+      content:
+        'application/json':
+          schema:
+            $ref: '#/components/schemas/BookWithId'
+          examples:
+            MobyDick:
+              $ref: '#/components/examples/Book'
+  parameters:
+    OffsetQuery:
+      name: offset
+      in: query
+      required: false
+      description: >-
+        A zero-based index from which the next page of records should be queried.
+      schema:
+        type: number
+        default: 0
+    LimitQuery:
+      name: limit
+      in: query
+      required: false
+      description: >-
+        A non-zero number that indicates the maximum number of records to return.
+        The number of records returned may be less than this `limit`.
+      schema:
+        type: number
+        default: 10
+        minimum: 1
+    FieldsQuery:
+      name: fields
+      in: query
+      style: form
+      explode: false
+      required: false
+      description: >-
+        A list of fields to use to filter the fields from the response and reduce
+        the payload size.
+      schema:
+        type: array
+        items:
+          type: string
+  examples:
+    Book:
+      summary: Array of books
+      value: {"isbn":"ISBN 0123","title":"Moby Dick","author":"Herman Melville","published":"1873-10-18"}
+    Books:
+      summary: Array of books
+      value: [{"isbn":"ISBN 0123","title":"Moby Dick","author":"Herman Melville","published":"1873-10-18"}]

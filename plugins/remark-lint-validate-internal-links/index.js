@@ -10,7 +10,7 @@ import unicode from 'unicode/category/index.js';
 const log = new debugModule('remark-lint:validate-internal-links');
 
 // This regex is used for finding hugo variables in the headings. It is somewhat
-// limited since we could have another type of parameters refered with <% text %>
+// limited since we could have another type of parameters referred with <% text %>
 // we well as spaces in the variables e.g. {{% deprecation/link D042 %}}.
 // If we have heading in mypage.md:  ## My heading is {{% deprecation/link D042 %}}
 // It will be displayed as: ## My heading is [D042](/docs/deprecations#D042)
@@ -40,7 +40,7 @@ const pluginConfig = {
  * The cache has the following structure => reference: warning. Valid references
  * have "warnings.valid" values. The purpose of the caches is to skip checking
  * links that already have been checked.
- * 
+ *
  * REFACTOR: The cache could be improved with storing the collected information
  * for files and their headings. Such information could be reused in
  * validateAnchors function.
@@ -366,7 +366,7 @@ function isNumber(r) {
 /**
  * Implements blackfriday algorithm for anchor sanitization:
  * https://pkg.go.dev/github.com/russross/blackfriday#hdr-Sanitized_Anchor_Names
- * 
+ *
  * @param {string} heading - the heading to produce anchor from.
  * @returns {string} the sanitized anchor.
  */

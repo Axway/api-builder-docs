@@ -9,13 +9,17 @@ date: 2021-10-01
 
 {{% variables/apibuilder_prod_name %}} detects plugins by searching for installed modules with the `api-builder-plugin-` prefix. Scoped packages with this prefix will also be detected. These plugins can contain a mixture of different component types.
 
-* flow-nodes
-* schemas
-* data connectors
+* Flow-nodes
+* Flow-triggers
+* Middleware
+* API specifications
+* Schemas
+* Data connectors
 
 Plugins which are released by Axway can be categorized by an additional prefix based on the components and functionality that they provide:
 
 * **flow-nodes**: `api-builder-plugin-fn-`
+* **flow-triggers**: `api-builder-plugin-ft-`
 * **data connectors**: `api-builder-plugin-dc-`
 
 For information on the Plugins UI, refer to [{{% variables/apibuilder_prod_name %}} Console](/docs/developer_guide/console/#plugins-tab).

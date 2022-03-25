@@ -58,9 +58,9 @@ Returning an undocumented header, or failing to return a required header in **He
 
 #### Content-type header
 
-The `content-type` header describes the response **Body**, if one is provided. You may not have to specify a content-type header in the HTTP response Headers as API Builder can automatically pick an appropriate HTTP response content-type header.
+The `content-type` header describes the response **Body**, if one is provided. You may not have to specify a `content-type` header in the HTTP response **Headers** as {{% variables/apibuilder_prod_name %}} can automatically pick an appropriate HTTP response `content-type` header, if the type of response **Body** set from the flow is matches the defined [OpenAPI response](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#responseObject).
 
- if the type of response **Body** set from the flow is ambiguous with respect to the defined [OpenAPI response](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#responseObject), you will have to specify a `content-type` header in the HTTP response **Headers**.
+If the type of response **Body** set from the flow is ambiguous with respect to the defined [OpenAPI response](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#responseObject), you will have to specify a `content-type` header in the HTTP response **Headers**.
 
 * If your flow explicitly sets a `content-type` header in **Headers**, it will be used.
 * If your flow does not set a response **Body** then a `content-type` header will not be set.
@@ -75,12 +75,17 @@ Currently wildcard media-types and parameters such as `charset` are not supporte
 
 ### Body
 
-{{% variables/apibuilder_prod_name %}} will automatically handle response body content encoding if the type of response **Body** set from the flow is unambiguous with respect to the defined [OpenAPI response content media type](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#mediaTypeObject).
+If a response **Body** is expected from the OpenAPI operation [response](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#responses-object) (i.e. a response [content](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#fixed-fields-15) is defined), then the flow must set a response **Body**.
 
-* If the **Body** is a `Buffer`, then the content will be sent as-is.
-* If the **Body** is a `string`, then it will be encoded as utf-8 by [Express.js](https://expressjs.com), and the `content-type` charset will be set to to "utf-8". If you do not want this, then you will have to use a `Buffer` instead, and specify the correct charset on your `content-type` header.
-* If the flow sets a **Body** _other_ than `string` or `Buffer`, and the `content-type` header is JSON (e.g. either explicitly `application/json` or [automatically chosen](#content-type-header)), then the value with be automatically encoded with [`JSON.stringify`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) with "utf-8" character encoding before sending to the client. If the body fails to be encoded as JSON, then this will result in an `ERROR` being logged to the console and an [`500 Internal Server Error`](#internal-server-error-500) being returned to the client.
-* If the flow sets a **Body** _other_ than `string` or `Buffer`, and the `content-type` header is not JSON, then the correct encoding cannot be determined and this will result in an `ERROR` being logged to the console and an [`500 Internal Server Error`](#internal-server-error-500) being returned to the client.
+If the response **Body** value from the flow does not match any defined [Status](#status), [content-type header](#content-type-header), and the [OpenAPI response content media type](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#mediaTypeObject), then this will result in an `ERROR` being logged to the console and an [`500 Internal Server Error`](#internal-server-error-500) being returned to the client.
+
+If the response **Body** is required and not provided, then this will result in an `ERROR` being logged to the console and an [`500 Internal Server Error`](#internal-server-error-500) being returned to the client.
+
+{{% variables/apibuilder_prod_name %}} will automatically handle response body content encoding, if the type of response **Body** set from the flow matches the defined [OpenAPI response content media type](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#mediaTypeObject).
+
+* If the flow explicitly sets a `Buffer`, then the content will be sent as-is.
+* If the flow is a `string`, then that will be sent without any additional encoding. However, [Express.js](https://expressjs.com) will automatically explicitly set the charset to "utf-8". If you do not want this, then you will have to use a `Buffer` instead and set the correct charset on your `content-type` header.
+* If the flow sets a response **Body** valid _other_ than `string` or `Buffer`, and the `content-type` header is JSON (e.g. either explicitly `application/json` or [automatically chosen](#content-type-header)), then the value with be automatically encoded with [`JSON.stringify`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) with "utf-8" character encoding before sending to the client.
 
 ### Required response body
 

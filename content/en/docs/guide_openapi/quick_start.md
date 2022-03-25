@@ -55,8 +55,8 @@ The OpenAPI specification you imported is served by the {{% variables/apibuilder
 
 The OpenAPI specification is bound to the following paths and is exposed by the service for download:
 
-* `/apidoc/swagger.json` (for legacy purposes)
-* `/apidoc/swagger.yaml` (for legacy purposes)
+* `/apidoc/swagger.json` (for model API and custom API)
+* `/apidoc/swagger.yaml` (for model API and custom API)
 * `/apidoc/openapi.json`
 * `/apidoc/openapi.yaml`
 

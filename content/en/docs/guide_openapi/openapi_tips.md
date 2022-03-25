@@ -57,7 +57,19 @@ Reusable [OpenAPI components](https://github.com/OAI/OpenAPI-Specification/blob/
 
 ## JSON Schema tips
 
-The following sections provide some guidance and recommendations when writing JSON schema.
+The following sections provide some guidance and recommendations when writing JSON schema. You should make your JSON schema as constrained as possible so that, by the time you need to handle the request in the flow, you can be sure that the data is exactly as you would expect. It means less bugs later and less checking later.
+
+### Required properties
+
+Use [required properties](http://json-schema.org/understanding-json-schema/reference/object.html#required-properties) if fields should be provided. While this is good for input validation, separate, less constrained schema may be required for [filtering fields](#filtering-fields).
+
+### Default value
+
+You can annotate an optional property to have a [default](http://json-schema.org/understanding-json-schema/reference/generic.html#annotations) value. This is convenient for clients as it documents what to expect when the value is not provided. However, it is for documentation purposes only. Optional values would need to be checked in the flow, and appropriate defaults handled manually.
+
+### Formats
+
+JSON schema [formats](https://json-schema.org/understanding-json-schema/reference/string.html#built-in-formats) can be used to additionally constrain `string` properties. It is very useful if a string property is expected to have a particular structure, for example, an [email address](https://json-schema.org/understanding-json-schema/reference/string.html#email-addresses).
 
 ### additionalProperties
 
@@ -71,6 +83,9 @@ User:
   properties:
     name:
       type: string
+    email:
+      type: string
+      format: email
 ```
 
 It looks good, and would require the "name" property, and would pass JSON schema validation with this input: `{"name":"bob"}`, but it would also pass validation with this input `{"name":"bob", "age": 12}`. That is because JSON schema allows additional properties by default. It is better to restrict the inputs to _exactly_ what you expect from the user, or it could cause problems (e.g. security or compatibility).
@@ -86,6 +101,9 @@ User:
   properties:
     name:
       type: string
+    email:
+      type: string
+      format: email
 ```
 
 {{% alert title="Tip" color="primary" %}}
@@ -95,6 +113,22 @@ The more constrained you make your schema, the less bugs you will have later, so
 ### Composition with allOf
 
 Composing schemas from sub-schemas seems logical, but can be tricky. We are not necessarily recommending that you use schema composition, but if you wan to, you should read [extending closed schemas](http://json-schema.org/understanding-json-schema/reference/object.html#extending-closed-schemas). It is debatable if this kind of composition and extra level of complexity is worth it, but it can help reduce the size of the schema.
+
+### Filtering fields
+
+It is very beneficial for clients to be able to filter fields from the results, instead of trying to pull back the entire result, which can be very large and degrade performance for both the client and server. If you follow these tips, then your JSON schema used for inputs will be very constrained, and require specific properties. Unfortunately, the same schema that is used for inputs cannot be re-used for filtering because filtering fields can remove these required properties and validation will fail. So, you may need JSON schema specifically for filtering.
+
+```yaml
+UserFields:
+  type: object
+  additionalProperties: false
+  properties:
+    name:
+      type: string
+    email:
+      type: string
+      format: email
+```
 
 ## Example REST API
 

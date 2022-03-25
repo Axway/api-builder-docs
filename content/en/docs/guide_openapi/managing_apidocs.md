@@ -16,11 +16,11 @@ If you do not already have an OpenAPI specification to manage, you can read our 
 
 ## Importing OpenAPI documents
 
-Currently, only one **OpenAPI** document is supported for **OpenAPI** flow-trigger. Once loaded, you can [update](#updating-openapi-documents) or [delete](#deleting-openapi-documents) it as required.
-
-Note that [OpenAPI 2.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md) and [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md) are supported, but that OpenAPI 3.0 is the preferred standard for {{% variables/apibuilder_prod_name %}}. Please see [OpenAPI specification support](/docs/guide_openapi/writing_apidocs#openapi-specification-support) for further details on the OpenAPI standards and their supported features.
+You can import OpenAPI documents from the _API Doc & Test_ page. Note that [OpenAPI 2.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md) and [OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md) are supported, but that OpenAPI 3.0 is the preferred standard for {{% variables/apibuilder_prod_name %}}. Please see [OpenAPI specification support](/docs/guide_openapi/writing_apidocs#openapi-specification-support) for further details on the OpenAPI standards and their supported features.
 
 ![OpenAPI import](/Images/openapi_quickstart_import.gif)
+
+Once loaded, you can [update](#updating-openapi-documents) or [delete](#deleting-openapi-documents) the document as required. You can import multiple OpenAPI documents with unique names, but you cannot import another OpenAPI document with the same name.
 
 ## Binding OpenAPI operations
 

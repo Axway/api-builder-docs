@@ -1,6 +1,6 @@
 ---
 title: OpenAPI tips
-weight: 40
+weight: 80
 date: 2022-03-01
 description: This document provides recommendations that help you write clear and compliant OpenAPI specifications. All examples in this document are OpenAPI 3.0.
 ---

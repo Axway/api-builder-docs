@@ -19,7 +19,9 @@ Brief summary of the notable release contents.
 * #7268: Hides Flow-Triggers in Flow-Node panel when editing flows that are bound to OpenAPI specifications.
 * #7268: Hides OpenAPI flow-triggers from the list of Flow-Triggers in Flow-Node panel when editing flows.
 
-<!-- ## Fixes -->
+## Fixes
+
+* #7347: Updated [json-schema-faker](https://www.npmjs.com/package/json-schema-faker) to address npm-audit security issue #1067281 with sabotaged [faker](https://www.npmjs.com/package/faker) module.
 
 {{% releasenotes/deprecations %}}
 

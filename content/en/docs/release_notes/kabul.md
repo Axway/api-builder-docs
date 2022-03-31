@@ -13,7 +13,11 @@ Brief summary of the notable release contents.
 
 <!-- ## Breaking changes -->
 
-<!-- ## Features -->
+## Features
+
+* #7268: Prevents OpenAPI specification flow-triggers from being deleted in the flow editor.
+* #7268: Hides Flow-Triggers in Flow-Node panel when editing flows that are bound to OpenAPI specifications.
+* #7268: Hides OpenAPI flow-triggers from the list of Flow-Triggers in Flow-Node panel when editing flows.
 
 <!-- ## Fixes -->
 
@@ -29,4 +33,3 @@ Brief summary of the notable release contents.
 For a list of up-to-date known issues see [{{% variables/apibuilder_prod_name %}} known issues](/docs/known_issues/).
 
 {{% releasenotes/previous %}}
-

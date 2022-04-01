@@ -18,6 +18,7 @@ Brief summary of the notable release contents.
 * #7268: Prevents OpenAPI specification flow-triggers from being deleted in the flow editor.
 * #7268: Hides Flow-Triggers in Flow-Node panel when editing flows that are bound to OpenAPI specifications.
 * #7268: Hides OpenAPI flow-triggers from the list of Flow-Triggers in Flow-Node panel when editing flows.
+* #7355: In "API Doc & Test" page, changed the title of "API Endpoints" and removed "Endpoints" column.
 
 ## Fixes
 

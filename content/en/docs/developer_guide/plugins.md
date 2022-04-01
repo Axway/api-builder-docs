@@ -42,6 +42,22 @@ When {{% variables/apibuilder_prod_name %}} loads plugins, the configuration spe
 
 Other plugins, such as `api-builder-plugin-dc-`, may use a slightly different or legacy method of configuration. Check the readme of individual plugins for specific details.
 
+## Compatibility
+
+Since {{% variables/apibuilder_prod_name %}} version [Kabul](/docs/release_notes/kabul), {{% variables/apibuilder_prod_name %}} plugin compatibility can be defined using a semver range in `engines.apibuilder` in the plugin's `package.json`.
+
+This example shows that the plugin is compatible with {{% variables/apibuilder_prod_name %}} version 4.63.0 and newer.
+
+```json
+{
+  "engines": {
+    "apibuilder": ">=4.63.0"
+  }
+}
+```
+
+Attempting to install or use a plugin with an incompatible version of {{% variables/apibuilder_prod_name %}} will result in an error on startup.
+
 ## Creating your own plugins
 
 We provide a method to create shareable plugins that contain flow-nodes for orchestration within the flow editor. For this, you can use the [{{% variables/apibuilder_prod_name %}} SDK](/docs/developer_guide/sdk/).

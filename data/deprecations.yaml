@@ -435,3 +435,10 @@ D051:
   summary: >-
     The `disableServerBanner` config option has been deprecated in favor of
     [`http.headers.server`](/docs/developer_guide/project/configuration/project_configuration/#http).
+
+D052:
+  name: runtimePeerDependency
+  release: Kabul
+  summary: >-
+    Using dependencies with a peerDependency on @axway/api-builder-runtime has been deprecated and
+    may cause issues when using npm 7 or higher.

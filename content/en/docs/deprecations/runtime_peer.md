@@ -17,7 +17,7 @@ Peer dependencies are a feature of npm used in {{% variables/apibuilder_prod_nam
 
 ```json
 "peerDependencies": {
-  "@axway/api-builder-runtime": ">=4.5.0"
+  "@axway/api-builder-runtime": "^4.5.0"
 }
 ```
 
@@ -55,9 +55,9 @@ Check your plugin's package.json for a `peerDependencies` section. It may look l
 }
 ```
 
-Take note of the current peerDependency range for @axway/api-builder-runtime. In this example it is ">=4.5.0".
+Take note of the current peerDependency range for @axway/api-builder-runtime. In this example it is "^4.5.0".
 
-Now add an "apibuilder" key under "engines" as follows. If "engines" is not defined in your package.json then you should create it. The value should be identical to the peer dependency range above.
+Now add an "apibuilder" key under "engines" as follows. If "engines" is not defined in your package.json then you should create it. The value should be equivalent to the peer dependency range above. In this case we're using the `>=` syntax to specify ranges greater than or equal to `4.5.0`, although any valid semver expression can be used.
 
 ```json
 {
@@ -68,7 +68,7 @@ Now add an "apibuilder" key under "engines" as follows. If "engines" is not defi
     "apibuilder": ">=4.5.0"
   },
   "peerDependencies": {
-    "@axway/api-builder-runtime": ">=4.5.0"
+    "@axway/api-builder-runtime": "^4.5.0"
   }
 }
 ```

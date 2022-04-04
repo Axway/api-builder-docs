@@ -247,7 +247,7 @@ components:
 
 ### Path parameter names
 
-**OpenAPI** path parameter name(s) must be made up of “word characters” ([A-Za-z0-9_]).
+**OpenAPI** path parameter name(s) must be made up of word characters ([A-Za-z0-9_]).
 
 {{% alert title="Tip" color="primary" %}}
 File import will fail if the path parameter name(s) contains invalid characters.

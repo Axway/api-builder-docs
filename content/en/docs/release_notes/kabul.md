@@ -20,6 +20,7 @@ Brief summary of the notable release contents.
 * #7268: Hide OpenAPI flow-triggers from the list of flow-triggers in flow-nodes panel when editing flows.
 * #7355: In "API Doc & Test" page, changed the title of "API Endpoints" and removed "Endpoints" column.
 * #6933: Now reads `engines.apibuilder` from plugin `package.json` files to determine compatibility with the {{% variables/apibuilder_prod_name %}} version in use. Incompatible plugins will fail to start and will not be able to be installed from the "Plugins" page.
+* #7329: Added the ability to scaffold example projects to the api-builder cli - `api-builder init --example` to see the available examples.
 
 ## Fixes
 

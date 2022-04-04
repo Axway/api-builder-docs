@@ -78,6 +78,25 @@ If you want to narrow down the list of APIs, you can filter the results on the A
 axway builder init --get-catalog --filter="Marketo" marketing_api
 ```
 
+#### \--example
+
+ You can use the CLI to generate example projects that showcase a specific part of the product. To see the list of available examples:
+
+ ```bash
+$ axway builder init --example
+```
+
+You can navigate up and down the list of available examples using the arrow keys. To select an example press [Enter].
+
+Selecting an example will create the project and install its dependencies. After the installation is completed you will receive the location and instructions how to start the project:
+
+```bash
+Successfully created: api-builder-example-greet. To run:
+  cd api-builder-example-greet
+  npm start
+```
+
+
 #### \--no-install
 
 This command prevents the installation of dependent node_modules when the project is initialized. Using the same example project name as above.

@@ -16,9 +16,10 @@ Brief summary of the notable release contents.
 ## Features
 
 * #7268: Prevents OpenAPI specification flow-triggers from being deleted in the flow editor.
-* #7268: Hides Flow-Triggers in Flow-Node panel when editing flows that are bound to OpenAPI specifications.
-* #7268: Hides OpenAPI flow-triggers from the list of Flow-Triggers in Flow-Node panel when editing flows.
+* #7268: Hide the flow-triggers list in the flow-nodes panel when editing flows that are bound to OpenAPI specifications.
+* #7268: Hide OpenAPI flow-triggers from the list of flow-triggers in flow-nodes panel when editing flows.
 * #7355: In "API Doc & Test" page, changed the title of "API Endpoints" and removed "Endpoints" column.
+* #6933: Now reads `engines.apibuilder` from plugin `package.json` files to determine compatibility with the {{% variables/apibuilder_prod_name %}} version in use. Incompatible plugins will fail to start and will not be able to be installed from the "Plugins" page.
 
 ## Fixes
 

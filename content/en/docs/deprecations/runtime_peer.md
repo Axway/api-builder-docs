@@ -32,7 +32,7 @@ To avoid this, we introduced a new way of documenting compatibility with {{% var
 
 ## How does this impact my service
 
-If you are using {{% variables/apibuilder_prod_name %}} 4.60.0 and install a plugin with a mismatching {{% variables/apibuilder_prod_name %}} peer dependency, for example ">=4.3.0", then this could have one of two outcomes dependending on how {{% variables/apibuilder_prod_name %}} is installed:
+If you are using {{% variables/apibuilder_prod_name %}} 4.60.0 and install a plugin with a mismatching {{% variables/apibuilder_prod_name %}} peer dependency, for example ">=4.3.0", then this could have one of two outcomes depending on how {{% variables/apibuilder_prod_name %}} is installed:
 1. The install will output lots of warnings, but effectively complete, however your {{% variables/apibuilder_prod_name %}} version is now unexpectedly 4.3.0.
 1. The install fails due to mismatching version requirements.
 

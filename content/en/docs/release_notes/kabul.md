@@ -11,7 +11,9 @@ Brief summary of the notable release contents.
 
 {{% releasenotes/upgrade %}}
 
-<!-- ## Breaking changes -->
+## Breaking changes
+
+* #7102: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) OpenAPI specs are now validated to check for invalid path parameter names that contain characters that are incompatible with [Express route parameters](https://expressjs.com/en/guide/routing.html#route-parameters), i.e. names that contain characters other than `A-Z a-z 0-9 _`.
 
 ## Features
 
@@ -24,7 +26,6 @@ Brief summary of the notable release contents.
 
 ## Fixes
 
-* #7102: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) Fixed issue where `path` parameter names contain invalid character(s) including dashes.
 * #7347: Updated [json-schema-faker](https://www.npmjs.com/package/json-schema-faker) to address npm-audit security issue #1067281 with sabotaged [faker](https://www.npmjs.com/package/faker) module.
 
 {{% releasenotes/deprecations %}}

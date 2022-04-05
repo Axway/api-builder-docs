@@ -32,7 +32,11 @@ To avoid this, we introduced a new way of documenting compatibility with {{% var
 
 ## How does this impact my service
 
-If you are using {{% variables/apibuilder_prod_name %}} 4.60.0 and install a plugin with a mismatching {{% variables/apibuilder_prod_name %}} peer dependency, for example ">=4.3.0", then this will output lots of warnings on install, but effectively complete. The issue is that by installing this plugin, it has unexpectedly downgraded your {{% variables/apibuilder_prod_name %}} version to 4.3.0.
+If you are using {{% variables/apibuilder_prod_name %}} 4.60.0 and install a plugin with a mismatching {{% variables/apibuilder_prod_name %}} peer dependency, for example ">=4.3.0", then this could have one of two outcomes dependending on how {{% variables/apibuilder_prod_name %}} is installed:
+1. The install will output lots of warnings, but effectively complete, however your {{% variables/apibuilder_prod_name %}} version is now unexpectedly 4.3.0.
+1. The install fails due to mismatching version requirements.
+
+Existing services can keep working for now by using the `--legacy-peer-dependencies` flag to `npm install`, however fully upgrading your service is strongly recommended.
 
 ## Upgrading your service
 Most services will not be impacted as plugins will be updated at the same time as {{% variables/apibuilder_prod_name %}}, but if you are using a previous major version of a supported plugin, you should manually upgrade to use the latest compatible major version of that plugin.

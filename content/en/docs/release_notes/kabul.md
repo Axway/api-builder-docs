@@ -7,7 +7,7 @@ Hide_readingtime: true
 ---
 ## Summary
 
-Brief summary of the notable release contents.
+Added support for Node.js 16 and npm 8 for {{% variables/apibuilder_prod_name %}} runtime and plugins. All plugins now have an `engines.apibuilder` that indicate their compatibility support for `@axway/api-builder-runtime` and will error on install if they are incompatible. Also made UX improvements to the _API Doc & Test_ page to get rid of the confusing name "Endpoints", and to hide Flow-Triggers when editing flows that are bound to OpenAPI specifications (to prevent confusion).
 
 {{% releasenotes/upgrade %}}
 
@@ -15,6 +15,7 @@ Brief summary of the notable release contents.
 
 ## Features
 
+* #7345: Added support for Node.js 16.
 * #7102: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) OpenAPI specs are now validated to check for invalid path parameter names that contain characters that are incompatible with [Express route parameters](https://expressjs.com/en/guide/routing.html#route-parameters), i.e. names that contain characters other than `A-Z a-z 0-9 _`.
 * #7268: Prevents OpenAPI specification flow-triggers from being deleted in the flow editor.
 * #7268: Hide the flow-triggers list in the flow-nodes panel when editing flows that are bound to OpenAPI specifications.

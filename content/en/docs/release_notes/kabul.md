@@ -11,12 +11,11 @@ Brief summary of the notable release contents.
 
 {{% releasenotes/upgrade %}}
 
-## Breaking changes
-
-* #7102: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) OpenAPI specs are now validated to check for invalid path parameter names that contain characters that are incompatible with [Express route parameters](https://expressjs.com/en/guide/routing.html#route-parameters), i.e. names that contain characters other than `A-Z a-z 0-9 _`.
+<!-- ## Breaking changes -->
 
 ## Features
 
+* #7102: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) OpenAPI specs are now validated to check for invalid path parameter names that contain characters that are incompatible with [Express route parameters](https://expressjs.com/en/guide/routing.html#route-parameters), i.e. names that contain characters other than `A-Z a-z 0-9 _`.
 * #7268: Prevents OpenAPI specification flow-triggers from being deleted in the flow editor.
 * #7268: Hide the flow-triggers list in the flow-nodes panel when editing flows that are bound to OpenAPI specifications.
 * #7268: Hide OpenAPI flow-triggers from the list of flow-triggers in flow-nodes panel when editing flows.

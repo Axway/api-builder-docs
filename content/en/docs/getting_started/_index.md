@@ -56,6 +56,10 @@ axway pm install @axway/amplify-api-builder-cli
 
 ### Create a new {{% variables/apibuilder_prod_name %}} project
 
+{{% alert title="Note" %}}
+You can also create one of our pre-built [example projects](/docs/developer_guide/cli/#example) instead of creating a new one.
+{{% /alert %}}
+
 Once {{% variables/apibuilder_prod_name %}} CLI is installed, you can use it to create a new project. In the following example, the CLI will create and initialize a project called `myproject` in the `./myproject` directory.
 
 ```bash

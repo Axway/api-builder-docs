@@ -31,10 +31,9 @@ To avoid this, we introduced a new way of documenting compatibility with {{% var
 
 This issue impacts your service when you want to update the Node.js and npm versions in your environment. (The latest release of Node.js 16 is shipped with npm version 8).
 
-Existing services can continue to use the old `peerDependencies` behavior by using the `--legacy-peer-dependencies` flag to `npm install` with unmaintained versions of plugins, however fully upgrading your service is strongly recommended.
-
-## Upgrading your service
 Most services will not be impacted as plugins will be updated at the same time as {{% variables/apibuilder_prod_name %}}, but if you are using a previous version of a supported plugin, you should manually upgrade to use the latest version of that plugin.
+
+Existing services can continue to use the old `peerDependencies` behavior by using the `--legacy-peer-dependencies` flag to `npm install` with unmaintained versions of plugins, however fully upgrading your service is strongly recommended.
 
 ## Upgrading plugins that you own
 If you have created a plugin, then you should update it as follows, and publish a new version to stay fully compatible with the latest versions of npm:

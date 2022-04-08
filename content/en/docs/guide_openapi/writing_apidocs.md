@@ -247,8 +247,8 @@ components:
 
 ### Path parameter names
 
-The OpenAPI path parameter name(s) must be made up of word characters containing only: `A-Z a-z 0-9 _` according to [Express route parameters guide](https://expressjs.com/en/guide/routing.html#route-parameters).
+OpenAPI path parameter names must be made up of characters containing only: `A-Z a-z 0-9 _` according to [Express route parameters guide](https://expressjs.com/en/guide/routing.html#route-parameters).
 
 {{% alert title="Tip" color="primary" %}}
-OpenAPI file import will fail if the path parameter name(s) contains invalid characters.
+OpenAPI specifications will fail to import if path parameter names contain invalid characters.
 {{% /alert %}}

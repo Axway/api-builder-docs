@@ -23,22 +23,17 @@ Peer dependencies are a feature of npm, usually used for plugin packages, to doc
 
 ## Why are we making this change
 
-If you are using npm v7 and higher, then installing plugins that still contain `peerDependencies` on `@axway/api-builder-runtime` can have unexpected results. It can cause installation to fail, or it can install an unintended version of {{% variables/apibuilder_prod_name %}}.
-
-Existing services can continue to use the old `peerDependencies` behavior by using the `--legacy-peer-dependencies` flag to `npm install`, however fully upgrading your service is strongly recommended.
+If you are using npm version 1, 2, 7 and higher then peer dependencies are [automatically installed](https://nodejs.org/en/blog/npm/peer-dependencies/#using-peer-dependencies), and installing plugins that still contain `peerDependencies` on `@axway/api-builder-runtime` can have unexpected results. It can cause installation to fail, or it can install an unintended version of {{% variables/apibuilder_prod_name %}}.
 
 To avoid this, we introduced a new way of documenting compatibility with {{% variables/apibuilder_prod_name %}} - `engines.apibuilder`, and updated all our plugins.
 
 ## How does this impact my service
 
-If you are using {{% variables/apibuilder_prod_name %}} 4.60.0 and install a plugin with a mismatching {{% variables/apibuilder_prod_name %}} peer dependency, for example ">=4.3.0", then this could have one of two outcomes depending on how {{% variables/apibuilder_prod_name %}} is installed:
-1. The install will output lots of warnings, but effectively complete, however your {{% variables/apibuilder_prod_name %}} version is now unexpectedly 4.3.0.
-1. The install fails due to mismatching version requirements.
+This issue impacts your service when you want to update the Node.js and npm versions in your environment. (The latest release of Node.js 16 is shipped with npm version 8).
 
-Existing services can keep working for now by using the `--legacy-peer-dependencies` flag to `npm install`, however fully upgrading your service is strongly recommended.
+Most services will not be impacted as plugins will be updated at the same time as {{% variables/apibuilder_prod_name %}}, but if you are using a previous version of a supported plugin, you should manually upgrade to use the latest version of that plugin.
 
-## Upgrading your service
-Most services will not be impacted as plugins will be updated at the same time as {{% variables/apibuilder_prod_name %}}, but if you are using a previous major version of a supported plugin, you should manually upgrade to use the latest compatible major version of that plugin.
+Existing services can continue to use the old `peerDependencies` behavior by using the `--legacy-peer-dependencies` flag to `npm install` with unmaintained versions of plugins, however fully upgrading your service is strongly recommended.
 
 ## Upgrading plugins that you own
 If you have created a plugin, then you should update it as follows, and publish a new version to stay fully compatible with the latest versions of npm:

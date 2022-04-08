@@ -6,6 +6,8 @@ deprecation: D050
 date: 2021-10-01
 ---
 
+{{% alert title="Note" color="primary" %}}This document describes deprecation {{% deprecation/link D050 %}}{{% /alert %}}
+
 Sending a payload body with HTTP methods GET or HEAD to Swagger 2.0 endpoints have been deprecated since {{% variables/apibuilder_prod_name %}} [Roberttown](/docs/release_notes/roberttown) release.
 
 Beginning in the [Roberttown](/docs/release_notes/roberttown) release, payload body sent with GET or HEAD requests to Swagger 2.0 endpoints will be ignored.

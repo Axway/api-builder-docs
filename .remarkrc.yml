@@ -85,6 +85,7 @@ plugins:
       # { yes: 'JavaScript' },
       { yes: 'Node.js' },
       { yes: 'npm' },
+      { yes: 'CLI', ignoreNextTo: '-' },
       { yes: 'unix' },
       { yes: 'GitHub' },
       # { yes: 'Docker' },

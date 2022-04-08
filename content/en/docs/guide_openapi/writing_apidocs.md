@@ -244,3 +244,11 @@ components:
                 enum:
                   - 500
 ```
+
+### Path parameter names
+
+OpenAPI path parameter names must be made up of characters containing only: `A-Z a-z 0-9 _` according to [Express route parameters guide](https://expressjs.com/en/guide/routing.html#route-parameters).
+
+{{% alert title="Tip" color="primary" %}}
+OpenAPI specifications will fail to import if path parameter names contain invalid characters.
+{{% /alert %}}

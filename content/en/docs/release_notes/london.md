@@ -13,11 +13,14 @@ Brief summary of the notable release contents.
 
 <!-- ## Breaking changes -->
 
-<!-- ## Features -->
+## Features
+* #7367: Added new menu option "Generate API" to Models page that is enabled when the [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) is installed.
 
 ## Fixes
 
-* #7366: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) OpenAPI specs invalid path parameter names error message includes the link to the express route guide and also grouped the invalid path parameter names in a single path together into a single error message.
+* #7366: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now produces better error messages for OpenAPI specifications that contain invalid path parameter names.
+* #7367: Fixed issue where model endpoint generation for "distinct" API had invalid `200` response schema.
+* #7367: Fixed issue where API generated from memory models would fail schema validation when certain API were invoked (e.g. query, upsert).
 
 {{% releasenotes/deprecations %}}
 

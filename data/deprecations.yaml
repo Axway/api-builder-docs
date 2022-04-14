@@ -21,8 +21,7 @@ D003:
   summary: >-
     usage of `admin.disableAPIDoc` in the
     [project configuration](/docs/developer_guide/project/configuration/project_configuration)
-    has been deprecated. Use `apidoc.disabled` instead. If both values are provided,
-    `apidoc.disabled` will be preferred.
+    has been deprecated.
 
 D004:
   name: enableModelsWithNoPrimaryKey
@@ -442,3 +441,20 @@ D052:
   summary: >-
     Using dependencies with a peerDependency on @axway/api-builder-runtime has been deprecated and
     may cause issues when using npm 7 or higher.
+
+D053:
+  name: disableEndpoints
+  release: London
+  flag: true
+  comment: |-
+    Enabling this flag will not emit a deprecation warning for the usage of endpoints.
+  summary: >-
+    Endpoints feature has been deprecated, use OpenAPI plugin instead to import th specs.
+
+D054:
+  name: 'apidoc'
+  release: London
+  summary: >-
+    usage of `apidoc.disabled` in the
+    [project configuration](/docs/developer_guide/project/configuration/project_configuration)
+    has been deprecated.    

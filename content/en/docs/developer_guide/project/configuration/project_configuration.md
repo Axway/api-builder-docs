@@ -34,7 +34,7 @@ The following topics describe the project configuration settings.
 
 | Key | Type | Default | Description |
 | --- | --- | --- | --- |
-| disabled | Boolean | false | Set to `true` to display the generated OpenAPI Docs. Changing the setting only works in production. Swagger documentation is always available in dev mode. |
+| disabled | Boolean | false | **Deprecated {{% deprecation/link D054 %}}**. Set to `true` to display the generated OpenAPI Docs. Changing the setting only works in production. Swagger documentation is always available in dev mode. |
 | prefix | String | '/apidoc' | Prefix for the API documentation. |
 | overrides | object | {} | Overrides to Swagger documentation. Any values set here do not change the functionality of the server, only what is exposed in the Swagger. |
 | overrides.host | string | \- | OpenAPI 2 specific override. Hostname and optional port on which the server can be accessed. The value can be set to `null` to clear the `host`. |

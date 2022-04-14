@@ -14,6 +14,9 @@ Brief summary of the notable release contents.
 <!-- ## Breaking changes -->
 
 ## Features
+
+* #7215: Added new `disableEndpoints` deprecation flag which controls usage of endpoints if no spec plugin is installed.
+* #7215: Deprecated `apidoc.disabled` feature and removed from default configuration.
 * #7367: Added new menu option "Generate API" to Models page that is enabled when the [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) is installed.
 
 ## Fixes

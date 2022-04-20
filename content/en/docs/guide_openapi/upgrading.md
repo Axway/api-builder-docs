@@ -2,7 +2,7 @@
 title: Upgrading from endpoints
 weight: 90
 date: 2022-03-01
-description: If you are an existing customer, you may be familiar with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints) and have existing applications that you wish to upgrade to use **OpenAPI** flow-trigger. This document describes how to upgrade.
+description: If you are an existing customer, you may be familiar with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints) and have existing applications that you wish to upgrade to use the **OpenAPI** flow-trigger. This document describes how to upgrade.
 ---
 
 ## Overview
@@ -21,9 +21,9 @@ Support for [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints) wi
 
 Before upgrading, we recommend the following:
 
-1. Read this guide and get familiar with the [known differences](#known-differences) between Swagger endpoints and the new **OpenAPI**. For most applications, this upgrade should be very simple.
+1. Read this guide and get familiar with the [known differences](#known-differences) between Swagger endpoints and the new **OpenAPI** flow-trigger. For most applications, this upgrade should be very simple.
 1. Ensure that your application currently works as expected, and that all code paths are covered by tests. It will be much easier to test any change, including upgrades, if adequate tests are in place.
-1. Back up your application.
+1. Ensure your application is committed under source control, or backed up.
 
 Open a command prompt and change to the directory of the {{% variables/apibuilder_prod_name %}} project that you wish to upgrade. Note that this command will upgrade your application, and re-install your `node_modules` using npm.  If you do not want this, then you can provide the `--no-install` option:
 
@@ -43,9 +43,15 @@ API Builder OpenAPI upgrade, version 1.0.0
 Your application is now successfully upgraded.
 ```
 
-After you run the upgrade:
+To finalise the upgrade, and to fully disable the endpoints feature, add the following setting to your `default.js` file.
 
-1. Ensure that your application's tests pass.
+```javascript
+flags: {
+    disableEndpoints: true
+}
+```
+
+1. Ensure that your application's tests pass. There are a number of differences in behavior listed below that should be accounted for.
 1. Remove the `./endpoints` directory because it is no longer used (the files have been moved to `./apidocs/openapi`).
 1. Commit your changes to source control.
 

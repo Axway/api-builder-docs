@@ -15,15 +15,13 @@ Brief summary of the notable release contents.
 
 ## Features
 
-* #7215: Added new `disableEndpoints` deprecation flag which controls usage of endpoints if no spec plugin is installed.
-* #7215: Deprecated `apidoc.disabled` feature and removed from default configuration.
-* #7367: Added new menu option "Generate API" to Models page that is enabled when the [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) is installed.
+* #7367: Added new menu option "Generate API" to **Models** page that is enabled when [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) is installed, and replaces "Generate endpoints". This creates an OpenAPI 2.0 specification and flows with CRUD operations for the model which can be edited as needed.
 
 ## Fixes
 
 * #7366: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now produces better error messages for OpenAPI specifications that contain invalid path parameter names.
 * #7367: Fixed issue where model endpoint generation for "distinct" API had invalid `200` response schema.
-* #7367: Fixed issue where API generated from memory models would fail schema validation when certain API were invoked (e.g. query, upsert).
+* #7367: Fixed issue where API generated from memory models would fail schema validation when certain APIs were invoked (e.g. query, upsert).
 
 {{% releasenotes/deprecations %}}
 

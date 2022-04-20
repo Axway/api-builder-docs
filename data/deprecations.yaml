@@ -446,15 +446,13 @@ D053:
   name: disableEndpoints
   release: London
   flag: true
-  comment: |-
-    Enabling this flag will not emit a deprecation warning for the usage of endpoints.
   summary: >-
-    Endpoints feature has been deprecated, use OpenAPI plugin instead to import th specs.
+    Endpoints are deprecated and have been replaced with the [OpenAPI flow-trigger](/docs/developer_guide/flows/flow_triggers/oas_flow_trigger).
+    Follow [this guide](/docs/guide_openapi/upgrading) to replace endpoints in your service.
 
 D054:
-  name: 'apidoc'
+  name: apidoc.disabled
   release: London
   summary: >-
-    usage of `apidoc.disabled` in the
-    [project configuration](/docs/developer_guide/project/configuration/project_configuration)
-    has been deprecated.    
+    Usage of [`apidoc.disabled`](/docs/developer_guide/project/configuration/project_configuration#apidoc)
+    to stop OpenAPI documentation being accessible has been deprecated with no replacement.

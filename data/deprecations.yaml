@@ -456,5 +456,5 @@ D054:
   name: apidoc.disabled
   release: London
   summary: >-
-    usage of [`apidoc.disabled`](/docs/developer_guide/project/configuration/project_configuration#apidoc)
-    to stop OpenAPI documentation being accessible has been deprecated with no replacement.
+    usage of `apidoc.disabled` to stop OpenAPI documentation being accessible has been deprecated
+    with no replacement.

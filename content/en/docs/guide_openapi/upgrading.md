@@ -195,7 +195,7 @@ The [OpenAPI upgrade](#upgrading-to-openapi-flow-trigger) will automatically ena
 
 ### Removed $.params
 
-Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), all OpenAPI parameters were parsed and passed to the flow through `$.params`. Now, all OpenAPI parameters are accessed through their [HTTP request component parts](/docs/guide_openapi/upgrading#the-request-is-different).
+Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), all OpenAPI parameters were parsed and passed to the flow through `$.params`. Now, all OpenAPI parameters are accessed through their [HTTP request component parts](/docs/guide_openapi/upgrading#the-request-is-different). Also note that [OpenAPI 2.0 body parameters](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#parameterObject) could be accessed from the `$.params` using their parameter name. Now, the body parameter is always `$.request.body`.
 
 This change was made because OpenAPI parameters are uniquely identified by the properties `in` and `name`, where `name` is case-sensitive. This means that when using `$.params`, it is possible for parameter names to clash. Because of this, all parameters are now accessed through their [HTTP request component parts](/docs/guide_openapi/upgrading#the-request-is-different) which guarantees uniqueness.
 

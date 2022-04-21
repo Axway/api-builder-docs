@@ -7,7 +7,7 @@ Hide_readingtime: true
 ---
 ## Summary
 
-Brief summary of the notable release contents.
+Added the ability to "Generate API" from models to replace the previous "Generate endpoints" feature. Now, the API is generated as an OpenAPI specification and depends on the [OpenAPI flow-trigger plugin](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas).
 
 {{% releasenotes/upgrade %}}
 
@@ -16,6 +16,8 @@ Brief summary of the notable release contents.
 ## Features
 
 * #7367: Added new menu option "Generate API" to **Models** page that is enabled when [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) is installed, and replaces "Generate endpoints". This creates an OpenAPI 2.0 specification and flows with CRUD operations for the model which can be edited as needed.
+* #7215: Added {{% deprecation/link D053 %}} to deprecated endpoints.
+* #7215: Added {{% deprecation/link D054 %}} to deprecate `apidoc.disabled` configuration.
 
 ## Fixes
 

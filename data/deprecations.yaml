@@ -21,8 +21,7 @@ D003:
   summary: >-
     usage of `admin.disableAPIDoc` in the
     [project configuration](/docs/developer_guide/project/configuration/project_configuration)
-    has been deprecated. Use `apidoc.disabled` instead. If both values are provided,
-    `apidoc.disabled` will be preferred.
+    has been deprecated.
 
 D004:
   name: enableModelsWithNoPrimaryKey
@@ -433,12 +432,29 @@ D051:
   name: disableServerBanner
   release: Wrecsam
   summary: >-
-    The `disableServerBanner` config option has been deprecated in favor of
+    the `disableServerBanner` config option has been deprecated in favor of
     [`http.headers.server`](/docs/developer_guide/project/configuration/project_configuration/#http).
 
 D052:
   name: runtimePeerDependency
   release: Kabul
   summary: >-
-    Using dependencies with a peerDependency on @axway/api-builder-runtime has been deprecated and
+    using dependencies with a peerDependency on @axway/api-builder-runtime has been deprecated and
     may cause issues when using npm 7 or higher.
+
+D053:
+  name: disableEndpoints
+  release: London
+  flag: true
+  comment: |-
+    Disables endpoints
+  summary: >-
+    endpoints are deprecated and have been replaced with the [OpenAPI flow-trigger](/docs/developer_guide/flows/flow_triggers/oas_flow_trigger).
+    Follow [this guide](/docs/guide_openapi/upgrading) to replace endpoints in your service.
+
+D054:
+  name: apidoc.disabled
+  release: London
+  summary: >-
+    usage of `apidoc.disabled` to stop OpenAPI documentation being accessible has been deprecated
+    with no replacement.

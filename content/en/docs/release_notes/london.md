@@ -27,10 +27,18 @@ Added the ability to "Generate API" from models to replace the previous "Generat
 
 {{% releasenotes/deprecations %}}
 
-<!-- Regenerate modules/plugins with api-builder-tools generate-release-notes script -->
-<!-- ## Updated modules -->
+## Updated modules
 
-<!-- ## Updated plugins -->
+* [@axway/amplify-api-builder-cli@3.3.2](https://www.npmjs.com/package/@axway/amplify-api-builder-cli/v/3.3.2)
+* [@axway/api-builder@6.3.2](https://www.npmjs.com/package/@axway/api-builder/v/6.3.2)
+* [@axway/api-builder-admin@1.61.1](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.61.1)
+* [@axway/api-builder-runtime@4.87.2](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.87.2)
+* [@axway/api-builder-openapi-upgrade@1.0.4](https://www.npmjs.com/package/@axway/api-builder-openapi-upgrade/v/1.0.4)
+
+## Updated plugins
+
+* [@axway/api-builder-plugin-dc-mongo@1.2.1](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mongo/v/1.2.1)
+* [@axway/api-builder-plugin-ft-oas@1.3.1](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas/v/1.3.1)
 
 ## Known issues
 

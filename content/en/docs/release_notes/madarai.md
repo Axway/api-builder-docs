@@ -17,7 +17,9 @@ Hide_readingtime: true
 
 * #7371: The Microsoft [MSSQL connector](/docs/developer_guide/connectors/mssql_connector) plugin now supports tables created in schema other than "dbo".
 
-<!-- ## Fixes -->
+## Fixes
+
+* #7117: The API path conflict with other paths is now handled as log error/warning in the startup.
 
 {{% releasenotes/deprecations %}}
 

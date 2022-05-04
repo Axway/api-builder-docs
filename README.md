@@ -94,6 +94,8 @@ The most annoying part of this is lining up the chrome window and LICEcap window
 
 ![Setup Window resizer](/static_readme/window_resizer_settings.png)
 
+![capture screen](/static_readme/capture_screen.png)
+
 You may also need to open the console in your browser to stop the bottom edges being curved. You may also want to use the built-in magnifier (zoom on Mac) to ensure the recording viewport lines up correctly.
 
 ### Recording

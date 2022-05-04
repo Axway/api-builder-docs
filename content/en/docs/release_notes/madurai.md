@@ -7,7 +7,7 @@ Hide_readingtime: true
 ---
 ## Summary
 
-**TODO**: summary
+In this release we enhanced the **API Doc & Test** page to specifically list all available API specifications that the service implements, as well as where these documents can be accessed from. As usual, the specifications can be viewed, and APIs they contain can be tested and it is now more easy to download. The `Dynamic` OpenAPI specification created for every service is no longer hidden and is now visible on the **API Doc & Test** page. Additionally, we added support for non-default table schemas in the MSSQL plugin.
 
 {{% releasenotes/upgrade %}}
 
@@ -15,14 +15,15 @@ Hide_readingtime: true
 
 ## Features
 
-* #7358: Added the ability to individually download any of the existing service API specifications directly from the API Doc & Test page.
-* #7357: API Builder now dynamically generates an OpenAPI specification that documents the service programmatically defined APIs, routes, and dynamic APIs such as those automatically generated from from models. This specification is automatically generated and available on API Doc & Test page.
-* #7371: The Microsoft [MSSQL connector](/docs/developer_guide/connectors/mssql_connector) plugin now supports tables created in schema other than "dbo".
-* #7374: When creating Models, they no longer have API methods enabled by default.
+* #7358: The **API Doc & Test** page has been updated to show all top level API specifications documented by your service, and where they can be downloaded.
+* #7357: A new item for the `Dynamic` OpenAPI specification (`/apidoc/swagger.json`) has been added to **API Doc & Test** for all services. Individual API groups (for example for auto-generated model APIs or programmatic APIs) have been removed from this list and are now visible and testable as part of the `Dynamic` API specification. 
+* #7356: Added the ability to individually download any of the existing service API specifications directly from the **API Doc & Test** page, as well as from the respective specification pages.
+* #7371: The [MSSQL connector](/docs/developer_guide/connectors/mssql_connector) plugin now supports tables created in schema other than the database user's default schema (usually `dbo`).
+* #7374: When creating new models, API methods are not enabled by default.
 
 ## Fixes
 
-* #7117: The API path conflict with other paths is now handled as log error/warning in the startup.
+* #7117: Previously unhandled conflicts between OpenAPI paths and other API paths in your service are now detected.
 
 {{% releasenotes/deprecations %}}
 

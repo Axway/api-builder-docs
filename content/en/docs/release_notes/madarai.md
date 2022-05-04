@@ -16,6 +16,7 @@ Hide_readingtime: true
 ## Features
 
 * #7371: The Microsoft [MSSQL connector](/docs/developer_guide/connectors/mssql_connector) plugin now supports tables created in schema other than "dbo".
+* #7374: When creating Models, they no longer have API methods enabled by default.
 
 ## Fixes
 

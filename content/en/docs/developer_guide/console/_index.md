@@ -53,11 +53,13 @@ The **Summary** tab lists basic information about your application like app name
 
 ### API Doc & Test tab
 
-On startup, API endpoints are automatically generated for all models as per their default configuration. An API provides a way for a client to access your application, such as `GET <SERVER_ADDRESS>/api/users/query`, execute custom logic, internally access the application's models and APIs, and return data to the client application.
+An API document or specification is a file which defines the methods which are available on a service, how they are accessed, and what responses are expected. The **API Doc & Test** tab lists all specifications that your service implements.
 
-The **API Doc & Test** tab in the Admin Console contains generated docs of your application APIs, including how to call the API, multiple examples, and the ability to test the APIs. The generated docs use the information in the `description` fields of your JavaScript definition files to fill in some of the information. API definitions can also be imported by selecting the **\+ API** button. You can import an API from a Swagger definition by either selecting a file from your local file system or entering a URL. For additional information, refer to [Manage Endpoints](/docs/developer_guide/flows/manage_endpoints/).
+Documents may be dynamically generated from components of your service, such as the `Dynamic` OpenAPI 2.0 specification created by default on all services. External documents may also be imported and implemented using [API-first methodologies](/docs/guide_openapi/quick_start).
 
-![localhost_8080_console_project_summary_%281%29](/Images/localhost_8080_console_project_summary_(1).png)
+`Dynamic` specifications take their name and description from your services `package.json`.
+
+![API Doc & Test tab](/Images/console_tab_api_doc_and_test.png)
 
 ### Flows tab
 

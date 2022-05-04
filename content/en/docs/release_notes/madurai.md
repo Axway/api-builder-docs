@@ -15,6 +15,8 @@ Hide_readingtime: true
 
 ## Features
 
+* #7358: Added the ability to individually download any of the existing service API specifications directly from the API Doc & Test page.
+* #7357: API Builder now dynamically generates an OpenAPI specification that documents the service programmatically defined APIs, routes, and dynamic APIs such as those automatically generated from from models. This specification is automatically generated and available on API Doc & Test page.
 * #7371: The Microsoft [MSSQL connector](/docs/developer_guide/connectors/mssql_connector) plugin now supports tables created in schema other than "dbo".
 * #7374: When creating Models, they no longer have API methods enabled by default.
 

@@ -63,3 +63,42 @@ Named plugins shall be bold, but only the name, not the type.
 ### Pages
 
 Pages, such as _API Doc & Test_ shall be written in italic, and exactly as they appear in the UI.
+
+## Recording GIFs
+
+We record animated GIFs for better visualisation of process in the docs. We should be consistent when recording though, so everyone should follow the same steps to ensure that the docs look uniform and the animations are a reasonable file size.
+
+Tools:
+* Chrome
+* [Window resizer chrome extension](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh/related?hl=en) 
+* [LICEcap](https://www.cockos.com/licecap/)
+
+GIF properties:
+* 1240x720
+* 5fps
+* Infinite repeat count
+* The cursor is displayed
+* The entire viewport is recorded, but not the browser itself
+* Browser is at 100% zoom
+
+### Configuring utilities
+
+Ensure LICEcap is set to the correct fps and image size. This should be persisted, so only need to set it once.
+![Setup LICEcap](/static_readme/licecap_setup.gif)
+
+Install and configure Window resizer. I recommend setting a preset for API Builder recording.
+
+Ensure your resize target is viewport, and your width and height are 1240x720.
+
+The most annoying part of this is lining up the chrome window and LICEcap window. Click "use current" when configuring the Window resizer preset. This will allow you to keep the chrome window aligned with your LICEcap window in order to avoid having to reposition it to link up.
+
+![Setup Window resizer](/static_readme/window_resizer_settings.png)
+
+![capture screen](/static_readme/capture_screen.png)
+
+You may also need to open the console in your browser to stop the bottom edges being curved. You may also want to use the built-in magnifier (zoom on Mac) to ensure the recording viewport lines up correctly.
+
+### Recording
+When clicking record in LICEcap, ensure the following settings are configured.
+![Setup Window Resizer](/static_readme/licecap_settings.png)
+

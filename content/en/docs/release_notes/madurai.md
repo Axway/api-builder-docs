@@ -28,13 +28,12 @@ In this release we enhanced the **API Doc & Test** page to specifically list all
 {{% releasenotes/deprecations %}}
 
 <!-- Regenerate modules/plugins with api-builder-tools script -->
-
 ## Updated modules
+* [@axway/api-builder-admin@1.63.0](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.63.0)
+* [@axway/api-builder-runtime@4.89.0](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.89.0)
 
-* [@axway/api-builder-admin@1.61.2](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.61.2)
-* [@axway/api-builder-runtime@4.87.3](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.87.3)
-
-<!-- ## Updated plugins -->
+## Updated plugins
+* [@axway/api-builder-plugin-dc-mssql@3.3.0](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mssql/v/3.3.0)
 
 ## Known issues
 

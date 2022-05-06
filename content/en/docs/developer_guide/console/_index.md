@@ -55,9 +55,9 @@ The **Summary** tab lists basic information about your application like app name
 
 An API document or specification is a file which defines the methods which are available on a service, how they are accessed, and what responses are expected. The **API Doc & Test** tab lists all specifications that your service implements.
 
-Documents may be dynamically generated from components of your service, such as the `Dynamic` OpenAPI 2.0 specification created by default on all services. External documents may also be imported and implemented using [API-first methodologies](/docs/guide_openapi/quick_start).
+Documents may be dynamically generated from components of your service, such as the _Dynamic_ OpenAPI 2.0 specification created by default on all services. External documents may also be imported and implemented using [API-first methodologies](/docs/guide_openapi/quick_start).
 
-`Dynamic` specifications take their name and description from your services `package.json`.
+_Dynamic_ specifications take their name and description from your services `package.json`.
 
 ![API Doc & Test tab](/Images/console_tab_api_doc_and_test.png)
 

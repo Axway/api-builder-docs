@@ -161,3 +161,5 @@ However, we recommend that you do not change the environmentalized port configur
 ## Further reading
 
 Once you are familiar with startup and the UI, be sure to read the [Best Practices](/docs/best_practices/) guide as it will help guide your next phase of development.
+
+For additional {{% variables/apibuilder_prod_name %}} demos, examples and use-cases, check out posts on the [Axway Blog](https://blog.axway.com/tag/api-builder).

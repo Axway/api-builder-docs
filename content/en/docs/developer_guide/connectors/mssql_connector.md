@@ -58,7 +58,7 @@ Once the plugin is installed, the configuration file is located in `<project>/co
 
 ## Usage
 
-After you configure the connector, you can start up your {{% variables/apibuilder_prod_name %}} project and visit the console (normally found under http://localhost:8080/console). Your connector will also be listed as a **Connector** when creating a [new model](https://docs.axway.com/bundle/api-builder/page/docs/developer_guide/models/create/index.html#create-a-new-model) in the console.
+After you configure the connector, you can start up your {{% variables/apibuilder_prod_name %}} project and visit the console (normally found under `http://localhost:8080/console`). Your connector will also be listed as a **Connector** when creating a [new model](https://docs.axway.com/bundle/api-builder/page/docs/developer_guide/models/create/index.html#create-a-new-model) in the console.
 
 Your database tables will be listed under the [Models](http://localhost:8080/console/project/models) section of the console. You can now click on the gear icon to the right of the table names and generate flow based APIs.
 

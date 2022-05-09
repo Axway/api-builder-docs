@@ -198,13 +198,11 @@ For Accept (always) and for Content-Type where methods have a **body** payload:
 For Content-Type where methods have **formData** parameters:
 
 * If there are no valid mime-types in **consumes**:
-
-    * If the method has file parameters, the default mime-type is **multipart/form-data**
-    * If the method does not have file type parameters, the default mime-type is **application/x-www-form-urlencoded**
+  * If the method has file parameters, the default mime-type is **multipart/form-data**
+  * If the method does not have file type parameters, the default mime-type is **application/x-www-form-urlencoded**
 * If there are valid mime-types in **consumes:**
-
-    * If there are file type parameters, use **multipart/form-data** if it exists; otherwise, use **application/x-www-form-urlencoded** or the first valid type
-    * If there are no file type parameters, use **application/x-www-form-urlencoded** if it exists; otherwise, use **multipart/form-data** or the first valid type
+  * If there are file type parameters, use **multipart/form-data** if it exists; otherwise, use **application/x-www-form-urlencoded** or the first valid type
+  * If there are no file type parameters, use **application/x-www-form-urlencoded** if it exists; otherwise, use **multipart/form-data** or the first valid type
 
 ### Overriding the default selection
 

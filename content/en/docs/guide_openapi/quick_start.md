@@ -9,7 +9,7 @@ description: Quickly get started to write your first flow, and learn the basics 
 
 1. Navigate to _API Doc & Test_
 1. Click on the **+ OpenAPI** button
-1. In the input box, enter:<br>https://docs.axway.com/bundle/api-builder/page/samples/openapi/bookstore.yaml
+1. In the input box, enter:<br>`https://docs.axway.com/bundle/api-builder/page/samples/openapi/bookstore.yaml`
 1. Click **Fetch from URL**
 1. It will show a Summary of the API. Click **Save** to finish importing the API
 
@@ -62,4 +62,4 @@ The OpenAPI specification is bound to the following paths and is exposed by the 
 
 Administrators will see only one path in the log. For OpenAPI 2.0, it is `/apidoc/swagger.json`, otherwise, it is `/apidoc/openapi.json`. Some parts of the API specification can be tweaked from the [apidocs.overrides configuration](/docs/developer_guide/project/configuration/project_configuration#apidoc). The "/apidoc" prefix is configured by changing the [`apidoc.prefix`](/docs/developer_guide/project/configuration/project_configuration#apidoc) in the configuration.
 
-For example, the OpenAPI specification can be downloaded from: http://localhost:8080/apidoc/openapi.yaml
+For example, the OpenAPI specification can be downloaded from: `http://localhost:8080/apidoc/openapi.yaml`

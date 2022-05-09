@@ -120,6 +120,7 @@ To create the credential, you need the following information.
         }
       }
     ```
+
 1. Click **Save** and then open the **Credentials** tab.
 
     ![onedrive_unauthorized_lat](/Images/onedrive_unauthorized_lat.png)
@@ -223,6 +224,7 @@ Before creating the flow, you need to import the API that will expose your flow.
       ]
     }
     ```
+
 1. Name the file `onedrive.json` and save the file. You will import this file as an [API Endpoint](#import-the-api-endpoint).
 
 ### Import the API Endpoint
@@ -256,11 +258,13 @@ We will go through the steps to create the flow, but for reference, the complete
     1. Connect the **next** output of the Get Credential node to the new Format object node.
     1. Click on the Format object title and rename it to Format Headers for clarity.
     1. On the **Parameters** tab, set the data to be `$.credential,` and set the template to:
+
       ```javascript
         {
             "Authorization": "Bearer {{=it}}"
         }
       ```
+
     1. On the **Outputs** tab, change the **Next** output to `$.headers`.
 
         ![format_headers_params](/Images/format_headers_params.png) ![format_headers_outputs](/Images/format_headers_outputs.png)

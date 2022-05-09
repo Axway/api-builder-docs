@@ -13,6 +13,7 @@ Using a peer dependency on @axway/api-builder-runtime in plugins has been deprec
 Plugins should now use `engines.apibuilder` to document compatibility.
 
 ## What are peer dependencies?
+
 Peer dependencies are a feature of npm, usually used for plugin packages, to document a particular version of a "host" package that it is compatible with. They are defined in `package.json` along with `dependencies` and `devDependencies`.
 
 ```json
@@ -36,6 +37,7 @@ Most services will not be impacted as plugins will be updated at the same time a
 Existing services can continue to use the old `peerDependencies` behavior by using the `--legacy-peer-dependencies` flag to `npm install` with unmaintained versions of plugins, however fully upgrading your service is strongly recommended.
 
 ## Upgrading plugins that you own
+
 If you have created a plugin, then you should update it as follows, and publish a new version to stay fully compatible with the latest versions of npm:
 
 Check your plugin's package.json for a `peerDependencies` section. It may look like the following:

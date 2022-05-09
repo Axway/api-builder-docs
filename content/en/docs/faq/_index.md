@@ -19,7 +19,7 @@ You should have npm (recommended minimum {{% variables/recommended_npm %}}), and
 
 {{% variables/apibuilder_prod_name %}} v4 maintains compatibility with a minimum of Node.js {{% variables/minimum_node %}}, however, using a version older than {{% variables/recommended_node %}} is not recommended. See the [Node.js support policy](/docs/nodejs_support_policy/) for more information.
 
-## I get errors during npm install saying I need python installed!
+## I get errors during npm install saying I need python installed
 
 This can happen when installing {{% variables/apibuilder_prod_name %}} and plugins using npm and is a warning which can be safely ignored. To bypass the warning, you can run npm install with the following flag:
 

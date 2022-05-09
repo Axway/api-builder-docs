@@ -54,6 +54,7 @@ To edit a flow using the {{% variables/apibuilder_prod_name %}} user interface:
 1. Select **Save and exit** to save the flow changes and return to the API Lists page. Select **Discard changes** to discard the unsaved changes to the flow and return to the API Lists page.
 
 ## Delete flows
+
 When a flow can be deleted, a **Delete** button is shown besides the flow name in the flow editor. Flows can not be deleted if they have not been saved or are bound to endpoints.
 ![delete_flow](/Images/delete_flow.png)
 

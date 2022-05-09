@@ -66,14 +66,16 @@ Pages, such as _API Doc & Test_ shall be written in italic, and exactly as they 
 
 ## Recording GIFs
 
-We record animated GIFs for better visualisation of process in the docs. We should be consistent when recording though, so everyone should follow the same steps to ensure that the docs look uniform and the animations are a reasonable file size.
+We record animated GIFs for better visualization of process in the docs. We should be consistent when recording though, so everyone should follow the same steps to ensure that the docs look uniform and the animations are a reasonable file size.
 
 Tools:
+
 * Chrome
-* [Window resizer chrome extension](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh/related?hl=en) 
+* [Window resizer chrome extension](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh/related?hl=en)
 * [LICEcap](https://www.cockos.com/licecap/)
 
 GIF properties:
+
 * 1240x720
 * 5fps
 * Infinite repeat count
@@ -99,6 +101,6 @@ The most annoying part of this is lining up the chrome window and LICEcap window
 You may also need to open the console in your browser to stop the bottom edges being curved. You may also want to use the built-in magnifier (zoom on Mac) to ensure the recording viewport lines up correctly.
 
 ### Recording
+
 When clicking record in LICEcap, ensure the following settings are configured.
 ![Setup Window Resizer](/static_readme/licecap_settings.png)
-

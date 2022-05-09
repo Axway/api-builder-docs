@@ -43,4 +43,4 @@ Sets the response for the executing **Flow Listener** to be returned to the flow
 
 See [Flow Listener](/docs/developer_guide/flows/flow_triggers/flow_listener_flow_trigger/#how-to-use-the-plugin) flow-trigger for an example on how to use the plugin.
 
-It is important to note that the outputs for this flow-node should be unchanged from the default value of `$.response`. 
+It is important to note that the outputs for this flow-node should be unchanged from the default value of `$.response`.

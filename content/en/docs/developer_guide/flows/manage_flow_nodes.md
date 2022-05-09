@@ -25,6 +25,7 @@ To add flow-nodes to a flow:
 1. Drag the selected flow-node onto the flow editor panel in the center of the API Orchestration user interface. The flow-node will automatically align with any additional flow-nodes in the flow. A warning message may be displayed, and the flow-node may be highlighted until it is configured.
 
 ## Managing the flow graph
+
 As you develop further your business logic, the flow graph will grow exponentially. We have added a set of shortcut keys to help you operate more easily. They are as follows:
 
 1. Panning - Press the arrow keys to move the flow graph.

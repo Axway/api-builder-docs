@@ -89,9 +89,8 @@ The functional part of a Codeblock should be a `.js` file which exports a functi
 * `apibuilder <APIBuilder>` - The {{% variables/apibuilder_prod_name %}} instance.
 * `params <Object>` - Key/value pairs of parameters passed to the node instance.
 * `cb <Function>` - Callback.
-
-    * `err` - Error. Passing this will cause the flow to cease processing and a 500 error to be returned from the endpoint which called it.
-    * `response` - The data to be returned as the node response.
+* `err` - Error. Passing this will cause the flow to cease processing and a 500 error to be returned from the endpoint which called it.
+* `response` - The data to be returned as the node response.
 
 {{% alert title="Note" color="primary" %}}Most of the time errors should be returned in the callback as a standard response. Using the first parameter to return errors is the same as throwing an error in the Codeblock and should rarely need to be used.{{% /alert %}}
 

@@ -130,7 +130,7 @@ With API-first development, {{% variables/apibuilder_prod_name %}} services can 
 
 This is an example of the API discoverability response format:
 
-```json
+```jsonc
 {
   // API discoverability response format version
   "version": "1.0",
@@ -152,7 +152,7 @@ This is an example of the API discoverability response format:
           {
             // the URL of the document
             "url": "http://localhost:8080/apidoc/swagger.json",
-        		// the mime-type of the document [optional]
+            // the mime-type of the document [optional]
             "mimeType": "application/json",
             // the version of the specification used by this document (i.e. OpenAPI 2.0) [optional]
             "specificationVersion": "2.0"
@@ -164,7 +164,7 @@ This is an example of the API discoverability response format:
           }
         ]
       }
-		]
+    ]
   }
 }
 

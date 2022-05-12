@@ -13,7 +13,7 @@ Brief summary of the notable release contents.
 <!-- ## Breaking changes -->
 
 ## Features
-* #7348: Added an API for external discoverability of all the API documents that the {{% variables/apibuilder_prod_name %}} service exposes. This is accessible on the `apidoc.prefix` (default `/apidoc`). For more information see [API discoverability](/docs/best_practices/_index.md#api_discoverability).
+* #7348: Added an API for external discoverability of all the API documents that the {{% variables/apibuilder_prod_name %}} service exposes. This is accessible on the `apidoc.prefix` (default `/apidoc`). For more information see [API discoverability](/docs/best_practices/#api-discoverability).
 
 ## Fixes
 * #7287: HTTP request/response logs and flow logs for [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) no longer have a different request-id for the same request.

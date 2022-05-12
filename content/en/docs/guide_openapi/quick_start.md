@@ -49,17 +49,12 @@ Now that your **GET /books/{isbn}** is implemented, you can invoke your API.
 1. In the **isbn** parameter field, input `1234`
 1. Click the **Execute** button (you may need to scroll down)
 
-## Accessing the API specification
+## Accessing the API specifications
 
-The OpenAPI specification you imported is served by the {{% variables/apibuilder_prod_name %}} application. From the UI, you can click on the **Summary** page, and then click on **Download OpenAPI specification**.
+The OpenAPI specifications you import are served by the {{% variables/apibuilder_prod_name %}} application. From the UI, you can click on the **API Doc & Test** page, and see all specifications, and their URLs.
 
-The OpenAPI specification is bound to the following paths and is exposed by the service for download:
+The specifications are bound under the `/apidoc` path, for example, the OpenAPI specification for the Bookstore example can be downloaded from `http://localhost:8080/apidoc/openapi/bookstore.yaml`.
 
-* `/apidoc/swagger.json` (for model API and custom API)
-* `/apidoc/swagger.yaml` (for model API and custom API)
-* `/apidoc/openapi.json`
-* `/apidoc/openapi.yaml`
+Some parts of the API specification can be tweaked from the [apidocs.overrides configuration](/docs/developer_guide/project/configuration/project_configuration#apidoc). The "/apidoc" prefix is configured by changing the [`apidoc.prefix`](/docs/developer_guide/project/configuration/project_configuration#apidoc) in the configuration.
 
-Administrators will see only one path in the log. For OpenAPI 2.0, it is `/apidoc/swagger.json`, otherwise, it is `/apidoc/openapi.json`. Some parts of the API specification can be tweaked from the [apidocs.overrides configuration](/docs/developer_guide/project/configuration/project_configuration#apidoc). The "/apidoc" prefix is configured by changing the [`apidoc.prefix`](/docs/developer_guide/project/configuration/project_configuration#apidoc) in the configuration.
-
-For example, the OpenAPI specification can be downloaded from: `http://localhost:8080/apidoc/openapi.yaml`
+Links to all of your application's API specifications can be discovered outside development by accessing the `/apidoc` path directly. For more information see [API discoverability](/docs/best_practices/#api-discoverability).

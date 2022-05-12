@@ -20,8 +20,7 @@ You can import OpenAPI documents from the _API Doc & Test_ page. Note that [Open
 
 ![OpenAPI import](/Images/openapi_quickstart_import.gif)
 
-Once loaded, you can [update](#updating-openapi-documents) or [delete](#deleting-openapi-documents) the document as required. You can import multiple OpenAPI documents with unique names, but you cannot import another OpenAPI document with the same name.
-
+Once loaded, you can [update](#updating-openapi-documents) or [delete](#deleting-openapi-documents) the document as required.
 ## Binding OpenAPI operations
 
 The [Quick start](/docs/guide_openapi/quick_start) shows how to bind OpenAPI operations flows. When operations are bound, [updating the OpenAPI document](#updating-openapi-documents) subsequently can affect bound operations.

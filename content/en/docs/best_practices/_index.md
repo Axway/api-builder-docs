@@ -106,8 +106,6 @@ When writing code for the [JavaScript flow-node](/docs/developer_guide/flows/flo
 * Set [NODE_ENV=production](https://expressjs.com/en/advanced/best-practice-performance.html) in the environment for security and performance.
 
 ## Managing your service
-
-* The health of your service can be monitored via the health check API `/apibuilderPing.json`
 * The health of your Docker container is monitored via [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) and uses `./healthcheck.js` to periodically ping the health check API `/apibuilderPing.json`
 * If flow-triggers become unhealthy (e.g. such as an inability to contact Kafka or Solace), your service will shut down as part of best practices for fault-tolerant microservice architecture so that it can [self-heal and auto-restart](https://blog.risingstack.com/designing-microservices-architecture-for-failure/#selfhealing). If you are not using Docker/Kubernetes in production, then you will need to employ a process manager (e.g. [pm2](https://pm2.keymetrics.io/)).
 
@@ -122,3 +120,52 @@ For these reasons, to maintain a healthy service, it is important to update your
 * Use the latest, fully patched version of node that we support (see our [Getting Started Guide](/docs/getting_started) and [{{% variables/apibuilder_prod_name %}} Node.js support policy](/docs/nodejs_support_policy) for version restrictions).
 * Keep your dependencies up to date with their latest patches.
 * Every two weeks, Axway {{% variables/apibuilder_prod_name %}} releases new features, patches, and security fixes. You should keep an eye on our [Release Notes](/docs/release_notes), our list of [Deprecations](/docs/deprecations), and our [Updates](/docs/updates). Keep abreast of the updates to ensure your application will be compatible with any change(s) that may be introduced. Occasionally, you may want to incorporate these security updates and fixes into your application.
+
+## Accessing your service
+* The health of your service can be monitored via the health check API `/apibuilderPing.json`
+* Links to all the API documentation for your service can be found at `/apidocs`. 
+
+### API Discoverability
+With API-first development, {{% variables/apibuilder_prod_name %}} services can implement and expose multiple independent API documents on different URLs. These URLs are not always predictable. Starting with the [Nantes](/docs/release_notes/nantes) release, {{% variables/apibuilder_prod_name %}} services expose an API on the [apidoc prefix](/docs/developer_guide/project/configuration/project_configuration#apidoc) (`/apidoc`) for discovering all API documents and their URLs.
+
+This is an example of the API discoverability response format:
+
+```json
+{
+  // API discoverability response format version
+  "version": "1.0",
+  // Specification types
+  "types": {
+    // Array of individual OpenAPI documents
+    "openapi": [
+      {
+        // document id
+        "id": "dynamic",
+        // document version [optional]
+        "version": "1.0.0",
+        // document name
+        "name": "project",
+        // document description
+        "description": "An {{% variables/apibuilder_prod_name %}} service",
+        // document links.
+        "links": [
+          {
+            // the URL of the document
+            "url": "http://localhost:8080/apidoc/swagger.json",
+        		// the mime-type of the document [optional]
+            "mimeType": "application/json",
+            // the version of the specification used by this document (i.e. OpenAPI 2.0) [optional]
+            "specificationVersion": "2.0"
+          },
+          {
+            "url": "http://localhost:8080/apidoc/swagger.yaml",
+            "mimeType": "text/yaml",
+            "specificationVersion": "2.0"
+          }
+        ]
+      }
+		]
+  }
+}
+
+```

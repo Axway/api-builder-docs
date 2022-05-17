@@ -109,7 +109,7 @@ For example, if your endpoint has a parameter "IPAddress" that is a string with 
 
 {{% variables/apibuilder_prod_name %}} has a generated OpenAPI 2.0 specification that can be accessed from `http://localhost:8080/apidocs/swagger.json`. This dynamic specification contains a mash-up of any [custom API](/docs/developer_guide/apis), [model API](/docs/developer_guide/console/models), and your [Swagger endpoint specifications](https://docs.axway.com/bundle/api-builder/page/docs/developer_guide/flows/manage_endpoints/index.html), and is updated as API or models are added or changed. It does _not_ contain any API-first specifications after upgrading from endpoints.
 
-The API-first specification(s) will be hosted on their own separate [`apidocs` URL](/docs/guide_openapi/quick_start/#accessing-the-api-specification). This means that external applications that might rely on `/apidocs/swagger.json` will have to have some knowledge about these API-first specification URLs, and where to access them.
+The API-first specification(s) will be hosted on their own separate [`apidocs` URL](/docs/guide_openapi/quick_start/#accessing-the-api-specifications). This means that external applications that might rely on `/apidocs/swagger.json` will have to have some knowledge about these API-first specification URLs, and where to access them.
 
 ### Default to application/json
 

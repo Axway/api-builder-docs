@@ -18,7 +18,8 @@ Brief summary of the notable release contents.
 ## Fixes
 * #7287: HTTP request/response logs and flow logs for [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) no longer have a different request-id for the same request.
 * #7394: [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas) now  validates the encoded JSON body against the response schema instead of validating a pre-encoded JavaScript object body which may have different type parameters or extra keys, and could incorrectly fail validation.
-* #7403: Fix issue with NPM causing failure to start project after installing using NPM version 6 or lower, or using the `--legacy-peer-deps` flag. 
+* #7403: Fix issue with npm causing failure to start project after installing using npm version 6 or lower, or using the `--legacy-peer-deps` flag. 
+* #7413: Fix issue with [@axway/api-builder-plugin-fn-xslt](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-xslt) where XSLT error messages became less detailed.
 
 {{% releasenotes/deprecations %}}
 

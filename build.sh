@@ -57,8 +57,9 @@ function fCheckoutSubmodule() {
         cd ${PROJECT_DIR} > /dev/null
         echo "[INFO] =========================================================="
     else
-        echo "[ERROR] Can't find the common content directory [${AXWAY_COMMON_DIR}]."
-        exit 1
+        echo "[INFO] Can't find the common content directory [${AXWAY_COMMON_DIR}]."
+        # git submodule add git@github.com:Axway/axway-open-docs-common.git $AXWAY_COMMON_DIR
+        git submodule update --init --remote $AXWAY_COMMON_DIR
     fi
     # the npm packages don't seem to be needed on the netify build server...this is just for developers
     if [[ "${MODE}" == "dev" ]];then

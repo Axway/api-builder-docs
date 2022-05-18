@@ -8,6 +8,11 @@ This repository contains all files for building and deploying the netlify site. 
 
 We welcome your contributions! To get started fork this repository, create a feature branch with your changes, and then submit a pull request.
 
+## Updating common submodule
+To update the common submodule run `npm run build`. As part of the process the latest version of the common submodule will be pulled. If it updated, the changes can be committed just like any other changes.
+
+To verify the current submodule version run `git submodule status` and verify that the commit hash matches the latest commit hash here: https://github.com/Axway/axway-open-docs-common/commits/master
+
 ## Style guide
 
 ### Text buttons

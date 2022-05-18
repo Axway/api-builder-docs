@@ -46,10 +46,9 @@ AXWAY_COMMON_DIR="axway-open-docs-common"
 #   - microsite should only have the axway-open-docs-common as a submodule
 #   - the docsy theme is a submodule of axway-open-docs-common
 function fCheckoutSubmodule() {
-    echo "[INFO] Makes sure [${AXWAY_COMMON_DIR}] submodule is checked out."
-
+    echo "[INFO] Makes sure [${AXWAY_COMMON_DIR}] submodule is checked out and up-to-date."
+    git submodule update --init --force --recursive --checkout --remote
     if [[ -d "${AXWAY_COMMON_DIR}" ]];then
-        git submodule update --init --force --recursive --checkout
         echo "[INFO] ====================[ submodule info ]===================="
         git submodule status
         cd ${AXWAY_COMMON_DIR} > /dev/null

@@ -47,7 +47,10 @@ AXWAY_COMMON_DIR="axway-open-docs-common"
 #   - the docsy theme is a submodule of axway-open-docs-common
 function fCheckoutSubmodule() {
     echo "[INFO] Makes sure [${AXWAY_COMMON_DIR}] submodule is checked out and up-to-date."
-    git submodule update --init --force --recursive --checkout --remote
+    # Checks out the submodule and sub-submodules
+    git submodule update --init --force --recursive --checkout
+    # Update the axway-open-docs-common submodule to the latest commit
+    git submodule update --init --force --checkout --remote
     if [[ -d "${AXWAY_COMMON_DIR}" ]];then
         echo "[INFO] ====================[ submodule info ]===================="
         git submodule status

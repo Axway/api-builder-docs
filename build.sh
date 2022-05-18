@@ -49,7 +49,7 @@ function fCheckoutSubmodule() {
     echo "[INFO] Makes sure [${AXWAY_COMMON_DIR}] submodule is checked out."
 
     if [[ -d "${AXWAY_COMMON_DIR}" ]];then
-        git submodule update --init --force --recursive --checkout
+        git submodule update --init --force --recursive --checkout --remote
         echo "[INFO] ====================[ submodule info ]===================="
         git submodule status
         cd ${AXWAY_COMMON_DIR} > /dev/null

@@ -144,6 +144,10 @@ requestBody:
 
 If the [OpenAPI operation](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#operationObject) defines only an `application/octet-stream`, or defines media-types that is not processable (i.e. that are _not_ `application/*json`, `x-www-form-urlencoded`, `multipart/form-data`, or `text/plain`), then the body will be accessible from `$.request.body` as a [`Buffer`](https://nodejs.org/api/buffer.html), and will _not_ be validated against the JSON schema.
 
+### Request ID
+
+Beginning in [@axway/api-builder-plugin-ft-oas@1.6.0](/docs/release_notes/oyo), the {{% variables/apibuilder_prod_name %}} HTTP request ID is accessible from `$.request.id`. This can be useful for traceability.
+
 ## Request body validation
 
 Before invoking the flow, {{% variables/apibuilder_prod_name %}} will validate the request body with respect to the OpenAPI operation. For performance, JSON schema validation occurs "just in time". This means that the first time the request is validated for this particular operation, the JSON schema will be compiled and cached for future use. Then, the request body will be validated against the compiled JSON schema. This can lead to production errors if the JSON schema is invalid (e.g invalid references) and if there is inadequate testing.

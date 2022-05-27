@@ -6,6 +6,7 @@ date: 2022-06-03
 Hide_readingtime: true
 ---
 ## Summary
+
 Brief summary of the notable release contents.
 
 {{% releasenotes/upgrade %}}
@@ -13,10 +14,13 @@ Brief summary of the notable release contents.
 <!-- ## Breaking changes -->
 
 ## Features
+
 * #7439: The HTTP request ID is now accessible in flows from `$.request.id` when using [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas).
 
 ## Fixes
+
 * #7383: **API Doc & Test** page now reflects the correct error state for API documents that have invalid flow-triggers.
+* #7433: In [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas), fixed issue when importing OpenAPI specification with no extension. Now defaults to .yaml.
 
 {{% releasenotes/deprecations %}}
 
@@ -26,6 +30,7 @@ Brief summary of the notable release contents.
 <!-- ## Updated plugins -->
 
 ## Known issues
+
 For a list of up-to-date known issues see [{{% variables/apibuilder_prod_name %}} known issues](/docs/known_issues/).
 
 {{% releasenotes/previous %}}

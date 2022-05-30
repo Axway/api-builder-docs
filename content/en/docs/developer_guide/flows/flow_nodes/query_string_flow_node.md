@@ -62,6 +62,6 @@ In this section, some examples are shown. The examples show what the Output woul
 | `{"a": "b", "name":[null,"Bar"]}` | `strictNullHandling: true` | `a=b&name&name=Bar` |
 | `{"a": { "b": { "c": "d"}}` | `allowDots: true`, `disableEncode: true` | `a.b.c=d&name&name=Bar` |
 
-#### Nested Query input
+### Nested Query input
 
 For the nested query input object like `{"a": { "b": { "c": "d"}}` will be stringified to `a[b][c]=d` as output by using bracket notation. But for some cases, the whole nested object values should be kept without transforming. By enabling `stringifyNesting` option to `true` will JSON stringify the whole nested objects.

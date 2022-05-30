@@ -22,7 +22,7 @@ The Query String flow-node has a single method called `createquery`. It composes
 The `Create Query` method parameters are:
 
 | Parameter | Type | Default | Description | Configuration selection |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | queries | object | - | The arbitrary query inputs which can be combined to make a single query string. | Selector, Object |
 | arrayFormat | brackets<br /><br />indices<br /><br />comma<br /><br />repeat | indices | For eg, the input array format is `{ a: ['b', 'c'] }` different formats for the stringified array output are:<br /><br />If "brackets", the output array format will be returned as `a[]=b&a[]=c`<br /><br /> If "indices", the output array format will be returned as `a[0]=b&a[1]=c`<br /><br />If "repeat", the output array format will be returned as `a=b&a=c`. | Selector, String |
 | allowDots | boolean | If enabled the nested object queries will be stringified using dot notation | Selector, Boolean |

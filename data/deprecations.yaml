@@ -458,3 +458,12 @@ D054:
   summary: >-
     usage of `apidoc.disabled` to stop OpenAPI documentation being accessible has been deprecated
     with no replacement.
+
+D055:
+  name: Node.js v14
+  release: Oyo
+  summary: >-
+    Node.js v14 has been deprecated, In {{% variables/apibuilder_prod_name %}} v5, Node.js v16 is going to be the minimum supported version. Only use Active LTS or Maintenance LTS Node.js versions in
+    production. While the versions we deem as deprecated are not recommended, API compatibility will be maintained until
+    an explicit breaking change removes it. Only use Active LTS or Maintenance LTS Node.js versions
+    in production.    

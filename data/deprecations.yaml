@@ -331,9 +331,8 @@ D040:
   name: Node.js v10
   release: Jackson
   summary: >-
-    Node.js v10 has been deprecated. Only use Active LTS or Maintenance LTS Node.js versions in
-    production. See API Builder's [Node.js support policy](/docs/nodejs_support_policy/). While the
-    versions we deem as deprecated are not recommended, API compatibility will be maintained until
+    Node.js v10 has been deprecated. See API Builder's [Node.js support policy](/docs/nodejs_support_policy/).
+    While the versions we deem as deprecated are not recommended, API compatibility will be maintained until
     an explicit breaking change removes it. Only use Active LTS or Maintenance LTS Node.js versions
     in production.
 
@@ -457,13 +456,11 @@ D054:
   release: London
   summary: >-
     usage of `apidoc.disabled` to stop OpenAPI documentation being accessible has been deprecated
-    with no replacement.
+    and should not be used.
 
 D055:
   name: Node.js v14
   release: Oyo
   summary: >-
-    Node.js v14 has been deprecated, In {{% variables/apibuilder_prod_name %}} v5, Node.js v16 is going to be the minimum supported version. Only use Active LTS or Maintenance LTS Node.js versions in
-    production. While the versions we deem as deprecated are not recommended, API compatibility will be maintained until
-    an explicit breaking change removes it. Only use Active LTS or Maintenance LTS Node.js versions
-    in production.    
+    Node.js v14 has been deprecated. API compatibility will be maintained until API Builder v5.
+    See API Builder's [Node.js support policy](/docs/nodejs_support_policy/).

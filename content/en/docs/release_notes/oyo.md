@@ -16,7 +16,6 @@ Brief summary of the notable release contents.
 ## Features
 
 * #7439: The HTTP request ID is now accessible in flows from `$.request.id` when using [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas).
-* #7410: Node.js v14 is deprecated, Node.js v16 is going to be the minimum version of support in API Builder v5.
 
 ## Fixes
 

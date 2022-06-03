@@ -7,7 +7,7 @@ Hide_readingtime: true
 ---
 ## Summary
 
-Brief summary of the notable release contents.
+In this release we added support for accessing the HTTP request ID when using the OpenAPI flow-trigger and now reflect specification error statuses in more places in the UI.
 
 {{% releasenotes/upgrade %}}
 
@@ -16,7 +16,7 @@ Brief summary of the notable release contents.
 ## Features
 
 * #7439: The HTTP request ID is now accessible in flows from `$.request.id` when using [@axway/api-builder-plugin-ft-oas](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas).
-* #7436: The "Share your feedback" button in the UI now links to the Aha! ideas portal.
+* #7436: The "Share your feedback" button in the UI now links to the Axway community ideas portal.
 
 ## Fixes
 

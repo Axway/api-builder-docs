@@ -160,6 +160,7 @@ Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoint
 | $.request.headers | [Request header parameters](/docs/guide_openapi/request_handling#request-header-parameters) | The processed, case-sensitive, [OpenAPI `header` parameter(s)](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#parameterObject), if provided. |
 | $.request.query | [Request query parameters](/docs/guide_openapi/request_handling#request-query-parameters) | The processed, case-sensitive, [OpenAPI `query` parameter(s)](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#parameterObject), if provided. |
 | $.request.path | [Request path parameters](/docs/guide_openapi/request_handling#request-path-parameters) | The processed, case-sensitive, [OpenAPI `path` parameter(s)](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#parameterObject), if provided. |
+| $.request.id | [Request ID](/docs/guide_openapi/request_handling#request-id) | Added in [@axway/api-builder-plugin-ft-oas@1.6.0](/docs/release_notes/oyo). The {{% variables/apibuilder_prod_name %}} HTTP request ID. |
 
 This change was made because it provided full access to the raw request that could be used in an unsafe manner. It also exposes the flow to changes to the `ClientRequest` that can occur between implementations of Node.js.
 
@@ -232,3 +233,6 @@ Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoint
 This change was made because there is currently no consistent way to support these. They are external to the API-first OpenAPI specification and there is currently no way to expose them to the clients, and therefore would not be consumable.
 
 If you encounter this issue, we recommend you add the schema to your OpenAPI specification and reference them that way.
+
+### Removed $.request.getId()
+Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), the HTTP request ID was accessible from `$.request.getId()`. This was not accessible the initial release of the OpenAPI flow-trigger. Now, from version [1.6.0](/docs/release_notes/oyo), the request ID is accessible from `$.request.id`.

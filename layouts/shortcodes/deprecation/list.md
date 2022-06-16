@@ -1,8 +1,18 @@
 {{ $deprecations := .Site.Data.deprecations }}
+{{ $majors := .Site.Data.majorReleases }}
 {{ $this := . }}
+{{ $eolDate := "FUBAR" }}
 {{ range $id, $dep := $deprecations }}
 ### [{{ $id }}] {{ $dep.name }} {#{{ $id }}}
-Beginning with the [{{ $dep.release }}](/docs/release_notes/{{ lower $dep.release }}) release, {{ $dep.summary }}
+<!-- this will access .Site.Data.majorReleases[ $dep.eol ] -->
+{{ $major := index $majors $dep.eol }}
+|  |  |
+| ---- | ---- |
+| **Introduced in release** | [{{ $dep.release }}](/docs/release_notes/{{ lower $dep.release }}) ({{ $dep.date }}) |
+| **Expected end of life** | [{{ if $dep.eol }}{{ $dep.eol }}{{ end }}](/docs/nodejs_support_policy) ({{ $major.date }}) |
+| **Status** | Active |
+
+{{ $dep.summary }}
 <!-- TODO: make dependencies anchors -->
 {{ with $dep.dependencies }}This depends on {{ delimit $dep.dependencies ", " "and " }}.{{ end }}
 {{ range where $this.Page.RegularPages "Params.deprecation" $id }}

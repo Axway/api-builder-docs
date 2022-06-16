@@ -1,6 +1,8 @@
 D001:
   name: /apidoc/docs.json
   release: "4.0.0"
+  eol: v6
+  date: 2018-06-29
   summary: >-
     Swagger API docs are available on `/apidoc/swagger.json` and are mirrored on
     `/apidoc/docs.json`. Using the `/apidoc/docs.json` endpoint to access Swagger API documentation
@@ -9,8 +11,10 @@ D001:
 D002:
   name: apiDocPrefix
   release: Boston
+  date: 2018-08-03
+  eol: v6
   summary: >-
-    usage of `admin.apiDocPrefix` in the
+    Usage of `admin.apiDocPrefix` in the
     [project configuration](/docs/developer_guide/project/configuration/project_configuration)
     has been deprecated. Use `apidoc.prefix` instead. If both values are provided, `apidoc.prefix`
     will be preferred.
@@ -18,21 +22,25 @@ D002:
 D003:
   name: disableAPIDoc
   release: Boston
+  date: 2018-08-03
+  eol: v6
   summary: >-
-    usage of `admin.disableAPIDoc` in the
+    Usage of `admin.disableAPIDoc` in the
     [project configuration](/docs/developer_guide/project/configuration/project_configuration)
     has been deprecated.
 
 D004:
   name: enableModelsWithNoPrimaryKey
   release: Canberra
+  date: 2018-08-17
+  eol: v6
   flag: true
   comment: |-
     Enable support for Models that have no primary key.
     Breaking change for old versions as previously the Create API returned a location
     header. Also the model advertised unsupported methods.
   summary: >-
-    for models that do not have a primary key:
+    For models that do not have a primary key:
 
 
     * The `delete`, `findAndModify`, `findByID`, `upsert`, and `update` APIs and endpoints will not
@@ -46,6 +54,8 @@ D004:
 D005:
   name: usePrimaryKeyType
   release: Canberra
+  date: 2018-08-17
+  eol: v6
   flag: true
   comment: |-
     Generate APIs and flows that use primary key type rather than always assuming string.
@@ -56,6 +66,8 @@ D005:
 D006:
   name: exitOnPluginFailure
   release: Dublin
+  date: 2018-08-31
+  eol: v6
   flag: true
   comment: |-
     Enabling this flag will cause the service to exit when there is a problem loading a plugin.
@@ -65,6 +77,8 @@ D006:
 D007:
   name: enableAliasesInCompositeOperators
   release: Eden
+  date: 2018-09-14
+  eol: v6
   flag: true
   comment: |-
     Enable support for aliases in comparison operators on composite models.
@@ -77,6 +91,8 @@ D007:
 D008:
   name: enableMemoryConnectorLike
   release: Eden
+  date: 2018-09-14
+  eol: v6
   flag: true
   comment: |-
     Enable support for the $like comparison operator in the Memory connector.
@@ -87,6 +103,8 @@ D008:
 D009:
   name: enableScopedConfig
   release: Istanbul
+  date: 2018-11-23
+  eol: v6
   flag: true
   comment: |-
     Enabling this flag ensures that a plugin only receives the config relevant to that plugin.
@@ -97,6 +115,8 @@ D009:
 D010:
   name: perURLAuthentication
   release: Lisbon
+  date: 2019-01-18
+  eol: v6
   summary: >-
     authentication has changed to make all paths secure, and public paths must be explicitly
     declared.
@@ -104,6 +124,8 @@ D010:
 D011:
   name: API Builder Web
   release: Lisbon
+  date: 2019-01-18
+  eol: v6
   summary: >-
     [API Builder Web](/docs/Developer_Guide/Web) is deprecated and will be removed in a future major
     version. If you are currently using Web Routes, consider switching to another modern web
@@ -112,6 +134,8 @@ D011:
 D012:
   name: enableModelNameEncoding
   release: Osaka
+  date: 2019-03-01
+  eol: v6
   flag: true
   comment: |-
     Enable support for model names being percent-encoded as per RFC-3986 in auto-generated API.
@@ -119,22 +143,26 @@ D012:
     "foo%2Fbar".
   summary: >-
     model names are URI encoded as per [RFC-3986](https://www.ietf.org/rfc/rfc3986.txt), and the
-    APIs that are auto-generated for models will bind to their URI equivalent. 
+    APIs that are auto-generated for models will bind to their URI equivalent.
 
 D013:
   name: enableNullModelFields
   release: Quebec
+  date: 2019-03-29
+  eol: v6
   flag: true
   comment: |-
     Enable support for null fields coming from Models.
   summary: >-
-    queries on models, which have fields with `null` values, can now return that field in the
+    Queries on models, which have fields with `null` values, can now return that field in the
     response rather than hiding the field. Support for this behavior is dependent on the connector
     being used.
 
 D014:
   name: enableModelNameEncodingInSwagger
   release: Quebec
+  date: 2019-03-29
+  eol: v6
   flag: true
   comment: |-
     Enable support for model names being percent-encoded as per RFC-3986 in API Builder's Swagger.
@@ -147,6 +175,8 @@ D014:
 D015:
   name: enableModelNameEncodingWithConnectorSlash
   release: Barcelona
+  date: 2019-09-27
+  eol: v6
   flag: true
   dependencies:
     - D012
@@ -162,6 +192,8 @@ D015:
 D016:
   name: Model.define
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
     `Model.define` is deprecated and will be removed in a future version of the product. Use
     `Model.extend` or `APIBuilder.createModel` instead.
@@ -169,19 +201,25 @@ D016:
 D017:
   name: Model instance reduce and APIBuilder.Model.reduce
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
-    reducing a Model instance (i.e. `Model.prototype.reduce`) and `APIBuilder.Model.reduce` are
+    Reducing a Model instance (i.e. `Model.prototype.reduce`) and `APIBuilder.Model.reduce` are
     deprecated and will be removed in a future version of the product.
 
 D018:
   name: APIBuilder.removeModel
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
     `APIBuilder.removeModel` is deprecated and will be removed in a future version of the product.
 
 D019:
   name: APIBuilder.removeConnector
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
     `APIBuilder.removeConnector` is deprecated and will be removed in a future version of the
     product.
@@ -189,18 +227,24 @@ D019:
 D020:
   name: APIBuilder.removeBlock
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
     `APIBuilder.removeBlock` is deprecated and will be removed in a future version of the product.
 
 D021:
   name: APIBuilder.removeAPI
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
     `APIBuilder.removeAPI` is deprecated and will be removed in a future version of the product.
 
 D022:
   name: APIBuilder.removeAPIByFilename
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
     `APIBuilder.removeAPIByFilename` is deprecated and will be removed in a future version of the
     product.
@@ -208,26 +252,34 @@ D022:
 D023:
   name: APIBuilder.removeRoute
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
     `APIBuilder.removeRoute` is deprecated and will be removed in a future version of the product.
 
 D024:
   name: Model prefix
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
-    creating a Model with the `prefix` property is deprecated and will be removed in a future
+    Creating a Model with the `prefix` property is deprecated and will be removed in a future
     version of the product.
 
 D025:
   name: Model.prototype.extend
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
-    extending a model instance (i.e. `Model.prototype.extend`) is deprecated and will be removed
+    Extending a model instance (i.e. `Model.prototype.extend`) is deprecated and will be removed
     in a future version of the product.  Use `Model.extend` instead.
 
 D026:
   name: APIBuilder.app.locals
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
     `APIBuilder.app.locals` properties `appc_external_url`, `appc_external_apidoc_path_legacy`,
     `appc_external_apidoc_path`, or `appc_external_apidoc_url` are deprecated and will be removed
@@ -236,12 +288,16 @@ D026:
 D027:
   name: APIBuilder.debug
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
     `APIBuilder.debug` is deprecated and will be removed in a future version of the product.
 
 D028:
   name: Codeblocks
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
     [codeblocks](/docs/developer_guide/flows/flow_nodes/codeblock_flow_node) are deprecated and will be removed in a future version of the
     product.
@@ -249,6 +305,8 @@ D028:
 D029:
   name: '@axway/api-builder-react-engine'
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
     [@axway/api-builder-react-engine](https://www.npmjs.com/package/@axway/api-builder-react-engine)
     is deprecated and will not receive any updates. If you are currently using Web Routes, consider
@@ -258,12 +316,16 @@ D029:
 D030:
   name: APIBuilder.get
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
     `APIBuilder.get` is deprecated and will be removed in a future version of the product.
 
 D031:
   name: APIBuilder.pluralize
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
     `APIBuilder.pluralize `is deprecated and will be removed in a future version of the product.
     Use the pluralize module instead.
@@ -271,6 +333,8 @@ D031:
 D032:
   name: APIBuilder.singularize
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
     `APIBuilder.singularize `is deprecated and will be removed in a future version of the product.
     Use the pluralize module instead.
@@ -278,6 +342,8 @@ D032:
 D033:
   name: APIBuilder.logger.stripColors
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
     `APIBuilder.logger.stripColors `is deprecated and will be removed in a future version of the
     product.
@@ -285,42 +351,54 @@ D033:
 D034:
   name: Model.fields[name].optional and API.parameters[name].optional
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
-    using the `optional` property on Model fields and API parameters is deprecated and will be
+    Using the `optional` property on Model fields and API parameters is deprecated and will be
     ignored in a future version of the product. Use the `required` property instead.
 
 D035:
   name: Logger.createDefaultLogger
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
-    the static function `Logger.createDefaultLogger `is deprecated and will be removed in a future version of the product.
+    The static function `Logger.createDefaultLogger `is deprecated and will be removed in a future version of the product.
 
 D036:
   name: Logger.createRestifyLogger
   release: Cairo
+  date: 2019-10-11
+  eol: v6
   summary: >-
-    the static function `Logger.createRestifyLogger `is deprecated and will be removed in a future
+    The static function `Logger.createRestifyLogger `is deprecated and will be removed in a future
     version of the product.
 
 D037:
   name: Sort
   release: Ennis
+  date: 2019-11-22
+  eol: v6
   summary: >-
-    creating an API or Route with the `sort` property is deprecated in favor of a more robust
+    Creating an API or Route with the `sort` property is deprecated in favor of a more robust
     internal sort mechanism.
 
 D038:
   name: Port
   release: Florence
+  date: 2019-12-06
+  eol: v6
   summary: >-
-    usage of port in the [project configuration](/docs/developer_guide/project/configuration/project_configuration/) has been deprecated. Use 
+    Usage of port in the [project configuration](/docs/developer_guide/project/configuration/project_configuration/) has been deprecated. Use
     `http.port` instead.
 
 D039:
   name: Unmaintained Node.js versions
   release: Jackson
+  date: 2020-02-28
+  eol: v6
   summary: >-
-    we introduced a [Node.js support policy](/docs/nodejs_support_policy/) in which end-of-life Node.js versions are
+    We introduced a [Node.js support policy](/docs/nodejs_support_policy/) in which end-of-life Node.js versions are
     automatically deprecated by API Builder. See
     [https://nodejs.org/en/about/releases](https://nodejs.org/en/about/releases) for the versions
     which are actively maintained. While the versions we deem as deprecated are not recommended,
@@ -330,6 +408,8 @@ D039:
 D040:
   name: Node.js v10
   release: Jackson
+  date: 2020-02-28
+  eol: v6
   summary: >-
     Node.js v10 has been deprecated. See API Builder's [Node.js support policy](/docs/nodejs_support_policy/).
     While the versions we deem as deprecated are not recommended, API compatibility will be maintained until
@@ -339,13 +419,17 @@ D040:
 D041:
   name: logger.logRequest and logger.logResponse
   release: Jackson
+  date: 2020-02-28
+  eol: v6
   summary: >-
-    the `logRequest` and `logResponse` functions on the API Builder logger are deprecated and will
+    The `logRequest` and `logResponse` functions on the API Builder logger are deprecated and will
     be removed in a future version of the product.
 
 D042:
   name: enableOverrideEndpointContentType
   release: Tokyo
+  date: 2020-07-31
+  eol: v6
   flag: true
   comment: |-
     Enable support for overriding endpoint content-type using the flow's HTTP response headers.
@@ -357,18 +441,22 @@ D042:
 D043:
   name: enableModelErrorOutputs
   release: Ufa
+  date: 2020-08-14
+  eol: v6
   flag: true
   comment: |-
     Enable support for model flow-nodes having Error outputs.
   summary: >-
-    model flow-nodes will gain an additional output, `Error`. This will be the default behavior when
+    Model flow-nodes will gain an additional output, `Error`. This will be the default behavior when
     flows are generated from models in all new services.
 
 D044:
   name: API.response
   release: Zagreb
+  date: 2020-10-23
+  eol: v6
   summary: >-
-    the `response` property on the [custom API](/docs/developer_guide/apis/) is
+    The `response` property on the [custom API](/docs/developer_guide/apis/) is
     deprecated in favor of the `model` property. The `model` property serves the same purpose in
     that the named model is used to describe the response schema in the generated API Swagger
     documentation.
@@ -376,18 +464,22 @@ D044:
 D045:
   name: exitOnSwaggerSchemaValidationError
   release: Bruges
+  date: 2020-11-20
+  eol: v6
   flag: true
   comment: |-
     Enabling this flag will cause the service to exit when there is an error validating the service
     Swagger or any loaded JSON schema.
   summary: >-
-    validation errors when loading JSON schemas will cause the service to terminate. Additionally,
+    Validation errors when loading JSON schemas will cause the service to terminate. Additionally,
     the service's Swagger API docs are now validated and will cause the service to terminate if
     found to be invalid.
 
 D046:
   name: config.bodyParser
   release: Faro
+  date: 2021-01-29
+  eol: v6
   summary: >-
     The `bodyParser` config option is deprecated and will be removed in a future version of the
     product.
@@ -395,6 +487,8 @@ D046:
 D047:
   name: config.busboy
   release: Faro
+  date: 2021-01-29
+  eol: v6
   summary: >-
     The `busboy` config option is deprecated and will be removed in a future version of the product.
     Use [`config.limits`](/docs/developer_guide/project/configuration/project_configuration/#limits) to configure limits for multipart/form-data requests
@@ -403,14 +497,18 @@ D047:
 D048:
   name: undefinedMultipartPartSize
   release: Faro
+  date: 2021-01-29
+  eol: v6
   summary: >-
-    the new [`config.limits`](/docs/developer_guide/project/configuration/project_configuration/#limits) config option should be
+    The new [`config.limits`](/docs/developer_guide/project/configuration/project_configuration/#limits) config option should be
     configured with a value. Leaving it unset is deprecated behavior and the default behavior will
     change in a future version of the product to be equivalent to setting infinity (no limit).
 
 D049:
   name: enableLoggingOfLevel
   release: Giza
+  date: 2021-02-12
+  eol: v6
   flag: true
   comment: |-
     Enabling this flag will emit the log level in each log message.
@@ -420,6 +518,8 @@ D049:
 D050:
   name: enableStrictBodyPayloads
   release: Roberttown
+  date: 2021-07-16
+  eol: v8
   flag: true
   comment: |-
     Enabling this flag will ignore HTTP payload body on GET and HEAD methods.
@@ -430,37 +530,47 @@ D050:
 D051:
   name: disableServerBanner
   release: Wrecsam
+  date: 2021-09-24
+  eol: v8
   summary: >-
-    the `disableServerBanner` config option has been deprecated in favor of
+    The `disableServerBanner` config option has been deprecated in favor of
     [`http.headers.server`](/docs/developer_guide/project/configuration/project_configuration/#http).
 
 D052:
   name: runtimePeerDependency
   release: Kabul
+  date: 2022-04-08
+  eol: v8
   summary: >-
-    using dependencies with a peerDependency on @axway/api-builder-runtime has been deprecated and
+    Using dependencies with a peerDependency on @axway/api-builder-runtime has been deprecated and
     may cause issues when using npm 7 or higher.
 
 D053:
   name: disableEndpoints
   release: London
+  date: 2022-04-22
+  eol: v8
   flag: true
   comment: |-
     Disables endpoints
   summary: >-
-    endpoints are deprecated and have been replaced with the [OpenAPI flow-trigger](/docs/developer_guide/flows/flow_triggers/oas_flow_trigger).
+    Endpoints are deprecated and have been replaced with the [OpenAPI flow-trigger](/docs/developer_guide/flows/flow_triggers/oas_flow_trigger).
     Follow [this guide](/docs/guide_openapi/upgrading) to replace endpoints in your service.
 
 D054:
   name: apidoc.disabled
   release: London
+  date: 2022-04-22
+  eol: v8
   summary: >-
-    usage of `apidoc.disabled` to stop OpenAPI documentation being accessible has been deprecated
+    Usage of `apidoc.disabled` to stop OpenAPI documentation being accessible has been deprecated
     and should not be used.
 
 D055:
   name: Node.js v14
   release: Oyo
+  date: 2022-06-03
+  eol: v8
   summary: >-
     Node.js v14 has been deprecated. API compatibility will be maintained until API Builder v5.
     See API Builder's [Node.js support policy](/docs/nodejs_support_policy/).

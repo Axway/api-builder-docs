@@ -7,7 +7,7 @@ Hide_readingtime: true
 ---
 ## Summary
 
-In this release, we enhanced the metrics reported by the Prometheus plugin to show the API Builder version as well as support for a number of Prometheus recommended system metrics.
+In this release we enhanced the metrics reported by the Prometheus plugin to show the API Builder version as well as support for a number of Prometheus recommended system metrics.
 
 {{% releasenotes/upgrade %}}
 

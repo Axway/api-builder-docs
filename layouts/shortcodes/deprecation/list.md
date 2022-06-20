@@ -9,7 +9,7 @@
 |  |  |
 | ---- | ---- |
 | **Introduced in release** | [{{ $dep.release }}](/docs/release_notes/{{ lower $dep.release }}) ({{ $dep.date }}) |
-| **Expected end of life** | [{{ if $dep.eol }}{{ $dep.eol }}{{ end }}](/docs/nodejs_support_policy) ({{ $major.date }}) |
+| **Expected end of life** | {{ $major.date }} |
 | **Status** | Active |
 
 {{ $dep.summary }}

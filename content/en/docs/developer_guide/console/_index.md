@@ -65,7 +65,7 @@ _Dynamic_ specifications take their name and description from your services `pac
 
 A flow is a low-code way of orchestrating services and utilities. Flows can be invoked by endpoints as well as by a number of other flow-triggers such as timers and event queues. The **Flows** tab lets you create and edit flows.
 
-![localhost_8080_console_project_summary_%282%29](/Images/localhost_8080_console_project_summary_(2).png)
+![Flows tab](/Images/localhost_8080_console_project_summary_(2).png)
 
 ### Models tab
 
@@ -77,7 +77,7 @@ The **Models** tab lets you create new models. The model build process involves 
 1. Add fields to your new model.
 1. Select the auto-generated API endpoint.
 
-![localhost_8080_console_project_summary_%283%29](/Images/localhost_8080_console_project_summary_(3).png)
+![Models tab](/Images/localhost_8080_console_project_summary_(3).png)
 
 You may only build models when executing the project locally. The build console will not work in production even if you enable the Admin Console in production.
 
@@ -91,13 +91,13 @@ The **Configuration** tab displays the list of configuration files on the {{% va
 
 See [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/) for an example and settings.
 
-![localhost_8080_console_project_summary_%284%29](/Images/localhost_8080_console_project_summary_(4).png)
+![Configuration tab](/Images/localhost_8080_console_project_summary_(4).png)
 
 ### Credentials tab
 
 The **Credentials** tab displays a card view listing of all the currently configured credentials. For additional information, refer to [Managing Credentials](/docs/developer_guide/credentials/managing_credentials/).
 
-![localhost_8080_console_project_summary_%288%29](/Images/localhost_8080_console_project_summary_(8).png)
+![Credentials tab](/Images/localhost_8080_console_project_summary_(8).png)
 
 ### Plugins tab
 
@@ -105,15 +105,15 @@ The **Plugins** tab shows the components to extend the core functionality of {{%
 
 A list of official **Axway supported plugins.**
 
-![localhost_8080_console_project_summary_%285%29](/Images/localhost_8080_console_project_summary_(5).png)
+![Plugins tab - supported plugins](/Images/localhost_8080_console_project_summary_(5).png)
 
 A list of **Community plugins**. These have been contributed by members of the {{% variables/apibuilder_prod_name %}} community are are not officially supported by Axway.
 
-![localhost_8080_console_project_summary_%286%29](/Images/localhost_8080_console_project_summary_(6).png)
+![Plugins tab - community plugins](/Images/localhost_8080_console_project_summary_(6).png)
 
 And a list of **Installed plugins.**
 
-![localhost_8080_console_project_summary_%287%29](/Images/localhost_8080_console_project_summary_(7).png)
+![Plugins tab - installed plugins](/Images/localhost_8080_console_project_summary_(7).png)
 
 #### Install a listed plugin
 
@@ -134,6 +134,12 @@ Before installing community plugins, you should confirm that you agree that you 
 #### Create a plugin
 
 To create a plugin, select the **Create plugin** link. You are directed to [{{% variables/apibuilder_prod_name %}} SDK](/docs/developer_guide/sdk) documentation to guide you through the process.
+
+### Updates tab
+
+The **Updates** tab shows updates and upgrades for installed components. You should always keep your components up to date for the latest features, bug fixes, and security updates.
+
+![Updates tab](/Images/console_tab_updates.png)
 
 ## Information and search
 

@@ -7,7 +7,7 @@ Hide_readingtime: true
 ---
 ## Summary
 
-In this release we have removed the Titanium reference from OpenAPI Try-it out examples section.
+In this release we added an "Updates" tab to inform users of updates that are available to the {{% variables/apibuilder_prod_name %}} Core and plugin components.
 
 {{% releasenotes/upgrade %}}
 
@@ -15,7 +15,8 @@ In this release we have removed the Titanium reference from OpenAPI Try-it out e
 
 ## Features
 
-* #7173: Removed Titanium reference from OpenAPI Try-it out examples.
+* #7399: Added new "Updates" tab to UI.
+* #7173: Removed the Titanium example from the **API Doc & Test** tab from the **Try it out** examples.
 
 {{% releasenotes/deprecations %}}
 

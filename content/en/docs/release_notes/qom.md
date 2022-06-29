@@ -16,7 +16,7 @@ In this release we added an "Updates" tab to inform users of updates that are av
 ## Features
 
 * #7399: Added new "Updates" tab to UI.
-* #7173: Removed the Titanium example from the **API Doc & Test** tab from the **Try it out** examples.
+* #7173: Removed Titanium examples from OpenAPI **Try it out** sections in the UI.
 
 {{% releasenotes/deprecations %}}
 

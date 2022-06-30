@@ -139,6 +139,14 @@ To create a plugin, select the **Create plugin** link. You are directed to [{{% 
 
 The **Updates** tab shows updates and upgrades for installed components. You should always keep your components up to date for the latest features, bug fixes, and security updates.
 
+On startup, _updates_ are checked using npm during development only.
+
+_Updates_ are new compatible versions of components that will be installed when running [`npm update`](https://docs.npmjs.com/cli/v8/commands/npm-update).
+
+_Upgrades_ are new versions of components which may introduce breaking changes, and are outside the range allowed by your service's package.json. These require extra care when consuming, and can also require modifications to your service.
+
+_Upgrades are not currently displayed, and will be introduced in a future release._
+
 ![Updates tab](/Images/updates_tab.png)
 
 ## Information and search

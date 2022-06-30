@@ -145,7 +145,7 @@ _Updates_ are new compatible versions of components that will be installed when 
 
 _Upgrades_ are new versions of components which may introduce breaking changes, and are outside the range allowed by your service's package.json. These require extra care when consuming, and can also require modifications to your service.
 
-_Upgrades are not currently displayed, and will be introduced in a future release._
+Upgrades are not currently displayed, and will be introduced in a future release.
 
 This feature is only available when using maintenance and LTS Node.js versions greater than 12.
 

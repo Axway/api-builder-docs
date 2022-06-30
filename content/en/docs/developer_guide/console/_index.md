@@ -147,6 +147,8 @@ _Upgrades_ are new versions of components which may introduce breaking changes, 
 
 _Upgrades are not currently displayed, and will be introduced in a future release._
 
+This feature is only available when using maintenance and LTS Node.js versions greater than 12.
+
 ![Updates tab](/Images/updates_tab.png)
 
 ## Information and search

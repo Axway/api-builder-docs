@@ -49,7 +49,7 @@ The `admin` dictionary can contain the following keys:
 
 The **Summary** tab lists basic information about your application like app name, version, description, author, license, and API key. To quickly navigate to the **Summary** tab, click on the Axway icon or click on {{% variables/apibuilder_prod_name %}}.
 
-![localhost_8080_console_project_summary](/Images/localhost_8080_console_project_summary.png)
+![Project Summary](/Images/project_summary_tab.png)
 
 ### API Doc & Test tab
 
@@ -59,13 +59,13 @@ Documents may be dynamically generated from components of your service, such as 
 
 _Dynamic_ specifications take their name and description from your services `package.json`.
 
-![API Doc & Test tab](/Images/console_tab_api_doc_and_test.png)
+![API Doc & Test tab](/Images/api_doc_and_test_tab.png)
 
 ### Flows tab
 
 A flow is a low-code way of orchestrating services and utilities. Flows can be invoked by endpoints as well as by a number of other flow-triggers such as timers and event queues. The **Flows** tab lets you create and edit flows.
 
-![Flows tab](/Images/localhost_8080_console_project_summary_(2).png)
+![Flows tab](/Images/flows_tab.png)
 
 ### Models tab
 
@@ -77,7 +77,7 @@ The **Models** tab lets you create new models. The model build process involves 
 1. Add fields to your new model.
 1. Select the auto-generated API endpoint.
 
-![Models tab](/Images/localhost_8080_console_project_summary_(3).png)
+![Models tab](/Images/models_tab.png)
 
 You may only build models when executing the project locally. The build console will not work in production even if you enable the Admin Console in production.
 
@@ -91,13 +91,13 @@ The **Configuration** tab displays the list of configuration files on the {{% va
 
 See [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/) for an example and settings.
 
-![Configuration tab](/Images/localhost_8080_console_project_summary_(4).png)
+![Configuration tab](/Images/configurations_tab.png)
 
 ### Credentials tab
 
 The **Credentials** tab displays a card view listing of all the currently configured credentials. For additional information, refer to [Managing Credentials](/docs/developer_guide/credentials/managing_credentials/).
 
-![Credentials tab](/Images/localhost_8080_console_project_summary_(8).png)
+![Credentials tab](/Images/credentials_tab.png)
 
 ### Plugins tab
 
@@ -105,15 +105,15 @@ The **Plugins** tab shows the components to extend the core functionality of {{%
 
 A list of official **Axway supported plugins.**
 
-![Plugins tab - supported plugins](/Images/localhost_8080_console_project_summary_(5).png)
+![Plugins tab - supported plugins](/Images/plugins_tab_supported.png)
 
 A list of **Community plugins**. These have been contributed by members of the {{% variables/apibuilder_prod_name %}} community are are not officially supported by Axway.
 
-![Plugins tab - community plugins](/Images/localhost_8080_console_project_summary_(6).png)
+![Plugins tab - community plugins](/Images/plugins_tab_community.png)
 
 And a list of **Installed plugins.**
 
-![Plugins tab - installed plugins](/Images/localhost_8080_console_project_summary_(7).png)
+![Plugins tab - installed plugins](/Images/plugins_tab_installed.png)
 
 #### Install a listed plugin
 
@@ -139,7 +139,7 @@ To create a plugin, select the **Create plugin** link. You are directed to [{{% 
 
 The **Updates** tab shows updates and upgrades for installed components. You should always keep your components up to date for the latest features, bug fixes, and security updates.
 
-![Updates tab](/Images/console_tab_updates.png)
+![Updates tab](/Images/updates_tab.png)
 
 ## Information and search
 

@@ -18,14 +18,12 @@ Summary of this release.
 ## Fixes
 
 * #7469: Added a warning when using Node.js 17 (EoL since June 2022) as per our [Node.js support policy](/docs/nodejs_support_policy/).
+* #7428: The {{% variables/platform_prod_name %}} {{% variables/apibuilder_prod_name %}} CLI version has been changed from 3.x to 6.x so that it shares the same version with our equivalent {{% variables/apibuilder_prod_name %}} CLI. No breaking changes were introduced.
 
 {{% releasenotes/deprecations %}}
 
-## Updated modules
-* [@axway/amplify-api-builder-cli](https://www.npmjs.com/package/@axway/api-builder-cli/v/3.3.6)
-* [@axway/api-builder-openapi-upgrade](https://www.npmjs.com/package/@axway/api-builder-openapi-upgrade/v/1.0.8)
-* [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.92.2)
-* [@axway/api-builder](https://www.npmjs.com/package/@axway/api-builder/v/6.3.6)
+<!-- Regenerate modules/plugins with api-builder-tools generate-release-notes script -->
+<!-- ## Updated modules -->
 
 ## Known issues
 

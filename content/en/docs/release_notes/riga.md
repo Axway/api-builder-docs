@@ -13,9 +13,11 @@ Summary of this release.
 
 <!-- ## Breaking changes -->
 
-## Features
+<!-- ## Features -->
 
-* #7469: Node.js v17 is deprecated.
+## Fixes
+
+* #7469: Added a warning when using Node.js 17 (EoL since June 2022) as per our [Node.js support policy](/docs/nodejs_support_policy/).
 
 {{% releasenotes/deprecations %}}
 

@@ -7,7 +7,7 @@ date: 2021-10-01
 
 ## Overview
 
-Each {{% variables/apibuilder_prod_name %}} integration that you create can report its own transaction usage to the platform without the need for an agent. Transactions are reported against Environments in your Organization, and you can review these transactions along with those from [other Amplify products](https://docs.axway.com/bundle/subusage_11_en/page/amplify_subscription_usage_and_reporting.html). For more information, see [Subscription Usage Tracking](https://docs.axway.com/bundle/subusage_11_en/page/about_subscription_usage_tracking.html) and [Manage Billing](https://docs.axway.com/bundle/platform-management/page/docs/management_guide/managing_billing/index.html).
+Each {{% variables/apibuilder_prod_name %}} integration that you create can report its own transaction usage to the platform without the need for an agent. Transactions are reported against Environments in your Organization, and you can review these transactions along with those from [other Amplify products](https://docs.axway.com/bundle/subusage_11_en/page/amplify_subscription_usage_and_reporting.html). For more information, see [Subscription Usage Tracking](https://docs.axway.com/bundle/subusage_11_en/page/about_subscription_usage_tracking.html).
 
 ### What is counted as a transaction?
 
@@ -106,7 +106,7 @@ When you want to track transaction usage, in your target environment, you need t
 
 ### subscriptionUsageTracking
 
-This configuration is used to configure {{% variables/apibuilder_prod_name %}} [usage tracking for the {{% variables/platform_prod_name %}}](https://docs.axway.com/bundle/subusage_en/page/amplify_subscription_usage_and_reporting.html). Certain keys are only applicable when using specific reporters. These are identified in the final column.
+This configuration is used to configure {{% variables/apibuilder_prod_name %}}. Certain keys are only applicable when using specific reporters. These are identified in the final column.
 
 | Key | Type | Description | Required | Default | Applicable reporters |
 | --- | --- | --- | --- | --- | --- |

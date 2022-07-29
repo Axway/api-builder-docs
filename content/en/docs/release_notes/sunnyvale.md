@@ -26,9 +26,9 @@ In this release we added a system of badge notifications for the UI. Notificatio
 
 <!-- Regenerate modules/plugins with api-builder-tools generate-release-notes script -->
 ## Updated modules
-* [@axway/api-builder-admin@1.66.3](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.66.3)
+* [@axway/api-builder-admin@1.67.0](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.67.0)
 * [@axway/api-builder-oas-flow-node@2.6.6](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/2.6.6)
-* [@axway/api-builder-runtime@4.92.5](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.92.5)
+* [@axway/api-builder-runtime@4.92.6](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.92.6)
 * [@axway/api-builder-sdk@1.2.5](https://www.npmjs.com/package/@axway/api-builder-sdk/v/1.2.5)
 * [@axway/api-builder-test-utils@1.5.11](https://www.npmjs.com/package/@axway/api-builder-test-utils/v/1.5.11)
 

@@ -19,7 +19,7 @@ In this release we added a system of badge notifications for the UI. Notificatio
 
 * #7466: Fixed an issue in [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) credential manager that ignored credential failure when the credential was previously deleted.
 * #7466: Fixed an issue in [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) credential manager that failed to mark credentials in an error state when refresh fails.
-* #7466: Fixed an issue in [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) credential manager that failed to mark expired credentials in an error state when they cannot be automatically refreshed.
+* #7466: Fixed an issue in [@axway/api-builder-runtime](https://www.npmjs.com/package/@axway/api-builder-runtime) credential manager that failed to mark expired credentials in a warning state when they cannot be automatically refreshed.
 
 {{% releasenotes/deprecations %}}
 

@@ -5,7 +5,7 @@ date: 2022-08-26
 
 ## Why are we making this change
 
-In the [Tauranga](/docs/release_notes/tauranga/) release, we introduced a new `Project` utility in [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) to reduce the amount of code that users have to manage in their project unit tests. When this feature is used, it allows us to provide unit test optimisations for new {{% variables/apibuilder_prod_name %}} Core features through regular updates without users having to make manual changes such as this one to receive them.
+In the [Unna](/docs/release_notes/unna/) release, we introduced a new `Project` utility in [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) to reduce the amount of code that users have to manage in their project unit tests. When this feature is used, it allows us to provide unit test optimisations for new {{% variables/apibuilder_prod_name %}} Core features through regular updates without users having to make manual changes such as this one to receive them.
 
 ## How does this impact my service
 
@@ -15,7 +15,7 @@ New projects have this feature enabled by default.
 
 ## Upgrade existing services
 
-This feature requires the [Tauranga](/docs/release_notes/tauranga/) release of {% variables/apibuilder_prod_name %}} Core, so ensure you have installed all updates before continuing. This guide also assumes you have followed the previous update outlined in [Replace the request dev-dependency in project unit tests](/docs/updates/2021_12_17_update_to_remove_request_module)
+This feature requires the [Tauranga](/docs/release_notes/unna/) release of {% variables/apibuilder_prod_name %}} Core, so ensure you have installed all updates before continuing. This guide also assumes you have followed the previous update outlined in [Replace the request dev-dependency in project unit tests](/docs/updates/2021_12_17_update_to_remove_request_module)
 
 ### Install @axway/api-builder-test-utils
 

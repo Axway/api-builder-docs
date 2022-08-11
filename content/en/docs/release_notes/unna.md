@@ -1,6 +1,6 @@
 ---
-title: Ulaanbaatar release notes
-linkTitle: Ulaanbaatar
+title: Unna release notes
+linkTitle: Unna
 description: 26 August 2022
 date: 2022-08-26
 Hide_readingtime: true

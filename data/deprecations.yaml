@@ -1,6 +1,6 @@
 D001:
   name: /apidoc/docs.json
-  release: "4.0.0"
+  release: 'v4'
   eol: v6
   date: 2018-06-29
   summary: >-
@@ -396,7 +396,6 @@ D039:
   name: Unmaintained Node.js versions
   release: Jackson
   date: 2020-02-28
-  eol: v6
   summary: >-
     We introduced a [Node.js support policy](/docs/nodejs_support_policy/) in which end-of-life Node.js versions are
     automatically deprecated by API Builder. See
@@ -409,7 +408,7 @@ D040:
   name: Node.js v10
   release: Jackson
   date: 2020-02-28
-  eol: v6
+  eol: v5
   summary: >-
     Node.js v10 has been deprecated. See API Builder's [Node.js support policy](/docs/nodejs_support_policy/).
     While the versions we deem as deprecated are not recommended, API compatibility will be maintained until
@@ -570,7 +569,7 @@ D055:
   name: Node.js v14
   release: Oyo
   date: 2022-06-03
-  eol: v8
+  eol: v5
   summary: >-
     Node.js v14 has been deprecated. API compatibility will be maintained until API Builder v5.
     See API Builder's [Node.js support policy](/docs/nodejs_support_policy/).

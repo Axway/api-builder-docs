@@ -1,7 +1,5 @@
 ---
-title: >-
-  2021-12-17 Replace the request dev-dependency in project unit tests
-weight: 40
+title: Replace the request dev-dependency in project unit tests
 date: 2021-12-17
 ---
 ## Why are we making this change

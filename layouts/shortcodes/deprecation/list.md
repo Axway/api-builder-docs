@@ -5,11 +5,10 @@
 {{ range $id, $dep := $deprecations }}
 ### [{{ $id }}] {{ $dep.name }} {#{{ $id }}}
 <!-- this will access .Site.Data.majorReleases[ $dep.eol ] -->
-{{ $major := index $majors $dep.eol }}
 |  |  |
 | ---- | ---- |
-| **Introduced in release** | [{{ $dep.release }}](/docs/release_notes/{{ lower $dep.release }}) ({{ $dep.date }}) |
-| **Expected end of life** | {{ $major.date }} |
+| **Introduced in release** | [{{ $dep.release }}](/docs/release_notes/{{ lower $dep.release }}) ({{ $dep.date }}) | {{ if $dep.eol }} {{ $major := index $majors $dep.eol }}
+| **Expected end of life** | {{ $major.date }} | {{ end }}
 | **Status** | Active |
 
 {{ $dep.summary }}

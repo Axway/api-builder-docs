@@ -27,9 +27,6 @@ In this release we continued our effort on providing the necessary information t
 
 ## Updated modules
 
-* [@axway/api-builder-admin@1.67.1](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.67.1)
-* [@axway/api-builder-runtime@4.92.7](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.92.7)
-
 <!-- ## Updated plugins -->
 
 ## Known issues

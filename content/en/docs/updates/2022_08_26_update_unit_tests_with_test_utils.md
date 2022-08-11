@@ -71,16 +71,16 @@ You should wrap existing assertions that require a running server within `runtim
 
 ```javascript
 it('should assert something', async () => {
-	expect(example).to.equal(true);;
+  expect(example).to.equal(true);;
 });
 ```
 
 New code:
 ```javascript
 it('should assert something', async () => {
-	await runtime.test(async () => {
-		expect(example).to.equal(true);
-	});
+  await runtime.test(async () => {
+    expect(example).to.equal(true);
+  });
 });
 ```
 
@@ -97,40 +97,40 @@ const got = require('got');
 const { startApiBuilder, stopApiBuilder } = require('./_base');
 
 describe('APIs', function () {
-	this.timeout(30000);
-	let apibuilder;
-	let client;
+  this.timeout(30000);
+  let apibuilder;
+  let client;
 
-	/**
-	 * Start API Builder.
-	 */
-	before(async () => {
-		apibuilder = await startApiBuilder();
-		const apikey = apibuilder.config.apikey;
-		client = got.extend({
-			prefixUrl: `http://localhost:${apibuilder.port}`,
-			headers: {
-				apikey,
-				authorization: `Basic ${Buffer.from(apikey + ':').toString('base64')}`
-			},
-			throwHttpErrors: false
-		});
-	});
+  /**
+   * Start API Builder.
+   */
+  before(async () => {
+    apibuilder = await startApiBuilder();
+    const apikey = apibuilder.config.apikey;
+    client = got.extend({
+      prefixUrl: `http://localhost:${apibuilder.port}`,
+      headers: {
+        apikey,
+        authorization: `Basic ${Buffer.from(apikey + ':').toString('base64')}`
+      },
+      throwHttpErrors: false
+    });
+  });
 
-	/**
-	 * Stop API Builder after the tests.
-	 */
-	after(() => stopApiBuilder(apibuilder));
+  /**
+   * Stop API Builder after the tests.
+   */
+  after(() => stopApiBuilder(apibuilder));
 
-	describe('Healthcheck', () => {
-		it('should be able to hit the healthcheck API', async () => {
-			const response = await client.get('apibuilderPing.json', {
-				responseType: 'json'
-			});
-			expect(response.statusCode).to.equal(200);
-			expect(response.body).to.deep.equal({ success: true });
-		});
-	});
+  describe('Healthcheck', () => {
+    it('should be able to hit the healthcheck API', async () => {
+      const response = await client.get('apibuilderPing.json', {
+        responseType: 'json'
+      });
+      expect(response.statusCode).to.equal(200);
+      expect(response.body).to.deep.equal({ success: true });
+    });
+  });
 });
 ```
 
@@ -142,34 +142,34 @@ const got = require('got');
 const { Runtime } = require('@axway/api-builder-test-utils');
 
 describe('APIs', function () {
-	this.timeout(30000);
-	let runtime;
-	let client;
+  this.timeout(30000);
+  let runtime;
+  let client;
 
-	before(async () => {
-		runtime = new Runtime();
-		const apikey = runtime.server.config.apikey;
-		const port = runtime.server.port;
-		client = got.extend({
-			prefixUrl: `http://localhost:${port}`,
-			headers: {
-				apikey,
-				authorization: `Basic ${Buffer.from(apikey + ':').toString('base64')}`
-			},
-			throwHttpErrors: false
-		});
-	});
+  before(async () => {
+    runtime = new Runtime();
+    const apikey = runtime.server.config.apikey;
+    const port = runtime.server.port;
+    client = got.extend({
+      prefixUrl: `http://localhost:${port}`,
+      headers: {
+        apikey,
+        authorization: `Basic ${Buffer.from(apikey + ':').toString('base64')}`
+      },
+      throwHttpErrors: false
+    });
+  });
 
-	describe('Healthcheck', () => {
-		it('should be able to hit the healthcheck API', async () => {
-			await runtime.test(async () => {
-				const response = await client.get('apibuilderPing.json', {
-					responseType: 'json'
-				});
-				expect(response.statusCode).to.equal(200);
-				expect(response.body).to.deep.equal({ success: true });
-			});
-		});
-	});
+  describe('Healthcheck', () => {
+    it('should be able to hit the healthcheck API', async () => {
+      await runtime.test(async () => {
+        const response = await client.get('apibuilderPing.json', {
+          responseType: 'json'
+        });
+        expect(response.statusCode).to.equal(200);
+        expect(response.body).to.deep.equal({ success: true });
+      });
+    });
+  });
 });
 ```

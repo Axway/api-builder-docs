@@ -28,7 +28,6 @@ In this release we started work on a feature to check for and inform users of up
 * [@axway/api-builder-oas-flow-node@2.6.4](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/2.6.4)
 * [@axway/api-builder-runtime@4.92.1](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.92.1)
 * [@axway/api-builder-openapi-upgrade@1.0.7](https://www.npmjs.com/package/@axway/api-builder-openapi-upgrade/v/1.0.7)
-* [arrow-admin-ui@4.49.0](https://www.npmjs.com/package/arrow-admin-ui/v/4.49.0)
 
 ## Updated plugins
 

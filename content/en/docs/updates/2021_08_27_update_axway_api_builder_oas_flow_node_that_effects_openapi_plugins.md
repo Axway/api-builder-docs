@@ -1,11 +1,5 @@
 ---
-title: >-
-  2021-08-27 update @axway/api-builder-oas-flow-node that effects openapi
-  plugins
-linkTitle: >-
-  2021-08-27 update @axway/api-builder-oas-flow-node that effects openapi
-  plugins
-weight: 20
+title: Update to @axway/api-builder-oas-flow-node that effects OpenAPI plugins
 date: 2021-08-27
 ---
 

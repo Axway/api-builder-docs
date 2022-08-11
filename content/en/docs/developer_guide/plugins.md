@@ -5,7 +5,7 @@ weight: 100
 date: 2021-10-01
 ---
 
-{{% variables/apibuilder_prod_name %}} 4.0.0 introduces the concept of plugins. Plugins are regular node modules that are included in your {{% variables/apibuilder_prod_name %}} project's `package.json` file.
+{{% variables/apibuilder_prod_name %}} v4 introduces the concept of plugins. Plugins are regular node modules that are included in your {{% variables/apibuilder_prod_name %}} project's `package.json` file.
 
 {{% variables/apibuilder_prod_name %}} detects plugins by searching for installed modules with the `api-builder-plugin-` prefix. Scoped packages with this prefix will also be detected. These plugins can contain a mixture of different component types.
 

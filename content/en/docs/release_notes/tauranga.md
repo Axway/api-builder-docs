@@ -20,13 +20,15 @@ In this release, we continued our effort on providing the necessary information 
 {{% releasenotes/deprecations %}}
 
 ## Updated modules
-* [@axway/api-builder-admin@1.66.3](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.66.3)
-* [@axway/api-builder-runtime@4.92.5](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.92.5)
+
+* [@axway/api-builder-admin@1.67.1](https://www.npmjs.com/package/@axway/api-builder-admin/v/1.67.1)
+* [@axway/api-builder-runtime@4.92.7](https://www.npmjs.com/package/@axway/api-builder-runtime/v/4.92.7)
 * [@axway/api-builder-oas-flow-node@2.6.6](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/2.6.6)
 * [@axway/api-builder-sdk@1.2.5](https://www.npmjs.com/package/@axway/api-builder-sdk/v/1.2.5)
 * [@axway/api-builder-test-utils@1.5.11](https://www.npmjs.com/package/@axway/api-builder-test-utils/v/1.5.11)
 
 ## Updated plugins
+
 * [@axway/api-builder-plugin-fn-base64@4.1.4](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-base64/v/4.1.4)
 * [@axway/api-builder-plugin-fn-javascript@3.1.4](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-javascript/v/3.1.4)
 * [@axway/api-builder-plugin-fn-json@4.1.4](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-json/v/4.1.4)

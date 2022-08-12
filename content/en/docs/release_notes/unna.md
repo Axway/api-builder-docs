@@ -7,13 +7,15 @@ Hide_readingtime: true
 ---
 ## Summary
 
-In this release weintroduced a way to provide unit-test improvements to users more easily.
+In this release, we continued our effort on providing the necessary information to users to keep their applications up to date. With this release, all upgrades that are available to the {{% variables/apibuilder_prod_name %}} Core and the installed plugin components in their services will be now shown alongside any potential updates in the [**Updates** tab](/docs/developer_guide/console/#updates-tab). We also introduced a way to provide unit-test improvements to users more easily.
 
 {{% releasenotes/upgrade %}}
 
 <!-- ## Breaking changes -->
 
 ## Features
+
+* #7405: Projects now check for upgrades on startup, and they are displayed in the [**Updates** tab](/docs/developer_guide/console/#updates-tab).
 * #7470: {{% variables/apibuilder_prod_name %}} has been updated to allow configuration from files in `/conf` to be overridden when creating a new `APIBuilder` instance by passing `configOverrides` as a key to the second `options` argument in the constructor.
 * #7470: [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) updates will now be displayed in the [**Updates** tab](/docs/developer_guide/console/#updates-tab).
 * #7470: [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) now has a [`Runtime`](TODO: add link to test utils readme when we add the documentation) feature that can be used to test a real {{% variables/apibuilder_prod_name %}} project.

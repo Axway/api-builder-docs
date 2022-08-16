@@ -5,7 +5,7 @@ date: 2022-08-26
 
 ## Why are we making this change
 
-In the [Unna](/docs/release_notes/unna/) release, we introduced a new `Project` utility in [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) to reduce the amount of code that users have to manage in their project unit tests. When this feature is used, it allows us to provide unit test optimisations for new {{% variables/apibuilder_prod_name %}} Core features through regular updates without users having to make manual changes such as this one to receive them.
+In the [Unna](/docs/release_notes/unna/) release, we introduced a new `Project` utility in [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) to reduce the amount of code that users have to manage in their project unit tests. When this feature is used, it allows us to provide unit test optimisations for new {{% variables/apibuilder_prod_name %}} Core features through regular updates without users having to make manual changes (such as this one) to receive them.
 
 ## How does this impact my service
 
@@ -15,7 +15,7 @@ New projects have this feature enabled by default.
 
 ## Upgrade existing services
 
-This feature requires the [Tauranga](/docs/release_notes/unna/) release of {% variables/apibuilder_prod_name %}} Core, so ensure you have installed all updates before continuing. This guide also assumes you have followed the previous update outlined in [Replace the request dev-dependency in project unit tests](/docs/updates/2021_12_17_update_to_remove_request_module)
+This feature requires the [Unna](/docs/release_notes/unna/) release of {% variables/apibuilder_prod_name %}} Core, so ensure you have installed all updates before continuing. This guide also assumes you have followed the previous update outlined in [Replace the request dev-dependency in project unit tests](/docs/updates/2021_12_17_update_to_remove_request_module)
 
 ### Install @axway/api-builder-test-utils
 
@@ -27,25 +27,33 @@ npm install @axway/api-builder-test-utils@1.6.0 --save-dev
 
 ### Import @axway/api-builder-test-utils
 
-Within your unit tests, you will be replacing references to `_base`, `startApiBuilder` and `stopApiBuilder`.
+In all of your project's unit tests, find this code:
 
-Find and replace following line to import `@axway-api-builder-test-utils` into your unit tests:
 ```javascript
 const { startApiBuilder, stopApiBuilder } = require('./_base');
 ```
-New code:
+
+And replace it with:
+
 ```javascript
 const { Runtime } = require('@axway/api-builder-test-utils');
 ```
 
+### Remove _base.js
+
+The file `/test/_base.js` is now no longer used, and can be deleted from your project.
+
 ### Replace startApiBuilder with Runtime
-Within inside `describe`, replace `let apibuilder` with `let runtime`.
-Now, replace `startApiBuilder` and `apikey`:
+
+In all of your project's unit tests, find the `before` block of code:
+
 ```javascript
 apibuilder = await startApiBuilder();
 const apikey = apibuilder.config.apikey;
 ```
-New code:
+
+Replace `startApiBuilder` and `apikey`:
+
 ```javascript
 runtime = new Runtime();
 const apikey = runtime.server.config.apikey;
@@ -65,17 +73,17 @@ after(() => stopApiBuilder(apibuilder));
 ```
 
 ### Update assertions
-The new code will encapsulate each of your tests in an individual run of API Builder, ensuring any failure will shut down the server rather than leaving it running in the background causing future tests to fail.
 
-You should wrap existing assertions that require a running server within `runtime.test`. The following assertion is an example:
+Previously, your tests may assert similar to this example:
 
 ```javascript
 it('should assert something', async () => {
-  expect(example).to.equal(true);;
+  expect(example).to.equal(true);
 });
 ```
 
-New code:
+However, that was error prone, and if the test failed, there was a chance the server would not shut down correctly. Instances of `Runtime` object now have a `.test` function that can be used to encapsulate each test that will automatically stop the server if there are any failures. The above example can be written:
+
 ```javascript
 it('should assert something', async () => {
   await runtime.test(async () => {
@@ -84,9 +92,10 @@ it('should assert something', async () => {
 });
 ```
 
-Finally, `/test/_base.js` should now be no longer used, so delete the file from your project.
+In all of your project's unit tests, update your tests to use the `runtime.test` function.
 
 ## Example
+
 Here is a before-after example of the changes made to the default test file in new projects.
 
 ### Before
@@ -146,7 +155,7 @@ describe('APIs', function () {
   let runtime;
   let client;
 
-  before(async () => {
+  beforeEach(async () => {
     runtime = new Runtime();
     const apikey = runtime.server.config.apikey;
     const port = runtime.server.port;

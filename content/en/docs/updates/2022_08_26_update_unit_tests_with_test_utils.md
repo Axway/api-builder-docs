@@ -15,7 +15,7 @@ New projects have this feature enabled by default.
 
 ## Upgrade existing services
 
-This feature requires the [Unna](/docs/release_notes/unna/) release of {% variables/apibuilder_prod_name %}} Core, so ensure you have installed all updates before continuing. This guide also assumes you have followed the previous update outlined in [Replace the request dev-dependency in project unit tests](/docs/updates/2021_12_17_update_to_remove_request_module)
+This feature requires the [Unna](/docs/release_notes/unna/) release of {{% variables/apibuilder_prod_name %}} Core, so ensure you have installed all updates before continuing. This guide also assumes you have followed the previous update outlined in [Replace the request dev-dependency in project unit tests](/docs/updates/2021_12_17_update_to_remove_request_module)
 
 ### Install @axway/api-builder-test-utils
 

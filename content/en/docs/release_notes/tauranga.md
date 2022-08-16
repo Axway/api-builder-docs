@@ -1,13 +1,13 @@
 ---
 title: Tauranga release notes
 linkTitle: Tauranga
-description: 12 August 2022
-date: 2022-08-12
+description: 16 August 2022
+date: 2022-08-16
 Hide_readingtime: true
 ---
 ## Summary
 
-In this release, we continued our effort on providing the necessary information to users to keep their applications up to date. With this release, when {{% variables/apibuilder_prod_name %}} checks for updates, it will respect npm configuration for `ca`, `cafile`, and `strict-ssl`.
+In this release, we continued our effort on providing the necessary information to users to keep their applications up to date. When {{% variables/apibuilder_prod_name %}} checks for updates, it will now respect npm configuration for `ca`, `cafile`, and `strict-ssl`.
 
 {{% releasenotes/upgrade %}}
 
@@ -15,7 +15,7 @@ In this release, we continued our effort on providing the necessary information 
 
 ## Fixes
 
-* #7490: Checking for updates, it now respects existing  npm configuration for `ca`, `cafile`, and `strict-ssl`.
+* #7490: When {{% variables/apibuilder_prod_name %}} checks for updates, it will respect npm configuration for `ca`, `cafile`, and `strict-ssl`.
 
 {{% releasenotes/deprecations %}}
 

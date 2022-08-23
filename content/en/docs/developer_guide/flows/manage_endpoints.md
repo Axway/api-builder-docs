@@ -1,6 +1,6 @@
 ---
-title: Manage Endpoints
-linkTitle: Manage Endpoints
+title: Manage endpoints
+linkTitle: Manage endpoints
 weight: 10
 date: 2021-10-01
 ---
@@ -11,7 +11,7 @@ An API endpoint provides a way for a client to access your application, such as 
 
 {{% alert title="Note" color="primary" %}}A Swagger API endpoint definition file can only be imported once. If you attempt to import a Swagger file for the same API endpoint definition, you will receive a server error message due to conflicting paths.{{% /alert %}}
 
-When designing API to import, you should refer to the apiPrefix section in [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/#apiprefix) for important API design considerations.
+When designing API to import, you should refer to the `apiPrefix` section in [Project configuration](/docs/developer_guide/project/configuration/project_configuration/#apiprefix) for important API design considerations.
 
 To import API endpoints using the {{% variables/apibuilder_prod_name %}} user interface:
 

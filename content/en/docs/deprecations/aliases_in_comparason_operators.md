@@ -18,9 +18,9 @@ This will be the default behavior in all new services.
 
 ## Why are we deprecating this feature
 
-Previously, querying an aliased field could result in an unexpected result. For example, if a composite model has an aliased field `fname`, the expectation is that a query such as `{"fname": { "$nin": ["Tom" ] }` will return all the models except those with a `fname` of `Tom.` However, the actual result is all rows, including those whose `fname` is `Tom`. This is due to the aliased field being treated as a non-existent field.
+Previously, querying an aliased field could result in an unexpected result. For example, if a composite model has an aliased field `fname`, the expectation is that a query such as `{"fname": { "$nin": ["Tom" ] }` will return all the models except those with a `fname` of `"Tom"`. However, the actual result is all rows, including those whose `fname` is `"Tom"`. This is due to the aliased field being treated as a non-existent field.
 
-Now, the aliased field is correctly mapped, and in the example scenario, only those rows whose `fname` is not `Tom` will be returned.
+Now, the aliased field is correctly mapped, and in the example scenario, only those rows whose `fname` is not `"Tom"` will be returned.
 
 ## How does this impact my service
 
@@ -44,6 +44,6 @@ flags: {
 }
 ```
 
-More `default.js` configuration file information can be found here: [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/#flags)
+For more detailed information on the configuration options, see [Project configuration](/docs/developer_guide/project/configuration/project_configuration/#flags).
 
 Once enabled, review your service to ensure that you have no logic in your flows or APIs that depends on the deprecated behavior.

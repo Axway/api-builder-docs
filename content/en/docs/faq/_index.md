@@ -49,7 +49,7 @@ Refer to [{{% variables/apibuilder_prod_name %}} APIs](/docs/developer_guide/api
 
 ## How do I configure {{% variables/apibuilder_prod_name %}}?
 
-Refer to [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/) for more information.
+Refer to [Project configuration](/docs/developer_guide/project/configuration/project_configuration/) for more information.
 
 ## How do I create {{% variables/apibuilder_prod_name %}} connectors?
 

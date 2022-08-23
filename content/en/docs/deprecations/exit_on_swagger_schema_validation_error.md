@@ -40,6 +40,6 @@ flags: {
 }
 ```
 
-More `default.js` configuration file information can be found here: [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/#flags)
+For more detailed information on the configuration options, see [Project configuration](/docs/developer_guide/project/configuration/project_configuration/#flags).
 
 Once enabled, review your startup log to ensure that the service has no invalid JSON schemas or invalid Swagger. If the application starts without error, then the upgrade is successful.

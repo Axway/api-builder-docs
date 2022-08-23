@@ -1,3 +1,4 @@
+<!-- see ./data/deprecations.yaml -->
 {{ $deprecations := .Site.Data.deprecations }}
 {{ $majors := .Site.Data.majorReleases }}
 {{ $this := . }}

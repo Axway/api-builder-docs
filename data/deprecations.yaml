@@ -573,3 +573,13 @@ D055:
   summary: >-
     Node.js v14 has been deprecated. API compatibility will be maintained until API Builder v5.
     See API Builder's [Node.js support policy](/docs/nodejs_support_policy/).
+
+D056:
+  name: disableLegacyHeaders
+  release: Unna
+  date: 2022-08-26
+  eol: v8
+  summary: >-
+    HTTP header responses for "server", "content-md5", and "etag" are deprecated
+    and will not be sent to the client by default. For more information on how
+    to be prepared for the change and start using the new behavior now.

@@ -43,6 +43,6 @@ flags: {
 }
 ```
 
-More `default.js` configuration file information can be found here: [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/#flags)
+For more detailed information on the configuration options, see [Project configuration](/docs/developer_guide/project/configuration/project_configuration/#flags).
 
 {{% alert title="Note" color="primary" %}}Enabling the `usePrimaryKeyType` feature is a breaking change for old releases, and it is recommended that you re-test your service after enabling the feature.{{% /alert %}}

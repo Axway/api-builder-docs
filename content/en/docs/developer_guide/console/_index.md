@@ -89,7 +89,7 @@ The **Configuration** tab displays the list of configuration files on the {{% va
 
 {{% alert title="Note" color="primary" %}}Edits to these files will trigger a server restart once the files have been saved.{{% /alert %}}
 
-See [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/) for an example and settings.
+See [Project configuration](/docs/developer_guide/project/configuration/project_configuration/) for an example and settings.
 
 ![Configuration tab](/Images/configurations_tab.png)
 

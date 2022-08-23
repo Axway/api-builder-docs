@@ -5,11 +5,11 @@ weight: 30
 date: 2021-10-01
 ---
 
-This section provides information on {{% variables/apibuilder_prod_name %}} logging components. {{% variables/apibuilder_prod_name %}} streams log messages to the console, enabling integration with third-party log aggregation tools. For additional information on integrating {{% variables/apibuilder_prod_name %}} logging with a third-party log aggregation tool, refer to [Export {{% variables/apibuilder_prod_name %}} Logs into a Data Store](/docs/how_to/export_api_builder_logs_into_a_data_store/).
+This section provides information on {{% variables/apibuilder_prod_name %}} logging components. {{% variables/apibuilder_prod_name %}} streams log messages to the console, enabling integration with third-party log aggregation tools. For additional information on integrating {{% variables/apibuilder_prod_name %}} logging with a third-party log aggregation tool, refer to [Export {{% variables/apibuilder_prod_name %}} logs into a data store](/docs/how_to/export_api_builder_logs_into_a_data_store/).
 
 ## Configure logging
 
-The logLevel can be set in the configuration. See [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/#loglevel).
+The logLevel can be set in the configuration. See [Project configuration](/docs/developer_guide/project/configuration/project_configuration/#loglevel).
 
 ## Logger methods
 

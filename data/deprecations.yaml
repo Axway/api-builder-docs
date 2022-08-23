@@ -580,6 +580,5 @@ D056:
   date: 2022-08-26
   eol: v8
   summary: >-
-    HTTP header responses for "server", "content-md5", and "etag" are deprecated
-    and will not be sent to the client by default. For more information on how
-    to be prepared for the change and start using the new behavior now.
+    Automatically sending HTTP response headers "server", "content-md5", and
+    "etag" are deprecated and will no longer be sent by default.

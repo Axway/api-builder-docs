@@ -45,6 +45,7 @@ flags: {
 }
 ```
 
+<<<<<<< HEAD
 Once `disableLegacyHeaders` is set to `true`, then "server", "content-md5", and "etag" are disabled by default, but the `config.http.headers` section can be used to explicitly enable or disable them.
 
 If your service already has a `config.http.headers`, then your service is not impacted by this change, you can leave the configuration section as-is. Note that any header that is `false` can be deleted as they are now disabled by default.

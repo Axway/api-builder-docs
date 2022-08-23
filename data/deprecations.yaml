@@ -580,5 +580,6 @@ D056:
   date: 2022-08-26
   eol: v8
   summary: >-
+<<<<<<< HEAD
     Automatically sending HTTP response headers "server", "content-md5", and
     "etag" are deprecated and will no longer be sent unless explicitly enabled in [`http.headers` configuration](/docs/developer_guide/project/configuration/project_configuration).

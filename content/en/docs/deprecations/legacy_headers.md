@@ -48,19 +48,19 @@ flags: {
 Once `disableLegacyHeaders` is set to `true`, if clients of your service require "server", "content-md5", or "etag", then you can individually enable them in your `config.http.headers`, e.g.:
 
 ```javascript
-	http: {
-		// This is the port the service will be bound to. Defaults to 8080.
-		port: parseInt(process.env.PORT) || 8080,
+http: {
+  // This is the port the service will be bound to. Defaults to 8080.
+  port: parseInt(process.env.PORT) || 8080,
 
-		// When this is true, the service will no longer listen on requests over http.
-		// Disabling http requires 'ssl' to be configured.
-		disabled: false,
+  // When this is true, the service will no longer listen on requests over http.
+  // Disabling http requires 'ssl' to be configured.
+  disabled: false,
 
-		// Controls certain header algorithms.
-		headers: {
-			server: true
-		}
-	},
+  // Controls certain header algorithms.
+  headers: {
+    server: true
+  }
+},
 ```
 
 For more detailed information on the configuration options, see [Project configuration](/docs/developer_guide/project/configuration/project_configuration/#http).

@@ -20,6 +20,7 @@ In this release, we continued our effort on providing the necessary information 
 * #7470: [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) updates will now be displayed in the [**Updates** tab](/docs/developer_guide/console/#updates-tab).
 * #7470: [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) now has a [`Runtime`](TODO: add link to test utils readme when we add the documentation) feature that can be used to test a real {{% variables/apibuilder_prod_name %}} project.
 * #7470: New projects now have a devDependency on [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils), and use the `Runtime` feature in unit tests. Existing users should follow [this guide](/docs/updates/2022_08_26_update_unit_tests_with_test_utils) to find out how to benefit from the new feature.
+* #7498: Added new metrics to [@axway/api-builder-plugin-prometheus](https://www.npmjs.com/package/@axway/api-builder-plugin-prometheus) for 'nodejs_active_resources', and 'nodejs_active_resources_total'.
 
 ## Fixes
 

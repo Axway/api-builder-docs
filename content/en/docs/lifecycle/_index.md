@@ -52,4 +52,4 @@ It is policy that deprecations are not introduced in the Maintenance phase. Majo
 
 ## Major version compatibility policy
 
-Our intention is that every major version of the product be backwardly compatible with the previous major version, and that the upgrade experience from one major version to the next is as simple as "clicking a button". However, there are cases where previously [deprecated](/docs/deprecations) features _may_ be removed from a new major version. Deprecated features will only ever be removed from even-numbered major releases, e.g. v4, v6, v8, etc.
+Each major version will have a number of breaking changes from the previous version, but our intention is that it should be as easy as possible to upgrade from one major version to the next. We give users the opportunity to opt-in to breaking changes at their own leisure by [deprecating](/docs/deprecations) old behavior well in advance of a breaking change being introduced in a future major version.

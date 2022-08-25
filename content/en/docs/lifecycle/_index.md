@@ -14,11 +14,10 @@ The current release schedule is as follows:
 
 ![Product release plan](/Images/lifecycle-release-plan.png)
 
-_** Actual collection of release names are to be decided._
 
 ### Node.js requirements
 
-As with any software, there will be important security releases for Node.js. These versions will often have fixes for web related vulnerabilities which are very important to when running an {{% variables/apibuilder_prod_name %}}  service. We strongly recommend to keep an eye on the [Node.js blog](https://nodejs.org/en/blog/vulnerability) for new security releases and stay up-to-date to keep your service secure. {{% variables/apibuilder_prod_name %}} will update the recommended Node.js version as and when new security releases become available.
+As with any software, there will be important security releases for Node.js. These versions will often have fixes for web related vulnerabilities which are very important to when running an {{% variables/apibuilder_prod_name %}} service. We strongly recommend to keep an eye on the [Node.js blog](https://nodejs.org/en/blog/vulnerability) for new security releases and stay up-to-date to keep your service secure. {{% variables/apibuilder_prod_name %}} will update the recommended Node.js version when we add support, and as new security releases become available.
 
 Each major version of {{% variables/apibuilder_prod_name %}} will runs on a minimum supported version of Node.js.
 
@@ -30,7 +29,7 @@ Any {{% variables/apibuilder_prod_name %}} major version that is currently suppo
 
 ## Active development phase
 
-Major {{% variables/apibuilder_prod_name %}} versions are in _Active_ development for a maximum of 12 months. In Active development, releases happen every two weeks, and may contain any of the following:
+Major {{% variables/apibuilder_prod_name %}} versions are in _Active_ development for at least 12 months. In Active development, releases happen every two weeks, and may contain any of the following:
 
 * New features
 * New components
@@ -38,18 +37,18 @@ Major {{% variables/apibuilder_prod_name %}} versions are in _Active_ developmen
 * Fixes
 * Security updates
 
-Whenever possible, we would encourage you to use the latest major version of {{% variables/apibuilder_prod_name %}}, and regularly upgrade your projects to the latest major version.
+Whenever possible, we encourage you to use the latest version of {{% variables/apibuilder_prod_name %}} by regularly applying all available updates and upgrades to your projects, and to contact support if any issues arise in doing so.
 
-In this phase, features may be [deprecated](/docs/deprecations). If you see warnings in the console, you may be using a feature that is intended to be removed from the product in a future major release. You should endeavor to resolve the deprecation warnings. In most cases, it may be enough to add a [deprecation flag](/docs/deprecations#deprecation-flags) to the configuration. You can read more about when deprecated features will be removed from the product in the [Major version compatibility policy](#major-version-compatibility-policy) section below.
+In this phase, features may be [deprecated](/docs/deprecations). If you see warnings in the console, you may be using a feature that is intended to be changed or removed from the product in a future major release. You should endeavor to resolve the deprecation warnings. In most cases, it may be enough to add a [deprecation flag](/docs/deprecations#deprecation-flags) to the configuration. You can read more about when deprecated features are planned to be removed from the product in the [Major version compatibility policy](#major-version-compatibility-policy) section below.
 
 ## Maintenance phase
 
-After 12 months of [Active development](#active-development-phase), major versions of {{% variables/apibuilder_prod_name %}} enter the _Maintenance_ phase, where the product is actively maintained and supported, but releases happen much less regularly, and may contain any of the following:
+When a new major version of {{% variables/apibuilder_prod_name %}} is released, previous major versions enter the _Maintenance_ phase, where the product is actively maintained and supported, but releases happen much less regularly, and may contain any of the following:
 
 * Fixes
 * Security updates
 
-It is policy that features and deprecations are not introduced in the Maintenance phase. Major versions of the product will remain in the _Maintenance_ phase for 12 months, after which, the Major version is no longer supported.
+It is policy that deprecations are not introduced in the Maintenance phase. Major versions of the product will remain in the _Maintenance_ phase for 12 months, after which, the Major version is no longer supported.
 
 ## Major version compatibility policy
 

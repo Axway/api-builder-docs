@@ -25,9 +25,9 @@ The "content-md5" is a MD5 hash of the HTTP response, and is used to ensure the 
 
 ## How does this impact my service
 
-This is now the default behavior for all new services. Any existing services will continue to work as they previously did, though it is strongly recommended you enable the `disableLegacyHeaders` flag on existing services to ensure your applications handle this deprecation.
+All new services will have "server", "content-md5", and "etag" disabled by default.
 
-The changed behavior may impact existing clients that rely on "server", "etag" or "content-md5".
+Any existing services will continue to work as they previously did, though it is strongly recommended you upgrade the service. Note that the upgrade is a change of behavior that may impact existing clients that rely on "server", "etag" or "content-md5".
 
 ## Upgrading existing services
 
@@ -45,7 +45,11 @@ flags: {
 }
 ```
 
-Once `disableLegacyHeaders` is set to `true`, if clients of your service require "server", "content-md5", or "etag", then you can individually enable them in your `config.http.headers`, e.g.:
+Once `disableLegacyHeaders` is set to `true`, then "server", "content-md5", and "etag" are disabled by default, but the `config.http.headers` section can be used to explicitly enable or disable them.
+
+If your service already has a `config.http.headers`, then your service is not impacted by this change, you can leave the configuration section as-is. Note that any header that is `false` can be deleted as they are now disabled by default.
+
+If your service does not have a `config.http.headers` section, then you need to carefuly consider if your clients are impacted by "server", "content-md5", and "etag", as they will not be sent by default. If clients of your service require "server", "content-md5", or "etag", then you can individually enable them in your `config.http.headers`, e.g.:
 
 ```javascript
 http: {
@@ -58,10 +62,12 @@ http: {
 
   // Controls certain header algorithms.
   headers: {
-    server: true
+    etag: true
   }
 },
 ```
+
+If "server" is already set to `true`, you should consider disabling it (or deleting it) for [security purposes](#why-are-we-deprecating-this-feature).
 
 For more detailed information on the configuration options, see [Project configuration](/docs/developer_guide/project/configuration/project_configuration/#http).
 

@@ -152,8 +152,8 @@ proxy: `http://localhost:8081`
 | Key | Type | Description |
 | --- | --- | --- |
 | port | Number | The port to listen on for HTTP requests. |
-| disabled | Boolean | False by default. When this flag is set to True HTTP traffic is disabled.<br /><br />For this to work, _baseurl_ should point to https path and _`ssl`_ must be configured and used. |
-| headers.etag | Boolean | True by default. Enabling will send an 'etag' response header which contains a unique key for a<br /><br />specific version of a resource. |
+| disabled | Boolean | False by default. When this flag is set to True HTTP traffic is disabled. For this to work, _baseurl_ should point to https path and _`ssl`_ must be configured and used. |
+| headers.etag | Boolean | True by default. Enabling will send an 'etag' response header which contains a unique key for a specific version of a resource. |
 | headers\['content-md5'\] | Boolean | True by default. Enabling will send a 'content-md5' response header which contains an MD5 hash of the response body. |
 | headers.server | Boolean | True by default. Enabling will send a 'server' response header which describes the server. i.e. `server: {{% variables/apibuilder_prod_name %}}/4.67.6` |
 

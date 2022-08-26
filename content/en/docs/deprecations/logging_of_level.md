@@ -50,6 +50,6 @@ flags: {
 }
 ```
 
-More `default.js` configuration file information can be found here: [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/#flags)
+For more detailed information on the configuration options, see [Project configuration](/docs/developer_guide/project/configuration/project_configuration/#flags).
 
 Once enabled, ensure any applications consuming your service's logs do not depend on the deprecated behavior.

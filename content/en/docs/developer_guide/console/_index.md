@@ -89,7 +89,7 @@ The **Configuration** tab displays the list of configuration files on the {{% va
 
 {{% alert title="Note" color="primary" %}}Edits to these files will trigger a server restart once the files have been saved.{{% /alert %}}
 
-See [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/) for an example and settings.
+See [Project configuration](/docs/developer_guide/project/configuration/project_configuration/) for an example and settings.
 
 ![Configuration tab](/Images/configurations_tab.png)
 
@@ -139,15 +139,12 @@ To create a plugin, select the **Create plugin** link. You are directed to [{{% 
 
 The **Updates** tab shows updates and upgrades for installed components. You should always keep your components up to date for the latest features, bug fixes, and security updates.
 
-On startup, _updates_ are checked using npm during development only.
+On startup, {{% variables/apibuilder_prod_name %}} will check npm for updates and upgrades to installed components. This check only happens in development, and never in production. This feature is only available when using maintenance and LTS Node.js versions greater than 12.
 
-_Updates_ are new compatible versions of components that will be installed when running [`npm update`](https://docs.npmjs.com/cli/v8/commands/npm-update).
+* An _update_ means that the are new compatibile versions of components available from npm, and can be installed by running [`npm update`](https://docs.npmjs.com/cli/v8/commands/npm-update).
+* An _upgrade_ means that the next version of the component may introduce breaking changes. Upgrades require extra care and attention before installing.
 
-_Upgrades_ are new versions of components which may introduce breaking changes, and are outside the range allowed by your service's package.json. These require extra care when consuming, and can also require modifications to your service.
-
-Upgrades are not currently displayed, and will be introduced in a future release.
-
-This feature is only available when using maintenance and LTS Node.js versions greater than 12.
+Before installing any upgrade, you should read the release notes very carefully. While some breaking changes are innocuous (for example, the new component requires a higher minimum version of node), some breaking changes can cause parts of your application to cease to function as expected. If this is a possibility, the release notes will explain what to do and may also require manual changes to your application before it will function as expected.
 
 ![Updates tab](/Images/updates_tab.png)
 

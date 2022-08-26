@@ -56,7 +56,7 @@ flags: {
 }
 ```
 
-More `default.js` configuration file information can be found here: [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/#flags)
+For more detailed information on the configuration options, see [Project configuration](/docs/developer_guide/project/configuration/project_configuration/#flags).
 
 Once enabled, start {{% variables/apibuilder_prod_name %}} to check for invalid flows and endpoints. If there are any flows or endpoints that are now invalid because of the removed methods, {{% variables/apibuilder_prod_name %}} will fail to start with error messages. For example, an Oracle model called NOPK would generate an error like:
 

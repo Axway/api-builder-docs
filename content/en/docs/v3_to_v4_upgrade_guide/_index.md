@@ -9,7 +9,7 @@ date: 2021-10-01
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
-{{% variables/apibuilder_prod_name %}} 4.0.0 introduced a large number of breaking changes. They are listed in detail alongside all the other changes and fixes in the [{{% variables/apibuilder_prod_name %}} 4.0.0 Release Notes](/docs/release_notes/4).
+{{% variables/apibuilder_prod_name %}} v4 introduced a large number of breaking changes. They are listed in detail alongside all the other changes and fixes in the [{{% variables/apibuilder_prod_name %}} v4 Release Notes](/docs/release_notes/v4).
 
 This guide covers the steps required for most users to migrate their projects from {{% variables/apibuilder_prod_name %}} v3 to {{% variables/apibuilder_prod_name %}} v4.
 

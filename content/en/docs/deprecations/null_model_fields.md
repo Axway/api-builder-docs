@@ -138,6 +138,6 @@ flags: {
 }
 ```
 
-More `default.js` configuration file information can be found here: [Project Configuration](/docs/developer_guide/project/configuration/project_configuration/#flags)
+For more detailed information on the configuration options, see [Project configuration](/docs/developer_guide/project/configuration/project_configuration/#flags).
 
 Once enabled, review your service to ensure that you have no logic in your flows or APIs that depends on the deprecated behavior.

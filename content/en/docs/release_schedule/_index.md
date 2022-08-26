@@ -1,6 +1,6 @@
 ---
-title: Support policy
-weight: 130
+title: Release schedule
+weight: 71
 date: 2022-08-26
 ---
 

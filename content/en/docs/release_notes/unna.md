@@ -18,8 +18,6 @@ In this release, we continued our effort on providing the necessary information 
 * #7405: Projects will now check for upgrades on startup, and they are displayed in the [**Updates** tab](/docs/developer_guide/console/#updates-tab).
 * #7498: Added new metrics to [@axway/api-builder-plugin-prometheus](https://www.npmjs.com/package/@axway/api-builder-plugin-prometheus) for 'nodejs_active_resources' and 'nodejs_active_resources_total'.
 
-## Fixes
-
 {{% releasenotes/deprecations %}}
 
 <!-- Regenerate modules/plugins with api-builder-tools generate-release-notes script -->

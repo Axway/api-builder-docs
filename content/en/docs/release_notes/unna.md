@@ -7,7 +7,7 @@ Hide_readingtime: true
 ---
 ## Summary
 
-In this release, we continued our effort on providing the necessary information to users to keep their applications up to date. With this release, all upgrades that are available to the {{% variables/apibuilder_prod_name %}} Core and the installed plugin components in their services will be now shown alongside any potential updates in the [**Updates** tab](/docs/developer_guide/console/#updates-tab). We also introduced a way to provide unit-test improvements to users more easily.
+In this release, we continued our effort on providing the necessary information to users to keep their applications up to date. With this release, all upgrades that are available to the {{% variables/apibuilder_prod_name %}} Core and the installed plugin components in their services will be now shown alongside any potential updates in the [**Updates** tab](/docs/developer_guide/console/#updates-tab).
 
 {{% releasenotes/upgrade %}}
 

@@ -18,9 +18,9 @@ The current release schedule is as follows:
 
 Below are all the {{% variables/apibuilder_prod_name %}} releases and their current status. Each major version of {{% variables/apibuilder_prod_name %}} will runs on a minimum supported version of Node.js.
 
-| {{% variables/apibuilder_prod_name %}} version | Status | Release Names | Minimum Node.js | Minimum Node.js for CLI | Recommended Node.js     | Active Start | Maintenance Start | Support Stop |
-| ---------------------------------------------- | ------ | ------------- | --------------- | ----------------------- | ----------------------- | ------------ | ----------------- | ------------ |
-| v4                                             | Active | Cities        | v8.9.0          | v.12.17.0               | v16.14.0 LTS or greater | 2018-06-29   |                   |              |
+| {{% variables/apibuilder_prod_name %}} version | Status | Release Names | Minimum Node.js                | Minimum Node.js for CLI            | Recommended Node.js                | Active Start | Maintenance Start | Support Stop |
+| ---------------------------------------------- | ------ | ------------- | ------------------------------ | ---------------------------------- | ---------------------------------- | ------------ | ----------------- | ------------ |
+| v4                                             | Active | Cities        | {{% variables/minimum_node %}} | {{% variables/minimum_node_cli %}} | {{% variables/recommended_node %}} | 2018-06-29   |                   |              |
 
 As with any software, it is important to keep up all components up to date. The [Updates](/docs/developer_guide/console#updates-tab) tab in {{% variables/apibuilder_prod_name %}} can be used to keep {{% variables/apibuilder_prod_name %}} up to date.
 

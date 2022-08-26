@@ -25,7 +25,6 @@ In this release, we continued our effort on providing the necessary information 
 {{% releasenotes/deprecations %}}
 
 <!-- Regenerate modules/plugins with api-builder-tools generate-release-notes script -->
-
 ## Updated modules
 * [@axway/amplify-api-builder-cli@6.3.8](https://www.npmjs.com/package/@axway/amplify-api-builder-cli/v/6.3.8)
 * [@axway/api-builder@6.3.8](https://www.npmjs.com/package/@axway/api-builder/v/6.3.8)

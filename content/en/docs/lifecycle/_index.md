@@ -20,7 +20,8 @@ Below are all the {{% variables/apibuilder_prod_name %}} releases and their curr
 
 | {{% variables/apibuilder_prod_name %}} version | Status | Release Names | Minimum Node.js                | Minimum Node.js for CLI            | Recommended Node.js                | Active Start | Maintenance Start | Support Stop |
 | ---------------------------------------------- | ------ | ------------- | ------------------------------ | ---------------------------------- | ---------------------------------- | ------------ | ----------------- | ------------ |
-| v4                                             | Active | Cities        | {{% variables/minimum_node %}} | {{% variables/minimum_node_cli %}} | {{% variables/recommended_node %}} | 2018-06-29   |                   |              |
+| v4                                             | Active | Cities        | {{% variables/minimum_node %}} | {{% variables/minimum_node_cli %}} | {{% variables/recommended_node %}} | 2018-06-29   | 2022-09           | 2023-09      |
+| v5                                             | Active | Authors       | v16 LTS                        | v16 LTS                            | v16 LTS                            | 2022-09      | 2023-09           | 2024-09      |
 
 As with any software, it is important to keep up all components up to date. The [Updates](/docs/developer_guide/console#updates-tab) tab in {{% variables/apibuilder_prod_name %}} can be used to keep {{% variables/apibuilder_prod_name %}} up to date.
 

@@ -26,7 +26,7 @@ As with any software, it is important to keep up all components up to date. The 
 
 Similarly, there will be important security releases for Node.js. These versions will often have fixes for web related vulnerabilities which are very important to when running an {{% variables/apibuilder_prod_name %}} service. We strongly recommend to keep an eye on the [Node.js blog](https://nodejs.org/en/blog/vulnerability) for new security releases and stay up-to-date to keep your service secure. {{% variables/apibuilder_prod_name %}} will update the recommended Node.js version when we add support, and as new security releases become available.
 
-Any {{% variables/apibuilder_prod_name %}} major version that is currently supported introduce or deprecate support for specific Node.js versions as required, according to [Node.js release schedule](https://nodejs.org/en/about/releases).
+Any {{% variables/apibuilder_prod_name %}} major version that is currently supported can introduce or deprecate support for specific Node.js versions as required, according to [Node.js release schedule](https://nodejs.org/en/about/releases).
 
 ## Active development phase
 

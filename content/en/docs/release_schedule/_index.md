@@ -33,7 +33,7 @@ Below are all the {{% variables/apibuilder_prod_name %}} releases and their curr
 
 #### {{% variables/apibuilder_prod_name %}} CLI
 
-Below are the CLI versions for the {{% variables/apibuilder_prod_name %}} releases and their current status. Only CLI with a *CLI major version* should be used with the corresponding {{% variables/apibuilder_prod_name %}} version.
+Below are the CLI versions for the {{% variables/apibuilder_prod_name %}} releases and their current status. Only CLI with a _CLI major version_ should be used with the corresponding {{% variables/apibuilder_prod_name %}} version.
 
 | {{% variables/apibuilder_prod_name %}} version | CLI major version | Status      | Minimum Node.js for CLI            | Active Start | Maintenance Start | Support Stop |
 | ---------------------------------------------- | ----------------- | ----------- | ---------------------------------- | ------------ | ----------------- | ------------ |

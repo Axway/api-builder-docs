@@ -6,11 +6,14 @@ date: 2022-09-09
 Hide_readingtime: true
 ---
 ## Summary
-Brief summary of the notable release contents.
+
+{{% variables/apibuilder_prod_name %}} v5 is released. Projects created on v4 are compatible with v5, but require installing upgrades for components (see [Upgrades](/docs/developer_guide/console#updates-tab)).
 
 {{% releasenotes/upgrade %}}
 
-<!-- ## Breaking changes -->
+## Breaking changes
+
+- #6089: Breaking change: all {{% variables/apibuilder_prod_name %}} components now require a minimum of Node.js version 16.x.
 
 <!-- ## Features -->
 

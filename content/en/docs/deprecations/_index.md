@@ -6,6 +6,8 @@ no_list: true
 date: 2021-06-22
 ---
 
+{{% alert title="Note" color="primary" %}}This page shows the deprecations for a previous {{% variables/apibuilder_prod_name %}} version. For an up-to-date list of deprecations, see the [latest {{% variables/apibuilder_prod_name %}} documentation](https://docs.axway.com/bundle/api-builder/page/docs/deprecations/index.html).{{% /alert %}}
+
 {{% variables/apibuilder_prod_name %}} regularly adds feature improvements, fixes, and occasionally identify and fix features that do not work as designed, or are orthogonal to the intended direction of the product. When these are identified, we mark them as deprecated and add them to this document. We intend to remove all the deprecated features in the next major release of the product.
 
 {{% alert title="Note" color="primary" %}}To ensure that you stay abreast of important updates and to make it easier to upgrade, you should pay attention to the deprecation warnings and address them as soon as possible.{{% /alert %}}

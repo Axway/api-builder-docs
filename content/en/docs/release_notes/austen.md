@@ -1,5 +1,5 @@
 ---
-title: Austin release notes
+title: Austen release notes
 linkTitle: Austen
 description: 9 September 2022
 date: 2022-09-09

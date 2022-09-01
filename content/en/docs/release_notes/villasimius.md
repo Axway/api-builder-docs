@@ -12,7 +12,8 @@ Brief summary of the notable release contents.
 
 <!-- ## Breaking changes -->
 
-<!-- ## Features -->
+## Features
+* #7406: When installing plugins from the **Plugins** page, if the latest version of a plugin is not compatible with the current version of {{% variables/apibuilder_prod_name %}} or Node.js a previous compatible version will be installed instead, if possible.
 
 ## Fixes
 * #7500: Fixed the unexpected re-rendering of UI components in the API DOCS & TEST page after a restart.

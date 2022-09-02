@@ -15,7 +15,7 @@ Brief summary of the notable release contents.
 <!-- ## Features -->
 
 ## Fixes
-* #7500: Fixed the unexpected re-rendering of UI components in the API DOCS & TEST page after a restart.
+* #7500: Fixed the unexpected re-rendering of UI components in the _API Doc & Test_ page after a restart.
 
 {{% releasenotes/deprecations %}}
 

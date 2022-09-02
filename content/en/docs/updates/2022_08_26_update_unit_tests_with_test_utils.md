@@ -1,11 +1,11 @@
 ---
 title: Update project unit tests to use @axway/api-builder-test-utils
-date: 2022-08-26
+date: 2022-09-16
 ---
 
 ## Why are we making this change
 
-In the [Unna](/docs/release_notes/unna/) release, we introduced a new `Project` utility in [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) to reduce the amount of code that users have to manage in their project unit tests. When this feature is used, it allows us to provide unit test optimisations for new {{% variables/apibuilder_prod_name %}} Core features through regular updates without users having to make manual changes (such as this one) to receive them.
+In the [Villasimius](/docs/release_notes/villasimius/) release, we introduced a new `Project` utility in [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) to reduce the amount of code that users have to manage in their project unit tests. When this feature is used, it allows us to provide unit test optimisations for new {{% variables/apibuilder_prod_name %}} Core features through regular updates without users having to make manual changes (such as this one) to receive them.
 
 ## How does this impact my service
 
@@ -15,7 +15,7 @@ New projects have this feature enabled by default.
 
 ## Upgrade existing services
 
-This feature requires the [Unna](/docs/release_notes/unna/) release of {{% variables/apibuilder_prod_name %}} Core, so ensure you have installed all updates before continuing. This guide also assumes you have followed the previous update outlined in [Replace the request dev-dependency in project unit tests](/docs/updates/2021_12_17_update_to_remove_request_module)
+This feature requires the [Villasimius](/docs/release_notes/villasimius/) release of {{% variables/apibuilder_prod_name %}} Core, so ensure you have installed all updates before continuing. This guide also assumes you have followed the previous update outlined in [Replace the request dev-dependency in project unit tests](/docs/updates/2021_12_17_update_to_remove_request_module)
 
 ### Install @axway/api-builder-test-utils
 
@@ -52,14 +52,11 @@ apibuilder = await startApiBuilder();
 const apikey = apibuilder.config.apikey;
 ```
 
-Replace `startApiBuilder` and `apikey`:
-
+Repalce `startApiBuilder` with `Runtime`.
 ```javascript
 runtime = new Runtime();
-const apikey = runtime.server.config.apikey;
 ```
-
-If there is code referencing `apibuilder.port`, replace it with `runtime.server.port`.
+Remove `apikey` and `port` reference from code, its now handled in `Runtime`.
 
 ### Remove stopApiBuilder
 
@@ -70,6 +67,22 @@ Delete the following code:
  * Stop API Builder after the tests.
  */
 after(() => stopApiBuilder(apibuilder));
+```
+
+
+### Remove got client
+`got` client is replaced with `runtime.request`, which supports `url`, `method`, `headers`, and `body` as options.
+
+```javascript
+runtime.request({
+  method: 'GET',
+  url: 'apibuilderPing.json',
+  headers: {
+    accept: 'application/json',
+    'content-type': 'application/json',
+    body: { fruit: 'Banana', quantity: 1 }
+  }
+});
 ```
 
 ### Update assertions
@@ -143,35 +156,29 @@ describe('APIs', function () {
 
 ```javascript
 const { expect } = require('chai');
-const got = require('got');
 const { Runtime } = require('@axway/api-builder-test-utils');
+
+/**
+ * See https://www.npmjs.com/package/@axway/api-builder-test-utils#runtime-api
+ */
 describe('APIs', function () {
   this.timeout(30000);
-  let runtime;
-  let client;
-  beforeEach(async () => {
-    runtime = new Runtime();
-    const apikey = runtime.server.config.apikey;
-    const port = runtime.server.port;
-    client = got.extend({
-      prefixUrl: `http://localhost:${port}`,
-      headers: {
-        apikey,
-        authorization: `Basic ${Buffer.from(apikey + ':').toString('base64')}`
-      },
-      throwHttpErrors: false
-    });
-  });
   describe('Healthcheck', () => {
-    it('should be able to hit the healthcheck API', async () => {
-      await runtime.test(async () => {
-        const response = await client.get('apibuilderPing.json', {
-          responseType: 'json'
-        });
-        expect(response.statusCode).to.equal(200);
-        expect(response.body).to.deep.equal({ success: true });
-      });
-    });
-  });
+		it('should be able to hit the healthcheck API', async () => {
+			const runtime = new Runtime();
+			await runtime.test(async () => {
+				const response = await runtime.request({
+					method: 'GET',
+					url: 'apibuilderPing.json',
+					headers: {
+						accept: 'application/json',
+						'content-type': 'application/json'
+					}
+				});
+				expect(response.statusCode).to.equal(200);
+				expect(response.body).to.deep.equal({ success: true });
+			});
+		});
+	});
 });
 ```

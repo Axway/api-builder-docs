@@ -69,7 +69,6 @@ Delete the following code:
 after(() => stopApiBuilder(apibuilder));
 ```
 
-
 ### Remove got client
 `got` client is replaced with `runtime.request`, which supports `url`, `method`, `headers`, and `body` as options.
 
@@ -164,21 +163,21 @@ const { Runtime } = require('@axway/api-builder-test-utils');
 describe('APIs', function () {
   this.timeout(30000);
   describe('Healthcheck', () => {
-		it('should be able to hit the healthcheck API', async () => {
-			const runtime = new Runtime();
-			await runtime.test(async () => {
-				const response = await runtime.request({
-					method: 'GET',
-					url: 'apibuilderPing.json',
-					headers: {
-						accept: 'application/json',
-						'content-type': 'application/json'
-					}
-				});
-				expect(response.statusCode).to.equal(200);
-				expect(response.body).to.deep.equal({ success: true });
-			});
-		});
-	});
+    it('should be able to hit the healthcheck API', async () => {
+      const runtime = new Runtime();
+      await runtime.test(async () => {
+        const response = await runtime.request({
+          method: 'GET',
+          url: 'apibuilderPing.json',
+          headers: {
+            accept: 'application/json',
+            'content-type': 'application/json'
+          }
+        });
+        expect(response.statusCode).to.equal(200);
+        expect(response.body).to.deep.equal({ success: true });
+      });
+    });
+  });
 });
 ```

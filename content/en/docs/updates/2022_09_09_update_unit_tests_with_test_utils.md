@@ -1,11 +1,11 @@
 ---
 title: Update project unit tests to use @axway/api-builder-test-utils
-date: 2022-09-16
+date: 2022-09-09
 ---
 
 ## Why are we making this change
 
-In the [Villasimius](/docs/release_notes/villasimius/) release, we introduced a new `Project` utility in [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) to reduce the amount of code that users have to manage in their project unit tests. When this feature is used, it allows us to provide unit test optimisations for new {{% variables/apibuilder_prod_name %}} Core features through regular updates without users having to make manual changes (such as this one) to receive them.
+In the [Villasimius](/docs/release_notes/villasimius/) release, we introduced a new `Runtime` utility in [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) to reduce the amount of code that users have to manage in their project unit tests. When this feature is used, it allows us to provide unit test optimisations for new {{% variables/apibuilder_prod_name %}} Core features through regular updates without users having to make manual changes (such as this one) to receive them.
 
 ## How does this impact my service
 
@@ -29,82 +29,76 @@ npm install @axway/api-builder-test-utils@1.6.0 --save-dev
 
 In all of your project's unit tests, find this code:
 
-```javascript
+```js
 const { startApiBuilder, stopApiBuilder } = require('./_base');
 ```
 
 And replace it with:
 
-```javascript
+```js
 const { Runtime } = require('@axway/api-builder-test-utils');
 ```
 
-### Remove _base.js
+### Remove the `_base.js` file
 
 The file `/test/_base.js` is now no longer used, and can be deleted from your project.
 
-### Replace startApiBuilder with Runtime
+### Remove the `before` and `after` block
 
-In all of your project's unit tests, find the `before` block of code:
+In all of your project's unit test files find the `before` and `after` blocks of code.
 
-```javascript
-apibuilder = await startApiBuilder();
-const apikey = apibuilder.config.apikey;
-```
+If the `before` and `after` blocks of code are the same as the ones below, then you can remove the global variables, `apibuilder` and `client`, as well as the entire `before` and `after` blocks of code.
 
-Repalce `startApiBuilder` with `Runtime`.
-```javascript
-runtime = new Runtime();
-```
-Remove `apikey` and `port` reference from code, its now handled in `Runtime`.
+```js
+let apibuilder;
+let client;
 
-### Remove stopApiBuilder
+/**
+ * Start API Builder.
+ */
+before(async () => {
+  apibuilder = await startApiBuilder();
+  const apikey = apibuilder.config.apikey;
+  client = got.extend({
+    prefixUrl: `http://localhost:${apibuilder.port}`,
+    headers: {
+      apikey,
+      authorization: `Basic ${Buffer.from(apikey + ':').toString('base64')}`
+    },
+    throwHttpErrors: false
+  });
+});
 
-Delete the following code:
-
-```javascript
 /**
  * Stop API Builder after the tests.
  */
 after(() => stopApiBuilder(apibuilder));
 ```
 
-### Remove got client
-`got` client is replaced with `runtime.request`, which supports `url`, `method`, `headers`, and `body` as options.
-
-```javascript
-runtime.request({
-  method: 'GET',
-  url: 'apibuilderPing.json',
-  headers: {
-    accept: 'application/json',
-    'content-type': 'application/json',
-    body: { fruit: 'Banana', quantity: 1 }
-  }
-});
-```
+If the `before` or `after` blocks are not the same, you will need to assess if the changes are compatible with these recommended updates, or consult the [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) documentation.
 
 ### Update assertions
 
 Previously, your tests may assert similar to this example:
 
-```javascript
-it('should assert something', async () => {
+```js
+it('should assert something', () => {
   expect(example).to.equal(true);
 });
 ```
 
-However, that was error prone, and if the test failed, there was a chance the server would not shut down correctly. Instances of `Runtime` object now have a `.test` function that can be used to encapsulate each test that will automatically stop the server if there are any failures. The above example can be written:
+However, that was error prone, and if the test failed, there was a chance the server would not shut down correctly. Instances of `Runtime` object now have a `test` function that is used to start and stop the runtime server and will stop the server if there are any failures. The above example can be rewritten.
 
-```javascript
+```js
 it('should assert something', async () => {
+  const runtime = new Runtime();
   await runtime.test(async () => {
     expect(example).to.equal(true);
   });
 });
 ```
 
-In all of your project's unit tests, update your tests to use the `runtime.test` function.
+In all of your project's unit tests, update your tests to use the new `Runtime` instance and `test` function.
 
 ## Example
 
@@ -112,7 +106,7 @@ Here is a before-after example of the changes made to the default test file in n
 
 ### Before
 
-```javascript
+```js
 const { expect } = require('chai');
 const got = require('got');
 const { startApiBuilder, stopApiBuilder } = require('./_base');
@@ -120,6 +114,7 @@ describe('APIs', function () {
   this.timeout(30000);
   let apibuilder;
   let client;
+
   /**
    * Start API Builder.
    */
@@ -135,10 +130,12 @@ describe('APIs', function () {
       throwHttpErrors: false
     });
   });
+
   /**
    * Stop API Builder after the tests.
    */
   after(() => stopApiBuilder(apibuilder));
+
   describe('Healthcheck', () => {
     it('should be able to hit the healthcheck API', async () => {
       const response = await client.get('apibuilderPing.json', {
@@ -153,25 +150,22 @@ describe('APIs', function () {
 
 ### After
 
-```javascript
+```js
 const { expect } = require('chai');
 const { Runtime } = require('@axway/api-builder-test-utils');
 
-/**
- * See https://www.npmjs.com/package/@axway/api-builder-test-utils#runtime-api
- */
 describe('APIs', function () {
   this.timeout(30000);
+
   describe('Healthcheck', () => {
     it('should be able to hit the healthcheck API', async () => {
       const runtime = new Runtime();
       await runtime.test(async () => {
         const response = await runtime.request({
           method: 'GET',
-          url: 'apibuilderPing.json',
+          path: 'apibuilderPing.json',
           headers: {
-            accept: 'application/json',
-            'content-type': 'application/json'
+            accept: 'application/json'
           }
         });
         expect(response.statusCode).to.equal(200);

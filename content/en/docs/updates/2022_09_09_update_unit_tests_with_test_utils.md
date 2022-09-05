@@ -100,6 +100,54 @@ it('should assert something', async () => {
 
 In all of your project's unit tests, update your tests to use the new `Runtime` instance and `test` function.
 
+### Update HTTP client
+
+The `Runtime` instance provides a convenience HTTP client via the [request](https://www.npmjs.com/package/@axway/api-builder-test-utils#async-runtimerequesthttpoptions) method, and the `got` module is no longer needed.
+
+Previously, HTTP client requests using `got` would look similar to this:
+
+```js
+it('should be able to hit the healthcheck API', async () => {
+  const response = await client.get('apibuilderPing.json', {
+    responseType: 'json'
+  });
+  expect(response.statusCode).to.equal(200);
+  expect(response.body).to.deep.equal({ success: true });
+});
+```
+
+Now, they can be updated to use `runtime.test` and `runtime.request`:
+
+```js
+it('should be able to hit the healthcheck API', async () => {
+  const runtime = new Runtime();
+  await runtime.test(async () => {
+    const response = await runtime.request({
+      method: 'GET',
+      path: 'apibuilderPing.json'
+    });
+    expect(response.statusCode).to.equal(200);
+    expect(response.body).to.deep.equal({ success: true });
+  });
+});
+```
+
+See [request](https://www.npmjs.com/package/@axway/api-builder-test-utils#async-runtimerequesthttpoptions) for more information on the HTTP client options and for more examples.
+
+#### Remove `got`
+
+The HTTP client library `got` is no longer needed and can be removed from the `devDependencies` in `package.json`, for example:
+
+```
+"got": "^11.8.3",
+```
+
+Also, `got` can be removed from all the test files that `require` it. This can be removed:
+
+```js
+const got = require('got');
+```
+
 ## Example
 
 Here is a before-after example of the changes made to the default test file in new projects.

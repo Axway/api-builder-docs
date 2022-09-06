@@ -26,19 +26,19 @@ Any {{% variables/apibuilder_prod_name %}} major version that is currently suppo
 
 Below are all the major Core versions and their current status and requirements.
 
-| Core version | Status      | Release Names | Minimum Node.js                | Recommended Node.js                | Active Start | Maintenance Start | Support Stop |
-| ------------ | ----------- | ------------- | ------------------------------ | ---------------------------------- | ------------ | ----------------- | ------------ |
-| v4           | Maintenance | Cities        | v8.9.0                         | v16                                | 2018-06-29   | 2022-09-09        | 2023-09-09   |
-| v5           | Active      | Authors       | {{% variables/minimum_node %}} | {{% variables/recommended_node %}} | 2022-09-09   | 2023-09-09        | 2024-09-09   |
+| Core version | Status      | Release Names | Minimum Node.js                | Recommended Node.js                                                                                                | Active Start | Maintenance Start | Support Stop |
+| ------------ | ----------- | ------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------ | ----------------- | ------------ |
+| v4           | Maintenance | Cities        | {{% variables/minimum_node %}} | {{% variables/recommended_node %}}                                                                                 | 2018-06-29   | 2022-09-09        | 2023-09-09   |
+| v5           | Active      | Authors       | v16                            | See the [latest release schedule](https://docs.axway.com/bundle/api-builder/page/docs/release_schedule/index.html) | 2022-09-09   | 2023-09-09        | 2024-09-09   |
 
 #### {{% variables/apibuilder_prod_name %}} CLI
 
 Below are the major CLI versions and their current status and requirements. Note that each CLI version should be used alongside the particular version of {{% variables/apibuilder_prod_name %}} Core as shown below.
 
-| CLI version | {{% variables/apibuilder_prod_name %}} Core version | Status      | Minimum Node.js                    | Active Start | Maintenance Start | Support Stop |
-| ----------- | ----------------------------------------------------| ----------- | ---------------------------------- | ------------ | ----------------- | ------------ |
-| v6          | v4                                                  | Maintenance | v12.17.0                           | 2018-06-29   | 2022-09-09        | 2023-09-09   |
-| v7          | v5                                                  | Active      | {{% variables/minimum_node_cli %}} | 2022-09-09   | 2023-09-09        | 2024-09-09   |
+| CLI version | {{% variables/apibuilder_prod_name %}} Core version | Status      | Minimum Node.js                                                                                                    | Active Start | Maintenance Start | Support Stop |
+| ----------- | ----------------------------------------------------| ----------- | ------------------------------------------------------------------------------------------------------------------ | ------------ | ----------------- | ------------ |
+| v6          | v4                                                  | Maintenance | {{% variables/minimum_node_cli %}}                                                                                 | 2018-06-29   | 2022-09-09        | 2023-09-09   |
+| v7          | v5                                                  | Active      | See the [latest release schedule](https://docs.axway.com/bundle/api-builder/page/docs/release_schedule/index.html) | 2022-09-09   | 2023-09-09        | 2024-09-09   |
 
 ## Active development phase
 

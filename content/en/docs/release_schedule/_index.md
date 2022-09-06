@@ -24,21 +24,21 @@ Any {{% variables/apibuilder_prod_name %}} major version that is currently suppo
 
 #### {{% variables/apibuilder_prod_name %}} Core
 
-Below are all the major {{% variables/apibuilder_prod_name %}} Core versions and their current status and requirements.
+Below are all the major Core versions and their current status and requirements.
 
-| {{% variables/apibuilder_prod_name %}} Core version | Status      | Release Names | Minimum Node.js                | Recommended Node.js                | Active Start | Maintenance Start | Support Stop |
-| --------------------------------------------------- | ----------- | ------------- | ------------------------------ | ---------------------------------- | ------------ | ----------------- | ------------ |
-| v4                                             | Maintenance | Cities        | v8.9.0                         | {{% variables/recommended_node %}} | 2018-06-29   | 2022-09-09        | 2023-09-09      |
-| v5                                             | Active      | Authors       | {{% variables/minimum_node %}} | {{% variables/recommended_node %}} | 2022-09-09   | 2023-09-09        | 2024-09-09      |
+| Core version | Status      | Release Names | Minimum Node.js                | Recommended Node.js                | Active Start | Maintenance Start | Support Stop |
+| ------------ | ----------- | ------------- | ------------------------------ | ---------------------------------- | ------------ | ----------------- | ------------ |
+| v4           | Maintenance | Cities        | v8.9.0                         | v16                                | 2018-06-29   | 2022-09-09        | 2023-09-09   |
+| v5           | Active      | Authors       | {{% variables/minimum_node %}} | {{% variables/recommended_node %}} | 2022-09-09   | 2023-09-09        | 2024-09-09   |
 
 #### {{% variables/apibuilder_prod_name %}} CLI
 
 Below are the major CLI versions and their current status and requirements. Note that each CLI version should be used alongside the particular version of {{% variables/apibuilder_prod_name %}} Core as shown below.
 
 | CLI version | {{% variables/apibuilder_prod_name %}} Core version | Status      | Minimum Node.js                    | Active Start | Maintenance Start | Support Stop |
-| ----------- | --------------------------------------| ----------- | ----------- | ---------------------------------- | ------------ | ---------------- | ------------ |
-| v6                                             | v4                | Maintenance | v12.17.0                           | 2018-06-29   | 2022-09-09        | 2023-09-09      |
-| v7                                             | v5                | Active      | {{% variables/minimum_node_cli %}} | 2022-09-09   | 2023-09-09      | 2024-09-09      |
+| ----------- | ----------------------------------------------------| ----------- | ---------------------------------- | ------------ | ----------------- | ------------ |
+| v6          | v4                                                  | Maintenance | v12.17.0                           | 2018-06-29   | 2022-09-09        | 2023-09-09   |
+| v7          | v5                                                  | Active      | {{% variables/minimum_node_cli %}} | 2022-09-09   | 2023-09-09        | 2024-09-09   |
 
 ## Active development phase
 

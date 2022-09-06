@@ -22,23 +22,23 @@ Similarly, there will be important security releases for Node.js. These versions
 
 Any {{% variables/apibuilder_prod_name %}} major version that is currently supported can introduce or deprecate support for specific Node.js versions as required, according to [Node.js release schedule](https://nodejs.org/en/about/releases).
 
-#### {{% variables/apibuilder_prod_name %}} core
+#### {{% variables/apibuilder_prod_name %}} Core
 
-Below are all the {{% variables/apibuilder_prod_name %}} releases and their current status. Each major version of {{% variables/apibuilder_prod_name %}} will runs on a minimum supported version of Node.js.
+Below are all the {{% variables/apibuilder_prod_name %}} Core releases and their current status. Each major version of {{% variables/apibuilder_prod_name %}} Core will run on a minimum supported version of Node.js.
 
-| {{% variables/apibuilder_prod_name %}} version | Status      | Release Names | Minimum Node.js                | Recommended Node.js                | Active Start | Maintenance Start | Support Stop |
+| {{% variables/apibuilder_prod_name %}} Core version | Status      | Release Names | Minimum Node.js                | Recommended Node.js                | Active Start | Maintenance Start | Support Stop |
 | ---------------------------------------------- | ----------- | ------------- | ------------------------------ | ---------------------------------- | ------------ | ----------------- | ------------ |
-| v4                                             | Maintenance | Cities        | v8.9.0                         | {{% variables/recommended_node %}} | 2018-06-29   | 2022-09-09        | 2023-09      |
-| v5                                             | Active      | Authors       | {{% variables/minimum_node %}} | {{% variables/recommended_node %}} | 2022-09-09   | 2023-09           | 2024-09      |
+| v4                                             | Maintenance | Cities        | v8.9.0                         | {{% variables/recommended_node %}} | 2018-06-29   | 2022-09-09        | 2023-09-09      |
+| v5                                             | Active      | Authors       | {{% variables/minimum_node %}} | {{% variables/recommended_node %}} | 2022-09-09   | 2023-09-09           | 2024-09-09      |
 
 #### {{% variables/apibuilder_prod_name %}} CLI
 
 Below are the CLI versions for the {{% variables/apibuilder_prod_name %}} releases and their current status. Only CLI with a _CLI major version_ should be used with the corresponding {{% variables/apibuilder_prod_name %}} version.
 
-| {{% variables/apibuilder_prod_name %}} version | CLI major version | Status      | Minimum Node.js for CLI            | Active Start | Maintenance Start | Support Stop |
+| CLI version | {{% variables/apibuilder_prod_name %}} Core version | Status      | Minimum Node.js for CLI            | Active Start | Maintenance Start | Support Stop |
 | ---------------------------------------------- | ----------------- | ----------- | ---------------------------------- | ------------ | ----------------- | ------------ |
-| v4                                             | v6                | Maintenance | v12.17.0                           | 2018-06-29   | 2022-09-09        | 2023-09      |
-| v5                                             | v7                | Active      | {{% variables/minimum_node_cli %}} | 2022-09-09   | 2023-09           | 2024-09      |
+| v6                                             | v4                | Maintenance | v12.17.0                           | 2018-06-29   | 2022-09-09        | 2023-09-09      |
+| v7                                             | v5                | Active      | {{% variables/minimum_node_cli %}} | 2022-09-09   | 2023-09-09           | 2024-09-09      |
 
 ## Active development phase
 

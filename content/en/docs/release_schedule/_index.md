@@ -16,18 +16,29 @@ The current release schedule is as follows:
 
 ### Releases
 
-Below are all the {{% variables/apibuilder_prod_name %}} releases and their current status. Each major version of {{% variables/apibuilder_prod_name %}} will runs on a minimum supported version of Node.js.
-
-| {{% variables/apibuilder_prod_name %}} version | Status | Release Names | Minimum Node.js                | Minimum Node.js for CLI            | Recommended Node.js                | Active Start | Maintenance Start | Support Stop |
-| ---------------------------------------------- | ------ | ------------- | ------------------------------ | ---------------------------------- | ---------------------------------- | ------------ | ----------------- | ------------ |
-| v4                                             | Active | Cities        | {{% variables/minimum_node %}} | {{% variables/minimum_node_cli %}} | {{% variables/recommended_node %}} | 2018-06-29   | 2022-09           | 2023-09      |
-| v5                                             | Active | Authors       | v16 LTS                        | v16 LTS                            | v16 LTS                            | 2022-09      | 2023-09           | 2024-09      |
-
 As with any software, it is important to keep up all components up to date. The [Updates](/docs/developer_guide/console#updates-tab) tab in {{% variables/apibuilder_prod_name %}} can be used to keep {{% variables/apibuilder_prod_name %}} up to date.
 
 Similarly, there will be important security releases for Node.js. These versions will often have fixes for web related vulnerabilities which are very important to when running an {{% variables/apibuilder_prod_name %}} service. We strongly recommend to keep an eye on the [Node.js blog](https://nodejs.org/en/blog/vulnerability) for new security releases and stay up-to-date to keep your service secure. {{% variables/apibuilder_prod_name %}} will update the recommended Node.js version when we add support, and as new security releases become available.
 
 Any {{% variables/apibuilder_prod_name %}} major version that is currently supported can introduce or deprecate support for specific Node.js versions as required, according to [Node.js release schedule](https://nodejs.org/en/about/releases).
+
+#### {{% variables/apibuilder_prod_name %}} Core
+
+Below are all the major Core versions and their current status and requirements.
+
+| Core version | Status      | Release Names | Minimum Node.js                | Recommended Node.js                                                                                                | Active Start | Maintenance Start | Support Stop |
+| ------------ | ----------- | ------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------ | ----------------- | ------------ |
+| v4           | Maintenance | Cities        | {{% variables/minimum_node %}} | {{% variables/recommended_node %}}                                                                                 | 2018-06-29   | 2022-09-09        | 2023-09-09   |
+| v5           | Active      | Authors       | v16                            | See the [latest release schedule](https://docs.axway.com/bundle/api-builder/page/docs/release_schedule/index.html) | 2022-09-09   | 2023-09-09        | 2024-09-09   |
+
+#### {{% variables/apibuilder_prod_name %}} CLI
+
+Below are the major CLI versions and their current status and requirements. Note that each CLI version should be used alongside the particular version of {{% variables/apibuilder_prod_name %}} Core as shown below.
+
+| CLI version | {{% variables/apibuilder_prod_name %}} Core version | Status      | Minimum Node.js                                                                                                    | Active Start | Maintenance Start | Support Stop |
+| ----------- | ----------------------------------------------------| ----------- | ------------------------------------------------------------------------------------------------------------------ | ------------ | ----------------- | ------------ |
+| v6          | v4                                                  | Maintenance | {{% variables/minimum_node_cli %}}                                                                                 | 2018-06-29   | 2022-09-09        | 2023-09-09   |
+| v7          | v5                                                  | Active      | See the [latest release schedule](https://docs.axway.com/bundle/api-builder/page/docs/release_schedule/index.html) | 2022-09-09   | 2023-09-09        | 2024-09-09   |
 
 ## Active development phase
 

@@ -152,7 +152,7 @@ const got = require('got');
 
 Below is a before-after example of the changes made to the default test file in new projects.
 
-### Before
+### Before update
 
 ```js
 const { expect } = require('chai');
@@ -196,7 +196,7 @@ describe('APIs', function () {
 });
 ```
 
-### After
+### After update
 
 ```js
 const { expect } = require('chai');

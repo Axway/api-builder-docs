@@ -138,7 +138,7 @@ See [request](https://www.npmjs.com/package/@axway/api-builder-test-utils#async-
 
 The HTTP client library `got` is no longer needed and can be removed from the `devDependencies` in `package.json`, for example:
 
-```
+```text
 "got": "^11.8.3",
 ```
 

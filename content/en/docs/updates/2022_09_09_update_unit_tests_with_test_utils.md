@@ -150,7 +150,7 @@ const got = require('got');
 
 ## Example
 
-Here is a before-after example of the changes made to the default test file in new projects.
+Below is a before-after example of the changes made to the default test file in new projects.
 
 ### Before
 

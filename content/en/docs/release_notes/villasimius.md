@@ -13,6 +13,7 @@ Brief summary of the notable release contents.
 <!-- ## Breaking changes -->
 
 ## Features
+* #7406: When installing plugins from the **Plugins** page, if the latest version of a plugin is not compatible with the current version of {{% variables/apibuilder_prod_name %}} or Node.js a previous compatible version will be installed instead, if possible. This feature only applies when using Node.js 12.13.0 and above.
 * #7470: {{% variables/apibuilder_prod_name %}} has been updated to allow configuration from files in `./conf` to be overridden when creating a new `APIBuilder` instance by passing `configOverrides` as a key to the second `options` argument in the constructor.
 * #7470: Updates to [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) will now be displayed in the [**Updates** tab](/docs/developer_guide/console/#updates-tab).
 * #7470: [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) now has a [`Runtime`](https://www.npmjs.com/package/@axway/api-builder-test-utils#runtime-api) feature that can be used to test an {{% variables/apibuilder_prod_name %}} project.

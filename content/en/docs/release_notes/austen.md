@@ -10,7 +10,8 @@ Brief summary of the notable release contents.
 
 {{% releasenotes/upgrade %}}
 
-<!-- ## Breaking changes -->
+## Breaking changes
+#7425: {{% variables/apibuilder_prod_name %}} will now fail to start with a mismatching versions of @axway/api-builder-admin and @axway/api-builder-runtime (the same version should be installed).
 
 <!-- ## Features -->
 

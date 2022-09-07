@@ -6,12 +6,14 @@ date: 2022-09-09
 Hide_readingtime: true
 ---
 ## Summary
-Brief summary of the notable release contents.
+
+{{% variables/apibuilder_prod_name %}} v5 is released. Projects created on v4 are compatible with v5, but require installing upgrades for components (see [Upgrades](/docs/developer_guide/console#updates-tab)).
 
 {{% releasenotes/upgrade %}}
 
 ## Breaking changes
-#7425: {{% variables/apibuilder_prod_name %}} will now fail to start with a mismatching versions of @axway/api-builder-admin and @axway/api-builder-runtime (the same version should be installed).
+- #7425: {{% variables/apibuilder_prod_name %}} will now fail to start with mismatching versions of @axway/api-builder-admin and @axway/api-builder-runtime (the same version of each should be installed).
+- #6089: All {{% variables/apibuilder_prod_name %}} components now require a minimum of Node.js version 16.x.
 
 <!-- ## Features -->
 

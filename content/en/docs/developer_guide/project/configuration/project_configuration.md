@@ -25,8 +25,9 @@ The following topics describe the project configuration settings.
 | --- | --- | --- | --- |
 | allowedHosts | Array`<String>` | \- | Restricts access to the Admin Console to the specified hosts. |
 | apiDocPrefix | String | '/apidoc' | **Deprecated {{% deprecation/link D002 %}}**. Prefix for the API documentation. |
-| disableAPIDoc | Boolean | false | **Deprecated {{% deprecation/link D003 %}}**. Set to `true` to display the generated OpenAPI Docs. Changing the setting only works in production. Swagger documentation is always available in dev mode. |
-| enabled | Boolean | true | Set to `true` to enable the Admin Console. |
+| disableAPIDoc | Boolean | false | **Deprecated {{% deprecation/link D003 %}}**. API documentation is always available. |
+| enabled | Boolean | true | Set to `false` to disable the Admin Console in development |
+| updatesEnabled | Boolean | true | Set to `false` to disable checking for component updates on npm when the server starts in development mode.
 
 ### apidoc
 

@@ -52,16 +52,6 @@ SET LOG_LEVEL=trace
 npm start
 ```
 
-#### On Amplify Runtime Services
-
-{{% alert title="Note" color="primary" %}}Amplify Runtime Services is deprecated and will be discontinued effective September 1, 2022.{{% /alert %}}
-
-If you are deploying {{% variables/apibuilder_prod_name %}} on [Amplify Runtime Services](/docs/how_to/deploy_an_api_builder_application_to_amplify_runtime_services/).
-
-```bash
-amplify acs config --set LOG_LEVEL=trace myproject
-```
-
 #### On Docker
 
 If you are deploying {{% variables/apibuilder_prod_name %}} [using Docker](/docs/how_to/dockerize_an_api_builder_service/).

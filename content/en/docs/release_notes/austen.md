@@ -12,8 +12,8 @@ Hide_readingtime: true
 {{% releasenotes/upgrade %}}
 
 ## Breaking changes
-- #7425: {{% variables/apibuilder_prod_name %}} will now fail to start with mismatching versions of @axway/api-builder-admin and @axway/api-builder-runtime (the same version of each should be installed).
 - #6089: All {{% variables/apibuilder_prod_name %}} components now require a minimum of Node.js version 16.x.
+- #7425: {{% variables/apibuilder_prod_name %}} will now fail to start with mismatching versions of @axway/api-builder-admin and @axway/api-builder-runtime (the same version of each should be installed).
 
 <!-- ## Features -->
 

@@ -136,10 +136,10 @@ See [request](https://www.npmjs.com/package/@axway/api-builder-test-utils#async-
 
 #### Remove `got`
 
-The HTTP client library `got` is no longer needed and can be removed from the `devDependencies` in `package.json`, for example:
+The HTTP client library `got` is no longer needed and can be removed from the project if it is not used anywhere else, for example:
 
-```text
-"got": "^11.8.3",
+```bash
+npm uninstall got
 ```
 
 Also, `got` can be removed from all the test files that `require` it. This can be removed:

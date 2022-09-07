@@ -22,7 +22,7 @@ date: 2021-10-01
 
 Files ending in `default.js` are part of the application, can be added to source control, and will be released into production, so these must never contain sensitive information, such as passwords.
 
-Files ending in `local.js` are never be added to source control, and will not be released into production, so these files can contain sensitive information such as passwords.
+Files ending in `local.js` are never be added to source control, and will not be released into production, so these files can contain sensitive information such as passwords. These are explicitly ignored in `.gitignore` and `.dockerignore`. If you use alternate source control or deployment methods, then you should ensure that these files are not deployed.
 
 At startup, all "default" files are loaded and sorted and merged into a single configuration object. Then, all "local" files are loaded, sorted, and merged with the single configuration object, and can override the "default" configuration.
 

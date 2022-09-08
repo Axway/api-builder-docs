@@ -95,10 +95,6 @@ If you have issues running this command, it may be because the project is missin
 
 New versions of {{% variables/apibuilder_prod_name %}} are released every 2 weeks, and often contain important fixes and features (for more information about the updates, see [{{% variables/apibuilder_prod_name %}} Release notes](/docs/release_notes/)). Follow the [Update guide](/docs/updates/update_guide) to keep your application up to date.
 
-From time to time, there will be recommended changes to your existing projects. To keep your service in sync with these changes, see [{{% variables/apibuilder_prod_name %}} Updates](/docs/updates/).
-
-From time to time, features will be deprecated. [Deprecations](/docs/deprecations) should be applied to ensure that the product will upgrade easily from one version to the next.
-
 ## Introduction to the UI
 
 Once your project is running, point your browser to `http://localhost:8080/console` to access the {{% variables/apibuilder_prod_name %}} user interface (UI) console.

@@ -1,6 +1,6 @@
 ---
-title: Upgrading from endpoints
-weight: 90
+title: Upgrading endpoints
+weight: 40
 date: 2022-03-01
 description: If you are an existing customer, you may be familiar with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints) and have existing applications that you wish to upgrade to use the **OpenAPI** flow-trigger. This document describes how to upgrade.
 ---

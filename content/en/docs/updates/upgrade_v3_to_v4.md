@@ -1,7 +1,6 @@
 ---
-title: v3 to v4 upgrade guide
-linkTitle: v3 to v4 upgrade guide
-weight: 120
+title: Upgrade v3 to v4
+weight: 30
 date: 2021-10-01
 ---
 

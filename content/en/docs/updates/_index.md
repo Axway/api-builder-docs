@@ -1,9 +1,17 @@
 ---
 title: Updates
 linkTitle: Updates
-weight: 100
+weight: 70
 date: 2021-10-01
 ---
+
+New versions of {{% variables/apibuilder_prod_name %}} are released every 2 weeks, and often contain important fixes and features (for more information about the updates, see [Release notes](/docs/release_notes/)). Follow the [Update guide](/docs/updates/update_guide) to keep your application up to date.
+
+From time to time, there will be recommended changes to your existing projects. To keep your service in sync with these changes, see [Project updates](/docs/updates/project_updates).
+
+From time to time, features will be deprecated. [Deprecations](/docs/deprecations) should be applied to ensure that the product will upgrade easily from one version to the next.
+
+Every year, according to our [release schedule](/docs/release_schedule), a new major version of the product will be released, and the previous one will be put into maintenance. If you watch and apply [deprecations](/docs/deprecations), and regularly [update](/docs/updates/update_guide) your application, then upgrading to the next version will be relatively simple.
 
 ## Introduction
 

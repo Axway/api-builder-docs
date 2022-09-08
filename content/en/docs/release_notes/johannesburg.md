@@ -10,7 +10,7 @@ Hide_readingtime: true
 In this release we officially shipped the OpenAPI flow-trigger, adding support for API-first development using OpenAPI 3.0. We also added the ability to disable OpenAPI response validation, as well as requested support for using multiple OpenAPI specifications in the same service. New {{% variables/apibuilder_prod_name %}} projects will come with the OpenAPI flow-trigger installed by default.
 
 {{% releasenotes/upgrade %}}
-In order to migrate from endpoints to the new OpenAPI flow-trigger, you can follow [this upgrade guide](/docs/guide_openapi/upgrading).
+In order to migrate from endpoints to the new OpenAPI flow-trigger, you can follow [Upgrade endpoints](/docs/updates/upgrade_endpoints) guide.
 
 ## Breaking changes
 

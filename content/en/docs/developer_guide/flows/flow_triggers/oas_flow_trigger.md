@@ -19,7 +19,7 @@ Installing the plugin enables new UI on the [API Doc & Test](/docs/developer_gui
 
 To get started and learn more on how the flow-trigger plugin enables the use of Api-first in {{% variables/apibuilder_prod_name %}} see our [Quick start guide](/docs/guide_openapi/quick_start).
 
-If you have an existing service that uses the old legacy endpoints you can upgrade your service with our [Upgrade guide](/docs/guide_openapi/upgrading).
+If you have an existing service that uses the old legacy endpoints you can upgrade your service with our guide [Upgrade endpoints](/docs/updates/upgrade_endpoints).
 
 ## Flow-trigger details
 

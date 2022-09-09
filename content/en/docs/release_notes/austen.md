@@ -7,7 +7,7 @@ Hide_readingtime: true
 ---
 ## Summary
 
-{{% variables/apibuilder_prod_name %}} v5 is released. Projects created on v4 are compatible with v5, but require installing upgrades for components (see [Upgrades](/docs/developer_guide/console#updates-tab)).
+In this release we introduced new major versions of {{% variables/apibuilder_prod_name %}} Core (v5) and plugins. Projects that use {{% variables/apibuilder_prod_name %}} v4 and previous versions of plugins can be [upgraded](/docs/updates/update_guide/#installing-upgrades) provided that your environment has Node.js v16.
 
 {{% releasenotes/update %}}
 

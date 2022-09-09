@@ -11,6 +11,36 @@ date: 2021-10-01
 
 {{% alert title="Note" color="primary" %}}API key values and session objects are auto-generated when you create a new project.{{% /alert %}}
 
+### Configuration files
+
+{{% variables/apibuilder_prod_name %}} will look for two types of configuration files in the **`./conf`** directory of the application, either "default" or "local", for example:
+
+* default.js
+* local.js
+* oracle.default.js
+* oracle.local.js
+
+Files ending in `default.js` are part of the application, can be added to source control, and will be released into production, so these must never contain sensitive information, such as passwords.
+
+Files ending in `local.js` are never be added to source control, and will not be released into production, so these files can contain sensitive information such as passwords. These are explicitly ignored in `.gitignore` and `.dockerignore`. If you use alternate source control or deployment methods, then you should ensure that these files are not deployed.
+
+At startup, all "default" files are loaded and sorted and merged into a single configuration object. Then, all "local" files are loaded, sorted, and merged with the single configuration object, and can override the "default" configuration.
+
+Usually, the values for configuration parameters are specified directly in the configuration file. However, for sensitive information, those values could be environmentalized (see the [Environmentalization guide](https://docs.axway.com/bundle/api-builder-security-guide/page/environmentalization.html) for more information). The important thing to know about environmentalized parameters is that all the values are provided to the application as strings, and might need subsequent type conversion like this:
+
+```javascript
+// default.js
+
+module.exports = {
+  // In this case we convert the string value that comes from the environment to
+  // integer. Similar approach would be with floats.
+  timeout: parseInt(process.env.TIMEOUT, 10),
+
+  // In this case we convert the string value to boolean
+  printEnvVars: process.env.PRINT_ENV_VARS === "true"
+}
+```
+
 ## Settings
 
 <!-- lint disable heading-sentence-case -->
@@ -25,8 +55,9 @@ The following topics describe the project configuration settings.
 | --- | --- | --- | --- |
 | allowedHosts | Array`<String>` | \- | Restricts access to the Admin Console to the specified hosts. |
 | apiDocPrefix | String | '/apidoc' | **Deprecated {{% deprecation/link D002 %}}**. Prefix for the API documentation. |
-| disableAPIDoc | Boolean | false | **Deprecated {{% deprecation/link D003 %}}**. Set to `true` to display the generated OpenAPI Docs. Changing the setting only works in production. Swagger documentation is always available in dev mode. |
-| enabled | Boolean | true | Set to `true` to enable the Admin Console. |
+| disableAPIDoc | Boolean | false | **Deprecated {{% deprecation/link D003 %}}**. API documentation is always available. |
+| enabled | Boolean | true | Set to `false` to disable the Admin Console in development |
+| updatesEnabled | Boolean | true | Set to `false` to disable checking for component updates on npm when the server starts in development mode.
 
 ### apidoc
 
@@ -197,21 +228,3 @@ module.exports = function (req, resp) {
 ### bindProcessHandlers
 
 \[boolean\] True by default. When this is set to false, {{% variables/apibuilder_prod_name %}} will not automatically shut down or restart on process signals such as SIGUSR2, SIGINT and SIGABRT, as well as on exit and uncaught exception events. bindProcessHandlers should be set to false when starting {{% variables/apibuilder_prod_name %}} as part of another process (i.e. during mocha unit tests), otherwise any bound process handlers may interfere with the main process and cause unexpected behaviour.
-
-### Configuration files
-
-{{% variables/apibuilder_prod_name %}} will look for two sets of configuration files in the **`./conf`** directory of the application, those ending in `default.js` and `local.js`. The `default` files are part of the source for your application, whereas the `local` files might contain sensitive information (such as passwords) and are not source controlled (these files will be ignored by the Git repository). At startup, all `default` files are loaded and sorted and merged into a single configuration object. Then, all `local` files are loaded, sorted, and merged with the single configuration object.
-
-Usually, the values for configuration parameters are directly specified in the configuration file. However, for sensitive information, those values could be environmentalized. For how to do that, refer to the [Environmentalization guide](https://docs.axway.com/bundle/api-builder-security-guide/page/environmentalization.html). The important thing to know is that if environmentalization is used, all the values will come as strings and might need subsequent type conversion like this:
-
-```javascript
-// default.js
-
-module.exports = {
-  // In this case we convert the string value that comes from the environment to integer. Similar approach would be with floats.
-  timeout: parseInt(process.env.TIMEOUT, 10),
-
-  // In this case we convert the string value to boolean
-  printEnvVars: process.env.PRINT_ENV_VARS === "true"
-}
-```

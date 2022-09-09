@@ -11,7 +11,7 @@ Brief summary of the notable release contents.
 {{% releasenotes/upgrade %}}
 
 ## Breaking changes
-* #7479: [`config.admin.updatesEnabled`](/docs/developer_guide/project/configuration/project_configuration/#admin) no longer has its default behavior controlled by [`config.bindProcessHandlers`](/docs/developer_guide/project/configuration/project_configuration/#bindprocesshandlers). If your project unit tests still directly set `bindProcessHandlers` you should follow [this guide](/docs/updates/2022_08_26_update_unit_tests_with_test_utils) to update your unit tests to use `@axway/api-builder-test-utils` which will control `updatesEnabled` and `bindProcessHandlers` under the hood.
+* #7479: [`config.admin.updatesEnabled`](/docs/developer_guide/project/configuration/project_configuration/#admin) is enabled by default, and should be explicitly disabled for unit tests (similar to [`bindProcessHandlers`](/docs/developer_guide/project/configuration/project_configuration#bindprocesshandlers)). Unit tests should be updated to use the [`@axway/api-builder-test-utils`](https://www.npmjs.com/package/@axway/api-builder-test-utils), which disables `updatesEnabled` and `bindProcessHandlers` by default. If your project unit tests still directly set `bindProcessHandlers`, then you should follow [this guide](/docs/updates/2022_08_26_update_unit_tests_with_test_utils) to upgrade them.
 
 <!-- ## Features -->
 

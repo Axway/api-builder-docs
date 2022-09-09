@@ -9,7 +9,7 @@ Hide_readingtime: true
 
 In this release, we added a warning when using the end of life Node.js 17, and updated our CLIs to share the same version number.
 
-{{% releasenotes/upgrade %}}
+{{% releasenotes/update %}}
 
 <!-- ## Breaking changes -->
 

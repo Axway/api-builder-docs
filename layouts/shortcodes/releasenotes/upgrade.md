@@ -1,4 +1,5 @@
-## Upgrade
+<!-- Legacy shortcode for release notes on versions that don't have the updates UI -->
+## Update
 To update an existing API Builder application, execute the following command from within the application directory:
 ```bash
 npm update

@@ -9,7 +9,7 @@ Hide_readingtime: true
 
 In this release we started work on a feature to check for and inform users of updates that are available to the {{% variables/apibuilder_prod_name %}} Core and plugin components. These are shown in the new _Updates_ tab in the UI.
 
-{{% releasenotes/upgrade %}}
+{{% releasenotes/update %}}
 
 <!-- ## Breaking changes -->
 

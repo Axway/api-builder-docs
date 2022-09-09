@@ -10,7 +10,7 @@ In this release, we added smarter behavior when installing plugins, so that when
 
 In this release, {{% variables/apibuilder_prod_name %}} v4 enters the maintenance phase for one year and will only receive security patches. See the [Release schedule](/docs/release_schedule) for more information about active and maintenance phases. We strongly recommend upgrading to the latest major version of {{% variables/apibuilder_prod_name %}}.
 
-{{% releasenotes/upgrade %}}
+{{% releasenotes/update %}}
 
 <!-- ## Breaking changes -->
 

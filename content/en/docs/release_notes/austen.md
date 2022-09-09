@@ -9,7 +9,7 @@ Hide_readingtime: true
 
 {{% variables/apibuilder_prod_name %}} v5 is released. Projects created on v4 are compatible with v5, but require installing upgrades for components (see [Upgrades](/docs/developer_guide/console#updates-tab)).
 
-{{% releasenotes/upgrade %}}
+{{% releasenotes/update %}}
 
 ## Breaking changes
 

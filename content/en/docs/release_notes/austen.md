@@ -13,7 +13,7 @@ Hide_readingtime: true
 
 ## Breaking changes
 
-- #6089: Breaking change: all {{% variables/apibuilder_prod_name %}} components now require a minimum of Node.js version 16.x.
+* #6089: Breaking change: all {{% variables/apibuilder_prod_name %}} components now require a minimum of Node.js version 16.x.
 
 <!-- ## Features -->
 

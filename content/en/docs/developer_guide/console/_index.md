@@ -113,7 +113,7 @@ To create a plugin, select the **Create plugin** link. You are directed to [{{% 
 
 ### Updates tab
 
-The **Updates** tab shows updates and upgrades for installed components. You should always keep your components up to date for the latest features, bug fixes, and security updates.
+The _Updates_ tab shows updates and upgrades for installed components. You should always keep your components up to date for the latest features, bug fixes, and security updates.
 
 On startup, {{% variables/apibuilder_prod_name %}} will check npm for updates and upgrades to installed components. This check only happens in development, and never in production. This feature is only available when using maintenance and LTS Node.js versions greater than 12.
 

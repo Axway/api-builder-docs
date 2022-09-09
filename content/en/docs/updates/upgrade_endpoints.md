@@ -1,6 +1,6 @@
 ---
-title: Upgrading from endpoints
-weight: 90
+title: Upgrading endpoints
+weight: 40
 date: 2022-03-01
 description: If you are an existing customer, you may be familiar with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints) and have existing applications that you wish to upgrade to use the **OpenAPI** flow-trigger. This document describes how to upgrade.
 ---
@@ -186,7 +186,7 @@ If you encounter this issue, you should change your flow to access the fields fr
 
 Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), all HTTP headers from the request would be passed to the flow where all of the keys were lower-case. While this is still true, if any HTTP header is an [OpenAPI parameter](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#parameterObject), then the case will be preserved.
 
-This change was made because OpenAPI parameters are uniquely identified by the properties `in` and `name`, where `name` is case-sensitive. Because of this, all parameters are now accessed through their [HTTP request component parts](/docs/guide_openapi/upgrading#the-request-is-different), which guarantees uniqueness, but also preserves case (when applicable).
+This change was made because OpenAPI parameters are uniquely identified by the properties `in` and `name`, where `name` is case-sensitive. Because of this, all parameters are now accessed through their [HTTP request component parts](#the-request-is-different), which guarantees uniqueness, but also preserves case (when applicable).
 
 If it is desirable to ensure all headers are lower-case, then there is an option on the **OpenAPI** flow-trigger to [**Lower-case all headers**](/docs/guide_openapi/flows#lower-case-all-headers).
 
@@ -196,9 +196,9 @@ The [OpenAPI upgrade](#upgrading-to-openapi-flow-trigger) will automatically ena
 
 ### Removed $.params
 
-Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), all OpenAPI parameters were parsed and passed to the flow through `$.params`. Now, all OpenAPI parameters are accessed through their [HTTP request component parts](/docs/guide_openapi/upgrading#the-request-is-different). Also note that [OpenAPI 2.0 body parameters](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#parameterObject) could be accessed from the `$.params` using their parameter name. Now, the body parameter is always `$.request.body`.
+Previously, with [Swagger endpoints](/docs/developer_guide/flows/manage_endpoints), all OpenAPI parameters were parsed and passed to the flow through `$.params`. Now, all OpenAPI parameters are accessed through their [HTTP request component parts](#the-request-is-different). Also note that [OpenAPI 2.0 body parameters](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/2.0.md#parameterObject) could be accessed from the `$.params` using their parameter name. Now, the body parameter is always `$.request.body`.
 
-This change was made because OpenAPI parameters are uniquely identified by the properties `in` and `name`, where `name` is case-sensitive. This means that when using `$.params`, it is possible for parameter names to clash. Because of this, all parameters are now accessed through their [HTTP request component parts](/docs/guide_openapi/upgrading#the-request-is-different) which guarantees uniqueness.
+This change was made because OpenAPI parameters are uniquely identified by the properties `in` and `name`, where `name` is case-sensitive. This means that when using `$.params`, it is possible for parameter names to clash. Because of this, all parameters are now accessed through their [HTTP request component parts](#the-request-is-different) which guarantees uniqueness.
 
 If it is desirable to continue to use `$.params`, then there is an option on the **OpenAPI** flow-trigger to [**Flatten parameters**](/docs/guide_openapi/flows#flatten-parameters).
 

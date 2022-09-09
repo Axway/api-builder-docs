@@ -1,11 +1,10 @@
 ---
-title: v3 to v4 upgrade guide
-linkTitle: v3 to v4 upgrade guide
-weight: 120
+title: Upgrade v3 to v4
+weight: 30
 date: 2021-10-01
 ---
 
-{{% alert title="Note" color="primary" %}}Support for {{% variables/apibuilder_prod_name %}} 3.x ceased on 30 April 2020. Use the [v3 to v4 upgrade guide](/docs/v3_to_v4_upgrade_guide) to migrate all your applications to [{{% variables/apibuilder_prod_name %}} 4.x](/docs/getting_started).
+{{% alert title="Note" color="primary" %}}Support for {{% variables/apibuilder_prod_name %}} 3.x ceased on 30 April 2020. Use document to migrate all your applications to {{% variables/apibuilder_prod_name %}} 4.x.
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 

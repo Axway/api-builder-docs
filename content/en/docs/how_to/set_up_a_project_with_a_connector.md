@@ -28,7 +28,6 @@ The following data connector plugins are currently available for download direct
 
 | Connector | Plugin |
 | --------- | ------ |
-| [MBS Connector](/docs/developer_guide/connectors/mbs_connector) | [api-builder-plugin-dc-mbs](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mbs)|
 | [Mongo Connector](/docs/developer_guide/connectors/mongo_connector) | [api-builder-plugin-dc-mongo](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mongo)|
 | [MsSQL Connector](/docs/developer_guide/connectors/mssql_connector) | [api-builder-plugin-dc-mssql](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mssql)|
 | [MySQL Connector](/docs/developer_guide/connectors/mysql_connector) | [api-builder-plugin-dc-mysql](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mysql)|

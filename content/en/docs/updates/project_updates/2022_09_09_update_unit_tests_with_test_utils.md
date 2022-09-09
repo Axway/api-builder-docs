@@ -9,13 +9,13 @@ In the [Villasimius](/docs/release_notes/villasimius/) release, we introduced a 
 
 ## How does this impact my service
 
-To benefit from this feature, existing project's unit tests must be modified as described below. Once the modifications have been made, future updates to [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) will be able to be seen from the **Updates** tab.
+To benefit from this feature, existing project's unit tests must be modified as described below. Once the modifications have been made, future updates to [@axway/api-builder-test-utils](https://www.npmjs.com/package/@axway/api-builder-test-utils) will be able to be seen from the _Updates_ tab.
 
 New projects have this feature enabled by default.
 
 ## Upgrade existing services
 
-This feature requires the [Villasimius](/docs/release_notes/villasimius/) release of {{% variables/apibuilder_prod_name %}} Core, so ensure you have installed all updates before continuing. This guide also assumes you have followed the previous update outlined in [Replace the request dev-dependency in project unit tests](/docs/updates/2021_12_17_update_to_remove_request_module)
+This feature requires the [Villasimius](/docs/release_notes/villasimius/) release of {{% variables/apibuilder_prod_name %}} Core, so ensure you have installed all updates before continuing. This guide also assumes you have followed the previous update outlined in [Replace the request dev-dependency in project unit tests](/docs/updates/project_updates/2021_12_17_update_to_remove_request_module)
 
 ### Install @axway/api-builder-test-utils
 

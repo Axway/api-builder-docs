@@ -6,7 +6,7 @@ date: 2022-09-09
 
 New versions of {{% variables/apibuilder_prod_name %}} are released every 2 weeks, often containing important fixes and features. Each {{% variables/apibuilder_prod_name %}} project depends on it is own version of {{% variables/apibuilder_prod_name %}} which allows you to update your services individually.
 
-{{% variables/apibuilder_prod_name %}} provides details about component updates in the **Updates** tab in the UI. There are two types:
+{{% variables/apibuilder_prod_name %}} provides details about component updates in the _Updates_ tab in the UI. There are two types:
 
 * _Updates_ - These are safe, incremental updates that may fix bugs, introduce new features, or apply security updates. These types of updates are automatically applied when `npm update` is run from the command line. You should regularly update your application (see [installing updates](#installing-updates)).
 

@@ -9,7 +9,7 @@ Hide_readingtime: true
 
 In this release, we continued our effort on providing the necessary information to users to keep their applications up to date. When {{% variables/apibuilder_prod_name %}} checks for updates, it will now respect npm configuration for `ca`, `cafile`, and `strict-ssl`.
 
-{{% releasenotes/upgrade %}}
+{{% releasenotes/update %}}
 
 <!-- ## Breaking changes -->
 

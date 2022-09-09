@@ -11,4 +11,4 @@ If you are new to using API-first with {{% variables/apibuilder_prod_name %}} yo
 
 ## Existing users
 
-If you have an existing service that uses the old legacy endpoints you can upgrade your service with our [Upgrade guide](/docs/guide_openapi/upgrading).
+If you have an existing service that uses the old legacy endpoints you can upgrade your service with our [Upgrade endpoints](/docs/updates/upgrade_endpoints) guide.

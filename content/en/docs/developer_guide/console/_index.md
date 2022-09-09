@@ -15,31 +15,7 @@ By default, when you create a new project and run it locally, the **Admin Consol
 
 To configure access to the Admin Console, open the project's `./conf/default.js` file, and edit the `admin` key. The `admin` key is a dictionary of key-value pairs that control the access to the Admin Console, such as restricting which hosts can access the Admin Console.
 
-The `admin` dictionary can contain the following keys:
-
-| Key | Type | Default | Description |
-| --- | --- | --- | --- |
-| allowedHosts | Array`<String>` | \- | Restrict access to the Admin Console to the specified hosts. |
-| enabled | Boolean | true | Set to `true` to enable the Admin Console. |
-
-**Example:**
-
-```javascript
-// ./conf/default.js
-
-// Control the settings for the @axway/api-builder-admin UI console
-    admin: {
-        // Control whether the admin website is available
-        enabled: true,
-        // The hostnames or IPs from which connections to admin are allowed. Hostnames must be resolvable on the
-        // server. IP ranges can also be specified. e.g. [ 'localhost', '192.168.1.0/24', '10.1.1.1' ]
-        // An empty list [] will allow unrestricted access, though this is not recommended due to security
-        // concerns.
-        allowedHosts: [
-            'localhost', '::1'
-        ]
-    },
-```
+Available configuration settings can be found in [Project configuration](/docs/developer_guide/project/configuration/project_configuration#admin).
 
 ## {{% variables/apibuilder_prod_name %}} tabs
 
@@ -137,11 +113,13 @@ To create a plugin, select the **Create plugin** link. You are directed to [{{% 
 
 ### Updates tab
 
-The **Updates** tab shows updates and upgrades for installed components. You should always keep your components up to date for the latest features, bug fixes, and security updates.
+The _Updates_ tab shows updates and upgrades for installed components. You should always keep your components up to date for the latest features, bug fixes, and security updates.
 
 On startup, {{% variables/apibuilder_prod_name %}} will check npm for updates and upgrades to installed components. This check only happens in development, and never in production. This feature is only available when using maintenance and LTS Node.js versions greater than 12.
 
-* An _update_ means that the are new compatibile versions of components available from npm, and can be installed by running [`npm update`](https://docs.npmjs.com/cli/v8/commands/npm-update).
+If you do not have access to npm, or need to disable this feature in development for other reasons, see [`updatesEnabled`](/docs/developer_guide/project/configuration/project_configuration#admin).
+
+* An _update_ means that the are new compatible versions of components available from npm, and can be installed by running [`npm update`](https://docs.npmjs.com/cli/v8/commands/npm-update).
 * An _upgrade_ means that the next version of the component may introduce breaking changes. Upgrades require extra care and attention before installing.
 
 Before installing any upgrade, you should read the release notes very carefully. While some breaking changes are innocuous (for example, the new component requires a higher minimum version of node), some breaking changes can cause parts of your application to cease to function as expected. If this is a possibility, the release notes will explain what to do and may also require manual changes to your application before it will function as expected.

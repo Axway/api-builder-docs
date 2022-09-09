@@ -7,15 +7,15 @@ Hide_readingtime: true
 ---
 ## Summary
 
-In this release we started work on a feature to check for and inform users of updates that are available to the {{% variables/apibuilder_prod_name %}} Core and plugin components. These are shown in the new **Updates** tab in the UI.
+In this release we started work on a feature to check for and inform users of updates that are available to the {{% variables/apibuilder_prod_name %}} Core and plugin components. These are shown in the new _Updates_ tab in the UI.
 
-{{% releasenotes/upgrade %}}
+{{% releasenotes/update %}}
 
 <!-- ## Breaking changes -->
 
 ## Features
 
-* #7399: Projects now check for updates on startup, and they are displayed in the new **Updates** tab in the UI. For more information, see [here](/docs/developer_guide/console/#updates-tab).
+* #7399: Projects now check for updates on startup, and they are displayed in the new _Updates_ tab in the UI. For more information, see [here](/docs/developer_guide/console/#updates-tab).
 * #7173: Removed Titanium examples from OpenAPI **Try it out** sections in the UI.
 
 {{% releasenotes/deprecations %}}

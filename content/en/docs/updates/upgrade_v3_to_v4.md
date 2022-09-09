@@ -1,11 +1,10 @@
 ---
-title: v3 to v4 upgrade guide
-linkTitle: v3 to v4 upgrade guide
-weight: 120
+title: Upgrade v3 to v4
+weight: 30
 date: 2021-10-01
 ---
 
-{{% alert title="Note" color="primary" %}}Support for {{% variables/apibuilder_prod_name %}} 3.x ceased on 30 April 2020. Use the [v3 to v4 upgrade guide](/docs/v3_to_v4_upgrade_guide) to migrate all your applications to [{{% variables/apibuilder_prod_name %}} 4.x](/docs/getting_started).
+{{% alert title="Note" color="primary" %}}Support for {{% variables/apibuilder_prod_name %}} 3.x ceased on 30 April 2020. Use document to migrate all your applications to {{% variables/apibuilder_prod_name %}} 4.x.
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
@@ -357,7 +356,7 @@ rm -rf ./logs
 
 ### port
 
-This is a new v4 option. However, it is critical if the service is to be successfully published to Amplify Runtime Services (ARS).
+This is a new v4 option, which can be important if the container is to be successfully deployed in some container environments.
 
 ```javascript
 // conf/default.js (v4)
@@ -375,7 +374,7 @@ Also, you may also want to add this environment variable to a local environment 
 PORT=8080
 ```
 
-Note that you should always provide the PORT when deploying/running your service on a target environment, for example when using Docker, or when publishing to ARS.
+Note that you should always provide the PORT when deploying/running your service on a target environment, for example when using Docker.
 
 For more information, please read the [Environmentalization](https://docs.axway.com/bundle/api-builder-security-guide/page/environmentalization.html) guide.
 
@@ -536,8 +535,6 @@ We regularly add feature improvements, fixes, and occasionally identify and fix 
 
 {{% alert title="Note" color="primary" %}}To ensure that you stay abreast of important updates and to make it easier to upgrade, you should pay attention to the deprecation warnings and address them as soon as possible.{{% /alert %}}
 
-## Deploying to Amplify Runtime Services (ARS)
+## Deploying to Amplify Runtime Services
 
-{{% alert title="Note" color="primary" %}}Amplify Runtime Services is deprecated and will be discontinued effective September 1, 2022.{{% /alert %}}
-
-Once the major changes from this document are applied, and the necessary unit-tests are run to ensure your project continues to work as expected, then you can follow this guide to [Deploy an {{% variables/apibuilder_prod_name %}} application to Amplify Runtime Services](/docs/how_to/deploy_an_api_builder_application_to_amplify_runtime_services/).
+Deploying to Amplify Runtime Services (ARS) is now discontinued (effective September 1, 2022). Please see the [How to guides](/docs/how_to) for other deployment options.

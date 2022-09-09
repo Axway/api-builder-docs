@@ -9,7 +9,7 @@ Hide_readingtime: true
 
 In this release we added a system of badge notifications for the UI. Notifications include the number of credentials that require attention, and also the number of updates that are available to the {{% variables/apibuilder_prod_name %}} Core and plugin components.
 
-{{% releasenotes/upgrade %}}
+{{% releasenotes/update %}}
 
 ## Features
 

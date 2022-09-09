@@ -24,8 +24,38 @@ Hide_readingtime: true
 {{% releasenotes/deprecations %}}
 
 <!-- Regenerate modules/plugins with api-builder-tools generate-release-notes script -->
+## Updated modules
+* [@axway/amplify-api-builder-cli@7.0.0](https://www.npmjs.com/package/@axway/amplify-api-builder-cli/v/7.0.0)
+* [@axway/api-builder@7.0.0](https://www.npmjs.com/package/@axway/api-builder/v/7.0.0)
+* [@axway/api-builder-admin@5.0.0](https://www.npmjs.com/package/@axway/api-builder-admin/v/5.0.0)
+* [@axway/api-builder-oas-flow-node@3.0.0](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/3.0.0)
+* [@axway/api-builder-project-utils@3.0.0](https://www.npmjs.com/package/@axway/api-builder-project-utils/v/3.0.0)
+* [@axway/api-builder-runtime@5.0.0](https://www.npmjs.com/package/@axway/api-builder-runtime/v/5.0.0)
+* [@axway/api-builder-sdk@2.0.0](https://www.npmjs.com/package/@axway/api-builder-sdk/v/2.0.0)
+* [@axway/api-builder-test-utils@2.0.0](https://www.npmjs.com/package/@axway/api-builder-test-utils/v/2.0.0)
+* [@axway/api-builder-openapi-upgrade@2.0.0](https://www.npmjs.com/package/@axway/api-builder-openapi-upgrade/v/2.0.0)
 
-<!-- ## Updated plugins -->
+## Updated plugins
+* [@axway/api-builder-plugin-dc-mongo@2.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mongo/v/2.0.0)
+* [@axway/api-builder-plugin-dc-mssql@4.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mssql/v/4.0.0)
+* [@axway/api-builder-plugin-dc-mysql@3.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-mysql/v/3.0.0)
+* [@axway/api-builder-plugin-dc-oracle@4.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-dc-oracle/v/4.0.0)
+* [@axway/api-builder-plugin-fn-base64@5.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-base64/v/5.0.0)
+* [@axway/api-builder-plugin-fn-javascript@4.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-javascript/v/4.0.0)
+* [@axway/api-builder-plugin-fn-json@5.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-json/v/5.0.0)
+* [@axway/api-builder-plugin-fn-logger@2.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-logger/v/2.0.0)
+* [@axway/api-builder-plugin-fn-mustache@2.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-mustache/v/2.0.0)
+* [@axway/api-builder-plugin-fn-restclient@3.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-restclient/v/3.0.0)
+* [@axway/api-builder-plugin-fn-swagger@4.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-swagger/v/4.0.0)
+* [@axway/api-builder-plugin-fn-xslt@4.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-fn-xslt/v/4.0.0)
+* [@axway/api-builder-plugin-ft-cron@2.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-cron/v/2.0.0)
+* [@axway/api-builder-plugin-ft-event@2.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-event/v/2.0.0)
+* [@axway/api-builder-plugin-ft-kafka@2.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-kafka/v/2.0.0)
+* [@axway/api-builder-plugin-ft-oas@2.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-oas/v/2.0.0)
+* [@axway/api-builder-plugin-ft-solace@2.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-solace/v/2.0.0)
+* [@axway/api-builder-plugin-ft-timer@2.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-ft-timer/v/2.0.0)
+* [@axway/api-builder-plugin-invoke-flow@2.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-invoke-flow/v/2.0.0)
+* [@axway/api-builder-plugin-prometheus@2.0.0](https://www.npmjs.com/package/@axway/api-builder-plugin-prometheus/v/2.0.0)
 
 ## Known issues
 

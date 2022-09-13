@@ -34,7 +34,7 @@ blog = "/:section/:year/:month/:day/:slug/"
 
 ## Markup config
 [markup]
-  defaultMarkdownHandler = "blackFriday"
+  #defaultMarkdownHandler = "blackFriday" # goldmark is the default
 
   [markup.blackFriday]
   plainIDAnchors = true
@@ -47,7 +47,7 @@ blog = "/:section/:year/:month/:day/:slug/"
 
   [markup.goldmark]
     [markup.goldmark.renderer]
-      #unsafe = true #this overrides the default setting of false
+     unsafe = true #this overrides the default setting of false and allows goldmark to render HTML as Markdown
 
 # Image processing configuration.
 [imaging]

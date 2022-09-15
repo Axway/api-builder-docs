@@ -32,7 +32,9 @@ Publish text message as String to Solace topic.
 | Parameter | Type | Description | Configuration selection | Required |
 | --- | --- | --- | --- | --- |
 | Connection ID | String | The Solace Connection ID, which can be found in the details of the Solace Consumer flow-trigger | Selector, String | Yes |
-| Topic | String | The topic where messages are published. | Selector, String | Yes |
+| Destination name | String | The topic or queue name to publish the message. | Selector, String | Yes |
+| Delivery mode | String | The message delivery mode, one of: Direct (default), Persistent, Non-persistent. | Selector, String | No |
+| Destination type | String | The Solace consumer type, one of: Queue, Topic (default). | Selector, String | No |
 | Message | Any | The message to be published. | Any | Yes |
 
 #### Outputs
@@ -51,7 +53,9 @@ JSON encodes and publishes a message to a Solace topic.
 | Parameter | Type | Description | Configuration selection | Required |
 | --- | --- | --- | --- | --- |
 | Connection ID | String | The Solace Connection ID, which can be found in the details of the Solace Consumer flow-trigger | Selector, String | Yes |
-| Topic | String | The topic where messages are published. | Selector, String | Yes |
+| Destination name | String | The topic or queue name to publish the message. | Selector, String | Yes |
+| Delivery mode | String | The message delivery mode, one of: Direct (default), Persistent, Non-persistent. | Selector, String | No |
+| Destination type | String | The Solace consumer type, one of: Queue, Topic (default). | Selector, String | No |
 | Message | Any | The message to publish. The value will be JSON encoded before sending. | Any | Yes |
 
 #### Outputs
@@ -70,7 +74,9 @@ Publish message with attached binary to Solace topic.
 | Parameter | Type | Description | Configuration selection | Required |
 | --- | --- | --- | --- | --- |
 | Connection ID | String | The Solace Connection ID, which can be found in the details of the Solace Consumer flow-trigger | Selector, String | Yes |
-| Topic | String | The topic where messages are published. | Selector, String | Yes |
+| Destination name | String | The topic or queue name to publish the message. | Selector, String | Yes |
+| Delivery mode | String | The message delivery mode, one of: Direct (default), Persistent, Non-persistent. | Selector, String | No |
+| Destination type | String | The Solace consumer type, one of: Queue, Topic (default). | Selector, String | No |
 | Message | Any | The message to be published. | Any | Yes |
 
 #### Outputs
@@ -80,19 +86,6 @@ Publish message with attached binary to Solace topic.
 | Next | Any | Successfully published message to Solace topic. |  |
 | Error | Any | Unexpected error when publishing to Solace topic. | $.error |
 <!-- lint enable no-duplicate-headings -->
-## Prerequisite
-
-We recommend that you first get familiar with [Solace Concepts](https://docs.solace.com/Solace-PubSub-Platform.htm). To get started using the Solace flow-trigger, you need to have access to a Solace server.
-
-Alternatively, you can run Solace in a Docker container:
-
-```bash
-# Start a message broker container named
-
-docker run -d -p 8082:8080 -p 55555:55555 -p:8008:8008 -p:1883:1883 -p:8000:8000 -p:5672:5672 -p:9000:9000 -p:2222:2222 --shm-size=2g --env username_admin_globalaccesslevel=admin --env username_admin_password=admin --name=solace solace/solace-pubsub-standard
-```
-
-If some of these ports are already used on your machine you can change them accordingly. For more information see [Solace documentation](https://solace.com/products/event-broker/software/getting-started/).
 
 ## How to use the Solace Producer
 
@@ -100,23 +93,21 @@ After the installation of the Solace plugin, you will find the **Solace Producer
 
 ![image2021-4-20_16_17_38](/Images/image2021_4_20_16_17_38.png)
 
-To use it in your flows drag and drop the **Solace Producer** flow-node into the flow graph on the right and select a method to expand its details and configure it:
+### Prerequisites
 
-![image2021-4-20_16_17_5](/Images/image2021_4_20_16_17_5.png)
+This example requires the example from the [Solace Consumer flow-trigger](/docs/developer_guide/flows/flow_triggers/solace_consumer_flow_trigger/#create-a-consumer-flow). The **Solace Consumer** is required to be created before this example so that it creates a valid **Connection ID** that will be used in this example.
 
 ### Example - Publish JSON to Solace
 
-In this example, we will encode an Object as JSON and publish it to a Solace topic, "messages". This example requires a [Solace Consumer](/docs/developer_guide/flows/flow_triggers/solace_consumer_flow_trigger/) flow-trigger to be created first so that it creates a valid **Connection ID** that will be used later in your **Kafka Producer**.
+First create a new flow following the instructions on [Create a new Flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) page.
 
-#### Create a Producer Flow
+Once you have created a new blank flow, you will want to drag and drop the **Solace Producer** from the **Flow-Nodes > Core** panel on the left, into the flow graph on the right.
 
-First create a new flow following the instructions on [Create a new Flow](/docs/developer_guide/flows/manage_flows/create_a_new_flow/) page. Once you have created a new blank flow, you will want to drag the **Solace Producer** from the **Flow-Nodes > Core** panel on the left, into the flow graph on the right. Configure the flow-node to have the properties as shown below:
+![Solace flow-node](/Images/solace_flow_node_configure.png)
 
-![image2021-4-20_16_15_45](/Images/image2021_4_20_16_15_45.png)
+In this example, we will encode an Object as JSON and publish it to a Solace topic, "messages". Configure the flow-node to have the properties as shown below. The **Connection ID** that is used here is a string identifier and can be found on the flow that contains the **Solace Consumer** configuration panel (e.g. "Consumer Flow"). Unless you have more than one, it is typically just, "solace".
 
-The **Connection ID** that is used here is a string identifier and can be found on the flow that contains the **Solace Consumer** configuration panel (e.g. "Consumer Flow"). Unless you have more than one, it is typically just, "solace".
-
-![image2021-4-20_15_11_48](/Images/image2021_4_20_15_11_48.png)
+![Solace flow-node encoding JSON](/Images/solace_flow_node_configure_message.png)
 
 Click on the debugger icon in the upper-right of the graph, do not change any values, and click **Execute Flow**, and check your console debug log, you should see:
 
@@ -131,11 +122,11 @@ Click on the debugger icon in the upper-right of the graph, do not change any va
 
 The flow-node successfully published JSON to Solace.
 
-{{% alert title="Note" color="primary" %}}It is not possible for your application to behave _only_ as a Solace Producer. For more information, see [Example - Behave only as a Solace Producer](#example-behave-only-as-a-solace-producer) below.{{% /alert %}}
+{{% alert title="Note" color="primary" %}}It is not possible for your application to behave _only_ as a Solace producer. For more information, see [Example - Behave only as a Solace Producer](#example-behave-only-as-a-solace-producer) below.{{% /alert %}}
 
 ### Example - Behave only as a Solace Producer
 
-It is not possible for your application to behave _only_ as a Solace Producer. This is because the Solace server configuration settings on the [Solace Consumer](/docs/developer_guide/flows/flow_triggers/solace_consumer_flow_trigger/) flow-trigger configuration panel, and it is a limitation with the product that flow-trigger connections cannot be managed independently. It is possible for your application to behave as a Solace Producer, but it is necessary to create a **Solace Consumer**, and then manually disable it. Follow the instructions to create a [Solace Consumer](/docs/developer_guide/flows/flow_triggers/solace_consumer_flow_trigger/), and then in a text editor, edit your `triggers/solace.yaml` file, and manually disable the flow-trigger by setting the "solace-1" flow-trigger property "enabled" to `false (line 15)`:
+It is not possible for your application to behave _only_ as a Solace producer. This is because the Solace server configuration settings on the [Solace Consumer](/docs/developer_guide/flows/flow_triggers/solace_consumer_flow_trigger/) flow-trigger configuration panel, and it is a limitation with the product that flow-trigger connections cannot be managed independently. It is possible for your application to behave as a Solace Producer, but it is necessary to create a **Solace Consumer**, and then manually disable it. Follow the instructions to create a [Solace Consumer](/docs/developer_guide/flows/flow_triggers/solace_consumer_flow_trigger/), and then in a text editor, edit your `triggers/solace.yaml` file, and manually disable the flow-trigger by setting the "solace-1" flow-trigger property "enabled" to `false (line 15)`:
 
 ```yaml:
 # solace.yaml
@@ -144,7 +135,7 @@ channels:
     name: Solace
     enabled: true
     parameters:
-      url: 'tcp://localhost:55556'
+      url: 'tcp://localhost:55555'
       vpnName: default
       userName: admin
       password: admin

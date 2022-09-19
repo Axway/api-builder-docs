@@ -8,7 +8,7 @@ Hide_readingtime: true
 ## Summary
 In this release, we fixed a high security vulnerability with the package "dicer".
 
-{{% releasenotes/upgrade %}}
+{{% releasenotes/update %}}
 
 <!-- ## Breaking changes -->
 

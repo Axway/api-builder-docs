@@ -1,8 +1,8 @@
 ---
 title: Beckett release notes
 linkTitle: Beckett
-description: 23 September 2022
-date: 2022-09-23
+description: 19 September 2022
+date: 2022-09-19
 Hide_readingtime: true
 ---
 ## Summary
@@ -14,7 +14,8 @@ Brief summary of the notable release contents.
 
 <!-- ## Features -->
 
-<!-- ## Fixes -->
+## Fixes
+* #7514: Fixed security issue [CVE-2022-24434](https://nvd.nist.gov/vuln/detail/CVE-2022-24434).
 
 {{% releasenotes/deprecations %}}
 

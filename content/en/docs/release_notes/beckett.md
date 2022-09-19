@@ -27,8 +27,6 @@ In this release, we fixed a high security vulnerability with the package "dicer"
 * [@axway/api-builder-runtime@5.0.1](https://www.npmjs.com/package/@axway/api-builder-runtime/v/5.0.1)
 * [@axway/api-builder-openapi-upgrade@2.0.2](https://www.npmjs.com/package/@axway/api-builder-openapi-upgrade/v/2.0.2)
 
-## Updated modules
-
 <!-- ## Updated plugins -->
 
 ## Known issues

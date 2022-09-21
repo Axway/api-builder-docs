@@ -14,7 +14,7 @@ In this release we added support for publishing and subscribing to queues in the
 
 ## Features
 * #7443: Added support for publishing and subscribing to queues in the Solace plugin.
-* #7443: Added support for manual application acknowledgement for messages from Solace queues using the new [**Solace Acknowledge** flow-node](/docs/developer_guide/flows/flow_nodes/solace_consumer_flow_node/).
+* #7443: Added support for manual application acknowledgement for messages from Solace queues using the new [**Solace Acknowledge** flow-node](/docs/developer_guide/flows/flow_nodes/solace_acknowledge_flow_node/).
 
 <!-- ## Fixes -->
 

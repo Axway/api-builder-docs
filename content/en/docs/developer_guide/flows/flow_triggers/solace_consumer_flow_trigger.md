@@ -9,7 +9,7 @@ date: 2021-10-01
 
 The **Solace Consumer** flow-trigger reads messages from [Solace](https://solace.com/) topics or queues. Using Solace is useful when implementing an [event-driven microservice architecture](https://medium.com/trendyol-tech/event-driven-microservice-architecture-91f80ceaa21e).
 
-It is part of the **Solace** plugin, `@axway/api-builder-plugin-ft-solace.` The plugin also contains a [**Solace Producer** flow-node](/docs/developer_guide/flows/flow_nodes/solace_producer_flow_node/) and the [**Solace Acknowledge** flow-node](/docs/developer_guide/flows/flow_nodes/solace_consumer_flow_node/). They can be used independently in that your application may only just consume messages from Solace, it does not necessarily have to publish them.
+It is part of the **Solace** plugin, `@axway/api-builder-plugin-ft-solace.` The plugin also contains a [**Solace Producer** flow-node](/docs/developer_guide/flows/flow_nodes/solace_producer_flow_node/) and the [**Solace Acknowledge** flow-node](/docs/developer_guide/flows/flow_nodes/solace_acknowledge_flow_node/). They can be used independently in that your application may only just consume messages from Solace, it does not necessarily have to publish them.
 
 You can install the Solace plugin from the **Plugins** page, or execute the following command:
 
@@ -41,9 +41,10 @@ The following sections provide details of the available **Solace Consumer** para
 | Parameter | Type | Description | Configuration selection | Required |
 | --- | --- | --- | --- | --- |
 | Name | String | The topic or queue name to which to subscribe. | Selector, String | Yes |
-| Queue acknowledge mode | String | The type of message acknowledgement required from the client. Only applies to queues. If "Client", then the client must use the [**Solace Acknowledge** flow-node](/docs/developer_guide/flows/flow_nodes/solace_consumer_flow_node/). | Selector, String | No |
-| Topic request timeout | String | The request timeout period in milliseconds for subscribing to and unsubscribing from topics. | Selector, String | No |
+| Consumer type | String | The type of consumer, either Topic (default) or Queue. | Selector, String | No |
 | Message format | String | Automatically decode messages. If you do not know the message format, then use \`binary\`. One of: JSON | string | binary | Selector, String | No |
+| Queue acknowledge mode | String | The type of message acknowledgement required from the client. Only applies to queues. If "Client", then the client must use the [**Solace Acknowledge** flow-node](/docs/developer_guide/flows/flow_nodes/solace_acknowledge_flow_node/). | Selector, String | No |
+| Topic request timeout | String | The request timeout period in milliseconds for subscribing to and unsubscribing from topics. | Selector, String | No |
 
 ## Quick start
 

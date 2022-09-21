@@ -9,7 +9,7 @@ date: 2021-10-01
 
 The **Solace Producer** flow-node writes messages to [Solace](https://solace.com/) topics. Using Solace is useful when implementing an [event-driven microservice architecture](https://medium.com/trendyol-tech/event-driven-microservice-architecture-91f80ceaa21e).
 
-It is part of the **Solace** plugin, `@axway/api-builder-plugin-ft-solace.` The plugin also contains a [**Solace Consumer** flow-trigger](/docs/developer_guide/flows/flow_triggers/solace_consumer_flow_trigger/) and the [**Solace Acknowledge** flow-node](/docs/developer_guide/flows/flow_nodes/solace_consumer_flow_node/). They can be used independently in that your application may only just publish messages to Solace, it does not necessarily have to consume them.
+It is part of the **Solace** plugin, `@axway/api-builder-plugin-ft-solace.` The plugin also contains a [**Solace Consumer** flow-trigger](/docs/developer_guide/flows/flow_triggers/solace_consumer_flow_trigger/) and the [**Solace Acknowledge** flow-node](/docs/developer_guide/flows/flow_nodes/solace_acknowledge_flow_node/). They can be used independently in that your application may only just publish messages to Solace, it does not necessarily have to consume them.
 
 You can install the Solace plugin from the **Plugins** page, or execute the following command:
 

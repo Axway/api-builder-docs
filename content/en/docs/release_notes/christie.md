@@ -6,13 +6,15 @@ date: 2022-09-23
 Hide_readingtime: true
 ---
 ## Summary
-Brief summary of the notable release contents.
+In this release we added support for publishing and subscribing to queues in the Solace plugin.
 
 {{% releasenotes/update %}}
 
 <!-- ## Breaking changes -->
 
-<!-- ## Features -->
+## Features
+* #7443: Added support for publishing and subscribing to queues in the Solace plugin.
+* #7443: Added support for manual application acknowledgement for messages from Solace queues using the new [**Solace Acknowledge** flow-node](/docs/developer_guide/flows/flow_nodes/solace_consumer_flow_node/).
 
 <!-- ## Fixes -->
 

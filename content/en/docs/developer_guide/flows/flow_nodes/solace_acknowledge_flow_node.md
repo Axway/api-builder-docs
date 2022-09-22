@@ -30,7 +30,7 @@ Acknowledge message receipt for Solace queues.
 
 | Parameter | Type | Description | Configuration selection | Required |
 | --- | --- | --- | --- | --- |
-| Solace Consumer request | Object | The request object from a Solace Consumer flow-trigger where "Queue acknowledge mode" is set to "Auto" | Selector | Yes |
+| Solace Consumer request | Object | The request object from a Solace Consumer flow-trigger where "Queue acknowledge mode" is set to "Client" | Selector | Yes |
 
 #### Outputs
 

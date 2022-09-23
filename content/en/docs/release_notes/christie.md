@@ -20,6 +20,7 @@ In this release we added support for publishing and subscribing to queues in the
 
 {{% releasenotes/deprecations %}}
 
+<!-- Regenerate modules/plugins with api-builder-tools generate-release-notes script -->
 ## Updated modules
 * [@axway/api-builder-admin@5.0.2](https://www.npmjs.com/package/@axway/api-builder-admin/v/5.0.2)
 * [@axway/api-builder-oas-flow-node@3.0.1](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/3.0.1)

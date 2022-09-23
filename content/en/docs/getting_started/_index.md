@@ -9,7 +9,7 @@ date: 2021-10-01
 
 You should have npm (recommended minimum {{% variables/recommended_npm %}}), and Node.js (recommended minimum {{% variables/recommended_node %}}) installed.
 
-{{% variables/apibuilder_prod_name %}} v4 maintains compatibility with a minimum of Node.js {{% variables/minimum_node %}}, however, using a version older than {{% variables/recommended_node %}} is not recommended. See the [Node.js support policy](/docs/nodejs_support_policy/) for more information.
+The latest version of {{% variables/apibuilder_prod_name %}} maintains compatibility with a minimum of Node.js {{% variables/minimum_node %}}, however, using a version older than {{% variables/recommended_node %}} is not recommended. See the [Node.js support policy](/docs/nodejs_support_policy/) for more information.
 
 ### Minimum requirements
 

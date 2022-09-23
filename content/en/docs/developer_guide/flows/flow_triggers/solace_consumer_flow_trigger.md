@@ -7,9 +7,9 @@ date: 2021-10-01
 
 ## Overview
 
-The **Solace Consumer** flow-trigger reads messages from [Solace](https://solace.com/) topics. Using Solace is useful when implementing an [event-driven microservice architecture](https://medium.com/trendyol-tech/event-driven-microservice-architecture-91f80ceaa21e).
+The **Solace Consumer** flow-trigger reads messages from [Solace](https://solace.com/) topics or queues. Using Solace is useful when implementing an [event-driven microservice architecture](https://medium.com/trendyol-tech/event-driven-microservice-architecture-91f80ceaa21e).
 
-It is part of the **Solace** plugin, `@axway/api-builder-plugin-ft-solace.` The plugin also contains a [**Solace Producer** flow-node](/docs/developer_guide/flows/flow_nodes/solace_producer_flow_node/). They can be used independently in that your application may only just consume messages from Solace, it does not necessarily have to publish them.
+It is part of the **Solace** plugin, `@axway/api-builder-plugin-ft-solace.` The plugin also contains a [**Solace Producer** flow-node](/docs/developer_guide/flows/flow_nodes/solace_producer_flow_node/) and the [**Solace Acknowledge** flow-node](/docs/developer_guide/flows/flow_nodes/solace_acknowledge_flow_node/). They can be used independently in that your application may only just consume messages from Solace, it does not necessarily have to publish them.
 
 You can install the Solace plugin from the **Plugins** page, or execute the following command:
 
@@ -29,8 +29,8 @@ The following sections provide details of the available **Solace Consumer** para
 | --- | --- | --- | --- | --- |
 | URL | String | The URL of the messaging service to connect to. | Selector, String | Yes |
 | VPN name | String | The Message VPN name that the client is requesting for this session. | Selector, String | Yes |
-| Username | String | The client username required for authentication. | Selector, String | Yes |
-| Password | String | The password required for authentication. | Selector, String | Yes |
+| User name | String | The client username required for authentication. | Selector, String | Yes |
+| User password | String | The password required for authentication. | Selector, String | Yes |
 | Connect retries | String | The number of times to retry connecting during initial connection setup. | Selector, String | No |
 | Connect timeout | String | The timeout period in milliseconds for a connect operation to the given URL. | Selector, String | No |
 
@@ -40,9 +40,11 @@ The following sections provide details of the available **Solace Consumer** para
 
 | Parameter | Type | Description | Configuration selection | Required |
 | --- | --- | --- | --- | --- |
-| Topic | String | The topic to which to subscribe. | Selector, String | Yes |
-| Request timeout | String | The request timeout period in milliseconds for subscribing to and unsubscribing from topics. | Selector, String | No |
-| Message format | String | Automatically decode messages from the \`topic\`. If you do not know the message format, then use \`binary\`. One of: JSON | string | binary | Selector, String | No |
+| Name | String | The topic or queue name to which to subscribe. | Selector, String | Yes |
+| Consumer type | String | The type of consumer, either Topic (default) or Queue. | Selector, String | No |
+| Message format | String | Automatically decode messages. If you do not know the message format, then use \`binary\`. One of: JSON | string | binary | Selector, String | No |
+| Queue acknowledge mode | String | The type of message acknowledgement required from the client. Only applies to queues. If "Client", then the client must use the [**Solace Acknowledge** flow-node](/docs/developer_guide/flows/flow_nodes/solace_acknowledge_flow_node/). | Selector, String | No |
+| Topic request timeout | String | The request timeout period in milliseconds for subscribing to and unsubscribing from topics. | Selector, String | No |
 
 ## Quick start
 
@@ -51,8 +53,6 @@ We recommend that you first get familiar with [Solace Concepts](https://docs.sol
 Alternatively, you can run Solace in a Docker container:
 
 ```bash
-// Start a message broker container named
-
 docker run -d -p 8082:8080 -p 55555:55555 -p:8008:8008 -p:1883:1883 -p:8000:8000 -p:5672:5672 -p:9000:9000 -p:2222:2222 --shm-size=2g --env username_admin_globalaccesslevel=admin --env username_admin_password=admin --name=solace solace/solace-pubsub-standard
 ```
 
@@ -70,11 +70,11 @@ Follow the instructions on [Create a new flow](/docs/developer_guide/flows/manag
 
 Configure the flow-node to have the properties as shown below:
 
-![image2021-4-20_15_10_29](/Images/image2021_4_20_15_10_29.png)
+![New Solace flow-trigger](/Images/solace_flow_trigger_new.png)
 
 This configures the **Solace Consumer** to receive JSON messages from the "messages" topic. However, we also need to configure the **Connection** details. Scroll the **Solace Consumer** property panel to the bottom, and enter your Solace server's details. This example is using the default values used in [how to run Solace service is a Docker container tutorial](https://solace.com/products/event-broker/software/getting-started/). Maker sure you adjust them accordingly if you have changed those values when starting the Solace container.
 
-![image2021-4-20_11_50_37](/Images/image2021_4_20_11_50_37.png)
+![Solace flow-trigger configured](/Images/solace_flow_trigger_configured.png)
 
 We will also want to assign the Solace message to a variable that will be used in the flow, but first we need to understand what a Solace **Message** actually is so that we can work with it. The **Solace Consumer** outputs a **Message** value called `$.request`, which can be seen on the **Outputs** tab.
 
@@ -123,8 +123,8 @@ Click **Execute Flow**. The flow editor will not show much, just a message, "Flo
 
 Once you are happy with the results you can save the flow and if the connection to Solace server is successful you will see the flow-trigger status is enabled:
 
-![image2021-4-20_15_11_48](/Images/image2021_4_20_15_11_48.png)
+![Solace flow-trigger enabled](/Images/solace_flow_trigger_enabled.png)
 
 #### Create a producer flow
 
-To verify the created above Consumer flow, follow the [Solace Producer flow-node guide](/docs/developer_guide/flows/flow_nodes/solace_producer_flow_node/) to create a "Producer flow" to write JSON to the Solace topic called "messages". Publishing with the Producer flow to the same topic will trigger the execution of the Consumer flow.
+To verify the created above Consumer flow, follow the [Solace Producer flow-node](/docs/developer_guide/flows/flow_nodes/solace_producer_flow_node#example-publish-json-to-solace) example to create a "Producer flow" to write JSON to the Solace topic called "messages". Publishing with the Producer flow to the same topic will trigger the execution of the Consumer flow.

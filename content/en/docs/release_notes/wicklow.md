@@ -15,7 +15,7 @@ Fixed a bug with `@axway/requester` on calculating the accurate `Content-Length`
 <!-- ## Features -->
 
 ## Fixes
-* #7538: Added `Buffer.byteLength()` method to calculate the accurate `Content-Length` of the request `body`.
+Fixed a bug with `@axway/requester` module where the request content-length header was calculated incorrectly when the request body was a string that contains multi-byte characters.
 
 {{% releasenotes/deprecations %}}
 

@@ -15,7 +15,7 @@ Fixed a bug with `@axway/requester` on calculating the accurate `Content-Length`
 <!-- ## Features -->
 
 ## Fixes
-Fixed a bug with `@axway/requester` module where the request content-length header was calculated incorrectly when the request body was a string that contains multi-byte characters.
+* #7538: Fixed a bug with `@axway/requester` module where the request content-length header was calculated incorrectly when the request body was a string that contains multi-byte characters.
 
 {{% releasenotes/deprecations %}}
 

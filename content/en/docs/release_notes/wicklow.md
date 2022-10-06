@@ -1,12 +1,12 @@
 ---
 title: Wicklow release notes
 linkTitle: Wicklow
-description: 30 September 2022
-date: 2022-09-30
+description: 07 October 2022
+date: 2022-10-07
 Hide_readingtime: true
 ---
 ## Summary
-Fixed a bug with `@axway/requester` on calculating the accurate `Content-Length` of the request `body`.
+Fixed a bug calculating the accurate `Content-Length` of the request `body` that impacted a number of modules, including `@axway/api-builder-plugin-fn-restclient`, `@axway/api-builder-plugin-fn-swagger`, and `@axway/api-builder-oas-flow-node`.
 
 {{% releasenotes/update %}}
 

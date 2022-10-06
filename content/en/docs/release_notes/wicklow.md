@@ -1,7 +1,7 @@
 ---
-title: Dickens release notes
-linkTitle: Dickens
-description: 7 October 2022
+title: Wicklow release notes
+linkTitle: Wicklow
+description: 07 October 2022
 date: 2022-10-07
 Hide_readingtime: true
 ---
@@ -20,9 +20,7 @@ Fixed a bug calculating the accurate `Content-Length` of the request `body` that
 {{% releasenotes/deprecations %}}
 
 <!-- Regenerate modules/plugins with api-builder-tools generate-release-notes script -->
-## Updated modules
-* [@axway/api-builder-admin@5.0.3](https://www.npmjs.com/package/@axway/api-builder-admin/v/5.0.3)
-* [@axway/api-builder-runtime@5.0.3](https://www.npmjs.com/package/@axway/api-builder-runtime/v/5.0.3)
+<!-- ## Updated modules -->
 
 <!-- ## Updated plugins -->
 

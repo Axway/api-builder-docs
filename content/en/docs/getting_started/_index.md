@@ -15,7 +15,7 @@ The latest version of {{% variables/apibuilder_prod_name %}} maintains compatibi
 
 These are the absolute minimum requirements for running an {{% variables/apibuilder_prod_name %}} service. Memory and disk usage may fluctuate over time and between releases. Recommended system specs should be significantly higher to account for additional plugins, inbound requests and custom service logic.
 
-|  | Development | Production |
+| Type | Development | Production |
 | --- | --- | --- |
 | HDD | 110MB | 80MB |
 | RAM | 45MB | 40MB |

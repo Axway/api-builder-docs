@@ -12,13 +12,17 @@ Let's create a new model. In the Admin Console:
 1. Click the **Models** tab.
 1. Click the **\+ Model** button on the right side.
 1. In the New Model step:
-![new_model_%281%29_latest](/Images/55476489_new_model_(1)_latest.png)
+
+    ![new_model_%281%29_latest](/Images/55476489_new_model_(1)_latest.png)
+
     1. Enter "simpleuser" in the **Model name** field (required). The name must be unique for all of the application's models.
     1. Select a **Connector** from the drop-down list (required). Connectors are used to persist data to the model.
     1. Add a description.
     1. Click **Next** to move onto the fields step.
 1. In the Create Model Fields step:
-![add_fields](/Images/add_fields.png)
+
+    ![add_fields](/Images/add_fields.png)
+
     1. Click the **\+ Field** button.
     1. Enter "first_name" in the Field name field (required).
     ![create_fields](/Images/create_fields.png)
@@ -30,7 +34,9 @@ Let's create a new model. In the Admin Console:
     1. Repeat step 4 as necessary to add the "last_name" and "email" fields to this model. After you add the fields, you can configure them by changing properties or adding validation or return logic.
     1. Click **Next** to move onto the endpoint step.
 1. In the API endpoint page:
-![add_endpoints](/Images/add_endpoints.png)
+
+    ![add_endpoints](/Images/add_endpoints.png)
+
     1. Make sure the **Create**, **Retrieve**, **Update**, and **Delete** methods are checked.
     1. Click Save to commit your new model to the app.
 

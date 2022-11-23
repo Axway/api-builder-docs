@@ -295,7 +295,9 @@ We will go through the steps to create the flow, but for reference, the complete
         ]
         ```
     1. On the **Outputs** tab, change the **Next** output to `$.contents`.
+
         ![responsedot_params](/Images/responsedot_params.png) ![responsedot_outputs](/Images/responsedot_outputs.png)
+
 1. Drag an HTTP flow-node from the tool panel; this only has a single `Set HTTP Response` method. We will use this node to configure the response that is returned to the caller.
 
     1. Connect the **Next** output of the Format Response node to the new Set HTTP Response node.

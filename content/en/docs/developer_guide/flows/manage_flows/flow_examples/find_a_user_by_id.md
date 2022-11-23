@@ -30,7 +30,9 @@ To configure a find a user by ID flow:
 1. For the **status** parameter, select **number** and enter `404` in the field.
 1. Leave the **body** and **headers** parameters disabled.
 1. Connect the notfound output of the Find a user by ID flow-node to the input of the User not found flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/). The completed flow is displayed.
-![Find_by_ID_latest](/Images/find_by_id_latest.png)
+
+    ![Find_by_ID_latest](/Images/find_by_id_latest.png)
+
 1. Click **Apply**.
 1. On the next screen, click **Proceed**. The server will be restarted, the _Find a user by ID_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.
 1. To exit API Orchestration user interface and return to API Lists page, click **Close**.

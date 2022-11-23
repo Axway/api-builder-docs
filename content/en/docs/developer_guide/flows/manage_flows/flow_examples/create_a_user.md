@@ -38,7 +38,9 @@ To configure a create a user flow:
 1. Leave the **body** and **headers** parameters disabled.
 1. Connect the next output of the Set header location flow-node to the input of the Create succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/).
 1. Connect the error output of the Set header location flow-node to the input of the Create failed flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/). The completed flow is displayed.
+
 ![image2019-8-6_15_55_45](/Images/image2019_8_6_15_55_45.png)
+
 1. Click **Apply**.
 1. On the next screen, click **Proceed**. The server will be restarted, the _Create a user_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.
 1. To exit API Orchestration user interface and return to API Lists page, click **Close**.

@@ -36,7 +36,9 @@ To configure an upsert (update or insert) a user flow:
 1. Enable the **headers** parameter, select **selector**, and select `$.headers` from the selector options drop-down menu or continue typing to complete the selector configuration manually. For additional selector auto-complete information, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/).
 1. Connect the insert output of the Upsert a user flow-node to the input of the Insert succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/).
 1. Connect the next output of the Set location flow-node to the input of the Insert succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage flow-nodes](/docs/developer_guide/flows/manage_flow_nodes/). The completed flow is displayed.
-![Upsert_latest](/Images/upsert_latest.png)
+
+    ![Upsert_latest](/Images/upsert_latest.png)
+
 1. Click **Apply**.
 1. On the next screen, click **Proceed**. The server will be restarted, the _Upsert a user_ flow will be saved and enabled, and you will be returned to the API Orchestration user interface.
 1. To exit API Orchestration user interface and return to API Lists page, click **Close**.

@@ -21,7 +21,7 @@ The performance of a flow depends significantly on what the flow is doing. Conne
 
 ## Performance metrics
 
-|     |     |
+|  Type   |  Metrics   |
 | --- | --- |
 | Date of test | March 2022 ([Johannesburg](/docs/release_notes/johannesburg)) |
 | Number of requests | 100,000 |

@@ -21,7 +21,7 @@ Typically, entities would have a plural root, e.g. `/users`, under which all met
 | PUT         | `/users/{id}`      | 204 No Content  |               | Update user by ID  |
 | DELETE      | `/users/{id}`      | 204 No Content  |               | Delete user by |
 
-1. `POST` operations to create a resource would typically return a `Location` header that is the URL for the newly created resource, but no response body.
+`POST` operations to create a resource would typically return a `Location` header that is the URL for the newly created resource, but no response body.
 
 In OpenAPI, resource values are described by [JSON schema](https://json-schema.org/). You may want to read our [JSON schema tips](#json-schema-tips) before designing resources and writing your OpenAPI specification.
 

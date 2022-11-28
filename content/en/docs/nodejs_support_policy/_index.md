@@ -5,7 +5,7 @@ weight: 130
 date: 2021-10-01
 ---
 
-|     |     |
+|  Requirement   |  Version   |
 | --- | --- |
 | Recommended | {{% variables/recommended_node %}} or greater |
 | Minimum | {{% variables/minimum_node %}} |

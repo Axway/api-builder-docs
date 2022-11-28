@@ -21,12 +21,14 @@ To create a new model using the UI:
 
 1. Click the **\+ Model** button.
 1. In the model window.
-![new_model_%281%29_latest](/Images/55477331_new_model_(1)_latest.png)
+
+    ![new_model_%281%29_latest](/Images/55477331_new_model_(1)_latest.png)
 
     1. Enter the **Model name** (required).
     1. Select a **Connector** (required).
     1. Enter a **Description** for the new model. While this is an optional field, we encourage you to provide a clear and concise description of what the model does.
     1. Click **Next** to start the process of creating a new model.
+
 1. In the New Model page, you will see the name of the model you just created with an option to edit that name and the Connector you selected for it to use.
 1. To add a new field, click the **\+ Field** button. In the model window,
 

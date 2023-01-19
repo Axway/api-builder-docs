@@ -1,36 +1,21 @@
-{{ if .Path }}
+{{ if .File }}
+{{ $pathFormatted := replace .File.Path "\\" "/" -}}
 {{ $gh_repo := ($.Param "github_repo") }}
 {{ $gh_subdir := ($.Param "github_subdir") }}
-{{ $gh_project_repo := ($.Param "github_project_repo") }}
-{{ if $gh_repo }}
+{{ $gh_branch := ($.Param "github_branch") }}
 <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-{{ $gh_branch := "master" }}   
-{{ if in (.Site.BaseURL | string) "develop" }}
-{{ $gh_branch = "develop"}}
-{{ end }} <!-- end of if develop -->
-{{ $editURL := printf "%s/edit/%s/content/%s" $gh_repo $gh_branch .Path }}
-{{ if and ($gh_subdir) (.Site.Language.Lang) }}
-{{ $editURL = printf "%s/edit/%s/%s/content/%s/%s" $gh_repo $gh_branch $gh_subdir ($.Site.Language.Lang) $.Path }}
-{{ else if .Site.Language.Lang }}
-{{ $editURL = printf "%s/edit/%s/content/%s/%s" $gh_repo $gh_branch ($.Site.Language.Lang) .Path }}
-{{ else if $gh_subdir }}
-{{ $editURL = printf "%s/edit/%s/%s/content/%s" $gh_repo $gh_branch $gh_subdir $.Path }}
-{{ end }} <!-- end of subdir lang conds -->
-<a href="{{ $editURL }}" target="_blank"><i class="fa fa-edit fa-fw"></i> {{ T "post_edit_this" }}</a>
-{{ $baseURL := strings.TrimSuffix "/" .Site.BaseURL }}
-{{ $dir := (split .File.Dir "/") }}
-{{ $cms_collection := index $dir 0 }}
-{{ with (index $dir 1) }}
-{{ $cms_collection = . }}
-{{ end }}
-{{ with (index $dir 2) }}
-{{ $cms_collection = . }}
-{{ end }}
-{{ with (index $dir 3) }}
-{{ $cms_collection = . }}
-{{ end }} <!-- end of with -->
-{{ $cmsURL := printf "%s/admin/#/edit/%s/%s" $baseURL $cms_collection .File.BaseFileName }}
-<a href="{{ $cmsURL }}" target="_blank"><i class="fas fa-columns fa-fw"></i> {{ T "post_edit_cms" }}</a>
+{{ if $gh_repo }}
+  {{ if $gh_branch  }}
+    {{ $editURL := printf "%s/edit/%s/content/%s" $gh_repo $gh_branch $pathFormatted }}
+    {{ if and ($gh_subdir) (.Site.Language.Lang) }}
+      {{ $editURL = printf "%s/edit/%s/%s/content/%s/%s" $gh_repo $gh_branch $gh_subdir ($.Site.Language.Lang) $pathFormatted }}
+    {{ else if .Site.Language.Lang }}
+      {{ $editURL = printf "%s/edit/%s/content/%s/%s" $gh_repo $gh_branch ($.Site.Language.Lang) $pathFormatted }}
+    {{ else if $gh_subdir }}
+      {{ $editURL = printf "%s/edit/%s/%s/content/%s" $gh_repo $gh_branch $gh_subdir $pathFormatted }}
+    {{ end }} <!-- end of subdir lang conds -->
+    <a href="{{ $editURL }}" target="_blank"><i class="fa fa-edit fa-fw"></i> {{ T "post_edit_this" }}</a>
+  {{ end }} <!-- end of if gh_branch -->
+{{ end }} <!-- end of if gh_repo -->
 </div>
-{{ end }} <!-- end of if repo -->
-{{ end }} <!-- end if path -->
+{{ end }} <!-- end if File -->

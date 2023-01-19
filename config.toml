@@ -1,4 +1,4 @@
-baseURL = "https://api-builder-docs.netlify.app"
+baseURL = "/"
 title = "API-Builder"
 
 enableRobotsTXT = true
@@ -47,7 +47,7 @@ blog = "/:section/:year/:month/:day/:slug/"
 
   [markup.goldmark]
     [markup.goldmark.renderer]
-     unsafe = true #this overrides the default setting of false and allows goldmark to render HTML as Markdown
+      unsafe = true #this overrides the default setting of false and allows goldmark to render HTML as well as Markdown
 
 # Image processing configuration.
 [imaging]
@@ -64,8 +64,8 @@ anchor = "smart"
 
 [languages]
 [languages.en]
-title = "Axway Documentation"
-description = "Axway Documentation"
+# title = ""
+# description = ""
 languageName ="English"
 # Weight used for sorting.
 weight = 1
@@ -84,6 +84,9 @@ version_menu = "Releases"
 github_repo = "https://github.com/Axway/api-builder-docs"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 # github_project_repo = "https://github.com/google/docsy"
+
+# Github branch value for the edit on github link.
+# github_branch = "master"
 
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""

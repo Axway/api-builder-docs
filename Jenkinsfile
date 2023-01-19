@@ -25,9 +25,9 @@ node('OpendocsBuilder') {
 
         // Potentially duplicating something already done using github workflows
         // but it runs fast. Just delete this stage if you don't need it.
-        /*stage ('Markdown Lint') {
-          opendocs.markdownlint("content/en/**/*.md")
-        }*/
+        //stage ('Markdown Lint') {
+        //  opendocs.markdownlint("content/en/**/*.md")
+        //}
 
         stage ('Build') {
           // The build environment uses a default version of hugo. Invoke the opendocs.build

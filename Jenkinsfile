@@ -7,7 +7,7 @@
 // you want to generate previews for using the PREVIEW_FOR_BRANCHES variable e.g. 
 //    String PREVIEW_FOR_BRANCHES = "developmay22 developaug22 developnov22"
 //    String PREVIEW_FOR_BRANCHES = "developmay22,developaug22,developnov22"
-String PREVIEW_FOR_BRANCHES = "developfeb23"
+String PREVIEW_FOR_BRANCHES = ""
 
 node('OpendocsBuilder') {
   timestamps{  // enable timestamp in the console logs
@@ -25,9 +25,9 @@ node('OpendocsBuilder') {
 
         // Potentially duplicating something already done using github workflows
         // but it runs fast. Just delete this stage if you don't need it.
-        stage ('Markdown Lint') {
+        /*stage ('Markdown Lint') {
           opendocs.markdownlint("content/en/**/*.md")
-        }
+        }*/
 
         stage ('Build') {
           // The build environment uses a default version of hugo. Invoke the opendocs.build

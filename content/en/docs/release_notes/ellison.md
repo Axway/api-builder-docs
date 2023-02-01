@@ -1,8 +1,8 @@
 ---
 title: Ellison release notes
 linkTitle: Ellison
-description: 02 February 2023
-date: 2023-02-02
+description: 01 February 2023
+date: 2023-02-01
 Hide_readingtime: true
 ---
 ## Summary

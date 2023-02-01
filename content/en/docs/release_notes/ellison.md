@@ -1,8 +1,8 @@
 ---
 title: Ellison release notes
 linkTitle: Ellison
-description: 01 February 2023
-date: 2023-01-02
+description: 02 February 2023
+date: 2023-02-02
 Hide_readingtime: true
 ---
 ## Summary
@@ -27,7 +27,6 @@ In this release, we fixed a high security vulnerability with the package "jsonwe
 <!-- ## Updated plugins -->
 
 ## Known issues
-For a list of up-to-date known issues see [{{% variables/apibuilder_prod_name %}
-} known issues](/docs/known_issues/).
+For a list of up-to-date known issues see [{{% variables/apibuilder_prod_name %}} known issues](/docs/known_issues/).
 
 {{% releasenotes/previous %}}

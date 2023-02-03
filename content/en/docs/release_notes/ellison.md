@@ -15,7 +15,7 @@ In this release, we fixed high security vulnerabilities with the package "jsonwe
 <!-- ## Features -->
 
 ## Fixes
-* #7575: Fixed security issues [CVE-2022-23541](https://nvd.nist.gov/vuln/detail/CVE-2022-23541) and [CVE-2022-23540](https://nvd.nist.gov/vuln/detail/CVE-2022-23540) with the jsonwbtoken package.
+* #7575: Fixed security issues in "jsonwbtoken" package - [CVE-2022-23540](https://nvd.nist.gov/vuln/detail/CVE-2022-23540) and [CVE-2022-23541](https://nvd.nist.gov/vuln/detail/CVE-2022-23541).
 
 {{% releasenotes/deprecations %}}
 

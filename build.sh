@@ -188,11 +188,12 @@ function fRunHugo() {
     cd ${BUILD_DIR}
     mkdir public
     case "${MODE}" in
-      "dev") 
+      "dev")
           hugo server
           ;;
       "ci")
-          hugo
+        # buildFuture allows the notes for the current release to be generated
+          hugo --buildFuture
           ;;
       *)
           echo "[ERROR] Build MODE [${MODE}] is invalid!!"

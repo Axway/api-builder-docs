@@ -21,8 +21,10 @@ In this release, we fixed high security vulnerabilities with the package "jsonwe
 
 <!-- Regenerate modules/plugins with api-builder-tools generate-release-notes script -->
 ## Updated modules
-* [@axway/api-builder-admin@5.0.4](https://www.npmjs.com/package/@axway/api-builder-admin/v/5.0.4)
-* [@axway/api-builder-runtime@5.0.4](https://www.npmjs.com/package/@axway/api-builder-runtime/v/5.0.4)
+* [@axway/api-builder-admin@5.0.5](https://www.npmjs.com/package/@axway/api-builder-admin/v/5.0.5)
+* [@axway/api-builder-runtime@5.0.5](https://www.npmjs.com/package/@axway/api-builder-runtime/v/5.0.5)
+* [@axway/api-builder-admin-api@8.0.4](https://www.npmjs.com/package/@axway/api-builder-admin-api/v/8.0.4)
+* [@axway/axway-flow-authorization](https://www.npmjs.com/package/@axway/axway-flow-authorization/v/2.1.1)
 
 <!-- ## Updated plugins -->
 

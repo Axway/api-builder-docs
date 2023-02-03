@@ -1,12 +1,12 @@
 ---
 title: Ellison release notes
 linkTitle: Ellison
-description: 01 February 2023
-date: 2023-02-01
+description: 02 February 2023
+date: 2023-02-02
 Hide_readingtime: true
 ---
 ## Summary
-In this release, we fixed a high security vulnerability with the package "jsonwebtoken".
+In this release, we fixed high security vulnerabilities with the package "jsonwebtoken".
 
 {{% releasenotes/update %}}
 
@@ -15,7 +15,7 @@ In this release, we fixed a high security vulnerability with the package "jsonwe
 <!-- ## Features -->
 
 ## Fixes
-* #7575: Fixed security issue [CVE-2022-24434](https://nvd.nist.gov/vuln/detail/CVE-2022-24434).
+* #7575: Fixed security issues [CVE-2022-23541](https://nvd.nist.gov/vuln/detail/CVE-2022-23541) and [CVE-2022-23540](https://nvd.nist.gov/vuln/detail/CVE-2022-23540) with the jsonwbtoken package.
 
 {{% releasenotes/deprecations %}}
 

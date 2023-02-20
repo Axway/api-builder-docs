@@ -1,5 +1,6 @@
 ---
-title: Search Results
-layout: search
-
+title: "Search"
+sitemap:
+  priority : 0.1
+layout: "search"
 ---

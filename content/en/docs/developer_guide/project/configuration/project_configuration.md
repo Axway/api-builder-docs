@@ -158,6 +158,10 @@ proxy: `http://localhost:8081`
 
 \[string\] Sets the log level for the logger utility. Accepted values are (in order of most-verbose to least) _trace_, _debug_, _info_, _warn_, _error_, _fatal, none_.
 
+### enableLoggingAsJSON
+
+\[boolean\] False by default. Replaces the human readable logging of API Builder with a JSON equivalent that can be parsed in external logging tools.
+
 ### session
 
 \[object\] You can generally leave this as-is since it is generated for each new project you create. The `session` object may contain the following key-value pairs:

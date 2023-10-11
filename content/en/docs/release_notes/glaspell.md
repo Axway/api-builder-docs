@@ -23,9 +23,9 @@ In this release, we upgraded our internal dependencies to no longer use the depr
 ## Updated modules
 * [@axway/amplify-api-builder-cli@7.1.0](https://www.npmjs.com/package/@axway/amplify-api-builder-cli/v/7.1.0)
 * [@axway/api-builder@7.1.0](https://www.npmjs.com/package/@axway/api-builder/v/7.1.0)
-* [@axway/api-builder-admin@5.1.0](https://www.npmjs.com/package/@axway/api-builder-admin/v/5.1.0)
+* [@axway/api-builder-admin@5.2.0](https://www.npmjs.com/package/@axway/api-builder-admin/v/5.2.0)
 * [@axway/api-builder-oas-flow-node@3.1.0](https://www.npmjs.com/package/@axway/api-builder-oas-flow-node/v/3.1.0)
-* [@axway/api-builder-runtime@5.1.0](https://www.npmjs.com/package/@axway/api-builder-runtime/v/5.1.0)
+* [@axway/api-builder-runtime@5.2.0](https://www.npmjs.com/package/@axway/api-builder-runtime/v/5.2.0)
 * [@axway/api-builder-test-utils@2.1.0](https://www.npmjs.com/package/@axway/api-builder-test-utils/v/2.1.0)
 * [@axway/api-builder-openapi-upgrade@2.1.0](https://www.npmjs.com/package/@axway/api-builder-openapi-upgrade/v/2.1.0)
 

@@ -4,8 +4,8 @@ linkTitle: Release notes
 date: 2018-06-29
 Hide_readingtime: true
 weight: 70
-no_title: true
-no_list: true
 ---
 
-{{% releasenotes/current %}}
+Review the API Builder release notes for new features, improvements, and fixed issues. See [Known issues](/docs/known_issues/) for outstanding issues.
+
+{{% alert title="Note" color="primary" %}}You must log in to this portal and be authenticated as an Axway customer to have access to known issues and release notes dated February 2022 and later. Release notes published before that date remain publicly accessible.{{% /alert %}}

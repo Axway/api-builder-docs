@@ -9,7 +9,7 @@ description: Quickly get started to write your first flow, and learn the basics 
 
 1. Navigate to _API Doc & Test_
 1. Click on the **+ OpenAPI** button
-1. In the input box, enter:<br>[`https://docs.axway.com/bundle/api-builder/page/samples/openapi/bookstore.yaml`](/samples/openapi/bookstore.yaml)
+1. In the input box, enter: [`https://docs.axway.com/bundle/api-builder/page/samples/openapi/bookstore.yaml`](/samples/openapi/bookstore.yaml)
 1. Click **Fetch from URL**
 1. It will show a Summary of the API. Click **Save** to finish importing the API
 
@@ -28,7 +28,7 @@ After importing the API, the _API Doc & Test_ shows the rendered OpenAPI specifi
 1. In the flow-node properties panel on the right, find **Body** property. It should appear disabled.
 1. In the **Body** property, enable the property by clicking the toggle switch.
 1. In the **Body** property, change the _Selector_ drop-down to _Object_.
-1. In the **Body** property, enter the value:<br>
+1. In the **Body** property, enter the value:
 `{"id":"1234","isbn":"1234", "title":"Moby Dick", "author":"Herman Melville","published":"1851-10-18"}`
 1. Click **Close** and then **Save and exit**
 

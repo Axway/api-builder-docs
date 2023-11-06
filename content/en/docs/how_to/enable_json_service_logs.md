@@ -31,7 +31,7 @@ The outputted logs in the the terminal console window have the following structu
 | Property | Type | Description |
 | --- | --- | --- |
 | timestamp | String | The time at which the message was originally outputted at. |
-| logLevel | String | The log level. Possible values are: [ "TRACE", "DEBUG", "INFO", "WARN", "ERROR", "FATAL" ].|
+| logLevel | String | The log level. Possible values are: "TRACE", "DEBUG", "INFO", "WARN", "ERROR", "FATAL".|
 | scope | String | The scope usually contains any additional identification that the service provide to help track what outputted the log - i.e the plugin name, the request id when applicable, etc. In the normal logging mode these are part of the message itself.|
 | message | String | The log message. |
 | service | Object | Contains service information such as the `name` and the `version` of your service. |
@@ -39,14 +39,14 @@ The outputted logs in the the terminal console window have the following structu
 ### Example
 ```javascript
 {
-	"timestamp": 1685358261538,
-	"logLevel": "INFO",
-	"scope": "[timer: timer-1] [request-id: b7eadd5e-e059-49ed-985b-8e0eaf43537c]",
-	"message": "The timer have triggered the flow.",
-	"service": {
-		"name": "my-service",
-		"version": "1.0.0"
-	}
+    "timestamp": 1685358261538,
+    "logLevel": "INFO",
+    "scope": "[timer: timer-1] [request-id: b7eadd5e-e059-49ed-985b-8e0eaf43537c]",
+    "message": "The timer have triggered the flow.",
+    "service": {
+        "name": "my-service",
+        "version": "1.0.0"
+    }
 }
 ```
 

@@ -17,8 +17,8 @@ In this release, we upgraded our internal dependencies to versions that no longe
 
 <!-- Regenerate modules/plugins with api-builder-tools generate-release-notes script -->
 ## Updated modules
-
-## Updated plugins
+* [@axway/api-builder-admin@5.4.0](https://www.npmjs.com/package/@axway/api-builder-admin/v/5.4.0)
+* [@axway/api-builder-runtime@5.4.0](https://www.npmjs.com/package/@axway/api-builder-runtime/v/5.4.0)
 
 ## Known issues
 For a list of up-to-date known issues see [{{% variables/apibuilder_prod_name %}} known issues](/docs/known_issues/).

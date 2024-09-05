@@ -40,6 +40,7 @@ The following features are currently unsupported by the **OpenAPI** flow-trigger
 * In _API Doc & Test_, APIs with `multipart/form-data` or `application/x-www-form-urlencoded` bodies will fail to render examples and execute correctly if the body schema is missing an implicit `type: object`.
 * [Media-type parameters](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#media-types) such as `;charset=utf-8` in request and response are currently ignored.
 * OpenAPI [response header styles](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#headerObject).
+* OpenAPI 3 parameter [nullable](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#fixed-fields-20).
 
 1. Using this feature in your OpenAPI specification will not cause any runtime issues, but using it may confuse clients.
 
